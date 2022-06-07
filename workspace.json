@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "core": "packages/core",
+    "date-time-picker": "packages/date-time-picker",
     "novatics-logo": "packages/novatics-logo"
   }
 }

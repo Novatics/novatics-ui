@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@novatics-ui/core": ["packages/core/src/index.ts"],
+      "@novatics-ui/date-time-picker": [
+        "packages/date-time-picker/src/index.ts"
+      ],
       "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"]
     }
   },

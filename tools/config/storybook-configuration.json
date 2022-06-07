@@ -1,0 +1,5 @@
+{
+  "configureCypress": false,
+  "generateStories": true,
+  "generateCypressSpecs": false
+}

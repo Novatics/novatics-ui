@@ -4,7 +4,12 @@
   "projects": {
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
+<<<<<<< HEAD
     "styles": "packages/styles",
+=======
+    "date-time-picker": "packages/date-time-picker",
+    "novatics-logo": "packages/novatics-logo",
+>>>>>>> 3735ad5 (add DateTimePicker component sketch)
     "tokens": "packages/tokens"
   }
 }

@@ -6,7 +6,8 @@
     "dev": "nx storybook core",
     "build": "nx run-many --all --target=build",
     "generate:component": "nx g lib --buildable --compiler=swc --style=@emotion/styled",
-    "generate:storybook": "nx g storybook-configuration --configureCypress=false --generateCypressSpecs=false --generateStories=true"
+    "generate:storybook": "nx g storybook-configuration --configureCypress=false --generateCypressSpecs=false --generateStories=true",
+    "component:generate": "nx workspace-generator component"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@babel/preset-typescript": "7.17.12",
     "@emotion/babel-plugin": "11.9.2",
     "@nrwl/cli": "14.1.9",
+    "@nrwl/devkit": "14.1.9",
     "@nrwl/eslint-plugin-nx": "14.1.9",
     "@nrwl/jest": "14.1.9",
     "@nrwl/js": "14.1.9",

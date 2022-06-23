@@ -58,6 +58,7 @@
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
     "jest": "28.1.0",
+    "lerna": "^5.1.4",
     "nx": "14.1.9",
     "prettier": "^2.5.1",
     "react-test-renderer": "18.1.0",

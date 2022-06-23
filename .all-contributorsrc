@@ -1,0 +1,24 @@
+{
+  "projectName": "ac-sql-reports-web",
+  "projectOwner": "Appen",
+  "repoType": "github",
+  "repoHost": "https://github.com/Appen",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 56,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "mgonc",
+      "name": "Matheus Gonçalves",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15728617",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

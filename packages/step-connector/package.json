@@ -1,9 +1,0 @@
-{
-  "name": "@novatics-ui/step-connector",
-  "version": "0.0.1",
-  "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "@mui/material": "^5.8.5"
-  }
-}

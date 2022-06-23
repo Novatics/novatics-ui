@@ -1,0 +1,74 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/step-content/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/step-content",
+        "tsConfig": "packages/step-content/tsconfig.lib.json",
+        "project": "packages/step-content/package.json",
+        "entryFile": "packages/step-content/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/step-content/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/step-content/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/step-content"],
+      "options": {
+        "jestConfig": "packages/step-content/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/step-content/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/step-content",
+        "config": {
+          "configFolder": "packages/step-content/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

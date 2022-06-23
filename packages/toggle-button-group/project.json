@@ -1,0 +1,76 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/toggle-button-group/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/toggle-button-group",
+        "tsConfig": "packages/toggle-button-group/tsconfig.lib.json",
+        "project": "packages/toggle-button-group/package.json",
+        "entryFile": "packages/toggle-button-group/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/toggle-button-group/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/toggle-button-group/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/toggle-button-group"],
+      "options": {
+        "jestConfig": "packages/toggle-button-group/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/toggle-button-group/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/toggle-button-group",
+        "config": {
+          "configFolder": "packages/toggle-button-group/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

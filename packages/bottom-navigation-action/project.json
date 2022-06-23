@@ -1,0 +1,76 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bottom-navigation-action/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/bottom-navigation-action",
+        "tsConfig": "packages/bottom-navigation-action/tsconfig.lib.json",
+        "project": "packages/bottom-navigation-action/package.json",
+        "entryFile": "packages/bottom-navigation-action/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/bottom-navigation-action/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/bottom-navigation-action/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/bottom-navigation-action"],
+      "options": {
+        "jestConfig": "packages/bottom-navigation-action/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/bottom-navigation-action/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/bottom-navigation-action",
+        "config": {
+          "configFolder": "packages/bottom-navigation-action/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

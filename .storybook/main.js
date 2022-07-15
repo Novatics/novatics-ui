@@ -1,11 +1,29 @@
-module.exports = {
-  stories: [],
-  addons: ['@storybook/addon-essentials'],
-  // uncomment the property below if you want to apply some webpack config globally
-  // webpackFinal: async (config, { configType }) => {
-  //   // Make whatever fine-grained changes you need that should apply to all storybook configs
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-  //   // Return the altered config
-  //   return config;
-  // },
+module.exports = {  
+    stories: [],
+    addons: ['@storybook/addon-essentials'],
+    webpackFinal: async (config, { configType }) => {
+        // analyze webpack bundle size. To enable run storybook with `cross-env analyze=true`
+        // not needed, but helps debug the problem :)
+        // const shouldAnalyze = process.env.analyze === "true";
+        // if (shouldAnalyze) {
+        //     config.plugins.push(
+        //         new BundleAnalyzerPlugin()
+        //     );
+        // }
+
+        // split into more chunks
+        config.optimization = {
+            splitChunks: {
+                chunks: "all",
+                minSize: 30 * 1024, // 30KB
+                maxSize: 1024 * 1024, // 1MB
+            },
+            minimize: false,
+            minimizer: [],
+        };
+
+        return config;
+    }
 };

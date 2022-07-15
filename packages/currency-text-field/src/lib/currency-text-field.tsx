@@ -1,36 +1,45 @@
-import react, { useState } from 'react';
+import react, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import TextField from '@mui/material/TextField';
 import currency from 'currency.js';
+// import json from '../util/Common-Currency.json';
 
-/* eslint-disable-next-line */
 export interface CurrencyTextFieldProps {
   value: number;
   onChange: (value: any) => void;
-  outputFormat: 'string' | 'float' | 'integer'
+  outputFormat?: 'string' | 'float' | 'integer';
+  currency?: string;
 }
 
-const outputFormatMapper = {
-  string: undefined,
-  float: 'value',
-  integer: 'intValue'
-}
-const StyledCurrencyTextField = styled.div`
-  color: pink;
-`;
 
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
-  const { value, onChange,outputFormat, ...rest } = props;
+  const { value, onChange, outputFormat = 'float', ...rest } = props;
   const [maskedValue, setMaskedValue] = useState('');
+
+
+  useEffect(() => {
+    const onlyNumbers = String(value).replace(/\D/g, '')
+    const c = currency(onlyNumbers, { precision: 2, fromCents: true, symbol: '' });
+    const newMaskedValue = c.format()
+    setMaskedValue(newMaskedValue)
+  },[])
+
+
   const internalOnChange = (textfieldvalue: string) => {
     const onlyNumbers = textfieldvalue.replace(/\D/g, '')
-    const c = currency(onlyNumbers, { precision: 2, fromCents: true });
-    console.log(c.intValue)
+    const c = currency(onlyNumbers, { precision: 2, fromCents: true, symbol: '' });
     const newMaskedValue = c.format()
 
-    const outputKey = outputFormatMapper[outputFormat]
+    let onchangeValue: string | number = newMaskedValue
 
-    onChange( outputKey? c[outputKey]: c.format());
+    if(outputFormat === 'float'){
+      onchangeValue = c.value
+    }
+    else if(outputFormat === 'integer'){
+      onchangeValue = c.intValue
+    }
+
+    onChange(onchangeValue)
     setMaskedValue(newMaskedValue);
   };
 
@@ -38,6 +47,11 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     <div>
       <TextField
         value={maskedValue}
+        InputProps={{
+          startAdornment: '',
+          endAdornment: 'R$',
+        }}
+    
         onChange={(value) => internalOnChange(value.target.value)}
         {...rest}
       />

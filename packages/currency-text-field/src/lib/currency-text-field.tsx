@@ -6,21 +6,32 @@ import currency from 'currency.js';
 /* eslint-disable-next-line */
 export interface CurrencyTextFieldProps {
   value: number;
-  onChange: Function;
+  onChange: (value: any) => void;
+  outputFormat: 'string' | 'float' | 'integer'
 }
 
+const outputFormatMapper = {
+  string: undefined,
+  float: 'value',
+  integer: 'intValue'
+}
 const StyledCurrencyTextField = styled.div`
   color: pink;
 `;
 
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
-  const { value, onChange, ...rest } = props;
+  const { value, onChange,outputFormat, ...rest } = props;
   const [maskedValue, setMaskedValue] = useState('');
-
   const internalOnChange = (textfieldvalue: string) => {
-    let c = currency(textfieldvalue, { precision: 2, fromCents: true });
-    onChange(c.intValue);
-    setMaskedValue(c.format());
+    const onlyNumbers = textfieldvalue.replace(/\D/g, '')
+    const c = currency(onlyNumbers, { precision: 2, fromCents: true });
+    console.log(c.intValue)
+    const newMaskedValue = c.format()
+
+    const outputKey = outputFormatMapper[outputFormat]
+
+    onChange( outputKey? c[outputKey]: c.format());
+    setMaskedValue(newMaskedValue);
   };
 
   return (

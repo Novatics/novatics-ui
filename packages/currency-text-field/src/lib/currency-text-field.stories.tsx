@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<CurrencyTextFieldProps> = (args) => (
   <CurrencyTextField
-    value={100}
+    value={200}
     outputFormat={'float'}
     onChange={(value: String) => {
       console.log('value', typeof value);

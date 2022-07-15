@@ -1,31 +1,35 @@
+import react, { useState } from 'react';
 import styled from '@emotion/styled';
 import TextField from '@mui/material/TextField';
+import currency from 'currency.js';
 
 /* eslint-disable-next-line */
-export interface CurrencyTextFieldProps {}
+export interface CurrencyTextFieldProps {
+  value: number;
+  onChange: Function;
+}
 
 const StyledCurrencyTextField = styled.div`
   color: pink;
 `;
 
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
-  const { value, onChange } = props;
-  const inputValue = value.parse
-  const internalOnChange = (textfieldvalue) => {
-    // 123,45 > R$ 123,45
-    onChange(newValue)
+  const { value, onChange, ...rest } = props;
+  const [maskedValue, setMaskedValue] = useState('');
 
-  }
+  const internalOnChange = (textfieldvalue: string) => {
+    let c = currency(textfieldvalue, { precision: 2, fromCents: true });
+    onChange(c.intValue);
+    setMaskedValue(c.format());
+  };
+
   return (
     <div>
-      <TextField value={inputValue} onChange={
-        (textfieldvalue) => {
-          // 123,456 > R$ 123,45
-          123456
-          onChange(newValue)
-      
-        }
-      } />
+      <TextField
+        value={maskedValue}
+        onChange={(value) => internalOnChange(value.target.value)}
+        {...rest}
+      />
     </div>
   );
 }

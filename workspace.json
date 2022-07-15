@@ -4,6 +4,7 @@
   "projects": {
     "button": "packages/button",
     "core": "packages/core",
+    "currency-text-field": "packages/currency-text-field",
     "novatics-logo": "packages/novatics-logo",
     "tokens": "packages/tokens"
   }

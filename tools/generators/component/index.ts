@@ -46,12 +46,6 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   console.log(outputStory.toString());
 
   if (mui) {
-    console.log("installing @mui/material @emotion/react @emotion/styled...");
-    const outputDependencies = execSync(
-      `cd ./packages/${fileName} && yarn add @mui/material @emotion/react @emotion/styled`
-    );
-    console.log(outputDependencies.toString());
-
     generateFiles(
       // virtual file system
       tree,

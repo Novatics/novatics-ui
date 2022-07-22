@@ -1,34 +1,48 @@
-import react, { useState, useEffect } from 'react';
-import styled from '@emotion/styled';
+import { useState, useEffect, useCallback } from 'react';
 import TextField from '@mui/material/TextField';
 import currency from 'currency.js';
 // import json from '../util/Common-Currency.json';
 
 export interface CurrencyTextFieldProps {
   value: string | number;
-  onChange: (value: any) => void;
+  onChange: (value: string | number) => void;
   outputFormat?: 'string' | 'float' | 'integer';
   currency?: string;
+  precision?: number;
+  decimal?: string;
+  separator?: string;
+  symbol?: string;
+  startSymbol?: boolean;
 }
 
-const formatToCurrency = (value: string | number) => {
-  const onlyNumbers = String(value).replace(/\D/g, '');
-  const c = currency(onlyNumbers, {
-    precision: 2,
-    fromCents: true,
-    symbol: '',
-  });
-  return c;
-};
-
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
-  const { value, onChange, outputFormat = 'float', ...rest } = props;
+  const {
+    value,
+    onChange,
+    outputFormat = 'float',
+    precision = 2,
+    decimal = ',',
+    separator = ' ',
+    symbol = '',
+    startSymbol = true,
+    ...rest
+  } = props;
   const [maskedValue, setMaskedValue] = useState('');
 
-  useEffect(() => {
-    setMaskedValue(formatToCurrency(value).format());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const formatToCurrency = useCallback(
+    (value: string | number) => {
+      const onlyNumbers = String(value).replace(/\D/g, '');
+      const c = currency(onlyNumbers, {
+        fromCents: true,
+        symbol: '',
+        precision: precision,
+        decimal: decimal,
+        separator: separator,
+      });
+      return c;
+    },
+    [precision, decimal, separator]
+  );
 
   const internalOnChange = (textFieldValue: string) => {
     const currencyObject = formatToCurrency(textFieldValue);
@@ -46,13 +60,18 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     setMaskedValue(internalMaskedValue);
   };
 
+  useEffect(() => {
+    setMaskedValue(formatToCurrency(value).format());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
       <TextField
         value={maskedValue}
         InputProps={{
-          startAdornment: '',
-          endAdornment: 'R$',
+          startAdornment: startSymbol ? symbol : '',
+          endAdornment: !startSymbol ? symbol : null,
         }}
         onChange={(value) => internalOnChange(value.target.value)}
         {...rest}

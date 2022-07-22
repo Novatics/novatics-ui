@@ -11,8 +11,9 @@ export interface CurrencyTextFieldProps {
   precision?: number;
   decimal?: string;
   separator?: string;
-  symbol?: string;
+  symbol?: React.ReactNode;
   startSymbol?: boolean;
+  useVedic?: boolean;
 }
 
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
@@ -22,9 +23,10 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     outputFormat = 'float',
     precision = 2,
     decimal = ',',
-    separator = ' ',
+    separator = '.',
     symbol = '',
     startSymbol = true,
+    useVedic = false,
     ...rest
   } = props;
   const [maskedValue, setMaskedValue] = useState('');
@@ -38,10 +40,11 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
         precision: precision,
         decimal: decimal,
         separator: separator,
+        useVedic: useVedic,
       });
       return c;
     },
-    [precision, decimal, separator]
+    [precision, decimal, separator, useVedic]
   );
 
   const internalOnChange = (textFieldValue: string) => {

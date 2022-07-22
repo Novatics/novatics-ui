@@ -11,14 +11,17 @@ export default {
 
 const Template: Story<CurrencyTextFieldProps> = (args) => (
   <CurrencyTextField
-    value={123.456}
+    value={args.value}
     outputFormat={args.outputFormat}
     precision={args.precision}
     decimal={args.decimal}
     separator={args.separator}
     symbol={args.symbol}
     startSymbol={args.startSymbol}
-    onChange={args.onChange}
+    useVedic={args.useVedic}
+    onChange={() => {
+      // setup implementation onChange
+    }}
   />
 );
 

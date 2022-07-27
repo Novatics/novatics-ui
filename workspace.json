@@ -4,6 +4,7 @@
   "projects": {
     "button": "packages/button",
     "core": "packages/core",
+    "masked-text-field": "packages/masked-text-field",
     "novatics-logo": "packages/novatics-logo"
   }
 }

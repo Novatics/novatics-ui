@@ -17,6 +17,9 @@
     "paths": {
       "@novatics-ui/button": ["packages/button/src/index.ts"],
       "@novatics-ui/core": ["packages/core/src/index.ts"],
+      "@novatics-ui/masked-text-field": [
+        "packages/masked-text-field/src/index.ts"
+      ],
       "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"]
     }
   },

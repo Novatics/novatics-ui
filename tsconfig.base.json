@@ -20,6 +20,9 @@
       "@novatics-ui/currency-text-field": [
         "packages/currency-text-field/src/index.ts"
       ],
+      "@novatics-ui/masked-text-field": [
+        "packages/masked-text-field/src/index.ts"
+      ],
       "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"]
     }
   },

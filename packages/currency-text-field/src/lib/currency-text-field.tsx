@@ -72,7 +72,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
       <TextField
         value={maskedValue}
         InputProps={{
-          startAdornment: startSymbol ? symbol : '',
+          startAdornment: startSymbol ? symbol : null,
           endAdornment: !startSymbol ? symbol : null,
         }}
         onChange={(value) => internalOnChange(value.target.value)}

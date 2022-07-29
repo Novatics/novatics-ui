@@ -7,7 +7,6 @@ export interface CurrencyTextFieldProps {
   value: string | number;
   onChange: (value: string | number) => void;
   outputFormat?: 'string' | 'float' | 'integer';
-  currency?: string;
   precision?: number;
   decimal?: string;
   separator?: string;

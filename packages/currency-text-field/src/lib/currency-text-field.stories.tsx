@@ -26,4 +26,13 @@ const Template: Story<CurrencyTextFieldProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  value: 123,
+  outputFormat: 'string',
+  symbol: '',
+  separator: '.',
+  precision: 2,
+  decimal: ',',
+  startSymbol: true,
+  useVedic: false,
+};

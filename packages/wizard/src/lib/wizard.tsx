@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Footer from './Footer';
+import Header from './Header';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -60,19 +61,19 @@ function a11yProps(index: number) {
   };
 }
 
-const VerticalTabs = () => {
-  const [value, setValue] = useState(0);
+const Wizard = () => {
+  const [tabIndex, setTabIndex] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+    setTabIndex(newValue);
   };
 
   const handleNext = () => {
-    setValue((prevValue) => prevValue + 1);
+    setTabIndex((prevValue) => prevValue + 1);
   };
 
   const handleBack = () => {
-    setValue((prevValue) => prevValue - 1);
+    setTabIndex((prevValue) => prevValue - 1);
   };
 
   return (
@@ -86,7 +87,7 @@ const VerticalTabs = () => {
     >
       <Tabs
         orientation="vertical"
-        value={value}
+        value={tabIndex}
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider' }}
@@ -102,7 +103,8 @@ const VerticalTabs = () => {
         }}
       >
         {steps.map((step, index) => (
-          <TabPanel key={step.description} value={value} index={index}>
+          <TabPanel key={step.description} value={tabIndex} index={index}>
+            <Header />
             {step.description}
             <Footer handleBack={handleBack} handleNext={handleNext} />
           </TabPanel>
@@ -112,4 +114,4 @@ const VerticalTabs = () => {
   );
 };
 
-export default VerticalTabs;
+export default Wizard;

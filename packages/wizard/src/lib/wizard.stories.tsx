@@ -6,7 +6,15 @@ export default {
   title: 'Wizard',
 } as ComponentMeta<typeof Wizard>;
 
-const Template: ComponentStory<typeof Wizard> = (args) => <Wizard/>;
+const Template: ComponentStory<typeof Wizard> = (args) => <Wizard {...args} />;
+
+const onBack = () => {
+  console.log('test BACK');
+};
+
+const onNext = () => {
+  console.log('test NEXT');
+};
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = { onBack: onBack, onNext: onNext };

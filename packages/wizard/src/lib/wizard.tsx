@@ -47,9 +47,9 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-          <Paper sx={{ p: 3, minHeight: '400px' }} variant="outlined">
-              <Typography>{children}</Typography>
-          </Paper>
+        <Paper sx={{ p: 3, minHeight: '400px' }} variant="outlined">
+          <Typography>{children}</Typography>
+        </Paper>
       )}
     </div>
   );
@@ -62,7 +62,13 @@ function a11yProps(index: number) {
   };
 }
 
-const Wizard = () => {
+interface WizardProps {
+  onBack: () => void;
+  onNext: () => void;
+  isLinear: boolean;
+}
+
+const Wizard = ({ onBack, onNext, isLinear }: WizardProps) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -70,10 +76,12 @@ const Wizard = () => {
   };
 
   const handleNext = () => {
+    onNext && onNext();
     setTabIndex((prevValue) => prevValue + 1);
   };
 
   const handleBack = () => {
+    onBack && onBack();
     setTabIndex((prevValue) => prevValue - 1);
   };
 
@@ -105,9 +113,14 @@ const Wizard = () => {
       >
         {steps.map((step, index) => (
           <TabPanel key={step.description} value={tabIndex} index={index}>
-            <Header step={index + 1} subtitle={step.label}  />
+            <Header step={index + 1} subtitle={step.label} />
             {step.description}
-            <Footer isFirst={index === 0} isLast={index + 1 === steps.length} handleBack={handleBack} handleNext={handleNext} />
+            <Footer
+              isFirst={index === 0}
+              isLast={index + 1 === steps.length}
+              handleBack={handleBack}
+              handleNext={handleNext}
+            />
           </TabPanel>
         ))}
       </Box>

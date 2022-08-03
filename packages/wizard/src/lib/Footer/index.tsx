@@ -7,6 +7,8 @@ interface FooterProps {
   handleNext: () => void;
   backText?: string;
   nextText?: string;
+  isFirst: boolean,
+  isLast: boolean,
 }
 
 const Footer = ({
@@ -14,6 +16,8 @@ const Footer = ({
   handleNext,
   backText = 'Back',
   nextText = 'Next',
+  isFirst = false,
+  isLast = false,
 }: FooterProps) => {
   return (
     <Box
@@ -23,12 +27,13 @@ const Footer = ({
         marginTop: '20px',
       }}
     >
-      <Button variant="outlined" onClick={handleBack}>
-        {backText}
-      </Button>
-      <Button variant="contained" onClick={handleNext}>
-        {nextText}
-      </Button>
+      {!isFirst && <Button variant="outlined" onClick={handleBack}>
+                    {backText}
+                  </Button>
+      }
+      {!isLast && <Button variant="contained" onClick={handleNext}>
+                  {nextText}
+                  </Button>}
     </Box>
   );
 };

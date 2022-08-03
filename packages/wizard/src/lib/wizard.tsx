@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Footer from './Footer';
@@ -46,9 +47,9 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
+          <Paper sx={{ p: 3, minHeight: '400px' }} variant="outlined">
+              <Typography>{children}</Typography>
+          </Paper>
       )}
     </div>
   );
@@ -104,9 +105,9 @@ const Wizard = () => {
       >
         {steps.map((step, index) => (
           <TabPanel key={step.description} value={tabIndex} index={index}>
-            <Header />
+            <Header step={index + 1} subtitle={step.label}  />
             {step.description}
-            <Footer handleBack={handleBack} handleNext={handleNext} />
+            <Footer isFirst={index === 0} isLast={index + 1 === steps.length} handleBack={handleBack} handleNext={handleNext} />
           </TabPanel>
         ))}
       </Box>

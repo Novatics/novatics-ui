@@ -5,8 +5,13 @@ import {
   names,
   Tree,
   installPackagesTask,
+  updateJson,
+  readProjectConfiguration,
 } from '@nrwl/devkit';
 import { execSync } from 'child_process';
+import * as sortby from 'lodash.sortby';
+import * as fs from 'fs';
+import * as util from 'util';
 
 interface ComponentSchemaOptions {
   name: string;
@@ -17,6 +22,23 @@ interface ComponentSchemaOptions {
   configureCypress?: boolean;
   generateCypressSpecs?: boolean;
   generateStories?: boolean;
+}
+
+function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
+  const czConf = require(`${tree.root}/.cz-config.js`);
+  const newCzConf = { ...czConf };
+  const { fileName } = options;
+  const [root, core, release, ...rest] = newCzConf.scopes;
+
+  const scopes = rest.filter((e) => e.name !== fileName);
+  scopes.push({ name: fileName });
+  newCzConf.scopes = [root, core, release, ...sortby(scopes, 'name')];
+
+  fs.writeFileSync(
+    `${tree.root}/.cz-config.js`,
+    'module.exports = ' + util.inspect(newCzConf),
+    'utf-8'
+  );
 }
 
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {
@@ -34,7 +56,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const { className, propertyName, constantName, fileName } = names(name);
 
   let libArgs = `--compiler=${compiler} --style=${style}`;
-  if (buildable) libArgs = '--buildable ' + libArgs;
+  if (buildable) libArgs = '--buildable --publishable' + libArgs;
 
   const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
   console.log(outputLib.toString());
@@ -69,6 +91,18 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
     await formatFiles(tree);
   }
+
+  updateJson(tree, `./packages/${fileName}/project.json`, (json) => {
+    json.targets = json.targets ?? {};
+    json.targets.build = json.targets.build ?? {};
+    json.targets.build.options = json.targets.build.options ?? {};
+    json.targets.build.options.format = ['cjs'];
+    json.targets.build.options.buildableProjectDepsInPackageJsonType =
+      'dependencies';
+    return json;
+  });
+
+  updateCommitZenConfig(tree, { fileName });
 
   return () => {
     installPackagesTask(tree);

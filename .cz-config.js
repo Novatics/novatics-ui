@@ -40,6 +40,7 @@ module.exports = {
     { name: 'root' },
     { name: 'core' },
     { name: 'release' },
+    { name: 'currency-text-field' },
     { name: 'tokens' }
   ],
   allowTicketNumber: false,

@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react';
+import { CurrencyNames } from '../currency/currency';
 import {
   CurrencyTextField,
   CurrencyTextFieldProps,
@@ -7,21 +8,38 @@ import {
 export default {
   component: CurrencyTextField,
   title: 'CurrencyTextField',
+  argTypes: {
+    value: {
+      description: 'The Value of the input',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 0 },
+      },
+    },
+    currency: {
+      description: 'The currency preset value',
+      table: {
+        type: { summary: 'CurrencyNames' },
+        defaultValue: { summary: '-' },
+      },
+      control: {
+        type: 'select',
+        options: CurrencyNames,
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<CurrencyTextFieldProps> = (args) => (
   <CurrencyTextField
     value={args.value}
-    outputFormat={args.outputFormat}
-    precision={args.precision}
-    decimal={args.decimal}
-    separator={args.separator}
-    symbol={args.symbol}
-    startSymbol={args.startSymbol}
-    useVedic={args.useVedic}
     onChange={() => {
       // setup implementation onChange
     }}
+    currency={args.currency}
+    outputFormat={args.outputFormat}
+    symbolFirst={args.symbolFirst}
+    currencyProps={args.currencyProps}
   />
 );
 
@@ -29,10 +47,12 @@ export const Primary = Template.bind({});
 Primary.args = {
   value: 123,
   outputFormat: 'string',
-  symbol: '',
-  separator: '.',
-  precision: 2,
-  decimal: ',',
-  startSymbol: true,
-  useVedic: false,
+  symbolFirst: true,
+  currencyProps: {
+    symbol: '',
+    separator: '.',
+    precision: 2,
+    decimal: ',',
+    useVedic: false,
+  },
 };

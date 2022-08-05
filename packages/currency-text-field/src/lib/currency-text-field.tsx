@@ -1,49 +1,76 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import TextField from '@mui/material/TextField';
-import currency from 'currency.js';
-// import json from '../util/Common-Currency.json';
+import currencyLib from 'currency.js';
+
+import CURRENCY, { CurrencyName } from '../currency/currency';
+
+export interface CurrencyProps {
+  precision?: number;
+  decimal?: string;
+  separator?: string;
+  symbol?: React.ReactNode;
+  useVedic?: boolean;
+}
 
 export interface CurrencyTextFieldProps {
   value: string | number;
   onChange: (value: string | number) => void;
   outputFormat?: 'string' | 'float' | 'integer';
-  precision?: number;
-  decimal?: string;
-  separator?: string;
-  symbol?: React.ReactNode;
-  startSymbol?: boolean;
-  useVedic?: boolean;
+  currency?: CurrencyName;
+  symbolFirst?: boolean;
+  currencyProps?: CurrencyProps;
 }
 
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
   const {
     value,
     onChange,
+    currency,
     outputFormat = 'float',
-    precision = 2,
-    decimal = ',',
-    separator = '.',
-    symbol = '',
-    startSymbol = true,
-    useVedic = false,
+    symbolFirst = true,
+    currencyProps,
     ...rest
   } = props;
   const [maskedValue, setMaskedValue] = useState('');
 
+  const priorityCurrencyProps = useMemo(() => {
+    const defaultProps: CurrencyProps = {
+      precision: currency ? CURRENCY[currency].precision : 2,
+      decimal: currency ? CURRENCY[currency].decimal : ',',
+      separator: currency ? CURRENCY[currency].separator : '.',
+      symbol: currency ? CURRENCY[currency].symbol : '',
+      useVedic: false,
+    };
+
+    if (currencyProps) {
+      if (currencyProps.decimal !== undefined) {
+        defaultProps.decimal = currencyProps.decimal;
+      }
+      if (currencyProps.precision !== undefined) {
+        defaultProps.precision = currencyProps.precision;
+      }
+      if (currencyProps.separator !== undefined) {
+        defaultProps.separator = currencyProps.separator;
+      }
+      if (currencyProps.symbol !== undefined) {
+        defaultProps.symbol = currencyProps.symbol;
+      }
+    }
+
+    return defaultProps;
+  }, [currency, currencyProps]);
+
   const formatToCurrency = useCallback(
     (value: string | number) => {
       const onlyNumbers = String(value).replace(/\D/g, '');
-      const c = currency(onlyNumbers, {
+      const c = currencyLib(onlyNumbers, {
+        ...priorityCurrencyProps,
         fromCents: true,
         symbol: '',
-        precision: precision,
-        decimal: decimal,
-        separator: separator,
-        useVedic: useVedic,
       });
       return c;
     },
-    [precision, decimal, separator, useVedic]
+    [priorityCurrencyProps]
   );
 
   const internalOnChange = (textFieldValue: string) => {
@@ -72,8 +99,8 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
       <TextField
         value={maskedValue}
         InputProps={{
-          startAdornment: startSymbol ? symbol : null,
-          endAdornment: !startSymbol ? symbol : null,
+          startAdornment: symbolFirst ? priorityCurrencyProps?.symbol : null,
+          endAdornment: !symbolFirst ? priorityCurrencyProps?.symbol : null,
         }}
         onChange={(value) => internalOnChange(value.target.value)}
         {...rest}

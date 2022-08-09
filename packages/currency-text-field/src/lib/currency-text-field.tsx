@@ -9,15 +9,15 @@ export interface CurrencyProps {
   decimal?: string;
   separator?: string;
   symbol?: React.ReactNode;
+  symbolFirst?: boolean;
   useVedic?: boolean;
 }
 
 export interface CurrencyTextFieldProps {
-  value: string | number;
   onChange: (value: string | number) => void;
+  value: string | number;
   outputFormat?: 'string' | 'float' | 'integer';
   currency?: CurrencyName;
-  symbolFirst?: boolean;
   currencyProps?: CurrencyProps;
 }
 
@@ -27,7 +27,6 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     onChange,
     currency,
     outputFormat = 'float',
-    symbolFirst = true,
     currencyProps,
     ...rest
   } = props;
@@ -39,6 +38,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
       decimal: currency ? CURRENCY[currency].decimal : ',',
       separator: currency ? CURRENCY[currency].separator : '.',
       symbol: currency ? CURRENCY[currency].symbol : '',
+      symbolFirst: currency ? CURRENCY[currency].symbolFirst : true,
       useVedic: false,
     };
 
@@ -54,6 +54,9 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
       }
       if (currencyProps.symbol !== undefined) {
         defaultProps.symbol = currencyProps.symbol;
+      }
+      if (currencyProps.symbolFirst !== undefined) {
+        defaultProps.symbolFirst = currencyProps.symbolFirst;
       }
     }
 
@@ -99,8 +102,12 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
       <TextField
         value={maskedValue}
         InputProps={{
-          startAdornment: symbolFirst ? priorityCurrencyProps?.symbol : null,
-          endAdornment: !symbolFirst ? priorityCurrencyProps?.symbol : null,
+          startAdornment: priorityCurrencyProps.symbolFirst
+            ? priorityCurrencyProps?.symbol
+            : null,
+          endAdornment: !priorityCurrencyProps.symbolFirst
+            ? priorityCurrencyProps?.symbol
+            : null,
         }}
         onChange={(value) => internalOnChange(value.target.value)}
         {...rest}

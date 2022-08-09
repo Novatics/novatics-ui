@@ -5,54 +5,83 @@ import {
   CurrencyTextFieldProps,
 } from './currency-text-field';
 
-export default {
-  component: CurrencyTextField,
-  title: 'CurrencyTextField',
-  argTypes: {
-    value: {
-      description: 'The Value of the input',
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: 0 },
-      },
-    },
-    currency: {
-      description: 'The currency preset value',
-      table: {
-        type: { summary: 'CurrencyNames' },
-        defaultValue: { summary: '-' },
-      },
-      control: {
-        type: 'select',
-        options: CurrencyNames,
-      },
-    },
-  },
-} as Meta;
-
 const Template: Story<CurrencyTextFieldProps> = (args) => (
   <CurrencyTextField
     value={args.value}
-    onChange={() => {
-      // setup implementation onChange
-    }}
+    onChange={args.onChange}
     currency={args.currency}
     outputFormat={args.outputFormat}
-    symbolFirst={args.symbolFirst}
     currencyProps={args.currencyProps}
   />
 );
 
 export const Primary = Template.bind({});
 Primary.args = {
+  onChange: () => {
+    // setup implementation
+  },
   value: 123,
-  outputFormat: 'string',
-  symbolFirst: true,
+  currency: 'brl',
   currencyProps: {
-    symbol: '',
-    separator: '.',
     precision: 2,
     decimal: ',',
+    separator: '.',
+    symbol: '',
+    symbolFirst: true,
     useVedic: false,
   },
+  outputFormat: 'string',
 };
+
+export default {
+  component: CurrencyTextField,
+  title: 'CurrencyTextField',
+  argTypes: {
+    onChange: {
+      description: 'Input onChange Method.',
+      table: {
+        type: { summary: null },
+        defaultValue: { summary: '() => {}' },
+      },
+    },
+    value: {
+      description: 'The Value of the input.',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 0 },
+      },
+    },
+    currency: {
+      description: 'The currency preset value.',
+      table: {
+        type: { summary: 'CurrencyNames' },
+        defaultValue: { summary: 'brl' },
+      },
+      control: {
+        type: 'select',
+        options: CurrencyNames,
+      },
+    },
+    currencyProps: {
+      description: 'Currency props',
+      table: {
+        type: { summary: null },
+        defaultValue: {
+          summary: `precision=2
+            decimal=','
+            separator='.'
+            symbol=''
+            symbolFirst=true
+            useVedic=false`,
+        },
+      },
+    },
+    outputFormat: {
+      description: 'The formated value passed to the form input.',
+      table: {
+        type: { summary: null },
+        defaultValue: { summary: 'string' },
+      },
+    },
+  },
+} as Meta;

@@ -7,6 +7,7 @@ interface FooterProps {
   handleNext: () => void;
   backText?: string;
   nextText?: string;
+  finishText?: string;
   isFirst: boolean;
   isLast: boolean;
 }
@@ -16,6 +17,7 @@ const Footer = ({
   handleNext,
   backText = 'Back',
   nextText = 'Next',
+  finishText = 'Finish',
   isFirst = false,
   isLast = false,
 }: FooterProps) => {
@@ -26,11 +28,13 @@ const Footer = ({
           {backText}
         </Button>
       )}
-      {!isLast && (
+      {isLast ?
+        <Button variant="contained" onClick={handleNext} className="nextButton">
+          {finishText}
+        </Button> :
         <Button variant="contained" onClick={handleNext} className="nextButton">
           {nextText}
-        </Button>
-      )}
+        </Button>}
     </BoxContainer>
   );
 };

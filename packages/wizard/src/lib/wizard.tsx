@@ -2,17 +2,10 @@ import React, { useState } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Footer from './Footer';
 import Header from './Header';
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
+import Footer from './Footer';
+import TabPanel from './TabPanel';
 
 const steps = [
   {
@@ -35,34 +28,14 @@ const steps = [
   },
 ];
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Paper sx={{ p: 3, minHeight: '400px' }} variant="outlined">
-          <Typography>{children}</Typography>
-        </Paper>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
+function setAccessibilityProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
-interface WizardProps {
+export interface WizardProps {
   onBack: () => void;
   onNext: () => void;
   isLinear: boolean;
@@ -98,19 +71,19 @@ const Wizard = ({ onBack, onNext, isLinear }: WizardProps) => {
         orientation="vertical"
         value={tabIndex}
         onChange={handleChange}
-        aria-label="Vertical tabs example"
+        aria-label="Vertical tabs"
         sx={{ borderRight: 1, borderColor: 'divider' }}
       >
         {steps.map((step, index) => (
-          <Tab key={step.label} label={step.label} {...a11yProps(index)} />
+          <Tab
+            key={step.label}
+            label={step.label}
+            {...setAccessibilityProps(index)}
+          />
         ))}
       </Tabs>
 
-      <Box
-        sx={{
-          width: '80%',
-        }}
-      >
+      <Box sx={{ width: '80%' }}>
         {steps.map((step, index) => (
           <TabPanel key={step.description} value={tabIndex} index={index}>
             <Header step={index + 1} subtitle={step.label} />

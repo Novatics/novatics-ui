@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import currencyLib from 'currency.js';
+import pick from 'lodash.pick';
+import defaults from 'lodash.defaults';
 
 import CURRENCY, { CurrencyName } from '../currency/currency';
 
@@ -21,11 +24,20 @@ export interface CurrencyTextFieldProps {
   currencyProps?: CurrencyProps;
 }
 
+const CURRENCY_ATTRIBUTES = [
+  'precision',
+  'decimal',
+  'separator',
+  'symbol',
+  'symbolFirst',
+  'useVedic',
+];
+
 export function CurrencyTextField(props: CurrencyTextFieldProps) {
   const {
     value,
     onChange,
-    currency,
+    currency = 'brl',
     outputFormat = 'float',
     currencyProps,
     ...rest
@@ -33,45 +45,26 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
   const [maskedValue, setMaskedValue] = useState('');
 
   const priorityCurrencyProps = useMemo(() => {
-    const defaultProps: CurrencyProps = {
-      precision: currency ? CURRENCY[currency].precision : 2,
-      decimal: currency ? CURRENCY[currency].decimal : ',',
-      separator: currency ? CURRENCY[currency].separator : '.',
-      symbol: currency ? CURRENCY[currency].symbol : '',
-      symbolFirst: currency ? CURRENCY[currency].symbolFirst : true,
-      useVedic: false,
-    };
+    const currencyFallback = pick(CURRENCY['brl'], CURRENCY_ATTRIBUTES);
+    const currencyPreset = pick(CURRENCY[currency], CURRENCY_ATTRIBUTES);
+    const mergedCurrency = defaults(
+      currencyProps,
+      currencyPreset,
+      currencyFallback
+    );
 
-    if (currencyProps) {
-      if (currencyProps.decimal !== undefined) {
-        defaultProps.decimal = currencyProps.decimal;
-      }
-      if (currencyProps.precision !== undefined) {
-        defaultProps.precision = currencyProps.precision;
-      }
-      if (currencyProps.separator !== undefined) {
-        defaultProps.separator = currencyProps.separator;
-      }
-      if (currencyProps.symbol !== undefined) {
-        defaultProps.symbol = currencyProps.symbol;
-      }
-      if (currencyProps.symbolFirst !== undefined) {
-        defaultProps.symbolFirst = currencyProps.symbolFirst;
-      }
-    }
-
-    return defaultProps;
+    return pick(mergedCurrency, CURRENCY_ATTRIBUTES) as CurrencyProps;
   }, [currency, currencyProps]);
 
   const formatToCurrency = useCallback(
     (value: string | number) => {
       const onlyNumbers = String(value).replace(/\D/g, '');
-      const c = currencyLib(onlyNumbers, {
+
+      return currencyLib(onlyNumbers, {
         ...priorityCurrencyProps,
         fromCents: true,
         symbol: '',
       });
-      return c;
     },
     [priorityCurrencyProps]
   );
@@ -98,21 +91,21 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
   }, []);
 
   return (
-    <div>
+    <Box>
       <TextField
         value={maskedValue}
         InputProps={{
-          startAdornment: priorityCurrencyProps.symbolFirst
-            ? priorityCurrencyProps?.symbol
-            : null,
-          endAdornment: !priorityCurrencyProps.symbolFirst
-            ? priorityCurrencyProps?.symbol
-            : null,
+          startAdornment: priorityCurrencyProps.symbolFirst ? (
+            <Box sx={{ mr: 0.5 }}>{priorityCurrencyProps?.symbol}</Box>
+          ) : null,
+          endAdornment: !priorityCurrencyProps.symbolFirst ? (
+            <Box sx={{ mr: 0.5 }}>{priorityCurrencyProps?.symbol}</Box>
+          ) : null,
         }}
         onChange={(value) => internalOnChange(value.target.value)}
         {...rest}
       />
-    </div>
+    </Box>
   );
 }
 

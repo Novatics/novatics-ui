@@ -1,9 +1,12 @@
-import styled from '@emotion/styled';
 import { TextField } from '@mui/material';
+import InputMask from "react-input-mask";
+
 
 /* eslint-disable-next-line */
 export interface MaskedTextFieldProps {
   value: string | number;
+  mask: string;
+  maskPlaceholder: string;
 }
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
@@ -14,12 +17,13 @@ export function MaskedTextField(props: MaskedTextFieldProps) {
   }
 
   return (
-    <div>
-      <TextField
-        value={value}
-        onChange={(event) => handleOnChangeEvent(event?.target?.value)}
-      />
-    </div>
+    <InputMask
+      mask={"(99) 99999-9999"}
+      value={value}
+      onChange={(event) => handleOnChangeEvent(event.target.value)}
+    >
+      { (inputProps) => <TextField {...inputProps } /> }
+    </InputMask>
   );
 }
 

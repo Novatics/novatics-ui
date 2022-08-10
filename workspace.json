@@ -3,7 +3,9 @@
   "version": 2,
   "projects": {
     "button": "packages/button",
+    "collapse-list": "packages/collapse-list",
     "core": "packages/core",
-    "novatics-logo": "packages/novatics-logo"
+    "novatics-logo": "packages/novatics-logo",
+    "styles": "packages/styles"
   }
 }

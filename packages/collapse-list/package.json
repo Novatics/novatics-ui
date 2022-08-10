@@ -1,0 +1,7 @@
+{
+  "name": "@novatics-ui/collapse-list",
+  "version": "0.0.1",
+  "dependencies": {
+    "react-resize-detector": "^7.1.2"
+  }
+}

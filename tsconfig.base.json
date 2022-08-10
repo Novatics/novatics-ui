@@ -16,8 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@novatics-ui/button": ["packages/button/src/index.ts"],
+      "@novatics-ui/collapse-list": ["packages/collapse-list/src/index.ts"],
       "@novatics-ui/core": ["packages/core/src/index.ts"],
-      "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"]
+      "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"],
+      "@novatics-ui/styles": ["packages/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

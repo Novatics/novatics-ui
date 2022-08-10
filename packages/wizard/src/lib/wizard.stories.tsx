@@ -1,19 +1,20 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Wizard from './wizard';
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import Wizard, { WizardProps } from './wizard';
 
 export default {
   component: Wizard,
   title: 'Wizard',
-} as ComponentMeta<typeof Wizard>;
+} as Meta;
 
-const Template: ComponentStory<typeof Wizard> = (args) => <Wizard {...args} />;
+const Template: Story<WizardProps> = (args) => <Wizard {...args} />;
 
 const onBack = () => {
-  console.log('test BACK');
+  // onBack stuff
 };
 
 const onNext = () => {
-  console.log('test NEXT');
+  // onNext stuff
 };
 
 export const Primary = Template.bind({});

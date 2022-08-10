@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import { Box } from '@mui/material';
+import { BoxContainer } from './styles';
 
 interface FooterProps {
   handleBack: () => void;
   handleNext: () => void;
   backText?: string;
   nextText?: string;
-  isFirst: boolean,
-  isLast: boolean,
+  isFirst: boolean;
+  isLast: boolean;
 }
 
 const Footer = ({
@@ -20,21 +20,18 @@ const Footer = ({
   isLast = false,
 }: FooterProps) => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: '20px',
-      }}
-    >
-      {!isFirst && <Button variant="outlined" onClick={handleBack}>
-                    {backText}
-                  </Button>
-      }
-      {!isLast && <Button variant="contained" onClick={handleNext}>
-                  {nextText}
-                  </Button>}
-    </Box>
+    <BoxContainer>
+      {!isFirst && (
+        <Button variant="outlined" onClick={handleBack} className="backButton">
+          {backText}
+        </Button>
+      )}
+      {!isLast && (
+        <Button variant="contained" onClick={handleNext} className="nextButton">
+          {nextText}
+        </Button>
+      )}
+    </BoxContainer>
   );
 };
 

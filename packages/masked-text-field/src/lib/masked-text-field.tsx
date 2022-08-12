@@ -1,6 +1,6 @@
 import { TextField } from '@mui/material';
 import { IMaskInput } from 'react-imask';
-import { forwardRef, useRef } from 'react';
+import { forwardRef } from 'react';
 
 // Presets:
 
@@ -13,10 +13,9 @@ import { forwardRef, useRef } from 'react';
 // PLACA (AAA-AAAA) *
 // CARTAO (9999 9999 9999 9999)
 
-/* eslint-disable-next-line */
 export interface MaskedTextFieldProps {
   value: string;
-  mask:
+  maskType:
     | 'cpf'
     | 'cnpj'
     | 'cpf-cnpj'
@@ -25,39 +24,46 @@ export interface MaskedTextFieldProps {
     | 'phone'
     | 'card-number';
   placeholder: string;
-  onChange: any;
+  onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void;
   name: string;
 }
-const TextMaskCustom = forwardRef<HTMLElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
-    const { onChange, ...other } = props;
-    // const ref = useRef(null);
+const MASK_TYPES = {
+  phone:  {
+    mask: "(#00) 000-0000",
+    definitions: {
+      '#': /[1-9]/,
+    }
+  }
+}
+function TextMaskCustom(props: CustomProps) {
+    const { onChange, maskType, ...other } = props;
+    const { mask,  definitions } = MASK_TYPES[maskType];
     return (
       <IMaskInput
         {...other}
-        mask="(#00) 000-0000"
-        definitions={{
-          '#': /[1-9]/,
-        }}
-        inputRef={ref}
+        mask={mask}
+        definitions={definitions}
         onAccept={(value: any) =>
+        {
           onChange({ target: { name: props.name, value } })
+        }
         }
         overwrite
       />
     );
-  }
-);
+}
+
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
-  const { value, mask, placeholder, ...rest } = props;
+  const { value, mask, placeholder, onChange, ...rest } = props;
 
   const handleOnChangeEvent = (value: any) => {
     console.log('value => ', value);
+    onChange(value)
   };
 
   return (

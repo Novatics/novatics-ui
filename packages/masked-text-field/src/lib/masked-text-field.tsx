@@ -1,6 +1,8 @@
 import { JSX } from '@emotion/react/jsx-runtime';
 import { TextField, TextFieldProps } from '@mui/material';
+import { IMaskInput } from 'react-imask';
 import InputMask from "react-input-mask";
+import { forwardRef, useRef } from 'react';
 
 
 // Presets:
@@ -22,22 +24,48 @@ export interface MaskedTextFieldProps {
   placeholder: string;
 }
 
+interface CustomProps {
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  name: string;
+}
+const TextMaskCustom = forwardRef<HTMLElement, CustomProps>(
+  function TextMaskCustom(props ) {
+    const { onChange, ...other } = props;
+    const ref = useRef(null);
+    return (
+      <IMaskInput
+        {...other}
+        mask="(#00) 000-0000"
+        definitions={{
+          '#': /[1-9]/,
+        }}
+        inputRef={ref}
+        onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+        overwrite
+      />
+    );
+  },
+);
+
 export function MaskedTextField(props: MaskedTextFieldProps) {
   const { value, mask, placeholder, ...rest } = props;
 
-  const handleOnChangeEvent = (value: string | number) => {
+  const handleOnChangeEvent = (value: any) => {
     console.log("value => ", value);
   }
 
   return (
-    <InputMask
-      mask={"(99) 99999-9999"}
-      value={value}
-      onChange={(event) => handleOnChangeEvent(event.target.value)}
-    >
-      { (inputProps: JSX.IntrinsicAttributes & JSX.LibraryManagedAttributes<(props: TextFieldProps) => JSX.Element, TextFieldProps>) => <TextField {...inputProps } /> }
-
-    </InputMask>
+    <TextField
+        label="react-number-format"
+        value={value}
+        onChange={handleOnChangeEvent as any}
+        name="numberformat"
+        id="formatted-numberformat-input"
+        InputProps={{
+          inputComponent: TextMaskCustom as any,
+        }}
+        variant="standard"
+      />
   );
 }
 

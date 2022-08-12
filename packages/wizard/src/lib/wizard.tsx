@@ -19,6 +19,8 @@ export interface Step {
   label: string;
   content: React.ReactNode | string;
 }
+
+type StepStatus = 'complete' | 'incomplete' | undefined;
 export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
@@ -29,6 +31,15 @@ export interface WizardProps {
 const Wizard = ({ onBack, onNext, isLinear = false, steps }: WizardProps) => {
   const [stepIndex, setStepIndex] = useState(0);
 
+  const initialStepsStatus: StepStatus[] = steps.map(() => 'incomplete');
+  const [stepsStatus, setStepsStatus] = useState(initialStepsStatus);
+
+  const updateStepStatus = () => {
+    const updatedStepsStatus = stepsStatus;
+    updatedStepsStatus[stepIndex] = 'complete';
+    setStepsStatus(updatedStepsStatus);
+  }
+
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setStepIndex(newValue);
   };
@@ -36,6 +47,8 @@ const Wizard = ({ onBack, onNext, isLinear = false, steps }: WizardProps) => {
   const handleNext = () => {
     onNext && onNext(stepIndex);
     setStepIndex((prevValue) => prevValue + 1);
+    updateStepStatus()
+    console.log(stepsStatus)
   };
 
   const handleBack = () => {

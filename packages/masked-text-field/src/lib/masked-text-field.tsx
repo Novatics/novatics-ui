@@ -1,9 +1,6 @@
-import { JSX } from '@emotion/react/jsx-runtime';
-import { TextField, TextFieldProps } from '@mui/material';
+import { TextField } from '@mui/material';
 import { IMaskInput } from 'react-imask';
-import InputMask from "react-input-mask";
 import { forwardRef, useRef } from 'react';
-
 
 // Presets:
 
@@ -16,12 +13,19 @@ import { forwardRef, useRef } from 'react';
 // PLACA (AAA-AAAA) *
 // CARTAO (9999 9999 9999 9999)
 
-
 /* eslint-disable-next-line */
 export interface MaskedTextFieldProps {
-  value: string | number;
-  mask: 'cpf' | 'cnpj' | 'cpf-cnpj' | 'cep' | 'zipcode' | 'phone' | 'card-number';
+  value: string;
+  mask:
+    | 'cpf'
+    | 'cnpj'
+    | 'cpf-cnpj'
+    | 'cep'
+    | 'zipcode'
+    | 'phone'
+    | 'card-number';
   placeholder: string;
+  onChange: any;
 }
 
 interface CustomProps {
@@ -29,9 +33,9 @@ interface CustomProps {
   name: string;
 }
 const TextMaskCustom = forwardRef<HTMLElement, CustomProps>(
-  function TextMaskCustom(props ) {
+  function TextMaskCustom(props, ref) {
     const { onChange, ...other } = props;
-    const ref = useRef(null);
+    // const ref = useRef(null);
     return (
       <IMaskInput
         {...other}
@@ -40,32 +44,34 @@ const TextMaskCustom = forwardRef<HTMLElement, CustomProps>(
           '#': /[1-9]/,
         }}
         inputRef={ref}
-        onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+        onAccept={(value: any) =>
+          onChange({ target: { name: props.name, value } })
+        }
         overwrite
       />
     );
-  },
+  }
 );
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
   const { value, mask, placeholder, ...rest } = props;
 
   const handleOnChangeEvent = (value: any) => {
-    console.log("value => ", value);
-  }
+    console.log('value => ', value);
+  };
 
   return (
     <TextField
-        label="react-number-format"
-        value={value}
-        onChange={handleOnChangeEvent as any}
-        name="numberformat"
-        id="formatted-numberformat-input"
-        InputProps={{
-          inputComponent: TextMaskCustom as any,
-        }}
-        variant="standard"
-      />
+      label="react-number-format"
+      value={value}
+      onChange={handleOnChangeEvent as any}
+      name="numberformat"
+      id="formatted-numberformat-input"
+      InputProps={{
+        inputComponent: TextMaskCustom as any,
+      }}
+      variant="standard"
+    />
   );
 }
 

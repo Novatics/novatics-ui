@@ -13,6 +13,13 @@ import { forwardRef } from 'react';
 // PLACA (AAA-AAAA) *
 // CARTAO (9999 9999 9999 9999)
 
+// interface iMaskedProps {
+//     mask: string ;
+//     definitions: {
+//       [key: string]
+//     }
+// }
+
 export interface MaskedTextFieldProps {
   value: string;
   maskType:

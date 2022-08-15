@@ -4,6 +4,7 @@
   "projects": {
     "button": "packages/button",
     "core": "packages/core",
-    "novatics-logo": "packages/novatics-logo"
+    "novatics-logo": "packages/novatics-logo",
+    "uploader": "packages/uploader"
   }
 }

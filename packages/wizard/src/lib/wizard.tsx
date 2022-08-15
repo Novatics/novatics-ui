@@ -43,8 +43,8 @@ const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps
   }
 
   const handleChange = (event: React.SyntheticEvent, newStep: number) => {
-    if(isLinear && newStep !== stepIndex + 1) return
-
+    const isNextStep = newStep === stepIndex + 1;
+    if(isLinear && !isNextStep) return
     setStepIndex(newStep);
     updateStepStatus();
   };

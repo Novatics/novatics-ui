@@ -56,7 +56,7 @@ function Form() {
     console.log(currentStep, form)
   };
 
-    return <Wizard onNext={onNext} onBack={onBack} steps={steps} />
+    return <Wizard onNext={onNext} onBack={onBack} steps={steps} isLinear={true} showCompleted={true} />
 
 }
 
@@ -74,4 +74,4 @@ const onNext = () => {
 };
 
 export const Primary = Template.bind({});
-Primary.args = { onBack: onBack, onNext: onNext };
+Primary.args = { onBack: onBack, onNext: onNext};

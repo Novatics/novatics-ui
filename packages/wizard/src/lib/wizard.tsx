@@ -6,7 +6,8 @@ import Box from '@mui/material/Box';
 import Header from './Header';
 import Footer from './Footer';
 import TabPanel from './TabPanel';
-
+import CheckIcon from '@mui/icons-material/Check';
+import { TabContainer } from './styles';
 
 function setAccessibilityProps(index: number) {
   return {
@@ -25,10 +26,11 @@ export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
   isLinear?: boolean;
+  showCompleted?: boolean;
   steps: Step[];
 }
 
-const Wizard = ({ onBack, onNext, isLinear = false, steps }: WizardProps) => {
+const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps }: WizardProps) => {
   const [stepIndex, setStepIndex] = useState(0);
 
   const initialStepsStatus: StepStatus[] = steps.map(() => 'incomplete');
@@ -40,20 +42,21 @@ const Wizard = ({ onBack, onNext, isLinear = false, steps }: WizardProps) => {
     setStepsStatus(updatedStepsStatus);
   }
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setStepIndex(newValue);
+  const handleChange = (event: React.SyntheticEvent, newStep: number) => {
+    if(isLinear && newStep !== stepIndex + 1) return
+
+    setStepIndex(newStep);
+    updateStepStatus();
   };
 
   const handleNext = () => {
     onNext && onNext(stepIndex);
-    setStepIndex((prevValue) => prevValue + 1);
-    updateStepStatus()
-    console.log(stepsStatus)
+    handleChange(null, stepIndex + 1);
   };
 
   const handleBack = () => {
     onBack && onBack(stepIndex);
-    setStepIndex((prevValue) => prevValue - 1);
+    handleChange(null, stepIndex - 1)
   };
 
   return (
@@ -73,11 +76,16 @@ const Wizard = ({ onBack, onNext, isLinear = false, steps }: WizardProps) => {
         sx={{ borderRight: 1, borderColor: 'divider' }}
       >
         {steps.map((step, index) => (
+          <TabContainer
+          onClick={() => handleChange(null, index)}
+          {...setAccessibilityProps(index)}
+          >
           <Tab
             key={step.label}
             label={step.label}
-            {...setAccessibilityProps(index)}
           />
+          {stepsStatus[index] === "complete" && showCompleted && <CheckIcon style={{ marginLeft: 'auto', marginRight: '10px' }} fontSize="small" color="success" />}
+          </TabContainer>
         ))}
       </Tabs>
 

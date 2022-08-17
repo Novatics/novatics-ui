@@ -41,7 +41,7 @@ const Wizard = ({
   showCompleted = false,
   steps,
 }: WizardProps) => {
-  const [stepIndex, setStepIndex] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const initialStepsStatus: StepStatus[] = steps.map(() => ({
     status: 'incomplete',
@@ -50,30 +50,31 @@ const Wizard = ({
 
   const updateStepStatus = () => {
     const updatedStepsStatus = stepsStatus;
-    updatedStepsStatus[stepIndex].status = 'complete';
+    updatedStepsStatus[currentStep].status = 'complete';
     setStepsStatus(updatedStepsStatus);
   };
 
   const handleChange = (event: React.SyntheticEvent, newStep: number) => {
-    const isNextStep = newStep === stepIndex + 1;
+    const isNextStep = newStep === currentStep + 1;
+
     if (isLinear && !isNextStep) return;
-    setStepIndex(newStep);
+    setCurrentStep(newStep);
     updateStepStatus();
   };
 
   const handleFinish = () => {
     onFinish && onFinish();
-    updateStepStatus();
+    handleChange(null, currentStep + 1);
   };
 
   const handleNext = () => {
-    onNext && onNext(stepIndex);
-    handleChange(null, stepIndex + 1);
+    onNext && onNext(currentStep);
+    handleChange(null, currentStep + 1);
   };
 
   const handleBack = () => {
-    onBack && onBack(stepIndex);
-    handleChange(null, stepIndex - 1);
+    onBack && onBack(currentStep);
+    handleChange(null, currentStep - 1);
   };
 
   return (
@@ -87,7 +88,7 @@ const Wizard = ({
     >
       <Tabs
         orientation="vertical"
-        value={stepIndex}
+        value={currentStep}
         onChange={handleChange}
         aria-label="Vertical tabs"
         sx={{ borderRight: 1, borderColor: 'divider' }}
@@ -112,7 +113,7 @@ const Wizard = ({
 
       <Box sx={{ width: '80%' }}>
         {steps.map((step, index) => (
-          <TabPanel key={step.label} value={stepIndex} index={index}>
+          <TabPanel key={step.label} value={currentStep} index={index}>
             <Header step={index + 1} subtitle={step.label} />
             {step.content}
             <Footer

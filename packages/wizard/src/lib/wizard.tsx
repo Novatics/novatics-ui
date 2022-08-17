@@ -21,31 +21,48 @@ export interface Step {
   content: React.ReactNode | string;
 }
 
-type StepStatus = 'complete' | 'incomplete' | undefined;
+interface StepStatus {
+  status: 'complete' | 'incomplete' | undefined;
+}
 export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
+  onFinish?: () => void;
   isLinear?: boolean;
   showCompleted?: boolean;
   steps: Step[];
 }
 
-const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps }: WizardProps) => {
+const Wizard = ({
+  onBack,
+  onNext,
+  onFinish,
+  isLinear = false,
+  showCompleted = false,
+  steps,
+}: WizardProps) => {
   const [stepIndex, setStepIndex] = useState(0);
 
-  const initialStepsStatus: StepStatus[] = steps.map(() => 'incomplete');
+  const initialStepsStatus: StepStatus[] = steps.map(() => ({
+    status: 'incomplete',
+  }));
   const [stepsStatus, setStepsStatus] = useState(initialStepsStatus);
 
   const updateStepStatus = () => {
     const updatedStepsStatus = stepsStatus;
-    updatedStepsStatus[stepIndex] = 'complete';
+    updatedStepsStatus[stepIndex].status = 'complete';
     setStepsStatus(updatedStepsStatus);
-  }
+  };
 
   const handleChange = (event: React.SyntheticEvent, newStep: number) => {
     const isNextStep = newStep === stepIndex + 1;
-    if(isLinear && !isNextStep) return
+    if (isLinear && !isNextStep) return;
     setStepIndex(newStep);
+    updateStepStatus();
+  };
+
+  const handleFinish = () => {
+    onFinish && onFinish();
     updateStepStatus();
   };
 
@@ -56,7 +73,7 @@ const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps
 
   const handleBack = () => {
     onBack && onBack(stepIndex);
-    handleChange(null, stepIndex - 1)
+    handleChange(null, stepIndex - 1);
   };
 
   return (
@@ -77,14 +94,18 @@ const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps
       >
         {steps.map((step, index) => (
           <TabContainer
-          onClick={() => handleChange(null, index)}
-          {...setAccessibilityProps(index)}
-          >
-          <Tab
             key={step.label}
-            label={step.label}
-          />
-          {stepsStatus[index] === "complete" && showCompleted && <CheckIcon style={{ marginLeft: 'auto', marginRight: '10px' }} fontSize="small" color="success" />}
+            onClick={() => handleChange(null, index)}
+            {...setAccessibilityProps(index)}
+          >
+            <Tab label={step.label} />
+            {stepsStatus[index].status === 'complete' && showCompleted && (
+              <CheckIcon
+                style={{ marginLeft: 'auto', marginRight: '10px' }}
+                fontSize="small"
+                color="success"
+              />
+            )}
           </TabContainer>
         ))}
       </Tabs>
@@ -99,6 +120,7 @@ const Wizard = ({ onBack, onNext, isLinear = false, showCompleted = false, steps
               isLast={index + 1 === steps.length}
               handleBack={handleBack}
               handleNext={handleNext}
+              handleFinish={handleFinish}
             />
           </TabPanel>
         ))}

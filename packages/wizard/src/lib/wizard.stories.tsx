@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import Wizard, { WizardProps } from './wizard';
 import Box from '@mui/material/Box';
@@ -9,24 +9,22 @@ export default {
   title: 'Wizard',
 } as Meta;
 
-
-
-
- function NameForm({form, setForm}: any) {
+function NameForm({ form, setForm }: any) {
   return (
     <Box>
-      <TextField id="name"
-                label="name"
-                variant="outlined"
-                 onChange={(e) => setForm({...form, name: e.target.value})}
-                 value={form.name}  />
+      <TextField
+        id="name"
+        label="name"
+        variant="outlined"
+        onChange={(e) => setForm({ ...form, name: e.target.value })}
+        value={form.name}
+      />
     </Box>
-  )
+  );
 }
 
-
 function Form() {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({ name: '' });
 
   const steps = [
     {
@@ -39,7 +37,7 @@ function Form() {
     {
       label: '02. Create an ad group',
       subtitle: 'You can write some cool information stuff here',
-      content: <NameForm form={form} setForm={setForm}/>
+      content: <NameForm form={form} setForm={setForm} />,
     },
     {
       label: '03. Create an ad',
@@ -52,20 +50,31 @@ function Form() {
   ];
 
   const onBack = (currentStep: number) => {
-    console.log(currentStep, form)
+    // console.log(currentStep, form);
   };
 
   const onNext = (currentStep: number) => {
-    console.log(currentStep, form)
+    // console.log(currentStep, form);
   };
 
-    return <Wizard onNext={onNext} onBack={onBack} steps={steps} isLinear={true} showCompleted={true} />
+  const onFinish = () => {
+    console.log('onFinish');
+  };
 
+  return (
+    <Wizard
+      onNext={onNext}
+      onBack={onBack}
+      onFinish={onFinish}
+      steps={steps}
+      isLinear={true}
+      showCompleted={true}
+    />
+  );
 }
 
-
 const Template: Story<WizardProps> = (args) => {
-  return <Form/>
+  return <Form />;
 };
 
 const onBack = () => {
@@ -76,5 +85,9 @@ const onNext = () => {
   // onNext stuff
 };
 
+const onFinish = () => {
+  // onFinish stuff
+};
+
 export const Primary = Template.bind({});
-Primary.args = { onBack: onBack, onNext: onNext};
+Primary.args = { onBack: onBack, onNext: onNext, onFinish: onFinish };

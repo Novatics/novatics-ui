@@ -5,6 +5,7 @@ import { BoxContainer } from './styles';
 interface FooterProps {
   handleBack: () => void;
   handleNext: () => void;
+  handleFinish: () => void;
   backText?: string;
   nextText?: string;
   finishText?: string;
@@ -15,6 +16,7 @@ interface FooterProps {
 const Footer = ({
   handleBack,
   handleNext,
+  handleFinish,
   backText = 'Back',
   nextText = 'Next',
   finishText = 'Finish',
@@ -28,13 +30,19 @@ const Footer = ({
           {backText}
         </Button>
       )}
-      {isLast ?
-        <Button variant="contained" onClick={handleNext} className="nextButton">
-          {finishText}
-        </Button> :
+      {!isLast ? (
         <Button variant="contained" onClick={handleNext} className="nextButton">
           {nextText}
-        </Button>}
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          onClick={handleFinish}
+          className="nextButton"
+        >
+          {finishText}
+        </Button>
+      )}
     </BoxContainer>
   );
 };

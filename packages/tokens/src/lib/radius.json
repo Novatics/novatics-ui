@@ -1,0 +1,16 @@
+{
+  "radius": {
+    "small": {
+      "pixel": 8,
+      "rem": 0.5
+    },
+    "medium": {
+      "pixel": 16,
+      "rem": 1
+    },
+    "large": {
+      "pixel": 24,
+      "rem": 1.5
+    }
+  }
+}

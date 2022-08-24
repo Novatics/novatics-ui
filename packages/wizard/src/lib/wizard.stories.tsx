@@ -9,6 +9,9 @@ export default {
   title: 'Wizard',
 } as Meta;
 
+
+
+
 function NameForm({ form, setForm }: any) {
   return (
     <Box>
@@ -29,6 +32,7 @@ function Form({
   onFinish,
   isLinear,
   showCompleted,
+  TabComponent,
 }: WizardProps) {
   const [form, setForm] = useState({ name: '' });
 
@@ -55,6 +59,8 @@ function Form({
     },
   ];
 
+
+
   return (
     <Wizard
       onNext={onNext}
@@ -63,6 +69,7 @@ function Form({
       steps={steps}
       isLinear={isLinear}
       showCompleted={showCompleted}
+      TabComponent={TabComponent}
     />
   );
 }
@@ -82,6 +89,13 @@ const onFinish = () => {
   console.log('onFinish');
 };
 
+
+const TabOverride = (props: any) => {
+  return (
+    <div>tab {props.step.label}</div>
+  )
+}
+
 const Template: Story<WizardProps> = (args) => {
   return <Form {...args} onBack={onBack} onNext={onNext} onFinish={onFinish} />;
 };
@@ -99,4 +113,9 @@ NonLinear.args = {
 export const ShowCompleted = Template.bind({});
 ShowCompleted.args = {
   showCompleted: true,
+};
+
+export const OverrideTab = Template.bind({});
+OverrideTab.args = {
+  TabComponent: TabOverride,
 };

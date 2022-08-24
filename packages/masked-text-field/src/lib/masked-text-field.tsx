@@ -1,4 +1,5 @@
-import { TextField } from '@mui/material';
+import { forwardRef } from 'react';
+import { TextField, TextFieldProps } from '@mui/material';
 import { AnyMaskedOptions } from 'imask';
 import { IMaskInput } from 'react-imask';
 
@@ -13,37 +14,40 @@ import { IMaskInput } from 'react-imask';
 // PLACA (AAA-AAAA) *
 // CARTAO (9999 9999 9999 9999)
 
-interface IMaskedProp {
-  mask: string;
-  maxLength?: number;
-  lazy?: boolean;
-  autofix?: boolean;
-  to?: number;
-  from?: number;
-}
+type AnyMask = AnyMaskedOptions['mask'];
+
 interface IMaskedProps {
-  mask: string | IMaskedProp[];
+  mask: AnyMask;
   definitions: {
     [key: string]: string | RegExp | (() => void);
   };
 }
 
-type MaskPreset = 'cpf' | 'cnpj' | 'cpf-cnpj' | 'cep' | 'zipcode' | 'phone' | 'card-number';
+type MaskPreset =
+  | 'cpf'
+  | 'cnpj'
+  | 'cpf-cnpj'
+  | 'cep'
+  | 'zipcode'
+  | 'phone'
+  | 'card-number';
 
-export interface MaskedTextFieldProps {
-  value: string;
-  onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
+export type MaskedTextFieldProps = TextFieldProps & {
   maskPreset?: MaskPreset;
-  placeholder?: string;
   iMaskProps?: IMaskedProps;
+};
+
+export interface TextMaskCustomProps
+  extends Omit<MaskedTextFieldProps, 'onChange'> {
+  onChange: (event: { target: { value: string } }) => void;
 }
 
 const MASK_TYPES: { [key: string]: AnyMaskedOptions } = {
-  'cpf': {
-    mask: '000.000.000-00'
+  cpf: {
+    mask: '000.000.000-00',
   },
-  'cnpj': {
-    mask: '00.000.000/0000-00'
+  cnpj: {
+    mask: '00.000.000/0000-00',
   },
   'cpf-cnpj': {
     mask: [
@@ -51,13 +55,13 @@ const MASK_TYPES: { [key: string]: AnyMaskedOptions } = {
       { mask: '00.000.000/0000-00' },
     ],
   },
-  'cep': {
+  cep: {
     mask: '00000-000',
   },
-  'zipcode': {
+  zipcode: {
     mask: '00000-0000',
   },
-  'phone': {
+  phone: {
     mask: '(#00) 000-0000',
     definitions: {
       '#': /[1-9]/,
@@ -68,43 +72,36 @@ const MASK_TYPES: { [key: string]: AnyMaskedOptions } = {
   },
 };
 
-function TextMaskCustom(props: MaskedTextFieldProps) {
-  // console.log('TextMaskCustom', props);
-  const { onChange, maskPreset = 'phone', ...other } = props;
-  const { mask, ...rest  } = MASK_TYPES[maskPreset] as AnyMaskedOptions ;
-  return (
-    <IMaskInput
-      {...other}
-      {...rest}
-      mask={mask}
-      onAccept={(value: any) => {
-        // onChange({ target: { name: props.name, value } });
-      }}
-      overwrite
-    />
-  );
-}
+const TextMaskCustom = forwardRef<HTMLElement, TextMaskCustomProps>(
+  (props, ref) => {
+    const { onChange, maskPreset, ...other } = props;
+    const maskProps = maskPreset ? MASK_TYPES[maskPreset] : undefined;
+    return (
+      // @ts-expect-error IMask have a complex combination of types. It will be better to ignore the type checking for now
+      <IMaskInput
+        ref={ref}
+        {...maskProps}
+        {...other}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onAccept={(value: any) => onChange({ target: { value } })}
+        overwrite
+      />
+    );
+  }
+);
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
-  const { value, maskPreset, placeholder, onChange, iMaskProps, ...rest } = props;
-
-  console.log('MaskedTextField', props);
-  const handleOnChangeEvent = (value: any) => {
-    onChange(value);
-  };
+  const { maskPreset, iMaskProps, InputProps, inputProps, ...rest } = props;
 
   return (
     <TextField
-      label="react-number-format"
-      value={value}
-      onChange={handleOnChangeEvent as any}
-      name="numberformat"
-      id="formatted-numberformat-input"
       InputProps={{
-        inputComponent: TextMaskCustom as any,
+        // @ts-expect-error Need to mimic a InputBase component
+        inputComponent: TextMaskCustom,
+        ...InputProps,
       }}
-      inputProps={{ maskPreset, iMaskProps }}
-      variant="standard"
+      inputProps={{ maskPreset, iMaskProps, ...inputProps }}
+      {...rest}
     />
   );
 }

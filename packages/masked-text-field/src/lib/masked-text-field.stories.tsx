@@ -12,10 +12,16 @@ const Form = (args: MaskedTextFieldProps) => {
 
   return (
     <MaskedTextField
+      maskPreset="phone"
+      label="Test label input"
+      name="name test "
+      id="format-input"
+      variant="outlined"
       {...args}
       value={input}
-      maskType="phone"
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+        setInput(e.target.value)
+      }
     />
   );
 };

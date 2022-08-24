@@ -1,6 +1,6 @@
-import { TextField, TextFieldProps } from '@mui/material';
+import { TextField } from '@mui/material';
+import { AnyMaskedOptions } from 'imask';
 import { IMaskInput } from 'react-imask';
-import { forwardRef } from 'react';
 
 // Presets:
 
@@ -24,31 +24,26 @@ interface IMaskedProp {
 interface IMaskedProps {
   mask: string | IMaskedProp[];
   definitions: {
-    [key: string]: string | RegExp | Function;
+    [key: string]: string | RegExp | (() => void);
   };
 }
+
+type MaskPreset = 'cpf' | 'cnpj' | 'cpf-cnpj' | 'cep' | 'zipcode' | 'phone' | 'card-number';
 
 export interface MaskedTextFieldProps {
   value: string;
   onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
-  maskType?:
-    | 'cpf'
-    | 'cnpj'
-    | 'cpf-cnpj'
-    | 'cep'
-    | 'zipcode'
-    | 'phone'
-    | 'card-number';
+  maskPreset?: MaskPreset;
   placeholder?: string;
   iMaskProps?: IMaskedProps;
 }
 
-const MASK_TYPES = {
-  cpf: {
-    mask: '000.000.000-00',
+const MASK_TYPES: { [key: string]: AnyMaskedOptions } = {
+  'cpf': {
+    mask: '000.000.000-00'
   },
-  cnpj: {
-    mask: '00.000.000/0000-00',
+  'cnpj': {
+    mask: '00.000.000/0000-00'
   },
   'cpf-cnpj': {
     mask: [
@@ -56,13 +51,13 @@ const MASK_TYPES = {
       { mask: '00.000.000/0000-00' },
     ],
   },
-  cep: {
+  'cep': {
     mask: '00000-000',
   },
-  zipcode: {
+  'zipcode': {
     mask: '00000-0000',
   },
-  phone: {
+  'phone': {
     mask: '(#00) 000-0000',
     definitions: {
       '#': /[1-9]/,
@@ -74,16 +69,16 @@ const MASK_TYPES = {
 };
 
 function TextMaskCustom(props: MaskedTextFieldProps) {
-  console.log('TextMaskCustom', props);
-  const { onChange, maskType, ...other } = props;
-  const { mask, definitions } = MASK_TYPES['phone'];
+  // console.log('TextMaskCustom', props);
+  const { onChange, maskPreset = 'phone', ...other } = props;
+  const { mask, ...rest  } = MASK_TYPES[maskPreset] as AnyMaskedOptions ;
   return (
     <IMaskInput
       {...other}
+      {...rest}
       mask={mask}
-      definitions={definitions}
       onAccept={(value: any) => {
-        onChange({ target: { name: props.name, value } });
+        // onChange({ target: { name: props.name, value } });
       }}
       overwrite
     />
@@ -91,7 +86,7 @@ function TextMaskCustom(props: MaskedTextFieldProps) {
 }
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
-  const { value, maskType, placeholder, onChange, iMaskProps, ...rest } = props;
+  const { value, maskPreset, placeholder, onChange, iMaskProps, ...rest } = props;
 
   console.log('MaskedTextField', props);
   const handleOnChangeEvent = (value: any) => {
@@ -108,7 +103,7 @@ export function MaskedTextField(props: MaskedTextFieldProps) {
       InputProps={{
         inputComponent: TextMaskCustom as any,
       }}
-      inputProps={{ maskType, iMaskProps }}
+      inputProps={{ maskPreset, iMaskProps }}
       variant="standard"
     />
   );

@@ -22,7 +22,8 @@ module.exports = {
     { name: 'root' },
     { name: 'core' },
     { name: 'release' },
-    { name: 'currency-text-field' }
+    { name: 'currency-text-field' },
+    { name: 'masked-text-field' }
   ],
   allowTicketNumber: false,
   isTicketNumberRequired: false,

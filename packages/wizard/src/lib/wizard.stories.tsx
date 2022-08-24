@@ -23,7 +23,13 @@ function NameForm({ form, setForm }: any) {
   );
 }
 
-function Form() {
+function Form({
+  onNext,
+  onBack,
+  onFinish,
+  isLinear,
+  showCompleted,
+}: WizardProps) {
   const [form, setForm] = useState({ name: '' });
 
   const steps = [
@@ -49,45 +55,48 @@ function Form() {
     },
   ];
 
-  const onBack = (currentStep: number) => {
-    // console.log(currentStep, form);
-  };
-
-  const onNext = (currentStep: number) => {
-    // console.log(currentStep, form);
-  };
-
-  const onFinish = () => {
-    console.log('onFinish');
-  };
-
   return (
     <Wizard
       onNext={onNext}
       onBack={onBack}
       onFinish={onFinish}
       steps={steps}
-      isLinear={true}
-      showCompleted={true}
+      isLinear={isLinear}
+      showCompleted={showCompleted}
     />
   );
 }
 
-const Template: Story<WizardProps> = (args) => {
-  return <Form />;
-};
-
 const onBack = () => {
   // onBack stuff
+  console.log('onBack');
 };
 
 const onNext = () => {
   // onNext stuff
+  console.log('onNext');
 };
 
 const onFinish = () => {
   // onFinish stuff
+  console.log('onFinish');
 };
 
-export const Primary = Template.bind({});
-Primary.args = { onBack: onBack, onNext: onNext, onFinish: onFinish };
+const Template: Story<WizardProps> = (args) => {
+  return <Form {...args} onBack={onBack} onNext={onNext} onFinish={onFinish} />;
+};
+
+export const Linear = Template.bind({});
+Linear.args = {
+  isLinear: true,
+};
+
+export const NonLinear = Template.bind({});
+NonLinear.args = {
+  isLinear: false,
+};
+
+export const ShowCompleted = Template.bind({});
+ShowCompleted.args = {
+  showCompleted: true,
+};

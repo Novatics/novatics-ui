@@ -1,0 +1,56 @@
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import { CurrencyNames } from '../currency/currency';
+import {
+  CurrencyTextField,
+  CurrencyTextFieldProps,
+} from './currency-text-field';
+
+
+<Meta title="Currency Textfield" component={CurrencyTextField} />
+
+# CurrencyTextField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Use this component for currency inputs
+
+### Installation
+
+First install the latest version of the package from `@novatics-ui/currency-text-field`.
+
+```bash
+yarn add @novatics-ui/currency-text-field
+```
+
+### Dependencies
+
+This component extends [Material UI React Text Field](https://mui.com/material-ui/react-text-field). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
+
+### Basic Usage
+
+```tsx
+import CurrencyTextField from '@novatics-ui/currency-text-field';
+
+const Component = () => <CurrencyTextField />;
+```
+
+<Canvas>
+  <Story
+    name="Playground"
+  >
+    {args => {
+      console.log(args)
+      return <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <CurrencyTextField  {...args} />
+      </div>
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

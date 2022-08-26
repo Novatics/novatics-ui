@@ -45,6 +45,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
   const [maskedValue, setMaskedValue] = useState('');
 
   const priorityCurrencyProps = useMemo(() => {
+    console.log("CURRENCY => ", pick(CURRENCY['brl'], CURRENCY_ATTRIBUTES));
     const currencyFallback = pick(CURRENCY['brl'], CURRENCY_ATTRIBUTES);
     const currencyPreset = pick(CURRENCY[currency], CURRENCY_ATTRIBUTES);
     const mergedCurrency = defaults(
@@ -55,6 +56,8 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
 
     return pick(mergedCurrency, CURRENCY_ATTRIBUTES) as CurrencyProps;
   }, [currency, currencyProps]);
+
+
 
   const formatToCurrency = useCallback(
     (value: string | number) => {

@@ -39,14 +39,14 @@ function Form({
   const steps = [
     {
       label: '01. Select campaign settings',
-      subtitle: 'You can write some cool information stuff here',
+      subtitle: 'Subtitle',
       content: `For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
     },
     {
       label: '02. Create an ad group',
-      subtitle: 'You can write some cool information stuff here',
+      subtitle: 'Subtitle with more text',
       content: <NameForm form={form} setForm={setForm} />,
     },
     {

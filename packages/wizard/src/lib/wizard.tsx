@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Header from './Header';
 import Footer from './Footer';
 import TabPanel from './TabPanel';
-import CheckIcon from '@mui/icons-material/Check';
+
 import { TabContainer } from './styles';
 
 function setAccessibilityProps(index: number) {

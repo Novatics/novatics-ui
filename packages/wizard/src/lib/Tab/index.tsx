@@ -17,25 +17,34 @@ interface TabProps {
   TabComponent: React.ReactNode;
 }
 
-const Tab = (props : TabProps) => {
+const Tab = (props: TabProps) => {
   const { step, isComplete, showCompleted, TabComponent } = props;
   const hasTabComponent = !!TabComponent;
 
-  return (
-    hasTabComponent ? <TabComponent {...props} /> :
-        <Button variant="text" sx={{maxWidth: '350px'}}>
-            <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flexWrap: 'wrap', maxWidth: '350px'}} >
-              <Typography variant="body1">{step.label && step.label}</Typography>
-              <Typography variant="subtitle2">{step.subtitle && step.subtitle}</Typography>
-            </Box>
-            {isComplete && showCompleted && (
-            <CheckIcon
-              style={{ marginLeft: 'auto', marginRight: '10px' }}
-              fontSize="small"
-              color="success"
-            />
-          )}
-        </Button>
+  return hasTabComponent ? (
+    <TabComponent {...props} />
+  ) : (
+    <Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        }}
+      >
+        <Typography variant="body1">{step.label && step.label}</Typography>
+        <Typography variant="subtitle2" sx={{ whiteSpace: 'pre-wrap' }}>
+          {step.subtitle && step.subtitle}
+        </Typography>
+      </Box>
+      {isComplete && showCompleted && (
+        <CheckIcon
+          style={{ marginLeft: 'auto', marginRight: '10px' }}
+          fontSize="small"
+          color="success"
+        />
+      )}
+    </Box>
   );
 };
 

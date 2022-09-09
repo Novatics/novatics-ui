@@ -34,7 +34,7 @@ const Tab = (props: TabProps) => {
       </TextContainer>
       {isComplete && showCompleted && (
         <CheckIcon
-          style={{ marginLeft: 'auto', marginRight: '10px' }}
+          style={{ marginLeft: '20px', marginRight: '10px' }}
           fontSize="small"
           color="success"
         />

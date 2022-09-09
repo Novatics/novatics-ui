@@ -1,9 +1,7 @@
 import React from 'react';
-import BaseTab from '@mui/material/Tab';
 import CheckIcon from '@mui/icons-material/Check';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Container, TextContainer } from './styles';
 interface Step {
   label: string;
   subtitle?: string;
@@ -24,19 +22,13 @@ const Tab = (props: TabProps) => {
   return hasTabComponent ? (
     <TabComponent {...props} />
   ) : (
-    <Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-        }}
-      >
+    <Container>
+      <TextContainer>
         <Typography variant="body1">{step.label && step.label}</Typography>
         <Typography variant="subtitle2" sx={{ whiteSpace: 'pre-wrap' }}>
           {step.subtitle && step.subtitle}
         </Typography>
-      </Box>
+      </TextContainer>
       {isComplete && showCompleted && (
         <CheckIcon
           style={{ marginLeft: 'auto', marginRight: '10px' }}
@@ -44,7 +36,7 @@ const Tab = (props: TabProps) => {
           color="success"
         />
       )}
-    </Box>
+    </Container>
   );
 };
 

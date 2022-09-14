@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import { Button } from './button';
+
+<Meta title="Button" component={Button} />
+
+# Button <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+A button with the novatics-ui theme.
+
+### Basic Usage
+
+<!--  TODOS
+search addon figma
+add sections with MDX
+
+ -->
+
+First install the latest version of the package from `@novatics-ui/button`.
+
+```tsx
+import Button from '@novatics-ui/button';
+
+const Component = () => <Button>Click me</Button>;
+```
+
+<Canvas>
+  <Story name="Playground">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Button {...args}>Click me</Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

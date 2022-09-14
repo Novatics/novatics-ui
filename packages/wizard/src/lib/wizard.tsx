@@ -19,6 +19,7 @@ function setAccessibilityProps(index: number) {
 export interface Step {
   label: string;
   content: React.ReactNode | string;
+  disabled: boolean;
 }
 
 interface StepStatus {
@@ -58,7 +59,8 @@ const Wizard = ({
 
   const handleChange = (newStep: number) => {
     const isNextStep = newStep === currentStep + 1;
-
+    const isDisabled = steps[newStep].disabled;
+    if (isDisabled) return;
     if (isLinear && !isNextStep) return;
     setCurrentStep(newStep);
     updateStepStatus();

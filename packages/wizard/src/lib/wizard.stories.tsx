@@ -43,11 +43,13 @@ function Form({
       content: `For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+      disabled: false,
     },
     {
       label: '02. Create an ad group',
       subtitle: 'Subtitle with more text',
       content: <NameForm form={form} setForm={setForm} />,
+      disabled: false,
     },
     {
       label: '03. Create an ad',
@@ -56,6 +58,7 @@ function Form({
                 and learn how to enhance your ads using features like ad extensions.
                 If you run into any problems with your ads, find out how to tell if
                 they're running and how to resolve approval issues.`,
+      disabled: true,
     },
   ];
 
@@ -119,3 +122,7 @@ export const OverrideTab = Template.bind({});
 OverrideTab.args = {
   TabComponent: TabOverride,
 };
+
+export const DisabledTab = Template.bind({});
+DisabledTab.args = {};
+

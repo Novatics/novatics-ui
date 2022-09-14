@@ -11,6 +11,7 @@ interface Step {
 interface TabProps {
   step: Step;
   isComplete: boolean;
+  disabled: boolean;
   showCompleted: boolean;
   TabComponent: React.ReactNode;
 }
@@ -19,14 +20,16 @@ const Tab = (props: TabProps) => {
   const { step, isComplete, showCompleted, TabComponent } = props;
   const hasTabComponent = !!TabComponent;
 
+  const { label, subtitle, disabled } = step;
+
   return hasTabComponent ? (
     <TabComponent {...props} />
   ) : (
-    <Container>
+    <Container disabled={disabled}>
       <TextContainer>
-        <Typography variant="body1">{step.label && step.label}</Typography>
-        <Typography variant="subtitle2" sx={{ whiteSpace: 'pre-wrap' }}>
-          {step.subtitle && step.subtitle}
+        <Typography variant="body1" color={disabled && 'gray'} >{label && label}</Typography>
+        <Typography variant="subtitle2" color={disabled && 'gray'} sx={{ whiteSpace: 'pre-wrap' }}>
+          {subtitle && subtitle}
         </Typography>
       </TextContainer>
       {isComplete && showCompleted && (

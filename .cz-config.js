@@ -1,56 +1,51 @@
 module.exports = {
   types: [
-    { value: 'feat', name: 'feat: A new feature' },
-    { value: 'fix', name: 'fix: A bug fix' },
-    { value: 'docs', name: 'docs: Documentation only changes' },
+    { value: 'fix', name: '🐛 Bug Fixes: A bug fix' },
+    {
+      value: 'docs',
+      name: '📚 Documentation: Documentation only changes'
+    },
     {
       value: 'style',
-      name: 'style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
+      name: '💎 Styles: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'
     },
     {
       value: 'refactor',
-      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
+      name: '📦 Code Refactoring: A code change that neither fixes a bug nor adds a feature'
     },
-    { value: 'test', name: 'test: Adding missing tests' },
+    {
+      value: 'perf',
+      name: '🚀 Performance Improvements: A code change that improves performance'
+    },
+    {
+      value: 'test',
+      name: '🔬 Tests: Adding missing tests or correcting existing tests'
+    },
+    {
+      value: 'build',
+      name: '🛠  Builds: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)'
+    },
+    {
+      value: 'ci',
+      name: '⚙️  Continuous Integrations: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)'
+    },
     {
       value: 'chore',
-      name: 'chore: Changes to the build process or auxiliary tools and libraries such as documentation generation',
+      name: "☕ Chores: Other changes that don't modify src or test files"
     },
-    { value: 'WIP', name: 'WIP: Work in progress' },
+    { value: 'revert', name: '🗑  Reverts: Reverts a previous commit' },
+    { value: 'wip', name: '🏗  WIP: Work in progress' }
   ],
-
   scopes: [
     { name: 'root' },
-    { name: 'release' },
-    { name: 'button' },
     { name: 'core' },
+    { name: 'release' },
+    { name: 'tokens' }
   ],
-
   allowTicketNumber: false,
   isTicketNumberRequired: false,
-  ticketNumberPrefix: 'TICKET-',
+  ticketNumberPrefix: 'NUI-',
   ticketNumberRegExp: 'd{1,5}',
-
-  // it needs to match the value for field type. Eg.: 'fix'
-  /*
-    scopeOverrides: {
-      fix: [
-        {name: 'merge'},
-        {name: 'style'},
-        {name: 'e2eTest'},
-        {name: 'unitTest'}
-      ]
-    },
-    */
-  // override the messages, defaults are as follows
-  allowCustomScopes: true,
-  allowBreakingChanges: ['feat', 'fix'],
-  // skip any questions you want
-  skipQuestions: ['body'],
-
-  // limit subject length
-  subjectLimit: 100,
-  // breaklineChar: '|', // It is supported for fields body and footer.
-  // footerPrefix : 'ISSUES CLOSED:'
-  // askForBreakingChangeFirst : true, // default is false
-};
+  allowBreakingChanges: [ 'feat', 'fix' ],
+  subjectLimit: 100
+}

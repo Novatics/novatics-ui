@@ -2,11 +2,7 @@ import React from 'react';
 import CheckIcon from '@mui/icons-material/Check';
 import Typography from '@mui/material/Typography';
 import { Container, TextContainer } from './styles';
-interface Step {
-  label: string;
-  subtitle?: string;
-  content: React.ReactNode | string;
-}
+import { Step } from '../wizard';
 
 interface TabProps {
   step: Step;
@@ -18,17 +14,22 @@ interface TabProps {
 
 const Tab = (props: TabProps) => {
   const { step, isComplete, showCompleted, TabComponent } = props;
-  const hasTabComponent = !!TabComponent;
 
-  const { label, subtitle, disabled } = step;
+  const { title, subtitle, disabled } = step;
 
-  return hasTabComponent ? (
+  return TabComponent ? (
     <TabComponent {...props} />
   ) : (
     <Container disabled={disabled}>
       <TextContainer>
-        <Typography variant="body1" color={disabled && 'gray'} >{label && label}</Typography>
-        <Typography variant="subtitle2" color={disabled && 'gray'} sx={{ whiteSpace: 'pre-wrap' }}>
+        <Typography variant="body1" color={disabled && 'gray'}>
+          {title && title}
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          color={disabled && 'gray'}
+          sx={{ whiteSpace: 'pre-wrap' }}
+        >
           {subtitle && subtitle}
         </Typography>
       </TextContainer>

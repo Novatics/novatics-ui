@@ -1,20 +1,15 @@
 import React from 'react';
+import { Step } from '../wizard';
 
-interface HeaderProps {
-  step: number;
-  title?: string;
-  subtitle?: string;
+export interface HeaderProps {
+  step: Step;
 }
 
-const Header = ({
-  step,
-  title = `STEP ${step} Template`,
-  subtitle,
-}: HeaderProps) => {
+const Header = ({ step }: HeaderProps) => {
   return (
     <div>
-      <h2>{title}</h2>
-      <h4>{subtitle}</h4>
+      <h2>{step.title}</h2>
+      <h4>{step.subtitle}</h4>
     </div>
   );
 };

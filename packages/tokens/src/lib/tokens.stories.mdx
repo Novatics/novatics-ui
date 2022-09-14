@@ -1,0 +1,295 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import keys from 'lodash.keys';
+import includes from 'lodash.includes';
+import snakecase from 'lodash.snakecase';
+import startcase from 'lodash.startcase';
+import pkg from '../../package.json';
+import Tokens from './tokens';
+const LIGHTER_COLORS = ['newMoon', 'halo', 'supernova'];
+const formatColorName = (color) =>
+  startcase(snakecase(color)).replace('_', ' ');
+const getColorTextColor = (color) => {
+  if (includes(color, '--light')) return '#000000';
+  if (includes(LIGHTER_COLORS, color)) return '#000000';
+  return '#FFFFFF';
+};
+const defaultColors = keys(Tokens.colors)
+  .filter((color) => !includes(color, '--'))
+  .map((color) => formatColorName(color));
+const collator = new Intl.Collator(undefined, {
+  numeric: true,
+  sensitivity: 'base',
+});
+const sortedSpacings = keys(Tokens.spacings).sort(collator.compare);
+
+<Meta title="Tokens" component={Tokens} />
+
+# Tokens <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Here we provide the novatics tokens stylesheet. This package is used on our style component to create components with our brand!
+
+You can install the package with
+
+```shell
+  yarn add -D @novatics-ui/tokens
+```
+
+```shell
+  npm install --dev @novatics-ui/tokens
+```
+
+and use it
+
+```tsx
+import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@novatics-ui/tokens';
+
+  ...
+  color: Tokens.colors.nebula.main
+  backgroundColor: colors.nebula.light
+  ...
+
+```
+
+### Colors
+
+<p>
+  We have some awesome colors in our theme:
+  {defaultColors
+    .map((c, i) => (i === defaultColors.length - 1 ? `and ${c}` : `${c}, `))
+    .join('')}
+  Some of the colors have variants.
+  <br />
+  The variant can be accessed by adding '--variant' to the token. For example:{' '}
+  <strong>"nebula--dark": "#5D23C9"</strong>
+</p>
+
+<Canvas>
+  <Story name="Colors">
+    {(args) => {
+      return (
+        <Grid container spacing={2}>
+          {keys(Tokens.colors).map((name) => (
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Paper
+                  square
+                  sx={{
+                    padding: 3,
+                    height: '106px',
+                    backgroundColor: Tokens.colors[name],
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    fontWeight="700"
+                    color={getColorTextColor(name)}
+                  >
+                    {formatColorName(name)}
+                  </Typography>
+                  <Typography variant="body2" color={getColorTextColor(name)}>
+                    <span style={{ opacity: 0.7 }}>HEX</span>{' '}
+                    {Tokens.colors[name]}
+                  </Typography>
+                  <Typography variant="body2" color={getColorTextColor(name)}>
+                    <span style={{ opacity: 0.7 }}>TOKEN</span> {name}
+                  </Typography>
+                </Paper>
+              </Stack>
+            </Grid>
+          ))}
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Border Radius
+
+<p>
+  Our round corners are defined here with three options: small, regular and
+  large. We provide the <strong>number</strong> option for pixel or rem.
+  <br />
+  The values can be retrived by{' '}
+  <strong>"borderRadius.small": {`{ "px": 8, "rem": 0.5 }`}'</strong>
+</p>
+
+<Canvas>
+  <Story name="Border Radius">
+    {(args) => {
+      return (
+        <Grid container spacing={4}>
+          <Grid item xs={4}>
+            <Stack spacing={1}>
+              <Typography variant="h5" fontWeight="700">
+                Small
+              </Typography>
+              <Typography variant="caption">borderRadius.small</Typography>
+              <Stack direction="row" spacing={3}>
+                <Box
+                  height="108px"
+                  width="256px"
+                  borderRadius={`${Tokens.borderRadius.small.px}px`}
+                  backgroundColor={Tokens.colors.cosmos}
+                />
+                <Stack spacing={1}>
+                  <Typography variant="body2">Corner Radius</Typography>
+                  <Box borderLeft="1px solid black" height="40px" pl={1}>
+                    <Typography variant="caption">
+                      {`${Tokens.borderRadius.small.px}px`}
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Grid>
+          <Grid item xs={4}>
+            <Stack spacing={1}>
+              <Typography variant="h5" fontWeight="700">
+                Regular
+              </Typography>
+              <Typography variant="caption">borderRadius.regular</Typography>
+              <Stack direction="row" spacing={3}>
+                <Box
+                  height="108px"
+                  width="256px"
+                  borderRadius={`${Tokens.borderRadius.regular.px}px`}
+                  backgroundColor={Tokens.colors.cosmos}
+                />
+                <Stack spacing={1}>
+                  <Typography variant="body2">Corner Radius</Typography>
+                  <Box borderLeft="1px solid black" height="40px" pl={1}>
+                    <Typography variant="caption">
+                      {`${Tokens.borderRadius.regular.px}px`}
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Grid>
+          <Grid item xs={4}>
+            <Stack spacing={1}>
+              <Typography variant="h5" fontWeight="700">
+                Large
+              </Typography>
+              <Typography variant="caption">borderRadius.large</Typography>
+              <Stack direction="row" spacing={3}>
+                <Box
+                  height="108px"
+                  width="256px"
+                  borderRadius={`${Tokens.borderRadius.large.px}px`}
+                  backgroundColor={Tokens.colors.cosmos}
+                />
+                <Stack spacing={1}>
+                  <Typography variant="body2">Corner Radius</Typography>
+                  <Box borderLeft="1px solid black" height="40px" pl={1}>
+                    <Typography variant="caption">
+                      {`${Tokens.borderRadius.large.px}px`}
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Grid>
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Spacings
+
+<p>
+  All of our spacings are a multiple of 8. The initial value is 0.5 and goes to
+  12. Be aware that we <strong>don't</strong> have each step of the series.
+  <br />
+  Values can be retrived by{' '}
+  <strong>"spacings["0.5"]: {`{ "px": 4, "rem": 0.25 }`}'</strong>
+</p>
+
+<Canvas>
+  <Story name="Spacings">
+    {(args) => {
+      return (
+        <Stack spacing={1}>
+          {sortedSpacings.map((spacing) => (
+            <Box display="flex" alignItems="center">
+              <Box
+                height={`${Tokens.spacings[spacing].px}px`}
+                width="40%"
+                backgroundColor={Tokens.colors['nebula--light']}
+                borderTop={`1px dashed ${Tokens.colors.nebula}`}
+                borderBottom={`1px dashed ${Tokens.colors.nebula}`}
+                mr={3}
+              />
+              <Stack direction="row" spacing={2}>
+                <Box width="100px">
+                  <Typography variant="body1">spacings[{spacing}]</Typography>
+                </Box>
+                <Typography variant="body1" sx={{ opacity: '0.7' }}>
+                  {spacing} * 8 = {Number(spacing) * 8}px
+                </Typography>
+              </Stack>
+            </Box>
+          ))}
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Shadows
+
+<p>
+  For shadows, we create two entities: Blackhole and Cosmos. Both have four
+  variants: low, medium, intermediate and high.
+  <br />
+  To get the values combine the desired name with the '--variant'{' '}
+  <strong>
+    "shadows["blackhole--high"]: "0px 16px 32px 4px rgba(37, 37, 37, 0.13)""
+  </strong>
+</p>
+
+<Canvas>
+  <Story name="Shadows">
+    {(args) => {
+      return (
+        <Grid container spacing={4}>
+          <Grid item xs={6}>
+            <Stack spacing={5}>
+              {['low', 'medium', 'intermediate', 'high'].map((variant) => (
+                <Stack spacing={1}>
+                  <Typography variant="body2">{`blackhole--${variant}`}</Typography>
+                  <Box
+                    height="108px"
+                    width="90%"
+                    sx={{ boxShadow: Tokens.shadows[`blackhole--${variant}`] }}
+                  />
+                </Stack>
+              ))}
+            </Stack>
+          </Grid>
+          <Grid item xs={6}>
+            <Stack spacing={5}>
+              {['low', 'medium', 'intermediate', 'high'].map((variant) => (
+                <Stack spacing={1}>
+                  <Typography variant="body2">{`cosmos--${variant}`}</Typography>
+                  <Box
+                    height="108px"
+                    width="90%"
+                    sx={{ boxShadow: Tokens.shadows[`cosmos--${variant}`] }}
+                  />
+                </Stack>
+              ))}
+            </Stack>
+          </Grid>
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>

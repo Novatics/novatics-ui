@@ -1,7 +1,11 @@
 import colors from './colors.json';
-import radius from './radius.json';
+import borderRadius from './border-radius.json';
 import shadows from './shadows.json';
-import spacing from './spacing.json';
+import spacings from './spacings.json';
 import typography from './typography.json';
 
-export { colors, radius, shadows, spacing, typography };
+export { colors, borderRadius, shadows, spacings, typography };
+
+const tokens = { colors, borderRadius, shadows, spacings, typography };
+
+export default tokens;

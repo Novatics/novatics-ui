@@ -6,6 +6,8 @@ import {
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
 
+require('./styles.css')
+
 const providerFn = ({ theme, children }) => {
   const muiTheme = MUICreateTheme(theme);
   return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>;
@@ -25,3 +27,13 @@ const theme = {
 };
 
 addDecorator(withThemes(null, [theme], { providerFn }));
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  viewMode: 'docs',
+  options: {
+    storySort: {
+      order: ['Intro', 'Core', '*'],
+    },
+  },
+};

@@ -1,7 +1,7 @@
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
-  stories: [],
+  stories: ['*.stories.mdx', '*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-essentials', '@react-theming/storybook-addon'],
   webpackFinal: async (config, { configType }) => {
     // analyze webpack bundle size. To enable run storybook with `cross-env analyze=true`

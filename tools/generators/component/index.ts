@@ -9,7 +9,7 @@ import {
   readProjectConfiguration,
 } from '@nrwl/devkit';
 import { execSync } from 'child_process';
-import * as sortby from 'lodash.sortby';
+import sortby from 'lodash.sortby';
 import * as fs from 'fs';
 import * as util from 'util';
 
@@ -126,6 +126,9 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   });
 
   updateCommitZenConfig(tree, { fileName });
+
+  console.log(`rm ${tree.root}/packages/${name}/src/lib/${name}.stories.tsx`);
+  execSync(`rm ${tree.root}/packages/${name}/src/lib/${name}.stories.tsx`);
 
   return () => {
     installPackagesTask(tree);

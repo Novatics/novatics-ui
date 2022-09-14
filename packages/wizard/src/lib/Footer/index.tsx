@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import { BoxContainer } from './styles';
 
-interface FooterProps {
+export interface FooterProps {
   handleBack: () => void;
   handleNext: () => void;
   handleFinish: () => void;

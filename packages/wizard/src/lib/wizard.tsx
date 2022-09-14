@@ -17,7 +17,8 @@ function setAccessibilityProps(index: number) {
 }
 
 export interface Step {
-  label: string;
+  title: string;
+  subtitle?: string;
   content: React.ReactNode | string;
   disabled: boolean;
 }
@@ -32,6 +33,9 @@ export interface WizardProps {
   isLinear?: boolean;
   showCompleted?: boolean;
   TabComponent: React.ReactNode;
+  HeaderComponent: React.ReactNode;
+  ContentComponent: React.ReactNode;
+  FooterComponent: React.ReactNode;
   steps: Step[];
 }
 
@@ -42,6 +46,9 @@ const Wizard = ({
   isLinear = false,
   showCompleted = false,
   TabComponent,
+  HeaderComponent,
+  ContentComponent,
+  FooterComponent,
   steps,
 }: WizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -97,33 +104,56 @@ const Wizard = ({
         sx={{ borderRight: 1, borderColor: 'divider' }}
       >
         {steps.map((step, index) => {
-
           const isComplete = stepsStatus[index].status === 'complete';
-          return <TabContainer
-            key={step.label}
-            onClick={() => handleChange(index)}
-            {...setAccessibilityProps(index)}
-          >
-           <Tab step={step}
+          return (
+            <TabContainer
+              key={step.title}
+              onClick={() => handleChange(index)}
+              {...setAccessibilityProps(index)}
+            >
+              <Tab
+                step={step}
                 isComplete={isComplete}
                 showCompleted={showCompleted}
-                TabComponent={TabComponent}/>
-          </TabContainer>
+                TabComponent={TabComponent}
+              />
+            </TabContainer>
+          );
         })}
       </Tabs>
 
       <Box sx={{ width: '80%' }}>
         {steps.map((step, index) => (
-          <TabPanel key={step.label} value={currentStep} index={index}>
-            <Header step={index + 1} subtitle={step.label} />
-            {step.content}
-            <Footer
-              isFirst={index === 0}
-              isLast={index + 1 === steps.length}
-              handleBack={handleBack}
-              handleNext={handleNext}
-              handleFinish={handleFinish}
-            />
+          <TabPanel key={step.title} value={currentStep} index={index}>
+            {HeaderComponent ? (
+              <HeaderComponent step={step} />
+            ) : (
+              <Header step={step} />
+            )}
+
+            {ContentComponent ? (
+              <ContentComponent content={step.content} />
+            ) : (
+              step.content
+            )}
+
+            {FooterComponent ? (
+              <FooterComponent
+                isFirst={index === 0}
+                isLast={index + 1 === steps.length}
+                handleBack={handleBack}
+                handleNext={handleNext}
+                handleFinish={handleFinish}
+              />
+            ) : (
+              <Footer
+                isFirst={index === 0}
+                isLast={index + 1 === steps.length}
+                handleBack={handleBack}
+                handleNext={handleNext}
+                handleFinish={handleFinish}
+              />
+            )}
           </TabPanel>
         ))}
       </Box>

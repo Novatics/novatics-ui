@@ -5,7 +5,7 @@ export const Container = styled(Box) (({ disabled }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
+    width: '25em',
     cursor:  disabled ? 'no-drop' : 'cursor',
   }))
 

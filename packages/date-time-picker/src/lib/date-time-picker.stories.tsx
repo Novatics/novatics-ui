@@ -1,5 +1,7 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { DateTimePicker, DateTimePickerProps } from './date-time-picker';
+import { DatePicker } from './date-picker';
 
 export default {
   component: DateTimePicker,
@@ -7,7 +9,10 @@ export default {
 } as Meta;
 
 const Template: Story<DateTimePickerProps> = (args) => (
-  <DateTimePicker {...args} />
+  <>
+    <DatePicker {...args} />
+    <DateTimePicker {...args} />
+  </>
 );
 
 export const Primary = Template.bind({});

@@ -1,0 +1,9 @@
+.MuiButtonBase-root.MuiPickersDay-root {
+  &.first-selected {
+    background-color: blue;
+  }
+
+  &.last-selected {
+    background-color: green;
+  }
+}

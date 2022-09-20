@@ -84,6 +84,7 @@
     "lodash.sortby": "^4.7.0",
     "lodash.startcase": "^4.4.0",
     "nx": "14.7.5",
+    "nxpm": "^2.0.0",
     "prettier": "^2.7.1",
     "react-test-renderer": "18.2.0",
     "storybook-addon-swc": "^1.1.8",

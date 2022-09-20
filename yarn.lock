@@ -16246,7 +16246,7 @@ nx@14.7.5, "nx@>=14.6.1 < 16":
 
 nxpm@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/nxpm/-/nxpm-2.0.0.tgz#e068e7b3165437519b461c10d367ac14ce182cfa"
+  resolved "http://localhost:4873/nxpm/-/nxpm-2.0.0.tgz#e068e7b3165437519b461c10d367ac14ce182cfa"
   integrity sha512-czyQbXcL00V45yvUcFUNT4EAWfVum8kdYtdNG9it5yi6cekAX9v6/OIhZTNtgoiSy/rNesMA22EgMxOvM2XpWw==
   dependencies:
     "@angular-devkit/core" "^9.1.6"

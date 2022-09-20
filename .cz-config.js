@@ -42,6 +42,7 @@ module.exports = {
     { name: 'core' },
     { name: 'release' },
     { name: 'currency-text-field' },
+    { name: 'styles' },
     { name: 'tokens' }
   ],
   allowTicketNumber: false,

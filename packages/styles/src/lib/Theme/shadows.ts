@@ -1,60 +1,40 @@
 import { shadows as rawShadows } from '@novatics-ui/tokens';
-import { Shadows as MuiShadows } from '@mui/material/styles/shadows';
 import { Length, RGBA } from './types';
 
 type ShadowType = `${Length} ${Length} ${Length} ${Length} ${RGBA}`;
 
-interface Shadows {
-  blackhole: {
-    low: number;
-    medium: number;
-    intermediate: number;
-    high: number;
-  };
-  cosmos: {
-    low: number;
-    medium: number;
-    intermediate: number;
-    high: number;
-  };
+export interface ShadowGradient {
+  low: ShadowType;
+  medium: ShadowType;
+  intermediate: ShadowType;
+  high: ShadowType;
 }
 
-export const shadows: Shadows = {
+export interface Shadows {
+  blackhole: ShadowGradient;
+  cosmos: ShadowGradient;
+}
+
+declare module '@mui/material/styles/createTheme' {
+  interface ThemeOptions {
+    customShadows?: Shadows;
+  }
+  interface BaseTheme {
+    customShadows: Shadows;
+  }
+}
+
+export const themeShadows: Shadows = {
   blackhole: {
-    low: 1,
-    medium: 2,
-    intermediate: 3,
-    high: 4,
+    low: rawShadows['blackhole--low'] as ShadowType,
+    medium: rawShadows['blackhole--medium'] as ShadowType,
+    intermediate: rawShadows['blackhole--intermediate'] as ShadowType,
+    high: rawShadows['blackhole--high'] as ShadowType,
   },
   cosmos: {
-    low: 5,
-    medium: 6,
-    intermediate: 7,
-    high: 8,
+    low: rawShadows['cosmos--low'] as ShadowType,
+    medium: rawShadows['cosmos--medium'] as ShadowType,
+    intermediate: rawShadows['cosmos--intermediate'] as ShadowType,
+    high: rawShadows['cosmos--high'] as ShadowType,
   },
 };
-
-type ShadowsArray = Array<string | ShadowType>;
-
-export const themeShadowsArray: ShadowsArray = [
-  'none',
-  rawShadows['blackhole--low'],
-  rawShadows['blackhole--medium'],
-  rawShadows['blackhole--intermediate'],
-  rawShadows['blackhole--high'],
-  rawShadows['cosmos--low'],
-  rawShadows['cosmos--medium'],
-  rawShadows['cosmos--intermediate'],
-  rawShadows['cosmos--high'],
-];
-
-const fillShadowsArray = (shadowsArray: string[]): MuiShadows => {
-  const filledShadowsArray = shadowsArray;
-  for (let i = 0; i < 25; i += 1) {
-    if (!filledShadowsArray[i]) filledShadowsArray[i] = '';
-    filledShadowsArray.push(shadowsArray[i]);
-  }
-  return filledShadowsArray as MuiShadows;
-};
-
-export const themeShadows: MuiShadows = fillShadowsArray(themeShadowsArray);

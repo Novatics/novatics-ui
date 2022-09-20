@@ -26,7 +26,7 @@ export const createTheme = (
       ...palette,
     },
     spacing: (factor: Spacings): Length => `${Number(factor) * 0.5}rem`,
-    shadows: themeShadows,
+    customShadows: themeShadows,
     components: {
       ...componentsInput,
     },

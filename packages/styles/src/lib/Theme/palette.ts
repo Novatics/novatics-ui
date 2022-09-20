@@ -17,7 +17,7 @@ declare module '@mui/material/styles/createPalette' {
     fullMoon?: string;
     newMoon?: string;
     halo?: string;
-    superNova?: string;
+    supernova?: string;
   }
   interface PaletteOptions {
     grayScale?: GrayScale;
@@ -40,7 +40,7 @@ export const palette: PaletteOptions = {
     fullMoon: colors['fullMoon'],
     newMoon: colors['newMoon'],
     halo: colors['halo'],
-    superNova: colors['supernova'],
+    supernova: colors['supernova'],
   },
   primary: {
     main: colors['nebula'],

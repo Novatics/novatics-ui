@@ -10,7 +10,7 @@ const StyledCore = styled.div`
 export function Core(props: CoreProps) {
   return (
     <StyledCore>
-      <h1>Welcome to Core!</h1>
+      <h1>Welcome to Core Tyestedasd!</h1>
     </StyledCore>
   );
 }

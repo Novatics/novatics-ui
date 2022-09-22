@@ -1,9 +1,10 @@
 .MuiButtonBase-root.MuiPickersDay-root {
-  &.first-selected {
-    background-color: blue;
+  &.selected {
+    background-color: rgb(80, 116, 244);
+    transition: 0.3s;
   }
 
-  &.last-selected {
-    background-color: green;
+  &.within {
+    background-color: rgba(80, 116, 244, 0.35);
   }
 }

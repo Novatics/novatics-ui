@@ -1,14 +1,5 @@
 import React from 'react';
-import { Step } from '../wizard';
-
-export interface ComponentOverrideProps {
-  step: Step;
-}
-
-export interface HeaderProps {
-  step: Step;
-  ComponentOverride: React.FC<ComponentOverrideProps>;
-}
+import { HeaderProps } from '../types';
 
 const Header = ({ step, ComponentOverride }: HeaderProps) => {
   if (ComponentOverride) {

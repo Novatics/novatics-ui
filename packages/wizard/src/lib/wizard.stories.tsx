@@ -3,9 +3,8 @@ import { Meta, Story } from '@storybook/react';
 import Wizard, { WizardProps } from './wizard';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { HeaderProps } from './Header';
-import { FooterProps } from './Footer';
-//Todo: Test if it works with a form
+import { HeaderOverrideProps, FooterOverrideProps } from './types';
+
 export default {
   component: Wizard,
   title: 'Wizard',
@@ -31,10 +30,10 @@ function Form({
   onFinish,
   isLinear,
   showCompleted,
-  TabComponent,
-  HeaderComponent,
-  ContentComponent,
-  FooterComponent,
+  TabOverride,
+  HeaderOverride,
+  ContentOverride,
+  FooterOverride,
 }: WizardProps) {
   const [form, setForm] = useState({ name: '' });
 
@@ -72,10 +71,10 @@ function Form({
       steps={steps}
       isLinear={isLinear}
       showCompleted={showCompleted}
-      TabComponent={TabComponent}
-      HeaderComponent={HeaderComponent}
-      ContentComponent={ContentComponent}
-      FooterComponent={FooterComponent}
+      TabOverride={TabOverride}
+      HeaderOverride={HeaderOverride}
+      ContentOverride={ContentOverride}
+      FooterOverride={FooterOverride}
     />
   );
 }
@@ -99,7 +98,7 @@ const TabOverride = (props: any) => {
   return <div>tab {props.step.title}</div>;
 };
 
-const HeaderOverride = ({ step }: HeaderProps) => {
+const HeaderOverride = ({ step }: HeaderOverrideProps) => {
   return <div>HEADER {step.title}</div>;
 };
 
@@ -117,7 +116,7 @@ const FooterOverride = ({
   handleFinish,
   isFirst = false,
   isLast = false,
-}: FooterProps) => {
+}: FooterOverrideProps) => {
   return <div>Footer</div>;
 };
 
@@ -142,10 +141,10 @@ ShowCompleted.args = {
 
 export const ComponentsOverride = Template.bind({});
 ComponentsOverride.args = {
-  TabComponent: TabOverride,
-  HeaderComponent: HeaderOverride,
-  FooterComponent: FooterOverride,
-  ContentComponent: ContentOverride,
+  TabOverride: TabOverride,
+  HeaderOverride: HeaderOverride,
+  FooterOverride: FooterOverride,
+  ContentOverride: ContentOverride,
 };
 
 export const DisabledTab = Template.bind({});

@@ -1,11 +1,20 @@
 import React from 'react';
 import { Step } from '../wizard';
 
-export interface HeaderProps {
+export interface ComponentOverrideProps {
   step: Step;
 }
 
-const Header = ({ step }: HeaderProps) => {
+export interface HeaderProps {
+  step: Step;
+  ComponentOverride: React.FC<ComponentOverrideProps>;
+}
+
+const Header = ({ step, ComponentOverride }: HeaderProps) => {
+  if (ComponentOverride) {
+    return <ComponentOverride step={step} />;
+  }
+
   return (
     <div>
       <h2>{step.title}</h2>

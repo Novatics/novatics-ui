@@ -8,6 +8,7 @@ import Footer from './Footer';
 import TabPanel from './TabPanel';
 
 import { TabContainer } from './styles';
+import Content from './Content/indes';
 
 function setAccessibilityProps(index: number) {
   return {
@@ -26,6 +27,7 @@ export interface Step {
 interface StepStatus {
   status: 'complete' | 'incomplete' | undefined;
 }
+
 export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
@@ -125,35 +127,21 @@ const Wizard = ({
       <Box sx={{ width: '80%' }}>
         {steps.map((step, index) => (
           <TabPanel key={step.title} value={currentStep} index={index}>
-            {HeaderComponent ? (
-              <HeaderComponent step={step} />
-            ) : (
-              <Header step={step} />
-            )}
+            <Header step={step} ComponentOverride={HeaderComponent} />
 
-            {ContentComponent ? (
-              <ContentComponent content={step.content} />
-            ) : (
-              step.content
-            )}
+            <Content
+              content={step.content}
+              ComponentOverride={ContentComponent}
+            />
 
-            {FooterComponent ? (
-              <FooterComponent
-                isFirst={index === 0}
-                isLast={index + 1 === steps.length}
-                handleBack={handleBack}
-                handleNext={handleNext}
-                handleFinish={handleFinish}
-              />
-            ) : (
-              <Footer
-                isFirst={index === 0}
-                isLast={index + 1 === steps.length}
-                handleBack={handleBack}
-                handleNext={handleNext}
-                handleFinish={handleFinish}
-              />
-            )}
+            <Footer
+              isFirst={index === 0}
+              isLast={index + 1 === steps.length}
+              handleBack={handleBack}
+              handleNext={handleNext}
+              handleFinish={handleFinish}
+              ComponentOverride={FooterComponent}
+            />
           </TabPanel>
         ))}
       </Box>

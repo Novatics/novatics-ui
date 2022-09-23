@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 
-export const Container = styled(Box) (({ disabled }) => ({
+interface ContainerProps {
+    disabled: boolean;
+}
+
+export const Container = styled(Box) (({ disabled }: ContainerProps) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',

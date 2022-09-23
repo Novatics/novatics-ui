@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Header from './Header';
 import Footer from './Footer';
 import TabPanel from './TabPanel';
-
+import { Step, HeaderOverrideProps, FooterOverrideProps, ContentOverrideProps, TabOverrideProps } from './types';
 import { TabContainer } from './styles';
 import Content from './Content/indes';
 
@@ -15,13 +15,6 @@ function setAccessibilityProps(index: number) {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
-}
-
-export interface Step {
-  title: string;
-  subtitle?: string;
-  content: React.ReactNode | string;
-  disabled: boolean;
 }
 
 interface StepStatus {
@@ -34,10 +27,10 @@ export interface WizardProps {
   onFinish?: () => void;
   isLinear?: boolean;
   showCompleted?: boolean;
-  TabComponent: React.ReactNode;
-  HeaderComponent: React.ReactNode;
-  ContentComponent: React.ReactNode;
-  FooterComponent: React.ReactNode;
+  TabOverride: React.FC<TabOverrideProps>;
+  HeaderOverride: React.FC<HeaderOverrideProps>;
+  ContentOverride: React.FC<ContentOverrideProps>;
+  FooterOverride: React.FC<FooterOverrideProps>;
   steps: Step[];
 }
 
@@ -47,10 +40,10 @@ const Wizard = ({
   onFinish,
   isLinear = false,
   showCompleted = false,
-  TabComponent,
-  HeaderComponent,
-  ContentComponent,
-  FooterComponent,
+  TabOverride,
+  HeaderOverride,
+  ContentOverride,
+  FooterOverride,
   steps,
 }: WizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -117,7 +110,7 @@ const Wizard = ({
                 step={step}
                 isComplete={isComplete}
                 showCompleted={showCompleted}
-                TabComponent={TabComponent}
+                TabOverride={TabOverride}
               />
             </TabContainer>
           );
@@ -127,11 +120,11 @@ const Wizard = ({
       <Box sx={{ width: '80%' }}>
         {steps.map((step, index) => (
           <TabPanel key={step.title} value={currentStep} index={index}>
-            <Header step={step} ComponentOverride={HeaderComponent} />
+            <Header step={step} ComponentOverride={HeaderOverride} />
 
             <Content
               content={step.content}
-              ComponentOverride={ContentComponent}
+              ComponentOverride={ContentOverride}
             />
 
             <Footer
@@ -140,7 +133,7 @@ const Wizard = ({
               handleBack={handleBack}
               handleNext={handleNext}
               handleFinish={handleFinish}
-              ComponentOverride={FooterComponent}
+              ComponentOverride={FooterOverride}
             />
           </TabPanel>
         ))}

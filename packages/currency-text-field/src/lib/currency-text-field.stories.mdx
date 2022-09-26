@@ -32,7 +32,6 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Basic Usage
 
 ```tsx
-
 import CurrencyTextField from '@novatics-ui/currency-text-field';
 
 <CurrencyTextField
@@ -40,19 +39,67 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
   onChange={() => {
     /* setup on change */
   }}
-/>
+/>;
 ```
 
-
-### Examples
+### Default
 
 <Canvas>
-  <Story name="Examples">
+  <Story name="Default">
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <CurrencyTextField
-            value={123}
+            value={123456}
+            onChange={() => {
+              /* setup on change */
+            }}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Currency Preset
+
+<Canvas>
+  <Story name="Preset">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <CurrencyTextField
+            value={123456}
+            currency="aud"
+            onChange={() => {
+              /* setup on change */
+            }}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Custom Props
+
+<Canvas>
+  <Story name="Custom">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <CurrencyTextField
+            value={1234567}
+            currency="aud"
+            currencyProps={{
+              decimal: '_',
+              precision: 3,
+              separator: '-',
+              symbol: '(^.^)',
+              symbolFirst: false,
+            }}
             onChange={() => {
               /* setup on change */
             }}
@@ -67,7 +114,22 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
 ### Playground
 
 <Canvas>
-  <Story name="Playground">
+  <Story
+    name="Playground"
+    argTypes={{
+      onChange: { description: "Input's onChange method." },
+      value: { description: "Input's initial value." },
+      outputFormat: {
+        description:
+          "Format type returned on onChange Method. 'string' -> masked value, as shown. 'float' -> unmasked number. 'integer' -> unmasked number without the decimal part.",
+      },
+      currency: {
+        description:
+          "Preset values of 'precision', 'decimal', 'separator', 'symbol'  'symbolFirst' and 'useVedic' based on currency code.",
+      },
+      currencyProps: { description: 'Props from currency.js library.' },
+    }}
+  >
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -79,3 +141,8 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
 </Canvas>
 
 <ArgsTable story="Playground" />
+
+## References
+
+**currencyJs documentation:**
+https://currency.js.org/

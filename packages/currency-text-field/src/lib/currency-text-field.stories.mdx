@@ -31,21 +31,8 @@ yarn add @mui/material @emotion/react @emotion/styled
 
 ### Basic Usage
 
-```tsx
-import CurrencyTextField from '@novatics-ui/currency-text-field';
-
-<CurrencyTextField
-  value={123}
-  onChange={() => {
-    /* setup on change */
-  }}
-/>;
-```
-
-### Default
-
 <Canvas>
-  <Story name="Default">
+  <Story name="Basic Usage">
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -62,10 +49,21 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
   </Story>
 </Canvas>
 
+```tsx
+import CurrencyTextField from '@novatics-ui/currency-text-field';
+
+<CurrencyTextField
+  value={123456}
+  onChange={() => {
+    /* setup on change */
+  }}
+/>;
+```
+
 ### Currency Preset
 
 <Canvas>
-  <Story name="Preset">
+  <Story name="Currency Preset">
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -83,10 +81,32 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
   </Story>
 </Canvas>
 
+
+The currency preset implements the default currency values.
+
+For example:
+
+```tsx
+  aud: {
+    symbol: '$',
+    precision: 2,
+    symbolFirst: true,
+    htmlEntity: '$',
+    decimal: '.',
+    separator: ',',
+  },
+```
+
+Check the list of available presets and their values:
+
+[ISO Currency](https://github.com/Novatics/novatics-ui/blob/dojo/NUI-15-masked-inputs/packages/currency-text-field/src/currency/currency_iso.ts)
+
+[NON_ISO Currency](https://github.com/Novatics/novatics-ui/blob/dojo/NUI-15-masked-inputs/packages/currency-text-field/src/currency/currency_non_iso.ts)
+
 ### Custom Props
 
 <Canvas>
-  <Story name="Custom">
+  <Story name="Custom Props">
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -110,6 +130,15 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
     }}
   </Story>
 </Canvas>
+
+This component implements [CurrencyJs Lib](https://currency.js.org/)
+
+Its possible to override any/all of this props in 'currencyProps':
+
+```tsx
+['precision', 'decimal', 'separator', 'symbol', 'symbolFirst', 'useVedic'];
+```
+
 
 ### Playground
 
@@ -141,8 +170,3 @@ import CurrencyTextField from '@novatics-ui/currency-text-field';
 </Canvas>
 
 <ArgsTable story="Playground" />
-
-## References
-
-**currencyJs documentation:**
-https://currency.js.org/

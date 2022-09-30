@@ -5,7 +5,7 @@ import { Container, TextContainer } from './styles';
 import { TabProps } from '../types';
 
 const Tab = (props: TabProps) => {
-  const { step, isComplete, showCompleted, TabOverride, isActive } = props;
+  const { step, isCompleted, showCompleted, TabOverride, isActive } = props;
 
   const { components, title, subtitle, disabled, ...others } = step;
 
@@ -38,7 +38,7 @@ const Tab = (props: TabProps) => {
           {subtitle && subtitle}
         </Typography>
       </TextContainer>
-      {isComplete && showCompleted && (
+      {isCompleted && showCompleted && (
         <CheckIcon
           style={{ marginLeft: '20px', marginRight: '10px' }}
           fontSize="small"

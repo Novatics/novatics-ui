@@ -50,6 +50,14 @@ function Form({
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
       disabled: false,
+      components: {
+        Header: (props) => {
+          console.log(props)
+          return <div>teste header</div>
+        },
+        Content: () => <div>teste content</div>,
+        Footer: () => <div>teste footer</div>,
+      }
     },
     {
       title: '02. Create an ad group',

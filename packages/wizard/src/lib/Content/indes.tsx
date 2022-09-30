@@ -1,11 +1,15 @@
 import {ContentProps} from '../types'
 
-const Content = ({ content, ComponentOverride }: ContentProps) => {
-  if (ComponentOverride) {
-    return <ComponentOverride content={content} />;
+const Content = ({ step, ComponentOverride }: ContentProps) => {
+  if(step?.components?.Content){
+    return step.components.Content({step})
   }
 
-  return <div>{content}</div>;
+  if (ComponentOverride) {
+    return <ComponentOverride step={step} />;
+  }
+
+  return <div>{step.content}</div>;
 };
 
 export default Content;

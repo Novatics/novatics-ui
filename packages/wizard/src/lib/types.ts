@@ -1,8 +1,14 @@
+interface Components {
+  Header?: React.FC;
+  Content?: React.FC;
+  Footer?: React.FC;
+}
 export interface Step {
   title: string;
   subtitle?: string;
   content: React.ReactNode | string;
   disabled: boolean;
+  components?: Components;
 }
 
 export interface HeaderBaseProps {
@@ -13,7 +19,7 @@ export interface HeaderProps extends HeaderBaseProps {
 }
 
 export interface ContentBaseProps {
-  content: React.ReactNode | string;
+  step: Step;
 }
 export interface ContentProps extends ContentBaseProps {
   ComponentOverride: React.FC<ContentBaseProps>;
@@ -28,6 +34,7 @@ export interface FooterBaseProps {
   finishText?: string;
   isFirst: boolean;
   isLast: boolean;
+  step: Step;
 }
 export interface FooterProps extends FooterBaseProps {
   ComponentOverride: React.FC<FooterBaseProps>;

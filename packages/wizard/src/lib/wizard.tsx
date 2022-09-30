@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Tabs from '@mui/material/Tabs';
+import Tabs, { TabsProps as MUITabsProps } from '@mui/material/Tabs';
 import Tab from './Tab';
 import Box from '@mui/material/Box';
 import Header from './Header';
@@ -14,7 +14,7 @@ import {
   TabBaseProps,
 } from './types';
 import { TabContainer } from './styles';
-import Content from './Content/indes';
+import Content from './Content';
 
 function setAccessibilityProps(index: number) {
   return {
@@ -38,7 +38,7 @@ export interface WizardProps {
   ContentOverride: React.FC<ContentBaseProps>;
   FooterOverride: React.FC<FooterBaseProps>;
   steps: Step[];
-
+  TabsProps?: MUITabsProps;
 }
 
 const Wizard = ({
@@ -47,6 +47,7 @@ const Wizard = ({
   onFinish,
   isLinear = false,
   showCompleted = false,
+  TabsProps,
   TabOverride,
   HeaderOverride,
   ContentOverride,
@@ -111,6 +112,7 @@ const Wizard = ({
         value={currentStep}
         aria-label="Vertical tabs"
         sx={{ borderRight: 1, borderColor: 'divider' }}
+        {...TabsProps}
       >
         {steps.map((step, index) => {
           const isComplete = stepsStatus[index].status === 'complete';
@@ -121,6 +123,7 @@ const Wizard = ({
               {...setAccessibilityProps(index)}
             >
               <Tab
+                isActive={index === currentStep}
                 step={step}
                 isComplete={isComplete}
                 showCompleted={showCompleted}
@@ -136,10 +139,7 @@ const Wizard = ({
           <TabPanel key={step.title} value={currentStep} index={index}>
             <Header step={step} ComponentOverride={HeaderOverride} />
 
-            <Content
-              step={step}
-              ComponentOverride={ContentOverride}
-            />
+            <Content step={step} ComponentOverride={ContentOverride} />
 
             <Footer
               isFirst={index === 0}

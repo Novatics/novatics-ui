@@ -2,6 +2,7 @@ interface Components {
   Header?: React.FC;
   Content?: React.FC;
   Footer?: React.FC;
+  Tab?: React.FC;
 }
 export interface Step {
   title: string;
@@ -41,6 +42,7 @@ export interface FooterProps extends FooterBaseProps {
 }
 
 export interface TabBaseProps {
+  isActive: Boolean;
   step: Step;
   isComplete: boolean;
   showCompleted: boolean;

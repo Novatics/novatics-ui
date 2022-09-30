@@ -15,9 +15,17 @@ const Footer = ({
   ComponentOverride,
   step,
 }: FooterProps) => {
+  const { components, ...others } = step;
 
-  if(step?.components?.Footer){
-    return step.components.Footer({step, isFirst, isLast, handleBack, handleNext, handleFinish})
+  if (components?.Footer) {
+    return components.Footer({
+      step: others,
+      isFirst,
+      isLast,
+      handleBack,
+      handleNext,
+      handleFinish,
+    });
   }
 
   if (ComponentOverride) {

@@ -1,0 +1,105 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import Wizard from './wizard';
+
+<Meta title="Wizard" component={Wizard} />
+
+# Wizard <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Use this component for currency inputs
+
+### Installation
+
+First install the latest version of the package from `@novatics-ui/wizard`.
+
+```bash
+yarn add @novatics-ui/wizard
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      const steps = [
+        {
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `For each ad campaign that you create, you can control how much
+you're willing to spend on clicks and conversions, which networks
+and geographical locations you want your ads to show on, and more.`,
+          disabled: false,
+        },
+        {
+          title: '02. Create an ad group',
+          subtitle: 'Subtitle with more text',
+          content: '<p>oi sdds</p>',
+          status: 'completed',
+          disabled: false,
+        },
+        {
+          title: '03. Create an ad',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+          disabled: false,
+        },
+      ];
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={() => {}}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={steps}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} />;
+```
+
+### Playground
+
+<Canvas>
+  <Story
+    argTypes={{
+      onNext: { description: "Input's onChange method." },
+    }}
+    name="Playground"
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={() => {}}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={[
+              {
+                title: '03. Create an ad',
+                subtitle: 'You can write some cool information stuff here',
+                content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+                disabled: false,
+              },
+            ]}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

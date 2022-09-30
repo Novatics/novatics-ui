@@ -38,6 +38,7 @@ export interface WizardProps {
   ContentOverride: React.FC<ContentBaseProps>;
   FooterOverride: React.FC<FooterBaseProps>;
   steps: Step[];
+
 }
 
 const Wizard = ({
@@ -136,13 +137,14 @@ const Wizard = ({
             <Header step={step} ComponentOverride={HeaderOverride} />
 
             <Content
-              content={step.content}
+              step={step}
               ComponentOverride={ContentOverride}
             />
 
             <Footer
               isFirst={index === 0}
               isLast={index + 1 === steps.length}
+              step={step}
               handleBack={handleBack}
               handleNext={handleNext}
               handleFinish={handleFinish}

@@ -3,7 +3,12 @@ import { Meta, Story } from '@storybook/react';
 import Wizard, { WizardProps } from './wizard';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { HeaderOverrideProps, FooterOverrideProps } from './types';
+import {
+  HeaderBaseProps,
+  FooterBaseProps,
+  ContentBaseProps,
+  TabBaseProps,
+} from './types';
 
 export default {
   component: Wizard,
@@ -94,19 +99,15 @@ const onFinish = () => {
   console.log('onFinish');
 };
 
-const TabOverride = (props: any) => {
-  return <div>tab {props.step.title}</div>;
+const TabOverride = ({ step }: TabBaseProps) => {
+  return <div>tab {step.title}</div>;
 };
 
-const HeaderOverride = ({ step }: HeaderOverrideProps) => {
+const HeaderOverride = ({ step }: HeaderBaseProps) => {
   return <div>HEADER {step.title}</div>;
 };
 
-export interface Content {
-  content: React.ReactNode | string;
-}
-
-const ContentOverride = ({ content }: Content) => {
+const ContentOverride = ({ content }: ContentBaseProps) => {
   return <div>{content}</div>;
 };
 
@@ -116,8 +117,8 @@ const FooterOverride = ({
   handleFinish,
   isFirst = false,
   isLast = false,
-}: FooterOverrideProps) => {
-  return <div>Footer</div>;
+}: FooterBaseProps) => {
+  return <div>FOOTER</div>;
 };
 
 const Template: Story<WizardProps> = (args) => {
@@ -141,10 +142,10 @@ ShowCompleted.args = {
 
 export const ComponentsOverride = Template.bind({});
 ComponentsOverride.args = {
-  TabOverride: TabOverride,
   HeaderOverride: HeaderOverride,
-  FooterOverride: FooterOverride,
   ContentOverride: ContentOverride,
+  FooterOverride: FooterOverride,
+  TabOverride: TabOverride,
 };
 
 export const DisabledTab = Template.bind({});

@@ -1,20 +1,25 @@
 export interface Step {
-    title: string;
-    subtitle?: string;
-    content: React.ReactNode | string;
-    disabled: boolean;
+  title: string;
+  subtitle?: string;
+  content: React.ReactNode | string;
+  disabled: boolean;
 }
 
-export interface HeaderOverrideProps {
-    step: Step;
-}
-
-export interface HeaderProps {
+export interface HeaderBaseProps {
   step: Step;
-  ComponentOverride: React.FC<HeaderOverrideProps>;
+}
+export interface HeaderProps extends HeaderBaseProps {
+  ComponentOverride: React.FC<HeaderBaseProps>;
 }
 
-export interface FooterOverrideProps {
+export interface ContentBaseProps {
+  content: React.ReactNode | string;
+}
+export interface ContentProps extends ContentBaseProps {
+  ComponentOverride: React.FC<ContentBaseProps>;
+}
+
+export interface FooterBaseProps {
   handleBack: () => void;
   handleNext: () => void;
   handleFinish: () => void;
@@ -24,38 +29,15 @@ export interface FooterOverrideProps {
   isFirst: boolean;
   isLast: boolean;
 }
-
-export interface FooterProps {
-  handleBack: () => void;
-  handleNext: () => void;
-  handleFinish: () => void;
-  backText?: string;
-  nextText?: string;
-  finishText?: string;
-  isFirst: boolean;
-  isLast: boolean;
-  ComponentOverride: React.FC<FooterOverrideProps>;
+export interface FooterProps extends FooterBaseProps {
+  ComponentOverride: React.FC<FooterBaseProps>;
 }
 
-
-export interface ContentOverrideProps {
-  content: React.ReactNode | string;
-}
-
-
-export interface ContentProps {
-  content: React.ReactNode | string;
-  ComponentOverride: React.FC<ContentOverrideProps>;
-}
-
-export interface TabOverrideProps {
+export interface TabBaseProps {
   step: Step;
   isComplete: boolean;
   showCompleted: boolean;
 }
-export interface TabProps {
-  step: Step;
-  isComplete: boolean;
-  showCompleted: boolean;
-  TabOverride?: React.FC<TabOverrideProps>;
+export interface TabProps extends TabBaseProps {
+  TabOverride?: React.FC<TabBaseProps>;
 }

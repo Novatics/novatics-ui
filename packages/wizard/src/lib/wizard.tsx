@@ -6,7 +6,13 @@ import Box from '@mui/material/Box';
 import Header from './Header';
 import Footer from './Footer';
 import TabPanel from './TabPanel';
-import { Step, HeaderOverrideProps, FooterOverrideProps, ContentOverrideProps, TabOverrideProps } from './types';
+import {
+  Step,
+  HeaderBaseProps,
+  FooterBaseProps,
+  ContentBaseProps,
+  TabBaseProps,
+} from './types';
 import { TabContainer } from './styles';
 import Content from './Content/indes';
 
@@ -27,10 +33,10 @@ export interface WizardProps {
   onFinish?: () => void;
   isLinear?: boolean;
   showCompleted?: boolean;
-  TabOverride: React.FC<TabOverrideProps>;
-  HeaderOverride: React.FC<HeaderOverrideProps>;
-  ContentOverride: React.FC<ContentOverrideProps>;
-  FooterOverride: React.FC<FooterOverrideProps>;
+  TabOverride: React.FC<TabBaseProps>;
+  HeaderOverride: React.FC<HeaderBaseProps>;
+  ContentOverride: React.FC<ContentBaseProps>;
+  FooterOverride: React.FC<FooterBaseProps>;
   steps: Step[];
 }
 
@@ -61,7 +67,7 @@ const Wizard = ({
 
   const handleChange = (newStep: number) => {
     const isNextStep = newStep === currentStep + 1;
-    const isDisabled = steps[newStep].disabled;
+    const isDisabled = steps[newStep] ? steps[newStep].disabled : false;
     if (isDisabled) return;
     if (isLinear && !isNextStep) return;
     setCurrentStep(newStep);

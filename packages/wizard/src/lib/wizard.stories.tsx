@@ -39,6 +39,7 @@ function Form({
   HeaderOverride,
   ContentOverride,
   FooterOverride,
+  TabsProps
 }: WizardProps) {
   const [form, setForm] = useState({ name: '' });
 
@@ -51,8 +52,10 @@ function Form({
                 and geographical locations you want your ads to show on, and more.`,
       disabled: false,
       components: {
+        Tab: (props) => {
+          return <div>Tab Teste {`${String(props.step.isActive)}`}</div>
+        },
         Header: (props) => {
-          console.log(props)
           return <div>teste header</div>
         },
         Content: () => <div>teste content</div>,
@@ -63,6 +66,7 @@ function Form({
       title: '02. Create an ad group',
       subtitle: 'Subtitle with more text',
       content: <NameForm form={form} setForm={setForm} />,
+      status: "completed",
       disabled: false,
     },
     {
@@ -88,6 +92,7 @@ function Form({
       HeaderOverride={HeaderOverride}
       ContentOverride={ContentOverride}
       FooterOverride={FooterOverride}
+      tabIndicatorColor="black"
     />
   );
 }

@@ -39,6 +39,7 @@ export interface WizardProps {
   FooterOverride: React.FC<FooterBaseProps>;
   steps: Step[];
   TabsProps?: MUITabsProps;
+  tabIndicatorColor?: string;
 }
 
 const Wizard = ({
@@ -47,6 +48,7 @@ const Wizard = ({
   onFinish,
   isLinear = false,
   showCompleted = false,
+  tabIndicatorColor,
   TabsProps,
   TabOverride,
   HeaderOverride,
@@ -56,24 +58,12 @@ const Wizard = ({
 }: WizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
 
-  const initialStepsStatus: StepStatus[] = steps.map(() => ({
-    status: 'incomplete',
-  }));
-  const [stepsStatus, setStepsStatus] = useState(initialStepsStatus);
-
-  const updateStepStatus = () => {
-    const updatedStepsStatus = stepsStatus;
-    updatedStepsStatus[currentStep].status = 'complete';
-    setStepsStatus(updatedStepsStatus);
-  };
-
   const handleChange = (newStep: number) => {
     const isNextStep = newStep === currentStep + 1;
     const isDisabled = steps[newStep] ? steps[newStep].disabled : false;
     if (isDisabled) return;
     if (isLinear && !isNextStep) return;
     setCurrentStep(newStep);
-    updateStepStatus();
   };
 
   const handleFinish = () => {
@@ -112,10 +102,12 @@ const Wizard = ({
         value={currentStep}
         aria-label="Vertical tabs"
         sx={{ borderRight: 1, borderColor: 'divider' }}
+        TabIndicatorProps={{
+          sx: { bgcolor: tabIndicatorColor }
+        }}
         {...TabsProps}
       >
         {steps.map((step, index) => {
-          const isComplete = stepsStatus[index].status === 'complete';
           return (
             <TabContainer
               key={step.title}
@@ -125,7 +117,7 @@ const Wizard = ({
               <Tab
                 isActive={index === currentStep}
                 step={step}
-                isComplete={isComplete}
+                isCompleted={step.status === "completed"}
                 showCompleted={showCompleted}
                 TabOverride={TabOverride}
               />

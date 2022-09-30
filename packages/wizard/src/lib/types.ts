@@ -10,6 +10,7 @@ export interface Step {
   content: React.ReactNode | string;
   disabled: boolean;
   components?: Components;
+  status?: "completed" | "pending" | undefined
 }
 
 export interface HeaderBaseProps {
@@ -42,9 +43,9 @@ export interface FooterProps extends FooterBaseProps {
 }
 
 export interface TabBaseProps {
-  isActive: Boolean;
+  isActive: boolean;
   step: Step;
-  isComplete: boolean;
+  isCompleted: boolean;
   showCompleted: boolean;
 }
 export interface TabProps extends TabBaseProps {

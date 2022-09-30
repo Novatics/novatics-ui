@@ -64,7 +64,7 @@ function Form({
                 and learn how to enhance your ads using features like ad extensions.
                 If you run into any problems with your ads, find out how to tell if
                 they're running and how to resolve approval issues.`,
-      disabled: true,
+      disabled: false,
     },
   ];
 
@@ -118,7 +118,12 @@ const FooterOverride = ({
   isFirst = false,
   isLast = false,
 }: FooterBaseProps) => {
-  return <div>FOOTER</div>;
+  return (
+    <>
+      <button onClick={handleBack}>BACK</button>
+      <button onClick={handleNext}>NEXT</button>
+    </>
+  );
 };
 
 const Template: Story<WizardProps> = (args) => {

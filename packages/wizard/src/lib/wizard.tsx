@@ -76,16 +76,23 @@ const Wizard = ({
 
   const handleFinish = () => {
     onFinish && onFinish();
-    handleChange(currentStep + 1);
   };
 
   const handleNext = () => {
+    const isLastStep = currentStep >= steps.length - 1;
+
     onNext && onNext(currentStep);
+    if (isLastStep) return;
+
     handleChange(currentStep + 1);
   };
 
   const handleBack = () => {
+    const isFirstStep = currentStep === 0;
+
     onBack && onBack(currentStep);
+    if (isFirstStep) return;
+
     handleChange(currentStep - 1);
   };
 

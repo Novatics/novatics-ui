@@ -1,8 +1,10 @@
-import {ContentProps} from '../types'
+import { ContentProps } from '../types';
 
 const Content = ({ step, ComponentOverride }: ContentProps) => {
-  if(step?.components?.Content){
-    return step.components.Content({step})
+  const { components, ...others } = step;
+
+  if (components?.Content) {
+    return components.Content({ step: others });
   }
 
   if (ComponentOverride) {

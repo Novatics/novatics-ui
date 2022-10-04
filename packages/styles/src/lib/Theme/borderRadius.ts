@@ -1,8 +1,9 @@
 import { borderRadius as borderRadiusSizes } from '@novatics-ui/tokens';
+import { Length } from './types';
 
 interface BorderRadiusSize {
-  px: number;
-  rem: number;
+  px: Length;
+  rem: Length;
 }
 
 interface BorderRadius {
@@ -13,16 +14,16 @@ interface BorderRadius {
 
 export const borderRadius: BorderRadius = {
   small: {
-    px: borderRadiusSizes.small.px,
-    rem: borderRadiusSizes.small.rem,
+    px: `${borderRadiusSizes.small.px}px`,
+    rem: `${borderRadiusSizes.small.rem}rem`,
   },
   regular: {
-    px: borderRadiusSizes.regular.px,
-    rem: borderRadiusSizes.regular.rem,
+    px: `${borderRadiusSizes.regular.px}px`,
+    rem: `${borderRadiusSizes.regular.rem}rem`,
   },
   large: {
-    px: borderRadiusSizes.large.px,
-    rem: borderRadiusSizes.large.rem,
+    px: `${borderRadiusSizes.large.px}px`,
+    rem: `${borderRadiusSizes.large.rem}rem`,
   },
 };
 

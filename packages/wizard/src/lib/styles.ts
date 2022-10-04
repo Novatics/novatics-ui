@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
+import { styled } from '@mui/system';
 
 export const TabContainer = styled(Box)`
   display: flex;

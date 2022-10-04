@@ -1,30 +1,31 @@
+import { FC, ReactNode } from 'react';
 interface Components {
-  Header?: React.FC;
-  Content?: React.FC;
-  Footer?: React.FC;
-  Tab?: React.FC;
+  Header?: FC;
+  Content?: FC;
+  Footer?: FC;
+  Tab?: FC;
 }
 export interface Step {
   title: string;
   subtitle?: string;
-  content: React.ReactNode | string;
+  content: ReactNode | string;
   disabled: boolean;
   components?: Components;
-  status?: "completed" | "pending" | undefined
+  status?: 'completed' | 'pending' | undefined;
 }
 
 export interface HeaderBaseProps {
   step: Step;
 }
 export interface HeaderProps extends HeaderBaseProps {
-  ComponentOverride: React.FC<HeaderBaseProps>;
+  ComponentOverride: FC<HeaderBaseProps>;
 }
 
 export interface ContentBaseProps {
   step: Step;
 }
 export interface ContentProps extends ContentBaseProps {
-  ComponentOverride: React.FC<ContentBaseProps>;
+  ComponentOverride: FC<ContentBaseProps>;
 }
 
 export interface FooterBaseProps {
@@ -39,7 +40,7 @@ export interface FooterBaseProps {
   step: Step;
 }
 export interface FooterProps extends FooterBaseProps {
-  ComponentOverride: React.FC<FooterBaseProps>;
+  ComponentOverride: FC<FooterBaseProps>;
 }
 
 export interface TabBaseProps {
@@ -49,5 +50,5 @@ export interface TabBaseProps {
   showCompleted: boolean;
 }
 export interface TabProps extends TabBaseProps {
-  TabOverride?: React.FC<TabBaseProps>;
+  TabOverride?: FC<TabBaseProps>;
 }

@@ -44,6 +44,7 @@ module.exports = {
     { name: 'currency-text-field' },
     { name: 'styles' },
     { name: 'tokens' }
+    { name: 'wizard' }
   ],
   allowTicketNumber: false,
   isTicketNumberRequired: false,

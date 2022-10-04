@@ -1,6 +1,6 @@
-import React from 'react';
 import CheckIcon from '@mui/icons-material/Check';
 import Typography from '@mui/material/Typography';
+
 import { Container, TextContainer } from './styles';
 import { TabProps } from '../types';
 

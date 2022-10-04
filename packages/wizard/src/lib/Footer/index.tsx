@@ -1,5 +1,5 @@
-import React from 'react';
 import Button from '@mui/material/Button';
+
 import { BoxContainer } from './styles';
 import { FooterProps } from '../types';
 

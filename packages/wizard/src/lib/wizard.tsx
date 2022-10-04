@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import Tabs, { TabsProps as MUITabsProps } from '@mui/material/Tabs';
-import Tab from './Tab';
 import Box from '@mui/material/Box';
+
+import Tab from './Tab';
 import Header from './Header';
 import Footer from './Footer';
 import TabPanel from './TabPanel';

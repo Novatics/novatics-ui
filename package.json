@@ -29,6 +29,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.11",
+    "@mui/icons-material": "^5.10.6",
     "@storybook/addon-docs": "^6.5.13",
     "core-js": "^3.26.0",
     "currency.js": "^2.0.4",

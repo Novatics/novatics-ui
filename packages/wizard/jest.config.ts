@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'button',
+  displayName: 'wizard',
   preset: '../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': [
@@ -9,5 +9,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/packages/button',
+  coverageDirectory: '../../coverage/packages/wizard',
 };

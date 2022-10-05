@@ -19,6 +19,9 @@
     "paths": {
       "@novatics-ui/button": ["packages/button/src/index.ts"],
       "@novatics-ui/core": ["packages/core/src/index.ts"],
+      "@novatics-ui/currency-text-field": [
+        "packages/currency-text-field/src/index.ts"
+      ],
       "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"],
       "@novatics-ui/tokens": ["packages/tokens/src/index.ts"]
     }

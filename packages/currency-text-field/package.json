@@ -1,0 +1,7 @@
+{
+  "name": "@novatics-ui/currency-text-field",
+  "version": "0.0.1",
+  "dependencies": {
+    "currency.js": "^2.0.4"
+  }
+}

@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import { BoxContainer } from './styles';
+import { ButtonContainer } from './styles';
 import { FooterProps } from '../types';
 
 const Footer = ({
@@ -42,26 +42,23 @@ const Footer = ({
   }
 
   return (
-    <BoxContainer>
+    <ButtonContainer>
       {!isFirst && (
-        <Button variant="outlined" onClick={handleBack} className="backButton">
+        <Button variant="outlined" onClick={handleBack}>
           {backText}
         </Button>
       )}
+
       {!isLast ? (
-        <Button variant="contained" onClick={handleNext} className="nextButton">
+        <Button variant="contained" onClick={handleNext}>
           {nextText}
         </Button>
       ) : (
-        <Button
-          variant="contained"
-          onClick={handleFinish}
-          className="nextButton"
-        >
+        <Button variant="contained" onClick={handleFinish}>
           {finishText}
         </Button>
       )}
-    </BoxContainer>
+    </ButtonContainer>
   );
 };
 

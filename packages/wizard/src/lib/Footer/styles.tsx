@@ -1,19 +1,12 @@
 import { styled } from '@mui/system';
 import { Box } from '@mui/material';
 
-export const BoxContainer = styled(Box)`
+export const ButtonContainer = styled(Box)`
   margin-top: auto;
-  margin-bottom: 24px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
 
-  button {
-    position: absolute;
-  }
-
-  .backButton {
-    left: 0;
-  }
-  .nextButton {
-    right: 0;
+  :has(button:only-child) {
+    justify-content: flex-end;
   }
 `;

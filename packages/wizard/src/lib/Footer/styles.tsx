@@ -1,7 +1,7 @@
 import { styled } from '@mui/system';
 import { Box } from '@mui/material';
 
-export const ButtonContainer = styled(Box)`
+export const Container = styled(Box)`
   margin-top: auto;
   display: flex;
   justify-content: space-between;

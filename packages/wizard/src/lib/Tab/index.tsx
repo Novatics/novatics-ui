@@ -28,14 +28,14 @@ const Tab = (props: TabProps) => {
     <Container disabled={disabled}>
       <TextContainer>
         <Typography variant="body1" color={disabledTextColor}>
-          {title && title}
+          {title ? title : ''}
         </Typography>
         <Typography
           variant="subtitle2"
           color={disabledTextColor}
           sx={{ whiteSpace: 'pre-wrap' }}
         >
-          {subtitle && subtitle}
+          {subtitle ? subtitle : ''}
         </Typography>
       </TextContainer>
       {isCompleted && showCompleted && (

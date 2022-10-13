@@ -24,10 +24,6 @@ function setAccessibilityProps(index: number) {
   };
 }
 
-interface StepStatus {
-  status: 'complete' | 'incomplete' | undefined;
-}
-
 export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
@@ -39,8 +35,10 @@ export interface WizardProps {
   ContentOverride: React.FC<ContentBaseProps>;
   FooterOverride: React.FC<FooterBaseProps>;
   steps: Step[];
-  TabsProps?: MUITabsProps;
   tabIndicatorColor?: string;
+  ContainerProps?: object;
+  TabsProps?: MUITabsProps;
+  TabPanelContainerProps?: object;
 }
 
 const Wizard = ({
@@ -50,7 +48,9 @@ const Wizard = ({
   isLinear = false,
   showCompleted = false,
   tabIndicatorColor,
+  ContainerProps,
   TabsProps,
+  TabPanelContainerProps,
   TabOverride,
   HeaderOverride,
   ContentOverride,
@@ -90,21 +90,14 @@ const Wizard = ({
   };
 
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.paper',
-        display: 'flex',
-        height: 'auto',
-        width: 'auto',
-      }}
-    >
+    <Box sx={{ display: 'flex' }} {...ContainerProps}>
       <Tabs
         orientation="vertical"
         value={currentStep}
         aria-label="Vertical tabs"
         sx={{ borderRight: 1, borderColor: 'divider' }}
         TabIndicatorProps={{
-          sx: { bgcolor: tabIndicatorColor }
+          sx: { bgcolor: tabIndicatorColor },
         }}
         {...TabsProps}
       >
@@ -118,7 +111,7 @@ const Wizard = ({
               <Tab
                 isActive={index === currentStep}
                 step={step}
-                isCompleted={step.status === "completed"}
+                isCompleted={step.status === 'completed'}
                 showCompleted={showCompleted}
                 TabOverride={TabOverride}
               />
@@ -127,7 +120,7 @@ const Wizard = ({
         })}
       </Tabs>
 
-      <Box sx={{ width: '80%' }}>
+      <Box width="80%" {...TabPanelContainerProps}>
         {steps.map((step, index) => (
           <TabPanel key={step.title} value={currentStep} index={index}>
             <Header step={step} ComponentOverride={HeaderOverride} />

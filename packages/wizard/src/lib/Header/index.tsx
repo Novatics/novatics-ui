@@ -1,4 +1,6 @@
+import { Typography } from '@mui/material';
 import { HeaderProps } from '../types';
+import { Container } from './styles';
 
 const Header = ({ step, ComponentOverride }: HeaderProps) => {
   const { components, ...others } = step;
@@ -12,10 +14,10 @@ const Header = ({ step, ComponentOverride }: HeaderProps) => {
   }
 
   return (
-    <div>
-      <h2>{step.title}</h2>
-      <h4>{step.subtitle}</h4>
-    </div>
+    <Container>
+      <Typography variant="h6">{step.title}</Typography>
+      <Typography variant="subtitle2">{step.subtitle}</Typography>
+    </Container>
   );
 };
 

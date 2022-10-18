@@ -9,7 +9,9 @@
     "generate:storybook": "nx g storybook-configuration --configureCypress=false --generateCypressSpecs=false --generateStories=true",
     "component:generate": "nx workspace-generator component",
     "prepare": "husky install",
-    "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix"
+    "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix",
+    "versions:create": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push"
   },
   "private": true,
   "dependencies": {

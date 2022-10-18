@@ -6,17 +6,13 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/currency-text-field",
         "tsConfig": "packages/currency-text-field/tsconfig.lib.json",
         "project": "packages/currency-text-field/package.json",
         "entryFile": "packages/currency-text-field/src/index.ts",
-        "external": [
-          "@emotion/react/jsx-runtime"
-        ],
+        "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
@@ -26,17 +22,13 @@
             "output": "."
           }
         ],
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "packages/currency-text-field/**/*.{ts,tsx,js,jsx}"
@@ -45,9 +37,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/packages/currency-text-field"
-      ],
+      "outputs": ["coverage/packages/currency-text-field"],
       "options": {
         "jestConfig": "packages/currency-text-field/jest.config.ts",
         "passWithNoTests": true
@@ -70,9 +60,7 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/currency-text-field",
@@ -84,6 +72,27 @@
         "ci": {
           "quiet": true
         }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "baseBranch": "master"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    },
+    "version:deploy": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "postTargets": ["currency-text-field:deploy"],
+        "baseBranch": "master"
       }
     }
   }

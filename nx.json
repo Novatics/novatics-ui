@@ -15,7 +15,7 @@
     "nx.json": "*"
   },
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "master"
   },
   "cli": {
     "defaultCollection": "@nrwl/react"
@@ -50,5 +50,13 @@
       }
     }
   },
-  "defaultProject": "packages"
+  "defaultProject": "packages",
+  "targetDependencies": {
+    "version": [
+      {
+        "target": "version",
+        "projects": "dependencies"
+      }
+    ]
+  }
 }

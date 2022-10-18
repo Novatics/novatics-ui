@@ -1,16 +1,17 @@
-import styled from '@emotion/styled';
+import { Typography, styled } from '@mui/material';
+import { colors } from '@novatics-ui/tokens';
 
 /* eslint-disable-next-line */
 export interface CoreProps {}
 
-const StyledCore = styled.div`
-  color: pink;
-`;
+const StyledCore = styled('div')({
+  color: colors['nebula--medium'],
+});
 
 export function Core(props: CoreProps) {
   return (
     <StyledCore>
-      <h1>Welcome to Core!</h1>
+      <Typography variant="h1">Welcome to Core!</Typography>
     </StyledCore>
   );
 }

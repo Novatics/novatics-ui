@@ -27,5 +27,6 @@
   "bigBang--light": "#FFF6E6",
   "mars": "#FF2A0D",
   "mars--dark": "#A30000",
-  "mars--light": "#FFEFE7"
+  "mars--light": "#FFEFE7",
+  "universe": "#0D0DFF"
 }

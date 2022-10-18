@@ -3,7 +3,7 @@ version: '3.1'
 services:
   verdaccio:
     image: verdaccio/verdaccio
-    container_name: 'verdaccio'
+    container_name: 'novatics_ui_verdaccio'
     networks:
       - node-network
     environment:

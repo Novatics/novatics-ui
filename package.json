@@ -10,6 +10,9 @@
     "component:generate": "nx workspace-generator component",
     "prepare": "husky install",
     "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix",
+    "verdaccio:up": "cp .npmrc .npmrc.bkp && cp .npmrc.local .npmrc && docker-compose up -d --build",
+    "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
+    "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
     "versions:create": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
     "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push"
   },

@@ -14,7 +14,10 @@
     "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
     "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
     "versions:create": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push"
+    "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:create:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:deploy": "nx affected --target deploy"
   },
   "private": true,
   "dependencies": {

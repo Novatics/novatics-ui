@@ -15,7 +15,12 @@ First install the latest version of the package from `@novatics-ui/wizard`.
 
 ```bash
 yarn add @novatics-ui/wizard
+
 ```
+<!--Todo: make steps array reusable-->
+<!--Todo: adjust complete step logic -->
+<!--Todo: style components override -->
+<!--Todo: add DisableTab -->
 
 ### Basic Usage
 
@@ -67,6 +72,221 @@ import Wizard from '@novatics-ui/wizard';
 <Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} />;
 ```
 
+### Linear
+The component only allows proceeding in a linear way if the isLinear prop is set to true
+<Canvas>
+  <Story name="Linear">
+    {(args) => {
+      const steps = [
+        {
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `For each ad campaign that you create, you can control how much
+you're willing to spend on clicks and conversions, which networks
+and geographical locations you want your ads to show on, and more.`,
+          disabled: false,
+        },
+        {
+          title: '02. Create an ad group',
+          subtitle: 'Subtitle with more text',
+          content: '<p>oi sdds</p>',
+          status: 'completed',
+          disabled: false,
+        },
+        {
+          title: '03. Create an ad',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+          disabled: false,
+        },
+      ];
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={() => {}}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={steps}
+            isLinear
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} isLinear />;
+```
+
+### Show Completed
+If the showCompleted prop is set to true the checkmark is going to appear when a step is completed
+<Canvas>
+  <Story name="Show Completed">
+    {(args) => {
+       const initialSteps = [
+        {
+          id: 1,
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `For each ad campaign that you create, you can control how much
+you're willing to spend on clicks and conversions, which networks
+and geographical locations you want your ads to show on, and more.`,
+          disabled: false,
+        },
+        {
+          id: 2,
+          title: '02. Create an ad group',
+          subtitle: 'Subtitle with more text',
+          content: '<p>oi sdds</p>',
+          disabled: false,
+        },
+        {
+          id: 3,
+          title: '03. Create an ad',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+          disabled: false,
+        },
+      ];
+      const [steps, setSteps] = React.useState(initialSteps);
+      const completeStep = (id) => {
+        setSteps((value) => {
+          const newSteps = value.map((step) => {
+            if(step.id === id){
+              return {...step, status: 'completed'};
+            }
+            return step
+          }
+          )
+          return newSteps;
+        })
+      }
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={(index) => completeStep(index + 1)}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={steps}
+            showCompleted
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} showCompleted />;
+```
+### Components Override
+-Allows overriding components for indivitual tabs inside the steps data like below:
+
+```tsx
+  import Wizard from '@novatics-ui/wizard';
+
+    const steps = [
+        {
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `...`,
+          disabled: false,
+          components: {
+            Tab: (props) => {
+              return <div>Individual Tab{`${String(props.step.isActive)}`}</div>
+            },
+            Header: (props) => {
+              return <div>Individual Header</div>
+            },
+            Content: () => <div>Individual Content</div>,
+            Footer: () => <div>Individual Content</div>,
+          }
+        },
+      ];
+<Wizard steps={steps} />;
+```
+-Allows overriding components for the whole wizard like below:
+
+```tsx
+  import Wizard from '@novatics-ui/wizard';
+
+  <Wizard steps={steps}       
+      TabOverride={() => <div>Tab</div>}
+      HeaderOverride={() => <div>Header</div>}
+      ContentOverride={() => <div>Content</div>}
+      FooterOverride={() => <div>Footer</div>} 
+      />;
+```
+<Canvas>
+  <Story name="Components Override">
+    {(args) => {
+    const steps = [
+        {
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `For each ad campaign that you create, you can control how much
+                    you're willing to spend on clicks and conversions, which networks
+                    and geographical locations you want your ads to show on, and more.`,
+          disabled: false,
+          components: {
+            Tab: (props) => {
+              return <div>Individual Tab</div>
+            },
+            Header: (props) => {
+              return <div>Individual header</div>
+            },
+            Content: () => <div>Individual content</div>,
+            Footer: () => <div>Individual footer</div>,
+          }
+        },
+        {
+          title: '02. Create an ad group',
+          subtitle: 'Subtitle with more text',
+          content: 'Name',
+          status: "completed",
+          disabled: false,
+        },
+        {
+          title: '03. Create an ad',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Try out different ad text to see what brings in the most customers,
+                    and learn how to enhance your ads using features like ad extensions.
+                    If you run into any problems with your ads, find out how to tell if
+                    they're running and how to resolve approval issues.`,
+          disabled: false,
+        },
+      ];
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={() => {}}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={steps}
+            TabOverride={() => <div>Tab</div>}
+            HeaderOverride={() => <div>Header</div>}
+            ContentOverride={() => <div>Content</div>}
+            FooterOverride={() => <div>Footer</div>} 
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} />;
+```
 ### Playground
 
 <Canvas>

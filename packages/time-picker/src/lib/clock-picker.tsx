@@ -26,9 +26,8 @@ const amount = 24
 
 const handleScroll = (e) => {
 
-  // console.log(listRef.current)
-   //console.log(e.currentTarget.scrollTop)
-   //console.log(listRef.current.clientHeight)
+  const newSelected = Math.floor(e.currentTarget.scrollTop / amount);
+  setSelected(newSelected)
 
 }
   return <div >
@@ -40,7 +39,7 @@ const handleScroll = (e) => {
         overflow: 'auto'
       }}
     >
-      {Array(amount).fill(0).map((_, i) => <ListItem>{i+1} {i + 1 === selected && 'selected'}</ListItem>)}
+      {Array(amount).fill(0).map((_, i) => <ListItem id={`item-${i}`} onClick={() => setSelected(i + 1)}>{i+1} {i + 1 === selected && 'selected'}</ListItem>)}
 
     </List></div>;
 };

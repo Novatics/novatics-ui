@@ -42,6 +42,7 @@ module.exports = {
     { name: 'core' },
     { name: 'release' },
     { name: 'currency-text-field' },
+    { name: 'time-picker' },
     { name: 'tokens' }
   ],
   allowTicketNumber: false,

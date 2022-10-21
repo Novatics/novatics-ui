@@ -6,6 +6,7 @@
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
     "novatics-logo": "packages/novatics-logo",
+    "time-picker": "packages/time-picker",
     "tokens": "packages/tokens"
   }
 }

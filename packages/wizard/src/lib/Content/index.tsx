@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { ContentProps } from '../types';
 
 const Content = ({ step, ComponentOverride }: ContentProps) => {
@@ -11,7 +12,7 @@ const Content = ({ step, ComponentOverride }: ContentProps) => {
     return <ComponentOverride step={step} />;
   }
 
-  return <div>{step.content}</div>;
+  return <Box sx={{ mt: '20px' }}>{step.content}</Box>;
 };
 
 export default Content;

@@ -90,7 +90,7 @@ const Wizard = ({
   };
 
   return (
-    <Box sx={{ display: 'flex' }} {...ContainerProps}>
+    <Box sx={{ display: 'flex' }} width="100%" {...ContainerProps}>
       <Tabs
         orientation="vertical"
         value={currentStep}

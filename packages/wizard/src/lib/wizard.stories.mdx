@@ -38,14 +38,13 @@ and geographical locations you want your ads to show on, and more.`,
         },
         {
           title: '02. Create an ad group',
-          subtitle: 'Subtitle with more text',
-          content: '<p>oi sdds</p>',
-          status: 'completed',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Small text content`,
           disabled: false,
         },
         {
           title: '03. Create an ad',
-          subtitle: 'You can write some cool information stuff here',
+          subtitle: 'Subtitle',
           content: `Try out different ad text to see what brings in the most customers,
 and learn how to enhance your ads using features like ad extensions.
 If you run into any problems with your ads, find out how to tell if
@@ -88,14 +87,14 @@ and geographical locations you want your ads to show on, and more.`,
         },
         {
           title: '02. Create an ad group',
-          subtitle: 'Subtitle with more text',
-          content: '<p>oi sdds</p>',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Small text content`,
           status: 'completed',
           disabled: false,
         },
         {
           title: '03. Create an ad',
-          subtitle: 'You can write some cool information stuff here',
+          subtitle: 'Subtitle',
           content: `Try out different ad text to see what brings in the most customers,
 and learn how to enhance your ads using features like ad extensions.
 If you run into any problems with your ads, find out how to tell if
@@ -141,14 +140,14 @@ and geographical locations you want your ads to show on, and more.`,
         {
           id: 2,
           title: '02. Create an ad group',
-          subtitle: 'Subtitle with more text',
-          content: '<p>oi sdds</p>',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Small text content`,
           disabled: false,
         },
         {
           id: 3,
           title: '03. Create an ad',
-          subtitle: 'You can write some cool information stuff here',
+          subtitle: 'Subtitle',
           content: `Try out different ad text to see what brings in the most customers,
 and learn how to enhance your ads using features like ad extensions.
 If you run into any problems with your ads, find out how to tell if
@@ -158,16 +157,10 @@ they're running and how to resolve approval issues.`,
       ];
       const [steps, setSteps] = React.useState(initialSteps);
       const completeStep = (id) => {
-        setSteps((value) => {
-          const newSteps = value.map((step) => {
-            if(step.id === id){
-              return {...step, status: 'completed'};
-            }
-            return step
-          }
-          )
-          return newSteps;
-        })
+        setSteps((value) => value.map((step) => 
+          (step.id === id) 
+          ? {...step, status: 'completed'} 
+          : step));
       }
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -250,14 +243,14 @@ import Wizard from '@novatics-ui/wizard';
         },
         {
           title: '02. Create an ad group',
-          subtitle: 'Subtitle with more text',
+          subtitle: 'You can write some cool information stuff here',
           content: 'Name',
           status: "completed",
           disabled: false,
         },
         {
           title: '03. Create an ad',
-          subtitle: 'You can write some cool information stuff here',
+          subtitle: 'Subtitle',
           content: `Try out different ad text to see what brings in the most customers,
                     and learn how to enhance your ads using features like ad extensions.
                     If you run into any problems with your ads, find out how to tell if

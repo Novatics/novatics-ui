@@ -25,26 +25,21 @@ const Tab = (props: TabProps) => {
   }
 
   return (
-    <Container disabled={disabled}>
+    <Container disabled={disabled} showCompleted={isCompleted && showCompleted}>
       <TextContainer>
         <Typography variant="body1" color={disabledTextColor}>
           {title ? title : ''}
         </Typography>
-        <Typography
-          variant="subtitle2"
-          color={disabledTextColor}
-          sx={{ whiteSpace: 'pre-wrap' }}
-        >
+        <Typography variant="subtitle2" color={disabledTextColor}>
           {subtitle ? subtitle : ''}
         </Typography>
       </TextContainer>
-      {isCompleted && showCompleted && (
-        <CheckIcon
-          style={{ marginLeft: '20px', marginRight: '10px' }}
-          fontSize="small"
-          color="success"
-        />
-      )}
+
+      <CheckIcon
+        style={{ marginLeft: '20px', marginRight: '10px' }}
+        fontSize="small"
+        color="success"
+      />
     </Container>
   );
 };

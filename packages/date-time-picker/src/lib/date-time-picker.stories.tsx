@@ -10,7 +10,7 @@ export default {
 
 const Template: Story<DateTimePickerProps> = (args) => (
   <>
-    <DatePicker {...args} />
+    <DatePicker date={null} {...args} />
     <DateTimePicker {...args} />
   </>
 );

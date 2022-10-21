@@ -1,12 +1,16 @@
 import { useState, useRef } from 'react';
-import { CalendarPicker as MUICalendarPicker } from '@mui/x-date-pickers/CalendarPicker';
+import {
+  CalendarPicker as MUICalendarPicker,
+  CalendarPickerProps,
+} from '@mui/x-date-pickers/CalendarPicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { format, isBefore, isAfter, isWithinInterval } from 'date-fns';
 
 import './date-picker.scss';
 /* eslint-disable-next-line */
-export interface DateTimePickerProps {}
+export interface DateTimePickerProps
+  extends Omit<CalendarPickerProps<Date>, 'onChange'> {}
 
 export function DatePicker(props: DateTimePickerProps) {
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -89,12 +93,25 @@ export function DatePicker(props: DateTimePickerProps) {
       toggleClassWithin(firstRef.current, lastRef.current);
     }
   };
+
+  const handleMonthChange = () => {
+    // TODO: Fix changing month behavior
+    const newFirstRef = selectElementByDate(firstDate);
+    const newLastRef = selectElementByDate(lastDate);
+    if (newFirstRef) {
+      firstRef.current = newFirstRef;
+      toggleClass(newFirstRef);
+    }
+    if (newLastRef) lastRef.current = newLastRef;
+  };
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <MUICalendarPicker
+        {...props}
         ref={calendarRef}
-        date={null}
         onChange={handleChange}
+        onMonthChange={handleMonthChange}
       />
     </LocalizationProvider>
   );

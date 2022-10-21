@@ -43,6 +43,7 @@ module.exports = {
     { name: 'release' },
     { name: 'currency-text-field' },
     { name: 'styles' },
+    { name: 'time-picker' },
     { name: 'tokens' },
     { name: 'wizard' }
   ],

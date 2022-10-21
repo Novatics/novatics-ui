@@ -5,6 +5,7 @@
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
     "styles": "packages/styles",
+    "time-picker": "packages/time-picker",
     "tokens": "packages/tokens"
   }
 }

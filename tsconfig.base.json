@@ -22,6 +22,7 @@
         "packages/currency-text-field/src/index.ts"
       ],
       "@novatics/styles": ["packages/styles/src/index.ts"],
+      "@novatics-ui/time-picker": ["packages/time-picker/src/index.ts"],
       "@novatics/tokens": ["packages/tokens/src/index.ts"]
     }
   },

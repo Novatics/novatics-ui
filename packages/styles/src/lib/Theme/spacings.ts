@@ -1,8 +1,10 @@
 import { spacings as spacingSizes } from '@novatics-ui/tokens';
-import { LenghUnitModes, Length, LengthUnit } from './types';
+import { Length } from './types';
 import { SpacingOptions } from '@mui/system';
 
 export type Spacings = keyof typeof spacingSizes;
+
+export { spacingSizes as spacings };
 
 declare module '@mui/material/styles/createTheme' {
   interface Spacing {

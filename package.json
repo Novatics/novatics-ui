@@ -17,7 +17,8 @@
     "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
     "versions:create:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
     "versions:create:push:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:deploy": "nx affected --target deploy"
+    "versions:deploy": "nx affected --target deploy",
+    "storybook:build": "nx build-storybook core"
   },
   "private": true,
   "dependencies": {

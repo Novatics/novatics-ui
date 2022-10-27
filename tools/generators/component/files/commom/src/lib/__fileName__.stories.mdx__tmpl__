@@ -4,8 +4,28 @@ import <%= className %> from './<%= fileName %>'
 
 <Meta title="<%= className %>" component={<%= className %>} />
 
-# Intro
+# <%= className %> <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
 
-This is our awesome ui libary of components!
+### Installation
 
-made by Novatics
+First install the latest version of the package from `@novatics-ui/<%= fileName %>`.
+
+```shell
+  yarn add -D @novatics-ui/<%= fileName %>
+```
+
+```shell
+  npm install --dev @novatics-ui/<%= fileName %>
+```
+
+and use it
+
+```tsx
+import ... from '@novatics-ui/<%= fileName %>';
+
+  ...
+
+
+```
+
+made by Novatics ❤

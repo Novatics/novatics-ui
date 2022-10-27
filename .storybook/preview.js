@@ -5,28 +5,16 @@ import {
 } from '@mui/material/styles';
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
+import { createTheme } from '../packages/styles/src/index';
 
-require('./styles.css')
+require('./styles.css');
 
-const providerFn = ({ theme, children }) => {
-  const muiTheme = MUICreateTheme(theme);
-  return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>;
-};
-const theme = {
-  palette: {
-    primary: {
-      main: '#FF0000',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    background: {
-      default: '#fff',
-    },
-  },
+const providerFn = ({ children }) => {
+  const theme = createTheme();
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-addDecorator(withThemes(null, [theme], { providerFn }));
+addDecorator(withThemes(null, [{}], { providerFn }));
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

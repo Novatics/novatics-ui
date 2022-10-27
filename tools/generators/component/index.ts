@@ -7,6 +7,8 @@ import {
   installPackagesTask,
   updateJson,
   readProjectConfiguration,
+  updateProjectConfiguration,
+  TargetConfiguration,
 } from '@nrwl/devkit';
 import { execSync } from 'child_process';
 import sortby from 'lodash.sortby';
@@ -22,6 +24,10 @@ interface ComponentSchemaOptions {
   configureCypress?: boolean;
   generateCypressSpecs?: boolean;
   generateStories?: boolean;
+  baseBranch?: string;
+  enforceConventionalCommits?: boolean;
+  preset?: 'angular' | 'conventional';
+  access?: 'public' | 'restricted';
 }
 
 function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
@@ -41,6 +47,32 @@ function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
   );
 }
 
+function updateTargetsBuild(targets: Record<string, any>) {
+  targets.build = targets.build ?? {};
+  targets.build.options = targets.build.options ?? {};
+  targets.build.options.format = ['cjs'];
+  targets.build.options.buildableProjectDepsInPackageJsonType = 'dependencies';
+}
+
+function updateTargetsVersion(targets: Record<string, any>) {
+  targets.version = { ...targets.version } ?? {};
+  targets.version.executor = '@jscutlery/semver:version';
+  targets.version.options = targets.version.options ?? {};
+  targets.version.options.preset = 'conventional';
+  targets.version.options.baseBranch = 'master';
+}
+
+function createTargetsVersionDeploy(targets: Record<string, any>, fileName: string) {
+  targets['version:deploy'] = { ...targets['version:deploy'] } ?? {};
+  targets['version:deploy'].executor = '@jscutlery/semver:version';
+  targets['version:deploy'].options = targets['version:deploy'].options ?? {};
+  targets['version:deploy'].options.preset = 'conventional';
+  targets['version:deploy'].options.baseBranch = 'master';
+  targets['version:deploy'].options.postTargets = [
+    `${fileName}:deploy`,
+  ];
+}
+
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const {
     name,
@@ -51,6 +83,10 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     configureCypress = false,
     generateCypressSpecs = false,
     generateStories = true,
+    baseBranch = 'master',
+    enforceConventionalCommits = true,
+    preset = 'conventional',
+    access = 'public',
   } = schema;
 
   const { className, propertyName, constantName, fileName } = names(name);
@@ -66,6 +102,18 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     `nx g storybook-configuration ${storyArgs} ${fileName}`
   );
   console.log(outputStory.toString());
+
+  let semverArgs = `--baseBranch=${baseBranch} --enforceConventionalCommits=${enforceConventionalCommits} --preset=${preset}`;
+  const outputSemver = execSync(
+    `nx g @jscutlery/semver:install ${semverArgs} --projects=${fileName}`
+  );
+  console.log(outputSemver.toString());
+
+  let ngxDeployArgs = `--access=${access}`;
+  const outputNgxDeploy = execSync(
+    `nx g ngx-deploy-npm:install ${ngxDeployArgs} --projects=${fileName}`
+  );
+  console.log(outputNgxDeploy.toString());
 
   generateFiles(
     // virtual file system
@@ -117,11 +165,10 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
   updateJson(tree, `./packages/${fileName}/project.json`, (json) => {
     json.targets = json.targets ?? {};
-    json.targets.build = json.targets.build ?? {};
-    json.targets.build.options = json.targets.build.options ?? {};
-    json.targets.build.options.format = ['cjs'];
-    json.targets.build.options.buildableProjectDepsInPackageJsonType =
-      'dependencies';
+    updateTargetsBuild(json.targets);
+    updateTargetsVersion(json.targets);
+    createTargetsVersionDeploy(json.targets, fileName);
+
     return json;
   });
 

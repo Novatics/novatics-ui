@@ -1,5 +1,6 @@
 module.exports = {
   types: [
+    { value: 'feat', name: '🧩 Features: A new feature' },
     { value: 'fix', name: '🐛 Bug Fixes: A bug fix' },
     {
       value: 'docs',
@@ -48,5 +49,6 @@ module.exports = {
   ticketNumberPrefix: 'NUI-',
   ticketNumberRegExp: 'd{1,5}',
   allowBreakingChanges: [ 'feat', 'fix' ],
-  subjectLimit: 100
+  subjectLimit: 100,
+  usePreparedCommit: true
 }

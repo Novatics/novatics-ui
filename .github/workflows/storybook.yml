@@ -2,7 +2,7 @@ name: Build and deploy storybook
 
 on:
   push:
-    branches: [storybook]
+    branches: [master]
 
 jobs:
   build-and-deploy:
@@ -13,14 +13,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install NMV
+      - name: Install NVM 🔧
         uses: dcodeIO/setup-node-nvm@master
         with:
-          node-version: node
+          node-version: lts/*
 
-      - name: Yarn install
+      - name: Install and Build 🔧
         run: |
-          node --version
           yarn
           yarn storybook:build
 

@@ -1,4 +1,4 @@
-name: storybook
+name: Build and deploy storybook
 
 on:
   push:
@@ -10,8 +10,15 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install NVM 🔧
+        uses: dcodeIO/setup-node-nvm@master
+        with:
+          node-version: lts/*
+
+      - name: Install and Build 🔧
         run: |
           yarn
           yarn storybook:build
@@ -19,5 +26,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: storybook # The branch the action should deploy to.
+          branch: storybook_doc # The branch the action should deploy to.
           folder: ./dist/storybook/core # The folder the action should deploy.

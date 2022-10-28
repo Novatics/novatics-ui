@@ -11,7 +11,7 @@ const StyledCore = styled('div')({
 export function Core(props: CoreProps) {
   return (
     <StyledCore>
-      <Typography variant="h1">Welcome to Core!</Typography>
+      <Typography variant="h1">Our core component!</Typography>
     </StyledCore>
   );
 }

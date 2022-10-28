@@ -130,176 +130,6 @@ const __namedExportsOrder = ["__page"];
 
 /***/ }),
 
-/***/ 2253:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
-  "default": () => (/* binding */ button_stories),
-  "playground": () => (/* binding */ playground)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
-var esm = __webpack_require__(3905);
-// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/dist/esm/index.js
-var dist_esm = __webpack_require__(85737);
-// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
-var blocks = __webpack_require__(63255);
-// EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 5 modules
-var client = __webpack_require__(46441);
-;// CONCATENATED MODULE: ./packages/button/package.json
-const package_namespaceObject = {"i":"0.0.1"};
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
-var es_object_assign = __webpack_require__(19601);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Button/Button.js + 10 modules
-var Button_Button = __webpack_require__(80828);
-// EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
-var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
-;// CONCATENATED MODULE: ./packages/button/src/lib/button.tsx
-
-
-
-var Button = function Button(props) {
-  return (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Button_Button/* default */.Z, Object.assign({}, props));
-};
-
-/* harmony default export */ const lib_button = ((/* unused pure expression or super */ null && (Button)));
-
-try {
-    // @ts-ignore
-    Button.displayName = "Button";
-    // @ts-ignore
-    Button.__docgenInfo = { "description": "", "displayName": "Button", "props": { "children": { "defaultValue": null, "description": "The content of the component.", "name": "children", "required": false, "type": { "name": "ReactNode" } }, "classes": { "defaultValue": null, "description": "Override or extend the styles applied to the component.", "name": "classes", "required": false, "type": { "name": "Partial<ButtonClasses> & Partial<ClassNameMap<never>>" } }, "color": { "defaultValue": { value: "'primary'" }, "description": "The color of the component.\nIt supports both default and custom theme colors, which can be added as shown in the\n[palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).", "name": "color", "required": false, "type": { "name": "enum", "value": [{ "value": "\"inherit\"" }, { "value": "\"primary\"" }, { "value": "\"secondary\"" }, { "value": "\"success\"" }, { "value": "\"error\"" }, { "value": "\"info\"" }, { "value": "\"warning\"" }] } }, "disabled": { "defaultValue": { value: "false\nfalse" }, "description": "If `true`, the component is disabled.", "name": "disabled", "required": false, "type": { "name": "boolean" } }, "disableElevation": { "defaultValue": { value: "false" }, "description": "If `true`, no elevation is used.", "name": "disableElevation", "required": false, "type": { "name": "boolean" } }, "disableFocusRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the  keyboard focus ripple is disabled.", "name": "disableFocusRipple", "required": false, "type": { "name": "boolean" } }, "endIcon": { "defaultValue": null, "description": "Element placed after the children.", "name": "endIcon", "required": false, "type": { "name": "ReactNode" } }, "fullWidth": { "defaultValue": { value: "false" }, "description": "If `true`, the button will take up the full width of its container.", "name": "fullWidth", "required": false, "type": { "name": "boolean" } }, "href": { "defaultValue": null, "description": "The URL to link to when the button is clicked.\nIf defined, an `a` element will be used as the root node.", "name": "href", "required": false, "type": { "name": "string" } }, "size": { "defaultValue": { value: "'medium'" }, "description": "The size of the component.\n`small` is equivalent to the dense button styling.", "name": "size", "required": false, "type": { "name": "enum", "value": [{ "value": "\"small\"" }, { "value": "\"medium\"" }, { "value": "\"large\"" }] } }, "startIcon": { "defaultValue": null, "description": "Element placed before the children.", "name": "startIcon", "required": false, "type": { "name": "ReactNode" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } }, "variant": { "defaultValue": { value: "'text'" }, "description": "The variant to use.", "name": "variant", "required": false, "type": { "name": "enum", "value": [{ "value": "\"text\"" }, { "value": "\"outlined\"" }, { "value": "\"contained\"" }] } }, "tabIndex": { "defaultValue": { value: "0" }, "description": "", "name": "tabIndex", "required": false, "type": { "name": "number" } }, "action": { "defaultValue": null, "description": "A ref for imperative actions.\nIt currently only supports `focusVisible()` action.", "name": "action", "required": false, "type": { "name": "Ref<ButtonBaseActions>" } }, "centerRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the ripples are centered.\nThey won't start at the cursor interaction position.", "name": "centerRipple", "required": false, "type": { "name": "boolean" } }, "disableRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the ripple effect is disabled.\n\n\u26A0\uFE0F Without a ripple there is no styling for :focus-visible by default. Be sure\nto highlight the element by applying separate styles with the `.Mui-focusVisible` class.", "name": "disableRipple", "required": false, "type": { "name": "boolean" } }, "disableTouchRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the touch ripple effect is disabled.", "name": "disableTouchRipple", "required": false, "type": { "name": "boolean" } }, "focusRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the base button will have a keyboard focus ripple.", "name": "focusRipple", "required": false, "type": { "name": "boolean" } }, "focusVisibleClassName": { "defaultValue": null, "description": "This prop can help identify which element has keyboard focus.\nThe class name will be applied when the element gains the focus through keyboard interaction.\nIt's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).\nThe rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).\nA [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components\nif needed.", "name": "focusVisibleClassName", "required": false, "type": { "name": "string" } }, "LinkComponent": { "defaultValue": { value: "'a'" }, "description": "The component used to render a link when the `href` prop is provided.", "name": "LinkComponent", "required": false, "type": { "name": "ElementType<any>" } }, "onFocusVisible": { "defaultValue": null, "description": "Callback fired when the component is focused with a keyboard.\nWe trigger a `onFocus` callback too.", "name": "onFocusVisible", "required": false, "type": { "name": "FocusEventHandler<any>" } }, "TouchRippleProps": { "defaultValue": null, "description": "Props applied to the `TouchRipple` element.", "name": "TouchRippleProps", "required": false, "type": { "name": "Partial<TouchRippleProps>" } }, "touchRippleRef": { "defaultValue": null, "description": "A ref that points to the `TouchRipple` element.", "name": "touchRippleRef", "required": false, "type": { "name": "Ref<TouchRippleActions>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<HTMLButtonElement>" } } } };
-    // @ts-ignore
-    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
-        // @ts-ignore
-        STORYBOOK_REACT_CLASSES["packages/button/src/lib/button.tsx#Button"] = { docgenInfo: Button.__docgenInfo, name: "Button", path: "packages/button/src/lib/button.tsx#Button" };
-}
-catch (__react_docgen_typescript_loader_error) { }
-try {
-    // @ts-ignore
-    button.displayName = "button";
-    // @ts-ignore
-    button.__docgenInfo = { "description": "", "displayName": "button", "props": { "children": { "defaultValue": null, "description": "The content of the component.", "name": "children", "required": false, "type": { "name": "ReactNode" } }, "classes": { "defaultValue": null, "description": "Override or extend the styles applied to the component.", "name": "classes", "required": false, "type": { "name": "Partial<ButtonClasses> & Partial<ClassNameMap<never>>" } }, "color": { "defaultValue": { value: "'primary'" }, "description": "The color of the component.\nIt supports both default and custom theme colors, which can be added as shown in the\n[palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).", "name": "color", "required": false, "type": { "name": "enum", "value": [{ "value": "\"inherit\"" }, { "value": "\"primary\"" }, { "value": "\"secondary\"" }, { "value": "\"success\"" }, { "value": "\"error\"" }, { "value": "\"info\"" }, { "value": "\"warning\"" }] } }, "disabled": { "defaultValue": { value: "false\nfalse" }, "description": "If `true`, the component is disabled.", "name": "disabled", "required": false, "type": { "name": "boolean" } }, "disableElevation": { "defaultValue": { value: "false" }, "description": "If `true`, no elevation is used.", "name": "disableElevation", "required": false, "type": { "name": "boolean" } }, "disableFocusRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the  keyboard focus ripple is disabled.", "name": "disableFocusRipple", "required": false, "type": { "name": "boolean" } }, "endIcon": { "defaultValue": null, "description": "Element placed after the children.", "name": "endIcon", "required": false, "type": { "name": "ReactNode" } }, "fullWidth": { "defaultValue": { value: "false" }, "description": "If `true`, the button will take up the full width of its container.", "name": "fullWidth", "required": false, "type": { "name": "boolean" } }, "href": { "defaultValue": null, "description": "The URL to link to when the button is clicked.\nIf defined, an `a` element will be used as the root node.", "name": "href", "required": false, "type": { "name": "string" } }, "size": { "defaultValue": { value: "'medium'" }, "description": "The size of the component.\n`small` is equivalent to the dense button styling.", "name": "size", "required": false, "type": { "name": "enum", "value": [{ "value": "\"small\"" }, { "value": "\"medium\"" }, { "value": "\"large\"" }] } }, "startIcon": { "defaultValue": null, "description": "Element placed before the children.", "name": "startIcon", "required": false, "type": { "name": "ReactNode" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } }, "variant": { "defaultValue": { value: "'text'" }, "description": "The variant to use.", "name": "variant", "required": false, "type": { "name": "enum", "value": [{ "value": "\"text\"" }, { "value": "\"outlined\"" }, { "value": "\"contained\"" }] } }, "tabIndex": { "defaultValue": { value: "0" }, "description": "", "name": "tabIndex", "required": false, "type": { "name": "number" } }, "action": { "defaultValue": null, "description": "A ref for imperative actions.\nIt currently only supports `focusVisible()` action.", "name": "action", "required": false, "type": { "name": "Ref<ButtonBaseActions>" } }, "centerRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the ripples are centered.\nThey won't start at the cursor interaction position.", "name": "centerRipple", "required": false, "type": { "name": "boolean" } }, "disableRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the ripple effect is disabled.\n\n\u26A0\uFE0F Without a ripple there is no styling for :focus-visible by default. Be sure\nto highlight the element by applying separate styles with the `.Mui-focusVisible` class.", "name": "disableRipple", "required": false, "type": { "name": "boolean" } }, "disableTouchRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the touch ripple effect is disabled.", "name": "disableTouchRipple", "required": false, "type": { "name": "boolean" } }, "focusRipple": { "defaultValue": { value: "false" }, "description": "If `true`, the base button will have a keyboard focus ripple.", "name": "focusRipple", "required": false, "type": { "name": "boolean" } }, "focusVisibleClassName": { "defaultValue": null, "description": "This prop can help identify which element has keyboard focus.\nThe class name will be applied when the element gains the focus through keyboard interaction.\nIt's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).\nThe rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).\nA [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components\nif needed.", "name": "focusVisibleClassName", "required": false, "type": { "name": "string" } }, "LinkComponent": { "defaultValue": { value: "'a'" }, "description": "The component used to render a link when the `href` prop is provided.", "name": "LinkComponent", "required": false, "type": { "name": "ElementType<any>" } }, "onFocusVisible": { "defaultValue": null, "description": "Callback fired when the component is focused with a keyboard.\nWe trigger a `onFocus` callback too.", "name": "onFocusVisible", "required": false, "type": { "name": "FocusEventHandler<any>" } }, "TouchRippleProps": { "defaultValue": null, "description": "Props applied to the `TouchRipple` element.", "name": "TouchRippleProps", "required": false, "type": { "name": "Partial<TouchRippleProps>" } }, "touchRippleRef": { "defaultValue": null, "description": "A ref that points to the `TouchRipple` element.", "name": "touchRippleRef", "required": false, "type": { "name": "Ref<TouchRippleActions>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<HTMLButtonElement>" } } } };
-    // @ts-ignore
-    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
-        // @ts-ignore
-        STORYBOOK_REACT_CLASSES["packages/button/src/lib/button.tsx#button"] = { docgenInfo: button.__docgenInfo, name: "button", path: "packages/button/src/lib/button.tsx#button" };
-}
-catch (__react_docgen_typescript_loader_error) { }
-try {
-    // @ts-ignore
-    getButtonUtilityClass.displayName = "getButtonUtilityClass";
-    // @ts-ignore
-    getButtonUtilityClass.__docgenInfo = { "description": "", "displayName": "getButtonUtilityClass", "props": {} };
-    // @ts-ignore
-    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
-        // @ts-ignore
-        STORYBOOK_REACT_CLASSES["packages/button/src/lib/button.tsx#getButtonUtilityClass"] = { docgenInfo: getButtonUtilityClass.__docgenInfo, name: "getButtonUtilityClass", path: "packages/button/src/lib/button.tsx#getButtonUtilityClass" };
-}
-catch (__react_docgen_typescript_loader_error) { }
-;// CONCATENATED MODULE: ./packages/button/src/lib/button.stories.mdx
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-
-
-/* @jsxRuntime classic */
-/* @jsx mdx */
-
-
-
-
-
-const layoutProps = {};
-const MDXLayout = "wrapper";
-function MDXContent({
-  components,
-  ...props
-}) {
-  return (0,esm/* mdx */.kt)(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), (0,esm/* mdx */.kt)(blocks/* Meta */.h_, {
-    title: "Button",
-    component: Button,
-    mdxType: "Meta"
-  }), (0,esm/* mdx */.kt)("h1", {
-    "id": "button-img-srchttpsimgshieldsiobadgeversion-vpkgversion-brightgreenn-"
-  }, `Button `, (0,esm/* mdx */.kt)("img", {
-    src: `https://img.shields.io/badge/Version-v${package_namespaceObject.i}-brightgreenn`
-  })), (0,esm/* mdx */.kt)("p", null, `A button with the novatics-ui theme.`), (0,esm/* mdx */.kt)("h3", {
-    "id": "basic-usage"
-  }, `Basic Usage`), (0,esm/* mdx */.kt)("p", null, `First install the latest version of the package from `, (0,esm/* mdx */.kt)("inlineCode", {
-    parentName: "p"
-  }, `@novatics-ui/button`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
-    parentName: "pre",
-    "className": "language-tsx"
-  }, `import Button from '@novatics-ui/button';
-
-const Component = () => <Button>Click me</Button>;
-`)), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
-    mdxType: "Canvas"
-  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
-    name: "Playground",
-    mdxType: "Story"
-  }, args => {
-    return (0,esm/* mdx */.kt)("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'row'
-      }
-    }, (0,esm/* mdx */.kt)(Button, _extends({}, args, {
-      mdxType: "Button"
-    }), "Click me"));
-  })), (0,esm/* mdx */.kt)(blocks/* ArgsTable */.$4, {
-    story: "Playground",
-    mdxType: "ArgsTable"
-  }));
-}
-;
-MDXContent.isMDXComponent = true;
-const playground = args => {
-  return (0,esm/* mdx */.kt)("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'row'
-    }
-  }, (0,esm/* mdx */.kt)(Button, args, "Click me"));
-};
-playground.storyName = 'Playground';
-playground.parameters = {
-  storySource: {
-    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\'\n  }}>\n          <Button {...args}>Click me</Button>\n        </div>;\n}'
-  }
-};
-const componentMeta = {
-  title: 'Button',
-  component: Button,
-  includeStories: ["playground"]
-};
-const mdxStoryNameToKey = {
-  "Playground": "playground"
-};
-componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = {
-  ...(componentMeta.parameters.docs || {}),
-  page: () => (0,esm/* mdx */.kt)(dist_esm/* AddContext */.aT, {
-    mdxStoryNameToKey: mdxStoryNameToKey,
-    mdxComponentAnnotations: componentMeta
-  }, (0,esm/* mdx */.kt)(MDXContent, null))
-};
-/* harmony default export */ const button_stories = (componentMeta);
-const __namedExportsOrder = ["playground"];
-
-/***/ }),
-
 /***/ 54101:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3717,7 +3547,7 @@ try {
     // @ts-ignore
     CurrencyTextField.displayName = "CurrencyTextField";
     // @ts-ignore
-    CurrencyTextField.__docgenInfo = { "description": "", "displayName": "CurrencyTextField", "props": { "onChange": { "defaultValue": null, "description": "", "name": "onChange", "required": true, "type": { "name": "(value: string | number) => void" } }, "value": { "defaultValue": null, "description": "", "name": "value", "required": true, "type": { "name": "string | number" } }, "outputFormat": { "defaultValue": null, "description": "", "name": "outputFormat", "required": false, "type": { "name": "enum", "value": [{ "value": "\"string\"" }, { "value": "\"float\"" }, { "value": "\"integer\"" }] } }, "currency": { "defaultValue": null, "description": "", "name": "currency", "required": false, "type": { "name": "enum", "value": [{ "value": "\"top\"" }, { "value": "\"all\"" }, { "value": "\"eek\"" }, { "value": "\"ghc\"" }, { "value": "\"ltl\"" }, { "value": "\"lvl\"" }, { "value": "\"mro\"" }, { "value": "\"mtl\"" }, { "value": "\"tmm\"" }, { "value": "\"yen\"" }, { "value": "\"zwd\"" }, { "value": "\"zwl\"" }, { "value": "\"zwn\"" }, { "value": "\"zwr\"" }, { "value": "\"vef\"" }, { "value": "\"bch\"" }, { "value": "\"btc\"" }, { "value": "\"jep\"" }, { "value": "\"ggp\"" }, { "value": "\"imp\"" }, { "value": "\"xfu\"" }, { "value": "\"gbx\"" }, { "value": "\"cnh\"" }, { "value": "\"usdc\"" }, { "value": "\"aed\"" }, { "value": "\"afn\"" }, { "value": "\"amd\"" }, { "value": "\"ang\"" }, { "value": "\"aoa\"" }, { "value": "\"ars\"" }, { "value": "\"aud\"" }, { "value": "\"awg\"" }, { "value": "\"azn\"" }, { "value": "\"bam\"" }, { "value": "\"bbd\"" }, { "value": "\"bdt\"" }, { "value": "\"bgn\"" }, { "value": "\"bhd\"" }, { "value": "\"bif\"" }, { "value": "\"bmd\"" }, { "value": "\"bnd\"" }, { "value": "\"bob\"" }, { "value": "\"brl\"" }, { "value": "\"bsd\"" }, { "value": "\"btn\"" }, { "value": "\"bwp\"" }, { "value": "\"byn\"" }, { "value": "\"byr\"" }, { "value": "\"bzd\"" }, { "value": "\"cad\"" }, { "value": "\"cdf\"" }, { "value": "\"chf\"" }, { "value": "\"clf\"" }, { "value": "\"clp\"" }, { "value": "\"cny\"" }, { "value": "\"cop\"" }, { "value": "\"crc\"" }, { "value": "\"cuc\"" }, { "value": "\"cup\"" }, { "value": "\"cve\"" }, { "value": "\"czk\"" }, { "value": "\"djf\"" }, { "value": "\"dkk\"" }, { "value": "\"dop\"" }, { "value": "\"dzd\"" }, { "value": "\"egp\"" }, { "value": "\"ern\"" }, { "value": "\"etb\"" }, { "value": "\"eur\"" }, { "value": "\"fjd\"" }, { "value": "\"fkp\"" }, { "value": "\"gbp\"" }, { "value": "\"gel\"" }, { "value": "\"ghs\"" }, { "value": "\"gip\"" }, { "value": "\"gmd\"" }, { "value": "\"gnf\"" }, { "value": "\"gtq\"" }, { "value": "\"gyd\"" }, { "value": "\"hkd\"" }, { "value": "\"hnl\"" }, { "value": "\"hrk\"" }, { "value": "\"htg\"" }, { "value": "\"huf\"" }, { "value": "\"idr\"" }, { "value": "\"ils\"" }, { "value": "\"inr\"" }, { "value": "\"iqd\"" }, { "value": "\"irr\"" }, { "value": "\"isk\"" }, { "value": "\"jmd\"" }, { "value": "\"jod\"" }, { "value": "\"jpy\"" }, { "value": "\"kes\"" }, { "value": "\"kgs\"" }, { "value": "\"khr\"" }, { "value": "\"kmf\"" }, { "value": "\"kpw\"" }, { "value": "\"krw\"" }, { "value": "\"kwd\"" }, { "value": "\"kyd\"" }, { "value": "\"kzt\"" }, { "value": "\"lak\"" }, { "value": "\"lbp\"" }, { "value": "\"lkr\"" }, { "value": "\"lrd\"" }, { "value": "\"lsl\"" }, { "value": "\"lyd\"" }, { "value": "\"mad\"" }, { "value": "\"mdl\"" }, { "value": "\"mga\"" }, { "value": "\"mkd\"" }, { "value": "\"mmk\"" }, { "value": "\"mnt\"" }, { "value": "\"mop\"" }, { "value": "\"mru\"" }, { "value": "\"mur\"" }, { "value": "\"mvr\"" }, { "value": "\"mwk\"" }, { "value": "\"mxn\"" }, { "value": "\"myr\"" }, { "value": "\"mzn\"" }, { "value": "\"nad\"" }, { "value": "\"ngn\"" }, { "value": "\"nio\"" }, { "value": "\"nok\"" }, { "value": "\"npr\"" }, { "value": "\"nzd\"" }, { "value": "\"omr\"" }, { "value": "\"pab\"" }, { "value": "\"pen\"" }, { "value": "\"pgk\"" }, { "value": "\"php\"" }, { "value": "\"pkr\"" }, { "value": "\"pln\"" }, { "value": "\"pyg\"" }, { "value": "\"qar\"" }, { "value": "\"ron\"" }, { "value": "\"rsd\"" }, { "value": "\"rub\"" }, { "value": "\"rwf\"" }, { "value": "\"sar\"" }, { "value": "\"sbd\"" }, { "value": "\"scr\"" }, { "value": "\"sdg\"" }, { "value": "\"sek\"" }, { "value": "\"sgd\"" }, { "value": "\"shp\"" }, { "value": "\"skk\"" }, { "value": "\"sll\"" }, { "value": "\"sos\"" }, { "value": "\"srd\"" }, { "value": "\"ssp\"" }, { "value": "\"std\"" }, { "value": "\"stn\"" }, { "value": "\"svc\"" }, { "value": "\"syp\"" }, { "value": "\"szl\"" }, { "value": "\"thb\"" }, { "value": "\"tjs\"" }, { "value": "\"tmt\"" }, { "value": "\"tnd\"" }, { "value": "\"try\"" }, { "value": "\"ttd\"" }, { "value": "\"twd\"" }, { "value": "\"tzs\"" }, { "value": "\"uah\"" }, { "value": "\"ugx\"" }, { "value": "\"usd\"" }, { "value": "\"uyu\"" }, { "value": "\"uzs\"" }, { "value": "\"ves\"" }, { "value": "\"vnd\"" }, { "value": "\"vuv\"" }, { "value": "\"wst\"" }, { "value": "\"xaf\"" }, { "value": "\"xag\"" }, { "value": "\"xau\"" }, { "value": "\"xba\"" }, { "value": "\"xbb\"" }, { "value": "\"xbc\"" }, { "value": "\"xbd\"" }, { "value": "\"xcd\"" }, { "value": "\"xdr\"" }, { "value": "\"xof\"" }, { "value": "\"xpd\"" }, { "value": "\"xpf\"" }, { "value": "\"xpt\"" }, { "value": "\"xts\"" }, { "value": "\"yer\"" }, { "value": "\"zar\"" }, { "value": "\"zmk\"" }, { "value": "\"zmw\"" }] } }, "currencyProps": { "defaultValue": null, "description": "", "name": "currencyProps", "required": false, "type": { "name": "CurrencyProps" } } } };
+    CurrencyTextField.__docgenInfo = { "description": "", "displayName": "CurrencyTextField", "props": { "onChange": { "defaultValue": null, "description": "", "name": "onChange", "required": true, "type": { "name": "(value: string | number) => void" } }, "value": { "defaultValue": null, "description": "", "name": "value", "required": true, "type": { "name": "string | number" } }, "outputFormat": { "defaultValue": null, "description": "", "name": "outputFormat", "required": false, "type": { "name": "enum", "value": [{ "value": "\"string\"" }, { "value": "\"float\"" }, { "value": "\"integer\"" }] } }, "currency": { "defaultValue": null, "description": "", "name": "currency", "required": false, "type": { "name": "enum", "value": [{ "value": "\"eek\"" }, { "value": "\"ghc\"" }, { "value": "\"ltl\"" }, { "value": "\"lvl\"" }, { "value": "\"mro\"" }, { "value": "\"mtl\"" }, { "value": "\"tmm\"" }, { "value": "\"yen\"" }, { "value": "\"zwd\"" }, { "value": "\"zwl\"" }, { "value": "\"zwn\"" }, { "value": "\"zwr\"" }, { "value": "\"vef\"" }, { "value": "\"bch\"" }, { "value": "\"btc\"" }, { "value": "\"jep\"" }, { "value": "\"ggp\"" }, { "value": "\"imp\"" }, { "value": "\"xfu\"" }, { "value": "\"gbx\"" }, { "value": "\"cnh\"" }, { "value": "\"usdc\"" }, { "value": "\"aed\"" }, { "value": "\"afn\"" }, { "value": "\"all\"" }, { "value": "\"amd\"" }, { "value": "\"ang\"" }, { "value": "\"aoa\"" }, { "value": "\"ars\"" }, { "value": "\"aud\"" }, { "value": "\"awg\"" }, { "value": "\"azn\"" }, { "value": "\"bam\"" }, { "value": "\"bbd\"" }, { "value": "\"bdt\"" }, { "value": "\"bgn\"" }, { "value": "\"bhd\"" }, { "value": "\"bif\"" }, { "value": "\"bmd\"" }, { "value": "\"bnd\"" }, { "value": "\"bob\"" }, { "value": "\"brl\"" }, { "value": "\"bsd\"" }, { "value": "\"btn\"" }, { "value": "\"bwp\"" }, { "value": "\"byn\"" }, { "value": "\"byr\"" }, { "value": "\"bzd\"" }, { "value": "\"cad\"" }, { "value": "\"cdf\"" }, { "value": "\"chf\"" }, { "value": "\"clf\"" }, { "value": "\"clp\"" }, { "value": "\"cny\"" }, { "value": "\"cop\"" }, { "value": "\"crc\"" }, { "value": "\"cuc\"" }, { "value": "\"cup\"" }, { "value": "\"cve\"" }, { "value": "\"czk\"" }, { "value": "\"djf\"" }, { "value": "\"dkk\"" }, { "value": "\"dop\"" }, { "value": "\"dzd\"" }, { "value": "\"egp\"" }, { "value": "\"ern\"" }, { "value": "\"etb\"" }, { "value": "\"eur\"" }, { "value": "\"fjd\"" }, { "value": "\"fkp\"" }, { "value": "\"gbp\"" }, { "value": "\"gel\"" }, { "value": "\"ghs\"" }, { "value": "\"gip\"" }, { "value": "\"gmd\"" }, { "value": "\"gnf\"" }, { "value": "\"gtq\"" }, { "value": "\"gyd\"" }, { "value": "\"hkd\"" }, { "value": "\"hnl\"" }, { "value": "\"hrk\"" }, { "value": "\"htg\"" }, { "value": "\"huf\"" }, { "value": "\"idr\"" }, { "value": "\"ils\"" }, { "value": "\"inr\"" }, { "value": "\"iqd\"" }, { "value": "\"irr\"" }, { "value": "\"isk\"" }, { "value": "\"jmd\"" }, { "value": "\"jod\"" }, { "value": "\"jpy\"" }, { "value": "\"kes\"" }, { "value": "\"kgs\"" }, { "value": "\"khr\"" }, { "value": "\"kmf\"" }, { "value": "\"kpw\"" }, { "value": "\"krw\"" }, { "value": "\"kwd\"" }, { "value": "\"kyd\"" }, { "value": "\"kzt\"" }, { "value": "\"lak\"" }, { "value": "\"lbp\"" }, { "value": "\"lkr\"" }, { "value": "\"lrd\"" }, { "value": "\"lsl\"" }, { "value": "\"lyd\"" }, { "value": "\"mad\"" }, { "value": "\"mdl\"" }, { "value": "\"mga\"" }, { "value": "\"mkd\"" }, { "value": "\"mmk\"" }, { "value": "\"mnt\"" }, { "value": "\"mop\"" }, { "value": "\"mru\"" }, { "value": "\"mur\"" }, { "value": "\"mvr\"" }, { "value": "\"mwk\"" }, { "value": "\"mxn\"" }, { "value": "\"myr\"" }, { "value": "\"mzn\"" }, { "value": "\"nad\"" }, { "value": "\"ngn\"" }, { "value": "\"nio\"" }, { "value": "\"nok\"" }, { "value": "\"npr\"" }, { "value": "\"nzd\"" }, { "value": "\"omr\"" }, { "value": "\"pab\"" }, { "value": "\"pen\"" }, { "value": "\"pgk\"" }, { "value": "\"php\"" }, { "value": "\"pkr\"" }, { "value": "\"pln\"" }, { "value": "\"pyg\"" }, { "value": "\"qar\"" }, { "value": "\"ron\"" }, { "value": "\"rsd\"" }, { "value": "\"rub\"" }, { "value": "\"rwf\"" }, { "value": "\"sar\"" }, { "value": "\"sbd\"" }, { "value": "\"scr\"" }, { "value": "\"sdg\"" }, { "value": "\"sek\"" }, { "value": "\"sgd\"" }, { "value": "\"shp\"" }, { "value": "\"skk\"" }, { "value": "\"sll\"" }, { "value": "\"sos\"" }, { "value": "\"srd\"" }, { "value": "\"ssp\"" }, { "value": "\"std\"" }, { "value": "\"stn\"" }, { "value": "\"svc\"" }, { "value": "\"syp\"" }, { "value": "\"szl\"" }, { "value": "\"thb\"" }, { "value": "\"tjs\"" }, { "value": "\"tmt\"" }, { "value": "\"tnd\"" }, { "value": "\"top\"" }, { "value": "\"try\"" }, { "value": "\"ttd\"" }, { "value": "\"twd\"" }, { "value": "\"tzs\"" }, { "value": "\"uah\"" }, { "value": "\"ugx\"" }, { "value": "\"usd\"" }, { "value": "\"uyu\"" }, { "value": "\"uzs\"" }, { "value": "\"ves\"" }, { "value": "\"vnd\"" }, { "value": "\"vuv\"" }, { "value": "\"wst\"" }, { "value": "\"xaf\"" }, { "value": "\"xag\"" }, { "value": "\"xau\"" }, { "value": "\"xba\"" }, { "value": "\"xbb\"" }, { "value": "\"xbc\"" }, { "value": "\"xbd\"" }, { "value": "\"xcd\"" }, { "value": "\"xdr\"" }, { "value": "\"xof\"" }, { "value": "\"xpd\"" }, { "value": "\"xpf\"" }, { "value": "\"xpt\"" }, { "value": "\"xts\"" }, { "value": "\"yer\"" }, { "value": "\"zar\"" }, { "value": "\"zmk\"" }, { "value": "\"zmw\"" }] } }, "currencyProps": { "defaultValue": null, "description": "", "name": "currencyProps", "required": false, "type": { "name": "CurrencyProps" } } } };
     // @ts-ignore
     if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
         // @ts-ignore
@@ -5223,7 +5053,7 @@ function Core(props) {
   return (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(StyledCore, {
     children: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Typography/* default */.Z, {
       variant: "h1",
-      children: "Welcome to Core!"
+      children: "Our core component!"
     })
   });
 }
@@ -5281,123 +5111,6 @@ Primary.args = {};
 Primary.parameters = Object.assign({
   storySource: {
     source: "(args) => <Core {...args} />"
-  }
-}, Primary.parameters);
-var __namedExportsOrder = ["Primary"];
-
-/***/ }),
-
-/***/ 11703:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Primary": () => (/* binding */ Primary),
-  "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
-  "default": () => (/* binding */ novatics_logo_stories)
-});
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
-var es_object_assign = __webpack_require__(19601);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.bind.js
-var es_function_bind = __webpack_require__(24812);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(7071);
-var objectWithoutPropertiesLoose_default = /*#__PURE__*/__webpack_require__.n(objectWithoutPropertiesLoose);
-// EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
-var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
-;// CONCATENATED MODULE: ./packages/novatics-logo/src/lib/novatics-logo.tsx
-
-var _excluded = ["title", "size", "variant"];
-
-
-
-function NovaticsLogo(props) {
-  var _props$title = props.title,
-    title = _props$title === void 0 ? 'Novatics' : _props$title,
-    _props$size = props.size,
-    size = _props$size === void 0 ? 300 : _props$size,
-    variant = props.variant,
-    rest = objectWithoutPropertiesLoose_default()(props, _excluded);
-  return (0,emotion_react_jsx_runtime_browser_esm/* jsxs */.BX)("svg", Object.assign({
-    width: size,
-    height: size,
-    viewBox: "0 0 421 400",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, rest, {
-    children: [(0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)("title", {
-      children: title
-    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)("path", {
-      d: "M210.595 53.9897V170.677L315.167 287.399V112.386L210.595 53.9897Z",
-      fill: "#FFCC00"
-    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)("path", {
-      d: "M210.595 229.026L315.167 287.352L210.595 170.677V229.026Z",
-      fill: "#FF9D00"
-    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)("path", {
-      d: "M106 112.386V287.352L210.595 345.748V229.026V170.63L106 112.386Z",
-      fill: "#832AF5"
-    })]
-  }));
-}
-/* harmony default export */ const novatics_logo = ((/* unused pure expression or super */ null && (NovaticsLogo)));
-try {
-    // @ts-ignore
-    NovaticsLogo.displayName = "NovaticsLogo";
-    // @ts-ignore
-    NovaticsLogo.__docgenInfo = { "description": "", "displayName": "NovaticsLogo", "props": { "size": { "defaultValue": null, "description": "", "name": "size", "required": false, "type": { "name": "number" } }, "variant": { "defaultValue": null, "description": "", "name": "variant", "required": false, "type": { "name": "string" } }, "title": { "defaultValue": null, "description": "", "name": "title", "required": false, "type": { "name": "string" } } } };
-    // @ts-ignore
-    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
-        // @ts-ignore
-        STORYBOOK_REACT_CLASSES["packages/novatics-logo/src/lib/novatics-logo.tsx#NovaticsLogo"] = { docgenInfo: NovaticsLogo.__docgenInfo, name: "NovaticsLogo", path: "packages/novatics-logo/src/lib/novatics-logo.tsx#NovaticsLogo" };
-}
-catch (__react_docgen_typescript_loader_error) { }
-;// CONCATENATED MODULE: ./packages/novatics-logo/src/lib/novatics-logo.stories.tsx
-
-
-/* eslint-disable */
-// @ts-nocheck
-// @ts-ignore
-var __STORY__ = "import { Story, Meta } from '@storybook/react';\nimport { NovaticsLogo, NovaticsLogoProps } from './novatics-logo';\n\nexport default {\n  component: NovaticsLogo,\n  title: 'NovaticsLogo',\n} as Meta;\n\nconst Template: Story<NovaticsLogoProps> = (args) => <NovaticsLogo {...args} />;\n\nexport const Primary = Template.bind({});\nPrimary.args = {};\n";
-// @ts-ignore
-var __LOCATIONS_MAP__ = {
-  "Primary": {
-    "startLoc": {
-      "col": 43,
-      "line": 9
-    },
-    "endLoc": {
-      "col": 79,
-      "line": 9
-    },
-    "startBody": {
-      "col": 43,
-      "line": 9
-    },
-    "endBody": {
-      "col": 79,
-      "line": 9
-    }
-  }
-};
-
-
-/* harmony default export */ const novatics_logo_stories = ({
-  component: NovaticsLogo,
-  title: 'NovaticsLogo'
-});
-var Template = function Template(args) {
-  return (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(NovaticsLogo, Object.assign({}, args));
-};
-var Primary = Template.bind({});
-Primary.args = {};
-Primary.parameters = Object.assign({
-  storySource: {
-    source: "(args) => <NovaticsLogo {...args} />"
   }
 }, Primary.parameters);
 var __namedExportsOrder = ["Primary"];
@@ -5632,8 +5345,7 @@ var tokens = {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./core/src/lib/core.stories.tsx": 59221,
-	"./novatics-logo/src/lib/novatics-logo.stories.tsx": 11703
+	"./core/src/lib/core.stories.tsx": 59221
 };
 
 
@@ -5662,7 +5374,6 @@ webpackContext.id = 23476;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./button/src/lib/button.stories.mdx": 2253,
 	"./currency-text-field/src/lib/currency-text-field.stories.mdx": 54101,
 	"./styles/src/lib/styles.stories.mdx": 13014,
 	"./tokens/src/lib/tokens.stories.mdx": 38716
@@ -6124,4 +5835,4 @@ var _frameworkImportPath = __webpack_require__(46441);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.19101a46.iframe.bundle.js.map
+//# sourceMappingURL=main.bd0f7926.iframe.bundle.js.map

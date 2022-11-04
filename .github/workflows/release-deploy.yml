@@ -21,9 +21,6 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/setup
 
-      - name: Build versions
-        run: yarn versions:create
-
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest

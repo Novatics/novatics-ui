@@ -30,6 +30,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: yarn
       - run: yarn versions:create
+      - run: echo  ${{secrets.GITHUB_TOKEN}}
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

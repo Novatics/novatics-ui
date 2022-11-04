@@ -1,5 +1,5 @@
 {
-  "name": "@novatics-ui/currency-text-field",
+  "name": "@novatics-ui-fork/currency-text-field",
   "version": "0.1.0",
   "dependencies": {
     "currency.js": "^2.0.4"

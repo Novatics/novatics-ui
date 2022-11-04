@@ -1,6 +1,6 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
-import { typography } from '@novatics-ui/tokens';
+import { typography } from '@novatics-ui-fork/tokens';
 
 type Typographies =
   | 'h1'

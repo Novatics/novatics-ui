@@ -1,5 +1,5 @@
 import { Typography, styled } from '@mui/material';
-import { colors } from '@novatics-ui-fork/tokens';
+import { colors } from '@mgonc/tokens';
 
 /* eslint-disable-next-line */
 export interface CoreProps {}

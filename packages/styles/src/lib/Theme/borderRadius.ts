@@ -1,4 +1,4 @@
-import { borderRadius as borderRadiusSizes } from '@novatics-ui-fork/tokens';
+import { borderRadius as borderRadiusSizes } from '@mgonc/tokens';
 import { Length } from './types';
 
 interface BorderRadiusSize {

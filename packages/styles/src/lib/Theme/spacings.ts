@@ -1,4 +1,4 @@
-import { spacings as spacingSizes } from '@novatics-ui-fork/tokens';
+import { spacings as spacingSizes } from '@mgonc/tokens';
 import { Length } from './types';
 import { SpacingOptions } from '@mui/system';
 

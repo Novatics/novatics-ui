@@ -7,6 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Get code to get access to custom our actions
         uses: actions/checkout@v3
@@ -25,6 +30,11 @@ jobs:
     permissions:
       packages: write
       contents: read
+
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Get code to get access to custom our actions
         uses: actions/checkout@v3
@@ -35,12 +45,14 @@ jobs:
           node-version: lts/*
           registry-url: https://npm.pkg.github.com/
       - run: yarn
-      - run: yarn versions:create
-      - run: echo "//registry.npmjs.org/:_authToken= ${{ env.NODE_AUTH_TOKEN }}"
+
+      - run: echo "//registry.npmjs.org/:_authToken= ${{ env.GITHUB_TOKEN }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn publish
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn nx version:deploy currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,20 +8,20 @@ import <%= className %> from './<%= fileName %>'
 
 ### Installation
 
-First install the latest version of the package from `@novatics-ui-fork/<%= fileName %>`.
+First install the latest version of the package from `@mgonc/<%= fileName %>`.
 
 ```shell
-  yarn add -D @novatics-ui-fork/<%= fileName %>
+  yarn add -D @mgonc/<%= fileName %>
 ```
 
 ```shell
-  npm install --dev @novatics-ui-fork/<%= fileName %>
+  npm install --dev @mgonc/<%= fileName %>
 ```
 
 and use it
 
 ```tsx
-import ... from '@novatics-ui-fork/<%= fileName %>';
+import ... from '@mgonc/<%= fileName %>';
 
   ...
 

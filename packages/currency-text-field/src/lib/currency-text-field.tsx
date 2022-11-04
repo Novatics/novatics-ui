@@ -42,7 +42,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     currencyProps,
     ...rest
   } = props;
-  const [maskedValue, setMaskedValue] = useState('1');
+  const [maskedValue, setMaskedValue] = useState('3');
 
   const priorityCurrencyProps = useMemo(() => {
     const currencyFallback = pick(CURRENCY['brl'], CURRENCY_ATTRIBUTES);

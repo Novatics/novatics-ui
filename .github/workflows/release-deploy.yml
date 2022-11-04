@@ -8,13 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Get code to get access to custom our actions
+        uses: actions/checkout@v3
         with:
-          node-version: lts/*
+          fetch-depth: 0
 
-      - run: yarn
-      - run: yarn versions:create
+      - name: Install Dependencies
+        uses: ./.github/actions/setup
+
+      - name: Build versions
+        run: yarn versions:create
 
   publish-gpr:
     needs: build
@@ -23,7 +26,9 @@ jobs:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - name: Get code to get access to custom our actions
+        uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           always-auth: true

@@ -24,6 +24,9 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,6 +56,14 @@ jobs:
         run: |
           git tag -f last-release
           git push origin last-release --force
+
+                - run: ls
+
+      - run: yarn nx run-many --base=last-release --target=deploy --verbose
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-gpr:
     needs: release

@@ -22,7 +22,12 @@ jobs:
         uses: ./.github/actions/setup
 
   release:
+    needs: build
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -50,7 +55,7 @@ jobs:
           git push origin last-release --force
 
   publish-gpr:
-    needs: build
+    needs: release
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -69,7 +74,7 @@ jobs:
           always-auth: true
           node-version: lts/*
           registry-url: https://npm.pkg.github.com/
-      
+
       - run: ls
 
       - run: yarn nx run-many --base=last-release --target=deploy --verbose

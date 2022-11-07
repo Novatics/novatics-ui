@@ -21,6 +21,34 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/setup
 
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          node-version: lts/*
+
+      - name: Setup Git
+        run: |
+          git config user.name "GitHub Bot"
+          git config user.email "souzagonc@gmail.com"
+      - run: yarn install --frozen-lockfile
+      - name: Version
+        shell: bash
+        run: yarn nx run-many --base=last-release --target=version --verbose --noVerify --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tag last-release
+        shell: bash
+        run: |
+          git tag -f last-release
+          git push origin last-release --force
+
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
@@ -41,23 +69,10 @@ jobs:
           always-auth: true
           node-version: lts/*
           registry-url: https://npm.pkg.github.com/
-      - run: yarn
-
-      - run: git tag
-
+      
       - run: ls
 
-      - run: rm -rf dist
-
-      - run: yarn nx build currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: ls
-
-      - run: yarn nx version:deploy currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
+      - run: yarn nx run-many --base=last-release --target=deploy --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

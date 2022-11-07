@@ -45,11 +45,6 @@ jobs:
 
       - run: git tag
 
-      - run: git tag -d core-0.0.1 core-0.0.2 currency-text-field-0.1.0 tokens-0.1.0 core-0.1.0             
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn nx version:deploy currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

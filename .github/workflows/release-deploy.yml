@@ -49,6 +49,14 @@ jobs:
 
       - run: rm -rf dist
 
+      - run: yarn nx build currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: ls
+
       - run: yarn nx version:deploy currency-text-field --verbose --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

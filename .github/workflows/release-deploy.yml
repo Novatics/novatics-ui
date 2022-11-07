@@ -54,7 +54,7 @@ jobs:
           git tag -f last-release
           git push origin last-release --force
 
-                - run: ls
+      - run: ls
 
       - run: yarn nx run-many --base=last-release --target=deploy --verbose
         env:

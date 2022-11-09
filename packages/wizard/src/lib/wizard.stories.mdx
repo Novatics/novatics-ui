@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import pkg from '../../package.json';
 import Wizard from './wizard';
+import { useState } from 'react';
 
 <Meta title="Wizard" component={Wizard} />
 
@@ -17,10 +18,19 @@ First install the latest version of the package from `@novatics-ui/wizard`.
 yarn add @novatics-ui/wizard
 
 ```
+
+### Dependencies
+
+This component extends [Material UI React Text Field](https://mui.com/material-ui/react-text-field). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
 <!--Todo: make steps array reusable-->
 <!--Todo: adjust complete step logic -->
 <!--Todo: style components override -->
-<!--Todo: add DisableTab -->
+<!--Todo: consoleErrors -->
 
 ### Basic Usage
 
@@ -54,12 +64,7 @@ they're running and how to resolve approval issues.`,
       ];
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            onNext={() => {}}
-            onBack={() => {}}
-            onFinish={() => {}}
-            steps={steps}
-          />
+          <Wizard steps={steps} />
         </div>
       );
     }}
@@ -68,11 +73,11 @@ they're running and how to resolve approval issues.`,
 
 ```tsx
 import Wizard from '@novatics-ui/wizard';
-<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} />;
+<Wizard steps={[]} />;
 ```
 
 ### Linear
-The component only allows proceeding in a linear way if the isLinear prop is set to true
+
 <Canvas>
   <Story name="Linear">
     {(args) => {
@@ -104,30 +109,27 @@ they're running and how to resolve approval issues.`,
       ];
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            onNext={() => {}}
-            onBack={() => {}}
-            onFinish={() => {}}
-            steps={steps}
-            isLinear
-          />
+          <Wizard steps={steps} isLinear />
         </div>
       );
     }}
   </Story>
 </Canvas>
 
+The `isLinear` prop defines whether the tabs will navigate in a linear way or not:
+
 ```tsx
 import Wizard from '@novatics-ui/wizard';
-<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} isLinear />;
+
+<Wizard steps={[]} isLinear />;
 ```
 
 ### Show Completed
-If the showCompleted prop is set to true the checkmark is going to appear when a step is completed
+
 <Canvas>
   <Story name="Show Completed">
     {(args) => {
-       const initialSteps = [
+      const initialSteps = [
         {
           id: 1,
           title: '01. Select campaign settings',
@@ -155,19 +157,18 @@ they're running and how to resolve approval issues.`,
           disabled: false,
         },
       ];
-      const [steps, setSteps] = React.useState(initialSteps);
+      const [steps, setSteps] = useState(initialSteps);
       const completeStep = (id) => {
-        setSteps((value) => value.map((step) => 
-          (step.id === id) 
-          ? {...step, status: 'completed'} 
-          : step));
-      }
+        setSteps((value) =>
+          value.map((step) =>
+            step.id === id ? { ...step, status: 'completed' } : step
+          )
+        );
+      };
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard
-            onNext={(index) => completeStep(index + 1)}
-            onBack={() => {}}
-            onFinish={() => {}}
+            onNext={(stepIndex) => completeStep(stepIndex + 1)}
             steps={steps}
             showCompleted
           />
@@ -177,52 +178,36 @@ they're running and how to resolve approval issues.`,
   </Story>
 </Canvas>
 
+The `showCompleted` prop defines whether the tab will show a checkmark when a step is completed or not.
+
+To set a step completed, we have to set the value of `status` key inside `steps` to `'completed'`:
+
 ```tsx
 import Wizard from '@novatics-ui/wizard';
-<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} showCompleted />;
+import { useState } from 'react';
+
+const [steps, setSteps] = useState(initialSteps);
+const completeStep = (id) => {
+  setSteps((value) =>
+    value.map((step) =>
+      step.id === id ? { ...step, status: 'completed' } : step
+    )
+  );
+};
+
+<Wizard
+  onNext={(stepIndex) => completeStep(stepIndex + 1)}
+  steps={[]}
+  showCompleted
+/>;
 ```
+
 ### Components Override
--Allows overriding components for indivitual tabs inside the steps data like below:
 
-```tsx
-  import Wizard from '@novatics-ui/wizard';
-
-    const steps = [
-        {
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `...`,
-          disabled: false,
-          components: {
-            Tab: (props) => {
-              return <div>Individual Tab{`${String(props.step.isActive)}`}</div>
-            },
-            Header: (props) => {
-              return <div>Individual Header</div>
-            },
-            Content: () => <div>Individual Content</div>,
-            Footer: () => <div>Individual Content</div>,
-          }
-        },
-      ];
-<Wizard steps={steps} />;
-```
--Allows overriding components for the whole wizard like below:
-
-```tsx
-  import Wizard from '@novatics-ui/wizard';
-
-  <Wizard steps={steps}       
-      TabOverride={() => <div>Tab</div>}
-      HeaderOverride={() => <div>Header</div>}
-      ContentOverride={() => <div>Content</div>}
-      FooterOverride={() => <div>Footer</div>} 
-      />;
-```
 <Canvas>
   <Story name="Components Override">
     {(args) => {
-    const steps = [
+      const steps = [
         {
           title: '01. Select campaign settings',
           subtitle: 'Subtitle',
@@ -231,21 +216,17 @@ import Wizard from '@novatics-ui/wizard';
                     and geographical locations you want your ads to show on, and more.`,
           disabled: false,
           components: {
-            Tab: (props) => {
-              return <div>Individual Tab</div>
-            },
-            Header: (props) => {
-              return <div>Individual header</div>
-            },
+            Tab: () => <div>Individual Tab</div>,
+            Header: () => <div>Individual header</div>,
             Content: () => <div>Individual content</div>,
             Footer: () => <div>Individual footer</div>,
-          }
+          },
         },
         {
           title: '02. Create an ad group',
           subtitle: 'You can write some cool information stuff here',
           content: 'Name',
-          status: "completed",
+          status: 'completed',
           disabled: false,
         },
         {
@@ -261,14 +242,10 @@ import Wizard from '@novatics-ui/wizard';
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard
-            onNext={() => {}}
-            onBack={() => {}}
-            onFinish={() => {}}
             steps={steps}
-            TabOverride={() => <div>Tab</div>}
             HeaderOverride={() => <div>Header</div>}
             ContentOverride={() => <div>Content</div>}
-            FooterOverride={() => <div>Footer</div>} 
+            FooterOverride={() => <div>Footer</div>}
           />
         </div>
       );
@@ -276,10 +253,102 @@ import Wizard from '@novatics-ui/wizard';
   </Story>
 </Canvas>
 
+It is possible to override the whole Wizard component by using the following props:
+
 ```tsx
 import Wizard from '@novatics-ui/wizard';
-<Wizard onNext={() => {}} onBack={() => {}} onFinish={() => {}} steps={[]} />;
+
+<Wizard
+  steps={steps}
+  TabOverride={() => <div>Tab</div>}
+  HeaderOverride={() => <div>Header</div>}
+  ContentOverride={() => <div>Content</div>}
+  FooterOverride={() => <div>Footer</div>}
+/>;
 ```
+
+We can also override components for individual tabs by using the `components` key inside `steps` array:
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+
+const steps = [
+  {
+    title: '01. Select campaign settings',
+    subtitle: 'Subtitle',
+    content: `...`,
+    disabled: false,
+    components: {
+      Tab: () => <div>Individual Tab</div>,
+      Header: () => <div>Individual Header</div>,
+      Content: () => <div>Individual Content</div>,
+      Footer: () => <div>Individual Footer</div>,
+    },
+  },
+];
+
+<Wizard steps={steps} />;
+```
+
+### Disabled Tab
+
+<Canvas>
+  <Story name="Disabled Tab">
+    {(args) => {
+      const steps = [
+        {
+          id: 1,
+          title: '01. Select campaign settings',
+          subtitle: 'Subtitle',
+          content: `For each ad campaign that you create, you can control how much
+you're willing to spend on clicks and conversions, which networks
+and geographical locations you want your ads to show on, and more.`,
+          disabled: false,
+        },
+        {
+          id: 2,
+          title: '02. Create an ad group',
+          subtitle: 'You can write some cool information stuff here',
+          content: `Small text content`,
+          disabled: false,
+        },
+        {
+          id: 3,
+          title: '03. Create an ad',
+          subtitle: 'Subtitle',
+          content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+          disabled: true,
+        },
+      ];
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard steps={steps} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+The `disabled` key inside `steps` array allows individual tabs to be disabled:
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+
+const steps = [
+  {
+    title: '03. Create an ad',
+    subtitle: 'Subtitle',
+    content: `...`,
+    disabled: true,
+  },
+];
+
+<Wizard steps={steps} />;
+```
+
 ### Playground
 
 <Canvas>

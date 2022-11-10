@@ -27,6 +27,7 @@ function setAccessibilityProps(index: number) {
 export interface WizardProps {
   onBack?: (stepIndex: number) => void;
   onNext?: (stepIndex: number) => void;
+  onChange?: (stepIndex: number) => void;
   onFinish?: () => void;
   isLinear?: boolean;
   showCompleted?: boolean;
@@ -45,6 +46,7 @@ const Wizard = ({
   onBack,
   onNext,
   onFinish,
+  onChange,
   isLinear = false,
   showCompleted = false,
   tabIndicatorColor,
@@ -60,6 +62,7 @@ const Wizard = ({
   const [currentStep, setCurrentStep] = useState(0);
 
   const handleChange = (newStep: number) => {
+    onChange && onChange(currentStep);
     const isNextStep = newStep === currentStep + 1;
     const isDisabled = steps[newStep] ? steps[newStep].disabled : false;
     if (isDisabled) return;

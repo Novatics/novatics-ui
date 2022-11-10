@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Tabs, { TabsProps as MUITabsProps } from '@mui/material/Tabs';
 import Box from '@mui/material/Box';
-
+import Typography from '@mui/material/Typography';
 import Tab from './Tab';
 import Header from './Header';
 import Footer from './Footer';
@@ -92,6 +92,20 @@ const Wizard = ({
     handleChange(currentStep - 1);
   };
 
+  useEffect(() => {
+    const allDisabled = steps.every((step) => step.disabled === true);
+
+    if(steps[currentStep].disabled && !allDisabled){
+        handleNext();
+    }
+    else if (allDisabled) {
+        console.log('allDisabled');
+        console.log('current Step disabled')
+        setCurrentStep(-1);
+      }
+    }
+  , [])
+
   return (
     <Box sx={{ display: 'flex' }} width="100%" {...ContainerProps}>
       <Tabs
@@ -124,6 +138,14 @@ const Wizard = ({
       </Tabs>
 
       <Box width="80%" {...TabPanelContainerProps}>
+        <TabPanel value={currentStep} index={-1}>
+          <Box sx={{textAlign: 'center'}}>
+            <Typography variant="body1">
+              All steps are disabled
+            </Typography>
+          </Box>
+        </TabPanel>
+
         {steps.map((step, index) => (
           <TabPanel key={step.title} value={currentStep} index={index}>
             <Header step={step} ComponentOverride={HeaderOverride} />

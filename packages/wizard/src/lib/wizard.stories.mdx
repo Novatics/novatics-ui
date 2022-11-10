@@ -11,12 +11,14 @@ const steps = [
 you're willing to spend on clicks and conversions, which networks
 and geographical locations you want your ads to show on, and more.`,
     disabled: false,
+    status: undefined,
   },
   {
     title: '02. Create an ad group',
     subtitle: 'You can write some cool information stuff here',
     content: `Small text content`,
     disabled: false,
+    status: undefined,
   },
   {
     title: '03. Create an ad',
@@ -26,6 +28,7 @@ and learn how to enhance your ads using features like ad extensions.
 If you run into any problems with your ads, find out how to tell if
 they're running and how to resolve approval issues.`,
     disabled: false,
+    status: undefined,
   },
 ];
 
@@ -52,12 +55,12 @@ This component extends some [Material UI](https://mui.com/material-ui/getting-st
 yarn add @mui/material @emotion/react @emotion/styled
 ```
 
-<!--Todo: make steps array reusable-->
-<!--Todo: adjust complete step logic -->
-<!--Todo: style components override -->
-<!--Todo: consoleErrors -->
-
 ### Basic Usage
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+<Wizard steps={['...']} />;
+```
 
 <Canvas>
   <Story name="Basic Usage">
@@ -71,13 +74,15 @@ yarn add @mui/material @emotion/react @emotion/styled
   </Story>
 </Canvas>
 
-```tsx
-import Wizard from '@novatics-ui/wizard';
-<Wizard steps={['...']} />;
-```
-
 ### Linear
 
+The `isLinear` prop defines whether the tabs will navigate in a linear way or not:
+
+```tsx
+import Wizard from '@novatics-ui/wizard';
+
+<Wizard steps={['...']} isLinear />;
+```
 <Canvas>
   <Story name="Linear">
     {(args) => {
@@ -90,22 +95,18 @@ import Wizard from '@novatics-ui/wizard';
   </Story>
 </Canvas>
 
-The `isLinear` prop defines whether the tabs will navigate in a linear way or not:
-
-```tsx
-import Wizard from '@novatics-ui/wizard';
-
-<Wizard steps={['...']} isLinear />;
-```
-
 ### Show Completed
+
+The `showCompleted` prop defines whether the tab will show a checkmark when a step is completed or not.
+
+To set a step completed, we have to set the value of `status` key inside `steps` to `'completed'`:
 
 <Canvas>
   <Story name="Show Completed">
     {(args) => {
-      const [newSteps, setNewSteps] = useState(steps);
+      const [completeSteps, setCompleteSteps] = useState(steps);
       const completeStep = (stepIndex) => {
-        setNewSteps((value) =>
+        setCompleteSteps((value) =>
           value.map((step, i) =>
             i === stepIndex ? { ...step, status: 'completed' } : step
           )
@@ -114,8 +115,8 @@ import Wizard from '@novatics-ui/wizard';
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard
-            onNext={(stepIndex) => completeStep(stepIndex)}
-            steps={newSteps}
+            onChange={(stepIndex) => completeStep(stepIndex)}
+            steps={completeSteps}
             showCompleted
           />
         </div>
@@ -124,63 +125,7 @@ import Wizard from '@novatics-ui/wizard';
   </Story>
 </Canvas>
 
-The `showCompleted` prop defines whether the tab will show a checkmark when a step is completed or not.
-
-To set a step completed, we have to set the value of `status` key inside `steps` to `'completed'`:
-
-```tsx
-import Wizard from '@novatics-ui/wizard';
-import { useState } from 'react';
-
-const steps = ['...'];
-const [newSteps, setNewSteps] = useState(steps);
-
-const completeStep = (stepIndex) => {
-  setNewSteps((value) =>
-    value.map((step, i) =>
-      i === stepIndex ? { ...step, status: 'completed' } : step
-    )
-  );
-};
-
-<Wizard
-  onNext={(stepIndex) => completeStep(stepIndex)}
-  steps={newSteps}
-  showCompleted
-/>;
-```
-
 ### Components Override
-
-<Canvas>
-  <Story name="Components Override">
-    {(args) => {
-      const newSteps = steps.map((step, i) => {
-        return i === 0
-          ? {
-              ...step,
-              components: {
-                Tab: () => <div>Individual Tab</div>,
-                Header: () => <div>Individual header</div>,
-                Content: () => <div>Individual content</div>,
-                Footer: () => <div>Individual footer</div>,
-              },
-            }
-          : step;
-      });
-      return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            steps={newSteps}
-            HeaderOverride={() => <div>Header</div>}
-            ContentOverride={() => <div>Content</div>}
-            FooterOverride={() => <div>Footer</div>}
-          />
-        </div>
-      );
-    }}
-  </Story>
-</Canvas>
 
 It is possible to override the whole Wizard component by using the following props:
 
@@ -221,22 +166,37 @@ const steps = [
 <Wizard steps={steps} />;
 ```
 
-### Disabled Tab
-
 <Canvas>
-  <Story name="Disabled Tab">
+  <Story name="Components Override">
     {(args) => {
       const newSteps = steps.map((step, i) => {
-        return i === 2 ? { ...step, disabled: true } : step;
+        return i === 0
+          ? {
+              ...step,
+              components: {
+                Tab: () => <div>Individual Tab</div>,
+                Header: () => <div>Individual header</div>,
+                Content: () => <div>Individual content</div>,
+                Footer: () => <div>Individual footer</div>,
+              },
+            }
+          : step;
       });
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard steps={newSteps} />
+          <Wizard
+            steps={newSteps}
+            HeaderOverride={() => <div>Header</div>}
+            ContentOverride={() => <div>Content</div>}
+            FooterOverride={() => <div>Footer</div>}
+          />
         </div>
       );
     }}
   </Story>
 </Canvas>
+
+### Disabled Tab
 
 The `disabled` key inside `steps` array allows individual tabs to be disabled:
 
@@ -254,30 +214,17 @@ const steps = [
 
 <Wizard steps={steps} />;
 ```
-
-### Playground
-
 <Canvas>
-  <Story
-    argTypes={{
-      onNext: { description: "Input's onChange method." },
-    }}
-    name="Playground"
-  >
+  <Story name="Disabled Tab">
     {(args) => {
+      const newSteps = steps.map((step, i) => {
+        return i === 2 ? { ...step, disabled: true } : step;
+      });
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            onNext={() => {}}
-            onBack={() => {}}
-            onFinish={() => {}}
-            steps={steps}
-            {...args}
-          />
+          <Wizard steps={newSteps} />
         </div>
       );
     }}
   </Story>
 </Canvas>
-
-<ArgsTable story="Playground" />

@@ -228,3 +228,74 @@ const steps = [
     }}
   </Story>
 </Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    argTypes={{
+        isLinear: {
+        name: 'isLinear',
+        description: 'isLinear',
+        table: {
+          type: { summary: 'boolean' },
+          defaultValue: { summary: false },
+        },
+        control: {
+          type: 'boolean',
+        },
+      },
+      showCompleted: {
+        name: 'showCompleted',
+        description: 'showCompleted',
+        table: {
+          type: { summary: 'boolean' },
+          defaultValue: { summary: false },
+        },
+        control: {
+          type: 'boolean',
+        },
+      },
+      tabIndicatorColor: {
+        name: 'tabIndicatorColor',
+        description: 'tabIndicatorColor',
+        table: {
+          type: { summary: 'string' },
+          defaultValue: { summary: 'blue' },
+        },
+        control: {
+          type: 'text',
+        },
+      },
+      onNext: { description: "Method called when next button is pressed" },
+      onBack: { description: "Method called when back button is pressed" },
+      onFinish: { description: "Method called when finish button is pressed" },
+      onChange: { description: "Method called when current step changes" },
+      ContainerProps: { description: "Container Props" },
+      TabsProps: { description: "Tabs Props" },
+      TabPanelContainerProps: { description: "Tab Panel Container Props" },
+      TabOverride: { description: "Tab Override" },
+      HeaderOverride: { description: "Header Override" },
+      ContentOverride: { description: "Content Override" },
+      FooterOverride: { description: "Footer Override" },
+      steps: { description: "steps" },
+    }}
+    name="Playground"
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Wizard
+            onNext={() => {}}
+            onBack={() => {}}
+            onFinish={() => {}}
+            steps={steps}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

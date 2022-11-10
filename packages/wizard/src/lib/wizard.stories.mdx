@@ -3,6 +3,31 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import pkg from '../../package.json';
 import Wizard from './wizard';
 import { useState } from 'react';
+const steps = [
+  {
+    title: '01. Select campaign settings',
+    subtitle: 'Subtitle',
+    content: `For each ad campaign that you create, you can control how much
+you're willing to spend on clicks and conversions, which networks
+and geographical locations you want your ads to show on, and more.`,
+    disabled: false,
+  },
+  {
+    title: '02. Create an ad group',
+    subtitle: 'You can write some cool information stuff here',
+    content: `Small text content`,
+    disabled: false,
+  },
+  {
+    title: '03. Create an ad',
+    subtitle: 'Subtitle',
+    content: `Try out different ad text to see what brings in the most customers,
+and learn how to enhance your ads using features like ad extensions.
+If you run into any problems with your ads, find out how to tell if
+they're running and how to resolve approval issues.`,
+    disabled: false,
+  },
+];
 
 <Meta title="Wizard" component={Wizard} />
 
@@ -37,31 +62,6 @@ yarn add @mui/material @emotion/react @emotion/styled
 <Canvas>
   <Story name="Basic Usage">
     {(args) => {
-      const steps = [
-        {
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `For each ad campaign that you create, you can control how much
-you're willing to spend on clicks and conversions, which networks
-and geographical locations you want your ads to show on, and more.`,
-          disabled: false,
-        },
-        {
-          title: '02. Create an ad group',
-          subtitle: 'You can write some cool information stuff here',
-          content: `Small text content`,
-          disabled: false,
-        },
-        {
-          title: '03. Create an ad',
-          subtitle: 'Subtitle',
-          content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
-          disabled: false,
-        },
-      ];
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard steps={steps} />
@@ -73,7 +73,7 @@ they're running and how to resolve approval issues.`,
 
 ```tsx
 import Wizard from '@novatics-ui/wizard';
-<Wizard steps={[]} />;
+<Wizard steps={['...']} />;
 ```
 
 ### Linear
@@ -81,32 +81,6 @@ import Wizard from '@novatics-ui/wizard';
 <Canvas>
   <Story name="Linear">
     {(args) => {
-      const steps = [
-        {
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `For each ad campaign that you create, you can control how much
-you're willing to spend on clicks and conversions, which networks
-and geographical locations you want your ads to show on, and more.`,
-          disabled: false,
-        },
-        {
-          title: '02. Create an ad group',
-          subtitle: 'You can write some cool information stuff here',
-          content: `Small text content`,
-          status: 'completed',
-          disabled: false,
-        },
-        {
-          title: '03. Create an ad',
-          subtitle: 'Subtitle',
-          content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
-          disabled: false,
-        },
-      ];
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard steps={steps} isLinear />
@@ -121,7 +95,7 @@ The `isLinear` prop defines whether the tabs will navigate in a linear way or no
 ```tsx
 import Wizard from '@novatics-ui/wizard';
 
-<Wizard steps={[]} isLinear />;
+<Wizard steps={['...']} isLinear />;
 ```
 
 ### Show Completed
@@ -129,47 +103,19 @@ import Wizard from '@novatics-ui/wizard';
 <Canvas>
   <Story name="Show Completed">
     {(args) => {
-      const initialSteps = [
-        {
-          id: 1,
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `For each ad campaign that you create, you can control how much
-you're willing to spend on clicks and conversions, which networks
-and geographical locations you want your ads to show on, and more.`,
-          disabled: false,
-        },
-        {
-          id: 2,
-          title: '02. Create an ad group',
-          subtitle: 'You can write some cool information stuff here',
-          content: `Small text content`,
-          disabled: false,
-        },
-        {
-          id: 3,
-          title: '03. Create an ad',
-          subtitle: 'Subtitle',
-          content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
-          disabled: false,
-        },
-      ];
-      const [steps, setSteps] = useState(initialSteps);
-      const completeStep = (id) => {
-        setSteps((value) =>
-          value.map((step) =>
-            step.id === id ? { ...step, status: 'completed' } : step
+      const [newSteps, setNewSteps] = useState(steps);
+      const completeStep = (stepIndex) => {
+        setNewSteps((value) =>
+          value.map((step, i) =>
+            i === stepIndex ? { ...step, status: 'completed' } : step
           )
         );
       };
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard
-            onNext={(stepIndex) => completeStep(stepIndex + 1)}
-            steps={steps}
+            onNext={(stepIndex) => completeStep(stepIndex)}
+            steps={newSteps}
             showCompleted
           />
         </div>
@@ -186,18 +132,20 @@ To set a step completed, we have to set the value of `status` key inside `steps`
 import Wizard from '@novatics-ui/wizard';
 import { useState } from 'react';
 
-const [steps, setSteps] = useState(initialSteps);
-const completeStep = (id) => {
-  setSteps((value) =>
-    value.map((step) =>
-      step.id === id ? { ...step, status: 'completed' } : step
+const steps = ['...'];
+const [newSteps, setNewSteps] = useState(steps);
+
+const completeStep = (stepIndex) => {
+  setNewSteps((value) =>
+    value.map((step, i) =>
+      i === stepIndex ? { ...step, status: 'completed' } : step
     )
   );
 };
 
 <Wizard
-  onNext={(stepIndex) => completeStep(stepIndex + 1)}
-  steps={[]}
+  onNext={(stepIndex) => completeStep(stepIndex)}
+  steps={newSteps}
   showCompleted
 />;
 ```
@@ -207,42 +155,23 @@ const completeStep = (id) => {
 <Canvas>
   <Story name="Components Override">
     {(args) => {
-      const steps = [
-        {
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `For each ad campaign that you create, you can control how much
-                    you're willing to spend on clicks and conversions, which networks
-                    and geographical locations you want your ads to show on, and more.`,
-          disabled: false,
-          components: {
-            Tab: () => <div>Individual Tab</div>,
-            Header: () => <div>Individual header</div>,
-            Content: () => <div>Individual content</div>,
-            Footer: () => <div>Individual footer</div>,
-          },
-        },
-        {
-          title: '02. Create an ad group',
-          subtitle: 'You can write some cool information stuff here',
-          content: 'Name',
-          status: 'completed',
-          disabled: false,
-        },
-        {
-          title: '03. Create an ad',
-          subtitle: 'Subtitle',
-          content: `Try out different ad text to see what brings in the most customers,
-                    and learn how to enhance your ads using features like ad extensions.
-                    If you run into any problems with your ads, find out how to tell if
-                    they're running and how to resolve approval issues.`,
-          disabled: false,
-        },
-      ];
+      const newSteps = steps.map((step, i) => {
+        return i === 0
+          ? {
+              ...step,
+              components: {
+                Tab: () => <div>Individual Tab</div>,
+                Header: () => <div>Individual header</div>,
+                Content: () => <div>Individual content</div>,
+                Footer: () => <div>Individual footer</div>,
+              },
+            }
+          : step;
+      });
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Wizard
-            steps={steps}
+            steps={newSteps}
             HeaderOverride={() => <div>Header</div>}
             ContentOverride={() => <div>Content</div>}
             FooterOverride={() => <div>Footer</div>}
@@ -257,6 +186,8 @@ It is possible to override the whole Wizard component by using the following pro
 
 ```tsx
 import Wizard from '@novatics-ui/wizard';
+
+const steps = ['...'];
 
 <Wizard
   steps={steps}
@@ -295,37 +226,12 @@ const steps = [
 <Canvas>
   <Story name="Disabled Tab">
     {(args) => {
-      const steps = [
-        {
-          id: 1,
-          title: '01. Select campaign settings',
-          subtitle: 'Subtitle',
-          content: `For each ad campaign that you create, you can control how much
-you're willing to spend on clicks and conversions, which networks
-and geographical locations you want your ads to show on, and more.`,
-          disabled: false,
-        },
-        {
-          id: 2,
-          title: '02. Create an ad group',
-          subtitle: 'You can write some cool information stuff here',
-          content: `Small text content`,
-          disabled: false,
-        },
-        {
-          id: 3,
-          title: '03. Create an ad',
-          subtitle: 'Subtitle',
-          content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
-          disabled: true,
-        },
-      ];
+      const newSteps = steps.map((step, i) => {
+        return i === 2 ? { ...step, disabled: true } : step;
+      });
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard steps={steps} />
+          <Wizard steps={newSteps} />
         </div>
       );
     }}
@@ -365,17 +271,7 @@ const steps = [
             onNext={() => {}}
             onBack={() => {}}
             onFinish={() => {}}
-            steps={[
-              {
-                title: '03. Create an ad',
-                subtitle: 'You can write some cool information stuff here',
-                content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
-                disabled: false,
-              },
-            ]}
+            steps={steps}
             {...args}
           />
         </div>

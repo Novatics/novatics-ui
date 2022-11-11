@@ -95,14 +95,15 @@ const Wizard = ({
   useEffect(() => {
     const allDisabled = steps.every((step) => step.disabled === true);
 
-    if(steps[currentStep].disabled && !allDisabled){
+    if (steps.length === 0){
+      setCurrentStep(-2);
+    }
+    else if(steps[currentStep].disabled && !allDisabled){
         handleNext();
     }
     else if (allDisabled) {
-        console.log('allDisabled');
-        console.log('current Step disabled')
         setCurrentStep(-1);
-      }
+    }
     }
   , [])
 
@@ -138,6 +139,13 @@ const Wizard = ({
       </Tabs>
 
       <Box width="80%" {...TabPanelContainerProps}>
+      <TabPanel value={currentStep} index={-2}>
+          <Box sx={{textAlign: 'center'}}>
+            <Typography variant="body1">
+              No steps available
+            </Typography>
+          </Box>
+        </TabPanel>
         <TabPanel value={currentStep} index={-1}>
           <Box sx={{textAlign: 'center'}}>
             <Typography variant="body1">

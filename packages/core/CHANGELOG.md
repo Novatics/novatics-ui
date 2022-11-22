@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.4](https://github.com/mgonc/novatics-ui/compare/core-0.1.3...core-0.1.4) (2022-11-22)
+
+### Dependency Updates
+
+* `currency-text-field` updated to version `0.4.1`
 ### [0.1.7](https://github.com/mgonc/novatics-ui/compare/core-0.1.6...core-0.1.7) (2022-11-22)
 
 ### Dependency Updates

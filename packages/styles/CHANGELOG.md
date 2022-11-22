@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/mgonc/novatics-ui/compare/styles-0.1.0...styles-0.2.0) (2022-11-22)
+
+
+### Features
+
+* **root:** change to affected ([131b667](https://github.com/mgonc/novatics-ui/commit/131b667a1aa6f590bef912794be26fd1f0528fb1))
+
 ## 0.1.0 (2022-11-22)
 
 ### Dependency Updates

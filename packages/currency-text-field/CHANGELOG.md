@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/mgonc/novatics-ui/compare/currency-text-field-0.3.1...currency-text-field-0.4.0) (2022-11-22)
+
+
+### Features
+
+* **root:** text field ([2d729f6](https://github.com/mgonc/novatics-ui/commit/2d729f6db6bed2fd74b20268d541d7819960bd79))
+
 ### [0.3.1](https://github.com/mgonc/novatics-ui/compare/currency-text-field-0.3.0...currency-text-field-0.3.1) (2022-11-22)
 
 ## [0.3.0](https://github.com/mgonc/novatics-ui/compare/currency-text-field-0.2.0...currency-text-field-0.3.0) (2022-11-22)

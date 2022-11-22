@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
 import Tabs, { TabsProps as MUITabsProps } from '@mui/material/Tabs';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+
 import Tab from './Tab';
 import Header from './Header';
 import Footer from './Footer';
@@ -95,17 +95,15 @@ const Wizard = ({
   useEffect(() => {
     const allDisabled = steps.every((step) => step.disabled === true);
 
-    if (steps.length === 0){
+    if (steps.length === 0) {
       setCurrentStep(-2);
+    } else if (steps[currentStep].disabled && !allDisabled) {
+      handleNext();
+    } else if (allDisabled) {
+      setCurrentStep(-1);
     }
-    else if(steps[currentStep].disabled && !allDisabled){
-        handleNext();
-    }
-    else if (allDisabled) {
-        setCurrentStep(-1);
-    }
-    }
-  , [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Box sx={{ display: 'flex' }} width="100%" {...ContainerProps}>
@@ -139,18 +137,14 @@ const Wizard = ({
       </Tabs>
 
       <Box width="80%" {...TabPanelContainerProps}>
-      <TabPanel value={currentStep} index={-2}>
-          <Box sx={{textAlign: 'center'}}>
-            <Typography variant="body1">
-              No steps available
-            </Typography>
+        <TabPanel value={currentStep} index={-2}>
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant="body1">No steps available</Typography>
           </Box>
         </TabPanel>
         <TabPanel value={currentStep} index={-1}>
-          <Box sx={{textAlign: 'center'}}>
-            <Typography variant="body1">
-              All steps are disabled
-            </Typography>
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant="body1">All steps are disabled</Typography>
           </Box>
         </TabPanel>
 

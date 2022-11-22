@@ -36,7 +36,7 @@ const Tab = (props: TabProps) => {
       </TextContainer>
 
       <CheckIcon
-        style={{ marginLeft: '20px', marginRight: '10px' }}
+        sx={{ marginLeft: '20px', marginRight: '10px' }}
         fontSize="small"
         color="success"
       />

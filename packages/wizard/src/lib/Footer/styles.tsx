@@ -1,5 +1,5 @@
-import { styled } from '@mui/system';
-import { Box } from '@mui/material';
+import { styled } from '@mui/material';
+import Box from '@mui/material/Box';
 
 export const Container = styled(Box)`
   margin-top: auto;

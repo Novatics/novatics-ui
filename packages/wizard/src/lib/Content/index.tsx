@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import { ContentProps } from '../types';
 
 const Content = ({ step, ComponentOverride }: ContentProps) => {

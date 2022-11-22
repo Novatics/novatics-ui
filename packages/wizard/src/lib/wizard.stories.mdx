@@ -1,15 +1,17 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { useState } from 'react';
 import pkg from '../../package.json';
 import Wizard from './wizard';
-import { useState } from 'react';
-const steps = [
+
+export const steps = [
   {
     title: '01. Select campaign settings',
     subtitle: 'Subtitle',
-    content: `For each ad campaign that you create, you can control how much
-you're willing to spend on clicks and conversions, which networks
-and geographical locations you want your ads to show on, and more.`,
+    content:
+      'For each ad campaign that you create, you can control how much ' +
+      "you're willing to spend on clicks and conversions, which networks " +
+      'and geographical locations you want your ads to show on, and more.',
     disabled: false,
     status: undefined,
   },
@@ -23,10 +25,11 @@ and geographical locations you want your ads to show on, and more.`,
   {
     title: '03. Create an ad',
     subtitle: 'Subtitle',
-    content: `Try out different ad text to see what brings in the most customers,
-and learn how to enhance your ads using features like ad extensions.
-If you run into any problems with your ads, find out how to tell if
-they're running and how to resolve approval issues.`,
+    content:
+      'Try out different ad text to see what brings in the most customers, ' +
+      'and learn how to enhance your ads using features like ad extensions.' +
+      'If you run into any problems with your ads, find out how to tell if ' +
+      "they're running and how to resolve approval issues.",
     disabled: false,
     status: undefined,
   },
@@ -40,10 +43,10 @@ Use this component for currency inputs
 
 ### Installation
 
-First install the latest version of the package from `@novatics-ui/wizard`.
+First install the latest version of the package from `@novatics/wizard`.
 
 ```bash
-yarn add @novatics-ui/wizard
+yarn add @novatics/wizard
 
 ```
 
@@ -58,20 +61,13 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Basic Usage
 
 ```tsx
-import Wizard from '@novatics-ui/wizard';
+import Wizard from '@novatics/wizard';
+
 <Wizard steps={['...']} />;
 ```
 
 <Canvas>
-  <Story name="Basic Usage">
-    {(args) => {
-      return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard steps={steps} />
-        </div>
-      );
-    }}
-  </Story>
+  <Story name="Basic Usage">{(args) => <Wizard steps={steps} />}</Story>
 </Canvas>
 
 ### Linear
@@ -83,16 +79,9 @@ import Wizard from '@novatics-ui/wizard';
 
 <Wizard steps={['...']} isLinear />;
 ```
+
 <Canvas>
-  <Story name="Linear">
-    {(args) => {
-      return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard steps={steps} isLinear />
-        </div>
-      );
-    }}
-  </Story>
+  <Story name="Linear">{(args) => <Wizard steps={steps} isLinear />}</Story>
 </Canvas>
 
 ### Show Completed
@@ -113,13 +102,11 @@ To set a step completed, we have to set the value of `status` key inside `steps`
         );
       };
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            onChange={(stepIndex) => completeStep(stepIndex)}
-            steps={completeSteps}
-            showCompleted
-          />
-        </div>
+        <Wizard
+          onChange={(stepIndex) => completeStep(stepIndex)}
+          steps={completeSteps}
+          showCompleted
+        />
       );
     }}
   </Story>
@@ -183,14 +170,12 @@ const steps = [
           : step;
       });
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            steps={newSteps}
-            HeaderOverride={() => <div>Header</div>}
-            ContentOverride={() => <div>Content</div>}
-            FooterOverride={() => <div>Footer</div>}
-          />
-        </div>
+        <Wizard
+          steps={newSteps}
+          HeaderOverride={() => <div>Header</div>}
+          ContentOverride={() => <div>Content</div>}
+          FooterOverride={() => <div>Footer</div>}
+        />
       );
     }}
   </Story>
@@ -214,17 +199,14 @@ const steps = [
 
 <Wizard steps={steps} />;
 ```
+
 <Canvas>
   <Story name="Disabled Tab">
     {(args) => {
       const newSteps = steps.map((step, i) => {
         return i === 2 ? { ...step, disabled: true } : step;
       });
-      return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard steps={newSteps} />
-        </div>
-      );
+      return <Wizard steps={newSteps} />;
     }}
   </Story>
 </Canvas>
@@ -234,7 +216,7 @@ const steps = [
 <Canvas>
   <Story
     argTypes={{
-        isLinear: {
+      isLinear: {
         name: 'isLinear',
         description: 'isLinear',
         table: {
@@ -267,32 +249,30 @@ const steps = [
           type: 'text',
         },
       },
-      onNext: { description: "Method called when next button is pressed" },
-      onBack: { description: "Method called when back button is pressed" },
-      onFinish: { description: "Method called when finish button is pressed" },
-      onChange: { description: "Method called when current step changes" },
-      ContainerProps: { description: "Container Props" },
-      TabsProps: { description: "Tabs Props" },
-      TabPanelContainerProps: { description: "Tab Panel Container Props" },
-      TabOverride: { description: "Tab Override" },
-      HeaderOverride: { description: "Header Override" },
-      ContentOverride: { description: "Content Override" },
-      FooterOverride: { description: "Footer Override" },
-      steps: { description: "steps" },
+      onNext: { description: 'Method called when next button is pressed' },
+      onBack: { description: 'Method called when back button is pressed' },
+      onFinish: { description: 'Method called when finish button is pressed' },
+      onChange: { description: 'Method called when current step changes' },
+      ContainerProps: { description: 'Container Props' },
+      TabsProps: { description: 'Tabs Props' },
+      TabPanelContainerProps: { description: 'Tab Panel Container Props' },
+      TabOverride: { description: 'Tab Override' },
+      HeaderOverride: { description: 'Header Override' },
+      ContentOverride: { description: 'Content Override' },
+      FooterOverride: { description: 'Footer Override' },
+      steps: { description: 'steps' },
     }}
     name="Playground"
   >
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Wizard
-            onNext={() => {}}
-            onBack={() => {}}
-            onFinish={() => {}}
-            steps={steps}
-            {...args}
-          />
-        </div>
+        <Wizard
+          onNext={() => {}}
+          onBack={() => {}}
+          onFinish={() => {}}
+          steps={steps}
+          {...args}
+        />
       );
     }}
   </Story>

@@ -14,7 +14,7 @@
         "entryFile": "packages/styles/src/index.ts",
         "external": ["react/jsx-runtime", "@emotion/styled/base"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
+        "compiler": "swc",
         "assets": [
           {
             "glob": "packages/styles/README.md",

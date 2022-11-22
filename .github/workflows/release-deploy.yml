@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  install:
+  install-build-deploy:
     runs-on: ubuntu-22.04
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -21,14 +21,6 @@ jobs:
       - name: Install Dependencies 🔧
         uses: ./.github/actions/setup
 
-  build:
-    needs: install
-    runs-on: ubuntu-22.04
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
       - name: Use Node.js 🔧
         uses: actions/setup-node@v3
         with:
@@ -52,20 +44,9 @@ jobs:
           git tag -f last-release
           git push origin last-release --force
 
-  deploy-gpr:
-    needs: build
-    runs-on: ubuntu-22.04
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
       - name: Deploy 🚀
         run: versions:deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-

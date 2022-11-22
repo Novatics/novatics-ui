@@ -18,11 +18,11 @@
     "verdaccio:up": "cp .npmrc .npmrc.bkp && cp .npmrc.local .npmrc && docker-compose up -d --build",
     "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
     "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
-    "versions:create": "nx run-many --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push": "nx run-many --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:create:deploy": "nx run-many --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push:deploy": "nx run-many --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:deploy": "nx run-many --base=last-release --verbose --target deploy",
+    "versions:create": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:deploy": "nx affected --base=last-release --verbose --target deploy",
     "storybook:build": "nx build-storybook core"
   },
   "dependencies": {

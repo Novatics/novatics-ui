@@ -1,0 +1,19 @@
+name: Setup
+description: Setup Node.js, cache and install dependencies
+inputs:
+  node-version:
+    description: Node.js version
+    required: false
+    default: 'lts/*'
+runs:
+  using: composite
+  steps:
+    - name: Install Dependencies
+      uses: actions/setup-node@v3
+      with:
+        cache: yarn
+        node-version: ${{ inputs.node-version }}
+        registry-url: https://registry.npmjs.org
+    - name: yarn install
+      shell: bash
+      run: yarn --frozen-lockfile --no-progress --non-interactive --prefer-offline

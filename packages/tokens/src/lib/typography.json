@@ -50,7 +50,7 @@
       "letterSpacing": "0.25px",
       "fontFamily": "Work Sans"
     },
-    "body1": {
+    "body": {
       "fontSize": {
         "pixel": 16,
         "rem": 1

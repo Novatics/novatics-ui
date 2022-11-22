@@ -1,6 +1,27 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
-import { typography } from '@novatics-ui/tokens';
+import { typography } from '@novatics/tokens';
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    body: React.CSSProperties;
+    bodySmall: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    body?: React.CSSProperties;
+    bodySmall?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    body: true;
+    bodySmall: true;
+  }
+}
 
 type Typographies =
   | 'h1'
@@ -8,11 +29,10 @@ type Typographies =
   | 'h3'
   | 'h4'
   | 'h5'
-  | 'h6'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption';
+  | 'body'
+  | 'bodySmall'
+  | 'caption'
+  | 'overline';
 
 const typographies = Object.keys(typography.typography) as Typographies[];
 

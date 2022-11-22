@@ -2,6 +2,10 @@
   "name": "novatics-ui",
   "version": "0.0.0",
   "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "@novatics:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "nx": "nx",
     "dev": "nx storybook core",
@@ -14,14 +18,13 @@
     "verdaccio:up": "cp .npmrc .npmrc.bkp && cp .npmrc.local .npmrc && docker-compose up -d --build",
     "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
     "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
-    "versions:create": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push": "nx affected --target version --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:create:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push:deploy": "nx affected --target version:deploy --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:deploy": "nx affected --target deploy",
+    "versions:create": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
+    "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:deploy": "nx affected --base=last-release --verbose --target deploy",
     "storybook:build": "nx build-storybook core"
   },
-  "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

@@ -45,7 +45,7 @@ jobs:
           git push origin last-release --force
 
       - name: Deploy 🚀
-        run: versions:deploy
+        run: yarn versions:deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -14,6 +14,18 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * **root:** update tokens ([d668662](https://github.com/mgonc/novatics-ui/commit/d668662e71e9f61a2e51ee31429e3bd048c5c23c))
 * **tokens:** update colors and typography based on figma ([751c613](https://github.com/mgonc/novatics-ui/commit/751c613b742bd4332fbba29acc8070060a82772e))
 
+## 0.1.0 (2022-11-22)
+
+
+### Features
+
+* **root:** adjust generator to add version config ([3e4d33c](https://github.com/mgonc/novatics-ui/commit/3e4d33c02094754a2cf2389d77aa92ea5c1868a5))
+* **root:** setup tokens ([146788f](https://github.com/mgonc/novatics-ui/commit/146788f05ca6dfd05685111d5170bde69c8796db))
+* **root:** tesing publish ([a2425c7](https://github.com/mgonc/novatics-ui/commit/a2425c7c1529c67544d53033771625f591373c23))
+* **root:** testing ([f264ad8](https://github.com/mgonc/novatics-ui/commit/f264ad8d5488626a5bf6cea7d3ac8b586cbec58e))
+* **root:** update tokens ([d668662](https://github.com/mgonc/novatics-ui/commit/d668662e71e9f61a2e51ee31429e3bd048c5c23c))
+* **tokens:** update colors and typography based on figma ([751c613](https://github.com/mgonc/novatics-ui/commit/751c613b742bd4332fbba29acc8070060a82772e))
+
 ### [0.2.1](https://github.com/mgonc/novatics-ui/compare/tokens-0.2.0...tokens-0.2.1) (2022-11-22)
 
 ### [0.2.1](https://github.com/mgonc/novatics-ui/compare/tokens-0.2.0...tokens-0.2.1) (2022-11-22)

@@ -38,15 +38,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Tag last-release 🏷
-        shell: bash
-        run: |
-          git tag -f last-release
-          git push origin last-release --force
-
       - name: Deploy 🚀
         run: yarn versions:deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag last-release 🏷
+        shell: bash
+        run: |
+          git tag -f last-release
+          git push origin last-release --force

@@ -1,0 +1,53 @@
+name: Build and Deploy releases
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  install-build-deploy:
+    runs-on: ubuntu-22.04
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Dependencies 🔧
+        uses: ./.github/actions/setup
+
+      - name: Use Node.js 🔧
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          node-version: lts/*
+
+      - name: Setup Git 🔧
+        run: |
+          git config user.name "GitHub Bot"
+          git config user.email "novatics-ui@novatics.com"
+          echo "\n//npm.pkg.github.com/:_authToken=\${GITHUB_TOKEN}" >> .npmrc
+
+      - name: Create versions 🏗
+        shell: bash
+        run: yarn versions:create:push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy 🚀
+        run: yarn versions:deploy
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag last-release 🏷
+        shell: bash
+        run: |
+          git tag -f last-release
+          git push origin last-release --force

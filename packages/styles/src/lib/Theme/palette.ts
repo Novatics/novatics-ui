@@ -1,5 +1,5 @@
 import { PaletteOptions } from '@mui/material';
-import { colors } from '@novatics-ui/tokens';
+import { colors } from '@novatics/tokens';
 
 declare module '@mui/material/styles/createPalette' {
   interface SimplePaletteColorOptions {
@@ -70,6 +70,7 @@ export const palette: PaletteOptions = {
     dark: colors['bigBang--dark'],
     light: colors['bigBang--light'],
   },
+  
   error: {
     main: colors['mars'],
     dark: colors['mars--dark'],

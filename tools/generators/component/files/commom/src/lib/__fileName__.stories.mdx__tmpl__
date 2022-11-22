@@ -8,20 +8,20 @@ import <%= className %> from './<%= fileName %>'
 
 ### Installation
 
-First install the latest version of the package from `@novatics-ui/<%= fileName %>`.
+First install the latest version of the package from `@novatics/<%= fileName %>`.
 
 ```shell
-  yarn add -D @novatics-ui/<%= fileName %>
+  yarn add -D @novatics/<%= fileName %>
 ```
 
 ```shell
-  npm install --dev @novatics-ui/<%= fileName %>
+  npm install --dev @novatics/<%= fileName %>
 ```
 
 and use it
 
 ```tsx
-import ... from '@novatics-ui/<%= fileName %>';
+import ... from '@novatics/<%= fileName %>';
 
   ...
 

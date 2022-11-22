@@ -17,12 +17,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@novatics-ui/core": ["packages/core/src/index.ts"],
-      "@novatics-ui/currency-text-field": [
+      "@novatics/core": ["packages/core/src/index.ts"],
+      "@novatics/currency-text-field": [
         "packages/currency-text-field/src/index.ts"
       ],
-      "@novatics-ui/styles": ["packages/styles/src/index.ts"],
-      "@novatics-ui/tokens": ["packages/tokens/src/index.ts"]
+      "@novatics/styles": ["packages/styles/src/index.ts"],
+      "@novatics/tokens": ["packages/tokens/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

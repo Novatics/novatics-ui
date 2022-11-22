@@ -37,17 +37,17 @@ Here we provide the novatics tokens stylesheet. This package is used on our styl
 You can install the package with
 
 ```shell
-  yarn add -D @novatics-ui/tokens
+  yarn add -D @novatics/tokens
 ```
 
 ```shell
-  npm install --dev @novatics-ui/tokens
+  npm install --dev @novatics/tokens
 ```
 
 and use it
 
 ```tsx
-import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@novatics-ui/tokens';
+import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@novatics/tokens';
 
   ...
   color: Tokens.colors.nebula.main
@@ -86,17 +86,17 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
                   }}
                 >
                   <Typography
-                    variant="body1"
+                    variant="body"
                     fontWeight="700"
                     color={getColorTextColor(name)}
                   >
                     {formatColorName(name)}
                   </Typography>
-                  <Typography variant="body2" color={getColorTextColor(name)}>
+                  <Typography variant="bodySmall" color={getColorTextColor(name)}>
                     <span style={{ opacity: 0.7 }}>HEX</span>{' '}
                     {Tokens.colors[name]}
                   </Typography>
-                  <Typography variant="body2" color={getColorTextColor(name)}>
+                  <Typography variant="bodySmall" color={getColorTextColor(name)}>
                     <span style={{ opacity: 0.7 }}>TOKEN</span> {name}
                   </Typography>
                 </Paper>
@@ -138,7 +138,7 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
                   backgroundColor={Tokens.colors.cosmos}
                 />
                 <Stack spacing={1}>
-                  <Typography variant="body2">Corner Radius</Typography>
+                  <Typography variant="bodySmall">Corner Radius</Typography>
                   <Box borderLeft="1px solid black" height="40px" pl={1}>
                     <Typography variant="caption">
                       {`${Tokens.borderRadius.small.px}px`}
@@ -162,7 +162,7 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
                   backgroundColor={Tokens.colors.cosmos}
                 />
                 <Stack spacing={1}>
-                  <Typography variant="body2">Corner Radius</Typography>
+                  <Typography variant="bodySmall">Corner Radius</Typography>
                   <Box borderLeft="1px solid black" height="40px" pl={1}>
                     <Typography variant="caption">
                       {`${Tokens.borderRadius.regular.px}px`}
@@ -186,7 +186,7 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
                   backgroundColor={Tokens.colors.cosmos}
                 />
                 <Stack spacing={1}>
-                  <Typography variant="body2">Corner Radius</Typography>
+                  <Typography variant="bodySmall">Corner Radius</Typography>
                   <Box borderLeft="1px solid black" height="40px" pl={1}>
                     <Typography variant="caption">
                       {`${Tokens.borderRadius.large.px}px`}
@@ -229,9 +229,9 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
               />
               <Stack direction="row" spacing={2}>
                 <Box width="100px">
-                  <Typography variant="body1">spacings[{spacing}]</Typography>
+                  <Typography variant="body">spacings[{spacing}]</Typography>
                 </Box>
-                <Typography variant="body1" sx={{ opacity: '0.7' }}>
+                <Typography variant="body" sx={{ opacity: '0.7' }}>
                   {spacing} * 8 = {Number(spacing) * 8}px
                 </Typography>
               </Stack>
@@ -264,7 +264,7 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
             <Stack spacing={5}>
               {['low', 'medium', 'intermediate', 'high'].map((variant) => (
                 <Stack spacing={1}>
-                  <Typography variant="body2">{`blackhole--${variant}`}</Typography>
+                  <Typography variant="bodySmall">{`blackhole--${variant}`}</Typography>
                   <Box
                     height="108px"
                     width="90%"
@@ -278,7 +278,7 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
             <Stack spacing={5}>
               {['low', 'medium', 'intermediate', 'high'].map((variant) => (
                 <Stack spacing={1}>
-                  <Typography variant="body2">{`cosmos--${variant}`}</Typography>
+                  <Typography variant="bodySmall">{`cosmos--${variant}`}</Typography>
                   <Box
                     height="108px"
                     width="90%"

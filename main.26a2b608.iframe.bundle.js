@@ -3588,10 +3588,10 @@ function MDXContent({
     "id": "installation"
   }, `Installation`), (0,esm/* mdx */.kt)("p", null, `First install the latest version of the package from `, (0,esm/* mdx */.kt)("inlineCode", {
     parentName: "p"
-  }, `@novatics-ui/currency-text-field`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+  }, `@novatics/currency-text-field`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-bash"
-  }, `yarn add @novatics-ui/currency-text-field
+  }, `yarn add @novatics/currency-text-field
 `)), (0,esm/* mdx */.kt)("h3", {
     "id": "dependencies"
   }, `Dependencies`), (0,esm/* mdx */.kt)("p", null, `This component extends `, (0,esm/* mdx */.kt)("a", {
@@ -3627,7 +3627,7 @@ function MDXContent({
   })), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-tsx"
-  }, `import CurrencyTextField from '@novatics-ui/currency-text-field';
+  }, `import CurrencyTextField from '@novatics/currency-text-field';
 
 <CurrencyTextField
   value={123456}
@@ -3905,7 +3905,7 @@ var client = __webpack_require__(46441);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/Button/Button.js + 10 modules
 var Button = __webpack_require__(80828);
 ;// CONCATENATED MODULE: ./packages/styles/package.json
-const package_namespaceObject = {"i":"0.0.1"};
+const package_namespaceObject = {"i8":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__(23157);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
@@ -3958,23 +3958,23 @@ function MDXContent({
   }), (0,esm/* mdx */.kt)("h1", {
     "id": "styles-img-srchttpsimgshieldsiobadgeversion-vpkgversion-brightgreenn-"
   }, `Styles `, (0,esm/* mdx */.kt)("img", {
-    src: `https://img.shields.io/badge/Version-v${package_namespaceObject.i}-brightgreenn`
+    src: `https://img.shields.io/badge/Version-v${package_namespaceObject.i8}-brightgreenn`
   })), (0,esm/* mdx */.kt)("p", null, `Basic functions to create a MUI theme with our default colors, spacings, border radius, shadows and typography.`), (0,esm/* mdx */.kt)("h3", {
     "id": "installation"
   }, `Installation`), (0,esm/* mdx */.kt)("p", null, `First install the latest version of the package from `, (0,esm/* mdx */.kt)("inlineCode", {
     parentName: "p"
-  }, `@novatics-ui/<%= fileName %>`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+  }, `@novatics/<%= fileName %>`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-shell"
-  }, `  yarn add -D @novatics-ui/styles
+  }, `  yarn add -D @novatics/styles
 `)), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-shell"
-  }, `  npm install --dev @novatics-ui/styles
+  }, `  npm install --dev @novatics/styles
 `)), (0,esm/* mdx */.kt)("p", null, `and use it`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-tsx"
-  }, `import { ThemeProvider, createTheme, styled } from '@novatics-ui/styles';
+  }, `import { ThemeProvider, createTheme, styled } from '@novatics/styles';
 
 const theme = createTheme();
 const Button = styled('button')({ background: 'red' });
@@ -4004,7 +4004,7 @@ return (
 To use it follow the documentation at Material-UI`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-tsx"
-  }, `import { ThemeProvider, createTheme, styled } from '@novatics-ui/styles';
+  }, `import { ThemeProvider, createTheme, styled } from '@novatics/styles';
 
 const App = ({ children }) => {
   const theme = createTheme();
@@ -4038,7 +4038,7 @@ This means that we can pass props not recognized by DOM using the dollar sign ($
 This is useful when we are using @emotion/styled as our styling engine.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-tsx"
-  }, `import { styled } from '@novatics-ui/styles';
+  }, `import { styled } from '@novatics/styles';
 
 export const ListItem = styled('li')(({ $isFirst, $isLast }) => ({
   borderStyle: 'solid',
@@ -4260,15 +4260,15 @@ function MDXContent({
   })), (0,esm/* mdx */.kt)("p", null, `Here we provide the novatics tokens stylesheet. This package is used on our style component to create components with our brand!`), (0,esm/* mdx */.kt)("p", null, `You can install the package with`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-shell"
-  }, `  yarn add -D @novatics-ui/tokens
+  }, `  yarn add -D @novatics/tokens
 `)), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-shell"
-  }, `  npm install --dev @novatics-ui/tokens
+  }, `  npm install --dev @novatics/tokens
 `)), (0,esm/* mdx */.kt)("p", null, `and use it`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
     parentName: "pre",
     "className": "language-tsx"
-  }, `import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@novatics-ui/tokens';
+  }, `import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@novatics/tokens';
 
   ...
   color: Tokens.colors.nebula.main
@@ -4303,12 +4303,12 @@ function MDXContent({
       },
       mdxType: "Paper"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body1",
+      variant: "body",
       fontWeight: "700",
       color: getColorTextColor(name),
       mdxType: "Typography"
     }, formatColorName(name)), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       color: getColorTextColor(name),
       mdxType: "Typography"
     }, (0,esm/* mdx */.kt)("span", {
@@ -4316,7 +4316,7 @@ function MDXContent({
         opacity: 0.7
       }
     }, "HEX"), ' ', tokens/* default.colors */.ZP.colors[name]), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       color: getColorTextColor(name),
       mdxType: "Typography"
     }, (0,esm/* mdx */.kt)("span", {
@@ -4364,7 +4364,7 @@ function MDXContent({
       spacing: 1,
       mdxType: "Stack"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       mdxType: "Typography"
     }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
       borderLeft: "1px solid black",
@@ -4402,7 +4402,7 @@ function MDXContent({
       spacing: 1,
       mdxType: "Stack"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       mdxType: "Typography"
     }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
       borderLeft: "1px solid black",
@@ -4440,7 +4440,7 @@ function MDXContent({
       spacing: 1,
       mdxType: "Stack"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       mdxType: "Typography"
     }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
       borderLeft: "1px solid black",
@@ -4482,10 +4482,10 @@ function MDXContent({
       width: "100px",
       mdxType: "Box"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body1",
+      variant: "body",
       mdxType: "Typography"
     }, "spacings[", spacing, "]")), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body1",
+      variant: "body",
       sx: {
         opacity: '0.7'
       },
@@ -4514,7 +4514,7 @@ function MDXContent({
       spacing: 1,
       mdxType: "Stack"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       mdxType: "Typography"
     }, `blackhole--${variant}`), (0,esm/* mdx */.kt)(Box/* default */.Z, {
       height: "108px",
@@ -4534,7 +4534,7 @@ function MDXContent({
       spacing: 1,
       mdxType: "Stack"
     }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-      variant: "body2",
+      variant: "bodySmall",
       mdxType: "Typography"
     }, `cosmos--${variant}`), (0,esm/* mdx */.kt)(Box/* default */.Z, {
       height: "108px",
@@ -4565,18 +4565,18 @@ const colors = args => {
       backgroundColor: tokens/* default.colors */.ZP.colors[name]
     }
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body1",
+    variant: "body",
     fontWeight: "700",
     color: getColorTextColor(name)
   }, formatColorName(name)), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2",
+    variant: "bodySmall",
     color: getColorTextColor(name)
   }, (0,esm/* mdx */.kt)("span", {
     style: {
       opacity: 0.7
     }
   }, "HEX"), ' ', tokens/* default.colors */.ZP.colors[name]), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2",
+    variant: "bodySmall",
     color: getColorTextColor(name)
   }, (0,esm/* mdx */.kt)("span", {
     style: {
@@ -4587,7 +4587,7 @@ const colors = args => {
 colors.storyName = 'Colors';
 colors.parameters = {
   storySource: {
-    source: 'args => {\n  return <Grid container spacing={2}>\n          {keys(Tokens.colors).map(name => <Grid item xs={3}>\n              <Stack spacing={1}>\n                <Paper square sx={{\n          padding: 3,\n          height: \'106px\',\n          backgroundColor: Tokens.colors[name]\n        }}>\n                  <Typography variant=\"body1\" fontWeight=\"700\" color={getColorTextColor(name)}>\n                    {formatColorName(name)}\n                  </Typography>\n                  <Typography variant=\"body2\" color={getColorTextColor(name)}>\n                    <span style={{\n              opacity: 0.7\n            }}>HEX</span>{\' \'}\n                    {Tokens.colors[name]}\n                  </Typography>\n                  <Typography variant=\"body2\" color={getColorTextColor(name)}>\n                    <span style={{\n              opacity: 0.7\n            }}>TOKEN</span> {name}\n                  </Typography>\n                </Paper>\n              </Stack>\n            </Grid>)}\n        </Grid>;\n}'
+    source: 'args => {\n  return <Grid container spacing={2}>\n          {keys(Tokens.colors).map(name => <Grid item xs={3}>\n              <Stack spacing={1}>\n                <Paper square sx={{\n          padding: 3,\n          height: \'106px\',\n          backgroundColor: Tokens.colors[name]\n        }}>\n                  <Typography variant=\"body\" fontWeight=\"700\" color={getColorTextColor(name)}>\n                    {formatColorName(name)}\n                  </Typography>\n                  <Typography variant=\"bodySmall\" color={getColorTextColor(name)}>\n                    <span style={{\n              opacity: 0.7\n            }}>HEX</span>{\' \'}\n                    {Tokens.colors[name]}\n                  </Typography>\n                  <Typography variant=\"bodySmall\" color={getColorTextColor(name)}>\n                    <span style={{\n              opacity: 0.7\n            }}>TOKEN</span> {name}\n                  </Typography>\n                </Paper>\n              </Stack>\n            </Grid>)}\n        </Grid>;\n}'
   }
 };
 const borderRadius = args => {
@@ -4615,7 +4615,7 @@ const borderRadius = args => {
   }), (0,esm/* mdx */.kt)(Stack/* default */.Z, {
     spacing: 1
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2"
+    variant: "bodySmall"
   }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
     borderLeft: "1px solid black",
     height: "40px",
@@ -4643,7 +4643,7 @@ const borderRadius = args => {
   }), (0,esm/* mdx */.kt)(Stack/* default */.Z, {
     spacing: 1
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2"
+    variant: "bodySmall"
   }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
     borderLeft: "1px solid black",
     height: "40px",
@@ -4671,7 +4671,7 @@ const borderRadius = args => {
   }), (0,esm/* mdx */.kt)(Stack/* default */.Z, {
     spacing: 1
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2"
+    variant: "bodySmall"
   }, "Corner Radius"), (0,esm/* mdx */.kt)(Box/* default */.Z, {
     borderLeft: "1px solid black",
     height: "40px",
@@ -4683,7 +4683,7 @@ const borderRadius = args => {
 borderRadius.storyName = 'Border Radius';
 borderRadius.parameters = {
   storySource: {
-    source: 'args => {\n  return <Grid container spacing={4}>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Small\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.small</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.small.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"body2\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.small.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Regular\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.regular</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.regular.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"body2\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.regular.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Large\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.large</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.large.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"body2\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.large.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n        </Grid>;\n}'
+    source: 'args => {\n  return <Grid container spacing={4}>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Small\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.small</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.small.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"bodySmall\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.small.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Regular\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.regular</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.regular.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"bodySmall\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.regular.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n          <Grid item xs={4}>\n            <Stack spacing={1}>\n              <Typography variant=\"h5\" fontWeight=\"700\">\n                Large\n              </Typography>\n              <Typography variant=\"caption\">borderRadius.large</Typography>\n              <Stack direction=\"row\" spacing={3}>\n                <Box height=\"108px\" width=\"256px\" borderRadius={`${Tokens.borderRadius.large.px}px`} backgroundColor={Tokens.colors.cosmos} />\n                <Stack spacing={1}>\n                  <Typography variant=\"bodySmall\">Corner Radius</Typography>\n                  <Box borderLeft=\"1px solid black\" height=\"40px\" pl={1}>\n                    <Typography variant=\"caption\">\n                      {`${Tokens.borderRadius.large.px}px`}\n                    </Typography>\n                  </Box>\n                </Stack>\n              </Stack>\n            </Stack>\n          </Grid>\n        </Grid>;\n}'
   }
 };
 const spacings = args => {
@@ -4705,9 +4705,9 @@ const spacings = args => {
   }, (0,esm/* mdx */.kt)(Box/* default */.Z, {
     width: "100px"
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body1"
+    variant: "body"
   }, "spacings[", spacing, "]")), (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body1",
+    variant: "body",
     sx: {
       opacity: '0.7'
     }
@@ -4716,7 +4716,7 @@ const spacings = args => {
 spacings.storyName = 'Spacings';
 spacings.parameters = {
   storySource: {
-    source: 'args => {\n  return <Stack spacing={1}>\n          {sortedSpacings.map(spacing => <Box display=\"flex\" alignItems=\"center\">\n              <Box height={`${Tokens.spacings[spacing].px}px`} width=\"40%\" backgroundColor={Tokens.colors[\'nebula--light\']} borderTop={`1px dashed ${Tokens.colors.nebula}`} borderBottom={`1px dashed ${Tokens.colors.nebula}`} mr={3} />\n              <Stack direction=\"row\" spacing={2}>\n                <Box width=\"100px\">\n                  <Typography variant=\"body1\">spacings[{spacing}]</Typography>\n                </Box>\n                <Typography variant=\"body1\" sx={{\n          opacity: \'0.7\'\n        }}>\n                  {spacing} * 8 = {Number(spacing) * 8}px\n                </Typography>\n              </Stack>\n            </Box>)}\n        </Stack>;\n}'
+    source: 'args => {\n  return <Stack spacing={1}>\n          {sortedSpacings.map(spacing => <Box display=\"flex\" alignItems=\"center\">\n              <Box height={`${Tokens.spacings[spacing].px}px`} width=\"40%\" backgroundColor={Tokens.colors[\'nebula--light\']} borderTop={`1px dashed ${Tokens.colors.nebula}`} borderBottom={`1px dashed ${Tokens.colors.nebula}`} mr={3} />\n              <Stack direction=\"row\" spacing={2}>\n                <Box width=\"100px\">\n                  <Typography variant=\"body\">spacings[{spacing}]</Typography>\n                </Box>\n                <Typography variant=\"body\" sx={{\n          opacity: \'0.7\'\n        }}>\n                  {spacing} * 8 = {Number(spacing) * 8}px\n                </Typography>\n              </Stack>\n            </Box>)}\n        </Stack>;\n}'
   }
 };
 const shadows = args => {
@@ -4731,7 +4731,7 @@ const shadows = args => {
   }, ['low', 'medium', 'intermediate', 'high'].map(variant => (0,esm/* mdx */.kt)(Stack/* default */.Z, {
     spacing: 1
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2"
+    variant: "bodySmall"
   }, `blackhole--${variant}`), (0,esm/* mdx */.kt)(Box/* default */.Z, {
     height: "108px",
     width: "90%",
@@ -4746,7 +4746,7 @@ const shadows = args => {
   }, ['low', 'medium', 'intermediate', 'high'].map(variant => (0,esm/* mdx */.kt)(Stack/* default */.Z, {
     spacing: 1
   }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
-    variant: "body2"
+    variant: "bodySmall"
   }, `cosmos--${variant}`), (0,esm/* mdx */.kt)(Box/* default */.Z, {
     height: "108px",
     width: "90%",
@@ -4758,7 +4758,7 @@ const shadows = args => {
 shadows.storyName = 'Shadows';
 shadows.parameters = {
   storySource: {
-    source: 'args => {\n  return <Grid container spacing={4}>\n          <Grid item xs={6}>\n            <Stack spacing={5}>\n              {[\'low\', \'medium\', \'intermediate\', \'high\'].map(variant => <Stack spacing={1}>\n                  <Typography variant=\"body2\">{`blackhole--${variant}`}</Typography>\n                  <Box height=\"108px\" width=\"90%\" sx={{\n            boxShadow: Tokens.shadows[`blackhole--${variant}`]\n          }} />\n                </Stack>)}\n            </Stack>\n          </Grid>\n          <Grid item xs={6}>\n            <Stack spacing={5}>\n              {[\'low\', \'medium\', \'intermediate\', \'high\'].map(variant => <Stack spacing={1}>\n                  <Typography variant=\"body2\">{`cosmos--${variant}`}</Typography>\n                  <Box height=\"108px\" width=\"90%\" sx={{\n            boxShadow: Tokens.shadows[`cosmos--${variant}`]\n          }} />\n                </Stack>)}\n            </Stack>\n          </Grid>\n        </Grid>;\n}'
+    source: 'args => {\n  return <Grid container spacing={4}>\n          <Grid item xs={6}>\n            <Stack spacing={5}>\n              {[\'low\', \'medium\', \'intermediate\', \'high\'].map(variant => <Stack spacing={1}>\n                  <Typography variant=\"bodySmall\">{`blackhole--${variant}`}</Typography>\n                  <Box height=\"108px\" width=\"90%\" sx={{\n            boxShadow: Tokens.shadows[`blackhole--${variant}`]\n          }} />\n                </Stack>)}\n            </Stack>\n          </Grid>\n          <Grid item xs={6}>\n            <Stack spacing={5}>\n              {[\'low\', \'medium\', \'intermediate\', \'high\'].map(variant => <Stack spacing={1}>\n                  <Typography variant=\"bodySmall\">{`cosmos--${variant}`}</Typography>\n                  <Box height=\"108px\" width=\"90%\" sx={{\n            boxShadow: Tokens.shadows[`cosmos--${variant}`]\n          }} />\n                </Stack>)}\n            </Stack>\n          </Grid>\n        </Grid>;\n}'
   }
 };
 const componentMeta = {
@@ -5313,7 +5313,7 @@ const shadows_namespaceObject = JSON.parse('{"blackhole--low":"0px 2px 4px 1px r
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/spacings.json
 const spacings_namespaceObject = JSON.parse('{"1":{"px":8,"rem":0.5},"2":{"px":16,"rem":1},"3":{"px":24,"rem":1.5},"4":{"px":32,"rem":2},"5":{"px":40,"rem":2.5},"6":{"px":48,"rem":3},"7":{"px":56,"rem":3.5},"8":{"px":64,"rem":4},"10":{"px":80,"rem":5},"12":{"px":96,"rem":6},"0.5":{"px":4,"rem":0.25},"1.5":{"px":12,"rem":0.75},"2.5":{"px":20,"rem":1.25}}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/typography.json
-const typography_namespaceObject = JSON.parse('{"typography":{"h1":{"fontSize":{"pixel":90,"rem":5.62},"fontWeight":700,"lineHeight":1,"letterSpacing":"-1px","fontFamily":"Work Sans"},"h2":{"fontSize":{"pixel":67,"rem":4.18},"fontWeight":700,"lineHeight":1,"letterSpacing":"-0.5px","fontFamily":"Work Sans"},"h3":{"fontSize":{"pixel":45,"rem":2.81},"fontWeight":700,"lineHeight":1,"letterSpacing":0,"fontFamily":"Work Sans"},"h4":{"fontSize":{"pixel":32,"rem":2},"fontWeight":500,"lineHeight":1,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"h5":{"fontSize":{"pixel":22,"rem":1.375},"fontWeight":400,"lineHeight":1.2,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"body1":{"fontSize":{"pixel":16,"rem":1},"fontWeight":400,"lineHeight":1.6,"letterSpacing":"0.15px","fontFamily":"Work Sans"},"bodySmall":{"fontSize":{"pixel":14,"rem":0.875},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.1px","fontFamily":"Work Sans"},"caption":{"fontSize":{"pixel":12,"rem":0.75},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"overline":{"fontSize":{"pixel":12,"rem":1.2},"fontWeight":500,"lineHeight":1.12,"letterSpacing":"1.25px","fontFamily":"Work Sans","textTransform":"uppercase"}}}');
+const typography_namespaceObject = JSON.parse('{"typography":{"h1":{"fontSize":{"pixel":90,"rem":5.62},"fontWeight":700,"lineHeight":1,"letterSpacing":"-1px","fontFamily":"Work Sans"},"h2":{"fontSize":{"pixel":67,"rem":4.18},"fontWeight":700,"lineHeight":1,"letterSpacing":"-0.5px","fontFamily":"Work Sans"},"h3":{"fontSize":{"pixel":45,"rem":2.81},"fontWeight":700,"lineHeight":1,"letterSpacing":0,"fontFamily":"Work Sans"},"h4":{"fontSize":{"pixel":32,"rem":2},"fontWeight":500,"lineHeight":1,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"h5":{"fontSize":{"pixel":22,"rem":1.375},"fontWeight":400,"lineHeight":1.2,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"body":{"fontSize":{"pixel":16,"rem":1},"fontWeight":400,"lineHeight":1.6,"letterSpacing":"0.15px","fontFamily":"Work Sans"},"bodySmall":{"fontSize":{"pixel":14,"rem":0.875},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.1px","fontFamily":"Work Sans"},"caption":{"fontSize":{"pixel":12,"rem":0.75},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"overline":{"fontSize":{"pixel":12,"rem":1.2},"fontWeight":500,"lineHeight":1.12,"letterSpacing":"1.25px","fontFamily":"Work Sans","textTransform":"uppercase"}}}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/tokens.ts
 
 
@@ -5835,4 +5835,4 @@ var _frameworkImportPath = __webpack_require__(46441);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.bd0f7926.iframe.bundle.js.map
+//# sourceMappingURL=main.26a2b608.iframe.bundle.js.map

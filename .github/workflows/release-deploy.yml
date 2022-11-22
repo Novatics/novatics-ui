@@ -1,92 +1,70 @@
-name: Node.js Package
+name: Build and Deploy releases
 
 on:
   push:
     branches: [master]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  install:
+    runs-on: ubuntu-22.04
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Get code to get access to custom our actions
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Install Dependencies
+      - name: Install Dependencies 🔧
         uses: ./.github/actions/setup
 
-  release:
-    needs: build
-    runs-on: ubuntu-latest
+  build:
+    needs: install
+    runs-on: ubuntu-22.04
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Use Node.js
+      - name: Use Node.js 🔧
         uses: actions/setup-node@v3
         with:
           always-auth: true
           node-version: lts/*
 
-      - name: Setup Git
+      - name: Setup Git 🔧
         run: |
           git config user.name "GitHub Bot"
-          git config user.email "souzagonc@gmail.com"
-      - run: yarn install --frozen-lockfile
-      - name: Version
+          git config user.email "novatics-ui@novatics.com"
+
+      - name: Create versions 🏗
         shell: bash
-        run: yarn nx run-many --base=last-release --target=version --verbose --noVerify --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push
+        run: yarn versions:create:push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Tag last-release
+
+      - name: Tag last-release 🏷
         shell: bash
         run: |
           git tag -f last-release
           git push origin last-release --force
 
-      - run: ls
+  deploy-gpr:
+    needs: build
+      runs-on: ubuntu-22.04
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: yarn nx run-many --base=last-release --target=deploy --verbose
+      - name: Deploy 🚀
+        run: versions:deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  publish-gpr:
-    needs: release
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
 
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Get code to get access to custom our actions
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          always-auth: true
-          node-version: lts/*
-          registry-url: https://npm.pkg.github.com/
-
-      - run: ls
-
-      - run: yarn nx run-many --base=last-release --target=deploy --verbose
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

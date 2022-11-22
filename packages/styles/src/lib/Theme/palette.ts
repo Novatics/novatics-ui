@@ -70,6 +70,7 @@ export const palette: PaletteOptions = {
     dark: colors['bigBang--dark'],
     light: colors['bigBang--light'],
   },
+  
   error: {
     main: colors['mars'],
     dark: colors['mars--dark'],

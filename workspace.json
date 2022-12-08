@@ -5,6 +5,7 @@
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
     "styles": "packages/styles",
-    "tokens": "packages/tokens"
+    "tokens": "packages/tokens",
+    "wizard": "packages/wizard"
   }
 }

@@ -23,6 +23,7 @@
       ],
       "@novatics/styles": ["packages/styles/src/index.ts"],
       "@novatics/tokens": ["packages/tokens/src/index.ts"],
+      "@novatics/wheel-picker": ["packages/wheel-picker/src/index.ts"],
       "@novatics/wizard": ["packages/wizard/src/index.ts"]
     }
   },

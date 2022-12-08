@@ -6,6 +6,7 @@
     "currency-text-field": "packages/currency-text-field",
     "styles": "packages/styles",
     "tokens": "packages/tokens",
+    "wheel-picker": "packages/wheel-picker",
     "wizard": "packages/wizard"
   }
 }

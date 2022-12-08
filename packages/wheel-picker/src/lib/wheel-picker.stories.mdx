@@ -1,0 +1,103 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {
+  List,
+  ListItem,
+  SelectProps,
+  Box,
+  BoxProps,
+  TextField,
+} from '@mui/material';
+
+import pkg from '../../package.json';
+import { WheelPicker, WheelPickerProps } from './wheel-picker';
+
+<Meta title="Wheel picker" component={WheelPicker} />
+
+# WheelPicker <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/wheel-picker`.
+
+```shell
+  yarn add -D @novatics/wheel-picker
+```
+
+```shell
+  npm install --dev @novatics/wheel-picker
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/wheel-picker';
+
+  ...
+
+
+```
+
+<!-- ### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      const [textFieldValue, setTextFieldValue] = useState('');
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Select"
+            value={textFieldValue}
+            onChange={({ value }) => setTextFieldValue(value)}
+            helperText="Please select your currency"
+          >
+            <WheelPicker {...args} />
+          </TextField>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas> -->
+
+### Playground
+
+<Canvas>
+  <Story name="Playground" component={WheelPicker}>
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <WheelPicker {...args}>
+            <div value={1}>one</div>
+            <div value={2}>two</div>
+            <div value={3}>three</div>
+            <div value={4}> four </div>
+            <div value={5}>five</div>
+            <div value={6}>six</div>
+            <div value={7}>seven</div>
+            <div value={8}>eight</div>
+            <div value={9}>nine</div>
+            <div value={10}>ten</div>
+            <div value={11}>eleven</div>
+            <div value={12}>twelve</div>
+            <div value={13}>thirteen</div>
+            <div value={14}>fourteen</div>
+            <div value={15}>fifteen</div>
+            <div value={16}>sixteen</div>
+            <div value={17}>seventeen</div>
+            <div value={18}>eighteen</div>
+            <div value={19}>nineteen</div>
+            <div value={20}>twenty</div>
+          </WheelPicker>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
+made by Novatics ❤

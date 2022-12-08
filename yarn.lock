@@ -5250,6 +5250,13 @@
   dependencies:
     "@types/lodash" "*"
 
+"@types/lodash.findindex@^4.6.7":
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/@types/lodash.findindex/-/lodash.findindex-4.6.7.tgz#1d3519cf56169fedf7288e4769e63ad58a5adb31"
+  integrity sha512-Rrcz/vl+yP0vl2vGiu2FCIeMNShoGTVMvG78o8oaxpg4oxwWuY0Pqz/itV3l/FhV6hPVAa3OmHYFQqy7FqSBWA==
+  dependencies:
+    "@types/lodash" "*"
+
 "@types/lodash.includes@^4.3.7":
   version "4.3.7"
   resolved "https://registry.yarnpkg.com/@types/lodash.includes/-/lodash.includes-4.3.7.tgz#b4cc0fe0fa0e68083fc933a5a644908cbd9e1f0f"
@@ -13106,6 +13113,11 @@ lodash.defaults@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
   integrity sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==
 
+lodash.findindex@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.findindex/-/lodash.findindex-4.6.0.tgz#a3245dee61fb9b6e0624b535125624bb69c11106"
+  integrity sha512-9er6Ccz6sEST3bHFtUrCFWk14nE8cdL/RoW1RRDV1BxqN3qsmsT56L14jhfctAqhVPVcdJw4MRxEaVoAK+JVvw==
+
 lodash.flow@^3.3.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/lodash.flow/-/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
@@ -17862,6 +17874,11 @@ ts-pnp@^1.1.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
+
+ts-transformer-keys@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/ts-transformer-keys/-/ts-transformer-keys-0.4.3.tgz#d62389a40f430c00ef98fb9575fb6778a196e3ed"
+  integrity sha512-pOTLlet1SnAvhKNr9tMAFwuv5283OkUNiq1fXTEK+vrSv+kxU3e2Ijr/UkqyX2vuMmvcNHdpXC31hob7ljH//g==
 
 tsconfig-paths-webpack-plugin@3.5.2:
   version "3.5.2"

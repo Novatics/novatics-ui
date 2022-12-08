@@ -18,6 +18,8 @@ import * as util from 'util';
 interface ComponentSchemaOptions {
   name: string;
   mui?: boolean;
+  importPath?: string;
+  bundler?: 'rollup' | 'vite';
   buildable?: boolean;
   compiler?: string;
   style?: string;
@@ -62,22 +64,25 @@ function updateTargetsVersion(targets: Record<string, any>) {
   targets.version.options.baseBranch = 'master';
 }
 
-function createTargetsVersionDeploy(targets: Record<string, any>, fileName: string) {
+function createTargetsVersionDeploy(
+  targets: Record<string, any>,
+  fileName: string
+) {
   targets['version:deploy'] = { ...targets['version:deploy'] } ?? {};
   targets['version:deploy'].executor = '@jscutlery/semver:version';
   targets['version:deploy'].options = targets['version:deploy'].options ?? {};
   targets['version:deploy'].options.preset = 'conventional';
   targets['version:deploy'].options.baseBranch = 'master';
-  targets['version:deploy'].options.postTargets = [
-    `${fileName}:deploy`,
-  ];
+  targets['version:deploy'].options.postTargets = [`${fileName}:deploy`];
 }
 
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const {
     name,
     mui,
+    importPath = '@novatics',
     buildable = true,
+    bundler = 'rollup',
     compiler = 'swc',
     style = '@emotion/styled',
     configureCypress = false,
@@ -91,8 +96,8 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
   const { className, propertyName, constantName, fileName } = names(name);
 
-  let libArgs = `--compiler=${compiler} --style=${style}`;
-  if (buildable) libArgs = '--buildable --publishable' + libArgs;
+  let libArgs = `--compiler=${compiler} --style=${style} --importPath=${importPath}/${fileName} --bundler=${bundler}`;
+  if (buildable) libArgs = '--publishable ' + libArgs;
 
   const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
   console.log(outputLib.toString());

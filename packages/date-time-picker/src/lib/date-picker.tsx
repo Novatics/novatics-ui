@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import {
+  PickersDay,
+  PickersDayProps,
   CalendarPicker as MUICalendarPicker,
   CalendarPickerProps,
-} from '@mui/x-date-pickers/CalendarPicker';
+} from '@mui/x-date-pickers';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import {
@@ -10,16 +12,35 @@ import {
   isBefore,
   isAfter,
   isWithinInterval,
+  isEqual,
   lastDayOfMonth,
   isSameMonth,
   getDay,
 } from 'date-fns';
+import { styled } from '@mui/material';
+import {
+  unstable_useEnhancedEffect as useEnhancedEffect,
+  unstable_composeClasses as composeClasses,
+  unstable_useForkRef as useForkRef,
+  unstable_generateUtilityClass as generateUtilityClass,
+  unstable_generateUtilityClasses as generateUtilityClasses,
+} from '@mui/utils';
 
 import './date-picker.scss';
-import { PickersDay } from '@mui/x-date-pickers';
 /* eslint-disable-next-line */
 export interface DateTimePickerProps
   extends Omit<CalendarPickerProps<Date>, 'onChange'> {}
+
+const StyledPickersDay = styled(
+  (props: PickersDayProps<Date> & { isWithin: boolean }) => {
+    console.log('sasdas', props);
+    const className = props.isWithin
+      ? getPickersDayUtilityClass('isWithin')
+      : '';
+
+    return <PickersDay {...props} className={className} />;
+  }
+)();
 
 export function DatePicker(props: DateTimePickerProps) {
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -42,6 +63,7 @@ export function DatePicker(props: DateTimePickerProps) {
   };
 
   const toggleClass = (element: Element, isWithin?: boolean): void => {
+    console.log('element');
     element.classList.toggle(isWithin ? 'within' : 'selected');
   };
 
@@ -85,24 +107,25 @@ export function DatePicker(props: DateTimePickerProps) {
   const handleChange = (date: Date | null) => {
     const selectedElement = selectElementByDate(date);
 
-    setFirstDate(date);
     console.log('selecionou', date);
 
     // if (selectedElement && date) {
     //   toggleClassWithin(firstRef.current, lastRef.current);
 
-    //   if (isSelectingFirst(date)) {
-    //     if (firstRef.current) toggleClass(firstRef.current);
-    //     firstRef.current = selectedElement;
-    //     toggleClass(firstRef.current);
-    //     setSelectTurn(1);
-    //   } else {
-    //     setLastDate(date);
-    //     if (lastRef.current) toggleClass(lastRef.current);
-    //     lastRef.current = selectedElement;
-    //     toggleClass(lastRef.current);
-    //     setSelectTurn(0);
-    //   }
+    if (isSelectingFirst(date)) {
+      setFirstDate(date);
+
+      // if (firstRef.current) toggleClass(firstRef.current);
+      // firstRef.current = selectedElement;
+      // toggleClass(firstRef.current);
+      // setSelectTurn(1);
+    } else {
+      setLastDate(date);
+      // if (lastRef.current) toggleClass(lastRef.current);
+      // lastRef.current = selectedElement;
+      // toggleClass(lastRef.current);
+      // setSelectTurn(0);
+    }
 
     //   toggleClassWithin(firstRef.current, lastRef.current);
     // }
@@ -146,17 +169,37 @@ export function DatePicker(props: DateTimePickerProps) {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <MUICalendarPicker
         {...props}
+        selectedDays={[firstDate]}
         ref={calendarRef}
         onChange={handleChange}
         date={firstDate}
         onMonthChange={(month) => setCurrentMonth(month)}
         renderDay={(day, selectedDays, pickersDayProps) => {
-          console.log(day, selectedDays, pickersDayProps);
-          return <PickersDay {...pickersDayProps} selected />;
+          const selected = isEqual(day, firstDate) || isEqual(day, lastDate);
+          let isWithin = false;
+          if (firstDate && lastDate) {
+            isWithin = isWithinInterval(day, {
+              start: firstDate,
+              end: lastDate,
+            });
+          }
+
+          return (
+            <StyledPickersDay
+              {...pickersDayProps}
+              // className={className}
+              selected={selected}
+              isWithin={isWithin}
+            />
+          );
         }}
       />
     </LocalizationProvider>
   );
+}
+
+export function getPickersDayUtilityClass(slot: string) {
+  return generateUtilityClass('NuiPickersDay', slot);
 }
 
 export default DatePicker;

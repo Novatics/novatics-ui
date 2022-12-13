@@ -1,10 +1,13 @@
-.MuiButtonBase-root.MuiPickersDay-root {
-  &.selected {
-    background-color: rgb(80, 116, 244);
-    transition: 0.3s;
-  }
+// .MuiButtonBase-root.MuiPickersDay-root {
+//   &.selected {
+//     background-color: rgb(80, 116, 244);
+//     transition: 0.3s;
+//   }
 
-  &.within {
-    background-color: rgba(80, 116, 244, 0.35);
-  }
+//   &.within {
+//     background-color: rgba(80, 116, 244, 0.35);
+//   }
+// }
+.NuiPickersDay-isWithin {
+  background-color: rgba(80, 116, 244, 0.35);
 }

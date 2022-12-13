@@ -21,8 +21,8 @@ export interface DateTimePickerProps
 
 export function DatePicker(props: DateTimePickerProps) {
   const calendarRef = useRef<HTMLDivElement>(null);
-  let firstRef = useRef<HTMLButtonElement | null>(null);
-  let lastRef = useRef<HTMLButtonElement | null>(null);
+  const firstRef = useRef<HTMLButtonElement | null>(null);
+  const lastRef = useRef<HTMLButtonElement | null>(null);
 
   const [firstDate, setFirstDate] = useState<Date | null>(null);
   const [lastDate, setLastDate] = useState<Date | null>(null);

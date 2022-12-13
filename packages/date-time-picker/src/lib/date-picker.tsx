@@ -1,11 +1,18 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   CalendarPicker as MUICalendarPicker,
   CalendarPickerProps,
 } from '@mui/x-date-pickers/CalendarPicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { format, isBefore, isAfter, isWithinInterval } from 'date-fns';
+import {
+  format,
+  isBefore,
+  isAfter,
+  isWithinInterval,
+  lastDayOfMonth,
+  isSameMonth,
+} from 'date-fns';
 
 import './date-picker.scss';
 /* eslint-disable-next-line */
@@ -20,6 +27,9 @@ export function DatePicker(props: DateTimePickerProps) {
   const [firstDate, setFirstDate] = useState<Date | null>(null);
   const [lastDate, setLastDate] = useState<Date | null>(null);
   const [selectTurn, setSelectTurn] = useState<0 | 1>(0);
+  const [currentMonth, setCurrentMonth] = useState<Date>(
+    props.date || props.defaultCalendarMonth || new Date()
+  );
 
   const isSelectingFirst = (newDate: Date): boolean => {
     if (!firstDate) return true;
@@ -96,14 +106,35 @@ export function DatePicker(props: DateTimePickerProps) {
 
   const handleMonthChange = () => {
     // TODO: Fix changing month behavior
-    const newFirstRef = selectElementByDate(firstDate);
-    const newLastRef = selectElementByDate(lastDate);
-    if (newFirstRef) {
-      firstRef.current = newFirstRef;
-      toggleClass(newFirstRef);
-    }
-    if (newLastRef) lastRef.current = newLastRef;
+    // Começa do zero
+    // if (firstDate && !isSameMonth(firstDate, currentMonth))
+    //   firstRef.current = null;
+    // if (lastDate && !isSameMonth(lastDate, currentMonth))
+    //   lastRef.current = null;
+    // const newFirstRef = selectElementByDate(firstDate);
+    // const newLastRef = selectElementByDate(lastDate);
+    // if (newFirstRef) {
+    //   firstRef.current = newFirstRef;
+    //   toggleClass(newFirstRef);
+    //   toggleClassWithin(
+    //     newFirstRef,
+    //     selectElementByDate(lastDayOfMonth(currentMonth))
+    //   );
+    //   console.log(newLastRef);
+    // }
+    // if (newLastRef) {
+    //   lastRef.current = newLastRef;
+    //   toggleClass(newLastRef);
+    //   toggleClassWithin(
+    //     newFirstRef,
+    //     selectElementByDate(lastDayOfMonth(currentMonth))
+    //   );
+    // }
   };
+
+  useEffect(() => {
+    handleMonthChange();
+  }, [currentMonth]);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -111,7 +142,7 @@ export function DatePicker(props: DateTimePickerProps) {
         {...props}
         ref={calendarRef}
         onChange={handleChange}
-        onMonthChange={handleMonthChange}
+        onMonthChange={(month) => setCurrentMonth(month)}
       />
     </LocalizationProvider>
   );

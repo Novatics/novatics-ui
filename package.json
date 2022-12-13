@@ -26,21 +26,13 @@
     "storybook:build": "nx build-storybook core"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.11",
     "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.11",
+    "@mui/x-date-pickers": "^5.0.10",
     "@storybook/addon-docs": "^6.5.13",
     "core-js": "^3.26.0",
-=======
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/material": "^5.10.6",
-    "@mui/x-date-pickers": "^5.0.5",
-    "@storybook/addon-docs": "^6.5.10",
-    "core-js": "^3.25.2",
->>>>>>> 3735ad5 (add DateTimePicker component sketch)
     "currency.js": "^2.0.4",
     "date-fns": "^2.29.3",
     "lodash.defaults": "^4.2.0",

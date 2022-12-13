@@ -21,16 +21,11 @@
       "@novatics/currency-text-field": [
         "packages/currency-text-field/src/index.ts"
       ],
-<<<<<<< HEAD
-      "@novatics/styles": ["packages/styles/src/index.ts"],
-      "@novatics/tokens": ["packages/tokens/src/index.ts"]
-=======
-      "@novatics-ui/date-time-picker": [
+      "@novatics/date-time-picker": [
         "packages/date-time-picker/src/index.ts"
       ],
-      "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"],
-      "@novatics-ui/tokens": ["packages/tokens/src/index.ts"]
->>>>>>> 3735ad5 (add DateTimePicker component sketch)
+      "@novatics/styles": ["packages/styles/src/index.ts"],
+      "@novatics/tokens": ["packages/tokens/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -12,9 +12,11 @@ import {
   isWithinInterval,
   lastDayOfMonth,
   isSameMonth,
+  getDay,
 } from 'date-fns';
 
 import './date-picker.scss';
+import { PickersDay } from '@mui/x-date-pickers';
 /* eslint-disable-next-line */
 export interface DateTimePickerProps
   extends Omit<CalendarPickerProps<Date>, 'onChange'> {}
@@ -83,25 +85,27 @@ export function DatePicker(props: DateTimePickerProps) {
   const handleChange = (date: Date | null) => {
     const selectedElement = selectElementByDate(date);
 
-    if (selectedElement && date) {
-      toggleClassWithin(firstRef.current, lastRef.current);
+    setFirstDate(date);
+    console.log('selecionou', date);
 
-      if (isSelectingFirst(date)) {
-        setFirstDate(date);
-        if (firstRef.current) toggleClass(firstRef.current);
-        firstRef.current = selectedElement;
-        toggleClass(firstRef.current);
-        setSelectTurn(1);
-      } else {
-        setLastDate(date);
-        if (lastRef.current) toggleClass(lastRef.current);
-        lastRef.current = selectedElement;
-        toggleClass(lastRef.current);
-        setSelectTurn(0);
-      }
+    // if (selectedElement && date) {
+    //   toggleClassWithin(firstRef.current, lastRef.current);
 
-      toggleClassWithin(firstRef.current, lastRef.current);
-    }
+    //   if (isSelectingFirst(date)) {
+    //     if (firstRef.current) toggleClass(firstRef.current);
+    //     firstRef.current = selectedElement;
+    //     toggleClass(firstRef.current);
+    //     setSelectTurn(1);
+    //   } else {
+    //     setLastDate(date);
+    //     if (lastRef.current) toggleClass(lastRef.current);
+    //     lastRef.current = selectedElement;
+    //     toggleClass(lastRef.current);
+    //     setSelectTurn(0);
+    //   }
+
+    //   toggleClassWithin(firstRef.current, lastRef.current);
+    // }
   };
 
   const handleMonthChange = () => {
@@ -132,6 +136,8 @@ export function DatePicker(props: DateTimePickerProps) {
     // }
   };
 
+  // const renderDay = (day: Date, selectedDays: Date[], )
+
   useEffect(() => {
     handleMonthChange();
   }, [currentMonth]);
@@ -142,7 +148,12 @@ export function DatePicker(props: DateTimePickerProps) {
         {...props}
         ref={calendarRef}
         onChange={handleChange}
+        date={firstDate}
         onMonthChange={(month) => setCurrentMonth(month)}
+        renderDay={(day, selectedDays, pickersDayProps) => {
+          console.log(day, selectedDays, pickersDayProps);
+          return <PickersDay {...pickersDayProps} selected />;
+        }}
       />
     </LocalizationProvider>
   );

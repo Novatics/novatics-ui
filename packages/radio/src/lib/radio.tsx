@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 
 export interface RadioProps extends MuiRadioProps {
   error: boolean;
+  checked: boolean;
 }
 
 const getRadiusCircleStyle = (color: string) => `radial-gradient(${color},${color} 40%,transparent 44%)`;

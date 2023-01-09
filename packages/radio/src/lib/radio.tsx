@@ -10,7 +10,7 @@ const getRadiusCircleStyle = (color: string) => `radial-gradient(${color},${colo
 const getBorderRadiusCircleStyle = (color: string) => `0 0 0 1.5px ${color}`;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const BpIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; }) => {
+const RadioIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; }) => {
   const defaultBorderColor = theme.palette.mode === 'dark' ? theme.palette.grayScale.supernova : theme.palette.grayScale.spaceStation;
   const defaultHoverColor = theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.dark;
   const errorColor = theme.palette.error.main;
@@ -42,7 +42,7 @@ const BpIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; 
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const BpCheckedIcon = styled(BpIcon)(({ theme, error }: { theme?: any; error: boolean; }) => {
+const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; error: boolean; }) => {
   const fillColor = theme.palette.mode === 'dark' ? theme.palette.primary.medium : theme.palette.primary.main;
   const disabledFillColor = theme.palette.mode === 'dark' ? theme.palette.grayScale.supernova : theme.palette.grayScale.spaceStation;
   const hoverFilledColor = theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.dark;
@@ -89,8 +89,8 @@ export function Radio(props: RadioProps) {
     disableFocusRipple
     disableRipple
     disableTouchRipple
-    icon={<BpIcon error={!!error} />}
-    checkedIcon={<BpCheckedIcon error={!!error} />}
+    icon={<RadioIcon error={!!error} />}
+    checkedIcon={<RadioCheckedIcon error={!!error} />}
     sx={{ "&:hover": { backgroundColor: "transparent", } }}
     {...props}
   />;

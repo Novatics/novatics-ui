@@ -41,7 +41,9 @@ module.exports = {
     { name: 'root' },
     { name: 'core' },
     { name: 'release' },
+    { name: 'checkbox' },
     { name: 'currency-text-field' },
+    { name: 'radio' },
     { name: 'styles' },
     { name: 'tokens' },
     { name: 'wizard' }

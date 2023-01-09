@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import Radio from './radio';
+
+<Meta title="Radio" component={Radio} />
+
+# Radio <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/radio`.
+
+```shell
+  yarn add -D @novatics/radio
+```
+
+```shell
+  npm install --dev @novatics/radio
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Radio
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import ... from '@novatics/radio';
+
+  ...
+
+
+```
+
+### Variations
+
+<Canvas>
+  <Story name="Variations">
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      default <Radio />
+      disabled <Radio disabled />
+      disabled checked<Radio disabled checked />
+      error <Radio error />
+    </div>
+  </Story>
+</Canvas>
+
+made by Novatics ❤

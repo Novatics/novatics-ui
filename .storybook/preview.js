@@ -24,4 +24,10 @@ export const parameters = {
       order: ['Intro', 'Core', '*'],
     },
   },
+  darkMode: {
+    current: 'dark',
+    darkClass: 'darkClass',
+    lightClass: 'lightClass',
+    stylePreview: true,
+  }
 };

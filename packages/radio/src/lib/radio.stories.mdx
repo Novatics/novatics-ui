@@ -15,8 +15,13 @@ First install the latest version of the package from `@novatics/radio`.
   yarn add -D @novatics/radio
 ```
 
-```shell
-  npm install --dev @novatics/radio
+
+### Dependencies
+
+This component extends [Material UI React Radio](https://mui.com/material-ui/react-radio-button). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material
 ```
 
 ### Basic Usage
@@ -48,12 +53,37 @@ import ... from '@novatics/radio';
 <Canvas>
   <Story name="Variations">
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      default <Radio />
-      disabled <Radio disabled />
-      disabled checked<Radio disabled checked />
-      error <Radio error />
+      <Radio />
+      <Radio checked />
+      <Radio disabled />
+      <Radio disabled checked />
+      <Radio error />
+      <Radio checked error />
     </div>
   </Story>
 </Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Radio {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
 
 made by Novatics ❤

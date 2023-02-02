@@ -1,3 +1,4 @@
+import { deepmerge } from '@mui/utils';
 import MuiRadio, { RadioProps as MuiRadioProps } from '@mui/material/Radio';
 import { styled } from '@mui/material/styles';
 
@@ -82,7 +83,7 @@ const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; err
 
 
 export function Radio(props: RadioProps) {
-  const { error } = props;
+  const { error, sx, ...other } = props;
 
   return <MuiRadio
     color="default"
@@ -91,8 +92,8 @@ export function Radio(props: RadioProps) {
     disableTouchRipple
     icon={<RadioIcon error={!!error} />}
     checkedIcon={<RadioCheckedIcon error={!!error} />}
-    sx={{ "&:hover": { backgroundColor: "transparent", } }}
-    {...props}
+    sx={deepmerge({ '&:hover': { backgroundColor: 'transparent' } }, sx)}
+    {...other}
   />;
 }
 

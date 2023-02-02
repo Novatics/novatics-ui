@@ -1,6 +1,6 @@
 import { deepmerge } from '@mui/utils';
 import MuiRadio, { RadioProps as MuiRadioProps } from '@mui/material/Radio';
-import { styled } from '@mui/material/styles';
+import { styled } from '@novatics/styles';
 
 export interface RadioProps extends MuiRadioProps {
   error: boolean;

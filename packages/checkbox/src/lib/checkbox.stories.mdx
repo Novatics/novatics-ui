@@ -11,16 +11,17 @@ import Checkbox from './checkbox';
 
 First install the latest version of the package from `@novatics/checkbox`.
 
-```bash
+```shell
   yarn add -D @novatics/checkbox
 ```
 
+
 ### Dependencies
 
-This component extends [Material UI React Checkbox](https://mui.com/material-ui/react-checkbox). Therefore is needed to install Material UI:
+This component extends [Material UI React Checkbox](https://mui.com/material-ui/react-checkbox-button). Therefore is needed to install Material UI:
 
 ```bash
-yarn add @mui/material @emotion/react @emotion/styled
+yarn add @mui/material
 ```
 
 ### Basic Usage
@@ -31,10 +32,6 @@ yarn add @mui/material @emotion/react @emotion/styled
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Checkbox
-            label="Default"
-            onChange={() => {
-              /* setup on change */
-            }}
             {...args}
           />
         </div>
@@ -43,54 +40,48 @@ yarn add @mui/material @emotion/react @emotion/styled
   </Story>
 </Canvas>
 
-
 ```tsx
-import Checkbox from '@novatics/checkbox';
+import ... from '@novatics/checkbox';
 
-<Checkbox
-  label="Default"
-/>
+  ...
+
+
 ```
 
 ### Variations
 
 <Canvas>
   <Story name="Variations">
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <Checkbox
-        label="Default"
-        onChange={() => {
-          /* setup on change */
-        }}
-      />
-      <Checkbox
-        label="Disabled"
-        disabled
-        onChange={() => {
-          /* setup on change */
-        }}
-      />
-      <Checkbox
-        label="Error"
-        CheckboxProps={{
-          color: "error",
-        }}
-        onChange={() => {
-          /* setup on change */
-        }}
-      />
-      <Checkbox
-        label="Indeterminate"
-        CheckboxProps={{
-          indeterminate: true,
-        }}
-        onChange={() => {
-          /* setup on change */
-        }}
-      />
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Checkbox indeterminate />
+      <Checkbox indeterminate disabled />
+      <Checkbox variant="outlined" indeterminate />
+      <Checkbox variant="outlined" indeterminate disabled />
     </div>
   </Story>
 </Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
 
 
 made by Novatics ❤

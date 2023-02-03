@@ -11,74 +11,61 @@ const getRadiusCircleStyle = (color: string) => `radial-gradient(${color},${colo
 const getBorderRadiusCircleStyle = (color: string) => `0 0 0 1.5px ${color}`;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RadioIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; }) => {
-  const defaultBorderColor = theme.palette.mode === 'dark' ? theme.palette.grayScale.supernova : theme.palette.grayScale.spaceStation;
-  const defaultHoverColor = theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.dark;
-  const errorColor = theme.palette.error.main;
+const RadioIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; }) => ({
+  borderRadius: '50%',
+  width: 16,
+  height: 16,
+  // Border is set via boxShadow, following MUI example
+  boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.grayScale.spaceStation),
+  backgroundColor: 'transparent',
+  // TODO How should focus be handled?
+  '.Mui-focusVisible &': {
+    outline: `2px auto ${theme.palette.primary.main}`,
+    outlineOffset: 2,
+  },
+  'input:hover ~ &': {
+    boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.dark),
 
-  return ({
-    borderRadius: '50%',
-    width: 16,
-    height: 16,
-    // Border is set via boxShadow, following MUI example
-    boxShadow: getBorderRadiusCircleStyle(error ? errorColor : defaultBorderColor),
-    backgroundColor: 'transparent',
-    // TODO How should focus be handled?
-    '.Mui-focusVisible &': {
-      outline: `2px auto ${theme.palette.primary.main}`,
-      outlineOffset: 2,
-    },
-    'input:hover ~ &': {
-      boxShadow: getBorderRadiusCircleStyle(error ? errorColor : defaultHoverColor),
-
-      '&:before': {
-        display: 'block',
-        width: 16,
-        height: 16,
-        backgroundImage: error ? 'none' : getRadiusCircleStyle(theme.palette.primary.medium),
-        content: '""',
-      },
-    },
-  });
-});
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; error: boolean; }) => {
-  const fillColor = theme.palette.mode === 'dark' ? theme.palette.primary.medium : theme.palette.primary.main;
-  const disabledFillColor = theme.palette.mode === 'dark' ? theme.palette.grayScale.supernova : theme.palette.grayScale.spaceStation;
-  const hoverFilledColor = theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.dark;
-  const errorColor = theme.palette.error.main;
-
-  return ({
-    boxShadow: getBorderRadiusCircleStyle(error ? errorColor : fillColor),
     '&:before': {
       display: 'block',
       width: 16,
       height: 16,
-      backgroundImage: getRadiusCircleStyle(error ? errorColor : fillColor),
+      backgroundImage: error ? 'none' : getRadiusCircleStyle(theme.palette.primary.medium),
       content: '""',
     },
-    'input:disabled ~ &': {
-      boxShadow: getBorderRadiusCircleStyle(disabledFillColor),
-      '&:before': {
-        display: 'block',
-        width: 16,
-        height: 16,
-        content: '""',
-        backgroundImage: getRadiusCircleStyle(disabledFillColor),
-      },
+  },
+}));
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; error: boolean; }) => ({
+  boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.main),
+  '&:before': {
+    display: 'block',
+    width: 16,
+    height: 16,
+    backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.main),
+    content: '""',
+  },
+  'input:disabled ~ &': {
+    boxShadow: getBorderRadiusCircleStyle(theme.palette.grayScale.spaceStation),
+    '&:before': {
+      display: 'block',
+      width: 16,
+      height: 16,
+      content: '""',
+      backgroundImage: getRadiusCircleStyle(theme.palette.grayScale.spaceStation),
     },
-    'input:hover ~ &': {
-      '&:before': {
-        display: 'block',
-        width: 16,
-        height: 16,
-        backgroundImage: getRadiusCircleStyle(error ? errorColor : hoverFilledColor),
-        content: '""',
-      },
+  },
+  'input:hover ~ &': {
+    '&:before': {
+      display: 'block',
+      width: 16,
+      height: 16,
+      backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.dark),
+      content: '""',
     },
-  });
-});
+  },
+}));
 
 
 
@@ -90,8 +77,8 @@ export function Radio(props: RadioProps) {
     disableFocusRipple
     disableRipple
     disableTouchRipple
-    icon={<RadioIcon error={!!error} />}
-    checkedIcon={<RadioCheckedIcon error={!!error} />}
+    icon={<RadioIcon error={error} />}
+    checkedIcon={<RadioCheckedIcon error={error} />}
     sx={deepmerge({ '&:hover': { backgroundColor: 'transparent' } }, sx)}
     {...other}
   />;

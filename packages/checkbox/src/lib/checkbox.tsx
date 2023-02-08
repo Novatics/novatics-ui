@@ -66,17 +66,40 @@ const UncheckedIcon = styled(CheckmarkIcon)<{ error?: boolean; }>(({ theme, erro
   },
 }));
 
-const CheckedIcon = styled(UncheckedIcon)<{ variant: 'filled' | 'outlined'; disabled?: boolean; }>(({ theme, variant, disabled }: { theme: any; variant?: 'filled' | 'outlined'; disabled?: boolean; }) => ({
-  color: variant === 'outlined' ? theme.palette.primary.main : theme.palette.grayScale.supernova,
-  backgroundColor: variant === 'outlined' ? theme.palette.grayScale.supernova : theme.palette.primary.main,
-  borderColor: theme.palette.primary.main,
+const CheckedIcon = styled(UncheckedIcon)<{ variant: 'filled' | 'outlined'; disabled?: boolean; }>(({ theme, variant, disabled }: { theme: any; variant?: 'filled' | 'outlined'; disabled?: boolean; }) => {
+  const getColor = () => {
+    if (disabled && variant === 'outlined') return theme.palette.grayScale.spaceStation;
+    if (disabled && variant === 'filled') return theme.palette.grayScale.supernova;
+    if (variant === 'filled') return theme.palette.grayScale.supernova;
+    return theme.palette.primary.main;
+  };
 
-  'input:hover ~ &': {
-    backgroundColor: theme.palette.primary.light,
-    borderColor: theme.palette.primary.dark,
-    color: theme.palette.grayScale.medium,
-  },
-}));
+  const getBorderColor = () => {
+    if (disabled && variant === 'outlined') return theme.palette.grayScale.spaceStation;
+    if (disabled && variant === 'filled') return theme.palette.grayScale.spaceStation;
+    if (variant === 'filled') return theme.palette.primary.main;
+    return theme.palette.primary.main;
+  };
+
+  const getBackgroundColor = () => {
+    if (disabled && variant === 'outlined') return theme.palette.grayScale.supernova;
+    if (disabled && variant === 'filled') return theme.palette.grayScale.spaceStation;
+    if (variant === 'filled') return theme.palette.primary.main;
+    return theme.palette.grayScale.supernova;
+  };
+
+  return ({
+    color: getColor(),
+    backgroundColor: getBackgroundColor(),
+    borderColor: getBorderColor(),
+
+    'input:hover ~ &': {
+      backgroundColor: disabled ? getBackgroundColor() : theme.palette.primary.light,
+      borderColor: disabled ? getBorderColor() : theme.palette.primary.dark,
+      color: disabled ? getColor() : theme.palette.grayScale.medium,
+    },
+  });
+});
 
 export function Checkbox({ variant = "filled", error, disabled, ...other }: CheckboxProps) {
   return <MuiCheckbox

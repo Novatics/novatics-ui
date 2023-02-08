@@ -1,17 +1,18 @@
 import MuiCheckbox, { CheckboxProps as MuiCheckboxProps } from '@mui/material/Checkbox';
-
+import CheckmarkIcon from './CheckmarkIcon';
 import { styled } from '@novatics/styles';
 
 
 /* eslint-disable-next-line */
 export interface CheckboxProps extends MuiCheckboxProps {
   variant: 'filled' | 'outlined';
+  error?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IndeterminateIcon = styled('span')<{ variant: 'filled' | 'outlined'; }>(({ theme, variant }: { theme: any, variant: 'filled' | 'outlined'; }) => ({
-  width: 16,
-  height: 16,
+  width: 14,
+  height: 14,
   backgroundColor: variant === 'filled' ? theme.palette.primary.main : 'transparent',
   borderRadius: '2px',
   border: variant === 'filled' ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.primary.main}`,
@@ -41,7 +42,7 @@ const IndeterminateIcon = styled('span')<{ variant: 'filled' | 'outlined'; }>(({
 
   'input:disabled ~ &': {
     backgroundColor: variant === 'filled' ? theme.palette.grayScale.spaceStation : 'transparent',
-    border: variant === 'filled' ? `2px solid ${theme.palette.grayScale.spaceStation}` : `2px solid ${theme.palette.grayScale.spaceStation}`,
+    border: `2px solid ${variant === 'filled' ? theme.palette.grayScale.spaceStation : theme.palette.grayScale.spaceStation}`,
 
     '&:before': {
       backgroundColor: variant === 'filled' ? theme.palette.grayScale.supernova : theme.palette.grayScale.spaceStation,
@@ -49,16 +50,44 @@ const IndeterminateIcon = styled('span')<{ variant: 'filled' | 'outlined'; }>(({
   },
 }));
 
-export function Checkbox({ variant = "filled", ...other }: CheckboxProps) {
+const UncheckedIcon = styled(CheckmarkIcon)<{ error?: boolean; }>(({ theme, error }: { theme: any; error?: boolean; }) => ({
+  width: 14,
+  height: 14,
+  borderRadius: '2px',
+  border: `2px solid ${error ? theme.palette.error.main : theme.palette.grayScale.spaceStation}`,
+  // Set color of the check icon
+  color: 'transparent',
+
+  'input:hover ~ &': !error && {
+    backgroundColor: theme.palette.primary.light,
+    borderColor: theme.palette.primary.dark,
+    // Set color of the check icon
+    color: theme.palette.primary.medium,
+  },
+}));
+
+const CheckedIcon = styled(UncheckedIcon)<{ variant: 'filled' | 'outlined'; disabled?: boolean; }>(({ theme, variant, disabled }: { theme: any; variant?: 'filled' | 'outlined'; disabled?: boolean; }) => ({
+  color: variant === 'outlined' ? theme.palette.primary.main : theme.palette.grayScale.supernova,
+  backgroundColor: variant === 'outlined' ? theme.palette.grayScale.supernova : theme.palette.primary.main,
+  borderColor: theme.palette.primary.main,
+
+  'input:hover ~ &': {
+    backgroundColor: theme.palette.primary.light,
+    borderColor: theme.palette.primary.dark,
+    color: theme.palette.grayScale.medium,
+  },
+}));
+
+export function Checkbox({ variant = "filled", error, disabled, ...other }: CheckboxProps) {
   return <MuiCheckbox
     color="default"
     disableFocusRipple
     disableRipple
     disableTouchRipple
+    disabled={disabled}
+    icon={<UncheckedIcon error={error} />}
+    checkedIcon={<CheckedIcon variant={variant} disabled={disabled} />}
     indeterminateIcon={<IndeterminateIcon variant={variant} />}
-    // icon={<RadioIcon error={error} />}
-    // checkedIcon={<RadioCheckedIcon error={error} />}
-    // sx={deepmerge({ '&:hover': { backgroundColor: 'transparent' } }, sx)}
     {...other}
   />;
 }

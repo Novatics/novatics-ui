@@ -3,8 +3,11 @@ import MuiRadio, { RadioProps as MuiRadioProps } from '@mui/material/Radio';
 import { styled } from '@novatics/styles';
 
 type PropsToOmit = 'disableFocusRipple' | 'centerRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef';
+// TODO: How should default Color be handled?
+type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 
 export interface RadioProps extends Omit<MuiRadioProps, PropsToOmit> {
+  color?: Color;
   error: boolean;
   checked: boolean;
 }
@@ -13,7 +16,7 @@ const getRadiusCircleStyle = (color: string) => `radial-gradient(${color},${colo
 const getBorderRadiusCircleStyle = (color: string) => `0 0 0 1.5px ${color}`;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RadioIcon = styled('span')(({ theme, error }: { theme?: any; error: boolean; }) => ({
+const RadioIcon = styled('span')(({ colorType, theme, error }: { colorType: Color; theme?: any; error: boolean; }) => ({
   borderRadius: '50%',
   width: 16,
   height: 16,
@@ -26,26 +29,26 @@ const RadioIcon = styled('span')(({ theme, error }: { theme?: any; error: boolea
     outlineOffset: 2,
   },
   'input:hover ~ &': {
-    boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.dark),
+    boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette[colorType].dark),
 
     '&:before': {
       display: 'block',
       width: 16,
       height: 16,
-      backgroundImage: error ? 'none' : getRadiusCircleStyle(theme.palette.primary.medium),
+      backgroundImage: error ? 'none' : getRadiusCircleStyle(theme.palette[colorType].medium || theme.palette[colorType].dark),
       content: '""',
     },
   },
 }));
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; error: boolean; }) => ({
-  boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.main),
+const RadioCheckedIcon = styled(RadioIcon)(({ colorType, theme, error }: { colorType: Color; theme?: any; error: boolean; }) => ({
+  boxShadow: getBorderRadiusCircleStyle(error ? theme.palette.error.main : theme.palette[colorType].main),
   '&:before': {
     display: 'block',
     width: 16,
     height: 16,
-    backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.main),
+    backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette[colorType].main),
     content: '""',
   },
   'input:disabled ~ &': {
@@ -63,7 +66,7 @@ const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; err
       display: 'block',
       width: 16,
       height: 16,
-      backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette.primary.dark),
+      backgroundImage: getRadiusCircleStyle(error ? theme.palette.error.main : theme.palette[colorType].dark),
       content: '""',
     },
   },
@@ -71,19 +74,16 @@ const RadioCheckedIcon = styled(RadioIcon)(({ theme, error }: { theme?: any; err
 
 
 
-export function Radio(props: RadioProps) {
-  const { error, sx, ...other } = props;
-
-  return <MuiRadio
+export const Radio = ({ color = "primary", error, sx, ...other }: RadioProps) => (
+  <MuiRadio
     color="default"
     disableFocusRipple
     disableRipple
     disableTouchRipple
-    icon={<RadioIcon error={error} />}
-    checkedIcon={<RadioCheckedIcon error={error} />}
+    icon={<RadioIcon colorType={color} error={error} />}
+    checkedIcon={<RadioCheckedIcon colorType={color} error={error} />}
     sx={deepmerge({ '&:hover': { backgroundColor: 'transparent' } }, sx)}
-    {...other}
-  />;
-}
+    {...other} />
+);
 
 export default Radio;

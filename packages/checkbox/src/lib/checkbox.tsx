@@ -3,7 +3,8 @@ import CheckIcon from '@mui/icons-material/Check';
 import { styled } from '@novatics/styles';
 
 type PropsToOmit = 'disableFocusRipple' | 'centerRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef';
-type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default';
+// TODO: How should default Color be handled?
+type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 
 export interface CheckboxProps extends Omit<MuiCheckboxProps, PropsToOmit> {
   variant: 'filled' | 'outlined';
@@ -103,6 +104,7 @@ const CheckedIcon = styled(UncheckedIcon)<{ colorType: Color; variant: 'filled' 
   });
 });
 
+// TODO: How could we make it more customizable regarding adding new colors?
 export function Checkbox({ variant = "filled", color = "primary", disabled, ...other }: CheckboxProps) {
   return <MuiCheckbox
     color="default"

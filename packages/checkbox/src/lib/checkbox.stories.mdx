@@ -58,7 +58,7 @@ import ... from '@novatics/checkbox';
         <Checkbox />
         <Checkbox checked />
         <Checkbox checked disabled />
-        <Checkbox error />
+        <Checkbox color="error" />
       </div>
       <div style={{display: 'flex', flexDirection: 'column'}}>
         <span>Outlined</span>
@@ -75,6 +75,34 @@ import ... from '@novatics/checkbox';
         <span>Indeterminate Outlined</span>
         <Checkbox variant="outlined" indeterminate />
         <Checkbox variant="outlined" indeterminate disabled />
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <span>Color Variations</span>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="primary" checked />
+          <Checkbox color="primary" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="secondary" checked />
+          <Checkbox color="secondary" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="error" checked />
+          <Checkbox color="error" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="info" checked />
+          <Checkbox color="info" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="success" checked />
+          <Checkbox color="success" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Checkbox color="warning" checked />
+          <Checkbox color="warning" />
+        </div>
+        {/* <Checkbox color="default" checked /> */}
       </div>
     </div>
   </Story>

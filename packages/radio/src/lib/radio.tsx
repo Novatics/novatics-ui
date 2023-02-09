@@ -2,7 +2,9 @@ import { deepmerge } from '@mui/utils';
 import MuiRadio, { RadioProps as MuiRadioProps } from '@mui/material/Radio';
 import { styled } from '@novatics/styles';
 
-export interface RadioProps extends MuiRadioProps {
+type PropsToOmit = 'disableFocusRipple' | 'centerRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef';
+
+export interface RadioProps extends Omit<MuiRadioProps, PropsToOmit> {
   error: boolean;
   checked: boolean;
 }

@@ -52,17 +52,30 @@ import ... from '@novatics/checkbox';
 
 <Canvas>
   <Story name="Variations">
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <Checkbox />
-      <Checkbox checked />
-      <Checkbox checked disabled />
-      <Checkbox variant="outlined" />
-      <Checkbox variant="outlined" checked />
-      <Checkbox variant="outlined" checked disabled />
-      <Checkbox indeterminate />
-      <Checkbox indeterminate disabled />
-      <Checkbox variant="outlined" indeterminate />
-      <Checkbox variant="outlined" indeterminate disabled />
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <span>Default</span>
+        <Checkbox />
+        <Checkbox checked />
+        <Checkbox checked disabled />
+        <Checkbox error />
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <span>Outlined</span>
+        <Checkbox variant="outlined" />
+        <Checkbox variant="outlined" checked />
+        <Checkbox variant="outlined" checked disabled />
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <span>Indeterminate Default</span>
+        <Checkbox indeterminate />
+        <Checkbox indeterminate disabled />
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <span>Indeterminate Outlined</span>
+        <Checkbox variant="outlined" indeterminate />
+        <Checkbox variant="outlined" indeterminate disabled />
+      </div>
     </div>
   </Story>
 </Canvas>

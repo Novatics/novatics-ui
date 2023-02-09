@@ -1,10 +1,10 @@
 import MuiCheckbox, { CheckboxProps as MuiCheckboxProps } from '@mui/material/Checkbox';
-import CheckmarkIcon from './CheckmarkIcon';
+import CheckIcon from '@mui/icons-material/Check';
 import { styled } from '@novatics/styles';
 
+type PropsToOmit = 'disableFocusRipple' | 'centerRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef';
 
-/* eslint-disable-next-line */
-export interface CheckboxProps extends MuiCheckboxProps {
+export interface CheckboxProps extends Omit<MuiCheckboxProps, PropsToOmit> {
   variant: 'filled' | 'outlined';
   error?: boolean;
 }
@@ -50,7 +50,7 @@ const IndeterminateIcon = styled('span')<{ variant: 'filled' | 'outlined'; }>(({
   },
 }));
 
-const UncheckedIcon = styled(CheckmarkIcon)<{ error?: boolean; }>(({ theme, error }: { theme: any; error?: boolean; }) => ({
+const UncheckedIcon = styled(CheckIcon)<{ error?: boolean; }>(({ theme, error }: { theme: any; error?: boolean; }) => ({
   width: 14,
   height: 14,
   borderRadius: '2px',

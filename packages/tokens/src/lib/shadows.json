@@ -1,0 +1,10 @@
+{
+  "blackhole--low": "0px 2px 4px 1px rgba(37, 37, 37, 0.1)",
+  "blackhole--medium": "0px 4px 8px 2px rgba(37, 37, 37, 0.1)",
+  "blackhole--intermediate": "0px 8px 14px 5px rgba(37, 37, 37, 0.1)",
+  "blackhole--high": "0px 16px 32px 4px rgba(37, 37, 37, 0.13)",
+  "cosmos--low": "0px 2px 4px 1px rgba(46, 33, 97, 0.1)",
+  "cosmos--medium": "0px 4px 8px 2px rgba(46, 33, 97, 0.1)",
+  "cosmos--intermediate": "0px 8px 14px 5px rgba(46, 33, 97, 0.1)",
+  "cosmos--high": "0px 16px 32px 4px rgba(46, 33, 97, 0.1)"
+}

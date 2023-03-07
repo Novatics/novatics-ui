@@ -7,6 +7,8 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
@@ -15,15 +17,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@novatics-ui/button": ["packages/button/src/index.ts"],
-      "@novatics-ui/core": ["packages/core/src/index.ts"],
-      "@novatics-ui/currency-text-field": [
+      "@novatics/core": ["packages/core/src/index.ts"],
+      "@novatics/currency-text-field": [
         "packages/currency-text-field/src/index.ts"
       ],
-      "@novatics-ui/masked-text-field": [
-        "packages/masked-text-field/src/index.ts"
-      ],
-      "@novatics-ui/novatics-logo": ["packages/novatics-logo/src/index.ts"]
+      "@novatics/styles": ["packages/styles/src/index.ts"],
+      "@novatics/tokens": ["packages/tokens/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

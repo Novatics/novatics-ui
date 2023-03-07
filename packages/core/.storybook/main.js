@@ -6,7 +6,7 @@ module.exports = {
   core: { ...rootMain.core, builder: 'webpack5' },
 
   stories: [
-    ...rootMain.stories,
+    ...rootMain.stories.map((s) => `../../../${s}`),
     '../../**/*.stories.mdx',
     '../../**/*.stories.@(js|jsx|ts|tsx)',
   ],

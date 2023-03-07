@@ -2,10 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "button": "packages/button",
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
-    "masked-text-field": "packages/masked-text-field",
-    "novatics-logo": "packages/novatics-logo"
+    "styles": "packages/styles",
+    "tokens": "packages/tokens"
   }
 }

@@ -1,0 +1,126 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Button from '@mui/material/Button';
+import pkg from '../../package.json';
+import { styled } from './styled';
+
+<Meta title="Styles" />
+
+# Styles <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Basic functions to create a MUI theme with our default colors, spacings, border radius, shadows and typography.
+
+### Installation
+
+First install the latest version of the package from `@novatics/<%= fileName %>`.
+
+```shell
+  yarn add -D @novatics/styles
+```
+
+```shell
+  npm install --dev @novatics/styles
+```
+
+and use it
+
+```tsx
+import { ThemeProvider, createTheme, styled } from '@novatics/styles';
+
+const theme = createTheme();
+const Button = styled('button')({ background: 'red' });
+
+return (
+  <ThemeProvider theme={theme}>
+    <Button>Click me</Button>
+  </ThemeProvider>
+);
+```
+
+### Dependencies
+
+This component extends [Material UI](https://mui.com/material-ui/customization/theming/). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
+### Create Theme
+
+Our package provide a custon createTheme function that creates a MUI theme based in our [tokens](/docs/tokens--colors)
+To use it follow the documentation at Material-UI
+
+```tsx
+import { ThemeProvider, createTheme, styled } from '@novatics/styles';
+
+const App = ({ children }) => {
+  const theme = createTheme();
+
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
+```
+
+<Canvas>
+  <Story name="Create Theme">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button variant="contained">Click me</Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Styled function
+
+We also provide a custom styled function. It extends the styled from MUI but has transient props built in.
+This means that we can pass props not recognized by DOM using the dollar sign ($) as a prefix. More like we have in [styled-components](https://styled-components.com/docs/api#using-custom-props)
+This is useful when we are using @emotion/styled as our styling engine.
+
+```tsx
+import { styled } from '@novatics/styles';
+
+export const ListItem = styled('li')(({ $isFirst, $isLast }) => ({
+  borderStyle: 'solid',
+  borderColor: 'black',
+  padding: '16px',
+  borderTopRightRadius: $isFirst ? '16px' : undefined,
+  borderTopLeftRadius: $isFirst ? '16px' : undefined,
+  borderBottomRightRadius: $isLast ? '16px' : undefined,
+  borderBottomLeftRadius: $isLast ? '16px' : undefined,
+  borderTop: $isFirst ? undefined : 'none',
+}));
+```
+
+In the code above you can pass the properties $isFirst and $isLast without worry of warnings in console saying that isFirst is not a valid DOM element prop
+
+<Canvas>
+  <Story name="Styled Function">
+    {(args) => {
+      const ListItem = styled('li')(({ $isFirst, $isLast }) => ({
+        borderStyle: 'solid',
+        borderColor: 'black',
+        padding: '16px',
+        borderTopRightRadius: $isFirst ? '16px' : undefined,
+        borderTopLeftRadius: $isFirst ? '16px' : undefined,
+        borderBottomRightRadius: $isLast ? '16px' : undefined,
+        borderBottomLeftRadius: $isLast ? '16px' : undefined,
+        borderTop: $isFirst ? undefined : 'none',
+      }));
+      return (
+        <ul
+          style={{
+            listStyleType: 'none',
+          }}
+        >
+          <ListItem $isFirst>This is First</ListItem>
+          <ListItem>This is middle</ListItem>
+          <ListItem $isLast>This is last</ListItem>
+        </ul>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

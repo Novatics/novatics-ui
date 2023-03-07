@@ -25,6 +25,7 @@ yarn generate:storybook <name-of-component>
 4. Run the storybook to start developing
 ```shell
 yarn dev
+
 ```
 
 ## Publishing(TBD)

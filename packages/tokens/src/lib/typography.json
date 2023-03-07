@@ -1,0 +1,95 @@
+{
+  "typography": {
+    "h1": {
+      "fontSize": {
+        "pixel": 90,
+        "rem": 5.62
+      },
+      "fontWeight": 700,
+      "lineHeight": 1,
+      "letterSpacing": "-1px",
+      "fontFamily": "Work Sans"
+    },
+    "h2": {
+      "fontSize": {
+        "pixel": 67,
+        "rem": 4.18
+      },
+      "fontWeight": 700,
+      "lineHeight": 1,
+      "letterSpacing": "-0.5px",
+      "fontFamily": "Work Sans"
+    },
+    "h3": {
+      "fontSize": {
+        "pixel": 45,
+        "rem": 2.81
+      },
+      "fontWeight": 700,
+      "lineHeight": 1,
+      "letterSpacing": 0,
+      "fontFamily": "Work Sans"
+    },
+    "h4": {
+      "fontSize": {
+        "pixel": 32,
+        "rem": 2
+      },
+      "fontWeight": 500,
+      "lineHeight": 1,
+      "letterSpacing": "0.25px",
+      "fontFamily": "Work Sans"
+    },
+    "h5": {
+      "fontSize": {
+        "pixel": 22,
+        "rem": 1.375
+      },
+      "fontWeight": 400,
+      "lineHeight": 1.2,
+      "letterSpacing": "0.25px",
+      "fontFamily": "Work Sans"
+    },
+    "body": {
+      "fontSize": {
+        "pixel": 16,
+        "rem": 1
+      },
+      "fontWeight": 400,
+      "lineHeight": 1.6,
+      "letterSpacing": "0.15px",
+      "fontFamily": "Work Sans"
+    },
+    "bodySmall": {
+      "fontSize": {
+        "pixel": 14,
+        "rem": 0.875
+      },
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.1px",
+      "fontFamily": "Work Sans"
+    },
+    "caption": {
+      "fontSize": {
+        "pixel": 12,
+        "rem": 0.75
+      },
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.25px",
+      "fontFamily": "Work Sans"
+    },
+    "overline": {
+      "fontSize": {
+        "pixel": 12,
+        "rem": 1.2
+      },
+      "fontWeight": 500,
+      "lineHeight": 1.12,
+      "letterSpacing": "1.25px",
+      "fontFamily": "Work Sans",
+      "textTransform": "uppercase"
+    }
+  }
+}

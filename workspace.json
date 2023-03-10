@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "chip": "packages/chip",
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
     "styles": "packages/styles",

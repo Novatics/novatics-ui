@@ -22,9 +22,11 @@ declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
     grayScale?: GrayScale;
     tertiary?: SimplePaletteColorOptions;
+    support?: SimplePaletteColorOptions;
   }
   interface Palette {
     grayScale: GrayScale;
+    support: SimplePaletteColorOptions;
   }
   interface TypeObject {
     grayScale: GrayScale;
@@ -70,11 +72,14 @@ export const palette: PaletteOptions = {
     dark: colors['bigBang--dark'],
     light: colors['bigBang--light'],
   },
-  
   error: {
     main: colors['mars'],
     dark: colors['mars--dark'],
     light: colors['mars--light'],
+  },
+  support: {
+    main: colors['universe'],
+    light: colors['universe--light'],
   },
 };
 

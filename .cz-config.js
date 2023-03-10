@@ -41,6 +41,7 @@ module.exports = {
     { name: 'root' },
     { name: 'core' },
     { name: 'release' },
+    { name: 'chip' },
     { name: 'currency-text-field' },
     { name: 'styles' },
     { name: 'tokens' },

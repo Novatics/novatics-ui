@@ -1,0 +1,128 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import { MaskedTextField } from './masked-text-field';
+
+<Meta title="Masked Textfield" component={MaskedTextField} />
+
+# MaskedTextField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Use this component for masked inputs
+
+### Installation
+
+First install the latest version of the package from `@novatics/masked-text-field`.
+
+```bash
+yarn add @novatics/masked-text-field
+```
+
+### Dependencies
+
+This component extends [Material UI React Text Field](https://mui.com/material-ui/react-text-field). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
+### Basic Usage
+
+The imaskProps attribute is implemented as per the [iMask documentation](https://imask.js.org/guide.html#masked-base)
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <MaskedTextField
+            initialValue={123456789}
+            iMaskProps={{ mask: '000-000-000-000' }}
+            onChange={(e) => {
+              /* setup on change */
+            }}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import MaskedTextField from '@novatics/masked-text-field';
+
+<MaskedTextField
+  initialValue={123456789}
+  iMaskProps={{ mask: '000-000-000-000' }}
+  onChange={(e) => {
+    /* setup on change */
+  }}
+  {...args}
+/>;
+```
+
+### Presets
+
+It is possible to use the maskPreset attribute to use one of the pre-configured masks.
+
+<Canvas>
+  <Story name="Presets">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <MaskedTextField
+            initialValue={12345678901}
+            maskPreset="cpf"
+            onChange={(e) => {
+              /* setup on change */
+            }}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import MaskedTextField from '@novatics/masked-text-field';
+
+<MaskedTextField
+  initialValue={12345678901}
+  maskPreset="cpf"
+  onChange={(e) => {
+    /* setup on change */
+  }}
+  {...args}
+/>;
+```
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      onChange: { description: "Input's onChange method." },
+      initialValue: { description: "Input's initial value." },
+      maskPreset: {
+        description:
+          'maskPreset has a higher priority than iMaskProps, this means that if the maskPreset is not null it will override iMaskProps',
+      },
+      outputFormat: {
+        description:
+          "Format type returned on onChange Method. 'masked' -> masked value, as shown. 'unmasked' -> unmasked number.",
+      },
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <MaskedTextField {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

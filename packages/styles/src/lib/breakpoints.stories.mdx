@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import pkg from '../../package.json';
+import { colors } from '@novatics/tokens';
 
 <Meta title="Breakpoints" />
 
@@ -32,7 +33,7 @@ Each breakpoint [key] matches with a fixed screen width [value]:
     {(args) => {
       const boxStyle = {
         border: '2px solid',
-        borderColor: '#808080',
+        borderColor: colors['penumbra'],
         padding: '10px',
         borderRadius: '4px',
         textAlign: 'center',
@@ -52,7 +53,7 @@ Each breakpoint [key] matches with a fixed screen width [value]:
           >
             <Box
               style={{
-                backgroundColor: '#e1def5',
+                backgroundColor: colors['cosmos--light'],
                 ...boxStyle,
               }}
             >
@@ -71,7 +72,7 @@ Each breakpoint [key] matches with a fixed screen width [value]:
           >
             <Box
               style={{
-                backgroundColor: '#fff2bf',
+                backgroundColor: colors['sunlight--light'],
                 ...boxStyle,
               }}
             >
@@ -90,7 +91,7 @@ Each breakpoint [key] matches with a fixed screen width [value]:
           >
             <Box
               style={{
-                backgroundColor: '#e6fbec',
+                backgroundColor: colors['aurora--light'],
                 ...boxStyle,
               }}
             >
@@ -109,7 +110,7 @@ Each breakpoint [key] matches with a fixed screen width [value]:
           >
             <Box
               style={{
-                backgroundColor: '#fff6e6',
+                backgroundColor: colors['bigBang--light'],
                 ...boxStyle,
               }}
             >

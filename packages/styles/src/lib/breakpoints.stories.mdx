@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import pkg from '../../package.json';
 
@@ -29,6 +30,16 @@ Each breakpoint [key] matches with a fixed screen width [value]:
 <Canvas>
   <Story name="Grid Breakpoints">
     {(args) => {
+      
+      const boxStyle = {
+        border: '2px solid',
+        borderColor: '#808080',
+        padding: '10px',
+        borderRadius: '4px',
+        textAlign: 'center',
+        fontWeight: 'bold',
+      };
+
       return (
         <Grid container spacing={2} style={{ padding: '10px' }}>
           <Grid
@@ -41,19 +52,14 @@ Each breakpoint [key] matches with a fixed screen width [value]:
             xxl={1}
             style={{ padding: '10px' }}
           >
-            <Item
+            <Box
               style={{
                 backgroundColor: '#e1def5',
-                border: '2px solid',
-                borderColor: '#808080',
-                padding: '10px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                fontWeight: 'bold',
+                ...boxStyle,
               }}
             >
               1
-            </Item>
+            </Box>
           </Grid>
           <Grid
             xxs={8}
@@ -65,19 +71,14 @@ Each breakpoint [key] matches with a fixed screen width [value]:
             xxl={11}
             style={{ padding: '10px' }}
           >
-            <Item
+            <Box
               style={{
                 backgroundColor: '#fff2bf',
-                border: '2px solid',
-                borderColor: '#808080',
-                padding: '10px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                fontWeight: 'bold',
+                ...boxStyle,
               }}
             >
               2
-            </Item>
+            </Box>
           </Grid>
           <Grid
             xxs={8}
@@ -89,19 +90,14 @@ Each breakpoint [key] matches with a fixed screen width [value]:
             xxl={11}
             style={{ padding: '10px' }}
           >
-            <Item
+            <Box
               style={{
                 backgroundColor: '#e6fbec',
-                border: '2px solid',
-                borderColor: '#808080',
-                padding: '10px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                fontWeight: 'bold',
+                ...boxStyle,
               }}
             >
               3
-            </Item>
+            </Box>
           </Grid>
           <Grid
             xxs={4}
@@ -113,23 +109,19 @@ Each breakpoint [key] matches with a fixed screen width [value]:
             xxl={1}
             style={{ padding: '10px' }}
           >
-            <Item
+            <Box
               style={{
                 backgroundColor: '#fff6e6',
-                border: '2px solid',
-                borderColor: '#808080',
-                padding: '10px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                fontWeight: 'bold',
+                ...boxStyle,
               }}
             >
               4
-            </Item>
+            </Box>
           </Grid>
         </Grid>
       );
     }}
+
   </Story>
 </Canvas>
 

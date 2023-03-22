@@ -1,0 +1,139 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import pkg from '../../package.json';
+
+<Meta title="Breakpoints" />
+
+# Breakpoints <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+This API enables the use of breakpoints in a wide variety of contexts.
+
+For optimal user experience, novatics ui uses material ui as a base to adapt to various layouts.
+
+## Default Breakpoints
+
+Each breakpoint [key] matches with a fixed screen width [value]:
+
+- **xxs**: extra-extra-small: 0px
+- **xs**: extra-small: 600px
+- **sm**: small: 960px
+- **md**: medium: 1024px
+- **lg**: large: 1200px
+- **xl**: extra-large: 1440px
+- **xxl**: extra-extra-large: 1728px
+
+### Grid Breakpoints
+
+<Canvas>
+  <Story name="Grid Breakpoints">
+    {(args) => {
+      return (
+        <Grid container spacing={2} style={{ padding: '10px' }}>
+          <Grid
+            xxs={4}
+            xs={6}
+            sm={1}
+            md={5}
+            lg={2}
+            xl={4}
+            xxl={1}
+            style={{ padding: '10px' }}
+          >
+            <Item
+              style={{
+                backgroundColor: '#e1def5',
+                border: '2px solid',
+                borderColor: '#808080',
+                padding: '10px',
+                borderRadius: '4px',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}
+            >
+              1
+            </Item>
+          </Grid>
+          <Grid
+            xxs={8}
+            xs={6}
+            sm={11}
+            md={7}
+            lg={10}
+            xl={8}
+            xxl={11}
+            style={{ padding: '10px' }}
+          >
+            <Item
+              style={{
+                backgroundColor: '#fff2bf',
+                border: '2px solid',
+                borderColor: '#808080',
+                padding: '10px',
+                borderRadius: '4px',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}
+            >
+              2
+            </Item>
+          </Grid>
+          <Grid
+            xxs={8}
+            xs={6}
+            sm={11}
+            md={7}
+            lg={10}
+            xl={8}
+            xxl={11}
+            style={{ padding: '10px' }}
+          >
+            <Item
+              style={{
+                backgroundColor: '#e6fbec',
+                border: '2px solid',
+                borderColor: '#808080',
+                padding: '10px',
+                borderRadius: '4px',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}
+            >
+              3
+            </Item>
+          </Grid>
+          <Grid
+            xxs={4}
+            xs={6}
+            sm={1}
+            md={5}
+            lg={2}
+            xl={4}
+            xxl={1}
+            style={{ padding: '10px' }}
+          >
+            <Item
+              style={{
+                backgroundColor: '#fff6e6',
+                border: '2px solid',
+                borderColor: '#808080',
+                padding: '10px',
+                borderRadius: '4px',
+                textAlign: 'center',
+                fontWeight: 'bold',
+              }}
+            >
+              4
+            </Item>
+          </Grid>
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+**Breakpoints Applied:**
+
+- **1 & 4** -> **xxs**: 4 **xs**: 6 **sm**: 1 **md**: 5 **lg**: 2 **xl**: 4 **xxl**: 1
+- **2 & 3** -> **xxs**: 8 **xs**: 6 **sm**: 11 **md**: 7 **lg**: 10 **xl**: 8 **xxl**: 11

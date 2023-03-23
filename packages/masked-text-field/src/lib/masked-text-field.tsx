@@ -34,9 +34,7 @@ export function MaskedTextField(props: MaskedTextFieldProps) {
     };
   }, [iMaskProps, maskPreset]);
 
-  const masked = useMemo(() => {
-    return IMask.createMask(maskOptions);
-  }, [maskOptions]);
+  const masked = useMemo(() => IMask.createMask(maskOptions), [maskOptions]);
 
   useEffect(() => {
     if (initialValue) {

@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from '@mui/material/Button';
 import pkg from '../../package.json';
 import { styled } from './styled';
+import { GridBreakpoints } from './stories/grid-breakpoints';
 
 <Meta title="Styles" />
 
@@ -122,5 +123,28 @@ In the code above you can pass the properties $isFirst and $isLast without worry
     }}
   </Story>
 </Canvas>
+
+## Breakpoints
+
+Each breakpoint [key] matches with a fixed screen width [value]:
+
+- **xxs**: extra-extra-small: 0px
+- **xs**: extra-small: 600px
+- **sm**: small: 960px
+- **md**: medium: 1024px
+- **lg**: large: 1200px
+- **xl**: extra-large: 1440px
+- **xxl**: extra-extra-large: 1728px
+
+<Canvas>
+  <Story name="Breakpoints">
+    <GridBreakpoints />
+  </Story>
+</Canvas>
+
+**Breakpoints Applied:**
+
+- **1 & 4** -> **xxs**: 4 **xs**: 6 **sm**: 1 **md**: 5 **lg**: 2 **xl**: 4 **xxl**: 1
+- **2 & 3** -> **xxs**: 8 **xs**: 6 **sm**: 11 **md**: 7 **lg**: 10 **xl**: 8 **xxl**: 11
 
 made by Novatics ❤

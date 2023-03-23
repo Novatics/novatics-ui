@@ -6,18 +6,18 @@
 
 ### Novatics UI
 
-Install Novatics UI, it is available as an [npm package](https://www.npmjs.com/package/novatics-ui)
+Install Novatics UI, it is available as an [npm package](https://www.npmjs.com/package/novatics)
 
 **npm:**
 
 ```sh
-npm install @novatics-ui
+npm install @novatics
 ```
 
 **yarn:**
 
 ```sh
-yarn add @novatics-ui
+yarn add @novatics
 ```
 
 ## Getting started with Novatics UI
@@ -28,7 +28,7 @@ Here is an example of a basic app using Novatics UI's `CurrencyTextField` compon
 
 ```jsx
 import * as React from 'react';
-import CurrencyTextField from '@novatics-ui/currency-text-field';
+import CurrencyTextField from '@novatics/currency-text-field';
 
 function App() {
   return (
@@ -91,10 +91,10 @@ Add user to verdaccio
 yarn verdaccio:addUser
 ```
 
-**note**  On linux, there may be a permission error, in this case it is necessary to give permission on the sudo folder.
+**note** On linux, there may be a permission error, in this case it is necessary to give permission on the sudo folder.
 
 ```shell
-sudo chown 10001:65533 -R storage   
+sudo chown 10001:65533 -R storage
 ```
 
 Create versions, push to git and deploy.
@@ -102,7 +102,6 @@ Create versions, push to git and deploy.
 ```shell
 yarn versions:create:push:deploy
 ```
-
 
 ## License
 

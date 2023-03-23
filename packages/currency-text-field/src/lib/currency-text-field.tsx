@@ -56,8 +56,6 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     return pick(mergedCurrency, CURRENCY_ATTRIBUTES) as CurrencyProps;
   }, [currency, currencyProps]);
 
-
-
   const formatToCurrency = useCallback(
     (value: string | number) => {
       const onlyNumbers = String(value).replace(/\D/g, '');

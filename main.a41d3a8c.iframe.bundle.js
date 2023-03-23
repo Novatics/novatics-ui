@@ -304,7 +304,7 @@ var Checkbox = __webpack_require__(49960);
 // EXTERNAL MODULE: ./node_modules/@mui/icons-material/Check.js
 var Check = __webpack_require__(27036);
 // EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
-var src = __webpack_require__(55475);
+var src = __webpack_require__(48901);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
 ;// CONCATENATED MODULE: ./packages/checkbox/src/lib/checkbox.tsx
@@ -914,7 +914,7 @@ var dist_esm = __webpack_require__(85737);
 // EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
 var blocks = __webpack_require__(63255);
 ;// CONCATENATED MODULE: ./packages/core/package.json
-const package_namespaceObject = {"i":"0.2.1"};
+const package_namespaceObject = {"i":"0.2.2"};
 ;// CONCATENATED MODULE: ./packages/core/src/lib/core.stories.mdx
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1015,7 +1015,7 @@ var blocks = __webpack_require__(63255);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 3 modules
 var client = __webpack_require__(6746);
 ;// CONCATENATED MODULE: ./packages/currency-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.1"};
+const package_namespaceObject = {"i8":"0.1.2"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(19601);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -5173,7 +5173,7 @@ var deepmerge = __webpack_require__(59766);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/Radio/Radio.js + 6 modules
 var Radio_Radio = __webpack_require__(33687);
 // EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
-var src = __webpack_require__(55475);
+var src = __webpack_require__(48901);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
 ;// CONCATENATED MODULE: ./packages/radio/src/lib/radio.tsx
@@ -5709,7 +5709,7 @@ const __namedExportsOrder = ["basicUsage", "variations", "playground"];
 
 /***/ }),
 
-/***/ 13014:
+/***/ 7328:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5719,6 +5719,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
+  "breakpoints": () => (/* binding */ breakpoints),
   "createTheme": () => (/* binding */ createTheme),
   "default": () => (/* binding */ styles_stories),
   "styledFunction": () => (/* binding */ styledFunction)
@@ -5756,6 +5757,101 @@ var transientOptions = {
 var styled = function styled(component, options) {
   return (0,styles_styled/* default */.ZP)(component, Object.assign({}, transientOptions, options));
 };
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Grid/Grid.js + 2 modules
+var Grid = __webpack_require__(30030);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Box/Box.js + 1 modules
+var Box = __webpack_require__(18720);
+// EXTERNAL MODULE: ./packages/tokens/src/index.ts
+var src = __webpack_require__(31530);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
+var styles_src = __webpack_require__(48901);
+// EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
+var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
+;// CONCATENATED MODULE: ./packages/styles/src/lib/stories/grid-breakpoints.tsx
+
+
+
+
+
+
+var StyledBox = (0,styles_src/* styled */.zo)(Box/* default */.Z)(function () {
+  return {
+    border: '2px solid',
+    borderColor: src/* colors.penumbra */.O9.penumbra,
+    padding: '10px',
+    borderRadius: '4px',
+    textAlign: 'center',
+    fontWeight: 'bold'
+  };
+});
+var GridBreakpoints = function GridBreakpoints() {
+  return (0,emotion_react_jsx_runtime_browser_esm/* jsxs */.BX)(Grid/* default */.ZP, {
+    container: true,
+    spacing: 2,
+    padding: 1,
+    children: [(0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Grid/* default */.ZP, {
+      xxs: 4,
+      xs: 6,
+      sm: 1,
+      md: 5,
+      lg: 2,
+      xl: 4,
+      xxl: 1,
+      padding: 1,
+      children: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(StyledBox, {
+        sx: {
+          backgroundColor: 'tertiary.light'
+        },
+        children: "1"
+      })
+    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Grid/* default */.ZP, {
+      xxs: 8,
+      xs: 6,
+      sm: 11,
+      md: 7,
+      lg: 10,
+      xl: 8,
+      xxl: 11,
+      padding: 1,
+      children: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(StyledBox, {
+        sx: {
+          backgroundColor: 'secondary.light'
+        },
+        children: "2"
+      })
+    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Grid/* default */.ZP, {
+      xxs: 8,
+      xs: 6,
+      sm: 11,
+      md: 7,
+      lg: 10,
+      xl: 8,
+      xxl: 11,
+      padding: 1,
+      children: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(StyledBox, {
+        sx: {
+          backgroundColor: 'success.light'
+        },
+        children: "3"
+      })
+    }), (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Grid/* default */.ZP, {
+      xxs: 4,
+      xs: 6,
+      sm: 1,
+      md: 5,
+      lg: 2,
+      xl: 4,
+      xxl: 1,
+      padding: 1,
+      children: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(StyledBox, {
+        sx: {
+          backgroundColor: 'warning.light'
+        },
+        children: "4"
+      })
+    })]
+  });
+};
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/styles.stories.mdx
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -5763,6 +5859,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 /* @jsxRuntime classic */
 /* @jsx mdx */
+
 
 
 
@@ -5913,7 +6010,82 @@ export const ListItem = styled('li')(({ $isFirst, $isLast }) => ({
       $isLast: true,
       mdxType: "ListItem"
     }, "This is last"));
-  })), (0,esm/* mdx */.kt)("p", null, `made by Novatics ❤`));
+  })), (0,esm/* mdx */.kt)("h2", {
+    "id": "breakpoints"
+  }, `Breakpoints`), (0,esm/* mdx */.kt)("p", null, `Each breakpoint `, `[key]`, ` matches with a fixed screen width `, `[value]`, `:`), (0,esm/* mdx */.kt)("ul", null, (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxs`), `: extra-extra-small: 0px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xs`), `: extra-small: 600px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `sm`), `: small: 960px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `md`), `: medium: 1024px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `lg`), `: large: 1200px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xl`), `: extra-large: 1440px`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxl`), `: extra-extra-large: 1728px`)), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Breakpoints",
+    mdxType: "Story"
+  }, (0,esm/* mdx */.kt)(GridBreakpoints, {
+    mdxType: "GridBreakpoints"
+  }))), (0,esm/* mdx */.kt)("p", null, (0,esm/* mdx */.kt)("strong", {
+    parentName: "p"
+  }, `Breakpoints Applied:`)), (0,esm/* mdx */.kt)("ul", null, (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `1 & 4`), ` -> `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxs`), `: 4 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xs`), `: 6 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `sm`), `: 1 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `md`), `: 5 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `lg`), `: 2 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xl`), `: 4 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxl`), `: 1`), (0,esm/* mdx */.kt)("li", {
+    parentName: "ul"
+  }, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `2 & 3`), ` -> `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxs`), `: 8 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xs`), `: 6 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `sm`), `: 11 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `md`), `: 7 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `lg`), `: 10 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xl`), `: 8 `, (0,esm/* mdx */.kt)("strong", {
+    parentName: "li"
+  }, `xxl`), `: 11`)), (0,esm/* mdx */.kt)("p", null, `made by Novatics ❤`));
 }
 ;
 MDXContent.isMDXComponent = true;
@@ -5963,13 +6135,21 @@ styledFunction.parameters = {
     source: 'args => {\n  const ListItem = styled(\'li\')(({\n    $isFirst,\n    $isLast\n  }) => ({\n    borderStyle: \'solid\',\n    borderColor: \'black\',\n    padding: \'16px\',\n    borderTopRightRadius: $isFirst ? \'16px\' : undefined,\n    borderTopLeftRadius: $isFirst ? \'16px\' : undefined,\n    borderBottomRightRadius: $isLast ? \'16px\' : undefined,\n    borderBottomLeftRadius: $isLast ? \'16px\' : undefined,\n    borderTop: $isFirst ? undefined : \'none\'\n  }));\n  return <ul style={{\n    listStyleType: \'none\'\n  }}>\n          <ListItem $isFirst>This is First</ListItem>\n          <ListItem>This is middle</ListItem>\n          <ListItem $isLast>This is last</ListItem>\n        </ul>;\n}'
   }
 };
+const breakpoints = () => (0,esm/* mdx */.kt)(GridBreakpoints, null);
+breakpoints.storyName = 'Breakpoints';
+breakpoints.parameters = {
+  storySource: {
+    source: '<GridBreakpoints />'
+  }
+};
 const componentMeta = {
   title: 'Styles',
-  includeStories: ["createTheme", "styledFunction"]
+  includeStories: ["createTheme", "styledFunction", "breakpoints"]
 };
 const mdxStoryNameToKey = {
   "Create Theme": "createTheme",
-  "Styled Function": "styledFunction"
+  "Styled Function": "styledFunction",
+  "Breakpoints": "breakpoints"
 };
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
@@ -5980,7 +6160,7 @@ componentMeta.parameters.docs = {
   }, (0,esm/* mdx */.kt)(MDXContent, null))
 };
 /* harmony default export */ const styles_stories = (componentMeta);
-const __namedExportsOrder = ["createTheme", "styledFunction"];
+const __namedExportsOrder = ["createTheme", "styledFunction", "breakpoints"];
 
 /***/ }),
 
@@ -7751,7 +7931,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _storybook_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6746);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15916);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(55475);
+/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48901);
 
 
 
@@ -7946,7 +8126,7 @@ Object.keys(preview_namespaceObject).forEach(function (key) {
 
 /***/ }),
 
-/***/ 55475:
+/***/ 48901:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7963,56 +8143,54 @@ __webpack_require__.d(__webpack_exports__, {
 var styles = __webpack_require__(71505);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
 var es_number_constructor = __webpack_require__(9653);
-// EXTERNAL MODULE: ./packages/tokens/src/lib/tokens.ts + 5 modules
-var tokens = __webpack_require__(75790);
-;// CONCATENATED MODULE: ./packages/tokens/src/index.ts
-
+// EXTERNAL MODULE: ./packages/tokens/src/index.ts
+var src = __webpack_require__(31530);
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/palette.ts
 
 
 var palette_palette = {
   grayScale: {
-    blackHole: tokens/* colors.blackHole */.O9.blackHole,
-    eclipse: tokens/* colors.eclipse */.O9.eclipse,
-    penumbra: tokens/* colors.penumbra */.O9.penumbra,
-    spaceStation: tokens/* colors.spaceStation */.O9.spaceStation,
-    fullMoon: tokens/* colors.fullMoon */.O9.fullMoon,
-    newMoon: tokens/* colors.newMoon */.O9.newMoon,
-    halo: tokens/* colors.halo */.O9.halo,
-    supernova: tokens/* colors.supernova */.O9.supernova
+    blackHole: src/* colors.blackHole */.O9.blackHole,
+    eclipse: src/* colors.eclipse */.O9.eclipse,
+    penumbra: src/* colors.penumbra */.O9.penumbra,
+    spaceStation: src/* colors.spaceStation */.O9.spaceStation,
+    fullMoon: src/* colors.fullMoon */.O9.fullMoon,
+    newMoon: src/* colors.newMoon */.O9.newMoon,
+    halo: src/* colors.halo */.O9.halo,
+    supernova: src/* colors.supernova */.O9.supernova
   },
   primary: {
-    main: tokens/* colors.nebula */.O9.nebula,
-    dark: tokens/* colors.nebula--dark */.O9["nebula--dark"],
-    medium: tokens/* colors.nebula--medium */.O9["nebula--medium"],
-    light: tokens/* colors.nebula--light */.O9["nebula--light"]
+    main: src/* colors.nebula */.O9.nebula,
+    dark: src/* colors.nebula--dark */.O9["nebula--dark"],
+    medium: src/* colors.nebula--medium */.O9["nebula--medium"],
+    light: src/* colors.nebula--light */.O9["nebula--light"]
   },
   secondary: {
-    main: tokens/* colors.sunlight */.O9.sunlight,
-    dark: tokens/* colors.sunlight--dark */.O9["sunlight--dark"],
-    medium: tokens/* colors.sunlight--medium */.O9["sunlight--medium"],
-    light: tokens/* colors.sunlight--light */.O9["sunlight--light"]
+    main: src/* colors.sunlight */.O9.sunlight,
+    dark: src/* colors.sunlight--dark */.O9["sunlight--dark"],
+    medium: src/* colors.sunlight--medium */.O9["sunlight--medium"],
+    light: src/* colors.sunlight--light */.O9["sunlight--light"]
   },
   tertiary: {
-    main: tokens/* colors.cosmos */.O9.cosmos,
-    dark: tokens/* colors.cosmos--dark */.O9["cosmos--dark"],
-    medium: tokens/* colors.cosmos--medium */.O9["cosmos--medium"],
-    light: tokens/* colors.cosmos--light */.O9["cosmos--light"]
+    main: src/* colors.cosmos */.O9.cosmos,
+    dark: src/* colors.cosmos--dark */.O9["cosmos--dark"],
+    medium: src/* colors.cosmos--medium */.O9["cosmos--medium"],
+    light: src/* colors.cosmos--light */.O9["cosmos--light"]
   },
   success: {
-    main: tokens/* colors.aurora */.O9.aurora,
-    dark: tokens/* colors.aurora--dark */.O9["aurora--dark"],
-    light: tokens/* colors.aurora--light */.O9["aurora--light"]
+    main: src/* colors.aurora */.O9.aurora,
+    dark: src/* colors.aurora--dark */.O9["aurora--dark"],
+    light: src/* colors.aurora--light */.O9["aurora--light"]
   },
   warning: {
-    main: tokens/* colors.bigBang */.O9.bigBang,
-    dark: tokens/* colors.bigBang--dark */.O9["bigBang--dark"],
-    light: tokens/* colors.bigBang--light */.O9["bigBang--light"]
+    main: src/* colors.bigBang */.O9.bigBang,
+    dark: src/* colors.bigBang--dark */.O9["bigBang--dark"],
+    light: src/* colors.bigBang--light */.O9["bigBang--light"]
   },
   error: {
-    main: tokens/* colors.mars */.O9.mars,
-    dark: tokens/* colors.mars--dark */.O9["mars--dark"],
-    light: tokens/* colors.mars--light */.O9["mars--light"]
+    main: src/* colors.mars */.O9.mars,
+    dark: src/* colors.mars--dark */.O9["mars--dark"],
+    light: src/* colors.mars--light */.O9["mars--light"]
   }
 };
 /* harmony default export */ const palette = ((/* unused pure expression or super */ null && (palette_palette)));
@@ -8023,16 +8201,16 @@ var es_string_small = __webpack_require__(37268);
 
 var borderRadius = {
   small: {
-    px: tokens/* borderRadius.small.px */.E0.small.px + "px",
-    rem: tokens/* borderRadius.small.rem */.E0.small.rem + "rem"
+    px: src/* borderRadius.small.px */.E0.small.px + "px",
+    rem: src/* borderRadius.small.rem */.E0.small.rem + "rem"
   },
   regular: {
-    px: tokens/* borderRadius.regular.px */.E0.regular.px + "px",
-    rem: tokens/* borderRadius.regular.rem */.E0.regular.rem + "rem"
+    px: src/* borderRadius.regular.px */.E0.regular.px + "px",
+    rem: src/* borderRadius.regular.rem */.E0.regular.rem + "rem"
   },
   large: {
-    px: tokens/* borderRadius.large.px */.E0.large.px + "px",
-    rem: tokens/* borderRadius.large.rem */.E0.large.rem + "rem"
+    px: src/* borderRadius.large.px */.E0.large.px + "px",
+    rem: src/* borderRadius.large.rem */.E0.large.rem + "rem"
   }
 };
 /* harmony default export */ const Theme_borderRadius = ((/* unused pure expression or super */ null && (borderRadius)));
@@ -8043,16 +8221,16 @@ var borderRadius = {
 
 var themeShadows = {
   blackhole: {
-    low: tokens/* shadows.blackhole--low */.q["blackhole--low"],
-    medium: tokens/* shadows.blackhole--medium */.q["blackhole--medium"],
-    intermediate: tokens/* shadows.blackhole--intermediate */.q["blackhole--intermediate"],
-    high: tokens/* shadows.blackhole--high */.q["blackhole--high"]
+    low: src/* shadows.blackhole--low */.q["blackhole--low"],
+    medium: src/* shadows.blackhole--medium */.q["blackhole--medium"],
+    intermediate: src/* shadows.blackhole--intermediate */.q["blackhole--intermediate"],
+    high: src/* shadows.blackhole--high */.q["blackhole--high"]
   },
   cosmos: {
-    low: tokens/* shadows.cosmos--low */.q["cosmos--low"],
-    medium: tokens/* shadows.cosmos--medium */.q["cosmos--medium"],
-    intermediate: tokens/* shadows.cosmos--intermediate */.q["cosmos--intermediate"],
-    high: tokens/* shadows.cosmos--high */.q["cosmos--high"]
+    low: src/* shadows.cosmos--low */.q["cosmos--low"],
+    medium: src/* shadows.cosmos--medium */.q["cosmos--medium"],
+    intermediate: src/* shadows.cosmos--intermediate */.q["cosmos--intermediate"],
+    high: src/* shadows.cosmos--high */.q["cosmos--high"]
   }
 };
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -8066,12 +8244,12 @@ var es_object_to_string = __webpack_require__(41539);
 
 
 
-var typographies = Object.keys(tokens/* typography.typography */.cp.typography);
+var typographies = Object.keys(src/* typography.typography */.cp.typography);
 var themeTypography = typographies.reduce(function (acc, curr) {
   acc[curr] = {
-    fontWeight: tokens/* typography.typography */.cp.typography[curr].fontWeight,
-    fontSize: tokens/* typography.typography */.cp.typography[curr].fontSize.rem + "rem",
-    lineHeight: tokens/* typography.typography */.cp.typography[curr].lineHeight
+    fontWeight: src/* typography.typography */.cp.typography[curr].fontWeight,
+    fontSize: src/* typography.typography */.cp.typography[curr].fontSize.rem + "rem",
+    lineHeight: src/* typography.typography */.cp.typography[curr].lineHeight
   };
   return acc;
 }, {});
@@ -8102,9 +8280,22 @@ var es_array_concat = __webpack_require__(92222);
 var es_object_assign = __webpack_require__(19601);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/createTheme.js + 14 modules
 var styles_createTheme = __webpack_require__(5517);
+;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/breakpoints.ts
+var themeBreakpoints = {
+  values: {
+    xxs: 0,
+    xs: 600,
+    sm: 960,
+    md: 1024,
+    lg: 1200,
+    xl: 1440,
+    xxl: 1728
+  }
+};
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/createTheme.ts
 
 var _excluded = ["components", "palette"];
+
 
 
 
@@ -8124,6 +8315,7 @@ var createTheme = function createTheme(options) {
     args[_key - 1] = arguments[_key];
   }
   return styles_createTheme/* default.apply */.Z.apply(void 0, [Object.assign({
+    breakpoints: themeBreakpoints,
     palette: Object.assign({}, palette_palette, palette),
     typography: themeTypography,
     spacing: function spacing(factor) {
@@ -8137,6 +8329,21 @@ var createTheme = function createTheme(options) {
 ;// CONCATENATED MODULE: ./packages/styles/src/index.ts
 
 
+
+
+/***/ }),
+
+/***/ 31530:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "E0": () => (/* reexport safe */ _lib_tokens__WEBPACK_IMPORTED_MODULE_0__.E0),
+/* harmony export */   "O9": () => (/* reexport safe */ _lib_tokens__WEBPACK_IMPORTED_MODULE_0__.O9),
+/* harmony export */   "cp": () => (/* reexport safe */ _lib_tokens__WEBPACK_IMPORTED_MODULE_0__.cp),
+/* harmony export */   "q": () => (/* reexport safe */ _lib_tokens__WEBPACK_IMPORTED_MODULE_0__.q)
+/* harmony export */ });
+/* harmony import */ var _lib_tokens__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75790);
 
 
 /***/ }),
@@ -8218,7 +8425,7 @@ var map = {
 	"./currency-text-field/src/lib/currency-text-field.stories.mdx": 54101,
 	"./masked-text-field/src/lib/masked-text-field.stories.mdx": 47642,
 	"./radio/src/lib/radio.stories.mdx": 66306,
-	"./styles/src/lib/styles.stories.mdx": 13014,
+	"./styles/src/lib/styles.stories.mdx": 7328,
 	"./tokens/src/lib/tokens.stories.mdx": 38716,
 	"./wizard/src/lib/wizard.stories.mdx": 47483
 };
@@ -8679,4 +8886,4 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.cc1c3b00.iframe.bundle.js.map
+//# sourceMappingURL=main.a41d3a8c.iframe.bundle.js.map

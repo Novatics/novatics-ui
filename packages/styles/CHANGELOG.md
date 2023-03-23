@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/styles-0.1.2...styles-0.2.0) (2023-03-23)
+
+
+### Features
+
+* **styles:** added breakpoints to createTheme ([9194042](https://github.com/Novatics/novatics-ui/commit/91940420fb4ffad77e8e42c83597824e3eed9e9a))
+
 ### [0.1.2](https://github.com/Novatics/novatics-ui/compare/styles-0.1.1...styles-0.1.2) (2023-03-23)
 
 ### [0.1.1](https://github.com/Novatics/novatics-ui/compare/styles-0.1.0...styles-0.1.1) (2023-03-23)

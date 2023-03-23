@@ -42,7 +42,7 @@ export interface WizardProps {
   TabPanelContainerProps?: object;
 }
 
-const Wizard = ({
+export const Wizard = ({
   onBack,
   onNext,
   onFinish,
@@ -102,7 +102,7 @@ const Wizard = ({
     } else if (allDisabled) {
       setCurrentStep(-1);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -3,10 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": ["**/*"],
   "plugins": ["@nrwl/nx", "@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

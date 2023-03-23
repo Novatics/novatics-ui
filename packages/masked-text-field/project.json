@@ -14,14 +14,16 @@
         "entryFile": "packages/masked-text-field/src/index.ts",
         "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "swc",
+        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/masked-text-field/README.md",
             "input": ".",
             "output": "."
           }
-        ]
+        ],
+        "format": ["cjs"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
@@ -68,6 +70,27 @@
         "ci": {
           "quiet": true
         }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "baseBranch": "master"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    },
+    "version:deploy": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "postTargets": ["masked-text-field:deploy"],
+        "baseBranch": "master"
       }
     }
   }

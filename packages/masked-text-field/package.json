@@ -1,5 +1,5 @@
 {
-  "name": "@novatics-ui/masked-text-field",
+  "name": "@novatics/masked-text-field",
   "version": "0.0.1",
   "dependencies": {
     "react-input-mask": "^2.0.4"

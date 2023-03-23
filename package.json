@@ -1,5 +1,5 @@
 {
-  "name": "novatics-ui",
+  "name": "novatics",
   "version": "0.0.0",
   "license": "MIT",
   "private": false,
@@ -28,8 +28,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.11",
     "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.11",
     "@storybook/addon-docs": "^6.5.13",
     "core-js": "^3.26.0",
     "currency.js": "^2.0.4",
@@ -111,6 +111,7 @@
     "prettier": "^2.7.1",
     "react-test-renderer": "18.2.0",
     "storybook-addon-swc": "^1.1.9",
+    "storybook-dark-mode": "^2.0.5",
     "swc-loader": "0.2.3",
     "ts-jest": "29.0.3",
     "ts-node": "10.9.1",

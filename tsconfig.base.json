@@ -17,12 +17,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@novatics/checkbox": ["packages/checkbox/src/index.ts"],
       "@novatics/core": ["packages/core/src/index.ts"],
       "@novatics/currency-text-field": [
         "packages/currency-text-field/src/index.ts"
       ],
+      "@novatics/masked-text-field": [
+        "packages/masked-text-field/src/index.ts"
+      ],
+      "@novatics/radio": ["packages/radio/src/index.ts"],
       "@novatics/styles": ["packages/styles/src/index.ts"],
-      "@novatics/tokens": ["packages/tokens/src/index.ts"]
+      "@novatics/tokens": ["packages/tokens/src/index.ts"],
+      "@novatics/wizard": ["packages/wizard/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

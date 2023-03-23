@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Core from './core';
+import Radio from './radio';
 
-describe('Core', () => {
+describe('Radio', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Core />);
+    const { baseElement } = render(<Radio />);
     expect(baseElement).toBeTruthy();
   });
 });

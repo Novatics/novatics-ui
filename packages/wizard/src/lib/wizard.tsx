@@ -42,7 +42,7 @@ export interface WizardProps {
   TabPanelContainerProps?: object;
 }
 
-const Wizard = ({
+export const Wizard = ({
   onBack,
   onNext,
   onFinish,

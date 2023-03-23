@@ -4,6 +4,7 @@
   "projects": {
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
+    "radio": "packages/radio",
     "styles": "packages/styles",
     "tokens": "packages/tokens"
   }

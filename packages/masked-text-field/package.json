@@ -2,9 +2,9 @@
   "name": "@novatics/masked-text-field",
   "version": "0.0.1",
   "dependencies": {
-    "react-input-mask": "^2.0.4"
+    "imask": "^6.4.3"
   },
   "devDependencies": {
-    "@types/react-input-mask": "^3.0.1"
+    "imask": "^6.4.3"
   }
 }

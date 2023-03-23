@@ -2,7 +2,11 @@
 
 module.exports = {
   stories: ['*.stories.mdx', '*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-essentials', '@react-theming/storybook-addon', 'storybook-dark-mode'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@react-theming/storybook-addon',
+    'storybook-dark-mode',
+  ],
   webpackFinal: async (config, { configType }) => {
     // analyze webpack bundle size. To enable run storybook with `cross-env analyze=true`
     // not needed, but helps debug the problem :)

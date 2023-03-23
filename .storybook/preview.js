@@ -29,5 +29,5 @@ export const parameters = {
     darkClass: 'darkClass',
     lightClass: 'lightClass',
     stylePreview: true,
-  }
+  },
 };

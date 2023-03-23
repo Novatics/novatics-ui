@@ -15,7 +15,6 @@ First install the latest version of the package from `@novatics/radio`.
   yarn add -D @novatics/radio
 ```
 
-
 ### Dependencies
 
 This component extends [Material UI React Radio](https://mui.com/material-ui/react-radio-button). Therefore is needed to install Material UI:
@@ -31,9 +30,7 @@ yarn add @mui/material
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Radio
-            {...args}
-          />
+          <Radio {...args} />
         </div>
       );
     }}
@@ -52,7 +49,13 @@ import ... from '@novatics/radio';
 
 <Canvas>
   <Story name="Variations">
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+      }}
+    >
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         Default Behaviors
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -120,6 +123,5 @@ import ... from '@novatics/radio';
 </Canvas>
 
 <ArgsTable story="Playground" />
-
 
 made by Novatics ❤

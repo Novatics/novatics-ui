@@ -12,7 +12,4 @@ export const transientOptions: Parameters<CreateStyled>[1] = {
 export const styled: CreateMUIStyled<Theme> = (
   component: Parameters<typeof MUIStyled>['0'],
   options: Parameters<typeof MUIStyled>['1']
-) => {
-  console.log('args', component, options);
-  return MUIStyled(component, { ...transientOptions, ...options });
-};
+) => MUIStyled(component, { ...transientOptions, ...options });

@@ -29,6 +29,13 @@ declare module '@mui/material/styles/createPalette' {
   interface TypeObject {
     grayScale: GrayScale;
   }
+  interface PaletteColor {
+    light: string;
+    main: string;
+    medium?: string;
+    dark: string;
+    contrastText: string;
+  }
 }
 
 export const palette: PaletteOptions = {
@@ -70,7 +77,6 @@ export const palette: PaletteOptions = {
     dark: colors['bigBang--dark'],
     light: colors['bigBang--light'],
   },
-  
   error: {
     main: colors['mars'],
     dark: colors['mars--dark'],

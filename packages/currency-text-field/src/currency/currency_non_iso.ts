@@ -110,7 +110,7 @@ export default {
     alternateSymbols: [],
     subunit: '',
     subunitToUnit: 1,
- precision:0,
+    precision: 0,
     symbolFirst: true,
     htmlEntity: '',
     decimal: '.',

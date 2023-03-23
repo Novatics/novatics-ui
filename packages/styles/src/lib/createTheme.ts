@@ -9,6 +9,7 @@ import { Spacings } from './Theme/spacings';
 import { themeShadows } from './Theme/shadows';
 import { themeTypography } from './Theme/typography';
 import { Length } from './Theme/types';
+import { themeBreakpoints } from './Theme/breakpoints';
 
 export { themePalette, themeBorderRadius };
 
@@ -24,6 +25,7 @@ export const createTheme = (
 
   return MUICreateTheme(
     {
+      breakpoints: themeBreakpoints,
       palette: {
         ...themePalette,
         ...palette,

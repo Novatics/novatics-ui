@@ -390,7 +390,7 @@ var blocks = __webpack_require__(63255);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 3 modules
 var client = __webpack_require__(6746);
 ;// CONCATENATED MODULE: ./packages/currency-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.0"};
+const package_namespaceObject = {"i8":"0.1.1"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(19601);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -7048,4 +7048,4 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.02588f52.iframe.bundle.js.map
+//# sourceMappingURL=main.c44da6b9.iframe.bundle.js.map

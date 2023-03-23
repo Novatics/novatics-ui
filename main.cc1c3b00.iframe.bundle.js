@@ -914,7 +914,7 @@ var dist_esm = __webpack_require__(85737);
 // EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
 var blocks = __webpack_require__(63255);
 ;// CONCATENATED MODULE: ./packages/core/package.json
-const package_namespaceObject = {"i":"0.2.2"};
+const package_namespaceObject = {"i":"0.2.1"};
 ;// CONCATENATED MODULE: ./packages/core/src/lib/core.stories.mdx
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1015,7 +1015,7 @@ var blocks = __webpack_require__(63255);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 3 modules
 var client = __webpack_require__(6746);
 ;// CONCATENATED MODULE: ./packages/currency-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.2"};
+const package_namespaceObject = {"i8":"0.1.1"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(19601);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -8679,4 +8679,4 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.43dd316d.iframe.bundle.js.map
+//# sourceMappingURL=main.cc1c3b00.iframe.bundle.js.map

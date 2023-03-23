@@ -17,6 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@novatics/checkbox": ["packages/checkbox/src/index.ts"],
       "@novatics/radio": ["packages/radio/src/index.ts"],
       "@novatics/core": ["packages/core/src/index.ts"],
       "@novatics/currency-text-field": [

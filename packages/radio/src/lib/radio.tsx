@@ -60,7 +60,6 @@ const RadioIcon = styled('span')<{
   };
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const RadioCheckedIcon = styled(RadioIcon)<{
   colorType: Color;
   error: boolean;

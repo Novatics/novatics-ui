@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "checkbox": "packages/checkbox",
     "core": "packages/core",
     "currency-text-field": "packages/currency-text-field",
     "radio": "packages/radio",

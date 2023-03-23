@@ -15,7 +15,6 @@ First install the latest version of the package from `@novatics/checkbox`.
   yarn add -D @novatics/checkbox
 ```
 
-
 ### Dependencies
 
 This component extends [Material UI React Checkbox](https://mui.com/material-ui/react-checkbox/). Therefore is needed to install Material UI:
@@ -31,9 +30,7 @@ yarn add @mui/material
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Checkbox
-            {...args}
-          />
+          <Checkbox {...args} />
         </div>
       );
     }}
@@ -52,31 +49,37 @@ import ... from '@novatics/checkbox';
 
 <Canvas>
   <Story name="Variations">
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+      }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Default</span>
         <Checkbox />
         <Checkbox checked />
         <Checkbox checked disabled />
         <Checkbox color="error" />
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Outlined</span>
         <Checkbox variant="outlined" />
         <Checkbox variant="outlined" checked />
         <Checkbox variant="outlined" checked disabled />
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Indeterminate Default</span>
         <Checkbox indeterminate />
         <Checkbox indeterminate disabled />
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Indeterminate Outlined</span>
         <Checkbox variant="outlined" indeterminate />
         <Checkbox variant="outlined" indeterminate disabled />
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Color Variations</span>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <Checkbox color="primary" checked />
@@ -128,6 +131,5 @@ import ... from '@novatics/checkbox';
 </Canvas>
 
 <ArgsTable story="Playground" />
-
 
 made by Novatics ❤

@@ -5047,7 +5047,7 @@ var blocks = __webpack_require__(63255);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 3 modules
 var client = __webpack_require__(6746);
 ;// CONCATENATED MODULE: ./packages/wizard/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.every.js
 var es_array_every = __webpack_require__(26541);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
@@ -7048,4 +7048,4 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.e7bf9b11.iframe.bundle.js.map
+//# sourceMappingURL=main.60326594.iframe.bundle.js.map

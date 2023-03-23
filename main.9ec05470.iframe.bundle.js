@@ -266,6 +266,631 @@ const __namedExportsOrder = ["__page"];
 
 /***/ }),
 
+/***/ 3359:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
+  "basicUsage": () => (/* binding */ basicUsage),
+  "default": () => (/* binding */ checkbox_stories),
+  "playground": () => (/* binding */ playground),
+  "variations": () => (/* binding */ variations)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(67294);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
+var esm = __webpack_require__(3905);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/dist/esm/index.js
+var dist_esm = __webpack_require__(85737);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
+var blocks = __webpack_require__(63255);
+// EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 3 modules
+var client = __webpack_require__(6746);
+;// CONCATENATED MODULE: ./packages/checkbox/package.json
+const package_namespaceObject = {"i":"0.0.1"};
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(7071);
+var objectWithoutPropertiesLoose_default = /*#__PURE__*/__webpack_require__.n(objectWithoutPropertiesLoose);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
+var es_object_assign = __webpack_require__(19601);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Checkbox/Checkbox.js + 4 modules
+var Checkbox = __webpack_require__(49960);
+// EXTERNAL MODULE: ./node_modules/@mui/icons-material/Check.js
+var Check = __webpack_require__(27036);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
+var src = __webpack_require__(55475);
+// EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
+var emotion_react_jsx_runtime_browser_esm = __webpack_require__(35944);
+;// CONCATENATED MODULE: ./packages/checkbox/src/lib/checkbox.tsx
+
+var _excluded = ["variant", "color", "disabled"];
+
+
+
+
+
+
+var IndeterminateIcon = (0,src/* styled */.zo)('span')(function (_ref) {
+  var colorType = _ref.colorType,
+    palette = _ref.theme.palette,
+    variant = _ref.variant;
+  var isFilled = variant === 'filled';
+  var colorVariant = palette[colorType];
+  return {
+    width: 14,
+    height: 14,
+    backgroundColor: isFilled ? colorVariant.main : 'transparent',
+    borderRadius: '2px',
+    border: "2px solid " + colorVariant.main,
+    '&:before': {
+      // center content to create line in the middle
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      display: 'block',
+      width: 8.89,
+      height: 1.78,
+      content: '""',
+      backgroundColor: isFilled ? palette.grayScale.supernova : colorVariant.main
+    },
+    'input:hover ~ &': {
+      backgroundColor: isFilled ? colorVariant.dark : colorVariant.light,
+      borderColor: colorVariant.dark,
+      '&:before': {
+        backgroundColor: isFilled ? palette.grayScale.supernova : colorVariant.medium
+      }
+    },
+    'input:disabled ~ &': {
+      backgroundColor: isFilled ? palette.grayScale.spaceStation : 'transparent',
+      border: "2px solid " + palette.grayScale.spaceStation,
+      '&:before': {
+        backgroundColor: isFilled ? palette.grayScale.supernova : palette.grayScale.spaceStation
+      }
+    }
+  };
+});
+var UncheckedIcon = (0,src/* styled */.zo)(Check/* default */.Z)(function (_ref2) {
+  var colorType = _ref2.colorType,
+    palette = _ref2.theme.palette,
+    error = _ref2.error;
+  return {
+    width: 14,
+    height: 14,
+    borderRadius: '2px',
+    border: "2px solid " + (error ? palette.error.main : palette.grayScale.spaceStation),
+    // Set color of the check icon
+    color: 'transparent',
+    'input:hover ~ &': {
+      backgroundColor: palette[colorType].light,
+      borderColor: palette[colorType].dark,
+      // Set color of the check icon
+      color: palette[colorType].medium || palette[colorType].dark
+    }
+  };
+});
+var CheckedIcon = (0,src/* styled */.zo)(UncheckedIcon)(function (_ref3) {
+  var colorType = _ref3.colorType,
+    palette = _ref3.theme.palette,
+    variant = _ref3.variant,
+    disabled = _ref3.disabled;
+  var isFilled = variant === 'filled';
+  var colors = (0,react.useMemo)(function () {
+    if (disabled && !isFilled) {
+      return {
+        color: palette.grayScale.spaceStation,
+        borderColor: palette.grayScale.spaceStation,
+        backgroundColor: palette.grayScale.supernova
+      };
+    }
+    if (disabled && isFilled) {
+      return {
+        color: palette.grayScale.supernova,
+        borderColor: palette.grayScale.spaceStation,
+        backgroundColor: palette.grayScale.spaceStation
+      };
+    }
+    if (isFilled) {
+      return {
+        color: palette.grayScale.supernova,
+        borderColor: palette[colorType].main,
+        backgroundColor: palette[colorType].main
+      };
+    }
+    return {
+      color: palette[colorType].main,
+      borderColor: palette[colorType].main,
+      backgroundColor: palette.grayScale.supernova
+    };
+  }, [colorType, disabled, isFilled, palette]);
+  return {
+    color: colors.color,
+    backgroundColor: colors.backgroundColor,
+    borderColor: colors.borderColor,
+    'input:hover ~ &': {
+      color: colors.color,
+      backgroundColor: colors.backgroundColor,
+      borderColor: colors.borderColor
+    }
+  };
+});
+
+// TODO: How could we make it more customizable regarding adding new colors?
+function checkbox_Checkbox(_ref4) {
+  var _ref4$variant = _ref4.variant,
+    variant = _ref4$variant === void 0 ? 'filled' : _ref4$variant,
+    _ref4$color = _ref4.color,
+    color = _ref4$color === void 0 ? 'primary' : _ref4$color,
+    disabled = _ref4.disabled,
+    other = objectWithoutPropertiesLoose_default()(_ref4, _excluded);
+  return (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Checkbox/* default */.Z, Object.assign({
+    disableFocusRipple: true,
+    disableRipple: true,
+    disableTouchRipple: true,
+    disabled: disabled,
+    icon: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(UncheckedIcon, {
+      colorType: color,
+      error: color === 'error'
+    }),
+    checkedIcon: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(CheckedIcon, {
+      colorType: color,
+      variant: variant,
+      disabled: disabled
+    }),
+    indeterminateIcon: (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(IndeterminateIcon, {
+      colorType: color,
+      variant: variant
+    })
+  }, other));
+}
+/* harmony default export */ const lib_checkbox = (checkbox_Checkbox);
+try {
+    // @ts-ignore
+    checkbox_Checkbox.displayName = "Checkbox";
+    // @ts-ignore
+    checkbox_Checkbox.__docgenInfo = { "description": "", "displayName": "Checkbox", "props": { "variant": { "defaultValue": { value: "filled" }, "description": "", "name": "variant", "required": false, "type": { "name": "enum", "value": [{ "value": "\"filled\"" }, { "value": "\"outlined\"" }] } }, "color": { "defaultValue": { value: "primary" }, "description": "The color of the component.\nIt supports both default and custom theme colors, which can be added as shown in the\n[palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).", "name": "color", "required": false, "type": { "name": "enum", "value": [{ "value": "\"primary\"" }, { "value": "\"secondary\"" }, { "value": "\"error\"" }, { "value": "\"info\"" }, { "value": "\"success\"" }, { "value": "\"warning\"" }] } }, "action": { "defaultValue": null, "description": "A ref for imperative actions.\nIt currently only supports `focusVisible()` action.", "name": "action", "required": false, "type": { "name": "Ref<ButtonBaseActions>" } }, "focusVisibleClassName": { "defaultValue": null, "description": "This prop can help identify which element has keyboard focus.\nThe class name will be applied when the element gains the focus through keyboard interaction.\nIt's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).\nThe rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).\nA [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components\nif needed.", "name": "focusVisibleClassName", "required": false, "type": { "name": "string" } }, "LinkComponent": { "defaultValue": { value: "'a'" }, "description": "The component used to render a link when the `href` prop is provided.", "name": "LinkComponent", "required": false, "type": { "name": "ElementType<any>" } }, "onFocusVisible": { "defaultValue": null, "description": "Callback fired when the component is focused with a keyboard.\nWe trigger a `onFocus` callback too.", "name": "onFocusVisible", "required": false, "type": { "name": "FocusEventHandler<any>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<HTMLButtonElement>" } } } };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES["packages/checkbox/src/lib/checkbox.tsx#Checkbox"] = { docgenInfo: checkbox_Checkbox.__docgenInfo, name: "Checkbox", path: "packages/checkbox/src/lib/checkbox.tsx#Checkbox" };
+}
+catch (__react_docgen_typescript_loader_error) { }
+;// CONCATENATED MODULE: ./packages/checkbox/src/lib/checkbox.stories.mdx
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+/* @jsxRuntime classic */
+/* @jsx mdx */
+
+
+
+
+
+const layoutProps = {};
+const MDXLayout = "wrapper";
+function MDXContent({
+  components,
+  ...props
+}) {
+  return (0,esm/* mdx */.kt)(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), (0,esm/* mdx */.kt)(blocks/* Meta */.h_, {
+    title: "Checkbox",
+    component: lib_checkbox,
+    mdxType: "Meta"
+  }), (0,esm/* mdx */.kt)("h1", {
+    "id": "checkbox-img-srchttpsimgshieldsiobadgeversion-vpkgversion-brightgreenn-"
+  }, `Checkbox `, (0,esm/* mdx */.kt)("img", {
+    src: `https://img.shields.io/badge/Version-v${package_namespaceObject.i}-brightgreenn`
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "installation"
+  }, `Installation`), (0,esm/* mdx */.kt)("p", null, `First install the latest version of the package from `, (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, `@novatics/checkbox`), `.`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-shell"
+  }, `  yarn add -D @novatics/checkbox
+`)), (0,esm/* mdx */.kt)("h3", {
+    "id": "dependencies"
+  }, `Dependencies`), (0,esm/* mdx */.kt)("p", null, `This component extends `, (0,esm/* mdx */.kt)("a", {
+    parentName: "p",
+    "href": "https://mui.com/material-ui/react-checkbox/",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
+  }, `Material UI React Checkbox`), `. Therefore is needed to install Material UI:`), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-bash"
+  }, `yarn add @mui/material
+`)), (0,esm/* mdx */.kt)("h3", {
+    "id": "basic-usage"
+  }, `Basic Usage`), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Basic Usage",
+    mdxType: "Story"
+  }, args => {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row'
+      }
+    }, (0,esm/* mdx */.kt)(lib_checkbox, _extends({}, args, {
+      mdxType: "Checkbox"
+    })));
+  })), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-tsx"
+  }, `import ... from '@novatics/checkbox';
+
+  ...
+
+
+`)), (0,esm/* mdx */.kt)("h3", {
+    "id": "variations"
+  }, `Variations`), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Variations",
+    mdxType: "Story"
+  }, (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-around'
+    }
+  }, (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (0,esm/* mdx */.kt)("span", null, "Default"), (0,esm/* mdx */.kt)(lib_checkbox, {
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    checked: true,
+    disabled: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "error",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (0,esm/* mdx */.kt)("span", null, "Outlined"), (0,esm/* mdx */.kt)(lib_checkbox, {
+    variant: "outlined",
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    variant: "outlined",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    variant: "outlined",
+    checked: true,
+    disabled: true,
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (0,esm/* mdx */.kt)("span", null, "Indeterminate Default"), (0,esm/* mdx */.kt)(lib_checkbox, {
+    indeterminate: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    indeterminate: true,
+    disabled: true,
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (0,esm/* mdx */.kt)("span", null, "Indeterminate Outlined"), (0,esm/* mdx */.kt)(lib_checkbox, {
+    variant: "outlined",
+    indeterminate: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    variant: "outlined",
+    indeterminate: true,
+    disabled: true,
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (0,esm/* mdx */.kt)("span", null, "Color Variations"), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "primary",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "primary",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "secondary",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "secondary",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "error",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "error",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "info",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "info",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "success",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "success",
+    mdxType: "Checkbox"
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "warning",
+    checked: true,
+    mdxType: "Checkbox"
+  }), (0,esm/* mdx */.kt)(lib_checkbox, {
+    color: "warning",
+    mdxType: "Checkbox"
+  })))))), (0,esm/* mdx */.kt)("h3", {
+    "id": "playground"
+  }, `Playground`), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Playground",
+    argTypes: {
+      error: false,
+      checked: false
+    },
+    mdxType: "Story"
+  }, args => {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row'
+      }
+    }, (0,esm/* mdx */.kt)(lib_checkbox, _extends({}, args, {
+      mdxType: "Checkbox"
+    })));
+  })), (0,esm/* mdx */.kt)(blocks/* ArgsTable */.$4, {
+    story: "Playground",
+    mdxType: "ArgsTable"
+  }), (0,esm/* mdx */.kt)("p", null, `made by Novatics ❤`));
+}
+;
+MDXContent.isMDXComponent = true;
+const basicUsage = args => {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, args));
+};
+basicUsage.storyName = 'Basic Usage';
+basicUsage.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\'\n  }}>\n          <Checkbox {...args} />\n        </div>;\n}'
+  }
+};
+const variations = () => (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  }
+}, (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}, (0,esm/* mdx */.kt)("span", null, "Default"), (0,esm/* mdx */.kt)(lib_checkbox, null), (0,esm/* mdx */.kt)(lib_checkbox, {
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  checked: true,
+  disabled: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "error"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}, (0,esm/* mdx */.kt)("span", null, "Outlined"), (0,esm/* mdx */.kt)(lib_checkbox, {
+  variant: "outlined"
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  variant: "outlined",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  variant: "outlined",
+  checked: true,
+  disabled: true
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}, (0,esm/* mdx */.kt)("span", null, "Indeterminate Default"), (0,esm/* mdx */.kt)(lib_checkbox, {
+  indeterminate: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  indeterminate: true,
+  disabled: true
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}, (0,esm/* mdx */.kt)("span", null, "Indeterminate Outlined"), (0,esm/* mdx */.kt)(lib_checkbox, {
+  variant: "outlined",
+  indeterminate: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  variant: "outlined",
+  indeterminate: true,
+  disabled: true
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}, (0,esm/* mdx */.kt)("span", null, "Color Variations"), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "primary",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "primary"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "secondary",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "secondary"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "error",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "error"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "info",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "info"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "success",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "success"
+})), (0,esm/* mdx */.kt)("div", {
+  style: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}, (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "warning",
+  checked: true
+}), (0,esm/* mdx */.kt)(lib_checkbox, {
+  color: "warning"
+}))));
+variations.storyName = 'Variations';
+variations.parameters = {
+  storySource: {
+    source: '<div style={{\n  display: \'flex\',\n  flexDirection: \'row\',\n  justifyContent: \'space-around\'\n}}>\n      <div style={{\n    display: \'flex\',\n    flexDirection: \'column\'\n  }}>\n        <span>Default</span>\n        <Checkbox />\n        <Checkbox checked />\n        <Checkbox checked disabled />\n        <Checkbox color=\"error\" />\n      </div>\n      <div style={{\n    display: \'flex\',\n    flexDirection: \'column\'\n  }}>\n        <span>Outlined</span>\n        <Checkbox variant=\"outlined\" />\n        <Checkbox variant=\"outlined\" checked />\n        <Checkbox variant=\"outlined\" checked disabled />\n      </div>\n      <div style={{\n    display: \'flex\',\n    flexDirection: \'column\'\n  }}>\n        <span>Indeterminate Default</span>\n        <Checkbox indeterminate />\n        <Checkbox indeterminate disabled />\n      </div>\n      <div style={{\n    display: \'flex\',\n    flexDirection: \'column\'\n  }}>\n        <span>Indeterminate Outlined</span>\n        <Checkbox variant=\"outlined\" indeterminate />\n        <Checkbox variant=\"outlined\" indeterminate disabled />\n      </div>\n      <div style={{\n    display: \'flex\',\n    flexDirection: \'column\'\n  }}>\n        <span>Color Variations</span>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"primary\" checked />\n          <Checkbox color=\"primary\" />\n        </div>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"secondary\" checked />\n          <Checkbox color=\"secondary\" />\n        </div>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"error\" checked />\n          <Checkbox color=\"error\" />\n        </div>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"info\" checked />\n          <Checkbox color=\"info\" />\n        </div>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"success\" checked />\n          <Checkbox color=\"success\" />\n        </div>\n        <div style={{\n      display: \'flex\',\n      flexDirection: \'row\'\n    }}>\n          <Checkbox color=\"warning\" checked />\n          <Checkbox color=\"warning\" />\n        </div>\n      </div>\n    </div>'
+  }
+};
+const playground = args => {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_checkbox, args));
+};
+playground.storyName = 'Playground';
+playground.argTypes = {
+  error: false,
+  checked: false
+};
+playground.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\'\n  }}>\n          <Checkbox {...args} />\n        </div>;\n}'
+  }
+};
+const componentMeta = {
+  title: 'Checkbox',
+  component: lib_checkbox,
+  includeStories: ["basicUsage", "variations", "playground"]
+};
+const mdxStoryNameToKey = {
+  "Basic Usage": "basicUsage",
+  "Variations": "variations",
+  "Playground": "playground"
+};
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (0,esm/* mdx */.kt)(dist_esm/* AddContext */.aT, {
+    mdxStoryNameToKey: mdxStoryNameToKey,
+    mdxComponentAnnotations: componentMeta
+  }, (0,esm/* mdx */.kt)(MDXContent, null))
+};
+/* harmony default export */ const checkbox_stories = (componentMeta);
+const __namedExportsOrder = ["basicUsage", "variations", "playground"];
+
+/***/ }),
+
 /***/ 4549:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3779,7 +4404,7 @@ try {
     // @ts-ignore
     CurrencyTextField.displayName = "CurrencyTextField";
     // @ts-ignore
-    CurrencyTextField.__docgenInfo = { "description": "", "displayName": "CurrencyTextField", "props": { "onChange": { "defaultValue": null, "description": "", "name": "onChange", "required": true, "type": { "name": "(value: string | number) => void" } }, "value": { "defaultValue": null, "description": "", "name": "value", "required": true, "type": { "name": "string | number" } }, "outputFormat": { "defaultValue": null, "description": "", "name": "outputFormat", "required": false, "type": { "name": "enum", "value": [{ "value": "\"string\"" }, { "value": "\"float\"" }, { "value": "\"integer\"" }] } }, "currency": { "defaultValue": null, "description": "", "name": "currency", "required": false, "type": { "name": "enum", "value": [{ "value": "\"eek\"" }, { "value": "\"ghc\"" }, { "value": "\"ltl\"" }, { "value": "\"lvl\"" }, { "value": "\"mro\"" }, { "value": "\"mtl\"" }, { "value": "\"tmm\"" }, { "value": "\"yen\"" }, { "value": "\"zwd\"" }, { "value": "\"zwl\"" }, { "value": "\"zwn\"" }, { "value": "\"zwr\"" }, { "value": "\"vef\"" }, { "value": "\"bch\"" }, { "value": "\"btc\"" }, { "value": "\"jep\"" }, { "value": "\"ggp\"" }, { "value": "\"imp\"" }, { "value": "\"xfu\"" }, { "value": "\"gbx\"" }, { "value": "\"cnh\"" }, { "value": "\"usdc\"" }, { "value": "\"aed\"" }, { "value": "\"afn\"" }, { "value": "\"all\"" }, { "value": "\"amd\"" }, { "value": "\"ang\"" }, { "value": "\"aoa\"" }, { "value": "\"ars\"" }, { "value": "\"aud\"" }, { "value": "\"awg\"" }, { "value": "\"azn\"" }, { "value": "\"bam\"" }, { "value": "\"bbd\"" }, { "value": "\"bdt\"" }, { "value": "\"bgn\"" }, { "value": "\"bhd\"" }, { "value": "\"bif\"" }, { "value": "\"bmd\"" }, { "value": "\"bnd\"" }, { "value": "\"bob\"" }, { "value": "\"brl\"" }, { "value": "\"bsd\"" }, { "value": "\"btn\"" }, { "value": "\"bwp\"" }, { "value": "\"byn\"" }, { "value": "\"byr\"" }, { "value": "\"bzd\"" }, { "value": "\"cad\"" }, { "value": "\"cdf\"" }, { "value": "\"chf\"" }, { "value": "\"clf\"" }, { "value": "\"clp\"" }, { "value": "\"cny\"" }, { "value": "\"cop\"" }, { "value": "\"crc\"" }, { "value": "\"cuc\"" }, { "value": "\"cup\"" }, { "value": "\"cve\"" }, { "value": "\"czk\"" }, { "value": "\"djf\"" }, { "value": "\"dkk\"" }, { "value": "\"dop\"" }, { "value": "\"dzd\"" }, { "value": "\"egp\"" }, { "value": "\"ern\"" }, { "value": "\"etb\"" }, { "value": "\"eur\"" }, { "value": "\"fjd\"" }, { "value": "\"fkp\"" }, { "value": "\"gbp\"" }, { "value": "\"gel\"" }, { "value": "\"ghs\"" }, { "value": "\"gip\"" }, { "value": "\"gmd\"" }, { "value": "\"gnf\"" }, { "value": "\"gtq\"" }, { "value": "\"gyd\"" }, { "value": "\"hkd\"" }, { "value": "\"hnl\"" }, { "value": "\"hrk\"" }, { "value": "\"htg\"" }, { "value": "\"huf\"" }, { "value": "\"idr\"" }, { "value": "\"ils\"" }, { "value": "\"inr\"" }, { "value": "\"iqd\"" }, { "value": "\"irr\"" }, { "value": "\"isk\"" }, { "value": "\"jmd\"" }, { "value": "\"jod\"" }, { "value": "\"jpy\"" }, { "value": "\"kes\"" }, { "value": "\"kgs\"" }, { "value": "\"khr\"" }, { "value": "\"kmf\"" }, { "value": "\"kpw\"" }, { "value": "\"krw\"" }, { "value": "\"kwd\"" }, { "value": "\"kyd\"" }, { "value": "\"kzt\"" }, { "value": "\"lak\"" }, { "value": "\"lbp\"" }, { "value": "\"lkr\"" }, { "value": "\"lrd\"" }, { "value": "\"lsl\"" }, { "value": "\"lyd\"" }, { "value": "\"mad\"" }, { "value": "\"mdl\"" }, { "value": "\"mga\"" }, { "value": "\"mkd\"" }, { "value": "\"mmk\"" }, { "value": "\"mnt\"" }, { "value": "\"mop\"" }, { "value": "\"mru\"" }, { "value": "\"mur\"" }, { "value": "\"mvr\"" }, { "value": "\"mwk\"" }, { "value": "\"mxn\"" }, { "value": "\"myr\"" }, { "value": "\"mzn\"" }, { "value": "\"nad\"" }, { "value": "\"ngn\"" }, { "value": "\"nio\"" }, { "value": "\"nok\"" }, { "value": "\"npr\"" }, { "value": "\"nzd\"" }, { "value": "\"omr\"" }, { "value": "\"pab\"" }, { "value": "\"pen\"" }, { "value": "\"pgk\"" }, { "value": "\"php\"" }, { "value": "\"pkr\"" }, { "value": "\"pln\"" }, { "value": "\"pyg\"" }, { "value": "\"qar\"" }, { "value": "\"ron\"" }, { "value": "\"rsd\"" }, { "value": "\"rub\"" }, { "value": "\"rwf\"" }, { "value": "\"sar\"" }, { "value": "\"sbd\"" }, { "value": "\"scr\"" }, { "value": "\"sdg\"" }, { "value": "\"sek\"" }, { "value": "\"sgd\"" }, { "value": "\"shp\"" }, { "value": "\"skk\"" }, { "value": "\"sll\"" }, { "value": "\"sos\"" }, { "value": "\"srd\"" }, { "value": "\"ssp\"" }, { "value": "\"std\"" }, { "value": "\"stn\"" }, { "value": "\"svc\"" }, { "value": "\"syp\"" }, { "value": "\"szl\"" }, { "value": "\"thb\"" }, { "value": "\"tjs\"" }, { "value": "\"tmt\"" }, { "value": "\"tnd\"" }, { "value": "\"top\"" }, { "value": "\"try\"" }, { "value": "\"ttd\"" }, { "value": "\"twd\"" }, { "value": "\"tzs\"" }, { "value": "\"uah\"" }, { "value": "\"ugx\"" }, { "value": "\"usd\"" }, { "value": "\"uyu\"" }, { "value": "\"uzs\"" }, { "value": "\"ves\"" }, { "value": "\"vnd\"" }, { "value": "\"vuv\"" }, { "value": "\"wst\"" }, { "value": "\"xaf\"" }, { "value": "\"xag\"" }, { "value": "\"xau\"" }, { "value": "\"xba\"" }, { "value": "\"xbb\"" }, { "value": "\"xbc\"" }, { "value": "\"xbd\"" }, { "value": "\"xcd\"" }, { "value": "\"xdr\"" }, { "value": "\"xof\"" }, { "value": "\"xpd\"" }, { "value": "\"xpf\"" }, { "value": "\"xpt\"" }, { "value": "\"xts\"" }, { "value": "\"yer\"" }, { "value": "\"zar\"" }, { "value": "\"zmk\"" }, { "value": "\"zmw\"" }] } }, "currencyProps": { "defaultValue": null, "description": "", "name": "currencyProps", "required": false, "type": { "name": "CurrencyProps" } } } };
+    CurrencyTextField.__docgenInfo = { "description": "", "displayName": "CurrencyTextField", "props": { "onChange": { "defaultValue": null, "description": "", "name": "onChange", "required": true, "type": { "name": "(value: string | number) => void" } }, "value": { "defaultValue": null, "description": "", "name": "value", "required": true, "type": { "name": "string | number" } }, "outputFormat": { "defaultValue": null, "description": "", "name": "outputFormat", "required": false, "type": { "name": "enum", "value": [{ "value": "\"string\"" }, { "value": "\"float\"" }, { "value": "\"integer\"" }] } }, "currency": { "defaultValue": null, "description": "", "name": "currency", "required": false, "type": { "name": "enum", "value": [{ "value": "\"all\"" }, { "value": "\"top\"" }, { "value": "\"eek\"" }, { "value": "\"ghc\"" }, { "value": "\"ltl\"" }, { "value": "\"lvl\"" }, { "value": "\"mro\"" }, { "value": "\"mtl\"" }, { "value": "\"tmm\"" }, { "value": "\"yen\"" }, { "value": "\"zwd\"" }, { "value": "\"zwl\"" }, { "value": "\"zwn\"" }, { "value": "\"zwr\"" }, { "value": "\"vef\"" }, { "value": "\"bch\"" }, { "value": "\"btc\"" }, { "value": "\"jep\"" }, { "value": "\"ggp\"" }, { "value": "\"imp\"" }, { "value": "\"xfu\"" }, { "value": "\"gbx\"" }, { "value": "\"cnh\"" }, { "value": "\"usdc\"" }, { "value": "\"aed\"" }, { "value": "\"afn\"" }, { "value": "\"amd\"" }, { "value": "\"ang\"" }, { "value": "\"aoa\"" }, { "value": "\"ars\"" }, { "value": "\"aud\"" }, { "value": "\"awg\"" }, { "value": "\"azn\"" }, { "value": "\"bam\"" }, { "value": "\"bbd\"" }, { "value": "\"bdt\"" }, { "value": "\"bgn\"" }, { "value": "\"bhd\"" }, { "value": "\"bif\"" }, { "value": "\"bmd\"" }, { "value": "\"bnd\"" }, { "value": "\"bob\"" }, { "value": "\"brl\"" }, { "value": "\"bsd\"" }, { "value": "\"btn\"" }, { "value": "\"bwp\"" }, { "value": "\"byn\"" }, { "value": "\"byr\"" }, { "value": "\"bzd\"" }, { "value": "\"cad\"" }, { "value": "\"cdf\"" }, { "value": "\"chf\"" }, { "value": "\"clf\"" }, { "value": "\"clp\"" }, { "value": "\"cny\"" }, { "value": "\"cop\"" }, { "value": "\"crc\"" }, { "value": "\"cuc\"" }, { "value": "\"cup\"" }, { "value": "\"cve\"" }, { "value": "\"czk\"" }, { "value": "\"djf\"" }, { "value": "\"dkk\"" }, { "value": "\"dop\"" }, { "value": "\"dzd\"" }, { "value": "\"egp\"" }, { "value": "\"ern\"" }, { "value": "\"etb\"" }, { "value": "\"eur\"" }, { "value": "\"fjd\"" }, { "value": "\"fkp\"" }, { "value": "\"gbp\"" }, { "value": "\"gel\"" }, { "value": "\"ghs\"" }, { "value": "\"gip\"" }, { "value": "\"gmd\"" }, { "value": "\"gnf\"" }, { "value": "\"gtq\"" }, { "value": "\"gyd\"" }, { "value": "\"hkd\"" }, { "value": "\"hnl\"" }, { "value": "\"hrk\"" }, { "value": "\"htg\"" }, { "value": "\"huf\"" }, { "value": "\"idr\"" }, { "value": "\"ils\"" }, { "value": "\"inr\"" }, { "value": "\"iqd\"" }, { "value": "\"irr\"" }, { "value": "\"isk\"" }, { "value": "\"jmd\"" }, { "value": "\"jod\"" }, { "value": "\"jpy\"" }, { "value": "\"kes\"" }, { "value": "\"kgs\"" }, { "value": "\"khr\"" }, { "value": "\"kmf\"" }, { "value": "\"kpw\"" }, { "value": "\"krw\"" }, { "value": "\"kwd\"" }, { "value": "\"kyd\"" }, { "value": "\"kzt\"" }, { "value": "\"lak\"" }, { "value": "\"lbp\"" }, { "value": "\"lkr\"" }, { "value": "\"lrd\"" }, { "value": "\"lsl\"" }, { "value": "\"lyd\"" }, { "value": "\"mad\"" }, { "value": "\"mdl\"" }, { "value": "\"mga\"" }, { "value": "\"mkd\"" }, { "value": "\"mmk\"" }, { "value": "\"mnt\"" }, { "value": "\"mop\"" }, { "value": "\"mru\"" }, { "value": "\"mur\"" }, { "value": "\"mvr\"" }, { "value": "\"mwk\"" }, { "value": "\"mxn\"" }, { "value": "\"myr\"" }, { "value": "\"mzn\"" }, { "value": "\"nad\"" }, { "value": "\"ngn\"" }, { "value": "\"nio\"" }, { "value": "\"nok\"" }, { "value": "\"npr\"" }, { "value": "\"nzd\"" }, { "value": "\"omr\"" }, { "value": "\"pab\"" }, { "value": "\"pen\"" }, { "value": "\"pgk\"" }, { "value": "\"php\"" }, { "value": "\"pkr\"" }, { "value": "\"pln\"" }, { "value": "\"pyg\"" }, { "value": "\"qar\"" }, { "value": "\"ron\"" }, { "value": "\"rsd\"" }, { "value": "\"rub\"" }, { "value": "\"rwf\"" }, { "value": "\"sar\"" }, { "value": "\"sbd\"" }, { "value": "\"scr\"" }, { "value": "\"sdg\"" }, { "value": "\"sek\"" }, { "value": "\"sgd\"" }, { "value": "\"shp\"" }, { "value": "\"skk\"" }, { "value": "\"sll\"" }, { "value": "\"sos\"" }, { "value": "\"srd\"" }, { "value": "\"ssp\"" }, { "value": "\"std\"" }, { "value": "\"stn\"" }, { "value": "\"svc\"" }, { "value": "\"syp\"" }, { "value": "\"szl\"" }, { "value": "\"thb\"" }, { "value": "\"tjs\"" }, { "value": "\"tmt\"" }, { "value": "\"tnd\"" }, { "value": "\"try\"" }, { "value": "\"ttd\"" }, { "value": "\"twd\"" }, { "value": "\"tzs\"" }, { "value": "\"uah\"" }, { "value": "\"ugx\"" }, { "value": "\"usd\"" }, { "value": "\"uyu\"" }, { "value": "\"uzs\"" }, { "value": "\"ves\"" }, { "value": "\"vnd\"" }, { "value": "\"vuv\"" }, { "value": "\"wst\"" }, { "value": "\"xaf\"" }, { "value": "\"xag\"" }, { "value": "\"xau\"" }, { "value": "\"xba\"" }, { "value": "\"xbb\"" }, { "value": "\"xbc\"" }, { "value": "\"xbd\"" }, { "value": "\"xcd\"" }, { "value": "\"xdr\"" }, { "value": "\"xof\"" }, { "value": "\"xpd\"" }, { "value": "\"xpf\"" }, { "value": "\"xpt\"" }, { "value": "\"xts\"" }, { "value": "\"yer\"" }, { "value": "\"zar\"" }, { "value": "\"zmk\"" }, { "value": "\"zmw\"" }] } }, "currencyProps": { "defaultValue": null, "description": "", "name": "currencyProps", "required": false, "type": { "name": "CurrencyProps" } } } };
     // @ts-ignore
     if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
         // @ts-ignore
@@ -4144,8 +4769,8 @@ var objectWithoutPropertiesLoose_default = /*#__PURE__*/__webpack_require__.n(ob
 var es_object_assign = __webpack_require__(19601);
 // EXTERNAL MODULE: ./node_modules/@mui/utils/esm/deepmerge.js
 var deepmerge = __webpack_require__(59766);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Radio/Radio.js + 8 modules
-var Radio_Radio = __webpack_require__(6337);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/Radio/Radio.js + 6 modules
+var Radio_Radio = __webpack_require__(33687);
 // EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
 var src = __webpack_require__(55475);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
@@ -4200,8 +4825,6 @@ var RadioIcon = (0,src/* styled */.zo)('span')(function (_ref) {
     }
   };
 });
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 var RadioCheckedIcon = (0,src/* styled */.zo)(RadioIcon)(function (_ref2) {
   var colorType = _ref2.colorType,
     palette = _ref2.theme.palette,
@@ -5790,7 +6413,7 @@ try {
     // @ts-ignore
     styles_Container.displayName = "Container";
     // @ts-ignore
-    styles_Container.__docgenInfo = { "description": "", "displayName": "Container", "props": { "m": { "defaultValue": null, "description": "", "name": "m", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "top": { "defaultValue": null, "description": "", "name": "top", "required": false, "type": { "name": "ResponsiveStyleValue<Top<string | number> | NonNullable<Top<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Top<string | number> | NonNullable<...>[]>)" } }, "color": { "defaultValue": null, "description": "", "name": "color", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Color> | ((theme: Theme) => ResponsiveStyleValue<string[] | Color>)" } }, "p": { "defaultValue": null, "description": "", "name": "p", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "border": { "defaultValue": null, "description": "", "name": "border", "required": false, "type": { "name": "ResponsiveStyleValue<number | \"hidden\" | \"inherit\" | (string & {}) | \"none\" | \"inset\" | \"medium\" | \"-moz-initial\" | \"initial\" | \"revert\" | \"revert-layer\" | \"unset\" | \"aliceblue\" | \"antiquewhite\" | ... 184 more ... | \"solid\"> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxShadow": { "defaultValue": null, "description": "", "name": "boxShadow", "required": false, "type": { "name": "ResponsiveStyleValue<number | BoxShadow> | ((theme: Theme) => ResponsiveStyleValue<number | BoxShadow>)" } }, "fontWeight": { "defaultValue": null, "description": "", "name": "fontWeight", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "zIndex": { "defaultValue": null, "description": "", "name": "zIndex", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "alignContent": { "defaultValue": null, "description": "", "name": "alignContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignContent>)" } }, "alignItems": { "defaultValue": null, "description": "", "name": "alignItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignItems>)" } }, "alignSelf": { "defaultValue": null, "description": "", "name": "alignSelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignSelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignSelf>)" } }, "bottom": { "defaultValue": null, "description": "", "name": "bottom", "required": false, "type": { "name": "ResponsiveStyleValue<Bottom<string | number> | NonNullable<Bottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxSizing": { "defaultValue": null, "description": "", "name": "boxSizing", "required": false, "type": { "name": "ResponsiveStyleValue<BoxSizing | NonNullable<BoxSizing>[]> | ((theme: Theme) => ResponsiveStyleValue<BoxSizing | NonNullable<...>[]>)" } }, "columnGap": { "defaultValue": null, "description": "", "name": "columnGap", "required": false, "type": { "name": "ResponsiveStyleValue<ColumnGap<string | number> | NonNullable<ColumnGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "display": { "defaultValue": null, "description": "", "name": "display", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "flexBasis": { "defaultValue": null, "description": "", "name": "flexBasis", "required": false, "type": { "name": "ResponsiveStyleValue<FlexBasis<string | number> | NonNullable<FlexBasis<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flexDirection": { "defaultValue": null, "description": "", "name": "flexDirection", "required": false, "type": { "name": "ResponsiveStyleValue<FlexDirection | NonNullable<FlexDirection>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexDirection | NonNullable<...>[]>)" } }, "flexGrow": { "defaultValue": null, "description": "", "name": "flexGrow", "required": false, "type": { "name": "ResponsiveStyleValue<FlexGrow | NonNullable<FlexGrow>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexGrow | NonNullable<...>[]>)" } }, "flexShrink": { "defaultValue": null, "description": "", "name": "flexShrink", "required": false, "type": { "name": "ResponsiveStyleValue<FlexShrink | NonNullable<FlexShrink>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexShrink | NonNullable<...>[]>)" } }, "flexWrap": { "defaultValue": null, "description": "", "name": "flexWrap", "required": false, "type": { "name": "ResponsiveStyleValue<FlexWrap | NonNullable<FlexWrap>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexWrap | NonNullable<...>[]>)" } }, "fontFamily": { "defaultValue": null, "description": "", "name": "fontFamily", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontFamily> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontFamily>)" } }, "fontSize": { "defaultValue": null, "description": "", "name": "fontSize", "required": false, "type": { "name": "ResponsiveStyleValue<FontSize<string | number> | NonNullable<FontSize<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "fontStyle": { "defaultValue": null, "description": "", "name": "fontStyle", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontStyle> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontStyle>)" } }, "gridAutoColumns": { "defaultValue": null, "description": "", "name": "gridAutoColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoColumns<string | number> | NonNullable<GridAutoColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridAutoFlow": { "defaultValue": null, "description": "", "name": "gridAutoFlow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridAutoFlow> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridAutoFlow>)" } }, "gridAutoRows": { "defaultValue": null, "description": "", "name": "gridAutoRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoRows<string | number> | NonNullable<GridAutoRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateAreas": { "defaultValue": null, "description": "", "name": "gridTemplateAreas", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridTemplateAreas> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridTemplateAreas>)" } }, "gridTemplateColumns": { "defaultValue": null, "description": "", "name": "gridTemplateColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateColumns<string | number> | NonNullable<GridTemplateColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateRows": { "defaultValue": null, "description": "", "name": "gridTemplateRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateRows<string | number> | NonNullable<GridTemplateRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "height": { "defaultValue": null, "description": "", "name": "height", "required": false, "type": { "name": "ResponsiveStyleValue<Height<string | number> | NonNullable<Height<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "justifyContent": { "defaultValue": null, "description": "", "name": "justifyContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyContent>)" } }, "justifyItems": { "defaultValue": null, "description": "", "name": "justifyItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyItems>)" } }, "justifySelf": { "defaultValue": null, "description": "", "name": "justifySelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifySelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifySelf>)" } }, "left": { "defaultValue": null, "description": "", "name": "left", "required": false, "type": { "name": "ResponsiveStyleValue<Left<string | number> | NonNullable<Left<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Left<...> | NonNullable<...>[]>)" } }, "letterSpacing": { "defaultValue": null, "description": "", "name": "letterSpacing", "required": false, "type": { "name": "ResponsiveStyleValue<LetterSpacing<string | number> | NonNullable<LetterSpacing<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "lineHeight": { "defaultValue": null, "description": "", "name": "lineHeight", "required": false, "type": { "name": "ResponsiveStyleValue<LineHeight<string | number> | NonNullable<LineHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginBottom": { "defaultValue": null, "description": "", "name": "marginBottom", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginLeft": { "defaultValue": null, "description": "", "name": "marginLeft", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginRight": { "defaultValue": null, "description": "", "name": "marginRight", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginTop": { "defaultValue": null, "description": "", "name": "marginTop", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxHeight": { "defaultValue": null, "description": "", "name": "maxHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MaxHeight<string | number> | NonNullable<MaxHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxWidth": { "defaultValue": null, "description": "", "name": "maxWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MaxWidth<string | number> | NonNullable<MaxWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minHeight": { "defaultValue": null, "description": "", "name": "minHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MinHeight<string | number> | NonNullable<MinHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minWidth": { "defaultValue": null, "description": "", "name": "minWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MinWidth<string | number> | NonNullable<MinWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "order": { "defaultValue": null, "description": "", "name": "order", "required": false, "type": { "name": "ResponsiveStyleValue<Order | NonNullable<Order>[]> | ((theme: Theme) => ResponsiveStyleValue<Order | NonNullable<Order>[]>)" } }, "paddingBottom": { "defaultValue": null, "description": "", "name": "paddingBottom", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingLeft": { "defaultValue": null, "description": "", "name": "paddingLeft", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingRight": { "defaultValue": null, "description": "", "name": "paddingRight", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingTop": { "defaultValue": null, "description": "", "name": "paddingTop", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "position": { "defaultValue": null, "description": "", "name": "position", "required": false, "type": { "name": "ResponsiveStyleValue<Position | NonNullable<Position>[]> | ((theme: Theme) => ResponsiveStyleValue<Position | NonNullable<...>[]>)" } }, "right": { "defaultValue": null, "description": "", "name": "right", "required": false, "type": { "name": "ResponsiveStyleValue<Right<string | number> | NonNullable<Right<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "rowGap": { "defaultValue": null, "description": "", "name": "rowGap", "required": false, "type": { "name": "ResponsiveStyleValue<RowGap<string | number> | NonNullable<RowGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "textAlign": { "defaultValue": null, "description": "", "name": "textAlign", "required": false, "type": { "name": "ResponsiveStyleValue<TextAlign | NonNullable<TextAlign>[]> | ((theme: Theme) => ResponsiveStyleValue<TextAlign | NonNullable<...>[]>)" } }, "textOverflow": { "defaultValue": null, "description": "", "name": "textOverflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | TextOverflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | TextOverflow>)" } }, "textTransform": { "defaultValue": null, "description": "", "name": "textTransform", "required": false, "type": { "name": "ResponsiveStyleValue<TextTransform | NonNullable<TextTransform>[]> | ((theme: Theme) => ResponsiveStyleValue<TextTransform | NonNullable<...>[]>)" } }, "visibility": { "defaultValue": null, "description": "", "name": "visibility", "required": false, "type": { "name": "ResponsiveStyleValue<Visibility | NonNullable<Visibility>[]> | ((theme: Theme) => ResponsiveStyleValue<Visibility | NonNullable<...>[]>)" } }, "whiteSpace": { "defaultValue": null, "description": "", "name": "whiteSpace", "required": false, "type": { "name": "ResponsiveStyleValue<WhiteSpace | NonNullable<WhiteSpace>[]> | ((theme: Theme) => ResponsiveStyleValue<WhiteSpace | NonNullable<...>[]>)" } }, "width": { "defaultValue": null, "description": "", "name": "width", "required": false, "type": { "name": "ResponsiveStyleValue<Width<string | number> | NonNullable<Width<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderBottom": { "defaultValue": null, "description": "", "name": "borderBottom", "required": false, "type": { "name": "ResponsiveStyleValue<BorderBottom<string | number> | NonNullable<BorderBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderColor": { "defaultValue": null, "description": "", "name": "borderColor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BorderColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BorderColor>)" } }, "borderLeft": { "defaultValue": null, "description": "", "name": "borderLeft", "required": false, "type": { "name": "ResponsiveStyleValue<BorderLeft<string | number> | NonNullable<BorderLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRadius": { "defaultValue": null, "description": "", "name": "borderRadius", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRadius<string | number> | NonNullable<BorderRadius<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRight": { "defaultValue": null, "description": "", "name": "borderRight", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRight<string | number> | NonNullable<BorderRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderTop": { "defaultValue": null, "description": "", "name": "borderTop", "required": false, "type": { "name": "ResponsiveStyleValue<BorderTop<string | number> | NonNullable<BorderTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flex": { "defaultValue": null, "description": "", "name": "flex", "required": false, "type": { "name": "ResponsiveStyleValue<Flex<string | number> | NonNullable<Flex<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Flex<...> | NonNullable<...>[]>)" } }, "gap": { "defaultValue": null, "description": "", "name": "gap", "required": false, "type": { "name": "ResponsiveStyleValue<Gap<string | number> | NonNullable<Gap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Gap<string | number> | NonNullable<...>[]>)" } }, "gridArea": { "defaultValue": null, "description": "", "name": "gridArea", "required": false, "type": { "name": "ResponsiveStyleValue<GridArea | NonNullable<GridArea>[]> | ((theme: Theme) => ResponsiveStyleValue<GridArea | NonNullable<...>[]>)" } }, "gridColumn": { "defaultValue": null, "description": "", "name": "gridColumn", "required": false, "type": { "name": "ResponsiveStyleValue<GridColumn | NonNullable<GridColumn>[]> | ((theme: Theme) => ResponsiveStyleValue<GridColumn | NonNullable<...>[]>)" } }, "gridRow": { "defaultValue": null, "description": "", "name": "gridRow", "required": false, "type": { "name": "ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]> | ((theme: Theme) => ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]>)" } }, "margin": { "defaultValue": null, "description": "", "name": "margin", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "overflow": { "defaultValue": null, "description": "", "name": "overflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Overflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | Overflow>)" } }, "padding": { "defaultValue": null, "description": "", "name": "padding", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "bgcolor": { "defaultValue": null, "description": "", "name": "bgcolor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BackgroundColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BackgroundColor>)" } }, "mt": { "defaultValue": null, "description": "", "name": "mt", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mr": { "defaultValue": null, "description": "", "name": "mr", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mb": { "defaultValue": null, "description": "", "name": "mb", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "ml": { "defaultValue": null, "description": "", "name": "ml", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mx": { "defaultValue": null, "description": "", "name": "mx", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginX": { "defaultValue": null, "description": "", "name": "marginX", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "my": { "defaultValue": null, "description": "", "name": "my", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginY": { "defaultValue": null, "description": "", "name": "marginY", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pt": { "defaultValue": null, "description": "", "name": "pt", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pr": { "defaultValue": null, "description": "", "name": "pr", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pb": { "defaultValue": null, "description": "", "name": "pb", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pl": { "defaultValue": null, "description": "", "name": "pl", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "px": { "defaultValue": null, "description": "", "name": "px", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingX": { "defaultValue": null, "description": "", "name": "paddingX", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "py": { "defaultValue": null, "description": "", "name": "py", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingY": { "defaultValue": null, "description": "", "name": "paddingY", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "typography": { "defaultValue": null, "description": "", "name": "typography", "required": false, "type": { "name": "ResponsiveStyleValue<string> | ((theme: Theme) => ResponsiveStyleValue<string>)" } }, "displayPrint": { "defaultValue": null, "description": "", "name": "displayPrint", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "component": { "defaultValue": null, "description": "The component used for the root node.\nEither a string to use a HTML element or a component.", "name": "component", "required": false, "type": { "name": "ElementType<any>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<unknown>" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } } } };
+    styles_Container.__docgenInfo = { "description": "", "displayName": "Container", "props": { "color": { "defaultValue": null, "description": "", "name": "color", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Color> | ((theme: Theme) => ResponsiveStyleValue<string[] | Color>)" } }, "p": { "defaultValue": null, "description": "", "name": "p", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "border": { "defaultValue": null, "description": "", "name": "border", "required": false, "type": { "name": "ResponsiveStyleValue<number | \"hidden\" | \"inherit\" | (string & {}) | \"none\" | \"inset\" | \"medium\" | \"-moz-initial\" | \"initial\" | \"revert\" | \"revert-layer\" | \"unset\" | \"aliceblue\" | \"antiquewhite\" | ... 184 more ... | \"solid\"> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxShadow": { "defaultValue": null, "description": "", "name": "boxShadow", "required": false, "type": { "name": "ResponsiveStyleValue<number | BoxShadow> | ((theme: Theme) => ResponsiveStyleValue<number | BoxShadow>)" } }, "fontWeight": { "defaultValue": null, "description": "", "name": "fontWeight", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "zIndex": { "defaultValue": null, "description": "", "name": "zIndex", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "alignContent": { "defaultValue": null, "description": "", "name": "alignContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignContent>)" } }, "alignItems": { "defaultValue": null, "description": "", "name": "alignItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignItems>)" } }, "alignSelf": { "defaultValue": null, "description": "", "name": "alignSelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignSelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignSelf>)" } }, "bottom": { "defaultValue": null, "description": "", "name": "bottom", "required": false, "type": { "name": "ResponsiveStyleValue<Bottom<string | number> | NonNullable<Bottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxSizing": { "defaultValue": null, "description": "", "name": "boxSizing", "required": false, "type": { "name": "ResponsiveStyleValue<BoxSizing | NonNullable<BoxSizing>[]> | ((theme: Theme) => ResponsiveStyleValue<BoxSizing | NonNullable<...>[]>)" } }, "columnGap": { "defaultValue": null, "description": "", "name": "columnGap", "required": false, "type": { "name": "ResponsiveStyleValue<ColumnGap<string | number> | NonNullable<ColumnGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "display": { "defaultValue": null, "description": "", "name": "display", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "flexBasis": { "defaultValue": null, "description": "", "name": "flexBasis", "required": false, "type": { "name": "ResponsiveStyleValue<FlexBasis<string | number> | NonNullable<FlexBasis<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flexDirection": { "defaultValue": null, "description": "", "name": "flexDirection", "required": false, "type": { "name": "ResponsiveStyleValue<FlexDirection | NonNullable<FlexDirection>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexDirection | NonNullable<...>[]>)" } }, "flexGrow": { "defaultValue": null, "description": "", "name": "flexGrow", "required": false, "type": { "name": "ResponsiveStyleValue<FlexGrow | NonNullable<FlexGrow>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexGrow | NonNullable<...>[]>)" } }, "flexShrink": { "defaultValue": null, "description": "", "name": "flexShrink", "required": false, "type": { "name": "ResponsiveStyleValue<FlexShrink | NonNullable<FlexShrink>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexShrink | NonNullable<...>[]>)" } }, "flexWrap": { "defaultValue": null, "description": "", "name": "flexWrap", "required": false, "type": { "name": "ResponsiveStyleValue<FlexWrap | NonNullable<FlexWrap>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexWrap | NonNullable<...>[]>)" } }, "fontFamily": { "defaultValue": null, "description": "", "name": "fontFamily", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontFamily> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontFamily>)" } }, "fontSize": { "defaultValue": null, "description": "", "name": "fontSize", "required": false, "type": { "name": "ResponsiveStyleValue<FontSize<string | number> | NonNullable<FontSize<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "fontStyle": { "defaultValue": null, "description": "", "name": "fontStyle", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontStyle> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontStyle>)" } }, "gridAutoColumns": { "defaultValue": null, "description": "", "name": "gridAutoColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoColumns<string | number> | NonNullable<GridAutoColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridAutoFlow": { "defaultValue": null, "description": "", "name": "gridAutoFlow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridAutoFlow> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridAutoFlow>)" } }, "gridAutoRows": { "defaultValue": null, "description": "", "name": "gridAutoRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoRows<string | number> | NonNullable<GridAutoRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateAreas": { "defaultValue": null, "description": "", "name": "gridTemplateAreas", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridTemplateAreas> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridTemplateAreas>)" } }, "gridTemplateColumns": { "defaultValue": null, "description": "", "name": "gridTemplateColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateColumns<string | number> | NonNullable<GridTemplateColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateRows": { "defaultValue": null, "description": "", "name": "gridTemplateRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateRows<string | number> | NonNullable<GridTemplateRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "height": { "defaultValue": null, "description": "", "name": "height", "required": false, "type": { "name": "ResponsiveStyleValue<Height<string | number> | NonNullable<Height<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "justifyContent": { "defaultValue": null, "description": "", "name": "justifyContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyContent>)" } }, "justifyItems": { "defaultValue": null, "description": "", "name": "justifyItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyItems>)" } }, "justifySelf": { "defaultValue": null, "description": "", "name": "justifySelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifySelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifySelf>)" } }, "left": { "defaultValue": null, "description": "", "name": "left", "required": false, "type": { "name": "ResponsiveStyleValue<Left<string | number> | NonNullable<Left<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Left<...> | NonNullable<...>[]>)" } }, "letterSpacing": { "defaultValue": null, "description": "", "name": "letterSpacing", "required": false, "type": { "name": "ResponsiveStyleValue<LetterSpacing<string | number> | NonNullable<LetterSpacing<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "lineHeight": { "defaultValue": null, "description": "", "name": "lineHeight", "required": false, "type": { "name": "ResponsiveStyleValue<LineHeight<string | number> | NonNullable<LineHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginBottom": { "defaultValue": null, "description": "", "name": "marginBottom", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginLeft": { "defaultValue": null, "description": "", "name": "marginLeft", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginRight": { "defaultValue": null, "description": "", "name": "marginRight", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginTop": { "defaultValue": null, "description": "", "name": "marginTop", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxHeight": { "defaultValue": null, "description": "", "name": "maxHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MaxHeight<string | number> | NonNullable<MaxHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxWidth": { "defaultValue": null, "description": "", "name": "maxWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MaxWidth<string | number> | NonNullable<MaxWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minHeight": { "defaultValue": null, "description": "", "name": "minHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MinHeight<string | number> | NonNullable<MinHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minWidth": { "defaultValue": null, "description": "", "name": "minWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MinWidth<string | number> | NonNullable<MinWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "order": { "defaultValue": null, "description": "", "name": "order", "required": false, "type": { "name": "ResponsiveStyleValue<Order | NonNullable<Order>[]> | ((theme: Theme) => ResponsiveStyleValue<Order | NonNullable<Order>[]>)" } }, "paddingBottom": { "defaultValue": null, "description": "", "name": "paddingBottom", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingLeft": { "defaultValue": null, "description": "", "name": "paddingLeft", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingRight": { "defaultValue": null, "description": "", "name": "paddingRight", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingTop": { "defaultValue": null, "description": "", "name": "paddingTop", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "position": { "defaultValue": null, "description": "", "name": "position", "required": false, "type": { "name": "ResponsiveStyleValue<Position | NonNullable<Position>[]> | ((theme: Theme) => ResponsiveStyleValue<Position | NonNullable<...>[]>)" } }, "right": { "defaultValue": null, "description": "", "name": "right", "required": false, "type": { "name": "ResponsiveStyleValue<Right<string | number> | NonNullable<Right<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "rowGap": { "defaultValue": null, "description": "", "name": "rowGap", "required": false, "type": { "name": "ResponsiveStyleValue<RowGap<string | number> | NonNullable<RowGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "textAlign": { "defaultValue": null, "description": "", "name": "textAlign", "required": false, "type": { "name": "ResponsiveStyleValue<TextAlign | NonNullable<TextAlign>[]> | ((theme: Theme) => ResponsiveStyleValue<TextAlign | NonNullable<...>[]>)" } }, "textOverflow": { "defaultValue": null, "description": "", "name": "textOverflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | TextOverflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | TextOverflow>)" } }, "textTransform": { "defaultValue": null, "description": "", "name": "textTransform", "required": false, "type": { "name": "ResponsiveStyleValue<TextTransform | NonNullable<TextTransform>[]> | ((theme: Theme) => ResponsiveStyleValue<TextTransform | NonNullable<...>[]>)" } }, "top": { "defaultValue": null, "description": "", "name": "top", "required": false, "type": { "name": "ResponsiveStyleValue<Top<string | number> | NonNullable<Top<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Top<string | number> | NonNullable<...>[]>)" } }, "visibility": { "defaultValue": null, "description": "", "name": "visibility", "required": false, "type": { "name": "ResponsiveStyleValue<Visibility | NonNullable<Visibility>[]> | ((theme: Theme) => ResponsiveStyleValue<Visibility | NonNullable<...>[]>)" } }, "whiteSpace": { "defaultValue": null, "description": "", "name": "whiteSpace", "required": false, "type": { "name": "ResponsiveStyleValue<WhiteSpace | NonNullable<WhiteSpace>[]> | ((theme: Theme) => ResponsiveStyleValue<WhiteSpace | NonNullable<...>[]>)" } }, "width": { "defaultValue": null, "description": "", "name": "width", "required": false, "type": { "name": "ResponsiveStyleValue<Width<string | number> | NonNullable<Width<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderBottom": { "defaultValue": null, "description": "", "name": "borderBottom", "required": false, "type": { "name": "ResponsiveStyleValue<BorderBottom<string | number> | NonNullable<BorderBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderColor": { "defaultValue": null, "description": "", "name": "borderColor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BorderColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BorderColor>)" } }, "borderLeft": { "defaultValue": null, "description": "", "name": "borderLeft", "required": false, "type": { "name": "ResponsiveStyleValue<BorderLeft<string | number> | NonNullable<BorderLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRadius": { "defaultValue": null, "description": "", "name": "borderRadius", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRadius<string | number> | NonNullable<BorderRadius<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRight": { "defaultValue": null, "description": "", "name": "borderRight", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRight<string | number> | NonNullable<BorderRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderTop": { "defaultValue": null, "description": "", "name": "borderTop", "required": false, "type": { "name": "ResponsiveStyleValue<BorderTop<string | number> | NonNullable<BorderTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flex": { "defaultValue": null, "description": "", "name": "flex", "required": false, "type": { "name": "ResponsiveStyleValue<Flex<string | number> | NonNullable<Flex<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Flex<...> | NonNullable<...>[]>)" } }, "gap": { "defaultValue": null, "description": "", "name": "gap", "required": false, "type": { "name": "ResponsiveStyleValue<Gap<string | number> | NonNullable<Gap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Gap<string | number> | NonNullable<...>[]>)" } }, "gridArea": { "defaultValue": null, "description": "", "name": "gridArea", "required": false, "type": { "name": "ResponsiveStyleValue<GridArea | NonNullable<GridArea>[]> | ((theme: Theme) => ResponsiveStyleValue<GridArea | NonNullable<...>[]>)" } }, "gridColumn": { "defaultValue": null, "description": "", "name": "gridColumn", "required": false, "type": { "name": "ResponsiveStyleValue<GridColumn | NonNullable<GridColumn>[]> | ((theme: Theme) => ResponsiveStyleValue<GridColumn | NonNullable<...>[]>)" } }, "gridRow": { "defaultValue": null, "description": "", "name": "gridRow", "required": false, "type": { "name": "ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]> | ((theme: Theme) => ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]>)" } }, "margin": { "defaultValue": null, "description": "", "name": "margin", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "overflow": { "defaultValue": null, "description": "", "name": "overflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Overflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | Overflow>)" } }, "padding": { "defaultValue": null, "description": "", "name": "padding", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "bgcolor": { "defaultValue": null, "description": "", "name": "bgcolor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BackgroundColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BackgroundColor>)" } }, "m": { "defaultValue": null, "description": "", "name": "m", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mt": { "defaultValue": null, "description": "", "name": "mt", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mr": { "defaultValue": null, "description": "", "name": "mr", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mb": { "defaultValue": null, "description": "", "name": "mb", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "ml": { "defaultValue": null, "description": "", "name": "ml", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mx": { "defaultValue": null, "description": "", "name": "mx", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginX": { "defaultValue": null, "description": "", "name": "marginX", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "my": { "defaultValue": null, "description": "", "name": "my", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginY": { "defaultValue": null, "description": "", "name": "marginY", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pt": { "defaultValue": null, "description": "", "name": "pt", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pr": { "defaultValue": null, "description": "", "name": "pr", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pb": { "defaultValue": null, "description": "", "name": "pb", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pl": { "defaultValue": null, "description": "", "name": "pl", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "px": { "defaultValue": null, "description": "", "name": "px", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingX": { "defaultValue": null, "description": "", "name": "paddingX", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "py": { "defaultValue": null, "description": "", "name": "py", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingY": { "defaultValue": null, "description": "", "name": "paddingY", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "typography": { "defaultValue": null, "description": "", "name": "typography", "required": false, "type": { "name": "ResponsiveStyleValue<string> | ((theme: Theme) => ResponsiveStyleValue<string>)" } }, "displayPrint": { "defaultValue": null, "description": "", "name": "displayPrint", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "component": { "defaultValue": null, "description": "The component used for the root node.\nEither a string to use a HTML element or a component.", "name": "component", "required": false, "type": { "name": "ElementType<any>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<unknown>" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } } } };
     // @ts-ignore
     if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
         // @ts-ignore
@@ -5931,7 +6554,7 @@ try {
     // @ts-ignore
     TabContainer.displayName = "TabContainer";
     // @ts-ignore
-    TabContainer.__docgenInfo = { "description": "", "displayName": "TabContainer", "props": { "m": { "defaultValue": null, "description": "", "name": "m", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "top": { "defaultValue": null, "description": "", "name": "top", "required": false, "type": { "name": "ResponsiveStyleValue<Top<string | number> | NonNullable<Top<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Top<string | number> | NonNullable<...>[]>)" } }, "color": { "defaultValue": null, "description": "", "name": "color", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Color> | ((theme: Theme) => ResponsiveStyleValue<string[] | Color>)" } }, "p": { "defaultValue": null, "description": "", "name": "p", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "border": { "defaultValue": null, "description": "", "name": "border", "required": false, "type": { "name": "ResponsiveStyleValue<number | \"hidden\" | \"inherit\" | (string & {}) | \"none\" | \"inset\" | \"medium\" | \"-moz-initial\" | \"initial\" | \"revert\" | \"revert-layer\" | \"unset\" | \"aliceblue\" | \"antiquewhite\" | ... 184 more ... | \"solid\"> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxShadow": { "defaultValue": null, "description": "", "name": "boxShadow", "required": false, "type": { "name": "ResponsiveStyleValue<number | BoxShadow> | ((theme: Theme) => ResponsiveStyleValue<number | BoxShadow>)" } }, "fontWeight": { "defaultValue": null, "description": "", "name": "fontWeight", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "zIndex": { "defaultValue": null, "description": "", "name": "zIndex", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "alignContent": { "defaultValue": null, "description": "", "name": "alignContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignContent>)" } }, "alignItems": { "defaultValue": null, "description": "", "name": "alignItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignItems>)" } }, "alignSelf": { "defaultValue": null, "description": "", "name": "alignSelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignSelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignSelf>)" } }, "bottom": { "defaultValue": null, "description": "", "name": "bottom", "required": false, "type": { "name": "ResponsiveStyleValue<Bottom<string | number> | NonNullable<Bottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxSizing": { "defaultValue": null, "description": "", "name": "boxSizing", "required": false, "type": { "name": "ResponsiveStyleValue<BoxSizing | NonNullable<BoxSizing>[]> | ((theme: Theme) => ResponsiveStyleValue<BoxSizing | NonNullable<...>[]>)" } }, "columnGap": { "defaultValue": null, "description": "", "name": "columnGap", "required": false, "type": { "name": "ResponsiveStyleValue<ColumnGap<string | number> | NonNullable<ColumnGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "display": { "defaultValue": null, "description": "", "name": "display", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "flexBasis": { "defaultValue": null, "description": "", "name": "flexBasis", "required": false, "type": { "name": "ResponsiveStyleValue<FlexBasis<string | number> | NonNullable<FlexBasis<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flexDirection": { "defaultValue": null, "description": "", "name": "flexDirection", "required": false, "type": { "name": "ResponsiveStyleValue<FlexDirection | NonNullable<FlexDirection>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexDirection | NonNullable<...>[]>)" } }, "flexGrow": { "defaultValue": null, "description": "", "name": "flexGrow", "required": false, "type": { "name": "ResponsiveStyleValue<FlexGrow | NonNullable<FlexGrow>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexGrow | NonNullable<...>[]>)" } }, "flexShrink": { "defaultValue": null, "description": "", "name": "flexShrink", "required": false, "type": { "name": "ResponsiveStyleValue<FlexShrink | NonNullable<FlexShrink>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexShrink | NonNullable<...>[]>)" } }, "flexWrap": { "defaultValue": null, "description": "", "name": "flexWrap", "required": false, "type": { "name": "ResponsiveStyleValue<FlexWrap | NonNullable<FlexWrap>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexWrap | NonNullable<...>[]>)" } }, "fontFamily": { "defaultValue": null, "description": "", "name": "fontFamily", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontFamily> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontFamily>)" } }, "fontSize": { "defaultValue": null, "description": "", "name": "fontSize", "required": false, "type": { "name": "ResponsiveStyleValue<FontSize<string | number> | NonNullable<FontSize<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "fontStyle": { "defaultValue": null, "description": "", "name": "fontStyle", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontStyle> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontStyle>)" } }, "gridAutoColumns": { "defaultValue": null, "description": "", "name": "gridAutoColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoColumns<string | number> | NonNullable<GridAutoColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridAutoFlow": { "defaultValue": null, "description": "", "name": "gridAutoFlow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridAutoFlow> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridAutoFlow>)" } }, "gridAutoRows": { "defaultValue": null, "description": "", "name": "gridAutoRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoRows<string | number> | NonNullable<GridAutoRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateAreas": { "defaultValue": null, "description": "", "name": "gridTemplateAreas", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridTemplateAreas> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridTemplateAreas>)" } }, "gridTemplateColumns": { "defaultValue": null, "description": "", "name": "gridTemplateColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateColumns<string | number> | NonNullable<GridTemplateColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateRows": { "defaultValue": null, "description": "", "name": "gridTemplateRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateRows<string | number> | NonNullable<GridTemplateRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "height": { "defaultValue": null, "description": "", "name": "height", "required": false, "type": { "name": "ResponsiveStyleValue<Height<string | number> | NonNullable<Height<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "justifyContent": { "defaultValue": null, "description": "", "name": "justifyContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyContent>)" } }, "justifyItems": { "defaultValue": null, "description": "", "name": "justifyItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyItems>)" } }, "justifySelf": { "defaultValue": null, "description": "", "name": "justifySelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifySelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifySelf>)" } }, "left": { "defaultValue": null, "description": "", "name": "left", "required": false, "type": { "name": "ResponsiveStyleValue<Left<string | number> | NonNullable<Left<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Left<...> | NonNullable<...>[]>)" } }, "letterSpacing": { "defaultValue": null, "description": "", "name": "letterSpacing", "required": false, "type": { "name": "ResponsiveStyleValue<LetterSpacing<string | number> | NonNullable<LetterSpacing<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "lineHeight": { "defaultValue": null, "description": "", "name": "lineHeight", "required": false, "type": { "name": "ResponsiveStyleValue<LineHeight<string | number> | NonNullable<LineHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginBottom": { "defaultValue": null, "description": "", "name": "marginBottom", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginLeft": { "defaultValue": null, "description": "", "name": "marginLeft", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginRight": { "defaultValue": null, "description": "", "name": "marginRight", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginTop": { "defaultValue": null, "description": "", "name": "marginTop", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxHeight": { "defaultValue": null, "description": "", "name": "maxHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MaxHeight<string | number> | NonNullable<MaxHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxWidth": { "defaultValue": null, "description": "", "name": "maxWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MaxWidth<string | number> | NonNullable<MaxWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minHeight": { "defaultValue": null, "description": "", "name": "minHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MinHeight<string | number> | NonNullable<MinHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minWidth": { "defaultValue": null, "description": "", "name": "minWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MinWidth<string | number> | NonNullable<MinWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "order": { "defaultValue": null, "description": "", "name": "order", "required": false, "type": { "name": "ResponsiveStyleValue<Order | NonNullable<Order>[]> | ((theme: Theme) => ResponsiveStyleValue<Order | NonNullable<Order>[]>)" } }, "paddingBottom": { "defaultValue": null, "description": "", "name": "paddingBottom", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingLeft": { "defaultValue": null, "description": "", "name": "paddingLeft", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingRight": { "defaultValue": null, "description": "", "name": "paddingRight", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingTop": { "defaultValue": null, "description": "", "name": "paddingTop", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "position": { "defaultValue": null, "description": "", "name": "position", "required": false, "type": { "name": "ResponsiveStyleValue<Position | NonNullable<Position>[]> | ((theme: Theme) => ResponsiveStyleValue<Position | NonNullable<...>[]>)" } }, "right": { "defaultValue": null, "description": "", "name": "right", "required": false, "type": { "name": "ResponsiveStyleValue<Right<string | number> | NonNullable<Right<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "rowGap": { "defaultValue": null, "description": "", "name": "rowGap", "required": false, "type": { "name": "ResponsiveStyleValue<RowGap<string | number> | NonNullable<RowGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "textAlign": { "defaultValue": null, "description": "", "name": "textAlign", "required": false, "type": { "name": "ResponsiveStyleValue<TextAlign | NonNullable<TextAlign>[]> | ((theme: Theme) => ResponsiveStyleValue<TextAlign | NonNullable<...>[]>)" } }, "textOverflow": { "defaultValue": null, "description": "", "name": "textOverflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | TextOverflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | TextOverflow>)" } }, "textTransform": { "defaultValue": null, "description": "", "name": "textTransform", "required": false, "type": { "name": "ResponsiveStyleValue<TextTransform | NonNullable<TextTransform>[]> | ((theme: Theme) => ResponsiveStyleValue<TextTransform | NonNullable<...>[]>)" } }, "visibility": { "defaultValue": null, "description": "", "name": "visibility", "required": false, "type": { "name": "ResponsiveStyleValue<Visibility | NonNullable<Visibility>[]> | ((theme: Theme) => ResponsiveStyleValue<Visibility | NonNullable<...>[]>)" } }, "whiteSpace": { "defaultValue": null, "description": "", "name": "whiteSpace", "required": false, "type": { "name": "ResponsiveStyleValue<WhiteSpace | NonNullable<WhiteSpace>[]> | ((theme: Theme) => ResponsiveStyleValue<WhiteSpace | NonNullable<...>[]>)" } }, "width": { "defaultValue": null, "description": "", "name": "width", "required": false, "type": { "name": "ResponsiveStyleValue<Width<string | number> | NonNullable<Width<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderBottom": { "defaultValue": null, "description": "", "name": "borderBottom", "required": false, "type": { "name": "ResponsiveStyleValue<BorderBottom<string | number> | NonNullable<BorderBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderColor": { "defaultValue": null, "description": "", "name": "borderColor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BorderColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BorderColor>)" } }, "borderLeft": { "defaultValue": null, "description": "", "name": "borderLeft", "required": false, "type": { "name": "ResponsiveStyleValue<BorderLeft<string | number> | NonNullable<BorderLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRadius": { "defaultValue": null, "description": "", "name": "borderRadius", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRadius<string | number> | NonNullable<BorderRadius<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRight": { "defaultValue": null, "description": "", "name": "borderRight", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRight<string | number> | NonNullable<BorderRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderTop": { "defaultValue": null, "description": "", "name": "borderTop", "required": false, "type": { "name": "ResponsiveStyleValue<BorderTop<string | number> | NonNullable<BorderTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flex": { "defaultValue": null, "description": "", "name": "flex", "required": false, "type": { "name": "ResponsiveStyleValue<Flex<string | number> | NonNullable<Flex<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Flex<...> | NonNullable<...>[]>)" } }, "gap": { "defaultValue": null, "description": "", "name": "gap", "required": false, "type": { "name": "ResponsiveStyleValue<Gap<string | number> | NonNullable<Gap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Gap<string | number> | NonNullable<...>[]>)" } }, "gridArea": { "defaultValue": null, "description": "", "name": "gridArea", "required": false, "type": { "name": "ResponsiveStyleValue<GridArea | NonNullable<GridArea>[]> | ((theme: Theme) => ResponsiveStyleValue<GridArea | NonNullable<...>[]>)" } }, "gridColumn": { "defaultValue": null, "description": "", "name": "gridColumn", "required": false, "type": { "name": "ResponsiveStyleValue<GridColumn | NonNullable<GridColumn>[]> | ((theme: Theme) => ResponsiveStyleValue<GridColumn | NonNullable<...>[]>)" } }, "gridRow": { "defaultValue": null, "description": "", "name": "gridRow", "required": false, "type": { "name": "ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]> | ((theme: Theme) => ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]>)" } }, "margin": { "defaultValue": null, "description": "", "name": "margin", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "overflow": { "defaultValue": null, "description": "", "name": "overflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Overflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | Overflow>)" } }, "padding": { "defaultValue": null, "description": "", "name": "padding", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "bgcolor": { "defaultValue": null, "description": "", "name": "bgcolor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BackgroundColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BackgroundColor>)" } }, "mt": { "defaultValue": null, "description": "", "name": "mt", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mr": { "defaultValue": null, "description": "", "name": "mr", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mb": { "defaultValue": null, "description": "", "name": "mb", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "ml": { "defaultValue": null, "description": "", "name": "ml", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mx": { "defaultValue": null, "description": "", "name": "mx", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginX": { "defaultValue": null, "description": "", "name": "marginX", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "my": { "defaultValue": null, "description": "", "name": "my", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginY": { "defaultValue": null, "description": "", "name": "marginY", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pt": { "defaultValue": null, "description": "", "name": "pt", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pr": { "defaultValue": null, "description": "", "name": "pr", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pb": { "defaultValue": null, "description": "", "name": "pb", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pl": { "defaultValue": null, "description": "", "name": "pl", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "px": { "defaultValue": null, "description": "", "name": "px", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingX": { "defaultValue": null, "description": "", "name": "paddingX", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "py": { "defaultValue": null, "description": "", "name": "py", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingY": { "defaultValue": null, "description": "", "name": "paddingY", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "typography": { "defaultValue": null, "description": "", "name": "typography", "required": false, "type": { "name": "ResponsiveStyleValue<string> | ((theme: Theme) => ResponsiveStyleValue<string>)" } }, "displayPrint": { "defaultValue": null, "description": "", "name": "displayPrint", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "component": { "defaultValue": null, "description": "The component used for the root node.\nEither a string to use a HTML element or a component.", "name": "component", "required": false, "type": { "name": "ElementType<any>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<unknown>" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme> & SxProps<Theme>" } } } };
+    TabContainer.__docgenInfo = { "description": "", "displayName": "TabContainer", "props": { "color": { "defaultValue": null, "description": "", "name": "color", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Color> | ((theme: Theme) => ResponsiveStyleValue<string[] | Color>)" } }, "p": { "defaultValue": null, "description": "", "name": "p", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "border": { "defaultValue": null, "description": "", "name": "border", "required": false, "type": { "name": "ResponsiveStyleValue<number | \"hidden\" | \"inherit\" | (string & {}) | \"none\" | \"inset\" | \"medium\" | \"-moz-initial\" | \"initial\" | \"revert\" | \"revert-layer\" | \"unset\" | \"aliceblue\" | \"antiquewhite\" | ... 184 more ... | \"solid\"> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxShadow": { "defaultValue": null, "description": "", "name": "boxShadow", "required": false, "type": { "name": "ResponsiveStyleValue<number | BoxShadow> | ((theme: Theme) => ResponsiveStyleValue<number | BoxShadow>)" } }, "fontWeight": { "defaultValue": null, "description": "", "name": "fontWeight", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "zIndex": { "defaultValue": null, "description": "", "name": "zIndex", "required": false, "type": { "name": "ResponsiveStyleValue<string | (string & {}) | (number & {})> | ((theme: Theme) => ResponsiveStyleValue<string | (string & {}) | (number & {})>)" } }, "alignContent": { "defaultValue": null, "description": "", "name": "alignContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignContent>)" } }, "alignItems": { "defaultValue": null, "description": "", "name": "alignItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignItems>)" } }, "alignSelf": { "defaultValue": null, "description": "", "name": "alignSelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | AlignSelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | AlignSelf>)" } }, "bottom": { "defaultValue": null, "description": "", "name": "bottom", "required": false, "type": { "name": "ResponsiveStyleValue<Bottom<string | number> | NonNullable<Bottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "boxSizing": { "defaultValue": null, "description": "", "name": "boxSizing", "required": false, "type": { "name": "ResponsiveStyleValue<BoxSizing | NonNullable<BoxSizing>[]> | ((theme: Theme) => ResponsiveStyleValue<BoxSizing | NonNullable<...>[]>)" } }, "columnGap": { "defaultValue": null, "description": "", "name": "columnGap", "required": false, "type": { "name": "ResponsiveStyleValue<ColumnGap<string | number> | NonNullable<ColumnGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "display": { "defaultValue": null, "description": "", "name": "display", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "flexBasis": { "defaultValue": null, "description": "", "name": "flexBasis", "required": false, "type": { "name": "ResponsiveStyleValue<FlexBasis<string | number> | NonNullable<FlexBasis<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flexDirection": { "defaultValue": null, "description": "", "name": "flexDirection", "required": false, "type": { "name": "ResponsiveStyleValue<FlexDirection | NonNullable<FlexDirection>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexDirection | NonNullable<...>[]>)" } }, "flexGrow": { "defaultValue": null, "description": "", "name": "flexGrow", "required": false, "type": { "name": "ResponsiveStyleValue<FlexGrow | NonNullable<FlexGrow>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexGrow | NonNullable<...>[]>)" } }, "flexShrink": { "defaultValue": null, "description": "", "name": "flexShrink", "required": false, "type": { "name": "ResponsiveStyleValue<FlexShrink | NonNullable<FlexShrink>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexShrink | NonNullable<...>[]>)" } }, "flexWrap": { "defaultValue": null, "description": "", "name": "flexWrap", "required": false, "type": { "name": "ResponsiveStyleValue<FlexWrap | NonNullable<FlexWrap>[]> | ((theme: Theme) => ResponsiveStyleValue<FlexWrap | NonNullable<...>[]>)" } }, "fontFamily": { "defaultValue": null, "description": "", "name": "fontFamily", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontFamily> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontFamily>)" } }, "fontSize": { "defaultValue": null, "description": "", "name": "fontSize", "required": false, "type": { "name": "ResponsiveStyleValue<FontSize<string | number> | NonNullable<FontSize<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "fontStyle": { "defaultValue": null, "description": "", "name": "fontStyle", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | FontStyle> | ((theme: Theme) => ResponsiveStyleValue<string[] | FontStyle>)" } }, "gridAutoColumns": { "defaultValue": null, "description": "", "name": "gridAutoColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoColumns<string | number> | NonNullable<GridAutoColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridAutoFlow": { "defaultValue": null, "description": "", "name": "gridAutoFlow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridAutoFlow> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridAutoFlow>)" } }, "gridAutoRows": { "defaultValue": null, "description": "", "name": "gridAutoRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridAutoRows<string | number> | NonNullable<GridAutoRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateAreas": { "defaultValue": null, "description": "", "name": "gridTemplateAreas", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | GridTemplateAreas> | ((theme: Theme) => ResponsiveStyleValue<string[] | GridTemplateAreas>)" } }, "gridTemplateColumns": { "defaultValue": null, "description": "", "name": "gridTemplateColumns", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateColumns<string | number> | NonNullable<GridTemplateColumns<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "gridTemplateRows": { "defaultValue": null, "description": "", "name": "gridTemplateRows", "required": false, "type": { "name": "ResponsiveStyleValue<GridTemplateRows<string | number> | NonNullable<GridTemplateRows<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "height": { "defaultValue": null, "description": "", "name": "height", "required": false, "type": { "name": "ResponsiveStyleValue<Height<string | number> | NonNullable<Height<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "justifyContent": { "defaultValue": null, "description": "", "name": "justifyContent", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyContent> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyContent>)" } }, "justifyItems": { "defaultValue": null, "description": "", "name": "justifyItems", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifyItems> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifyItems>)" } }, "justifySelf": { "defaultValue": null, "description": "", "name": "justifySelf", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | JustifySelf> | ((theme: Theme) => ResponsiveStyleValue<string[] | JustifySelf>)" } }, "left": { "defaultValue": null, "description": "", "name": "left", "required": false, "type": { "name": "ResponsiveStyleValue<Left<string | number> | NonNullable<Left<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Left<...> | NonNullable<...>[]>)" } }, "letterSpacing": { "defaultValue": null, "description": "", "name": "letterSpacing", "required": false, "type": { "name": "ResponsiveStyleValue<LetterSpacing<string | number> | NonNullable<LetterSpacing<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "lineHeight": { "defaultValue": null, "description": "", "name": "lineHeight", "required": false, "type": { "name": "ResponsiveStyleValue<LineHeight<string | number> | NonNullable<LineHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginBottom": { "defaultValue": null, "description": "", "name": "marginBottom", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginLeft": { "defaultValue": null, "description": "", "name": "marginLeft", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginRight": { "defaultValue": null, "description": "", "name": "marginRight", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginTop": { "defaultValue": null, "description": "", "name": "marginTop", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxHeight": { "defaultValue": null, "description": "", "name": "maxHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MaxHeight<string | number> | NonNullable<MaxHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "maxWidth": { "defaultValue": null, "description": "", "name": "maxWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MaxWidth<string | number> | NonNullable<MaxWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minHeight": { "defaultValue": null, "description": "", "name": "minHeight", "required": false, "type": { "name": "ResponsiveStyleValue<MinHeight<string | number> | NonNullable<MinHeight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "minWidth": { "defaultValue": null, "description": "", "name": "minWidth", "required": false, "type": { "name": "ResponsiveStyleValue<MinWidth<string | number> | NonNullable<MinWidth<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "order": { "defaultValue": null, "description": "", "name": "order", "required": false, "type": { "name": "ResponsiveStyleValue<Order | NonNullable<Order>[]> | ((theme: Theme) => ResponsiveStyleValue<Order | NonNullable<Order>[]>)" } }, "paddingBottom": { "defaultValue": null, "description": "", "name": "paddingBottom", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingLeft": { "defaultValue": null, "description": "", "name": "paddingLeft", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingRight": { "defaultValue": null, "description": "", "name": "paddingRight", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingTop": { "defaultValue": null, "description": "", "name": "paddingTop", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "position": { "defaultValue": null, "description": "", "name": "position", "required": false, "type": { "name": "ResponsiveStyleValue<Position | NonNullable<Position>[]> | ((theme: Theme) => ResponsiveStyleValue<Position | NonNullable<...>[]>)" } }, "right": { "defaultValue": null, "description": "", "name": "right", "required": false, "type": { "name": "ResponsiveStyleValue<Right<string | number> | NonNullable<Right<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "rowGap": { "defaultValue": null, "description": "", "name": "rowGap", "required": false, "type": { "name": "ResponsiveStyleValue<RowGap<string | number> | NonNullable<RowGap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "textAlign": { "defaultValue": null, "description": "", "name": "textAlign", "required": false, "type": { "name": "ResponsiveStyleValue<TextAlign | NonNullable<TextAlign>[]> | ((theme: Theme) => ResponsiveStyleValue<TextAlign | NonNullable<...>[]>)" } }, "textOverflow": { "defaultValue": null, "description": "", "name": "textOverflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | TextOverflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | TextOverflow>)" } }, "textTransform": { "defaultValue": null, "description": "", "name": "textTransform", "required": false, "type": { "name": "ResponsiveStyleValue<TextTransform | NonNullable<TextTransform>[]> | ((theme: Theme) => ResponsiveStyleValue<TextTransform | NonNullable<...>[]>)" } }, "top": { "defaultValue": null, "description": "", "name": "top", "required": false, "type": { "name": "ResponsiveStyleValue<Top<string | number> | NonNullable<Top<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Top<string | number> | NonNullable<...>[]>)" } }, "visibility": { "defaultValue": null, "description": "", "name": "visibility", "required": false, "type": { "name": "ResponsiveStyleValue<Visibility | NonNullable<Visibility>[]> | ((theme: Theme) => ResponsiveStyleValue<Visibility | NonNullable<...>[]>)" } }, "whiteSpace": { "defaultValue": null, "description": "", "name": "whiteSpace", "required": false, "type": { "name": "ResponsiveStyleValue<WhiteSpace | NonNullable<WhiteSpace>[]> | ((theme: Theme) => ResponsiveStyleValue<WhiteSpace | NonNullable<...>[]>)" } }, "width": { "defaultValue": null, "description": "", "name": "width", "required": false, "type": { "name": "ResponsiveStyleValue<Width<string | number> | NonNullable<Width<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderBottom": { "defaultValue": null, "description": "", "name": "borderBottom", "required": false, "type": { "name": "ResponsiveStyleValue<BorderBottom<string | number> | NonNullable<BorderBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderColor": { "defaultValue": null, "description": "", "name": "borderColor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BorderColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BorderColor>)" } }, "borderLeft": { "defaultValue": null, "description": "", "name": "borderLeft", "required": false, "type": { "name": "ResponsiveStyleValue<BorderLeft<string | number> | NonNullable<BorderLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRadius": { "defaultValue": null, "description": "", "name": "borderRadius", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRadius<string | number> | NonNullable<BorderRadius<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderRight": { "defaultValue": null, "description": "", "name": "borderRight", "required": false, "type": { "name": "ResponsiveStyleValue<BorderRight<string | number> | NonNullable<BorderRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "borderTop": { "defaultValue": null, "description": "", "name": "borderTop", "required": false, "type": { "name": "ResponsiveStyleValue<BorderTop<string | number> | NonNullable<BorderTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "flex": { "defaultValue": null, "description": "", "name": "flex", "required": false, "type": { "name": "ResponsiveStyleValue<Flex<string | number> | NonNullable<Flex<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Flex<...> | NonNullable<...>[]>)" } }, "gap": { "defaultValue": null, "description": "", "name": "gap", "required": false, "type": { "name": "ResponsiveStyleValue<Gap<string | number> | NonNullable<Gap<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<Gap<string | number> | NonNullable<...>[]>)" } }, "gridArea": { "defaultValue": null, "description": "", "name": "gridArea", "required": false, "type": { "name": "ResponsiveStyleValue<GridArea | NonNullable<GridArea>[]> | ((theme: Theme) => ResponsiveStyleValue<GridArea | NonNullable<...>[]>)" } }, "gridColumn": { "defaultValue": null, "description": "", "name": "gridColumn", "required": false, "type": { "name": "ResponsiveStyleValue<GridColumn | NonNullable<GridColumn>[]> | ((theme: Theme) => ResponsiveStyleValue<GridColumn | NonNullable<...>[]>)" } }, "gridRow": { "defaultValue": null, "description": "", "name": "gridRow", "required": false, "type": { "name": "ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]> | ((theme: Theme) => ResponsiveStyleValue<GridRow | NonNullable<GridRow>[]>)" } }, "margin": { "defaultValue": null, "description": "", "name": "margin", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "overflow": { "defaultValue": null, "description": "", "name": "overflow", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Overflow> | ((theme: Theme) => ResponsiveStyleValue<string[] | Overflow>)" } }, "padding": { "defaultValue": null, "description": "", "name": "padding", "required": false, "type": { "name": "ResponsiveStyleValue<Padding<string | number> | NonNullable<Padding<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "bgcolor": { "defaultValue": null, "description": "", "name": "bgcolor", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | BackgroundColor> | ((theme: Theme) => ResponsiveStyleValue<string[] | BackgroundColor>)" } }, "m": { "defaultValue": null, "description": "", "name": "m", "required": false, "type": { "name": "ResponsiveStyleValue<Margin<string | number> | NonNullable<Margin<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mt": { "defaultValue": null, "description": "", "name": "mt", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mr": { "defaultValue": null, "description": "", "name": "mr", "required": false, "type": { "name": "ResponsiveStyleValue<MarginRight<string | number> | NonNullable<MarginRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mb": { "defaultValue": null, "description": "", "name": "mb", "required": false, "type": { "name": "ResponsiveStyleValue<MarginBottom<string | number> | NonNullable<MarginBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "ml": { "defaultValue": null, "description": "", "name": "ml", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "mx": { "defaultValue": null, "description": "", "name": "mx", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginX": { "defaultValue": null, "description": "", "name": "marginX", "required": false, "type": { "name": "ResponsiveStyleValue<MarginLeft<string | number> | NonNullable<MarginLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "my": { "defaultValue": null, "description": "", "name": "my", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "marginY": { "defaultValue": null, "description": "", "name": "marginY", "required": false, "type": { "name": "ResponsiveStyleValue<MarginTop<string | number> | NonNullable<MarginTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pt": { "defaultValue": null, "description": "", "name": "pt", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pr": { "defaultValue": null, "description": "", "name": "pr", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingRight<string | number> | NonNullable<PaddingRight<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pb": { "defaultValue": null, "description": "", "name": "pb", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingBottom<string | number> | NonNullable<PaddingBottom<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "pl": { "defaultValue": null, "description": "", "name": "pl", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "px": { "defaultValue": null, "description": "", "name": "px", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingX": { "defaultValue": null, "description": "", "name": "paddingX", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingLeft<string | number> | NonNullable<PaddingLeft<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "py": { "defaultValue": null, "description": "", "name": "py", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "paddingY": { "defaultValue": null, "description": "", "name": "paddingY", "required": false, "type": { "name": "ResponsiveStyleValue<PaddingTop<string | number> | NonNullable<PaddingTop<string | number>>[]> | ((theme: Theme) => ResponsiveStyleValue<...>)" } }, "typography": { "defaultValue": null, "description": "", "name": "typography", "required": false, "type": { "name": "ResponsiveStyleValue<string> | ((theme: Theme) => ResponsiveStyleValue<string>)" } }, "displayPrint": { "defaultValue": null, "description": "", "name": "displayPrint", "required": false, "type": { "name": "ResponsiveStyleValue<string[] | Display> | ((theme: Theme) => ResponsiveStyleValue<string[] | Display>)" } }, "component": { "defaultValue": null, "description": "The component used for the root node.\nEither a string to use a HTML element or a component.", "name": "component", "required": false, "type": { "name": "ElementType<any>" } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<unknown>" } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme> & SxProps<Theme>" } } } };
     // @ts-ignore
     if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
         // @ts-ignore
@@ -7178,6 +7801,7 @@ module.exports = webpackEmptyContext;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./checkbox/src/lib/checkbox.stories.mdx": 3359,
 	"./core/src/lib/core.stories.mdx": 4549,
 	"./currency-text-field/src/lib/currency-text-field.stories.mdx": 54101,
 	"./radio/src/lib/radio.stories.mdx": 66306,
@@ -7626,20 +8250,20 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(98518)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(28922)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(88140)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(23301)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(42898)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(57372)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(40504)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(63675)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(15229)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(9562)))
-/******/ 	__webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(12845)))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [507,445,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(77215)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(98518)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(28922)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(88140)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(23301)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(42898)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(57372)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(40504)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(63675)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(15229)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(9562)))
+/******/ 	__webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(12845)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [507,166,214,932,487,869,917,601,882,856,536,300], () => (__webpack_require__(77215)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.23dcc46c.iframe.bundle.js.map
+//# sourceMappingURL=main.9ec05470.iframe.bundle.js.map

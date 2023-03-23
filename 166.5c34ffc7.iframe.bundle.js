@@ -1,4 +1,4 @@
-(self["webpackChunknovatics"] = self["webpackChunknovatics"] || []).push([[445],{
+(self["webpackChunknovatics"] = self["webpackChunknovatics"] || []).push([[166],{
 
 /***/ 3905:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -1490,6 +1490,209 @@ const ButtonBase = /*#__PURE__*/react.forwardRef(function ButtonBase(inProps, re
 
 /***/ }),
 
+/***/ 49960:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ Checkbox_Checkbox)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(35245);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(87462);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(67294);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
+var clsx_m = __webpack_require__(86010);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/composeClasses/composeClasses.js
+var composeClasses = __webpack_require__(94780);
+// EXTERNAL MODULE: ./node_modules/@mui/system/esm/colorManipulator.js
+var colorManipulator = __webpack_require__(41796);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/internal/SwitchBase.js + 1 modules
+var SwitchBase = __webpack_require__(69317);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/createSvgIcon.js + 2 modules
+var createSvgIcon = __webpack_require__(41);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(85893);
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/svg-icons/CheckBoxOutlineBlank.js
+
+
+/**
+ * @ignore - internal component.
+ */
+
+
+/* harmony default export */ const CheckBoxOutlineBlank = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
+  d: "M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+}), 'CheckBoxOutlineBlank'));
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/svg-icons/CheckBox.js
+
+
+/**
+ * @ignore - internal component.
+ */
+
+
+/* harmony default export */ const CheckBox = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
+  d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+}), 'CheckBox'));
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/svg-icons/IndeterminateCheckBox.js
+
+
+/**
+ * @ignore - internal component.
+ */
+
+
+/* harmony default export */ const IndeterminateCheckBox = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
+  d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+}), 'IndeterminateCheckBox'));
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/capitalize.js
+var capitalize = __webpack_require__(36622);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/useThemeProps.js + 2 modules
+var useThemeProps = __webpack_require__(81468);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/styled.js
+var styled = __webpack_require__(81719);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClasses/generateUtilityClasses.js
+var generateUtilityClasses = __webpack_require__(1588);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClass/generateUtilityClass.js
+var generateUtilityClass = __webpack_require__(34867);
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/Checkbox/checkboxClasses.js
+
+
+function getCheckboxUtilityClass(slot) {
+  return (0,generateUtilityClass/* default */.Z)('MuiCheckbox', slot);
+}
+const checkboxClasses = (0,generateUtilityClasses/* default */.Z)('MuiCheckbox', ['root', 'checked', 'disabled', 'indeterminate', 'colorPrimary', 'colorSecondary']);
+/* harmony default export */ const Checkbox_checkboxClasses = (checkboxClasses);
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/Checkbox/Checkbox.js
+
+
+const _excluded = ["checkedIcon", "color", "icon", "indeterminate", "indeterminateIcon", "inputProps", "size", "className"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const useUtilityClasses = ownerState => {
+  const {
+    classes,
+    indeterminate,
+    color
+  } = ownerState;
+  const slots = {
+    root: ['root', indeterminate && 'indeterminate', `color${(0,capitalize/* default */.Z)(color)}`]
+  };
+  const composedClasses = (0,composeClasses/* default */.Z)(slots, getCheckboxUtilityClass, classes);
+  return (0,esm_extends/* default */.Z)({}, classes, composedClasses);
+};
+
+const CheckboxRoot = (0,styled/* default */.ZP)(SwitchBase/* default */.Z, {
+  shouldForwardProp: prop => (0,styled/* rootShouldForwardProp */.FO)(prop) || prop === 'classes',
+  name: 'MuiCheckbox',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [styles.root, ownerState.indeterminate && styles.indeterminate, ownerState.color !== 'default' && styles[`color${(0,capitalize/* default */.Z)(ownerState.color)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => (0,esm_extends/* default */.Z)({
+  color: (theme.vars || theme).palette.text.secondary
+}, !ownerState.disableRipple && {
+  '&:hover': {
+    backgroundColor: theme.vars ? `rgba(${ownerState.color === 'default' ? theme.vars.palette.action.activeChannel : theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0,colorManipulator/* alpha */.Fq)(ownerState.color === 'default' ? theme.palette.action.active : theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    '@media (hover: none)': {
+      backgroundColor: 'transparent'
+    }
+  }
+}, ownerState.color !== 'default' && {
+  [`&.${Checkbox_checkboxClasses.checked}, &.${Checkbox_checkboxClasses.indeterminate}`]: {
+    color: (theme.vars || theme).palette[ownerState.color].main
+  },
+  [`&.${Checkbox_checkboxClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.action.disabled
+  }
+}));
+
+const defaultCheckedIcon = /*#__PURE__*/(0,jsx_runtime.jsx)(CheckBox, {});
+
+const defaultIcon = /*#__PURE__*/(0,jsx_runtime.jsx)(CheckBoxOutlineBlank, {});
+
+const defaultIndeterminateIcon = /*#__PURE__*/(0,jsx_runtime.jsx)(IndeterminateCheckBox, {});
+
+const Checkbox = /*#__PURE__*/react.forwardRef(function Checkbox(inProps, ref) {
+  var _icon$props$fontSize, _indeterminateIcon$pr;
+
+  const props = (0,useThemeProps/* default */.Z)({
+    props: inProps,
+    name: 'MuiCheckbox'
+  });
+
+  const {
+    checkedIcon = defaultCheckedIcon,
+    color = 'primary',
+    icon: iconProp = defaultIcon,
+    indeterminate = false,
+    indeterminateIcon: indeterminateIconProp = defaultIndeterminateIcon,
+    inputProps,
+    size = 'medium',
+    className
+  } = props,
+        other = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
+
+  const icon = indeterminate ? indeterminateIconProp : iconProp;
+  const indeterminateIcon = indeterminate ? indeterminateIconProp : checkedIcon;
+
+  const ownerState = (0,esm_extends/* default */.Z)({}, props, {
+    color,
+    indeterminate,
+    size
+  });
+
+  const classes = useUtilityClasses(ownerState);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxRoot, (0,esm_extends/* default */.Z)({
+    type: "checkbox",
+    inputProps: (0,esm_extends/* default */.Z)({
+      'data-indeterminate': indeterminate
+    }, inputProps),
+    icon: /*#__PURE__*/react.cloneElement(icon, {
+      fontSize: (_icon$props$fontSize = icon.props.fontSize) != null ? _icon$props$fontSize : size
+    }),
+    checkedIcon: /*#__PURE__*/react.cloneElement(indeterminateIcon, {
+      fontSize: (_indeterminateIcon$pr = indeterminateIcon.props.fontSize) != null ? _indeterminateIcon$pr : size
+    }),
+    ownerState: ownerState,
+    ref: ref,
+    className: (0,clsx_m/* default */.Z)(classes.root, className)
+  }, other, {
+    classes: classes
+  }));
+});
+ false ? 0 : void 0;
+/* harmony default export */ const Checkbox_Checkbox = (Checkbox);
+
+/***/ }),
+
 /***/ 82586:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -2222,7 +2425,7 @@ const Paper = /*#__PURE__*/react.forwardRef(function Paper(inProps, ref) {
 
 /***/ }),
 
-/***/ 6337:
+/***/ 33687:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2244,216 +2447,14 @@ var clsx_m = __webpack_require__(86010);
 var composeClasses = __webpack_require__(94780);
 // EXTERNAL MODULE: ./node_modules/@mui/system/esm/colorManipulator.js
 var colorManipulator = __webpack_require__(41796);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/capitalize.js
-var capitalize = __webpack_require__(36622);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/styled.js
-var styled = __webpack_require__(81719);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/useControlled.js + 1 modules
-var useControlled = __webpack_require__(91133);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/FormControl/useFormControl.js
-var useFormControl = __webpack_require__(59711);
-// EXTERNAL MODULE: ./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js + 4 modules
-var ButtonBase = __webpack_require__(45355);
-// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClasses/generateUtilityClasses.js
-var generateUtilityClasses = __webpack_require__(1588);
-// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClass/generateUtilityClass.js
-var generateUtilityClass = __webpack_require__(34867);
-;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/switchBaseClasses.js
-
-
-function getSwitchBaseUtilityClass(slot) {
-  return (0,generateUtilityClass/* default */.Z)('PrivateSwitchBase', slot);
-}
-const switchBaseClasses = (0,generateUtilityClasses/* default */.Z)('PrivateSwitchBase', ['root', 'checked', 'disabled', 'input', 'edgeStart', 'edgeEnd']);
-/* harmony default export */ const internal_switchBaseClasses = ((/* unused pure expression or super */ null && (switchBaseClasses)));
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(85893);
-;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/SwitchBase.js
-
-
-const _excluded = ["autoFocus", "checked", "checkedIcon", "className", "defaultChecked", "disabled", "disableFocusRipple", "edge", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes,
-    checked,
-    disabled,
-    edge
-  } = ownerState;
-  const slots = {
-    root: ['root', checked && 'checked', disabled && 'disabled', edge && `edge${(0,capitalize/* default */.Z)(edge)}`],
-    input: ['input']
-  };
-  return (0,composeClasses/* default */.Z)(slots, getSwitchBaseUtilityClass, classes);
-};
-
-const SwitchBaseRoot = (0,styled/* default */.ZP)(ButtonBase/* default */.Z)(({
-  ownerState
-}) => (0,esm_extends/* default */.Z)({
-  padding: 9,
-  borderRadius: '50%'
-}, ownerState.edge === 'start' && {
-  marginLeft: ownerState.size === 'small' ? -3 : -12
-}, ownerState.edge === 'end' && {
-  marginRight: ownerState.size === 'small' ? -3 : -12
-}));
-const SwitchBaseInput = (0,styled/* default */.ZP)('input')({
-  cursor: 'inherit',
-  position: 'absolute',
-  opacity: 0,
-  width: '100%',
-  height: '100%',
-  top: 0,
-  left: 0,
-  margin: 0,
-  padding: 0,
-  zIndex: 1
-});
-/**
- * @ignore - internal component.
- */
-
-const SwitchBase = /*#__PURE__*/react.forwardRef(function SwitchBase(props, ref) {
-  const {
-    autoFocus,
-    checked: checkedProp,
-    checkedIcon,
-    className,
-    defaultChecked,
-    disabled: disabledProp,
-    disableFocusRipple = false,
-    edge = false,
-    icon,
-    id,
-    inputProps,
-    inputRef,
-    name,
-    onBlur,
-    onChange,
-    onFocus,
-    readOnly,
-    required,
-    tabIndex,
-    type,
-    value
-  } = props,
-        other = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
-
-  const [checked, setCheckedState] = (0,useControlled/* default */.Z)({
-    controlled: checkedProp,
-    default: Boolean(defaultChecked),
-    name: 'SwitchBase',
-    state: 'checked'
-  });
-  const muiFormControl = (0,useFormControl/* default */.Z)();
-
-  const handleFocus = event => {
-    if (onFocus) {
-      onFocus(event);
-    }
-
-    if (muiFormControl && muiFormControl.onFocus) {
-      muiFormControl.onFocus(event);
-    }
-  };
-
-  const handleBlur = event => {
-    if (onBlur) {
-      onBlur(event);
-    }
-
-    if (muiFormControl && muiFormControl.onBlur) {
-      muiFormControl.onBlur(event);
-    }
-  };
-
-  const handleInputChange = event => {
-    // Workaround for https://github.com/facebook/react/issues/9023
-    if (event.nativeEvent.defaultPrevented) {
-      return;
-    }
-
-    const newChecked = event.target.checked;
-    setCheckedState(newChecked);
-
-    if (onChange) {
-      // TODO v6: remove the second argument.
-      onChange(event, newChecked);
-    }
-  };
-
-  let disabled = disabledProp;
-
-  if (muiFormControl) {
-    if (typeof disabled === 'undefined') {
-      disabled = muiFormControl.disabled;
-    }
-  }
-
-  const hasLabelFor = type === 'checkbox' || type === 'radio';
-
-  const ownerState = (0,esm_extends/* default */.Z)({}, props, {
-    checked,
-    disabled,
-    disableFocusRipple,
-    edge
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)(SwitchBaseRoot, (0,esm_extends/* default */.Z)({
-    component: "span",
-    className: (0,clsx_m/* default */.Z)(classes.root, className),
-    centerRipple: true,
-    focusRipple: !disableFocusRipple,
-    disabled: disabled,
-    tabIndex: null,
-    role: undefined,
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    ownerState: ownerState,
-    ref: ref
-  }, other, {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(SwitchBaseInput, (0,esm_extends/* default */.Z)({
-      autoFocus: autoFocus,
-      checked: checkedProp,
-      defaultChecked: defaultChecked,
-      className: classes.input,
-      disabled: disabled,
-      id: hasLabelFor && id,
-      name: name,
-      onChange: handleInputChange,
-      readOnly: readOnly,
-      ref: inputRef,
-      required: required,
-      ownerState: ownerState,
-      tabIndex: tabIndex,
-      type: type
-    }, type === 'checkbox' && value === undefined ? {} : {
-      value
-    }, inputProps)), checked ? checkedIcon : icon]
-  }));
-}); // NB: If changed, please update Checkbox, Switch and Radio
-// so that the API documentation is updated.
-
- false ? 0 : void 0;
-/* harmony default export */ const internal_SwitchBase = (SwitchBase);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/internal/SwitchBase.js + 1 modules
+var SwitchBase = __webpack_require__(69317);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/useThemeProps.js + 2 modules
 var useThemeProps = __webpack_require__(81468);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/createSvgIcon.js + 2 modules
 var createSvgIcon = __webpack_require__(41);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(85893);
 ;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/svg-icons/RadioButtonUnchecked.js
 
 
@@ -2476,6 +2477,8 @@ var createSvgIcon = __webpack_require__(41);
 /* harmony default export */ const RadioButtonChecked = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
   d: "M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
 }), 'RadioButtonChecked'));
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/styled.js
+var styled = __webpack_require__(81719);
 ;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/Radio/RadioButtonIcon.js
 
 
@@ -2543,6 +2546,8 @@ function RadioButtonIcon(props) {
 
  false ? 0 : void 0;
 /* harmony default export */ const Radio_RadioButtonIcon = (RadioButtonIcon);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/capitalize.js
+var capitalize = __webpack_require__(36622);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/createChainedFunction.js
 var createChainedFunction = __webpack_require__(46207);
 ;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/RadioGroup/RadioGroupContext.js
@@ -2562,6 +2567,10 @@ if (false) {}
 function useRadioGroup() {
   return react.useContext(RadioGroup_RadioGroupContext);
 }
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClasses/generateUtilityClasses.js
+var generateUtilityClasses = __webpack_require__(1588);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClass/generateUtilityClass.js
+var generateUtilityClass = __webpack_require__(34867);
 ;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/Radio/radioClasses.js
 
 
@@ -2573,7 +2582,7 @@ const radioClasses = (0,generateUtilityClasses/* default */.Z)('MuiRadio', ['roo
 ;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/Radio/Radio.js
 
 
-const Radio_excluded = ["checked", "checkedIcon", "color", "icon", "name", "onChange", "size", "className"];
+const _excluded = ["checked", "checkedIcon", "color", "icon", "name", "onChange", "size", "className"];
 
 
 
@@ -2590,7 +2599,7 @@ const Radio_excluded = ["checked", "checkedIcon", "color", "icon", "name", "onCh
 
 
 
-const Radio_useUtilityClasses = ownerState => {
+const useUtilityClasses = ownerState => {
   const {
     classes,
     color
@@ -2601,7 +2610,7 @@ const Radio_useUtilityClasses = ownerState => {
   return (0,esm_extends/* default */.Z)({}, classes, (0,composeClasses/* default */.Z)(slots, getRadioUtilityClass, classes));
 };
 
-const RadioRoot = (0,styled/* default */.ZP)(internal_SwitchBase, {
+const RadioRoot = (0,styled/* default */.ZP)(SwitchBase/* default */.Z, {
   shouldForwardProp: prop => (0,styled/* rootShouldForwardProp */.FO)(prop) || prop === 'classes',
   name: 'MuiRadio',
   slot: 'Root',
@@ -2666,14 +2675,14 @@ const Radio = /*#__PURE__*/react.forwardRef(function Radio(inProps, ref) {
     size = 'medium',
     className
   } = props,
-        other = (0,objectWithoutPropertiesLoose/* default */.Z)(props, Radio_excluded);
+        other = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
 
   const ownerState = (0,esm_extends/* default */.Z)({}, props, {
     color,
     size
   });
 
-  const classes = Radio_useUtilityClasses(ownerState);
+  const classes = useUtilityClasses(ownerState);
   const radioGroup = useRadioGroup();
   let checked = checkedProp;
   const onChange = (0,createChainedFunction/* default */.Z)(onChangeProp, radioGroup && radioGroup.onChange);
@@ -10072,6 +10081,235 @@ const Typography = /*#__PURE__*/react.forwardRef(function Typography(inProps, re
 });
  false ? 0 : void 0;
 /* harmony default export */ const Typography_Typography = (Typography);
+
+/***/ }),
+
+/***/ 69317:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ internal_SwitchBase)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(35245);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(87462);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(67294);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
+var clsx_m = __webpack_require__(86010);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/composeClasses/composeClasses.js
+var composeClasses = __webpack_require__(94780);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/capitalize.js
+var capitalize = __webpack_require__(36622);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/styles/styled.js
+var styled = __webpack_require__(81719);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/utils/useControlled.js + 1 modules
+var useControlled = __webpack_require__(91133);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/FormControl/useFormControl.js
+var useFormControl = __webpack_require__(59711);
+// EXTERNAL MODULE: ./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js + 4 modules
+var ButtonBase = __webpack_require__(45355);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClasses/generateUtilityClasses.js
+var generateUtilityClasses = __webpack_require__(1588);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/generateUtilityClass/generateUtilityClass.js
+var generateUtilityClass = __webpack_require__(34867);
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/switchBaseClasses.js
+
+
+function getSwitchBaseUtilityClass(slot) {
+  return (0,generateUtilityClass/* default */.Z)('PrivateSwitchBase', slot);
+}
+const switchBaseClasses = (0,generateUtilityClasses/* default */.Z)('PrivateSwitchBase', ['root', 'checked', 'disabled', 'input', 'edgeStart', 'edgeEnd']);
+/* harmony default export */ const internal_switchBaseClasses = ((/* unused pure expression or super */ null && (switchBaseClasses)));
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(85893);
+;// CONCATENATED MODULE: ./node_modules/@mui/material/esm/internal/SwitchBase.js
+
+
+const _excluded = ["autoFocus", "checked", "checkedIcon", "className", "defaultChecked", "disabled", "disableFocusRipple", "edge", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const useUtilityClasses = ownerState => {
+  const {
+    classes,
+    checked,
+    disabled,
+    edge
+  } = ownerState;
+  const slots = {
+    root: ['root', checked && 'checked', disabled && 'disabled', edge && `edge${(0,capitalize/* default */.Z)(edge)}`],
+    input: ['input']
+  };
+  return (0,composeClasses/* default */.Z)(slots, getSwitchBaseUtilityClass, classes);
+};
+
+const SwitchBaseRoot = (0,styled/* default */.ZP)(ButtonBase/* default */.Z)(({
+  ownerState
+}) => (0,esm_extends/* default */.Z)({
+  padding: 9,
+  borderRadius: '50%'
+}, ownerState.edge === 'start' && {
+  marginLeft: ownerState.size === 'small' ? -3 : -12
+}, ownerState.edge === 'end' && {
+  marginRight: ownerState.size === 'small' ? -3 : -12
+}));
+const SwitchBaseInput = (0,styled/* default */.ZP)('input')({
+  cursor: 'inherit',
+  position: 'absolute',
+  opacity: 0,
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0,
+  margin: 0,
+  padding: 0,
+  zIndex: 1
+});
+/**
+ * @ignore - internal component.
+ */
+
+const SwitchBase = /*#__PURE__*/react.forwardRef(function SwitchBase(props, ref) {
+  const {
+    autoFocus,
+    checked: checkedProp,
+    checkedIcon,
+    className,
+    defaultChecked,
+    disabled: disabledProp,
+    disableFocusRipple = false,
+    edge = false,
+    icon,
+    id,
+    inputProps,
+    inputRef,
+    name,
+    onBlur,
+    onChange,
+    onFocus,
+    readOnly,
+    required,
+    tabIndex,
+    type,
+    value
+  } = props,
+        other = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
+
+  const [checked, setCheckedState] = (0,useControlled/* default */.Z)({
+    controlled: checkedProp,
+    default: Boolean(defaultChecked),
+    name: 'SwitchBase',
+    state: 'checked'
+  });
+  const muiFormControl = (0,useFormControl/* default */.Z)();
+
+  const handleFocus = event => {
+    if (onFocus) {
+      onFocus(event);
+    }
+
+    if (muiFormControl && muiFormControl.onFocus) {
+      muiFormControl.onFocus(event);
+    }
+  };
+
+  const handleBlur = event => {
+    if (onBlur) {
+      onBlur(event);
+    }
+
+    if (muiFormControl && muiFormControl.onBlur) {
+      muiFormControl.onBlur(event);
+    }
+  };
+
+  const handleInputChange = event => {
+    // Workaround for https://github.com/facebook/react/issues/9023
+    if (event.nativeEvent.defaultPrevented) {
+      return;
+    }
+
+    const newChecked = event.target.checked;
+    setCheckedState(newChecked);
+
+    if (onChange) {
+      // TODO v6: remove the second argument.
+      onChange(event, newChecked);
+    }
+  };
+
+  let disabled = disabledProp;
+
+  if (muiFormControl) {
+    if (typeof disabled === 'undefined') {
+      disabled = muiFormControl.disabled;
+    }
+  }
+
+  const hasLabelFor = type === 'checkbox' || type === 'radio';
+
+  const ownerState = (0,esm_extends/* default */.Z)({}, props, {
+    checked,
+    disabled,
+    disableFocusRipple,
+    edge
+  });
+
+  const classes = useUtilityClasses(ownerState);
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(SwitchBaseRoot, (0,esm_extends/* default */.Z)({
+    component: "span",
+    className: (0,clsx_m/* default */.Z)(classes.root, className),
+    centerRipple: true,
+    focusRipple: !disableFocusRipple,
+    disabled: disabled,
+    tabIndex: null,
+    role: undefined,
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    ownerState: ownerState,
+    ref: ref
+  }, other, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(SwitchBaseInput, (0,esm_extends/* default */.Z)({
+      autoFocus: autoFocus,
+      checked: checkedProp,
+      defaultChecked: defaultChecked,
+      className: classes.input,
+      disabled: disabled,
+      id: hasLabelFor && id,
+      name: name,
+      onChange: handleInputChange,
+      readOnly: readOnly,
+      ref: inputRef,
+      required: required,
+      ownerState: ownerState,
+      tabIndex: tabIndex,
+      type: type
+    }, type === 'checkbox' && value === undefined ? {} : {
+      value
+    }, inputProps)), checked ? checkedIcon : icon]
+  }));
+}); // NB: If changed, please update Checkbox, Switch and Radio
+// so that the API documentation is updated.
+
+ false ? 0 : void 0;
+/* harmony default export */ const internal_SwitchBase = (SwitchBase);
 
 /***/ }),
 
@@ -27003,4 +27241,4 @@ module.exports = JSON.parse('["a","abbr","address","area","article","aside","aud
 /***/ })
 
 }]);
-//# sourceMappingURL=445.22cdfd11.iframe.bundle.js.map
+//# sourceMappingURL=166.5c34ffc7.iframe.bundle.js.map

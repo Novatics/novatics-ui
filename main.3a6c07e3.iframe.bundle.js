@@ -5738,7 +5738,7 @@ var client = __webpack_require__(6746);
 // EXTERNAL MODULE: ./node_modules/@mui/material/esm/Button/Button.js + 2 modules
 var Button = __webpack_require__(95305);
 ;// CONCATENATED MODULE: ./packages/styles/package.json
-const package_namespaceObject = {"i8":"0.1.2"};
+const package_namespaceObject = {"i8":"0.2.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__(23157);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
@@ -8886,4 +8886,4 @@ var _frameworkImportPath = __webpack_require__(6746);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.a41d3a8c.iframe.bundle.js.map
+//# sourceMappingURL=main.3a6c07e3.iframe.bundle.js.map

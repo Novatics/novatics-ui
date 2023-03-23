@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.1](https://github.com/Novatics/novatics-ui/compare/currency-text-field-0.1.0...currency-text-field-0.1.1) (2023-03-23)
+
+
+### Bug Fixes
+
+* **root:** run prittier and adjust pkg name ([ad7a921](https://github.com/Novatics/novatics-ui/commit/ad7a9216557fe1a57aaadd3ab0378211e05371bf))
+
 ## 0.1.0 (2022-11-22)
 
 

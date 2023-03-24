@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Novatics/novatics-ui/compare/tokens-0.1.1...tokens-0.1.2) (2023-03-24)
+
 ### [0.1.1](https://github.com/Novatics/novatics-ui/compare/tokens-0.1.0...tokens-0.1.1) (2023-03-23)
 
 

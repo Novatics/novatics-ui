@@ -1,11 +1,12 @@
 {
+  "name": "currency-text-field",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/currency-text-field/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/currency-text-field",
@@ -48,6 +49,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
+        "configDir": "packages/currency-text-field/.storybook",
         "config": {
           "configFolder": "packages/currency-text-field/.storybook"
         }
@@ -64,6 +66,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/currency-text-field",
+        "configDir": "packages/currency-text-field/.storybook",
         "config": {
           "configFolder": "packages/currency-text-field/.storybook"
         }

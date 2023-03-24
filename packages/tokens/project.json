@@ -1,7 +1,9 @@
 {
+  "name": "tokens",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/tokens/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
@@ -10,14 +12,27 @@
         "outputPath": "dist/packages/tokens",
         "main": "packages/tokens/src/index.ts",
         "tsConfig": "packages/tokens/tsconfig.lib.json",
-        "assets": ["packages/tokens/*.md"]
+        "project": "packages/tokens/package.json",
+        "entryFile": "packages/tokens/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/tokens/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "format": ["cjs"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/tokens/**/*.ts"]
+        "lintFilePatterns": ["packages/tokens/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
@@ -26,6 +41,39 @@
       "options": {
         "jestConfig": "packages/tokens/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "configDir": "packages/tokens/.storybook",
+        "config": {
+          "configFolder": "packages/tokens/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/tokens",
+        "configDir": "packages/tokens/.storybook",
+        "config": {
+          "configFolder": "packages/tokens/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     },
     "version": {
@@ -49,6 +97,5 @@
         "baseBranch": "master"
       }
     }
-  },
-  "tags": []
+  }
 }

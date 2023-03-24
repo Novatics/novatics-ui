@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/checkbox",
@@ -47,6 +47,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
+        "configDir": "packages/checkbox/.storybook",
         "config": {
           "configFolder": "packages/checkbox/.storybook"
         }
@@ -63,6 +64,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/checkbox",
+        "configDir": "packages/checkbox/.storybook",
         "config": {
           "configFolder": "packages/checkbox/.storybook"
         }

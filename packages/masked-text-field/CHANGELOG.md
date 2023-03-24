@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/masked-text-field-0.1.0...masked-text-field-0.1.1) (2023-03-24)
+
+
+### Bug Fixes
+
+* **root:** fix masked ([c749307](https://github.com/Novatics/novatics-ui/commit/c7493079c1a2797bb1c7cef87030219a2bf310ae))
+
 ## 0.1.0 (2023-03-23)
 
 

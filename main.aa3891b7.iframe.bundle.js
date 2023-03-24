@@ -234,7 +234,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/checkbox/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.2"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(37509);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
@@ -9105,4 +9105,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.89eb3355.iframe.bundle.js.map
+//# sourceMappingURL=main.aa3891b7.iframe.bundle.js.map

@@ -1,11 +1,12 @@
 {
+  "name": "masked-text-field",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/masked-text-field/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/masked-text-field",
@@ -46,6 +47,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
+        "configDir": "packages/masked-text-field/.storybook",
         "config": {
           "configFolder": "packages/masked-text-field/.storybook"
         }
@@ -62,6 +64,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/masked-text-field",
+        "configDir": "packages/masked-text-field/.storybook",
         "config": {
           "configFolder": "packages/masked-text-field/.storybook"
         }

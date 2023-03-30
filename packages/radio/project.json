@@ -45,11 +45,9 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/radio/.storybook"
-        }
+        "configDir": "packages/radio/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {
@@ -59,13 +57,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/radio",
-        "config": {
-          "configFolder": "packages/radio/.storybook"
-        }
+        "outputDir": "dist/storybook/radio",
+        "configDir": "packages/radio/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {

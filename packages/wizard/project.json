@@ -45,12 +45,9 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
         "configDir": "packages/wizard/.storybook",
-        "config": {
-          "configFolder": "packages/wizard/.storybook"
-        }
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {
@@ -60,14 +57,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/wizard",
+        "outputDir": "dist/storybook/wizard",
         "configDir": "packages/wizard/.storybook",
-        "config": {
-          "configFolder": "packages/wizard/.storybook"
-        }
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {

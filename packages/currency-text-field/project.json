@@ -47,12 +47,9 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
         "configDir": "packages/currency-text-field/.storybook",
-        "config": {
-          "configFolder": "packages/currency-text-field/.storybook"
-        }
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {
@@ -62,14 +59,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/currency-text-field",
+        "outputDir": "dist/storybook/currency-text-field",
         "configDir": "packages/currency-text-field/.storybook",
-        "config": {
-          "configFolder": "packages/currency-text-field/.storybook"
-        }
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {

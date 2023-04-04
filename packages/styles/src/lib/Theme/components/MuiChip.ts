@@ -6,14 +6,17 @@ import '../fonts.css';
 // This adds 50% transparency to hexadecimal colors
 const addTransparency = (color?: string): string => `${color}80`;
 
-const selectColor = (color?: string): string | undefined => {
+const selectColor = (color?: string, variant?: string): string | undefined => {
   switch (color) {
     case 'primary':
       return themePalette.primary?.main;
     case 'success':
-    case 'warning':
     case 'error':
       return themePalette[color]?.dark;
+    case 'warning':
+      return variant === 'outlined'
+        ? themePalette.warning?.main
+        : themePalette.warning?.dark;
     case 'info':
       return themePalette.support?.main;
     default:
@@ -39,7 +42,7 @@ export const MuiChip: Components['MuiChip'] = {
   styleOverrides: {
     root: ({ ownerState }) => ({
       backgroundColor: selectBackgroundColor(ownerState.color),
-      color: selectColor(ownerState.color),
+      color: selectColor(ownerState.color, ownerState.variant),
       borderColor: selectBackgroundColor(ownerState.color),
       borderWidth: '1px',
       borderStyle: 'solid',
@@ -51,7 +54,9 @@ export const MuiChip: Components['MuiChip'] = {
     },
     outlined: ({ ownerState }) => ({
       backgroundColor: 'transparent',
-      borderColor: addTransparency(selectColor(ownerState.color)),
+      borderColor: addTransparency(
+        selectColor(ownerState.color, ownerState.variant)
+      ),
     }),
     label: {
       ...themeTypography.caption,
@@ -62,16 +67,18 @@ export const MuiChip: Components['MuiChip'] = {
       height: '20px',
       width: '20px',
       margin: '0 0 0 4px',
-      color: selectColor(ownerState.color),
+      color: selectColor(ownerState.color, ownerState.variant),
     }),
     deleteIcon: ({ ownerState }) => ({
       height: '20px',
       width: '20px',
       margin: '0 0 0 4px',
-      color: selectColor(ownerState.color),
+      color: selectColor(ownerState.color, ownerState.variant),
       transition: '0.3s',
       '&:hover': {
-        color: addTransparency(selectColor(ownerState.color)),
+        color: addTransparency(
+          selectColor(ownerState.color, ownerState.variant)
+        ),
       },
     }),
     clickable: ({ ownerState }) => ({

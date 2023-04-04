@@ -1,4 +1,4 @@
-import { PaletteOptions } from '@mui/material';
+import { SimplePaletteColorOptions, PaletteOptions } from '@mui/material';
 import { colors } from '@novatics/tokens';
 
 declare module '@mui/material/styles/createPalette' {
@@ -33,7 +33,14 @@ declare module '@mui/material/styles/createPalette' {
   }
 }
 
-export const palette: PaletteOptions = {
+export interface ColorsOptions extends PaletteOptions {
+  primary?: SimplePaletteColorOptions;
+  success?: SimplePaletteColorOptions;
+  warning?: SimplePaletteColorOptions;
+  error?: SimplePaletteColorOptions;
+}
+
+export const palette: ColorsOptions = {
   grayScale: {
     blackHole: colors['blackHole'],
     eclipse: colors['eclipse'],

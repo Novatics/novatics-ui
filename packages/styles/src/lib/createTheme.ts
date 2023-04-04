@@ -9,6 +9,7 @@ import { Spacings } from './Theme/spacings';
 import { themeShadows } from './Theme/shadows';
 import { themeTypography } from './Theme/typography';
 import { Length } from './Theme/types';
+import { MuiChip } from './Theme/components/MuiChip';
 
 export { themePalette, themeBorderRadius };
 
@@ -33,6 +34,7 @@ export const createTheme = (
       customShadows: themeShadows,
       components: {
         ...componentsInput,
+        MuiChip,
       },
       ...others,
     },

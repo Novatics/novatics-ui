@@ -1,11 +1,12 @@
 {
+  "name": "wizard",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/wizard/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/wizard",
@@ -44,11 +45,9 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/wizard/.storybook"
-        }
+        "configDir": "packages/wizard/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {
@@ -58,13 +57,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/wizard",
-        "config": {
-          "configFolder": "packages/wizard/.storybook"
-        }
+        "outputDir": "dist/storybook/wizard",
+        "configDir": "packages/wizard/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {

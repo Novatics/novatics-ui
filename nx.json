@@ -1,7 +1,21 @@
 {
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
+    }
+  },
   "extends": "nx/presets/core.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "novatics-ui",
+  "npmScope": "novatics",
   "workspaceLayout": {
     "libsDir": "packages"
   },
@@ -19,20 +33,6 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/react"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "build-storybook"
-        ]
-      }
-    }
   },
   "generators": {
     "@nrwl/react": {

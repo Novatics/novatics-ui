@@ -62,15 +62,16 @@ function updateTargetsVersion(targets: Record<string, any>) {
   targets.version.options.baseBranch = 'master';
 }
 
-function createTargetsVersionDeploy(targets: Record<string, any>, fileName: string) {
+function createTargetsVersionDeploy(
+  targets: Record<string, any>,
+  fileName: string
+) {
   targets['version:deploy'] = { ...targets['version:deploy'] } ?? {};
   targets['version:deploy'].executor = '@jscutlery/semver:version';
   targets['version:deploy'].options = targets['version:deploy'].options ?? {};
   targets['version:deploy'].options.preset = 'conventional';
   targets['version:deploy'].options.baseBranch = 'master';
-  targets['version:deploy'].options.postTargets = [
-    `${fileName}:deploy`,
-  ];
+  targets['version:deploy'].options.postTargets = [`${fileName}:deploy`];
 }
 
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {

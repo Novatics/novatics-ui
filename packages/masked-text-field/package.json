@@ -1,0 +1,10 @@
+{
+  "name": "@novatics/masked-text-field",
+  "version": "0.0.0",
+  "dependencies": {
+    "imask": "^6.4.3"
+  },
+  "devDependencies": {
+    "imask": "^6.4.3"
+  }
+}

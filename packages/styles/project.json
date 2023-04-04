@@ -1,11 +1,12 @@
 {
+  "name": "styles",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/styles/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/styles",
@@ -44,11 +45,9 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/styles/.storybook"
-        }
+        "configDir": "packages/styles/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {
@@ -58,13 +57,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/styles",
-        "config": {
-          "configFolder": "packages/styles/.storybook"
-        }
+        "outputDir": "dist/storybook/styles",
+        "configDir": "packages/styles/.storybook",
+        "uiFramework": "@storybook/react"
       },
       "configurations": {
         "ci": {

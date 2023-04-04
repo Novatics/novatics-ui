@@ -31,6 +31,13 @@ declare module '@mui/material/styles/createPalette' {
   interface TypeObject {
     grayScale: GrayScale;
   }
+  interface PaletteColor {
+    light: string;
+    main: string;
+    medium?: string;
+    dark: string;
+    contrastText: string;
+  }
 }
 
 export interface ColorsOptions extends PaletteOptions {

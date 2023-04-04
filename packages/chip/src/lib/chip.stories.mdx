@@ -21,9 +21,34 @@ First install the latest version of the package from `@novatics/chip`.
 <Canvas>
   <Story name="Basic Usage">
     {(args) => {
+      const handleDelete = () => {};
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Chip label="Chip" size="medium" color="error" {...args} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip
+            label="Chip"
+            size="medium"
+            color="primary"
+            icon={<ChairOutlinedIcon />}
+            onDelete={handleDelete}
+            // onClick={() => alert('clicked')}
+            clickable
+          />
+          <Chip
+            label="Chip"
+            size="small"
+            color="primary"
+            icon={<ChairOutlinedIcon />}
+            variant="outlined"
+            onDelete={handleDelete}
+            clickable
+          />
         </div>
       );
     }}

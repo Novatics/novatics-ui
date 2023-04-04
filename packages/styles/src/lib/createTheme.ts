@@ -10,6 +10,7 @@ import { themeShadows } from './Theme/shadows';
 import { themeTypography } from './Theme/typography';
 import { Length } from './Theme/types';
 import { themeBreakpoints } from './Theme/breakpoints';
+import { MuiChip } from './Theme/components/MuiChip';
 
 export { themePalette, themeBorderRadius };
 
@@ -35,6 +36,7 @@ export const createTheme = (
       customShadows: themeShadows,
       components: {
         ...componentsInput,
+        MuiChip,
       },
       ...others,
     },

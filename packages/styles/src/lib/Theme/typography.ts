@@ -42,6 +42,7 @@ export const themeTypography = typographies.reduce(
       fontWeight: typography.typography[curr].fontWeight,
       fontSize: `${typography.typography[curr].fontSize.rem}rem`,
       lineHeight: typography.typography[curr].lineHeight,
+      fontFamily: typography.typography[curr].fontFamily,
     };
     return acc;
   },

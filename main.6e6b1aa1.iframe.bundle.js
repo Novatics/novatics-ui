@@ -109,7 +109,7 @@ function MDXContent(_ref) {
     "start": 2
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("li", {
     parentName: "ol"
-  }, "Use nx generators to create the component. Visit the ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("a", {
+  }, "Use nx generators to create the component and the storybook documentation. Visit the ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("a", {
     parentName: "li",
     "href": "https://nx.dev",
     "target": "_blank",
@@ -117,22 +117,15 @@ function MDXContent(_ref) {
   }, "Nx Documentation"), " to learn more.")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("code", {
     parentName: "pre",
     "className": "language-shell"
-  }, "yarn generate:component <name-of-component>\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("ol", {
+  }, "yarn component:generate \n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("ol", {
     "start": 3
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("li", {
-    parentName: "ol"
-  }, "Use nx generators to generate the storybook documentation")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("code", {
-    parentName: "pre",
-    "className": "language-shell"
-  }, "yarn generate:storybook <name-of-component>\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("ol", {
-    "start": 4
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("li", {
     parentName: "ol"
   }, "Run the storybook to start developing")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("code", {
     parentName: "pre",
     "className": "language-shell"
   }, "yarn dev\n\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("ol", {
-    "start": 5
+    "start": 4
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("li", {
     parentName: "ol"
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .mdx */ .kt)("p", {
@@ -4978,7 +4971,12 @@ function MDXContent(_ref) {
     "className": "language-tsx"
   }, "import MaskedTextField from '@novatics/masked-text-field';\n\n<MaskedTextField\n  initialValue={123456789}\n  iMaskProps={{ mask: '000-000-000-000' }}\n  onChange={(e) => {\n    /* setup on change */\n  }}\n  {...args}\n/>;\n")), (0,esm/* mdx */.kt)("h3", {
     "id": "presets"
-  }, "Presets"), (0,esm/* mdx */.kt)("p", null, "It is possible to use the maskPreset attribute to use one of the pre-configured masks."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+  }, "Presets"), (0,esm/* mdx */.kt)("p", null, "It is possible to use the maskPreset attribute to use one of the ", (0,esm/* mdx */.kt)("a", {
+    parentName: "p",
+    "href": "https://github.com/Novatics/novatics-ui/blob/master/packages/masked-text-field/src/lib/mask-presets.ts",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
+  }, "pre-configured masks"), "."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
     mdxType: "Canvas"
   }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
     name: "Presets",
@@ -9105,4 +9103,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.1c78f3b2.iframe.bundle.js.map
+//# sourceMappingURL=main.6e6b1aa1.iframe.bundle.js.map

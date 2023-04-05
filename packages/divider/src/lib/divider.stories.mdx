@@ -1,0 +1,275 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {
+  Box,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Stack,
+  Typography,
+  Chip,
+} from '@mui/material';
+import pkg from '../../package.json';
+import Divider from './divider';
+const content = (
+  <Typography>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id
+    dignissim justo. Nulla ut facilisis ligula. Interdum et malesuada fames ac
+    ante ipsum primis in faucibus. Sed malesuada lobortis pretium.
+  </Typography>
+);
+
+<Meta title="Divider" component={Divider} />
+
+# Divider <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/divider`.
+
+```shell
+  yarn add -D @novatics/divider
+```
+
+### Dependencies
+
+This component extends [Material UI React Divider](https://mui.com/material-ui/react-divider/). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Divider {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import ... from '@novatics/divider';
+
+  ...
+
+
+```
+
+### Variations
+
+<Canvas>
+  <Story name="Variations">
+    <Grid container spacing={2}>
+      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>
+        <Stack>
+          <Typography>Full width</Typography>
+          <Paper elevation={5}>
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="Inbox" />
+              </ListItem>
+              <Divider variant="fullWidth" />
+              <ListItem button>
+                <ListItemText primary="Drafts" />
+              </ListItem>
+              <Divider variant="fullWidth" />
+              <ListItem button>
+                <ListItemText primary="Trash" />
+              </ListItem>
+              <Divider variant="fullWidth" />
+              <ListItem button>
+                <ListItemText primary="Spam" />
+              </ListItem>
+            </List>
+          </Paper>
+        </Stack>
+      </Grid>
+      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>
+        <Stack>
+          <Typography>Inset</Typography>
+          <Paper elevation={5}>
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="Inbox" />
+              </ListItem>
+              <Divider variant="inset" />
+              <ListItem button>
+                <ListItemText primary="Drafts" />
+              </ListItem>
+              <Divider variant="inset" />
+              <ListItem button>
+                <ListItemText primary="Trash" />
+              </ListItem>
+              <Divider variant="inset" />
+              <ListItem button>
+                <ListItemText primary="Spam" />
+              </ListItem>
+            </List>
+          </Paper>
+        </Stack>
+      </Grid>
+      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>
+        <Stack>
+          <Typography>Middle</Typography>
+          <Paper elevation={5}>
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="Inbox" />
+              </ListItem>
+              <Divider variant="middle" />
+              <ListItem button>
+                <ListItemText primary="Drafts" />
+              </ListItem>
+              <Divider variant="middle" />
+              <ListItem button>
+                <ListItemText primary="Trash" />
+              </ListItem>
+              <Divider variant="middle" />
+              <ListItem button>
+                <ListItemText primary="Spam" />
+              </ListItem>
+            </List>
+          </Paper>
+        </Stack>
+      </Grid>
+      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>
+        <Stack>
+          <Typography>String</Typography>
+          <Paper elevation={5}>
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="Inbox" />
+              </ListItem>
+              <Divider variant="string" />
+              <ListItem button>
+                <ListItemText primary="Drafts" />
+              </ListItem>
+              <Divider variant="string" />
+              <ListItem button>
+                <ListItemText primary="Trash" />
+              </ListItem>
+              <Divider variant="string" />
+              <ListItem button>
+                <ListItemText primary="Spam" />
+              </ListItem>
+            </List>
+          </Paper>
+        </Stack>
+      </Grid>
+    </Grid>
+  </Story>
+</Canvas>
+
+### Orientation
+
+<Canvas>
+  <Story name="Orientation">
+    <Grid container spacing={2}>
+      <Grid item xxs={6}>
+        <Stack>
+          <Typography>Horizontal</Typography>
+          <Paper elevation={5}>
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="fullWidth" />
+              </ListItem>
+              <Divider variant="fullWidth" />
+              <ListItem button>
+                <ListItemText primary="inset" />
+              </ListItem>
+              <Divider variant="inset" />
+              <ListItem button>
+                <ListItemText primary="middle" />
+              </ListItem>
+              <Divider variant="middle" />
+              <ListItem button>
+                <ListItemText primary="." />
+              </ListItem>
+            </List>
+          </Paper>
+        </Stack>
+      </Grid>
+      <Grid item xxs={6}>
+        <Stack height="100%">
+          <Typography>Vertical</Typography>
+          <Paper elevation={5} sx={{ flex: '1' }}>
+            <Stack
+              direction="row"
+              height="100%"
+              textAlign="center"
+              alignItems="center"
+            >
+              <Box height="50px" minWidth="50px" width="25%">
+                fullWidth >
+              </Box>
+              <Divider flexItem orientation="vertical" variant="fullWidth" />
+              <Box height="50px" minWidth="50px" width="25%">
+                middle >
+              </Box>
+              <Divider flexItem orientation="vertical" variant="middle" />
+              <Box height="50px" minWidth="50px" width="25%">
+                string >
+              </Box>
+              <Divider flexItem orientation="vertical" variant="string" />
+              <Box height="50px" minWidth="50px" width="25%">
+                .
+              </Box>
+            </Stack>
+          </Paper>
+        </Stack>
+      </Grid>
+    </Grid>
+  </Story>
+</Canvas>
+
+### With Text
+
+<Canvas>
+  <Story name="With Text">
+    <Stack spacing={4}>
+      {content}
+      <Divider>CENTER</Divider>
+      {content}
+      <Divider textAlign="left">LEFT</Divider>
+      {content}
+      <Divider textAlign="right">RIGHT</Divider>
+      {content}
+      <Divider>
+        <Chip label="CHIP" />
+      </Divider>
+      {content}
+    </Stack>
+  </Story>
+</Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Divider {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
+made by Novatics ❤

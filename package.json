@@ -10,8 +10,6 @@
     "nx": "nx",
     "dev": "nx storybook core",
     "build": "nx run-many --all --target=build",
-    "generate:component": "nx g lib --buildable --publishable --compiler=swc --style=@emotion/styled",
-    "generate:storybook": "nx g storybook-configuration --configureCypress=false --generateCypressSpecs=false --generateStories=true",
     "component:generate": "nx workspace-generator component",
     "prepare": "husky install",
     "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix",

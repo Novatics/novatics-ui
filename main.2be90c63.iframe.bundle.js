@@ -227,7 +227,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/checkbox/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.0.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(37509);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
@@ -984,7 +984,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/currency-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.0"};
+const package_namespaceObject = {"i8":"0.0.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var modules_es_object_assign = __webpack_require__(33130);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -5171,7 +5171,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/radio/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.0.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(37509);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
@@ -5766,7 +5766,7 @@ var client = __webpack_require__(96378);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Button/Button.js + 2 modules
 var Button = __webpack_require__(38864);
 ;// CONCATENATED MODULE: ./packages/styles/package.json
-const package_namespaceObject = {"i8":"0.1.0"};
+const package_namespaceObject = {"i8":"0.0.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__(21496);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
@@ -6937,7 +6937,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/wizard/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.0.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(16739);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
@@ -9103,4 +9103,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.ba7a544c.iframe.bundle.js.map
+//# sourceMappingURL=main.2be90c63.iframe.bundle.js.map

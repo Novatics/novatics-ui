@@ -1,7 +1,6 @@
 import { Components } from '@mui/material';
 import { palette as themePalette } from '../palette';
 import { themeTypography } from '../typography';
-import '../fonts.css';
 
 // This adds 50% transparency to hexadecimal colors
 const addTransparency = (color?: string): string => `${color}80`;

@@ -867,7 +867,7 @@ var dist_esm = __webpack_require__(50062);
 // EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
 var blocks = __webpack_require__(87143);
 ;// CONCATENATED MODULE: ./packages/core/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.0.0"};
 ;// CONCATENATED MODULE: ./packages/core/src/lib/core.stories.mdx
 
 
@@ -9103,4 +9103,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.e498432c.iframe.bundle.js.map
+//# sourceMappingURL=main.ba7a544c.iframe.bundle.js.map

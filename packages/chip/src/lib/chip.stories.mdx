@@ -40,13 +40,6 @@ The `Chip` component have two variants: it supports outlined and filled styling.
   </Story>
 </Canvas>
 
-```tsx
-import Chip from '@novatics/chip';
-
-<Chip label="Chip" />
-<Chip label="Chip" variant="outlined" />
-```
-
 ### Click interaction
 
 Chips can be clickable. In this case, it will have a hover and a click effect. It can be set by either passing the `clickable` prop or by passing a function to `onClick` prop.
@@ -74,15 +67,6 @@ Chips can be clickable. In this case, it will have a hover and a click effect. I
     }}
   </Story>
 </Canvas>
-
-```tsx
-<Chip label="Clickable Chip" clickable />
-<Chip
-  label="Click Me"
-  onClick={handleClick}
-  variant="outlined"
-/>
-```
 
 ### Delete interaction
 
@@ -113,17 +97,6 @@ A `Chip` can present a delete icon by passing a `onDelete` prop.
     }}
   </Story>
 </Canvas>
-
-```tsx
-<Chip label="Deletable Chip" onDelete={handleDelete} />
-<Chip label="Deletable Chip" onDelete={handleDelete} variant="outlined" />
-<Chip
-  label="Deletable and Clickable"
-  onDelete={handleDelete}
-  variant="outlined"
-  clickable
-/>
-```
 
 ### Size
 
@@ -157,24 +130,6 @@ A `Chip` can be small or medium. The default size is medium.
   </Story>
 </Canvas>
 
-```tsx
-<Chip label="Small" size="small" />
-<Chip label="Small" size="small" variant="outlined" />
-<Chip
-  label="Small"
-  size="small"
-  onClick={handleClick}
-  onDelete={handleDelete}
-/>
-<Chip
-  label="Small"
-  size="small"
-  onClick={handleClick}
-  onDelete={handleDelete}
-  variant="outlined"
-/>
-```
-
 ### Icon
 
 A `Chip` can also have an icon, always placed on left.
@@ -205,18 +160,6 @@ A `Chip` can also have an icon, always placed on left.
     }}
   </Story>
 </Canvas>
-
-```tsx
-<Chip label="Icon" icon={<ChairOutlinedIcon />} />
-<Chip label="Icon" icon={<ChairOutlinedIcon />} variant="outlined" />
-<Chip label="Icon" icon={<ChairOutlinedIcon />} size="small" />
-<Chip
-  label="Icon"
-  icon={<ChairOutlinedIcon />}
-  size="small"
-  variant="outlined"
-/>
-```
 
 ### Colors
 
@@ -326,24 +269,5 @@ A 'Chip' can display a range of colors in addition to the default.
     }}
   </Story>
 </Canvas>
-
-```tsx
-<Chip
-  label="Primary"
-  color="primary"
-  icon={<ChairOutlinedIcon />}
-  onDelete={handleDelete}
-  clickable
-/>
-<Chip
-  label="Info"
-  color="info"
-  icon={<ChairOutlinedIcon />}
-  onDelete={handleDelete}
-  clickable
-/>
-
-...
-```
 
 made by Novatics ❤

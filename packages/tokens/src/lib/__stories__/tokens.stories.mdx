@@ -9,24 +9,14 @@ import keys from 'lodash.keys';
 import includes from 'lodash.includes';
 import snakecase from 'lodash.snakecase';
 import startcase from 'lodash.startcase';
-import pkg from '../../package.json';
-import Tokens from './tokens';
-const LIGHTER_COLORS = ['newMoon', 'halo', 'supernova'];
-const formatColorName = (color) =>
-  startcase(snakecase(color)).replace('_', ' ');
-const getColorTextColor = (color) => {
-  if (includes(color, '--light')) return '#000000';
-  if (includes(LIGHTER_COLORS, color)) return '#000000';
-  return '#FFFFFF';
-};
-const defaultColors = keys(Tokens.colors)
-  .filter((color) => !includes(color, '--'))
-  .map((color) => formatColorName(color));
-const collator = new Intl.Collator(undefined, {
-  numeric: true,
-  sensitivity: 'base',
-});
-const sortedSpacings = keys(Tokens.spacings).sort(collator.compare);
+import pkg from '../../../package.json';
+import Tokens from '../tokens';
+import {
+  formatColorName,
+  getColorTextColor,
+  defaultColors,
+  sortedSpacings,
+} from './constants';
 
 <Meta title="Tokens" component={Tokens} />
 

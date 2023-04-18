@@ -7,7 +7,7 @@
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "src/lib/__stories__/constants.ts"],
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",

@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/core-0.1.0...core-0.1.1) (2023-04-19)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.1.1`
+* `radio` updated to version `0.1.1`
+* `styles` updated to version `0.2.0`
+* `tokens` updated to version `0.2.0`
 ## 0.1.0 (2023-04-06)
 
 ### Dependency Updates

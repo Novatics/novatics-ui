@@ -1,6 +1,6 @@
 {
   "name": "@novatics/masked-text-field",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "imask": "^6.4.3"
   },

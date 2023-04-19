@@ -6,9 +6,6 @@ import {
   Tree,
   installPackagesTask,
   updateJson,
-  readProjectConfiguration,
-  updateProjectConfiguration,
-  TargetConfiguration,
 } from '@nrwl/devkit';
 import { execSync } from 'child_process';
 import sortby from 'lodash.sortby';
@@ -16,9 +13,11 @@ import * as fs from 'fs';
 import * as util from 'util';
 
 interface ComponentSchemaOptions {
+  project?: string;
   name: string;
   mui?: boolean;
   buildable?: boolean;
+  bundler?: string;
   compiler?: string;
   style?: string;
   configureCypress?: boolean;
@@ -76,9 +75,11 @@ function createTargetsVersionDeploy(
 
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const {
+    project = "@novatics",
     name,
     mui,
     buildable = true,
+    bundler = 'rollup',
     compiler = 'swc',
     style = '@emotion/styled',
     configureCypress = false,
@@ -92,8 +93,12 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
   const { className, propertyName, constantName, fileName } = names(name);
 
-  let libArgs = `--compiler=${compiler} --style=${style}`;
-  if (buildable) libArgs = '--buildable --publishable' + libArgs;
+  console.log(className, propertyName, constantName, fileName);
+
+  // throw new Error()
+
+  let libArgs = `--compiler=${compiler} --style=${style} --bundler=${bundler} --importPath=${project}/${fileName}`;
+  if (buildable) libArgs = '--publishable ' + libArgs;
 
   const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
   console.log(outputLib.toString());

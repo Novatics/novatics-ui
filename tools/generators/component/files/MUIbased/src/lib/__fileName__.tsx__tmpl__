@@ -1,6 +1,6 @@
-import <%= className %>Mui, { <%= className %>Props } from '@mui/material/<%= className %>';
+import Mui<%= className %>, { <%= className %>Props } from '@mui/material/<%= className %>';
 
-const <%= className %> = (props: <%= className %>Props) => <<%= className %>Mui {...props} />;
+const <%= className %> = (props: <%= className %>Props) => <Mui<%= className %> {...props} />;
 
 export { <%= className %> };
 export default <%= className %>;

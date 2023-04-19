@@ -1,6 +1,18 @@
 import { SimplePaletteColorOptions, PaletteOptions } from '@mui/material';
 import { colors } from '@novatics/tokens';
 
+declare module '@mui/material' {
+  interface Color {
+    0: string;
+    5: string;
+    10: string;
+    20: string;
+    35: string;
+    50: string;
+    70: string;
+    85: string;
+  }
+}
 declare module '@mui/material/styles/createPalette' {
   interface SimplePaletteColorOptions {
     main: string;
@@ -94,6 +106,16 @@ export const palette: ColorsOptions = {
   support: {
     main: colors['universe'],
     light: colors['universe--light'],
+  },
+  grey: {
+    85: colors['blackHole'],
+    70: colors['eclipse'],
+    50: colors['penumbra'],
+    35: colors['spaceStation'],
+    20: colors['fullMoon'],
+    10: colors['newMoon'],
+    5: colors['halo'],
+    0: colors['supernova'],
   },
 };
 

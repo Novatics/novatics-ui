@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import CheckboxField from './checkbox-field';
+import pkg from '../../package.json';
+
+<Meta title="CheckboxField" component={CheckboxField} />
+
+# CheckboxField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/checkbox-field`.
+
+```shell
+  yarn add -D @novatics/checkbox-field
+```
+
+```shell
+  npm install --dev @novatics/checkbox-field
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/checkbox-field';
+
+  ...
+
+
+```
+
+### Dependencies
+
+This component extends [Material UI React Checkbox](https://mui.com/material-ui/react-checkbox/). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <CheckboxField label="my checkbox" typography="bodySmall" {...args} />
+          <CheckboxField
+            label="my checkbox"
+            typography="bodySmall"
+            hint="Click me hint"
+            {...args}
+          />
+          <CheckboxField
+            label="my checkbox"
+            typography="bodySmall"
+            error
+            {...args}
+          />
+          <CheckboxField
+            label="my checkbox"
+            typography="bodySmall"
+            error="please fix this"
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

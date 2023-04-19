@@ -237,8 +237,8 @@ var modules_es_object_assign = __webpack_require__(33130);
 var Checkbox = __webpack_require__(12370);
 // EXTERNAL MODULE: ./node_modules/@mui/icons-material/Check.js
 var Check = __webpack_require__(26021);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
-var src = __webpack_require__(48901);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
+var src = __webpack_require__(81285);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/checkbox/src/lib/checkbox.tsx
@@ -834,6 +834,673 @@ var __namedExportsOrder = ["basicUsage", "variations", "playground"];
 
 /***/ }),
 
+/***/ 48764:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
+  "basicUsage": () => (/* binding */ basicUsage),
+  "clickInteraction": () => (/* binding */ clickInteraction),
+  "colors": () => (/* binding */ colors),
+  "default": () => (/* binding */ chip_stories),
+  "deleteInteraction": () => (/* binding */ deleteInteraction),
+  "icon": () => (/* binding */ icon),
+  "size": () => (/* binding */ size)
+});
+
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.keys.js
+var es_object_keys = __webpack_require__(11350);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.array.index-of.js
+var es_array_index_of = __webpack_require__(47719);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.symbol.js
+var es_symbol = __webpack_require__(41821);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.function.bind.js
+var es_function_bind = __webpack_require__(25697);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.assign.js
+var es_object_assign = __webpack_require__(44604);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(89526);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
+var esm = __webpack_require__(85504);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/dist/esm/index.js
+var dist_esm = __webpack_require__(50062);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
+var blocks = __webpack_require__(87143);
+// EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
+var client = __webpack_require__(96378);
+;// CONCATENATED MODULE: ./packages/chip/package.json
+const package_namespaceObject = {"i":"0.0.1"};
+// EXTERNAL MODULE: ./node_modules/@mui/icons-material/ChairOutlined.js
+var ChairOutlined = __webpack_require__(29640);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Chip/Chip.js + 2 modules
+var Chip = __webpack_require__(75000);
+;// CONCATENATED MODULE: ./packages/chip/src/lib/chip.tsx
+
+
+
+/* harmony default export */ const chip = (Chip/* default */.Z);
+try {
+    // @ts-ignore
+    getChipUtilityClass.displayName = "getChipUtilityClass";
+    // @ts-ignore
+    getChipUtilityClass.__docgenInfo = { "description": "", "displayName": "getChipUtilityClass", "props": {} };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES["packages/chip/src/lib/chip.tsx#getChipUtilityClass"] = { docgenInfo: getChipUtilityClass.__docgenInfo, name: "getChipUtilityClass", path: "packages/chip/src/lib/chip.tsx#getChipUtilityClass" };
+}
+catch (__react_docgen_typescript_loader_error) { }
+;// CONCATENATED MODULE: ./packages/chip/src/lib/chip.stories.mdx
+
+
+
+
+var _excluded = ["components"];
+
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+/* @jsxRuntime classic */
+/* @jsx mdx */
+
+
+
+
+
+
+var layoutProps = {};
+var MDXLayout = "wrapper";
+function MDXContent(_ref) {
+  var components = _ref.components,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return (0,esm/* mdx */.kt)(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), (0,esm/* mdx */.kt)(blocks/* Meta */.h_, {
+    title: "Chip",
+    component: chip,
+    mdxType: "Meta"
+  }), (0,esm/* mdx */.kt)("h1", {
+    "id": "chip-img-srchttpsimgshieldsiobadgeversion-vpkgversion-brightgreenn-"
+  }, "Chip ", (0,esm/* mdx */.kt)("img", {
+    src: "https://img.shields.io/badge/Version-v" + package_namespaceObject.i + "-brightgreenn"
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "installation"
+  }, "Installation"), (0,esm/* mdx */.kt)("p", null, "First install the latest version of the package from ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "@novatics/chip"), "."), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-shell"
+  }, "  yarn add -D @novatics/chip\n")), (0,esm/* mdx */.kt)("h3", {
+    "id": "basic-usage"
+  }, "Basic Usage"), (0,esm/* mdx */.kt)("p", null, "The ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "Chip"), " component have two variants: it supports outlined and filled styling. The default variant is filled."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Basic Usage",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Chip",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Chip",
+      variant: "outlined",
+      mdxType: "Chip"
+    }));
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "click-interaction"
+  }, "Click interaction"), (0,esm/* mdx */.kt)("p", null, "Chips can be clickable. In this case, it will have a hover and a click effect. It can be set by either passing the ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "clickable"), " prop or by passing a function to ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "onClick"), " prop."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Click interaction",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Clickable Chip",
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Click Me",
+      onClick: function onClick() {
+        return window.alert('Hi! :)');
+      },
+      variant: "outlined",
+      mdxType: "Chip"
+    }));
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "delete-interaction"
+  }, "Delete interaction"), (0,esm/* mdx */.kt)("p", null, "A ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "Chip"), " can present a delete icon by passing a ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "onDelete"), " prop."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Delete interaction",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Deletable Chip",
+      onDelete: function onDelete() {},
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Deletable Chip",
+      onDelete: function onDelete() {},
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Deletable and Clickable",
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    }));
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "size"
+  }, "Size"), (0,esm/* mdx */.kt)("p", null, "A ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "Chip"), " can be small or medium. The default size is medium."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Size",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Small",
+      size: "small",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Small",
+      size: "small",
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Small",
+      size: "small",
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Small",
+      size: "small",
+      onDelete: function onDelete() {},
+      variant: "outlined",
+      clickable: true,
+      mdxType: "Chip"
+    }));
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "icon"
+  }, "Icon"), (0,esm/* mdx */.kt)("p", null, "A ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "Chip"), " can also have an icon, always placed on left."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Icon",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Icon",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Icon",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Icon",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      size: "small",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Icon",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      size: "small",
+      variant: "outlined",
+      mdxType: "Chip"
+    }));
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "colors"
+  }, "Colors"), (0,esm/* mdx */.kt)("p", null, "A 'Chip' can display a range of colors in addition to the default."), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Colors",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)(react.Fragment, null, (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px',
+        marginBottom: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Primary",
+      color: "primary",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Info",
+      color: "info",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Success",
+      color: "success",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Error",
+      color: "error",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Warning",
+      color: "warning",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      mdxType: "Chip"
+    })), (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px'
+      }
+    }, (0,esm/* mdx */.kt)(chip, {
+      label: "Primary",
+      color: "primary",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Info",
+      color: "info",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Success",
+      color: "success",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Error",
+      color: "error",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    }), (0,esm/* mdx */.kt)(chip, {
+      label: "Warning",
+      color: "warning",
+      icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, {
+        mdxType: "ChairOutlinedIcon"
+      }),
+      onDelete: function onDelete() {},
+      clickable: true,
+      variant: "outlined",
+      mdxType: "Chip"
+    })));
+  })), (0,esm/* mdx */.kt)("p", null, "made by Novatics \u2764"));
+}
+MDXContent.displayName = "MDXContent";
+;
+MDXContent.isMDXComponent = true;
+var basicUsage = function basicUsage(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Chip"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Chip",
+    variant: "outlined"
+  }));
+};
+basicUsage.displayName = "basicUsage";
+basicUsage.storyName = 'Basic Usage';
+basicUsage.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\',\n    alignItems: \'center\',\n    gap: \'10px\'\n  }}>\n          <Chip label=\"Chip\" />\n          <Chip label=\"Chip\" variant=\"outlined\" />\n        </div>;\n}'
+  }
+};
+var clickInteraction = function clickInteraction(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Clickable Chip",
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Click Me",
+    onClick: function onClick() {
+      return window.alert('Hi! :)');
+    },
+    variant: "outlined"
+  }));
+};
+clickInteraction.displayName = "clickInteraction";
+clickInteraction.storyName = 'Click interaction';
+clickInteraction.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\',\n    alignItems: \'center\',\n    gap: \'10px\'\n  }}>\n          <Chip label=\"Clickable Chip\" clickable />\n          <Chip label=\"Click Me\" onClick={() => window.alert(\'Hi! :)\')} variant=\"outlined\" />\n        </div>;\n}'
+  }
+};
+var deleteInteraction = function deleteInteraction(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Deletable Chip",
+    onDelete: function onDelete() {}
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Deletable Chip",
+    onDelete: function onDelete() {},
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Deletable and Clickable",
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  }));
+};
+deleteInteraction.displayName = "deleteInteraction";
+deleteInteraction.storyName = 'Delete interaction';
+deleteInteraction.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\',\n    alignItems: \'center\',\n    gap: \'10px\'\n  }}>\n          <Chip label=\"Deletable Chip\" onDelete={() => {}} />\n          <Chip label=\"Deletable Chip\" onDelete={() => {}} variant=\"outlined\" />\n          <Chip label=\"Deletable and Clickable\" onDelete={() => {}} clickable variant=\"outlined\" />\n        </div>;\n}'
+  }
+};
+var size = function size(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Small",
+    size: "small"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Small",
+    size: "small",
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Small",
+    size: "small",
+    onDelete: function onDelete() {},
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Small",
+    size: "small",
+    onDelete: function onDelete() {},
+    variant: "outlined",
+    clickable: true
+  }));
+};
+size.displayName = "size";
+size.storyName = 'Size';
+size.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\',\n    alignItems: \'center\',\n    gap: \'10px\'\n  }}>\n          <Chip label=\"Small\" size=\"small\" />\n          <Chip label=\"Small\" size=\"small\" variant=\"outlined\" />\n          <Chip label=\"Small\" size=\"small\" onDelete={() => {}} clickable />\n          <Chip label=\"Small\" size=\"small\" onDelete={() => {}} variant=\"outlined\" clickable />\n        </div>;\n}'
+  }
+};
+var icon = function icon(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Icon",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null)
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Icon",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Icon",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    size: "small"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Icon",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    size: "small",
+    variant: "outlined"
+  }));
+};
+icon.displayName = "icon";
+icon.storyName = 'Icon';
+icon.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\',\n    alignItems: \'center\',\n    gap: \'10px\'\n  }}>\n          <Chip label=\"Icon\" icon={<ChairOutlinedIcon />} />\n          <Chip label=\"Icon\" icon={<ChairOutlinedIcon />} variant=\"outlined\" />\n          <Chip label=\"Icon\" icon={<ChairOutlinedIcon />} size=\"small\" />\n          <Chip label=\"Icon\" icon={<ChairOutlinedIcon />} size=\"small\" variant=\"outlined\" />\n        </div>;\n}'
+  }
+};
+var colors = function colors(args) {
+  return (0,esm/* mdx */.kt)(react.Fragment, null, (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px',
+      marginBottom: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Primary",
+    color: "primary",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Info",
+    color: "info",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Success",
+    color: "success",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Error",
+    color: "error",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Warning",
+    color: "warning",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true
+  })), (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: '10px'
+    }
+  }, (0,esm/* mdx */.kt)(chip, {
+    label: "Primary",
+    color: "primary",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Info",
+    color: "info",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Success",
+    color: "success",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Error",
+    color: "error",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  }), (0,esm/* mdx */.kt)(chip, {
+    label: "Warning",
+    color: "warning",
+    icon: (0,esm/* mdx */.kt)(ChairOutlined/* default */.Z, null),
+    onDelete: function onDelete() {},
+    clickable: true,
+    variant: "outlined"
+  })));
+};
+colors.storyName = 'Colors';
+colors.parameters = {
+  storySource: {
+    source: 'args => {\n  return <>\n          <div style={{\n      display: \'flex\',\n      flexDirection: \'row\',\n      alignItems: \'center\',\n      gap: \'10px\',\n      marginBottom: \'10px\'\n    }}>\n            <Chip label=\"Primary\" color=\"primary\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable />\n            <Chip label=\"Info\" color=\"info\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable />\n            <Chip label=\"Success\" color=\"success\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable />\n            <Chip label=\"Error\" color=\"error\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable />\n            <Chip label=\"Warning\" color=\"warning\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable />\n          </div>\n          <div style={{\n      display: \'flex\',\n      flexDirection: \'row\',\n      alignItems: \'center\',\n      gap: \'10px\'\n    }}>\n            <Chip label=\"Primary\" color=\"primary\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable variant=\"outlined\" />\n            <Chip label=\"Info\" color=\"info\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable variant=\"outlined\" />\n            <Chip label=\"Success\" color=\"success\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable variant=\"outlined\" />\n            <Chip label=\"Error\" color=\"error\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable variant=\"outlined\" />\n            <Chip label=\"Warning\" color=\"warning\" icon={<ChairOutlinedIcon />} onDelete={() => {}} clickable variant=\"outlined\" />\n          </div>\n        </>;\n}'
+  }
+};
+var componentMeta = {
+  title: 'Chip',
+  component: chip,
+  includeStories: ["basicUsage", "clickInteraction", "deleteInteraction", "size", "icon", "colors"]
+};
+var mdxStoryNameToKey = {
+  "Basic Usage": "basicUsage",
+  "Click interaction": "clickInteraction",
+  "Delete interaction": "deleteInteraction",
+  "Size": "size",
+  "Icon": "icon",
+  "Colors": "colors"
+};
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = Object.assign({}, componentMeta.parameters.docs || {}, {
+  page: function page() {
+    return (0,esm/* mdx */.kt)(dist_esm/* AddContext */.aT, {
+      mdxStoryNameToKey: mdxStoryNameToKey,
+      mdxComponentAnnotations: componentMeta
+    }, (0,esm/* mdx */.kt)(MDXContent, null));
+  }
+});
+/* harmony default export */ const chip_stories = (componentMeta);
+var __namedExportsOrder = ["basicUsage", "clickInteraction", "deleteInteraction", "size", "icon", "colors"];
+
+/***/ }),
+
 /***/ 4549:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -867,7 +1534,7 @@ var dist_esm = __webpack_require__(50062);
 // EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
 var blocks = __webpack_require__(87143);
 ;// CONCATENATED MODULE: ./packages/core/package.json
-const package_namespaceObject = {"i":"0.0.0"};
+const package_namespaceObject = {"i":"0.1.0"};
 ;// CONCATENATED MODULE: ./packages/core/src/lib/core.stories.mdx
 
 
@@ -5181,8 +5848,8 @@ var modules_es_object_assign = __webpack_require__(33130);
 var deepmerge = __webpack_require__(83643);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Radio/Radio.js + 6 modules
 var Radio_Radio = __webpack_require__(5301);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
-var src = __webpack_require__(48901);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
+var src = __webpack_require__(81285);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/radio/src/lib/radio.tsx
@@ -5795,8 +6462,8 @@ var Grid = __webpack_require__(50871);
 var Box = __webpack_require__(98356);
 // EXTERNAL MODULE: ./packages/tokens/src/index.ts
 var src = __webpack_require__(31530);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 8 modules
-var styles_src = __webpack_require__(48901);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
+var styles_src = __webpack_require__(81285);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/stories/grid-breakpoints.tsx
@@ -8089,7 +8756,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _storybook_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96378);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16340);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48901);
+/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81285);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(67557);
 
 
@@ -8323,7 +8990,7 @@ Object.keys(preview_namespaceObject).forEach(function (key) {
 
 /***/ }),
 
-/***/ 48901:
+/***/ 81285:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8390,6 +9057,10 @@ var palette_palette = {
     main: src/* colors.mars */.O9.mars,
     dark: src/* colors.mars--dark */.O9["mars--dark"],
     light: src/* colors.mars--light */.O9["mars--light"]
+  },
+  support: {
+    main: src/* colors.universe */.O9.universe,
+    light: src/* colors.universe--light */.O9["universe--light"]
   }
 };
 /* harmony default export */ const palette = ((/* unused pure expression or super */ null && (palette_palette)));
@@ -8457,7 +9128,8 @@ var themeTypography = typographies.reduce(function (acc, curr) {
   acc[curr] = {
     fontWeight: src/* typography.typography */.cp.typography[curr].fontWeight,
     fontSize: src/* typography.typography */.cp.typography[curr].fontSize.rem + "rem",
-    lineHeight: src/* typography.typography */.cp.typography[curr].lineHeight
+    lineHeight: src/* typography.typography */.cp.typography[curr].lineHeight,
+    fontFamily: src/* typography.typography */.cp.typography[curr].fontFamily
   };
   return acc;
 }, {});
@@ -8505,9 +9177,135 @@ var themeBreakpoints = {
     xxl: 1728
   }
 };
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.date.to-string.js
+var es_date_to_string = __webpack_require__(39180);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.to-string.js
+var es_regexp_to_string = __webpack_require__(33290);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.to-string.js
+var modules_es_object_to_string = __webpack_require__(22534);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.regexp.to-string.js
+var modules_es_regexp_to_string = __webpack_require__(55833);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.date.to-string.js
+var modules_es_date_to_string = __webpack_require__(65027);
+;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/util.ts
+
+
+
+
+
+
+var addTransparency = function addTransparency(color) {
+  var alpha = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.5;
+  var maxAlpha = 255;
+  var alphaHex = Math.ceil(maxAlpha * alpha).toString(16);
+  return "" + color + alphaHex;
+};
+;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/components/MuiChip.ts
+
+
+
+
+
+var selectColor = function selectColor(color, variant) {
+  var _themePalette$primary, _themePalette$color, _themePalette$warning, _themePalette$warning2, _themePalette$support, _themePalette$graySca;
+  switch (color) {
+    case 'primary':
+      return (_themePalette$primary = palette_palette.primary) === null || _themePalette$primary === void 0 ? void 0 : _themePalette$primary.main;
+    case 'success':
+    case 'error':
+      return (_themePalette$color = palette_palette[color]) === null || _themePalette$color === void 0 ? void 0 : _themePalette$color.dark;
+    case 'warning':
+      return variant === 'outlined' ? (_themePalette$warning = palette_palette.warning) === null || _themePalette$warning === void 0 ? void 0 : _themePalette$warning.main : (_themePalette$warning2 = palette_palette.warning) === null || _themePalette$warning2 === void 0 ? void 0 : _themePalette$warning2.dark;
+    case 'info':
+      return (_themePalette$support = palette_palette.support) === null || _themePalette$support === void 0 ? void 0 : _themePalette$support.main;
+    default:
+      return (_themePalette$graySca = palette_palette.grayScale) === null || _themePalette$graySca === void 0 ? void 0 : _themePalette$graySca.eclipse;
+  }
+};
+var selectBackgroundColor = function selectBackgroundColor(color) {
+  var _themePalette$color2, _themePalette$support2, _themePalette$graySca2;
+  switch (color) {
+    case 'primary':
+    case 'success':
+    case 'warning':
+    case 'error':
+      return (_themePalette$color2 = palette_palette[color]) === null || _themePalette$color2 === void 0 ? void 0 : _themePalette$color2.light;
+    case 'info':
+      return (_themePalette$support2 = palette_palette.support) === null || _themePalette$support2 === void 0 ? void 0 : _themePalette$support2.light;
+    default:
+      return (_themePalette$graySca2 = palette_palette.grayScale) === null || _themePalette$graySca2 === void 0 ? void 0 : _themePalette$graySca2.newMoon;
+  }
+};
+var MuiChip = {
+  styleOverrides: {
+    root: function root(_ref) {
+      var ownerState = _ref.ownerState;
+      return {
+        backgroundColor: selectBackgroundColor(ownerState.color),
+        color: selectColor(ownerState.color, ownerState.variant),
+        borderColor: selectBackgroundColor(ownerState.color),
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        padding: '6px 8px',
+        transition: '0.3s'
+      };
+    },
+    sizeSmall: {
+      padding: '2px 4px'
+    },
+    outlined: function outlined(_ref2) {
+      var ownerState = _ref2.ownerState;
+      return {
+        backgroundColor: 'transparent',
+        borderColor: addTransparency(selectColor(ownerState.color, ownerState.variant))
+      };
+    },
+    label: Object.assign({}, themeTypography.caption, {
+      fontWeight: 500,
+      padding: '0 4px'
+    }),
+    icon: function icon(_ref3) {
+      var ownerState = _ref3.ownerState;
+      return {
+        height: '20px',
+        width: '20px',
+        margin: '0 0 0 4px',
+        color: selectColor(ownerState.color, ownerState.variant)
+      };
+    },
+    deleteIcon: function deleteIcon(_ref4) {
+      var ownerState = _ref4.ownerState;
+      return {
+        height: '20px',
+        width: '20px',
+        margin: '0 0 0 4px',
+        color: selectColor(ownerState.color, ownerState.variant),
+        transition: '0.3s',
+        '&:hover': {
+          color: addTransparency(selectColor(ownerState.color, ownerState.variant))
+        }
+      };
+    },
+    clickable: function clickable(_ref5) {
+      var ownerState = _ref5.ownerState;
+      return {
+        '&:hover': {
+          backgroundColor: selectBackgroundColor(ownerState.color) + " !important",
+          // This is needed to override the default hover color since MUI doesn't use .MuiChip-clickable for this
+          color: selectColor(ownerState.color),
+          borderColor: addTransparency(selectColor(ownerState.color)),
+          borderWidth: '1px',
+          borderStyle: 'solid'
+        }
+      };
+    }
+  }
+};
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/createTheme.ts
 
 var _excluded = ["components", "palette"];
+
+
 
 
 
@@ -8538,7 +9336,9 @@ var createTheme = function createTheme(options) {
       return Number(factor) * 0.5 + "rem";
     },
     customShadows: themeShadows,
-    components: Object.assign({}, componentsInput)
+    components: Object.assign({}, componentsInput, {
+      MuiChip: MuiChip
+    })
   }, others)].concat(args));
 };
 /* harmony default export */ const lib_createTheme = ((/* unused pure expression or super */ null && (createTheme)));
@@ -8581,7 +9381,7 @@ __webpack_require__.d(__webpack_exports__, {
 // UNUSED EXPORTS: spacings
 
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/colors.json
-const colors_namespaceObject = JSON.parse('{"nebula":"#832AF5","nebula--dark":"#5D23C9","nebula--medium":"#BD8BFF","nebula--light":"#F6EEFF","sunlight":"#FFCC00","sunlight--dark":"#FFB500","sunlight--medium":"#FFD940","sunlight--light":"#FFF2BF","cosmos":"#371C9D ","cosmos--dark":"#2E2161","cosmos--medium":"#6E53D1","cosmos--light":"#E1DEF5","blackHole":"#252525","eclipse":"#515151","penumbra":"#808080","spaceStation":"#A6A6A6","fullMoon":"#CCCCCC","newMoon":"#E6E6E6","halo":"#F5F5F5","supernova":"#FFFFFF","aurora":"#00D038","aurora--dark":"#00701E","aurora--light":"#E6FBEC","bigBang":"#FF9D00","bigBang--dark":"#8A5500","bigBang--light":"#FFF6E6","mars":"#FF2A0D","mars--dark":"#A30000","mars--light":"#FFEFE7","universe":"#0D0DFF"}');
+const colors_namespaceObject = JSON.parse('{"nebula":"#832AF5","nebula--dark":"#5D23C9","nebula--medium":"#BD8BFF","nebula--light":"#F6EEFF","sunlight":"#FFCC00","sunlight--dark":"#FFB500","sunlight--medium":"#FFD940","sunlight--light":"#FFF2BF","cosmos":"#371C9D ","cosmos--dark":"#2E2161","cosmos--medium":"#6E53D1","cosmos--light":"#E1DEF5","blackHole":"#252525","eclipse":"#515151","penumbra":"#808080","spaceStation":"#A6A6A6","fullMoon":"#CCCCCC","newMoon":"#E6E6E6","halo":"#F5F5F5","supernova":"#FFFFFF","aurora":"#00D038","aurora--dark":"#00701E","aurora--light":"#E6FBEC","bigBang":"#FF9D00","bigBang--dark":"#8A5500","bigBang--light":"#FFF6E6","mars":"#FF2A0D","mars--dark":"#A30000","mars--light":"#FFEFE7","universe":"#0D0DFF","universe--light":"#EBEBFF"}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/border-radius.json
 const border_radius_namespaceObject = JSON.parse('{"small":{"px":8,"rem":0.5},"regular":{"px":16,"rem":1},"large":{"px":24,"rem":1.5}}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/shadows.json
@@ -8638,6 +9438,7 @@ module.exports = webpackEmptyContext;
 
 var map = {
 	"./checkbox/src/lib/checkbox.stories.mdx": 3359,
+	"./chip/src/lib/chip.stories.mdx": 48764,
 	"./core/src/lib/core.stories.mdx": 4549,
 	"./currency-text-field/src/lib/currency-text-field.stories.mdx": 54101,
 	"./masked-text-field/src/lib/masked-text-field.stories.mdx": 47642,
@@ -9087,20 +9888,20 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(47097)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(50904)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(97319)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(1401)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(22917)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(73663)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(29329)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(36268)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(27481)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(33837)))
-/******/ 	__webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(65706)))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [455,774,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(77215)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(47097)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(50904)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(97319)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(1401)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(22917)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(73663)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(29329)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(36268)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(27481)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(33837)))
+/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(65706)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(77215)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.ba7a544c.iframe.bundle.js.map
+//# sourceMappingURL=main.d68cf8c7.iframe.bundle.js.map

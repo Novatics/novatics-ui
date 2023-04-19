@@ -11,15 +11,9 @@ import {
   Typography,
   Chip,
 } from '@mui/material';
-import pkg from '../../package.json';
-import Divider from './divider';
-const content = (
-  <Typography>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id
-    dignissim justo. Nulla ut facilisis ligula. Interdum et malesuada fames ac
-    ante ipsum primis in faucibus. Sed malesuada lobortis pretium.
-  </Typography>
-);
+import pkg from '../../../package.json';
+import Divider from '../divider';
+import { Content } from './Content';
 
 <Meta title="Divider" component={Divider} />
 
@@ -45,21 +39,26 @@ yarn add @mui/material
 
 <Canvas>
   <Story name="Basic Usage">
-    {(args) => {
-      return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Divider {...args} />
-        </div>
-      );
-    }}
+    <div>
+      <ListItem button>
+        <ListItemText primary="Inbox" />
+      </ListItem>
+      <Divider variant="fullWidth" />
+      <ListItem button>
+        <ListItemText primary="Drafts" />
+      </ListItem>
+    </div>
   </Story>
 </Canvas>
 
 ```tsx
-import ... from '@novatics/divider';
+import Divider from '@novatics/divider';
 
-  ...
-
+...
+       <div>
+          <Divider {...args} />
+        </div>
+...
 
 ```
 
@@ -235,17 +234,17 @@ import ... from '@novatics/divider';
 <Canvas>
   <Story name="With Text">
     <Stack spacing={4}>
-      {content}
+      <Content />
       <Divider>CENTER</Divider>
-      {content}
+      <Content />
       <Divider textAlign="left">LEFT</Divider>
-      {content}
+      <Content />
       <Divider textAlign="right">RIGHT</Divider>
-      {content}
+      <Content />
       <Divider>
         <Chip label="CHIP" />
       </Divider>
-      {content}
+      <Content />
     </Stack>
   </Story>
 </Canvas>
@@ -262,8 +261,14 @@ import ... from '@novatics/divider';
   >
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Divider {...args} />
+        <div>
+          <ListItem button>
+            <ListItemText primary="Inbox" />
+          </ListItem>
+          <Divider variant="fullWidth" {...args} />
+          <ListItem button>
+            <ListItemText primary="Drafts" />
+          </ListItem>
         </div>
       );
     }}

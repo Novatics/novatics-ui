@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/tokens-0.1.0...tokens-0.2.0) (2023-04-19)
+
+
+### Features
+
+* **chip:** fix merge conflicts ([9102b70](https://github.com/Novatics/novatics-ui/commit/9102b70bb133636fd9aeb3e12dfe0b3fbed3d58b))
+* **divider:** implement divider ([cc841e0](https://github.com/Novatics/novatics-ui/commit/cc841e0783e930fbcf714c10b5c237f84ba6466e))
+
 ## 0.1.0 (2023-04-06)
 
 

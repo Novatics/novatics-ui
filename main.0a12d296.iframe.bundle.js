@@ -1534,7 +1534,7 @@ var dist_esm = __webpack_require__(50062);
 // EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
 var blocks = __webpack_require__(87143);
 ;// CONCATENATED MODULE: ./packages/core/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.0"};
 ;// CONCATENATED MODULE: ./packages/core/src/lib/core.stories.mdx
 
 
@@ -5436,7 +5436,7 @@ var Box = __webpack_require__(98356);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Chip/Chip.js + 2 modules
 var Chip = __webpack_require__(75000);
 ;// CONCATENATED MODULE: ./packages/divider/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.0.1"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var modules_es_object_assign = __webpack_require__(33130);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Divider/Divider.js + 1 modules
@@ -10827,4 +10827,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.228d0cfd.iframe.bundle.js.map
+//# sourceMappingURL=main.0a12d296.iframe.bundle.js.map

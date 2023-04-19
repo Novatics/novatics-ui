@@ -237,8 +237,8 @@ var modules_es_object_assign = __webpack_require__(33130);
 var Checkbox = __webpack_require__(12370);
 // EXTERNAL MODULE: ./node_modules/@mui/icons-material/Check.js
 var Check = __webpack_require__(26021);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
-var src = __webpack_require__(81285);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 11 modules
+var src = __webpack_require__(14202);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/checkbox/src/lib/checkbox.tsx
@@ -4952,8 +4952,8 @@ var modules_es_string_replace = __webpack_require__(53427);
 var modules_es_regexp_exec = __webpack_require__(90520);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Box/Box.js + 1 modules
 var Box = __webpack_require__(98356);
-// EXTERNAL MODULE: ./node_modules/@mui/material/TextField/TextField.js + 51 modules
-var TextField = __webpack_require__(91519);
+// EXTERNAL MODULE: ./node_modules/@mui/material/TextField/TextField.js + 48 modules
+var TextField = __webpack_require__(79456);
 // EXTERNAL MODULE: ./node_modules/currency.js/dist/currency.min.js
 var currency_min = __webpack_require__(10321);
 var currency_min_default = /*#__PURE__*/__webpack_require__.n(currency_min);
@@ -5379,6 +5379,877 @@ var __namedExportsOrder = ["basicUsage", "currencyPreset", "customProps", "playg
 
 /***/ }),
 
+/***/ 56936:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "__namedExportsOrder": () => (/* binding */ __namedExportsOrder),
+  "basicUsage": () => (/* binding */ basicUsage),
+  "default": () => (/* binding */ divider_stories),
+  "orientation": () => (/* binding */ orientation),
+  "playground": () => (/* binding */ playground),
+  "variations": () => (/* binding */ variations),
+  "withText": () => (/* binding */ withText)
+});
+
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.keys.js
+var es_object_keys = __webpack_require__(11350);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.array.index-of.js
+var es_array_index_of = __webpack_require__(47719);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.symbol.js
+var es_symbol = __webpack_require__(41821);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.function.bind.js
+var es_function_bind = __webpack_require__(25697);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.assign.js
+var es_object_assign = __webpack_require__(44604);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(89526);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
+var esm = __webpack_require__(85504);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/dist/esm/index.js
+var dist_esm = __webpack_require__(50062);
+// EXTERNAL MODULE: ./node_modules/@storybook/addon-docs/blocks.js
+var blocks = __webpack_require__(87143);
+// EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
+var client = __webpack_require__(96378);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Typography/Typography.js + 1 modules
+var Typography = __webpack_require__(19855);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Grid/Grid.js + 2 modules
+var Grid = __webpack_require__(50871);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Stack/Stack.js + 1 modules
+var Stack = __webpack_require__(38882);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Paper/Paper.js + 2 modules
+var Paper = __webpack_require__(77290);
+// EXTERNAL MODULE: ./node_modules/@mui/material/List/List.js + 1 modules
+var List = __webpack_require__(81445);
+// EXTERNAL MODULE: ./node_modules/@mui/material/ListItem/ListItem.js + 4 modules
+var ListItem = __webpack_require__(86041);
+// EXTERNAL MODULE: ./node_modules/@mui/material/ListItemText/ListItemText.js + 1 modules
+var ListItemText = __webpack_require__(85756);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Box/Box.js + 1 modules
+var Box = __webpack_require__(98356);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Chip/Chip.js + 2 modules
+var Chip = __webpack_require__(75000);
+;// CONCATENATED MODULE: ./packages/divider/package.json
+const package_namespaceObject = {"i":"0.0.1"};
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
+var modules_es_object_assign = __webpack_require__(33130);
+// EXTERNAL MODULE: ./node_modules/@mui/material/Divider/Divider.js + 1 modules
+var Divider_Divider = __webpack_require__(70751);
+// EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
+var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
+;// CONCATENATED MODULE: ./packages/divider/src/lib/divider.tsx
+
+
+
+
+var Divider = function Divider(props) {
+  return (0,emotion_react_jsx_runtime_browser_esm/* jsx */.tZ)(Divider_Divider/* default */.Z, Object.assign({}, props));
+};
+Divider.displayName = "Divider";
+
+/* harmony default export */ const lib_divider = (Divider);
+
+try {
+    // @ts-ignore
+    Divider.displayName = "Divider";
+    // @ts-ignore
+    Divider.__docgenInfo = { "description": "", "displayName": "Divider", "props": { "absolute": { "defaultValue": { value: "false" }, "description": "Absolutely position the element.", "name": "absolute", "required": false, "type": { "name": "boolean" } }, "children": { "defaultValue": null, "description": "The content of the component.", "name": "children", "required": false, "type": { "name": "ReactNode" } }, "classes": { "defaultValue": null, "description": "Override or extend the styles applied to the component.", "name": "classes", "required": false, "type": { "name": "Partial<DividerClasses> & Partial<ClassNameMap<never>>" } }, "flexItem": { "defaultValue": { value: "false" }, "description": "If `true`, a vertical divider will have the correct height when used in flex container.\n(By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)", "name": "flexItem", "required": false, "type": { "name": "boolean" } }, "light": { "defaultValue": { value: "false" }, "description": "If `true`, the divider will have a lighter color.", "name": "light", "required": false, "type": { "name": "boolean" } }, "orientation": { "defaultValue": { value: "'horizontal'" }, "description": "The component orientation.", "name": "orientation", "required": false, "type": { "name": "enum", "value": [{ "value": "\"horizontal\"" }, { "value": "\"vertical\"" }] } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } }, "textAlign": { "defaultValue": { value: "'center'" }, "description": "The text alignment.", "name": "textAlign", "required": false, "type": { "name": "enum", "value": [{ "value": "\"center\"" }, { "value": "\"left\"" }, { "value": "\"right\"" }] } }, "variant": { "defaultValue": { value: "'fullWidth'" }, "description": "The variant to use.", "name": "variant", "required": false, "type": { "name": "enum", "value": [{ "value": "\"inset\"" }, { "value": "\"fullWidth\"" }, { "value": "\"middle\"" }] } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<HTMLHRElement>" } } } };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES["packages/divider/src/lib/divider.tsx#Divider"] = { docgenInfo: Divider.__docgenInfo, name: "Divider", path: "packages/divider/src/lib/divider.tsx#Divider" };
+}
+catch (__react_docgen_typescript_loader_error) { }
+try {
+    // @ts-ignore
+    divider.displayName = "divider";
+    // @ts-ignore
+    divider.__docgenInfo = { "description": "", "displayName": "divider", "props": { "absolute": { "defaultValue": { value: "false" }, "description": "Absolutely position the element.", "name": "absolute", "required": false, "type": { "name": "boolean" } }, "children": { "defaultValue": null, "description": "The content of the component.", "name": "children", "required": false, "type": { "name": "ReactNode" } }, "classes": { "defaultValue": null, "description": "Override or extend the styles applied to the component.", "name": "classes", "required": false, "type": { "name": "Partial<DividerClasses> & Partial<ClassNameMap<never>>" } }, "flexItem": { "defaultValue": { value: "false" }, "description": "If `true`, a vertical divider will have the correct height when used in flex container.\n(By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)", "name": "flexItem", "required": false, "type": { "name": "boolean" } }, "light": { "defaultValue": { value: "false" }, "description": "If `true`, the divider will have a lighter color.", "name": "light", "required": false, "type": { "name": "boolean" } }, "orientation": { "defaultValue": { value: "'horizontal'" }, "description": "The component orientation.", "name": "orientation", "required": false, "type": { "name": "enum", "value": [{ "value": "\"horizontal\"" }, { "value": "\"vertical\"" }] } }, "sx": { "defaultValue": null, "description": "The system prop that allows defining system overrides as well as additional CSS styles.", "name": "sx", "required": false, "type": { "name": "SxProps<Theme>" } }, "textAlign": { "defaultValue": { value: "'center'" }, "description": "The text alignment.", "name": "textAlign", "required": false, "type": { "name": "enum", "value": [{ "value": "\"center\"" }, { "value": "\"left\"" }, { "value": "\"right\"" }] } }, "variant": { "defaultValue": { value: "'fullWidth'" }, "description": "The variant to use.", "name": "variant", "required": false, "type": { "name": "enum", "value": [{ "value": "\"inset\"" }, { "value": "\"fullWidth\"" }, { "value": "\"middle\"" }] } }, "ref": { "defaultValue": null, "description": "", "name": "ref", "required": false, "type": { "name": "Ref<HTMLHRElement>" } } } };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES["packages/divider/src/lib/divider.tsx#divider"] = { docgenInfo: divider.__docgenInfo, name: "divider", path: "packages/divider/src/lib/divider.tsx#divider" };
+}
+catch (__react_docgen_typescript_loader_error) { }
+try {
+    // @ts-ignore
+    getDividerUtilityClass.displayName = "getDividerUtilityClass";
+    // @ts-ignore
+    getDividerUtilityClass.__docgenInfo = { "description": "", "displayName": "getDividerUtilityClass", "props": {} };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== "undefined")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES["packages/divider/src/lib/divider.tsx#getDividerUtilityClass"] = { docgenInfo: getDividerUtilityClass.__docgenInfo, name: "getDividerUtilityClass", path: "packages/divider/src/lib/divider.tsx#getDividerUtilityClass" };
+}
+catch (__react_docgen_typescript_loader_error) { }
+;// CONCATENATED MODULE: ./packages/divider/src/lib/divider.stories.mdx
+
+
+
+
+var _excluded = ["components"];
+
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+/* @jsxRuntime classic */
+/* @jsx mdx */
+
+
+
+
+
+
+var content = (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo. Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed malesuada lobortis pretium.");
+var layoutProps = {};
+var MDXLayout = "wrapper";
+function MDXContent(_ref) {
+  var components = _ref.components,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return (0,esm/* mdx */.kt)(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), (0,esm/* mdx */.kt)(blocks/* Meta */.h_, {
+    title: "Divider",
+    component: lib_divider,
+    mdxType: "Meta"
+  }), (0,esm/* mdx */.kt)("h1", {
+    "id": "divider-img-srchttpsimgshieldsiobadgeversion-vpkgversion-brightgreenn-"
+  }, "Divider ", (0,esm/* mdx */.kt)("img", {
+    src: "https://img.shields.io/badge/Version-v" + package_namespaceObject.i + "-brightgreenn"
+  })), (0,esm/* mdx */.kt)("h3", {
+    "id": "installation"
+  }, "Installation"), (0,esm/* mdx */.kt)("p", null, "First install the latest version of the package from ", (0,esm/* mdx */.kt)("inlineCode", {
+    parentName: "p"
+  }, "@novatics/divider"), "."), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-shell"
+  }, "  yarn add -D @novatics/divider\n")), (0,esm/* mdx */.kt)("h3", {
+    "id": "dependencies"
+  }, "Dependencies"), (0,esm/* mdx */.kt)("p", null, "This component extends ", (0,esm/* mdx */.kt)("a", {
+    parentName: "p",
+    "href": "https://mui.com/material-ui/react-divider/",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
+  }, "Material UI React Divider"), ". Therefore is needed to install Material UI:"), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-bash"
+  }, "yarn add @mui/material\n")), (0,esm/* mdx */.kt)("h3", {
+    "id": "basic-usage"
+  }, "Basic Usage"), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Basic Usage",
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row'
+      }
+    }, (0,esm/* mdx */.kt)(lib_divider, _extends({}, args, {
+      mdxType: "Divider"
+    })));
+  })), (0,esm/* mdx */.kt)("pre", null, (0,esm/* mdx */.kt)("code", {
+    parentName: "pre",
+    "className": "language-tsx"
+  }, "import ... from '@novatics/divider';\n\n  ...\n\n\n")), (0,esm/* mdx */.kt)("h3", {
+    "id": "variations"
+  }, "Variations"), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Variations",
+    mdxType: "Story"
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    container: true,
+    spacing: 2,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "Full width"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav",
+    mdxType: "List"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam",
+    mdxType: "ListItemText"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "Inset"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav",
+    mdxType: "List"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam",
+    mdxType: "ListItemText"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "Middle"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav",
+    mdxType: "List"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam",
+    mdxType: "ListItemText"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "String"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav",
+    mdxType: "List"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam",
+    mdxType: "ListItemText"
+  }))))))))), (0,esm/* mdx */.kt)("h3", {
+    "id": "orientation"
+  }, "Orientation"), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Orientation",
+    mdxType: "Story"
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    container: true,
+    spacing: 2,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "Horizontal"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav",
+    mdxType: "List"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "fullWidth",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "inset",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "middle",
+    mdxType: "ListItemText"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true,
+    mdxType: "ListItem"
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: ".",
+    mdxType: "ListItemText"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    mdxType: "Grid"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    height: "100%",
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, {
+    mdxType: "Typography"
+  }, "Vertical"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    sx: {
+      flex: '1'
+    },
+    mdxType: "Paper"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    direction: "row",
+    height: "100%",
+    textAlign: "center",
+    alignItems: "center",
+    mdxType: "Stack"
+  }, (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%",
+    mdxType: "Box"
+  }, "fullWidth >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "fullWidth",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%",
+    mdxType: "Box"
+  }, "middle >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "middle",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%",
+    mdxType: "Box"
+  }, "string >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "string",
+    mdxType: "Divider"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%",
+    mdxType: "Box"
+  }, ".")))))))), (0,esm/* mdx */.kt)("h3", {
+    "id": "with-text"
+  }, "With Text"), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "With Text",
+    mdxType: "Story"
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    spacing: 4,
+    mdxType: "Stack"
+  }, content, (0,esm/* mdx */.kt)(lib_divider, {
+    mdxType: "Divider"
+  }, "CENTER"), content, (0,esm/* mdx */.kt)(lib_divider, {
+    textAlign: "left",
+    mdxType: "Divider"
+  }, "LEFT"), content, (0,esm/* mdx */.kt)(lib_divider, {
+    textAlign: "right",
+    mdxType: "Divider"
+  }, "RIGHT"), content, (0,esm/* mdx */.kt)(lib_divider, {
+    mdxType: "Divider"
+  }, (0,esm/* mdx */.kt)(Chip/* default */.Z, {
+    label: "CHIP",
+    mdxType: "Chip"
+  })), content))), (0,esm/* mdx */.kt)("h3", {
+    "id": "playground"
+  }, "Playground"), (0,esm/* mdx */.kt)(blocks/* Canvas */.Xz, {
+    mdxType: "Canvas"
+  }, (0,esm/* mdx */.kt)(blocks/* Story */.oG, {
+    name: "Playground",
+    argTypes: {
+      error: false,
+      checked: false
+    },
+    mdxType: "Story"
+  }, function (args) {
+    return (0,esm/* mdx */.kt)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'row'
+      }
+    }, (0,esm/* mdx */.kt)(lib_divider, _extends({}, args, {
+      mdxType: "Divider"
+    })));
+  })), (0,esm/* mdx */.kt)(blocks/* ArgsTable */.$4, {
+    story: "Playground",
+    mdxType: "ArgsTable"
+  }), (0,esm/* mdx */.kt)("p", null, "made by Novatics \u2764"));
+}
+MDXContent.displayName = "MDXContent";
+;
+MDXContent.isMDXComponent = true;
+var basicUsage = function basicUsage(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_divider, args));
+};
+basicUsage.displayName = "basicUsage";
+basicUsage.storyName = 'Basic Usage';
+basicUsage.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\'\n  }}>\n          <Divider {...args} />\n        </div>;\n}'
+  }
+};
+var variations = function variations() {
+  return (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    container: true,
+    spacing: 2
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, null, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Full width"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, null, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Inset"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, null, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Middle"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam"
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6,
+    sm: 4,
+    md: 3,
+    xl: 2,
+    xxl: 1
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, null, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "String"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Inbox"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Drafts"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Trash"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "string"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "Spam"
+  })))))));
+};
+variations.displayName = "variations";
+variations.storyName = 'Variations';
+variations.parameters = {
+  storySource: {
+    source: '<Grid container spacing={2}>\n      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>\n        <Stack>\n          <Typography>Full width</Typography>\n          <Paper elevation={5}>\n            <List component=\"nav\">\n              <ListItem button>\n                <ListItemText primary=\"Inbox\" />\n              </ListItem>\n              <Divider variant=\"fullWidth\" />\n              <ListItem button>\n                <ListItemText primary=\"Drafts\" />\n              </ListItem>\n              <Divider variant=\"fullWidth\" />\n              <ListItem button>\n                <ListItemText primary=\"Trash\" />\n              </ListItem>\n              <Divider variant=\"fullWidth\" />\n              <ListItem button>\n                <ListItemText primary=\"Spam\" />\n              </ListItem>\n            </List>\n          </Paper>\n        </Stack>\n      </Grid>\n      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>\n        <Stack>\n          <Typography>Inset</Typography>\n          <Paper elevation={5}>\n            <List component=\"nav\">\n              <ListItem button>\n                <ListItemText primary=\"Inbox\" />\n              </ListItem>\n              <Divider variant=\"inset\" />\n              <ListItem button>\n                <ListItemText primary=\"Drafts\" />\n              </ListItem>\n              <Divider variant=\"inset\" />\n              <ListItem button>\n                <ListItemText primary=\"Trash\" />\n              </ListItem>\n              <Divider variant=\"inset\" />\n              <ListItem button>\n                <ListItemText primary=\"Spam\" />\n              </ListItem>\n            </List>\n          </Paper>\n        </Stack>\n      </Grid>\n      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>\n        <Stack>\n          <Typography>Middle</Typography>\n          <Paper elevation={5}>\n            <List component=\"nav\">\n              <ListItem button>\n                <ListItemText primary=\"Inbox\" />\n              </ListItem>\n              <Divider variant=\"middle\" />\n              <ListItem button>\n                <ListItemText primary=\"Drafts\" />\n              </ListItem>\n              <Divider variant=\"middle\" />\n              <ListItem button>\n                <ListItemText primary=\"Trash\" />\n              </ListItem>\n              <Divider variant=\"middle\" />\n              <ListItem button>\n                <ListItemText primary=\"Spam\" />\n              </ListItem>\n            </List>\n          </Paper>\n        </Stack>\n      </Grid>\n      <Grid item xxs={6} sm={4} md={3} xl={2} xxl={1}>\n        <Stack>\n          <Typography>String</Typography>\n          <Paper elevation={5}>\n            <List component=\"nav\">\n              <ListItem button>\n                <ListItemText primary=\"Inbox\" />\n              </ListItem>\n              <Divider variant=\"string\" />\n              <ListItem button>\n                <ListItemText primary=\"Drafts\" />\n              </ListItem>\n              <Divider variant=\"string\" />\n              <ListItem button>\n                <ListItemText primary=\"Trash\" />\n              </ListItem>\n              <Divider variant=\"string\" />\n              <ListItem button>\n                <ListItemText primary=\"Spam\" />\n              </ListItem>\n            </List>\n          </Paper>\n        </Stack>\n      </Grid>\n    </Grid>'
+  }
+};
+var orientation = function orientation() {
+  return (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    container: true,
+    spacing: 2
+  }, (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, null, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Horizontal"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5
+  }, (0,esm/* mdx */.kt)(List/* default */.Z, {
+    component: "nav"
+  }, (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "fullWidth"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "fullWidth"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "inset"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "inset"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "middle"
+  })), (0,esm/* mdx */.kt)(lib_divider, {
+    variant: "middle"
+  }), (0,esm/* mdx */.kt)(ListItem/* default */.ZP, {
+    button: true
+  }, (0,esm/* mdx */.kt)(ListItemText/* default */.Z, {
+    primary: "."
+  })))))), (0,esm/* mdx */.kt)(Grid/* default */.ZP, {
+    item: true,
+    xxs: 6
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    height: "100%"
+  }, (0,esm/* mdx */.kt)(Typography/* default */.Z, null, "Vertical"), (0,esm/* mdx */.kt)(Paper/* default */.Z, {
+    elevation: 5,
+    sx: {
+      flex: '1'
+    }
+  }, (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    direction: "row",
+    height: "100%",
+    textAlign: "center",
+    alignItems: "center"
+  }, (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%"
+  }, "fullWidth >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "fullWidth"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%"
+  }, "middle >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "middle"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%"
+  }, "string >"), (0,esm/* mdx */.kt)(lib_divider, {
+    flexItem: true,
+    orientation: "vertical",
+    variant: "string"
+  }), (0,esm/* mdx */.kt)(Box/* default */.Z, {
+    height: "50px",
+    minWidth: "50px",
+    width: "25%"
+  }, "."))))));
+};
+orientation.displayName = "orientation";
+orientation.storyName = 'Orientation';
+orientation.parameters = {
+  storySource: {
+    source: '<Grid container spacing={2}>\n      <Grid item xxs={6}>\n        <Stack>\n          <Typography>Horizontal</Typography>\n          <Paper elevation={5}>\n            <List component=\"nav\">\n              <ListItem button>\n                <ListItemText primary=\"fullWidth\" />\n              </ListItem>\n              <Divider variant=\"fullWidth\" />\n              <ListItem button>\n                <ListItemText primary=\"inset\" />\n              </ListItem>\n              <Divider variant=\"inset\" />\n              <ListItem button>\n                <ListItemText primary=\"middle\" />\n              </ListItem>\n              <Divider variant=\"middle\" />\n              <ListItem button>\n                <ListItemText primary=\".\" />\n              </ListItem>\n            </List>\n          </Paper>\n        </Stack>\n      </Grid>\n      <Grid item xxs={6}>\n        <Stack height=\"100%\">\n          <Typography>Vertical</Typography>\n          <Paper elevation={5} sx={{\n        flex: \'1\'\n      }}>\n            <Stack direction=\"row\" height=\"100%\" textAlign=\"center\" alignItems=\"center\">\n              <Box height=\"50px\" minWidth=\"50px\" width=\"25%\">\n                fullWidth >\n              </Box>\n              <Divider flexItem orientation=\"vertical\" variant=\"fullWidth\" />\n              <Box height=\"50px\" minWidth=\"50px\" width=\"25%\">\n                middle >\n              </Box>\n              <Divider flexItem orientation=\"vertical\" variant=\"middle\" />\n              <Box height=\"50px\" minWidth=\"50px\" width=\"25%\">\n                string >\n              </Box>\n              <Divider flexItem orientation=\"vertical\" variant=\"string\" />\n              <Box height=\"50px\" minWidth=\"50px\" width=\"25%\">\n                .\n              </Box>\n            </Stack>\n          </Paper>\n        </Stack>\n      </Grid>\n    </Grid>'
+  }
+};
+var withText = function withText() {
+  return (0,esm/* mdx */.kt)(Stack/* default */.Z, {
+    spacing: 4
+  }, content, (0,esm/* mdx */.kt)(lib_divider, null, "CENTER"), content, (0,esm/* mdx */.kt)(lib_divider, {
+    textAlign: "left"
+  }, "LEFT"), content, (0,esm/* mdx */.kt)(lib_divider, {
+    textAlign: "right"
+  }, "RIGHT"), content, (0,esm/* mdx */.kt)(lib_divider, null, (0,esm/* mdx */.kt)(Chip/* default */.Z, {
+    label: "CHIP"
+  })), content);
+};
+withText.displayName = "withText";
+withText.storyName = 'With Text';
+withText.parameters = {
+  storySource: {
+    source: '<Stack spacing={4}>\n      {content}\n      <Divider>CENTER</Divider>\n      {content}\n      <Divider textAlign=\"left\">LEFT</Divider>\n      {content}\n      <Divider textAlign=\"right\">RIGHT</Divider>\n      {content}\n      <Divider>\n        <Chip label=\"CHIP\" />\n      </Divider>\n      {content}\n    </Stack>'
+  }
+};
+var playground = function playground(args) {
+  return (0,esm/* mdx */.kt)("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'row'
+    }
+  }, (0,esm/* mdx */.kt)(lib_divider, args));
+};
+playground.displayName = "playground";
+playground.storyName = 'Playground';
+playground.argTypes = {
+  error: false,
+  checked: false
+};
+playground.parameters = {
+  storySource: {
+    source: 'args => {\n  return <div style={{\n    display: \'flex\',\n    flexDirection: \'row\'\n  }}>\n          <Divider {...args} />\n        </div>;\n}'
+  }
+};
+var componentMeta = {
+  title: 'Divider',
+  component: lib_divider,
+  includeStories: ["basicUsage", "variations", "orientation", "withText", "playground"]
+};
+var mdxStoryNameToKey = {
+  "Basic Usage": "basicUsage",
+  "Variations": "variations",
+  "Orientation": "orientation",
+  "With Text": "withText",
+  "Playground": "playground"
+};
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = Object.assign({}, componentMeta.parameters.docs || {}, {
+  page: function page() {
+    return (0,esm/* mdx */.kt)(dist_esm/* AddContext */.aT, {
+      mdxStoryNameToKey: mdxStoryNameToKey,
+      mdxComponentAnnotations: componentMeta
+    }, (0,esm/* mdx */.kt)(MDXContent, null));
+  }
+});
+/* harmony default export */ const divider_stories = (componentMeta);
+var __namedExportsOrder = ["basicUsage", "variations", "orientation", "withText", "playground"];
+
+/***/ }),
+
 /***/ 47642:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -5437,8 +6308,8 @@ var modules_es_object_to_string = __webpack_require__(22534);
 var modules_es_regexp_to_string = __webpack_require__(55833);
 // EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.date.to-string.js
 var modules_es_date_to_string = __webpack_require__(65027);
-// EXTERNAL MODULE: ./node_modules/@mui/material/TextField/TextField.js + 51 modules
-var TextField = __webpack_require__(91519);
+// EXTERNAL MODULE: ./node_modules/@mui/material/TextField/TextField.js + 48 modules
+var TextField = __webpack_require__(79456);
 // EXTERNAL MODULE: ./node_modules/imask/esm/index.js + 25 modules
 var imask_esm = __webpack_require__(85146);
 ;// CONCATENATED MODULE: ./packages/masked-text-field/src/lib/mask-presets.ts
@@ -5848,8 +6719,8 @@ var modules_es_object_assign = __webpack_require__(33130);
 var deepmerge = __webpack_require__(83643);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Radio/Radio.js + 6 modules
 var Radio_Radio = __webpack_require__(5301);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
-var src = __webpack_require__(81285);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 11 modules
+var src = __webpack_require__(14202);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/radio/src/lib/radio.tsx
@@ -6462,8 +7333,8 @@ var Grid = __webpack_require__(50871);
 var Box = __webpack_require__(98356);
 // EXTERNAL MODULE: ./packages/tokens/src/index.ts
 var src = __webpack_require__(31530);
-// EXTERNAL MODULE: ./packages/styles/src/index.ts + 10 modules
-var styles_src = __webpack_require__(81285);
+// EXTERNAL MODULE: ./packages/styles/src/index.ts + 11 modules
+var styles_src = __webpack_require__(14202);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js
 var emotion_react_jsx_runtime_browser_esm = __webpack_require__(28179);
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/stories/grid-breakpoints.tsx
@@ -8756,7 +9627,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _storybook_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96378);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16340);
 /* harmony import */ var _react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_react_theming_storybook_addon__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81285);
+/* harmony import */ var _packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14202);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(67557);
 
 
@@ -8764,7 +9635,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(92205);
+__webpack_require__(74689);
 var providerFn = function providerFn(_ref) {
   var children = _ref.children;
   var theme = (0,_packages_styles_src_index__WEBPACK_IMPORTED_MODULE_3__/* .createTheme */ .jG)();
@@ -8990,7 +9861,7 @@ Object.keys(preview_namespaceObject).forEach(function (key) {
 
 /***/ }),
 
-/***/ 81285:
+/***/ 14202:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -9061,6 +9932,16 @@ var palette_palette = {
   support: {
     main: src/* colors.universe */.O9.universe,
     light: src/* colors.universe--light */.O9["universe--light"]
+  },
+  grey: {
+    85: src/* colors.blackHole */.O9.blackHole,
+    70: src/* colors.eclipse */.O9.eclipse,
+    50: src/* colors.penumbra */.O9.penumbra,
+    35: src/* colors.spaceStation */.O9.spaceStation,
+    20: src/* colors.fullMoon */.O9.fullMoon,
+    10: src/* colors.newMoon */.O9.newMoon,
+    5: src/* colors.halo */.O9.halo,
+    0: src/* colors.supernova */.O9.supernova
   }
 };
 /* harmony default export */ const palette = ((/* unused pure expression or super */ null && (palette_palette)));
@@ -9127,7 +10008,7 @@ var typographies = Object.keys(src/* typography.typography */.cp.typography);
 var themeTypography = typographies.reduce(function (acc, curr) {
   acc[curr] = {
     fontWeight: src/* typography.typography */.cp.typography[curr].fontWeight,
-    fontSize: src/* typography.typography */.cp.typography[curr].fontSize.rem + "rem",
+    fontSize: src/* typography.typography */.cp.typography[curr].fontSize.pixel + "px",
     lineHeight: src/* typography.typography */.cp.typography[curr].lineHeight,
     fontFamily: src/* typography.typography */.cp.typography[curr].fontFamily
   };
@@ -9155,16 +10036,18 @@ var theme = {
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(37509);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
-var es_array_concat = __webpack_require__(55862);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(33130);
-// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.array.concat.js
-var modules_es_array_concat = __webpack_require__(41381);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
+var es_array_concat = __webpack_require__(55862);
 // EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.object.assign.js
 var modules_es_object_assign = __webpack_require__(44604);
+// EXTERNAL MODULE: ./node_modules/@storybook/core-common/node_modules/core-js/modules/es.array.concat.js
+var modules_es_array_concat = __webpack_require__(41381);
 // EXTERNAL MODULE: ./node_modules/@mui/material/styles/createTheme.js + 14 modules
 var styles_createTheme = __webpack_require__(88396);
+// EXTERNAL MODULE: ./node_modules/@mui/utils/esm/deepmerge.js
+var deepmerge = __webpack_require__(83643);
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/breakpoints.ts
 var themeBreakpoints = {
   values: {
@@ -9301,9 +10184,42 @@ var MuiChip = {
     }
   }
 };
+;// CONCATENATED MODULE: ./packages/styles/src/lib/Theme/components/MuiDivider.ts
+
+
+var MuiDivider = {
+  styleOverrides: {
+    textAlignLeft: {
+      '::before': {
+        width: '24px'
+      }
+    },
+    textAlignRight: {
+      '::after': {
+        width: '24px'
+      }
+    },
+    wrapper: function wrapper(props) {
+      var theme = props.theme;
+      return Object.assign({
+        padding: '4px 8px',
+        color: theme.palette.grey[50]
+      }, theme.typography.overline);
+    },
+    wrapperVertical: function wrapperVertical(props) {
+      var theme = props.theme;
+      return Object.assign({
+        padding: '8px 4px',
+        color: theme.palette.grey[50]
+      }, theme.typography.overline);
+    }
+  }
+};
 ;// CONCATENATED MODULE: ./packages/styles/src/lib/createTheme.ts
 
 var _excluded = ["components", "palette"];
+
+
 
 
 
@@ -9324,11 +10240,9 @@ var createTheme = function createTheme(options) {
     _ref$components = _ref.components,
     componentsInput = _ref$components === void 0 ? {} : _ref$components,
     palette = _ref.palette,
-    others = objectWithoutProperties_default()(_ref, _excluded);
-  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    args[_key - 1] = arguments[_key];
-  }
-  return styles_createTheme/* default.apply */.Z.apply(void 0, [Object.assign({
+    other = objectWithoutProperties_default()(_ref, _excluded);
+  var components = createComponents(componentsInput);
+  var nuiTheme = (0,deepmerge/* default */.Z)({
     breakpoints: themeBreakpoints,
     palette: Object.assign({}, palette_palette, palette),
     typography: themeTypography,
@@ -9336,10 +10250,18 @@ var createTheme = function createTheme(options) {
       return Number(factor) * 0.5 + "rem";
     },
     customShadows: themeShadows,
-    components: Object.assign({}, componentsInput, {
-      MuiChip: MuiChip
-    })
-  }, others)].concat(args));
+    components: components
+  }, other);
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  return styles_createTheme/* default.apply */.Z.apply(void 0, [nuiTheme].concat(args));
+};
+var createComponents = function createComponents(componentsInput) {
+  return (0,deepmerge/* default */.Z)({
+    MuiChip: MuiChip,
+    MuiDivider: MuiDivider
+  }, componentsInput);
 };
 /* harmony default export */ const lib_createTheme = ((/* unused pure expression or super */ null && (createTheme)));
 ;// CONCATENATED MODULE: ./packages/styles/src/index.ts
@@ -9389,7 +10311,7 @@ const shadows_namespaceObject = JSON.parse('{"blackhole--low":"0px 2px 4px 1px r
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/spacings.json
 const spacings_namespaceObject = JSON.parse('{"1":{"px":8,"rem":0.5},"2":{"px":16,"rem":1},"3":{"px":24,"rem":1.5},"4":{"px":32,"rem":2},"5":{"px":40,"rem":2.5},"6":{"px":48,"rem":3},"7":{"px":56,"rem":3.5},"8":{"px":64,"rem":4},"10":{"px":80,"rem":5},"12":{"px":96,"rem":6},"0.5":{"px":4,"rem":0.25},"1.5":{"px":12,"rem":0.75},"2.5":{"px":20,"rem":1.25}}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/typography.json
-const typography_namespaceObject = JSON.parse('{"typography":{"h1":{"fontSize":{"pixel":90,"rem":5.62},"fontWeight":700,"lineHeight":1,"letterSpacing":"-1px","fontFamily":"Work Sans"},"h2":{"fontSize":{"pixel":67,"rem":4.18},"fontWeight":700,"lineHeight":1,"letterSpacing":"-0.5px","fontFamily":"Work Sans"},"h3":{"fontSize":{"pixel":45,"rem":2.81},"fontWeight":700,"lineHeight":1,"letterSpacing":0,"fontFamily":"Work Sans"},"h4":{"fontSize":{"pixel":32,"rem":2},"fontWeight":500,"lineHeight":1,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"h5":{"fontSize":{"pixel":22,"rem":1.375},"fontWeight":400,"lineHeight":1.2,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"body":{"fontSize":{"pixel":16,"rem":1},"fontWeight":400,"lineHeight":1.6,"letterSpacing":"0.15px","fontFamily":"Work Sans"},"bodySmall":{"fontSize":{"pixel":14,"rem":0.875},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.1px","fontFamily":"Work Sans"},"caption":{"fontSize":{"pixel":12,"rem":0.75},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"overline":{"fontSize":{"pixel":12,"rem":1.2},"fontWeight":500,"lineHeight":1.12,"letterSpacing":"1.25px","fontFamily":"Work Sans","textTransform":"uppercase"}}}');
+const typography_namespaceObject = JSON.parse('{"typography":{"h1":{"fontSize":{"pixel":90,"rem":5.625},"fontWeight":700,"lineHeight":1,"letterSpacing":"-1px","fontFamily":"Work Sans"},"h2":{"fontSize":{"pixel":67,"rem":4.188},"fontWeight":700,"lineHeight":1,"letterSpacing":"-0.5px","fontFamily":"Work Sans"},"h3":{"fontSize":{"pixel":45,"rem":2.813},"fontWeight":700,"lineHeight":1,"letterSpacing":0,"fontFamily":"Work Sans"},"h4":{"fontSize":{"pixel":32,"rem":2},"fontWeight":500,"lineHeight":1,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"h5":{"fontSize":{"pixel":22,"rem":1.375},"fontWeight":400,"lineHeight":1.2,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"body":{"fontSize":{"pixel":16,"rem":1},"fontWeight":400,"lineHeight":1.6,"letterSpacing":"0.15px","fontFamily":"Work Sans"},"bodySmall":{"fontSize":{"pixel":14,"rem":0.875},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.1px","fontFamily":"Work Sans"},"caption":{"fontSize":{"pixel":12,"rem":0.75},"fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.25px","fontFamily":"Work Sans"},"overline":{"fontSize":{"pixel":12,"rem":0.75},"fontWeight":500,"lineHeight":1.2,"letterSpacing":"1.25px","fontFamily":"Work Sans","textTransform":"uppercase"}}}');
 ;// CONCATENATED MODULE: ./packages/tokens/src/lib/tokens.ts
 
 
@@ -9408,7 +10330,7 @@ var tokens = {
 
 /***/ }),
 
-/***/ 92205:
+/***/ 74689:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -9441,6 +10363,7 @@ var map = {
 	"./chip/src/lib/chip.stories.mdx": 48764,
 	"./core/src/lib/core.stories.mdx": 4549,
 	"./currency-text-field/src/lib/currency-text-field.stories.mdx": 54101,
+	"./divider/src/lib/divider.stories.mdx": 56936,
 	"./masked-text-field/src/lib/masked-text-field.stories.mdx": 47642,
 	"./radio/src/lib/radio.stories.mdx": 66306,
 	"./styles/src/lib/styles.stories.mdx": 7328,
@@ -9888,20 +10811,20 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(47097)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(50904)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(97319)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(1401)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(22917)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(73663)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(29329)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(36268)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(27481)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(33837)))
-/******/ 	__webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(65706)))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [455,980,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(77215)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(47097)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(50904)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(97319)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(1401)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(22917)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(73663)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(29329)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(36268)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(27481)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(33837)))
+/******/ 	__webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(65706)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [455,558,642,205,969,468,518,32,305,928,303,535,441,882,894], () => (__webpack_require__(77215)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.d68cf8c7.iframe.bundle.js.map
+//# sourceMappingURL=main.530b330f.iframe.bundle.js.map

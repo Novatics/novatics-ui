@@ -227,7 +227,7 @@ var blocks = __webpack_require__(87143);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/esm/client/index.js + 15 modules
 var client = __webpack_require__(96378);
 ;// CONCATENATED MODULE: ./packages/checkbox/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(37509);
 var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
@@ -7304,7 +7304,7 @@ var client = __webpack_require__(96378);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Button/Button.js + 2 modules
 var Button = __webpack_require__(38864);
 ;// CONCATENATED MODULE: ./packages/styles/package.json
-const package_namespaceObject = {"i8":"0.2.0"};
+const package_namespaceObject = {"i8":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__(21496);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
@@ -10827,4 +10827,4 @@ var _frameworkImportPath = __webpack_require__(96378);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.86539fb9.iframe.bundle.js.map
+//# sourceMappingURL=main.3d8a72e6.iframe.bundle.js.map

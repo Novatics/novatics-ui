@@ -19,6 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@novatics/checkbox": ["packages/checkbox/src/index.ts"],
+      "@novatics-ui/chip": ["packages/chip/src/index.ts"],
       "@novatics/core": ["packages/core/src/index.ts"],
       "@novatics/currency-text-field": [
         "packages/currency-text-field/src/index.ts"

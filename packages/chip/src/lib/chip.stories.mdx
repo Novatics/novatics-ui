@@ -1,0 +1,273 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import ChairOutlinedIcon from '@mui/icons-material/ChairOutlined';
+import Chip from './chip';
+
+<Meta title="Chip" component={Chip} />
+
+# Chip <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/chip`.
+
+```shell
+  yarn add -D @novatics/chip
+```
+
+### Basic Usage
+
+The `Chip` component have two variants: it supports outlined and filled styling. The default variant is filled.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip label="Chip" />
+          <Chip label="Chip" variant="outlined" />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Click interaction
+
+Chips can be clickable. In this case, it will have a hover and a click effect. It can be set by either passing the `clickable` prop or by passing a function to `onClick` prop.
+
+<Canvas>
+  <Story name="Click interaction">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip label="Clickable Chip" clickable />
+          <Chip
+            label="Click Me"
+            onClick={() => window.alert('Hi! :)')}
+            variant="outlined"
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Delete interaction
+
+A `Chip` can present a delete icon by passing a `onDelete` prop.
+
+<Canvas>
+  <Story name="Delete interaction">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip label="Deletable Chip" onDelete={() => {}} />
+          <Chip label="Deletable Chip" onDelete={() => {}} variant="outlined" />
+          <Chip
+            label="Deletable and Clickable"
+            onDelete={() => {}}
+            clickable
+            variant="outlined"
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Size
+
+A `Chip` can be small or medium. The default size is medium.
+
+<Canvas>
+  <Story name="Size">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip label="Small" size="small" />
+          <Chip label="Small" size="small" variant="outlined" />
+          <Chip label="Small" size="small" onDelete={() => {}} clickable />
+          <Chip
+            label="Small"
+            size="small"
+            onDelete={() => {}}
+            variant="outlined"
+            clickable
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Icon
+
+A `Chip` can also have an icon, always placed on left.
+
+<Canvas>
+  <Story name="Icon">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Chip label="Icon" icon={<ChairOutlinedIcon />} />
+          <Chip label="Icon" icon={<ChairOutlinedIcon />} variant="outlined" />
+          <Chip label="Icon" icon={<ChairOutlinedIcon />} size="small" />
+          <Chip
+            label="Icon"
+            icon={<ChairOutlinedIcon />}
+            size="small"
+            variant="outlined"
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Colors
+
+A 'Chip' can display a range of colors in addition to the default.
+
+<Canvas>
+  <Story name="Colors">
+    {(args) => {
+      return (
+        <>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '10px',
+            }}
+          >
+            <Chip
+              label="Primary"
+              color="primary"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+            />
+            <Chip
+              label="Info"
+              color="info"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+            />
+            <Chip
+              label="Success"
+              color="success"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+            />
+            <Chip
+              label="Error"
+              color="error"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+            />
+            <Chip
+              label="Warning"
+              color="warning"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Chip
+              label="Primary"
+              color="primary"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+              variant="outlined"
+            />
+            <Chip
+              label="Info"
+              color="info"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+              variant="outlined"
+            />
+            <Chip
+              label="Success"
+              color="success"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+              variant="outlined"
+            />
+            <Chip
+              label="Error"
+              color="error"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+              variant="outlined"
+            />
+            <Chip
+              label="Warning"
+              color="warning"
+              icon={<ChairOutlinedIcon />}
+              onDelete={() => {}}
+              clickable
+              variant="outlined"
+            />
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

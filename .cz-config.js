@@ -45,6 +45,7 @@ module.exports = {
     { name: 'chip' },
     { name: 'currency-text-field' },
     { name: 'divider' },
+    { name: 'file-upload' },
     { name: 'masked-text-field' },
     { name: 'radio' },
     { name: 'styles' },

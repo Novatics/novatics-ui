@@ -1,0 +1,125 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import pkg from '../../package.json';
+import { FileUpload } from './file-upload';
+import { ListItem, ListItemProps } from '../list-item';
+import { DragAndDrop, DragAndDropProps } from '../drag-and-drop';
+import { FromUrl, FromUrlProps } from '../from-url';
+
+<Meta title="File Upload" component={FileUpload} />
+
+# FileUpload <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+Use this component for File Upload
+
+### Installation
+
+First install the latest version of the package from `@novatics/file-upload`.
+
+```bash
+yarn add @novatics/file-upload
+```
+
+### Dependencies
+
+This component extends [Material UI React Text Field](https://mui.com/material-ui/react-text-field). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <FileUpload />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import FileUpload from '@novatics/file-upload';
+
+<FileUpload />;
+```
+
+### Drag and Drop
+
+<Canvas>
+  <Story name="Drag And Drop">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <DragAndDrop />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import { DragAndDrop, DragAndDropProps } from '@novatics/file-upload';
+
+<DragAndDrop />;
+```
+
+### From URL
+
+<Canvas>
+  <Story name="From URL">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <FromUrl />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import { FromUrl, FromUrlProps } from '@novatics/file-upload';
+
+<FromUrl />;
+```
+
+### List Item
+
+<Canvas>
+  <Story name="List Item">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <ListItem />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+```tsx
+import { ListItem, ListItemProps } from '@novatics/file-upload';
+
+<ListItem />;
+```
+
+### Playground
+
+<Canvas>
+  <Story name="Playground" argTypes={{}}>
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <FileUpload {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />

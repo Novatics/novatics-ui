@@ -1,6 +1,6 @@
 {
   "name": "@novatics/checkbox-field",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "peerDependencies": {
     "formik": "^2.2.9"
   }

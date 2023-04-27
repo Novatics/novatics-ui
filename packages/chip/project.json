@@ -5,28 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/chip",
-        "tsConfig": "packages/chip/tsconfig.lib.json",
-        "project": "packages/chip/package.json",
-        "entryFile": "packages/chip/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/chip/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -34,22 +12,35 @@
         "lintFilePatterns": ["packages/chip/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "jestConfig": "packages/chip/jest.config.ts",
-        "passWithNoTests": true
+        "outputPath": "dist/packages/chip"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/packages/chip"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/chip"
       }
     },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/chip/.storybook"
-        }
+        "configDir": "packages/chip/.storybook"
       },
       "configurations": {
         "ci": {
@@ -59,17 +50,26 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/chip",
-        "config": {
-          "configFolder": "packages/chip/.storybook"
-        }
+        "outputDir": "dist/storybook/chip",
+        "configDir": "packages/chip/.storybook"
       },
       "configurations": {
         "ci": {
           "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "chip:build-storybook",
+        "staticFilePath": "dist/storybook/chip"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "chip:build-storybook:ci"
         }
       }
     },
@@ -83,7 +83,8 @@
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {

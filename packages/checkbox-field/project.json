@@ -7,28 +7,21 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/checkbox-field/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/checkbox-field/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nrwl/rollup:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^build"],
       "options": {
         "outputPath": "dist/packages/checkbox-field",
         "tsConfig": "packages/checkbox-field/tsconfig.lib.json",
         "project": "packages/checkbox-field/package.json",
         "entryFile": "packages/checkbox-field/src/index.ts",
-        "external": [
-          "@emotion/react/jsx-runtime"
-        ],
+        "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
         "assets": [
@@ -38,9 +31,7 @@
             "output": "."
           }
         ],
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
@@ -58,9 +49,7 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/checkbox-field",
         "configDir": "packages/checkbox-field/.storybook"
@@ -101,9 +90,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "checkbox-field:deploy"
-        ]
+        "postTargets": ["checkbox-field:deploy"]
       }
     }
   }

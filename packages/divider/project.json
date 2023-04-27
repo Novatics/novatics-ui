@@ -7,28 +7,20 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/divider/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/divider/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nrwl/rollup:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/divider",
         "tsConfig": "packages/divider/tsconfig.lib.json",
         "project": "packages/divider/package.json",
         "entryFile": "packages/divider/src/index.ts",
-        "external": [
-          "@emotion/react/jsx-runtime"
-        ],
+        "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
         "assets": [
@@ -38,9 +30,7 @@
             "output": "."
           }
         ],
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
@@ -59,9 +49,7 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/divider",
         "configDir": "packages/divider/.storybook",
@@ -91,9 +79,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "divider:deploy"
-        ]
+        "postTargets": ["divider:deploy"]
       }
     }
   }

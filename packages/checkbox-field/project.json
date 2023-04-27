@@ -13,26 +13,27 @@
       }
     },
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^build"],
+      "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/checkbox-field",
-        "tsConfig": "packages/checkbox-field/tsconfig.lib.json",
-        "project": "packages/checkbox-field/package.json",
-        "entryFile": "packages/checkbox-field/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "swc",
-        "assets": [
-          {
-            "glob": "packages/checkbox-field/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
+        "outputPath": "dist/packages/checkbox-field"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/packages/checkbox-field"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/checkbox-field"
       }
     },
     "storybook": {
@@ -82,7 +83,8 @@
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {

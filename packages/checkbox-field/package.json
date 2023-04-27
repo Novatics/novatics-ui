@@ -1,6 +1,14 @@
 {
   "name": "@novatics/checkbox-field",
   "version": "0.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
   "peerDependencies": {
     "formik": "^2.2.9"
   }

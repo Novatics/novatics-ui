@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/wizard-0.1.0...wizard-0.1.1) (2023-04-27)
+
 ## 0.1.0 (2023-04-06)
 
 

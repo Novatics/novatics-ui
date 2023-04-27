@@ -28,7 +28,7 @@ var blocks = __webpack_require__(88843);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/index.mjs
 var dist = __webpack_require__(70019);
 ;// CONCATENATED MODULE: ./packages/wizard/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.every.js
 var es_array_every = __webpack_require__(67443);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
@@ -1138,4 +1138,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=wizard-src-lib-wizard-stories-mdx.474c4d45.iframe.bundle.js.map
+//# sourceMappingURL=wizard-src-lib-wizard-stories-mdx.e83317a0.iframe.bundle.js.map

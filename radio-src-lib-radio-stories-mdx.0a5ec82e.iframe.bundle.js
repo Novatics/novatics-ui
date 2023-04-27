@@ -24,7 +24,7 @@ var blocks = __webpack_require__(88843);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/index.mjs
 var dist = __webpack_require__(70019);
 ;// CONCATENATED MODULE: ./packages/radio/package.json
-const package_namespaceObject = {"i":"0.1.3"};
+const package_namespaceObject = {"i":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(39446);
 var objectWithoutPropertiesLoose_default = /*#__PURE__*/__webpack_require__.n(objectWithoutPropertiesLoose);
@@ -1241,4 +1241,4 @@ function createChainedFunction(...funcs) {
 /***/ })
 
 }]);
-//# sourceMappingURL=radio-src-lib-radio-stories-mdx.cb08eca0.iframe.bundle.js.map
+//# sourceMappingURL=radio-src-lib-radio-stories-mdx.0a5ec82e.iframe.bundle.js.map

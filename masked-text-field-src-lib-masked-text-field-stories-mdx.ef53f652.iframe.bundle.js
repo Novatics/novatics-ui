@@ -24,7 +24,7 @@ var blocks = __webpack_require__(88843);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/index.mjs
 var dist = __webpack_require__(70019);
 ;// CONCATENATED MODULE: ./packages/masked-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.1"};
+const package_namespaceObject = {"i8":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(39446);
 var objectWithoutPropertiesLoose_default = /*#__PURE__*/__webpack_require__.n(objectWithoutPropertiesLoose);
@@ -422,4 +422,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=masked-text-field-src-lib-masked-text-field-stories-mdx.7af94773.iframe.bundle.js.map
+//# sourceMappingURL=masked-text-field-src-lib-masked-text-field-stories-mdx.ef53f652.iframe.bundle.js.map

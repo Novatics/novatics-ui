@@ -44,7 +44,7 @@ var Box = __webpack_require__(98356);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Chip/Chip.js + 2 modules
 var Chip = __webpack_require__(75000);
 ;// CONCATENATED MODULE: ./packages/divider/package.json
-const package_namespaceObject = {"i":"0.1.1"};
+const package_namespaceObject = {"i":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(33130);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Divider/Divider.js + 1 modules
@@ -952,4 +952,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=divider-src-lib-__stories__-divider-stories-mdx.ddeab679.iframe.bundle.js.map
+//# sourceMappingURL=divider-src-lib-__stories__-divider-stories-mdx.e53cd1ad.iframe.bundle.js.map

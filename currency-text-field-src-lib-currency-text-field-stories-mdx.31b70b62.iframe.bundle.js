@@ -25,7 +25,7 @@ var blocks = __webpack_require__(88843);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/index.mjs
 var dist = __webpack_require__(70019);
 ;// CONCATENATED MODULE: ./packages/currency-text-field/package.json
-const package_namespaceObject = {"i8":"0.1.0"};
+const package_namespaceObject = {"i8":"0.1.1"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
 var es_object_assign = __webpack_require__(33130);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
@@ -3782,4 +3782,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=currency-text-field-src-lib-currency-text-field-stories-mdx.c62e0b74.iframe.bundle.js.map
+//# sourceMappingURL=currency-text-field-src-lib-currency-text-field-stories-mdx.31b70b62.iframe.bundle.js.map

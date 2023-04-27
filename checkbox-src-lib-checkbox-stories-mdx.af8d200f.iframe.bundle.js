@@ -24,7 +24,7 @@ var blocks = __webpack_require__(88843);
 // EXTERNAL MODULE: ./node_modules/@storybook/react/dist/index.mjs
 var dist = __webpack_require__(70019);
 ;// CONCATENATED MODULE: ./packages/checkbox/package.json
-const package_namespaceObject = {"i":"0.1.0"};
+const package_namespaceObject = {"i":"0.2.0"};
 // EXTERNAL MODULE: ./packages/checkbox/src/lib/checkbox.tsx
 var lib_checkbox = __webpack_require__(40310);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
@@ -1654,4 +1654,4 @@ function useId(idOverride) {
 /***/ })
 
 }]);
-//# sourceMappingURL=checkbox-src-lib-checkbox-stories-mdx.aa35d745.iframe.bundle.js.map
+//# sourceMappingURL=checkbox-src-lib-checkbox-stories-mdx.af8d200f.iframe.bundle.js.map

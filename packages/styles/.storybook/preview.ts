@@ -1,3 +1,3 @@
-require('../../../.storybook/preview');
+import '../../../.storybook/preview';
 
 export * from '../../../.storybook/preview';

@@ -5,29 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^build"],
-      "options": {
-        "outputPath": "dist/packages/checkbox",
-        "tsConfig": "packages/checkbox/tsconfig.lib.json",
-        "project": "packages/checkbox/package.json",
-        "entryFile": "packages/checkbox/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/checkbox/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -35,11 +12,19 @@
         "lintFilePatterns": ["packages/checkbox/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "jestConfig": "packages/checkbox/jest.config.ts",
+        "outputPath": "dist/packages/checkbox"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/packages/testing"],
+      "options": {
+        "reportsDirectory": "../../coverage/packages/testing",
         "passWithNoTests": true
       }
     },

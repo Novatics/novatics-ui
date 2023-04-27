@@ -27,6 +27,8 @@ interface ComponentSchemaOptions {
   enforceConventionalCommits?: boolean;
   preset?: 'angular' | 'conventional';
   access?: 'public' | 'restricted';
+  storybook7Configuration?: boolean;
+  tsConfiguration?: boolean;
 }
 
 function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
@@ -49,8 +51,6 @@ function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
 function updateTargetsBuild(targets: Record<string, any>) {
   targets.build = targets.build ?? {};
   targets.build.options = targets.build.options ?? {};
-  targets.build.options.format = ['cjs'];
-  targets.build.options.buildableProjectDepsInPackageJsonType = 'dependencies';
 }
 
 function updateTargetsVersion(targets: Record<string, any>) {
@@ -79,16 +79,18 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     name,
     mui,
     buildable = true,
-    bundler = 'rollup',
+    bundler = 'vite',
     compiler = 'swc',
     style = '@emotion/styled',
     configureCypress = false,
     generateCypressSpecs = false,
-    generateStories = true,
+    generateStories = false,
     baseBranch = 'master',
     enforceConventionalCommits = true,
     preset = 'conventional',
     access = 'public',
+    storybook7Configuration = true,
+    tsConfiguration = true,
   } = schema;
 
   const { className, propertyName, constantName, fileName } = names(name);
@@ -103,7 +105,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
   console.log(outputLib.toString());
 
-  let storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories}`;
+  let storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
   const outputStory = execSync(
     `nx g storybook-configuration ${storyArgs} ${fileName}`
   );
@@ -179,9 +181,6 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   });
 
   updateCommitZenConfig(tree, { fileName });
-
-  console.log(`rm ${tree.root}/packages/${name}/src/lib/${name}.stories.tsx`);
-  execSync(`rm ${tree.root}/packages/${name}/src/lib/${name}.stories.tsx`);
 
   return () => {
     installPackagesTask(tree);

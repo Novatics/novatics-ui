@@ -1,8 +1,9 @@
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
-import { ThemeProvider, CssBaseline } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme } from '../packages/styles/src/index';
 
-require('./styles.css');
+import './styles.css';
 
 const theme = createTheme();
 

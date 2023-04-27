@@ -6,7 +6,10 @@ import { Wizard } from '@novatics/wizard';
 
 export { shadows, borderRadius, typography } from '@novatics/styles';
 export * from '@novatics/checkbox';
+export * from '@novatics/checkbox-field';
+export * from '@novatics/chip';
 export * from '@novatics/currency-text-field';
+export * from '@novatics/divider';
 export * from '@novatics/masked-text-field';
 export * from '@novatics/radio';
 export * from '@novatics/styles';

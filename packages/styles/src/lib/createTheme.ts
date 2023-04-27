@@ -11,11 +11,23 @@ import { themeShadows } from './Theme/shadows';
 import { themeTypography } from './Theme/typography';
 import { Length } from './Theme/types';
 import { themeBreakpoints } from './Theme/breakpoints';
+import { MuiCheckbox } from './Theme/components/MuiCheckbox';
 import { MuiChip } from './Theme/components/MuiChip';
 import { MuiDivider } from './Theme/components/MuiDivider';
 import './Theme/fonts.css';
 
 export { themePalette, themeBorderRadius };
+
+const createComponents = (componentsInput: ThemeOptions['components']) => {
+  return deepmerge(
+    {
+      MuiCheckbox,
+      MuiChip,
+      MuiDivider,
+    },
+    componentsInput
+  );
+};
 
 export const createTheme = (
   options?: ThemeOptions,
@@ -41,16 +53,6 @@ export const createTheme = (
   );
 
   return MUICreateTheme(nuiTheme, ...args);
-};
-
-const createComponents = (componentsInput: ThemeOptions['components']) => {
-  return deepmerge(
-    {
-      MuiChip,
-      MuiDivider,
-    },
-    componentsInput
-  );
 };
 
 export default createTheme;

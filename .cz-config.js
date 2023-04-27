@@ -42,6 +42,7 @@ module.exports = {
     { name: 'core' },
     { name: 'release' },
     { name: 'checkbox' },
+    { name: 'checkbox-field' },
     { name: 'chip' },
     { name: 'currency-text-field' },
     { name: 'divider' },

@@ -1,0 +1,249 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Formik, Field, Form } from 'formik';
+import { Button, Grid, Stack, Typography } from '@mui/material';
+
+import CheckboxField from './checkbox-field';
+import CheckboxFormikField from './checkbox-formik-field';
+import pkg from '../../package.json';
+
+<Meta title="CheckboxField" component={CheckboxField} />
+
+# CheckboxField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/checkbox-field`.
+
+```shell
+  yarn add -D @novatics/checkbox-field
+```
+
+```shell
+  npm install --dev @novatics/checkbox-field
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/checkbox-field';
+
+  ...
+
+
+```
+
+### Dependencies
+
+This component extends [Material UI React Checkbox](https://mui.com/material-ui/react-checkbox/). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    <Stack>
+      <Typography variant="h6">All states and variants</Typography>
+      <Grid container spacing={2}>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Default</Typography>
+            <CheckboxField />
+            <CheckboxField checked />
+            <CheckboxField disabled />
+            <CheckboxField checked disabled />
+            <CheckboxField color="error" />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Outlined</Typography>
+            <CheckboxField variant="outlined" />
+            <CheckboxField variant="outlined" checked />
+            <CheckboxField variant="outlined" checked disabled />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Indeterminate Default</Typography>
+            <CheckboxField indeterminate />
+            <CheckboxField indeterminate disabled />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Indeterminate Outlined</Typography>
+            <CheckboxField variant="outlined" indeterminate />
+            <CheckboxField variant="outlined" indeterminate disabled />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Color Variations</Typography>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="primary" checked />
+              <CheckboxField color="primary" />
+            </Stack>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="secondary" checked />
+              <CheckboxField color="secondary" />
+            </Stack>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="error" checked />
+              <CheckboxField color="error" />
+            </Stack>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="info" checked />
+              <CheckboxField color="info" />
+            </Stack>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="success" checked />
+              <CheckboxField color="success" />
+            </Stack>
+            <Stack direction="row" spacing={0}>
+              <CheckboxField color="warning" checked />
+              <CheckboxField color="warning" />
+            </Stack>
+          </Stack>
+        </Grid>
+      </Grid>
+      <Typography variant="h6">Labels</Typography>
+      <Grid container spacing={2}>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Default(end)</Typography>
+            <CheckboxField label="label" labelPlacement="end" />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Start</Typography>
+            <CheckboxField label="label" labelPlacement="start" />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Top</Typography>
+            <CheckboxField label="label" labelPlacement="top" />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Bottom</Typography>
+            <CheckboxField label="label" labelPlacement="bottom" />
+          </Stack>
+        </Grid>
+        <Grid item xxs={2}>
+          <Stack spacing={0}>
+            <Typography variant="bodySmall">Required</Typography>
+            <CheckboxField label="label" required />
+          </Stack>
+        </Grid>
+      </Grid>
+    </Stack>
+  </Story>
+</Canvas>
+
+### Using Formik
+
+We also provide a integrated component using [Field](https://formik.org/docs/api/field) from Formik!
+Some default behaviors of our component are:
+
+- Automatic label using field name. If you want to replace or hide the label you can use the label property.
+- Autimatic validation if the field is required (html5 ).
+
+<Canvas>
+  <Story name="Using Formik">
+    {(args) => {
+      return (
+        <Stack direction="row" spacing={0}>
+          <Formik
+            initialValues={{ isChecked: false, required: false,  toggle: false, checked: [] }}
+            onSubmit={async (values) => {
+              await new Promise((r) => setTimeout(r, 500));
+              alert(JSON.stringify(values, null, 2));
+            }}
+          >
+            {({ values, validateForm }) => (
+              <Form>
+                <Stack>
+                  <CheckboxFormikField id="isChecked" name="isChecked" />
+                  <CheckboxFormikField
+                    id="toggle"
+                    name="toggle"
+                    label={`${values.toggle}`}
+                    validate={(val) => !val}
+                  />
+                  <CheckboxFormikField
+                    type="checkbox"
+                    name="required"
+                    label="Required"
+                    required
+                  />
+                  <div role="group" aria-labelledby="checkbox-group">
+                    <CheckboxFormikField
+                      type="checkbox"
+                      name="checked"
+                      value="One"
+                      label="One"
+                    />
+                    <CheckboxFormikField
+                      type="checkbox"
+                      name="checked"
+                      value="Two"
+                      label="Two"
+                    />
+                    <CheckboxFormikField
+                      type="checkbox"
+                      name="checked"
+                      value="Three"
+                      label="Three"
+                    />
+                  </div>
+                  <Stack direction="row" spacing={1}>
+                    <Button
+                      variant="outlined"
+                      onClick={() =>
+                        validateForm().then(() => console.log('blah'))
+                      }
+                    >
+                      Validate
+                    </Button>
+                    <Button variant="contained" type="submit">
+                      Submit
+                    </Button>
+                  </Stack>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div>
+          <CheckboxField {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
+made by Novatics ❤

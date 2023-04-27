@@ -75,7 +75,7 @@ function createTargetsVersionDeploy(
 
 export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const {
-    project = "@novatics",
+    project = '@novatics',
     name,
     mui,
     buildable = true,

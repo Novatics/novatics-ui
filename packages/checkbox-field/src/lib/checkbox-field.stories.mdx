@@ -161,7 +161,12 @@ Some default behaviors of our component are:
       return (
         <Stack direction="row" spacing={0}>
           <Formik
-            initialValues={{ isChecked: false, required: false,  toggle: false, checked: [] }}
+            initialValues={{
+              isChecked: false,
+              required: false,
+              toggle: false,
+              checked: [],
+            }}
             onSubmit={async (values) => {
               await new Promise((r) => setTimeout(r, 500));
               alert(JSON.stringify(values, null, 2));

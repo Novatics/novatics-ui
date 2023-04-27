@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/core-0.1.0...core-0.2.0) (2023-04-27)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.2.0`
+* `currency-text-field` updated to version `0.2.0`
+* `masked-text-field` updated to version `0.2.0`
+* `radio` updated to version `0.2.0`
+* `wizard` updated to version `0.2.0`
+* `styles` updated to version `0.2.0`
+* `checkbox-field` updated to version `0.2.0`
+* `chip` updated to version `0.2.0`
+* `divider` updated to version `0.2.0`
+* `tokens` updated to version `0.2.0`
+
+### Features
+
+* **root:** format files and remove jest ([d9465bc](https://github.com/Novatics/novatics-ui/commit/d9465bc1205be35fa970b607b6cb1d05aca4f756))
+* **root:** migrate core ([4aac9d1](https://github.com/Novatics/novatics-ui/commit/4aac9d1666acf1839899782186937f8287ba9505))
+
 ## 0.1.0 (2023-04-27)
 
 ### Dependency Updates

@@ -5,29 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^build"],
-      "options": {
-        "outputPath": "dist/packages/radio",
-        "tsConfig": "packages/radio/tsconfig.lib.json",
-        "project": "packages/radio/package.json",
-        "entryFile": "packages/radio/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/radio/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -35,20 +12,35 @@
         "lintFilePatterns": ["packages/radio/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "jestConfig": "packages/radio/jest.config.ts",
-        "passWithNoTests": true
+        "outputPath": "dist/packages/radio"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/packages/radio"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/radio"
       }
     },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/radio/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/radio/.storybook"
       },
       "configurations": {
         "ci": {
@@ -61,12 +53,23 @@
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/radio",
-        "configDir": "packages/radio/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/radio/.storybook"
       },
       "configurations": {
         "ci": {
           "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "radio:build-storybook",
+        "staticFilePath": "dist/storybook/radio"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "radio:build-storybook:ci"
         }
       }
     },
@@ -80,7 +83,8 @@
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {

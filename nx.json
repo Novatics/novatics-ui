@@ -26,14 +26,18 @@
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
+        "bundler": "vite",
         "babel": true
       },
       "component": {
-        "style": "@emotion/styled"
+        "style": "@emotion/styled",
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
       },
       "library": {
         "style": "@emotion/styled",
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
       }
     }
   },
@@ -72,7 +76,10 @@
       ]
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production"]
+    },
+    "build-storybook": {
+      "inputs": ["default", "^production", "!{projectRoot}/.storybook/**/*"]
     }
   },
   "namedInputs": {
@@ -82,7 +89,8 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s"
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/.storybook/**/*"
     ],
     "sharedGlobals": []
   }

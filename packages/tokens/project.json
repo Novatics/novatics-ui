@@ -5,15 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/tokens",
-        "main": "packages/tokens/src/index.ts",
-        "tsConfig": "packages/tokens/tsconfig.lib.json"
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -21,20 +12,35 @@
         "lintFilePatterns": ["packages/tokens/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/tokens"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nrwl/vite:test",
       "outputs": ["coverage/packages/tokens"],
       "options": {
-        "jestConfig": "packages/tokens/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/tokens"
       }
     },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/tokens/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/tokens/.storybook"
       },
       "configurations": {
         "ci": {
@@ -47,8 +53,7 @@
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/tokens",
-        "configDir": "packages/tokens/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/tokens/.storybook"
       },
       "configurations": {
         "ci": {
@@ -56,25 +61,38 @@
         }
       }
     },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "tokens:build-storybook",
+        "staticFilePath": "dist/storybook/tokens"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "tokens:build-storybook:ci"
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional",
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "preset": "conventional"
       }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["tokens:deploy"],
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "postTargets": ["tokens:deploy"]
       }
     }
   }

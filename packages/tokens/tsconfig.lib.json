@@ -2,19 +2,25 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "types": []
+    "types": ["node", "vite/client"]
   },
-  "include": ["**/*.ts", "src/lib/__stories__/constants.ts"],
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ],
   "exclude": [
-    "jest.config.ts",
     "**/*.spec.ts",
     "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.test.tsx",
+    "**/*.spec.js",
+    "**/*.test.js",
+    "**/*.spec.jsx",
+    "**/*.test.jsx",
     "**/*.stories.ts",
     "**/*.stories.js",
     "**/*.stories.jsx",
     "**/*.stories.tsx"
-  ]
+  ],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }

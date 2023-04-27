@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -75,26 +75,28 @@ import Tokens, { colors, borderRadius, shadows, spacing, typography } from '@nov
                     backgroundColor: Tokens.colors[name],
                   }}
                 >
-                  <Typography
-                    variant="body"
-                    fontWeight="700"
-                    color={getColorTextColor(name)}
-                  >
-                    {formatColorName(name)}
-                  </Typography>
-                  <Typography
-                    variant="bodySmall"
-                    color={getColorTextColor(name)}
-                  >
-                    <span style={{ opacity: 0.7 }}>HEX</span>{' '}
-                    {Tokens.colors[name]}
-                  </Typography>
-                  <Typography
-                    variant="bodySmall"
-                    color={getColorTextColor(name)}
-                  >
-                    <span style={{ opacity: 0.7 }}>TOKEN</span> {name}
-                  </Typography>
+                  <Stack>
+                    <Typography
+                      variant="body"
+                      fontWeight="700"
+                      color={getColorTextColor(name)}
+                    >
+                      {formatColorName(name)}
+                    </Typography>
+                    <Typography
+                      variant="bodySmall"
+                      color={getColorTextColor(name)}
+                    >
+                      <span style={{ opacity: 0.7 }}>HEX</span>{' '}
+                      {Tokens.colors[name]}
+                    </Typography>
+                    <Typography
+                      variant="bodySmall"
+                      color={getColorTextColor(name)}
+                    >
+                      <span style={{ opacity: 0.7 }}>TOKEN</span> {name}
+                    </Typography>
+                  </Stack>
                 </Paper>
               </Stack>
             </Grid>

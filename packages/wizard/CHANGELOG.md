@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/wizard-0.1.0...wizard-0.2.0) (2023-04-27)
+
+
+### Features
+
+* **root:** fix import stories ([636dbb6](https://github.com/Novatics/novatics-ui/commit/636dbb6413892ac79bd5869afe247a0c28dd7db1))
+* **root:** format files and remove jest ([d9465bc](https://github.com/Novatics/novatics-ui/commit/d9465bc1205be35fa970b607b6cb1d05aca4f756))
+* **root:** migrate wizard ([d718826](https://github.com/Novatics/novatics-ui/commit/d718826c42d6b783565f781d74f3b05c774e371a))
+
 ## 0.1.0 (2023-04-27)
 
 

@@ -55,6 +55,15 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "version": {
+      "dependsOn": ["^build"]
+    },
+    "deploy": {
+      "dependsOn": ["^build"]
+    },
+    "version:deploy": {
+      "dependsOn": ["^build"]
+    },
     "lint": {
       "inputs": [
         "default",

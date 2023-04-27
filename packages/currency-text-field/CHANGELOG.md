@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/currency-text-field-0.1.0...currency-text-field-0.2.0) (2023-04-27)
+
+
+### Features
+
+* **root:** format files and remove jest ([d9465bc](https://github.com/Novatics/novatics-ui/commit/d9465bc1205be35fa970b607b6cb1d05aca4f756))
+* **root:** migrate currency-text-field ([bc955ae](https://github.com/Novatics/novatics-ui/commit/bc955aefa2ec76777fe52223184f870188dfb2c7))
+
 ## 0.1.0 (2023-04-27)
 
 

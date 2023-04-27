@@ -47,7 +47,7 @@ var lodash_snakecase_default = /*#__PURE__*/__webpack_require__.n(lodash_snakeca
 var lodash_startcase = __webpack_require__(89067);
 var lodash_startcase_default = /*#__PURE__*/__webpack_require__.n(lodash_startcase);
 ;// CONCATENATED MODULE: ./packages/tokens/package.json
-const package_namespaceObject = {"i8":"0.2.1"};
+const package_namespaceObject = {"i8":"0.1.0"};
 // EXTERNAL MODULE: ./packages/tokens/src/lib/tokens.ts + 5 modules
 var tokens = __webpack_require__(79000);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.exec.js
@@ -762,4 +762,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=tokens-src-lib-__stories__-tokens-stories-mdx.0ec9f5aa.iframe.bundle.js.map
+//# sourceMappingURL=tokens-src-lib-__stories__-tokens-stories-mdx.3a3550ae.iframe.bundle.js.map

@@ -26,7 +26,7 @@ var dist = __webpack_require__(70019);
 // EXTERNAL MODULE: ./node_modules/@mui/material/Button/Button.js + 2 modules
 var Button = __webpack_require__(38864);
 ;// CONCATENATED MODULE: ./packages/styles/package.json
-const package_namespaceObject = {"i8":"0.3.0"};
+const package_namespaceObject = {"i8":"0.1.0"};
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__(21496);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
@@ -474,4 +474,4 @@ componentMeta.parameters.docs = { ...(componentMeta.parameters.docs || {}),
 /***/ })
 
 }]);
-//# sourceMappingURL=styles-src-lib-styles-stories-mdx.53b9b2a9.iframe.bundle.js.map
+//# sourceMappingURL=styles-src-lib-styles-stories-mdx.e027cdc3.iframe.bundle.js.map

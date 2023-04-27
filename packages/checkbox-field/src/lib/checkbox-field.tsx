@@ -1,12 +1,7 @@
 import Checkbox, { CheckboxProps } from '@novatics/checkbox';
-import FormControl, { FormControlProps } from '@mui/material/FormControl';
-import InputLabel, { InputLabelProps } from '@mui/material/InputLabel';
-import MuiFormHelperText, {
-  FormHelperTextProps,
-} from '@mui/material/FormHelperText';
-import Stack from '@mui/material/Stack';
+import FormControl from '@mui/material/FormControl';
 import { styled, useTheme } from '@mui/material';
-import Typography, { TypographyProps } from '@mui/material/Typography';
+import { TypographyProps } from '@mui/material/Typography';
 import MuiFormControlLabel, {
   FormControlLabelProps,
 } from '@mui/material/FormControlLabel';
@@ -14,9 +9,10 @@ import MuiFormControlLabel, {
 const FormControlLabel = styled(MuiFormControlLabel)(({ theme }) => ({
   paddingTop: theme.spacing(1),
   paddingBottom: theme.spacing(1),
+  '&.MuiFormControlLabel-root': {
+    margin: 0,
+  },
 }));
-
-const FormHelperText = styled(MuiFormHelperText)(({ theme }) => ({}));
 
 export type CheckboxFieldProps = FormControlLabelProps &
   CheckboxProps & {
@@ -35,30 +31,37 @@ const CheckboxField = (props: CheckboxFieldProps) => {
 
   const hasError = Boolean(props.error);
   const color = hasError ? 'error' : undefined;
+  const labelPadding = {
+    paddingRight: theme.spacing(0.5),
+    paddingLeft: theme.spacing(0.5),
+  };
 
-  const hint =
-    hasError && typeof props.error === 'string' ? props.error : props.hint;
+  if (props.required) {
+    if (props.labelPlacement === 'start') {
+      labelPadding.paddingLeft = '0px';
+    } else {
+      labelPadding.paddingRight = '0px';
+    }
+  }
 
   return (
     <FormControl>
       <FormControlLabel
         {...props}
-        control={<Checkbox {...props} color={color} />}
+        control={<Checkbox color={color} {...props} />}
         slotProps={{
           ...props.slotProps,
           typography: {
+            color: hasError ? theme.palette.error.main : undefined,
             ...typographyOverride,
-            paddingRight: theme.spacing(0.5),
-            paddingLeft: theme.spacing(0.5),
+            ...labelPadding,
             ...props.slotProps?.typography,
           },
         }}
       />
-      {hint ? <FormHelperText error={hasError}>{hint}</FormHelperText> : null}
     </FormControl>
   );
 };
 
 export { CheckboxField };
 export default CheckboxField;
-export * from '@mui/material/Checkbox';

@@ -1,4 +1,4 @@
-import { Components, Theme } from '@mui/material';
+import { Components } from '@mui/material';
 
 export const MuiCheckbox: Components['MuiCheckbox'] = {
   styleOverrides: {
@@ -9,6 +9,10 @@ export const MuiCheckbox: Components['MuiCheckbox'] = {
       paddingLeft: '4px',
       height: '24px',
       width: '24px',
+      '&.Mui-disabled': {
+        cursor: 'not-allowed',
+        pointerEvents: 'all',
+      },
     },
   },
 };

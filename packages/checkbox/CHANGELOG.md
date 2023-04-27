@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/checkbox-0.1.2...checkbox-0.2.0) (2023-04-27)
+
+### Dependency Updates
+
+* `styles` updated to version `0.3.0`
+
+### Features
+
+* **checkbox-field:** implement checkbox formik field and adjust on checkbox component ([7925fec](https://github.com/Novatics/novatics-ui/commit/7925fec9e5cab93382f5cc70a1a7ea275dba8448))
+* **checkbox-field:** implement checkboxfield component ([8cd3f57](https://github.com/Novatics/novatics-ui/commit/8cd3f5767cf1d3771cd59635add673d2fa192b0a))
+
 ## [0.1.2](https://github.com/Novatics/novatics-ui/compare/checkbox-0.1.1...checkbox-0.1.2) (2023-04-27)
 
 ### Dependency Updates

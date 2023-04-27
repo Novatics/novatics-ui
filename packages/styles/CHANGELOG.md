@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/styles-0.1.0...styles-0.2.0) (2023-04-27)
+
+### Dependency Updates
+
+* `tokens` updated to version `0.2.0`
+
+### Features
+
+* **root:** fix import stories ([636dbb6](https://github.com/Novatics/novatics-ui/commit/636dbb6413892ac79bd5869afe247a0c28dd7db1))
+* **root:** format files and remove jest ([d9465bc](https://github.com/Novatics/novatics-ui/commit/d9465bc1205be35fa970b607b6cb1d05aca4f756))
+* **root:** migrate styles ([f623a83](https://github.com/Novatics/novatics-ui/commit/f623a832c8233409378a8f519d6228ea977493e1))
+
 ## 0.1.0 (2023-04-27)
 
 ### Dependency Updates

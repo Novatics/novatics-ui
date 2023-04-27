@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/checkbox-0.1.0...checkbox-0.2.0) (2023-04-27)
+
+### Dependency Updates
+
+* `styles` updated to version `0.2.0`
+
+### Features
+
+* **checkbox:** migrate checkbox ([e72afc5](https://github.com/Novatics/novatics-ui/commit/e72afc5679e517a62a7610d7cc6f6eb7437a8323))
+
 ## 0.1.0 (2023-04-27)
 
 ### Dependency Updates

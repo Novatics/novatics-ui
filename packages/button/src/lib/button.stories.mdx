@@ -1,5 +1,8 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import SendIcon from '@mui/icons-material/Send';
+import Switch from '@mui/material/Switch';
 import Button from './button';
 import pkg from '../../package.json';
 
@@ -15,18 +18,92 @@ First install the latest version of the package from `@novatics/button`.
   yarn add -D @novatics/button
 ```
 
-```shell
-  npm install --dev @novatics/button
-```
+### Basic Usage
 
-and use it
-
-```tsx
-import ... from '@novatics/button';
-
-  ...
-
-
-```
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      const [loading, setLoading] = React.useState(true);
+      return (
+        <>
+          <FormControlLabel
+            sx={{
+              display: 'block',
+            }}
+            control={
+              <Switch
+                checked={loading}
+                onChange={() => setLoading(!loading)}
+                name="loading"
+                color="primary"
+              />
+            }
+            label="Loading"
+          />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="center"
+            >
+              Submit
+            </Button>
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="start"
+            >
+              Submit
+            </Button>
+            <Button variant="contained" loading={loading} loadingPosition="end">
+              Submit
+            </Button>
+          </div>
+          <br />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="center"
+              endIcon={<SendIcon />}
+            >
+              Submit
+            </Button>
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="start"
+              endIcon={<SendIcon />}
+            >
+              Submit
+            </Button>
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="end"
+              endIcon={<SendIcon />}
+            >
+              Submit
+            </Button>
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
 
 made by Novatics ❤

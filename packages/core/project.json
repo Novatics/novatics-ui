@@ -5,27 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^build"],
-      "options": {
-        "outputPath": "dist/packages/core",
-        "tsConfig": "packages/core/tsconfig.lib.json",
-        "project": "packages/core/package.json",
-        "entryFile": "packages/core/src/index.ts",
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "swc",
-        "assets": [
-          {
-            "glob": "packages/core/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -33,20 +12,35 @@
         "lintFilePatterns": ["packages/core/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/core"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nrwl/vite:test",
       "outputs": ["coverage/packages/core"],
       "options": {
-        "jestConfig": "packages/core/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/core"
       }
     },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/core/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/core/.storybook"
       },
       "configurations": {
         "ci": {
@@ -59,8 +53,7 @@
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/core",
-        "configDir": "packages/core/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/core/.storybook"
       },
       "configurations": {
         "ci": {
@@ -68,25 +61,38 @@
         }
       }
     },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "core:build-storybook",
+        "staticFilePath": "dist/storybook/core"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "core:build-storybook:ci"
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional",
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "preset": "conventional"
       }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["core:deploy"],
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "postTargets": ["core:deploy"]
       }
     }
   }

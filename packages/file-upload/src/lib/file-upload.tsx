@@ -1,30 +1,38 @@
-import styled from '@emotion/styled';
-
 import { ListItem, ListItemProps } from '../list-item';
 import { DragAndDrop, DragAndDropProps } from '../drag-and-drop';
 import { FromUrl, FromUrlProps } from '../from-url';
+import { Box, Typography } from '@mui/material';
+import { FileUploadContainer } from './styles';
 
-/* eslint-disable-next-line */
 export interface FileUploadProps {
   listItemProps?: ListItemProps;
   dragAndDropProps?: DragAndDropProps;
-  fromUrlProps?: FromUrlProps;
+  fromUrlProps: FromUrlProps;
 }
-
-const StyledFileUpload = styled.div`
-  color: pink;
-`;
 
 export function FileUpload(props: FileUploadProps) {
   const { listItemProps, dragAndDropProps, fromUrlProps } = props;
 
   return (
-    <StyledFileUpload>
-      <h1>Welcome to FileUpload!</h1>
-      <DragAndDrop {...dragAndDropProps} />
-      <FromUrl {...fromUrlProps} />
-      <ListItem {...listItemProps} />
-    </StyledFileUpload>
+    <FileUploadContainer>
+      <Box>
+        <Typography variant="h6">Drag and Drop:</Typography>
+        <DragAndDrop {...dragAndDropProps} />
+      </Box>
+
+      <Box>
+        <Typography variant="h6">From URL:</Typography>
+        <FromUrl
+          onUpload={(url) => console.log(`url`, url)}
+          {...fromUrlProps}
+        />
+      </Box>
+
+      <Box>
+        <Typography variant="h6">List Item:</Typography>
+        <ListItem {...listItemProps} />
+      </Box>
+    </FileUploadContainer>
   );
 }
 

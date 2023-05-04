@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Novatics/novatics-ui/compare/core-0.2.0...core-0.2.1) (2023-05-04)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.2.1`
+* `currency-text-field` updated to version `0.2.1`
+* `masked-text-field` updated to version `0.2.1`
+* `radio` updated to version `0.2.1`
+* `wizard` updated to version `0.2.1`
+* `styles` updated to version `0.2.1`
+* `checkbox-field` updated to version `0.2.1`
+* `chip` updated to version `0.2.1`
+* `divider` updated to version `0.2.1`
+* `tokens` updated to version `0.2.1`
 ## [0.2.0](https://github.com/Novatics/novatics-ui/compare/core-0.1.0...core-0.2.0) (2023-04-27)
 
 ### Dependency Updates

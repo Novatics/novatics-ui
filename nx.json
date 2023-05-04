@@ -26,7 +26,8 @@
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
-        "bundler": "vite"
+        "bundler": "vite",
+        "babel": true
       },
       "component": {
         "style": "@emotion/styled",

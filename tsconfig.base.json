@@ -26,6 +26,7 @@
         "packages/currency-text-field/src/index.ts"
       ],
       "@novatics/divider": ["packages/divider/src/index.ts"],
+      "@novatics/input-field": ["packages/input-field/src/index.ts"],
       "@novatics/masked-text-field": [
         "packages/masked-text-field/src/index.ts"
       ],

@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "component": {
+      "implementation": "./src/generators/component",
+      "schema": "./src/generators/component/schema.json",
+      "description": "Generator component"
+    }
+  }
+}

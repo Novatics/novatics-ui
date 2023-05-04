@@ -19,14 +19,14 @@
     "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/react"
+    "defaultCollection": "@nx/react"
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
-        "bundler": "vite",
+        "bundler": "vite"
       },
       "component": {
         "style": "@emotion/styled",

@@ -6,7 +6,7 @@ import {
   Tree,
   installPackagesTask,
   updateJson,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { execSync } from 'child_process';
 import sortby from 'lodash.sortby';
 import * as fs from 'fs';

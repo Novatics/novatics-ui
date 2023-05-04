@@ -1,5 +1,4 @@
 import rootMain from '../../../.storybook/main';
-
 const config = {
   stories: [
     ...rootMain.stories.map((s) => `../../../${s}`),
@@ -11,12 +10,14 @@ const config = {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: 'packages/checkbox/vite.config.ts',
+        viteConfigPath: 'packages/core/vite.config.ts',
       },
     },
   },
+  docs: {
+    autodocs: true,
+  },
 };
-
 export default config;
 
 // To customize your Vite configuration you can use the viteFinal field.

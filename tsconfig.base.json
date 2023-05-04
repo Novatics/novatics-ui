@@ -32,7 +32,8 @@
       "@novatics/radio": ["packages/radio/src/index.ts"],
       "@novatics/styles": ["packages/styles/src/index.ts"],
       "@novatics/tokens": ["packages/tokens/src/index.ts"],
-      "@novatics/wizard": ["packages/wizard/src/index.ts"]
+      "@novatics/wizard": ["packages/wizard/src/index.ts"],
+      "@novatics/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

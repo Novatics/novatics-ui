@@ -20,8 +20,164 @@ First install the latest version of the package from `@novatics/button`.
 
 ### Basic Usage
 
+The `Button` component have three variants: it supports outlined, contained and only text styling. The default variant is `text`.
+
 <Canvas>
   <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Button variant="contained">Button</Button>
+            <Button variant="outlined">Button</Button>
+            <Button variant="text">Button</Button>
+          </div>
+          <br />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Button disabled variant="contained">
+              Disabled
+            </Button>
+            <Button disabled variant="outlined">
+              Disabled
+            </Button>
+            <Button disabled variant="text">
+              Disabled
+            </Button>
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Size
+
+A `Button` can be small, medium or large. The default size is medium.
+
+<Canvas>
+  <Story name="Size">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Button variant="contained" size="small">
+            Button
+          </Button>
+          <Button variant="contained">Button</Button>
+          <Button variant="contained" size="large">
+            Button
+          </Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Icon
+
+A `Button` can also have icons, that can be placed on the left or right of the button.
+
+<Canvas>
+  <Story name="Icon">
+    {(args) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Button variant="contained" startIcon={<SendIcon />}>
+            Send
+          </Button>
+          <Button variant="contained" endIcon={<SendIcon />}>
+            Send
+          </Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Colors
+
+A 'Button' can display a range of colors in addition to the default.
+
+<Canvas>
+  <Story name="Colors">
+    {(args) => {
+      return (
+        <>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '10px',
+            }}
+          >
+            <Button variant="outlined">Primary</Button>
+            <Button variant="outlined" color="error">
+              Error
+            </Button>
+            <Button variant="outlined" color="success">
+              Success
+            </Button>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Button variant="text">Primary</Button>
+            <Button variant="text" color="error">
+              Error
+            </Button>
+            <Button variant="text" color="success">
+              Success
+            </Button>
+            <Button variant="text" color="secondary">
+              Secondary
+            </Button>
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Colors
+
+A 'Button' can also present a loading state. By default, it will present `CircularProgress` in the center as the indicator.
+
+<Canvas>
+  <Story name="Loading">
     {(args) => {
       const [loading, setLoading] = React.useState(true);
       return (
@@ -48,21 +204,13 @@ First install the latest version of the package from `@novatics/button`.
               gap: '10px',
             }}
           >
-            <Button
-              variant="contained"
-              loading={loading}
-              loadingPosition="center"
-            >
+            <Button variant="contained" loading={loading}>
               Submit
             </Button>
-            <Button
-              variant="contained"
-              loading={loading}
-              loadingPosition="start"
-            >
+            <Button variant="outlined" loading={loading}>
               Submit
             </Button>
-            <Button variant="contained" loading={loading} loadingPosition="end">
+            <Button variant="text" loading={loading}>
               Submit
             </Button>
           </div>
@@ -79,7 +227,7 @@ First install the latest version of the package from `@novatics/button`.
               variant="contained"
               loading={loading}
               loadingPosition="center"
-              endIcon={<SendIcon />}
+              loadingIndicator="Loading..."
             >
               Submit
             </Button>
@@ -87,7 +235,7 @@ First install the latest version of the package from `@novatics/button`.
               variant="contained"
               loading={loading}
               loadingPosition="start"
-              endIcon={<SendIcon />}
+              startIcon={<SendIcon />}
             >
               Submit
             </Button>

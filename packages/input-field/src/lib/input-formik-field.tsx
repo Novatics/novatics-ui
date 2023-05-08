@@ -1,12 +1,11 @@
 import { useCallback, useMemo } from 'react';
 import { Field, FieldProps } from 'formik';
 
-import { CheckboxField, CheckboxFieldProps } from './checkbox-field';
+import { InputField, InputFieldProps } from './input-field';
 
-export type CheckboxFormikFieldProps<T, U> = CheckboxFieldProps &
-  FieldProps<T, U>;
+export type InputFormikFieldProps<T, U> = InputFieldProps & FieldProps<T, U>;
 
-const CheckboxFormikField = <T, U>(props: CheckboxFormikFieldProps<T, U>) => {
+const InputFormikField = <T, U>(props: InputFormikFieldProps<T, U>) => {
   const internalValidate = useCallback(
     (value) => (props.required ? !value : false),
     [props.required]
@@ -19,20 +18,21 @@ const CheckboxFormikField = <T, U>(props: CheckboxFormikFieldProps<T, U>) => {
 
   return (
     <Field validate={internalValidate} {...props}>
-      {({ field, form, meta }: FieldProps<boolean>) => {
+      {(p: FieldProps<boolean>) => {
+        const { field, form, meta } = p;
         const hasError =
           (form.touched || meta.touched) &&
           (meta.error || Boolean(form.errors[field.name]));
 
         return (
-          <CheckboxField
-            error={hasError}
+          <InputField
             {...props}
+            error={hasError}
             label={label}
             value={field.value}
-            onChange={(event, value) => {
+            onChange={(event) => {
               field.onChange(event);
-              props.onChange && props.onChange(event, value);
+              props.onChange && props.onChange(event);
             }}
           />
         );
@@ -41,5 +41,5 @@ const CheckboxFormikField = <T, U>(props: CheckboxFormikFieldProps<T, U>) => {
   );
 };
 
-export { CheckboxFormikField };
-export default CheckboxFormikField;
+export { InputFormikField };
+export default InputFormikField;

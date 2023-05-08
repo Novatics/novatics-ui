@@ -208,12 +208,7 @@ Some default behaviors of our component are:
                     />
                   </div>
                   <Stack direction="row" spacing={1}>
-                    <Button
-                      variant="outlined"
-                      onClick={() =>
-                        validateForm().then(() => console.log('blah'))
-                      }
-                    >
+                    <Button variant="outlined" onClick={() => validateForm()}>
                       Validate
                     </Button>
                     <Button variant="contained" type="submit">

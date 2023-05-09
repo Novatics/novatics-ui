@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import ActionFooter from './action-footer';
+import pkg from '../../package.json';
+
+<Meta title="ActionFooter" component={ActionFooter} />
+
+# ActionFooter <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/action-footer`.
+
+```shell
+  yarn add -D @novatics/action-footer
+```
+
+```shell
+  npm install --dev @novatics/action-footer
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/action-footer';
+
+  ...
+
+
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <ActionFooter {...args} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

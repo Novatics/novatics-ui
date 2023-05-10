@@ -25,16 +25,26 @@ export function ActionFooter({ action, contentPosition, children, ...props }: Ac
     }
   }, [contentPosition]);
 
+  const childrenArray = React.useMemo(() => {
+    if (children) {
+      return React.Children.toArray(children);
+    }
+    if (action) {
+      return React.Children.toArray(action);
+    }
+    return [];
+  }, [children, action]);
+
   return (
     <Stack
+      // should this be footer?
       component='footer'
       direction="row"
-      spacing={2}
       justifyContent={justifyContent}
       alignItems="center"
       {...props}
     >
-      {children || action.map((action) => action)}
+      {childrenArray}
     </Stack>
   );
 }

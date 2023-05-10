@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { Button } from '@mui/material';
 import ActionFooter from './action-footer';
 import pkg from '../../package.json';
 
@@ -15,18 +16,12 @@ First install the latest version of the package from `@novatics/action-footer`.
   yarn add -D @novatics/action-footer
 ```
 
-```shell
-  npm install --dev @novatics/action-footer
-```
+### Dependencies
 
-and use it
+This component extends [Material UI React Stack](https://mui.com/material-ui/react-stack). Therefore is needed to install Material UI:
 
-```tsx
-import ... from '@novatics/action-footer';
-
-  ...
-
-
+```bash
+yarn add @mui/material
 ```
 
 ### Basic Usage
@@ -42,5 +37,87 @@ import ... from '@novatics/action-footer';
     }}
   </Story>
 </Canvas>
+
+```tsx
+import ... from '@novatics/action-footer';
+
+  ...
+
+
+```
+
+### Variations
+
+<Canvas>
+  <Story name="Variations">
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+      }}
+    >
+      <div>
+        Using as children Behavior
+        <ActionFooter spacing={2}>
+          <Button variant="outlined" color="primary">
+            Click
+          </Button>
+          <Button variant="contained" color="primary">
+            Click
+          </Button>
+        </ActionFooter>
+      </div>
+      <div>
+        Using as action Prop Behavior
+        <ActionFooter
+          spacing={2}
+          action={[
+            <Button variant="outlined" color="primary">
+              Click
+            </Button>,
+            <Button variant="contained" color="primary">
+              Click
+            </Button>,
+          ]}
+        />
+      </div>
+    </div>
+  </Story>
+</Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <ActionFooter
+            style={{
+              width: '100%',
+            }}
+            {...args}
+          >
+            <Button variant="outlined" color="primary">
+              Click
+            </Button>
+            <Button variant="contained" color="primary">
+              Click
+            </Button>
+          </ActionFooter>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
 
 made by Novatics ❤

@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": [
         "{options.outputFile}"
       ],
@@ -17,39 +17,38 @@
       }
     },
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/vite:build",
       "outputs": [
         "{options.outputPath}"
       ],
+      "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/button",
-        "tsConfig": "packages/button/tsconfig.lib.json",
-        "project": "packages/button/package.json",
-        "entryFile": "packages/button/src/index.ts",
-        "external": [
-          "@emotion/react/jsx-runtime"
-        ],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/button/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": [
-          "cjs"
-        ],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
+        "outputPath": "dist/packages/button"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": [
+        "coverage/packages/button"
+      ],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/button"
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/button/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/button/.storybook"
       },
       "configurations": {
         "ci": {
@@ -58,18 +57,29 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": [
         "{options.outputDir}"
       ],
       "options": {
         "outputDir": "dist/storybook/button",
-        "configDir": "packages/button/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/button/.storybook"
       },
       "configurations": {
         "ci": {
           "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "button:build-storybook",
+        "staticFilePath": "dist/storybook/button"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "button:build-storybook:ci"
         }
       }
     },
@@ -83,7 +93,8 @@
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {

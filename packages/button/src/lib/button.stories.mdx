@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import SendIcon from '@mui/icons-material/Send';
 import Switch from '@mui/material/Switch';
@@ -26,28 +27,13 @@ The `Button` component have three variants: it supports outlined, contained and 
   <Story name="Basic Usage">
     {(args) => {
       return (
-        <>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
+        <Stack spacing={3}>
+          <Stack spacing={2} direction="row">
             <Button variant="contained">Button</Button>
             <Button variant="outlined">Button</Button>
             <Button variant="text">Button</Button>
-          </div>
-          <br />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
+          </Stack>
+          <Stack spacing={2} direction="row">
             <Button disabled variant="contained">
               Disabled
             </Button>
@@ -57,8 +43,8 @@ The `Button` component have three variants: it supports outlined, contained and 
             <Button disabled variant="text">
               Disabled
             </Button>
-          </div>
-        </>
+          </Stack>
+        </Stack>
       );
     }}
   </Story>
@@ -72,14 +58,7 @@ A `Button` can be small, medium or large. The default size is medium.
   <Story name="Size">
     {(args) => {
       return (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: '10px',
-          }}
-        >
+        <Stack spacing={2} direction="row">
           <Button variant="contained" size="small">
             Button
           </Button>
@@ -87,7 +66,7 @@ A `Button` can be small, medium or large. The default size is medium.
           <Button variant="contained" size="large">
             Button
           </Button>
-        </div>
+        </Stack>
       );
     }}
   </Story>
@@ -101,21 +80,14 @@ A `Button` can also have icons, that can be placed on the left or right of the b
   <Story name="Icon">
     {(args) => {
       return (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: '10px',
-          }}
-        >
+        <Stack spacing={2} direction="row">
           <Button variant="contained" startIcon={<SendIcon />}>
             Send
           </Button>
           <Button variant="contained" endIcon={<SendIcon />}>
             Send
           </Button>
-        </div>
+        </Stack>
       );
     }}
   </Story>
@@ -129,16 +101,8 @@ A 'Button' can display a range of colors in addition to the default.
   <Story name="Colors">
     {(args) => {
       return (
-        <>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-              marginBottom: '10px',
-            }}
-          >
+        <Stack spacing={3}>
+          <Stack spacing={2} direction="row">
             <Button variant="outlined">Primary</Button>
             <Button variant="outlined" color="error">
               Error
@@ -146,15 +110,8 @@ A 'Button' can display a range of colors in addition to the default.
             <Button variant="outlined" color="success">
               Success
             </Button>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
+          </Stack>
+          <Stack spacing={2} direction="row">
             <Button variant="text">Primary</Button>
             <Button variant="text" color="error">
               Error
@@ -165,23 +122,23 @@ A 'Button' can display a range of colors in addition to the default.
             <Button variant="text" color="secondary">
               Secondary
             </Button>
-          </div>
-        </>
+          </Stack>
+        </Stack>
       );
     }}
   </Story>
 </Canvas>
 
-### Colors
+### Loading
 
 A 'Button' can also present a loading state. By default, it will present `CircularProgress` in the center as the indicator.
 
 <Canvas>
   <Story name="Loading">
     {(args) => {
-      const [loading, setLoading] = React.useState(true);
+      const [loading, setLoading] = useState(true);
       return (
-        <>
+        <Stack spacing={3}>
           <FormControlLabel
             sx={{
               display: 'block',
@@ -196,14 +153,7 @@ A 'Button' can also present a loading state. By default, it will present `Circul
             }
             label="Loading"
           />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
+          <Stack spacing={2} direction="row">
             <Button variant="contained" loading={loading}>
               Submit
             </Button>
@@ -213,16 +163,8 @@ A 'Button' can also present a loading state. By default, it will present `Circul
             <Button variant="text" loading={loading}>
               Submit
             </Button>
-          </div>
-          <br />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
+          </Stack>
+          <Stack spacing={2} direction="row">
             <Button
               variant="contained"
               loading={loading}
@@ -247,8 +189,8 @@ A 'Button' can also present a loading state. By default, it will present `Circul
             >
               Submit
             </Button>
-          </div>
-        </>
+          </Stack>
+        </Stack>
       );
     }}
   </Story>

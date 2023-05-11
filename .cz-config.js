@@ -48,6 +48,7 @@ module.exports = {
     { name: 'chip' },
     { name: 'currency-text-field' },
     { name: 'divider' },
+    { name: 'form' },
     { name: 'input-field' },
     { name: 'masked-text-field' },
     { name: 'radio' },

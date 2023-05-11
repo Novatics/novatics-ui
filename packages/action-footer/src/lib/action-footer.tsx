@@ -1,15 +1,19 @@
 import React from 'react';
-
+import isEmpty from 'lodash.isempty';
 import { Stack, StackProps } from '@mui/material';
 
 export interface ActionFooterProps extends StackProps {
   contentPosition: 'space-between' | 'end' | 'start' | 'center';
   children?: React.ReactNode;
-  action: React.ReactNode[];
+  actions?: React.ReactNode[];
 }
 
-export function ActionFooter({ action, contentPosition, children, ...props }: ActionFooterProps) {
-
+export function ActionFooter({
+  actions,
+  contentPosition,
+  children,
+  ...props
+}: ActionFooterProps) {
   const justifyContent = React.useMemo(() => {
     switch (contentPosition) {
       case 'space-between':
@@ -29,16 +33,15 @@ export function ActionFooter({ action, contentPosition, children, ...props }: Ac
     if (children) {
       return React.Children.toArray(children);
     }
-    if (action) {
-      return React.Children.toArray(action);
+    if (actions && !isEmpty(actions)) {
+      return React.Children.toArray(actions);
     }
     return [];
-  }, [children, action]);
+  }, [children, actions]);
 
   return (
     <Stack
-      // should this be footer?
-      component='footer'
+      component="footer"
       direction="row"
       justifyContent={justifyContent}
       alignItems="center"

@@ -10,7 +10,7 @@ const config = {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: 'packages/action-footer/vite.config.ts',
+        viteConfigPath: 'packages/button/vite.config.ts',
       },
     },
   },

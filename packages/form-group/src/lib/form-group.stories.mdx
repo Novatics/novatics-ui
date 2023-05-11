@@ -1,5 +1,8 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+
 import FormGroup from './form-group';
 import pkg from '../../package.json';
 
@@ -15,18 +18,31 @@ First install the latest version of the package from `@novatics/form-group`.
   yarn add -D @novatics/form-group
 ```
 
-```shell
-  npm install --dev @novatics/form-group
-```
+### Basic Usage
 
-and use it
+The `FormGroup` component groups input components together.
 
-```tsx
-import ... from '@novatics/form-group';
-
-  ...
-
-
-```
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <FormGroup title={'Permissões'} direction="column">
+          <TextField
+            id="standard-search"
+            label="Search field"
+            type="search"
+            variant="standard"
+          />
+          <TextField
+            id="standard-search"
+            label="Search field"
+            type="search"
+            variant="standard"
+          />
+        </FormGroup>
+      );
+    }}
+  </Story>
+</Canvas>
 
 made by Novatics ❤

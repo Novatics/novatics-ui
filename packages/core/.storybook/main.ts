@@ -1,5 +1,7 @@
+import type { StorybookConfig } from '@storybook/react-vite';
 import rootMain from '../../../.storybook/main';
-const config = {
+
+const config: StorybookConfig = {
   stories: [
     ...rootMain.stories.map((s) => `../../../${s}`),
     '../../**/*.stories.mdx',
@@ -18,6 +20,7 @@ const config = {
     autodocs: true,
   },
 };
+
 export default config;
 
 // To customize your Vite configuration you can use the viteFinal field.

@@ -2,6 +2,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Form from './form';
 import pkg from '../../package.json';
+import { Button } from '../../../button/src/index';
+import { ActionFooter } from '../../../action-footer/src/index';
+import { InputField } from '../../../input-field/src/index';
 
 <Meta title="Form" component={Form} />
 
@@ -28,5 +31,61 @@ import ... from '@novatics/form';
 
 
 ```
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    argTypes={{
+      error: false,
+      checked: false,
+    }}
+  >
+    {(args) => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Form
+            title="Create a Project"
+            description="Os projetos são onde seus repositórios vivem. Eles são contêineres nos quais você pode agrupar repositórios semelhantes para melhores organizações de código."
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log('AUUUU');
+            }}
+            onSubmitButtonProps={{
+              children: 'create',
+            }}
+            loading
+          >
+            <InputField
+              label="Project's name"
+              required
+              hint="Some important text"
+            />
+            <InputField label="Key" required />
+            oi
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{' '}
+            <br></br>
+            <ActionFooter spacing={2}>
+              <Button type="reset" variant="outlined">
+                Reset
+              </Button>
+              <Button type="submit" variant="contained">
+                Submit
+              </Button>
+            </ActionFooter>
+          </Form>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
 
 made by Novatics ❤

@@ -41,6 +41,7 @@ module.exports = {
     { name: 'root' },
     { name: 'core' },
     { name: 'release' },
+    { name: 'action-footer' },
     { name: 'checkbox' },
     { name: 'checkbox-field' },
     { name: 'chip' },

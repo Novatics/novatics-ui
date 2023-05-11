@@ -18,6 +18,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@novatics/action-footer": ["packages/action-footer/src/index.ts"],
       "@novatics/checkbox": ["packages/checkbox/src/index.ts"],
       "@novatics/checkbox-field": ["packages/checkbox-field/src/index.ts"],
       "@novatics/chip": ["packages/chip/src/index.ts"],

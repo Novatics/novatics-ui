@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Novatics/novatics-ui/compare/styles-0.3.0...styles-0.3.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* **root:** pR suggestions ([03d3832](https://github.com/Novatics/novatics-ui/commit/03d3832d100ff6e70ffc0768bf2a01d6f218ebc0))
+
 ## [0.3.0](https://github.com/Novatics/novatics-ui/compare/styles-0.2.1...styles-0.3.0) (2023-05-11)
 
 

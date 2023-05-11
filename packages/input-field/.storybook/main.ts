@@ -10,7 +10,7 @@ const config = {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: 'packages/checkbox/vite.config.ts',
+        viteConfigPath: 'packages/input-field/vite.config.ts',
       },
     },
   },

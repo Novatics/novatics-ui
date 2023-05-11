@@ -14,6 +14,9 @@ import { themeBreakpoints } from './Theme/breakpoints';
 import { MuiCheckbox } from './Theme/components/MuiCheckbox';
 import { MuiChip } from './Theme/components/MuiChip';
 import { MuiDivider } from './Theme/components/MuiDivider';
+import { MuiFormLabel } from './Theme/components/MuiFormLabel';
+import { MuiInputBase } from './Theme/components/MuiInputBase';
+import { MuiFormHelperText } from './Theme/components/MuiFormHelperText';
 import './Theme/fonts.css';
 
 export { themePalette, themeBorderRadius };
@@ -24,6 +27,9 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiCheckbox,
       MuiChip,
       MuiDivider,
+      MuiFormLabel,
+      MuiInputBase,
+      MuiFormHelperText,
     },
     componentsInput
   );

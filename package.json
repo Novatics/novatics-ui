@@ -10,7 +10,7 @@
     "nx": "nx",
     "dev": "nx storybook core",
     "build": "nx run-many --all --target=build",
-    "component:generate": "nx workspace-generator component",
+    "component:generate": "nx generate @novatics/workspace-plugin:component",
     "prepare": "husky install",
     "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix",
     "verdaccio:up": "cp .npmrc .npmrc.bkp && cp .npmrc.local .npmrc && docker-compose up -d --build",
@@ -21,7 +21,7 @@
     "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
     "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
     "versions:deploy": "nx affected --base=last-release --verbose --target deploy",
-    "storybook:build": "nx storybook build core"
+    "storybook:build": "nx build-storybook core"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
@@ -38,12 +38,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "regenerator-runtime": "0.13.11",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.0",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@commitlint/config-nx-scopes": "^17.4.3",
+    "@emotion/babel-plugin": "11.10.6",
     "@jscutlery/semver": "^2.30.1",
     "@nx/devkit": "16.1.0",
     "@nx/eslint-plugin": "16.1.0",

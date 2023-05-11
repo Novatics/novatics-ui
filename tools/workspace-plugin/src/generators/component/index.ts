@@ -105,19 +105,19 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
   console.log(outputLib.toString());
 
-  let storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
+  const storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
   const outputStory = execSync(
     `nx g storybook-configuration ${storyArgs} ${fileName}`
   );
   console.log(outputStory.toString());
 
-  let semverArgs = `--baseBranch=${baseBranch} --enforceConventionalCommits=${enforceConventionalCommits} --preset=${preset}`;
+  const semverArgs = `--baseBranch=${baseBranch} --enforceConventionalCommits=${enforceConventionalCommits} --preset=${preset}`;
   const outputSemver = execSync(
     `nx g @jscutlery/semver:install ${semverArgs} --projects=${fileName}`
   );
   console.log(outputSemver.toString());
 
-  let ngxDeployArgs = `--access=${access}`;
+  const ngxDeployArgs = `--access=${access}`;
   const outputNgxDeploy = execSync(
     `nx g ngx-deploy-npm:install ${ngxDeployArgs} --projects=${fileName}`
   );

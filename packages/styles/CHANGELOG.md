@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Novatics/novatics-ui/compare/styles-0.2.1...styles-0.3.0) (2023-05-11)
+
+
+### Features
+
+* **input-field:** implement input field ([cc82445](https://github.com/Novatics/novatics-ui/commit/cc8244599e431729b92d9ab3dcceb99610cd7811))
+
 ## [0.2.1](https://github.com/Novatics/novatics-ui/compare/styles-0.2.0...styles-0.2.1) (2023-05-04)
 
 ### Dependency Updates

@@ -1,0 +1,2 @@
+import{r as u,b as l}from"./index-ebeaab24.js";function m(t,e=166){let n;function o(...s){const r=()=>{t.apply(this,s)};clearTimeout(n),n=setTimeout(r,e)}return o.clear=()=>{clearTimeout(n)},o}function d(t){return t&&t.ownerDocument||document}function I(t){return d(t).defaultView||window}let c=0;function f(t){const[e,n]=u.useState(t),o=t||e;return u.useEffect(()=>{e==null&&(c+=1,n(`mui-${c}`))},[e]),o}const a=l["useId"];function w(t){if(a!==void 0){const e=a();return t??e}return f(t)}export{I as a,m as d,d as o,w as u};
+//# sourceMappingURL=useId-50ce759f.js.map

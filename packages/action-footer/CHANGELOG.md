@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/action-footer-0.1.0...action-footer-0.2.0) (2023-05-11)
+
+
+### Features
+
+* **button:** update button with new vite template ([51f1ec5](https://github.com/Novatics/novatics-ui/commit/51f1ec5c7a111a038c3e83d19e87c4c612d70d3b))
+
 ## 0.1.0 (2023-05-11)
 
 

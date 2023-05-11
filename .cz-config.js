@@ -50,6 +50,7 @@ module.exports = {
     { name: 'divider' },
     { name: 'form' },
     { name: 'input-field' },
+    { name: 'form-group' },
     { name: 'masked-text-field' },
     { name: 'radio' },
     { name: 'styles' },

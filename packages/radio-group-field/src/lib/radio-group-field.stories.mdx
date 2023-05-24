@@ -22,7 +22,16 @@ The `RadioGroupField` component allows the creation of a field composed of radio
 <Canvas>
   <Story name="Basic Usage">
     {(args) => {
-      return <RadioGroupField {...args} />;
+      return (
+        <RadioGroupField
+          label="Gender"
+          options={[
+            { label: 'oi', value: 'oi', disabled: true },
+            { label: 'tchau', value: 'tchau' },
+          ]}
+          {...args}
+        />
+      );
     }}
   </Story>
 </Canvas>

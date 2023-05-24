@@ -51,6 +51,7 @@ module.exports = {
     { name: 'input-field' },
     { name: 'masked-text-field' },
     { name: 'radio' },
+    { name: 'radio-group-field' },
     { name: 'styles' },
     { name: 'tokens' },
     { name: 'wizard' }

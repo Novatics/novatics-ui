@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import RadioGroupField from './radio-group-field';
+import pkg from '../../package.json';
+
+<Meta title="RadioGroupField" component={RadioGroupField} />
+
+# RadioGroupField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/radio-group-field`.
+
+```shell
+  yarn add -D @novatics/radio-group-field
+```
+
+### Basic Usage
+
+The `RadioGroupField` component allows the creation of a field composed of radio buttons.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return <RadioGroupField {...args} />;
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

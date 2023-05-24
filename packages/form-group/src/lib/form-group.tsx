@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import MuiFormGroup, {
   FormGroupProps as MUIFormGroupProps,
 } from '@mui/material/FormGroup';
@@ -6,20 +6,31 @@ import MuiFormGroup, {
 export interface FormGroupProps extends MUIFormGroupProps {
   title?: string;
   direction: 'row' | 'column';
+  titleSpacing?: number;
+  childrenSpacing?: number;
 }
 
 const FormGroup = (props: FormGroupProps) => {
-  const { title, direction = 'column' } = props;
+  const {
+    title,
+    direction = 'column',
+    titleSpacing = 2.5,
+    childrenSpacing = 2.5,
+  } = props;
 
   return (
-    <>
+    <Stack spacing={titleSpacing}>
       {title && (
-        <Typography sx={{ mb: 2.5 }} variant="h5" fontWeight="500">
+        <Typography variant="h5" fontWeight="500">
           {title}
         </Typography>
       )}
-      <MuiFormGroup sx={{ gap: 2.5 }} row={direction === 'row'} {...props} />
-    </>
+      <MuiFormGroup
+        sx={{ gap: childrenSpacing }}
+        row={direction === 'row'}
+        {...props}
+      />
+    </Stack>
   );
 };
 

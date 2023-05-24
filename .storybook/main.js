@@ -4,7 +4,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@react-theming/storybook-addon',
     'storybook-dark-mode',
-    '@storybook/addon-mdx-gfm',
     '@storybook/addon-styling',
   ],
   typescript: {

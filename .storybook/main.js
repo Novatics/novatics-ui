@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm';
+
 module.exports = {
   stories: ['*.stories.mdx', '*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -5,6 +7,16 @@ module.exports = {
     '@react-theming/storybook-addon',
     'storybook-dark-mode',
     '@storybook/addon-styling',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
   typescript: {
     check: true,

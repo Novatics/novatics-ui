@@ -1,24 +1,46 @@
-import { Children, ReactElement, cloneElement, useMemo } from 'react';
+import {
+  Children,
+  ReactElement,
+  cloneElement,
+  useMemo,
+  FormEvent,
+  SyntheticEvent,
+} from 'react';
 import Stack, { StackProps } from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Button, ButtonProps } from '@novatics/button';
 import { ActionFooter, ActionFooterProps } from '@novatics/action-footer';
+import {
+  Formik,
+  FormikConfig,
+  FormikProps,
+  useFormik,
+  FormikValues,
+} from 'formik';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as Styles from '@novatics/styles';
 
-export type FromProps = StackProps & {
-  title?: string | ReturnType<typeof Typography>;
-  description?: string | ReturnType<typeof Typography>;
+export type BaseFormProps = Pick<StackProps, 'sx' | 'direction'> & {
+  title?: string | ReturnType<typeof Typography> | null;
+  description?: string | ReturnType<typeof Typography> | null;
   loading?: boolean | undefined;
   disabled?: boolean | undefined;
-  onSubmit?: () => void;
-  onReset?: () => void;
-  onSubmitButtonProps?: ButtonProps;
-  onResetButtonProps?: ButtonProps;
+  handleSubmit?: (e?: FormEvent<HTMLFormElement>) => void;
+  handleReset?: (e?: SyntheticEvent<any>) => void;
+  submitButtonProps?: ButtonProps;
+  resetButtonProps?: ButtonProps;
   buttonsPlacement?: ActionFooterProps['contentPosition'];
+  children?: (() => React.ReactNode) | React.ReactNode;
+  slots?: {
+    stack?: {
+      props: StackProps;
+    };
+  };
 };
 
-const useTextsFromProps = (props: FromProps) => {
+export type FormProps<T> = Partial<FormikProps<T>> & BaseFormProps;
+
+const useTextsFormProps = <T,>(props: FormProps<T>) => {
   let title: ReturnType<typeof Typography> = null;
   let description: ReturnType<typeof Typography> = null;
 
@@ -52,28 +74,31 @@ const DEFAULT_RESET_BUTTON_PROPS: ButtonProps = {
   variant: 'outlined',
 };
 
-const useButtonsFromProps = (props: FromProps) => {
+const useButtonsFormProps = <T,>(props: FormProps<T>) => {
   let onSubmitButton: ReturnType<typeof Button> | null = null;
   let onResetButton: ReturnType<typeof Button> | null = null;
 
-  if (props.onSubmitButtonProps) {
+  if (props.submitButtonProps) {
     onSubmitButton = (
       <Button
         {...DEFAULT_SUBMIT_BUTTON_PROPS}
-        onClick={props.onSubmit}
+        onClick={(e) =>
+          props.handleSubmit &&
+          props.handleSubmit(e as unknown as FormEvent<HTMLFormElement>)
+        }
         disabled={props.disabled}
         loading={props.loading}
-        {...props.onSubmitButtonProps}
+        {...props.submitButtonProps}
       />
     );
   }
 
-  if (props.onSubmitButtonProps) {
+  if (props.resetButtonProps) {
     onResetButton = (
       <Button
         {...DEFAULT_RESET_BUTTON_PROPS}
-        onClick={props.onReset}
-        {...props.onResetButtonProps}
+        onClick={(e) => props.handleReset && props.handleReset(e)}
+        {...props.resetButtonProps}
       />
     );
   }
@@ -81,18 +106,28 @@ const useButtonsFromProps = (props: FromProps) => {
   return { onSubmitButton, onResetButton };
 };
 
-export const Form = (props: FromProps) => {
+const useStackPropsFromSlots = <T,>(props: FormProps<T>) => {
+  if (props.slots?.stack) {
+    return props.slots?.stack;
+  }
+
+  return {};
+};
+
+export const Form = <T,>(props: FormProps<T>) => {
   const {
-    onSubmit,
-    onReset,
+    handleSubmit,
+    handleReset,
     children,
     loading,
     disabled: ownerDisabled,
+    direction,
     buttonsPlacement = 'end',
-    ...other
+    sx,
   } = props;
-  const { title, description } = useTextsFromProps(props);
-  const { onSubmitButton, onResetButton } = useButtonsFromProps(props);
+  const stackProps = useStackPropsFromSlots(props);
+  const { title, description } = useTextsFormProps(props);
+  const { onSubmitButton, onResetButton } = useButtonsFormProps(props);
   const disabled = useMemo(
     () => ownerDisabled || loading,
     [loading, ownerDisabled]
@@ -100,20 +135,34 @@ export const Form = (props: FromProps) => {
 
   const childrenArray = useMemo(() => {
     if (children) {
-      return Children.toArray(children).map((child) =>
-        typeof child === 'object'
-          ? cloneElement(child as ReactElement, { loading, disabled })
-          : child
-      );
+      console.log(children, typeof children === 'function');
+      const executedChildren =
+        typeof children === 'function' ? children() : children;
+      console.log(executedChildren, props);
+
+      return Children.toArray(executedChildren).map((child) => {
+        console.log('child', typeof child === 'object', child);
+        return typeof child === 'object'
+          ? cloneElement(child as ReactElement, {
+              loading,
+              disabled,
+            })
+          : child;
+      });
     }
 
     return [];
-  }, [children, disabled, loading]);
+  }, [children, disabled, loading, props]);
 
   return (
-    <form onSubmit={onSubmit} onReset={onReset}>
-      <Stack maxWidth="xs" spacing={2} {...other}>
-        <Stack spacing={2} mb={2}>
+    <form onSubmit={handleSubmit} onReset={handleReset}>
+      <Stack
+        spacing={2}
+        sx={{ maxWidth: 'xs', ...sx }}
+        direction={direction}
+        {...stackProps}
+      >
+        <Stack spacing={2} sx={{ marginBottom: 2 }}>
           {title}
           {description}
         </Stack>
@@ -130,4 +179,3 @@ export const Form = (props: FromProps) => {
 };
 
 export default Form;
-export * from '@mui/material/Stack';

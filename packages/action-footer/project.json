@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/action-footer/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/action-footer/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/action-footer"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/action-footer"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/packages/action-footer"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/action-footer"
@@ -58,9 +50,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/action-footer",
         "configDir": "packages/action-footer/.storybook"
@@ -102,9 +92,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "action-footer:deploy"
-        ]
+        "postTargets": ["action-footer:deploy"]
       }
     }
   }

@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/styles"],
+      "outputs": ["{workspaceRoot}/coverage/packages/styles"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/styles"

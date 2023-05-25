@@ -5,27 +5,25 @@ import {
   useMemo,
   FormEvent,
   SyntheticEvent,
+  forwardRef,
 } from 'react';
 import Stack, { StackProps } from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Button, ButtonProps } from '@novatics/button';
 import { ActionFooter, ActionFooterProps } from '@novatics/action-footer';
-import {
-  Formik,
-  FormikConfig,
-  FormikProps,
-  useFormik,
-  FormikValues,
-} from 'formik';
+import { FormikProps } from 'formik';
+// adding @novatics/styles prevent a typescript error from typography component.
+// Typescript get confused because of the redeclaration of types made inside @novatics/styles
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as Styles from '@novatics/styles';
 
-export type BaseFormProps = Pick<StackProps, 'sx' | 'direction'> & {
+export type BaseFormProps = Pick<StackProps, 'sx' | 'direction' | 'ref'> & {
   title?: string | ReturnType<typeof Typography> | null;
   description?: string | ReturnType<typeof Typography> | null;
   loading?: boolean | undefined;
   disabled?: boolean | undefined;
   handleSubmit?: (e?: FormEvent<HTMLFormElement>) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleReset?: (e?: SyntheticEvent<any>) => void;
   submitButtonProps?: ButtonProps;
   resetButtonProps?: ButtonProps;
@@ -114,7 +112,8 @@ const useStackPropsFromSlots = <T,>(props: FormProps<T>) => {
   return {};
 };
 
-export const Form = <T,>(props: FormProps<T>) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const FormComponent = <T,>(props: FormProps<T>, ref: any) => {
   const {
     handleSubmit,
     handleReset,
@@ -135,32 +134,30 @@ export const Form = <T,>(props: FormProps<T>) => {
 
   const childrenArray = useMemo(() => {
     if (children) {
-      console.log(children, typeof children === 'function');
       const executedChildren =
         typeof children === 'function' ? children() : children;
-      console.log(executedChildren, props);
 
       return Children.toArray(executedChildren).map((child) => {
-        console.log('child', typeof child === 'object', child);
         return typeof child === 'object'
           ? cloneElement(child as ReactElement, {
               loading,
               disabled,
+              direction
             })
           : child;
       });
     }
 
     return [];
-  }, [children, disabled, loading, props]);
+  }, [children, direction, disabled, loading]);
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>
       <Stack
         spacing={2}
         sx={{ maxWidth: 'xs', ...sx }}
-        direction={direction}
         {...stackProps}
+        ref={ref}
       >
         <Stack spacing={2} sx={{ marginBottom: 2 }}>
           {title}
@@ -177,5 +174,7 @@ export const Form = <T,>(props: FormProps<T>) => {
     </form>
   );
 };
+
+export const Form = forwardRef(FormComponent);
 
 export default Form;

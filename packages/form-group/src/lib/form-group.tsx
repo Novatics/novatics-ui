@@ -17,6 +17,7 @@ const FormGroup = (props: FormGroupProps) => {
     titleSpacing = 2.5,
     childrenSpacing = 2.5,
   } = props;
+  console.log('props', props);
 
   return (
     <Stack spacing={titleSpacing}>

@@ -5,7 +5,7 @@ import MuiFormGroup, {
 
 export interface FormGroupProps extends MUIFormGroupProps {
   title?: string;
-  direction: 'row' | 'column';
+  direction?: 'row' | 'column';
   titleSpacing?: number;
   childrenSpacing?: number;
 }

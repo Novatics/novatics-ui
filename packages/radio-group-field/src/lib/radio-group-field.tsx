@@ -3,29 +3,50 @@ import MuiFormControl from '@mui/material/FormControl';
 import MuiFormLabel from '@mui/material/FormLabel';
 import MuiFormControlLabel from '@mui/material/FormControlLabel';
 import { Radio } from '@novatics/radio';
+import { styled } from '@novatics/styles';
 
 interface RadioGroupFieldProps extends RadioGroupProps {
   label?: string;
   options?: Array<{ label: string; value: string; disabled?: boolean }>;
+  disabled?: boolean;
+  loading?: boolean;
+  error?: boolean;
 }
 
+const FormControl = styled(MuiFormControl)<RadioGroupProps>(() => ({
+  '.MuiFormGroup-root': {
+    flexDirection: 'row',
+    gap: '0 24px',
+  },
+  '.MuiFormControlLabel-root': {
+    margin: '8px 0',
+  },
+  '.MuiFormControlLabel-label': {
+    marginLeft: '4px',
+    marginRight: '4px',
+  },
+}));
+
 const RadioGroupField = (props: RadioGroupFieldProps) => {
-  const { label, children, options, ...others } = props;
+  const { label, children, options, disabled, loading, ...others } = props;
+
+  const disableRadio = disabled || loading;
+
   return (
-    <MuiFormControl>
-      <MuiFormLabel>{label}</MuiFormLabel>
+    <FormControl>
+      {label && <MuiFormLabel>{label}</MuiFormLabel>}
       <MuiRadioGroup {...others}>
         {options?.map((option) => (
           <MuiFormControlLabel
             value={option.value}
             control={<Radio />}
             label={option.label}
-            disabled={option.disabled}
+            disabled={option.disabled || disableRadio}
           />
         ))}
         {children}
       </MuiRadioGroup>
-    </MuiFormControl>
+    </FormControl>
   );
 };
 

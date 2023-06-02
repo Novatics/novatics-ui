@@ -5,18 +5,23 @@ import MuiFormControlLabel from '@mui/material/FormControlLabel';
 import { Radio } from '@novatics/radio';
 import { styled } from '@novatics/styles';
 
-interface RadioGroupFieldProps extends RadioGroupProps {
+export interface RadioGroupFieldProps extends RadioGroupProps {
   label?: string;
   options?: Array<{ label: string; value: string; disabled?: boolean }>;
   disabled?: boolean;
   loading?: boolean;
-  error?: boolean;
+  error?: string | boolean;
+  required?: boolean;
 }
 
 const FormControl = styled(MuiFormControl)<RadioGroupProps>(() => ({
   '.MuiFormGroup-root': {
     flexDirection: 'row',
     gap: '0 24px',
+  },
+  '.MuiFormLabel-root': {
+    fontWeight: '600',
+    letterSpacing: '1.25px',
   },
   '.MuiFormControlLabel-root': {
     margin: '8px 0',
@@ -33,7 +38,7 @@ const RadioGroupField = (props: RadioGroupFieldProps) => {
   const disableRadio = disabled || loading;
 
   return (
-    <FormControl>
+    <FormControl required={props.required}>
       {label && <MuiFormLabel>{label}</MuiFormLabel>}
       <MuiRadioGroup {...others}>
         {options?.map((option) => (

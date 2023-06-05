@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/divider"],
+      "outputs": ["{workspaceRoot}/coverage/packages/divider"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/divider"

@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/radio"],
+      "outputs": ["{workspaceRoot}/coverage/packages/radio"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/radio"

@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/checkbox-field"],
+      "outputs": ["{workspaceRoot}/coverage/packages/checkbox-field"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/checkbox-field"

@@ -1,0 +1,359 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Grid } from '@mui/material';
+
+import Form from './form';
+import FormikForm from './formik-form';
+import pkg from '../../package.json';
+import { Button } from '../../../button/src/index';
+import { ActionFooter } from '../../../action-footer/src/index';
+import { InputField, InputFormikField } from '../../../input-field/src/index';
+import { CheckboxField } from '../../../checkbox-field/src/index';
+import { FormGroup } from '../../../form-group/src/index';
+
+<Meta title="Form" component={Form} />
+
+# Form <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/form`.
+
+```shell
+  yarn add -D @novatics/form
+```
+
+```shell
+  npm install --dev @novatics/form
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/form';
+
+  ...
+
+
+```
+
+### Basic Usage
+
+Our component has some cool features to be explored. We have a **`title`** and **`description`** built in making easy to have basic forms.
+You have submit and reset options out of the box. To use just implement **`handleSubmit`** and **`handleReset`** functions and pass the props to
+**`submitButtonProps`** and **`resetButtonProps`**. To be more flexible we has a **`buttonsPlacement`** option from **`'@novatics-ui/action-footer'`**.
+
+We add global states **`direction`**, **`loading`** and **`disabled`**, that we pass to all children components. Our maxWidth is 600px but is totally customizable.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {() => {
+      const [values, setValues] = useState({ name: '', email: '' });
+      return (
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Form
+              title={'Create a Project'}
+              description={
+                'Projects are where your repositories live. They are containers in which you can group similar repositories together for better code organizations.'
+              }
+              handleSubmit={async (e) => {
+                e.preventDefault();
+                console.log('call handle submit');
+                await new Promise((r) => setTimeout(r, 500));
+                alert(JSON.stringify(values, null, 2));
+              }}
+              submitButtonProps={{ children: 'Submit' }}
+              loading
+            >
+              <InputField
+                label="Project's name"
+                hint="Some important text"
+                value={values.name}
+                onChange={(e) => {
+                  setValues({ ...values, name: e.target.value });
+                }}
+              />
+              <InputField
+                label="email"
+                value={values.email}
+                onChange={(e) => {
+                  setValues({ ...values, email: e.target.value });
+                }}
+              />
+            </Form>
+          </Grid>
+          <Grid item xs={6}>
+            <Form
+              title={'Create a Project'}
+              description={
+                'Projects are where your repositories live. They are containers in which you can group similar repositories together for better code organizations.'
+              }
+              handleSubmit={async (e) => {
+                e.preventDefault();
+                await new Promise((r) => setTimeout(r, 500));
+                alert(JSON.stringify(values, null, 2));
+              }}
+              submitButtonProps={{ children: 'Submit' }}
+              handleReset={async (e) => {
+                setValues({ name: '', email: '' });
+              }}
+              resetButtonProps={{ children: 'Cancel' }}
+            >
+              <InputField
+                label="Project's name"
+                hint="Some important text"
+                value={values.name}
+                onChange={(e) => {
+                  setValues({ ...values, name: e.target.value });
+                }}
+              />
+              <InputField
+                label="email"
+                value={values.email}
+                onChange={(e) => {
+                  setValues({ ...values, email: e.target.value });
+                }}
+              />
+            </Form>
+          </Grid>
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Form with groups
+
+Our component has some cool features to be explored. We have a **`title`** and **`description`** built in making easy to have basic forms.
+You have submit and reset options out of the box. To use just implement **`handleSubmit`** and **`handleReset`** functions and pass the props to
+**`submitButtonProps`** and **`resetButtonProps`**. To be more flexible we has a **`buttonsPlacement`** option from **`'@novatics-ui/action-footer'`**.
+
+We add global states **`direction`**, **`loading`** and **`disabled`**, that we pass to all children components. Our maxWidth is 600px but is totally customizable.
+
+<Canvas>
+  <Story name="Form with groups">
+    {() => {
+      const [values, setValues] = useState({
+        name: '',
+        email: '',
+        project: '',
+      });
+      return (
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Form
+              title={'Create a Project'}
+              description={
+                'Projects are where your repositories live. They are containers in which you can group similar repositories together for better code organizations.'
+              }
+              handleSubmit={async (e) => {
+                e.preventDefault();
+                console.log('call handle submit');
+                await new Promise((r) => setTimeout(r, 500));
+                alert(JSON.stringify(values, null, 2));
+              }}
+              submitButtonProps={{ children: 'Submit' }}
+              loading
+            >
+              <InputField
+                label="Project's name"
+                hint="Some important text"
+                value={values.project}
+                onChange={(e) => {
+                  setValues({ ...values, project: e.target.value });
+                }}
+              />
+              <FormGroup title="Personal Info">
+                <InputField
+                  label="name"
+                  value={values.name}
+                  onChange={(e) => {
+                    setValues({ ...values, name: e.target.value });
+                  }}
+                />
+                <InputField
+                  label="email"
+                  value={values.email}
+                  onChange={(e) => {
+                    setValues({ ...values, email: e.target.value });
+                  }}
+                />
+                <CheckboxField label="agree with terms" labelPlacement="end" />
+              </FormGroup>
+              <FormGroup title="Company Info">
+                <InputField
+                  label="name"
+                  value={values.name}
+                  onChange={(e) => {
+                    setValues({ ...values, name: e.target.value });
+                  }}
+                />
+              </FormGroup>
+            </Form>
+          </Grid>
+          <Grid item xs={6}>
+            <Form
+              title={'Create a Project'}
+              description={
+                'Projects are where your repositories live. They are containers in which you can group similar repositories together for better code organizations.'
+              }
+              direction="row"
+              handleSubmit={async (e) => {
+                e.preventDefault();
+                console.log('call handle submit');
+                await new Promise((r) => setTimeout(r, 500));
+                alert(JSON.stringify(values, null, 2));
+              }}
+              submitButtonProps={{ children: 'Submit' }}
+            >
+              <InputField
+                label="Project's name"
+                hint="Some important text"
+                value={values.project}
+                onChange={(e) => {
+                  setValues({ ...values, project: e.target.value });
+                }}
+              />
+              <FormGroup title="Personal Info" >
+                <InputField
+                  label="name"
+                  value={values.name}
+                  onChange={(e) => {
+                    setValues({ ...values, name: e.target.value });
+                  }}
+                />
+                <InputField
+                  label="email"
+                  value={values.email}
+                  onChange={(e) => {
+                    setValues({ ...values, email: e.target.value });
+                  }}
+                />
+                <CheckboxField label="agree with terms" labelPlacement="end" />
+              </FormGroup>
+              <FormGroup title="Company Info">
+                <InputField
+                  label="name"
+                  value={values.name}
+                  onChange={(e) => {
+                    setValues({ ...values, name: e.target.value });
+                  }}
+                />
+              </FormGroup>
+            </Form>
+          </Grid>
+        </Grid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Form with Formik
+
+We create a component that integrates Formik and abstract most of the functions. Also we added a cool functionality: **`scrollOnError`** prop. If you are using our components @novatics-ui FormikFields it is all set.
+but you can modify the selector, the scroll behavior etc.
+
+<Canvas>
+  <Story name="Forkmik">
+    {() => {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <FormikForm
+            title={'Create a Project'}
+            description={
+              'Projects are where your repositories live. They are containers in which you can group similar repositories together for better code organizations.'
+            }
+            onSubmit={(values) => {
+              e.preventDefault();
+            }}
+            submitButtonProps={{ children: 'create' }}
+            initialValues={{ name: '', email: '' }}
+            scrollOnError
+          >
+            {() => {
+              return (
+                <>
+                  <InputFormikField id="name" name="name" required />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  Loooooonnnng
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  Loooooonnnng
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  Loooooonnnng
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  Loooooonnnng form
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <InputFormikField id="email" name="email" />
+                </>
+              );
+            }}
+          </FormikForm>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    args={{
+      title: 'I am title!',
+      description: 'And I, description!',
+      handleSubmit: (e) => {
+        e.preventDefault();
+        console.log('handleSubmit');
+      },
+      submitButtonProps: {
+        children: 'create',
+      },
+    }}
+  >
+    {(args) => {
+      return (
+        <Form {...args}>
+          <InputField label="name" />
+        </Form>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
+made by Novatics ❤

@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/wizard"],
+      "outputs": ["{workspaceRoot}/coverage/packages/wizard"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/wizard"

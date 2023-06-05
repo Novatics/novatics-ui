@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/button/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/button/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/button"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/button"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/packages/button"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/button"
@@ -58,9 +50,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/button",
         "configDir": "packages/button/.storybook"
@@ -102,9 +92,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "button:deploy"
-        ]
+        "postTargets": ["button:deploy"]
       }
     }
   }

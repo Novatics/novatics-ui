@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/chip"],
+      "outputs": ["{workspaceRoot}/coverage/packages/chip"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/chip"

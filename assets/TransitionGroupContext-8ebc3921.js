@@ -1,0 +1,2 @@
+import{r as s,R as u}from"./index-ebeaab24.js";import{u as c}from"./useForkRef-3ff4e0b8.js";function l(e){const t=s.useRef(e);return c(()=>{t.current=e}),s.useCallback((...r)=>(0,t.current)(...r),[])}function p(e,t){if(e==null)return{};var r={},a=Object.keys(e),n,o;for(o=0;o<a.length;o++)n=a[o],!(t.indexOf(n)>=0)&&(r[n]=e[n]);return r}const x=u.createContext(null);export{x as T,p as _,l as u};
+//# sourceMappingURL=TransitionGroupContext-8ebc3921.js.map

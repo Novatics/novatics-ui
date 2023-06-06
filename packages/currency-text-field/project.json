@@ -32,7 +32,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/currency-text-field"],
+      "outputs": ["{workspaceRoot}/coverage/packages/currency-text-field"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/currency-text-field"

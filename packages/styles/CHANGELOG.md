@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Novatics/novatics-ui/compare/styles-0.3.1...styles-0.4.0) (2023-06-05)
+
+### Dependency Updates
+
+* `tokens` updated to version `0.2.2`
+
+### Features
+
+* **core:** export on core ([256562a](https://github.com/Novatics/novatics-ui/commit/256562a320b7139892523c722c0b7717668b1992))
+
 ## [0.3.1](https://github.com/Novatics/novatics-ui/compare/styles-0.3.0...styles-0.3.1) (2023-05-11)
 
 

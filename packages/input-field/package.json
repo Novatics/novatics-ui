@@ -1,6 +1,6 @@
 {
   "name": "@novatics/input-field",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -8,5 +8,8 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "peerDependencies": {
+    "formik": "^2.2.9"
   }
 }

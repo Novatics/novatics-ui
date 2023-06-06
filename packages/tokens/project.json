@@ -30,7 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/tokens"],
+      "outputs": ["{workspaceRoot}/coverage/packages/tokens"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/tokens"

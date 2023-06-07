@@ -23,9 +23,9 @@ export interface RadioGroupFieldProps extends RadioGroupProps {
 
 const FormControl = styled(MuiFormControl)<{
   direction?: 'row' | 'column';
-}>(({ direction }) => ({
+}>(({ direction = 'column' }) => ({
   '.MuiFormGroup-root': {
-    flexDirection: direction === 'row' ? 'row' : 'column',
+    flexDirection: direction,
     gap: '0 24px',
   },
   '.MuiFormLabel-root': {

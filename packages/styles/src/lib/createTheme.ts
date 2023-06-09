@@ -18,6 +18,7 @@ import { MuiFormLabel } from './Theme/components/MuiFormLabel';
 import { MuiInputBase } from './Theme/components/MuiInputBase';
 import { MuiFormHelperText } from './Theme/components/MuiFormHelperText';
 import { MuiButton } from './Theme/components/MuiButton';
+import { MuiRadio } from './Theme/components/MuiRadio';
 import './Theme/fonts.css';
 
 export { themePalette, themeBorderRadius };
@@ -32,6 +33,7 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiInputBase,
       MuiFormHelperText,
       MuiButton,
+      MuiRadio,
     },
     componentsInput
   );

@@ -14,8 +14,8 @@ type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 
 export interface RadioProps extends Omit<MuiRadioProps, PropsToOmit> {
   color?: Color;
-  error: boolean;
-  checked: boolean;
+  error?: boolean;
+  checked?: boolean;
 }
 
 const getRadiusCircleStyle = (color: string) =>
@@ -47,7 +47,7 @@ const RadioIcon = styled('span')<{
       outline: `2px auto ${palette.primary.main}`,
       outlineOffset: 2,
     },
-    'input:hover ~ &': {
+    'input:hover:enabled ~ &': {
       boxShadow: getBorderRadiusCircleStyle(boxShadowColorHover),
       '&:before': {
         display: 'block',
@@ -115,8 +115,8 @@ export const Radio = ({
     disableFocusRipple
     disableRipple
     disableTouchRipple
-    icon={<RadioIcon colorType={color} error={error} />}
-    checkedIcon={<RadioCheckedIcon colorType={color} error={error} />}
+    icon={<RadioIcon colorType={color} error={Boolean(error)} />}
+    checkedIcon={<RadioCheckedIcon colorType={color} error={Boolean(error)} />}
     sx={deepmerge({ '&:hover': { backgroundColor: 'transparent' } }, sx)}
     {...other}
   />

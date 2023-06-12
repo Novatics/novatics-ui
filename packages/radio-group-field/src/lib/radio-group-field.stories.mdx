@@ -1,0 +1,218 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Stack from '@mui/material/Stack';
+import RadioGroupField from './radio-group-field';
+import pkg from '../../package.json';
+
+<Meta title="RadioGroupField" component={RadioGroupField} />
+
+# RadioGroupField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/radio-group-field`.
+
+```shell
+  yarn add -D @novatics/radio-group-field
+```
+
+### Basic Usage
+
+The `RadioGroupField` component allows the creation of a field composed of radio buttons.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <RadioGroupField
+          label="Is this a radio group?"
+          withTextHelper={false}
+          options={[
+            {
+              label: 'Yes',
+              value: 'yes',
+            },
+            {
+              label: 'Probably',
+              value: 'probably',
+            },
+            {
+              label: 'No',
+              value: 'no',
+              disabled: true,
+            },
+          ]}
+          {...args}
+        />
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Direction
+
+The `direction` prop allows the user to change the direction of the radio buttons. The default value is `column`
+
+<Canvas>
+  <Story name="Direction">
+    {(args) => {
+      return (
+        <RadioGroupField
+          label="Radio Group Field"
+          direction="row"
+          withTextHelper={false}
+          options={[
+            {
+              label: 'First',
+              value: '1',
+            },
+            {
+              label: 'Second',
+              value: '2',
+            },
+            {
+              label: 'Third',
+              value: '3',
+            },
+          ]}
+          {...args}
+        />
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Helper Text
+
+The `withTextHelper` prop allows the user to add a hint or show an error to the field. By default, it is set to `true`.
+
+<Canvas>
+  <Story name="Helper Text">
+    {(args) => {
+      return (
+        <Stack spacing={5} direction="row">
+          <RadioGroupField
+            label="With Hint"
+            hint="This is a hint"
+            withTextHelper
+            options={[
+              {
+                label: 'First',
+                value: '1',
+              },
+              {
+                label: 'Second',
+                value: '2',
+              },
+              {
+                label: 'Third',
+                value: '3',
+              },
+            ]}
+            {...args}
+          />
+          <RadioGroupField
+            label="With Error"
+            error="This is an error"
+            withTextHelper
+            options={[
+              {
+                label: 'First',
+                value: '1',
+              },
+              {
+                label: 'Second',
+                value: '2',
+              },
+              {
+                label: 'Third',
+                value: '3',
+              },
+            ]}
+            {...args}
+          />
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Label Placement
+
+The `labelPlacement` prop allows the user to change the position of the label. The default value is `end`.
+
+<Canvas>
+  <Story name="Label Placement">
+    {(args) => {
+      return (
+        <Stack spacing={5}>
+          <RadioGroupField
+            label="Start"
+            withTextHelper={false}
+            direction="row"
+            labelPlacement="start"
+            options={[
+              {
+                label: 'First',
+                value: '1',
+              },
+              {
+                label: 'Second',
+                value: '2',
+              },
+              {
+                label: 'Third',
+                value: '3',
+              },
+            ]}
+            {...args}
+          />
+          <RadioGroupField
+            label="Bottom"
+            withTextHelper={false}
+            direction="row"
+            labelPlacement="bottom"
+            options={[
+              {
+                label: 'First',
+                value: '1',
+              },
+              {
+                label: 'Second',
+                value: '2',
+              },
+              {
+                label: 'Third',
+                value: '3',
+              },
+            ]}
+            {...args}
+          />
+          <RadioGroupField
+            label="Top"
+            withTextHelper={false}
+            direction="row"
+            labelPlacement="top"
+            options={[
+              {
+                label: 'First',
+                value: '1',
+              },
+              {
+                label: 'Second',
+                value: '2',
+              },
+              {
+                label: 'Third',
+                value: '3',
+              },
+            ]}
+            {...args}
+          />
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

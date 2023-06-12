@@ -1,0 +1,12 @@
+{
+  "name": "@novatics/divider",
+  "version": "0.2.2",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  }
+}

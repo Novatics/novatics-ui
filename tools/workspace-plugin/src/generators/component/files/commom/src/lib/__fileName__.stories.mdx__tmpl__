@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import <%= className %> from './<%= fileName %>'
+import pkg from '../../package.json';
+
+<Meta title="<%= className %>" component={<%= className %>} />
+
+# <%= className %> <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/<%= fileName %>`.
+
+```shell
+  yarn add -D @novatics/<%= fileName %>
+```
+
+```shell
+  npm install --dev @novatics/<%= fileName %>
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/<%= fileName %>';
+
+  ...
+
+
+```
+
+made by Novatics ❤

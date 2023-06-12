@@ -3,7 +3,7 @@
     "h1": {
       "fontSize": {
         "pixel": 90,
-        "rem": 5.62
+        "rem": 5.625
       },
       "fontWeight": 700,
       "lineHeight": 1,
@@ -13,7 +13,7 @@
     "h2": {
       "fontSize": {
         "pixel": 67,
-        "rem": 4.18
+        "rem": 4.188
       },
       "fontWeight": 700,
       "lineHeight": 1,
@@ -23,7 +23,7 @@
     "h3": {
       "fontSize": {
         "pixel": 45,
-        "rem": 2.81
+        "rem": 2.813
       },
       "fontWeight": 700,
       "lineHeight": 1,
@@ -83,10 +83,10 @@
     "overline": {
       "fontSize": {
         "pixel": 12,
-        "rem": 1.2
+        "rem": 0.75
       },
       "fontWeight": 500,
-      "lineHeight": 1.12,
+      "lineHeight": 1.2,
       "letterSpacing": "1.25px",
       "fontFamily": "Work Sans",
       "textTransform": "uppercase"

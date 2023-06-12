@@ -1,6 +1,14 @@
 {
   "name": "@novatics/currency-text-field",
-  "version": "0.1.0",
+  "version": "0.2.2",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
   "dependencies": {
     "currency.js": "^2.0.4"
   }

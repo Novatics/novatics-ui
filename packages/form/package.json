@@ -1,0 +1,18 @@
+{
+  "name": "@novatics/form",
+  "version": "0.1.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "lodash.isempty": "^4.4.0"
+  },
+  "peerDependencies": {
+    "formik": "^2.2.9"
+  }
+}

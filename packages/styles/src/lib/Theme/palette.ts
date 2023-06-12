@@ -1,6 +1,18 @@
-import { PaletteOptions } from '@mui/material';
+import { SimplePaletteColorOptions, PaletteOptions } from '@mui/material';
 import { colors } from '@novatics/tokens';
 
+declare module '@mui/material' {
+  interface Color {
+    0: string;
+    5: string;
+    10: string;
+    20: string;
+    35: string;
+    50: string;
+    70: string;
+    85: string;
+  }
+}
 declare module '@mui/material/styles/createPalette' {
   interface SimplePaletteColorOptions {
     main: string;
@@ -22,9 +34,11 @@ declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
     grayScale?: GrayScale;
     tertiary?: SimplePaletteColorOptions;
+    support?: SimplePaletteColorOptions;
   }
   interface Palette {
     grayScale: GrayScale;
+    support: SimplePaletteColorOptions;
   }
   interface TypeObject {
     grayScale: GrayScale;
@@ -38,7 +52,14 @@ declare module '@mui/material/styles/createPalette' {
   }
 }
 
-export const palette: PaletteOptions = {
+export interface ColorsOptions extends PaletteOptions {
+  primary?: SimplePaletteColorOptions;
+  success?: SimplePaletteColorOptions;
+  warning?: SimplePaletteColorOptions;
+  error?: SimplePaletteColorOptions;
+}
+
+export const palette: ColorsOptions = {
   grayScale: {
     blackHole: colors['blackHole'],
     eclipse: colors['eclipse'],
@@ -81,6 +102,20 @@ export const palette: PaletteOptions = {
     main: colors['mars'],
     dark: colors['mars--dark'],
     light: colors['mars--light'],
+  },
+  support: {
+    main: colors['universe'],
+    light: colors['universe--light'],
+  },
+  grey: {
+    85: colors['blackHole'],
+    70: colors['eclipse'],
+    50: colors['penumbra'],
+    35: colors['spaceStation'],
+    20: colors['fullMoon'],
+    10: colors['newMoon'],
+    5: colors['halo'],
+    0: colors['supernova'],
   },
 };
 

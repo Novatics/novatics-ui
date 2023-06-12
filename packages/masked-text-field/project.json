@@ -5,49 +5,42 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/masked-text-field",
-        "tsConfig": "packages/masked-text-field/tsconfig.lib.json",
-        "project": "packages/masked-text-field/package.json",
-        "entryFile": "packages/masked-text-field/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/masked-text-field/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
-      }
-    },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/masked-text-field/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/masked-text-field"],
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "jestConfig": "packages/masked-text-field/jest.config.ts",
-        "passWithNoTests": true
+        "outputPath": "dist/packages/masked-text-field"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/masked-text-field"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/masked-text-field"
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/masked-text-field/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/masked-text-field/.storybook"
       },
       "configurations": {
         "ci": {
@@ -56,12 +49,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/masked-text-field",
-        "configDir": "packages/masked-text-field/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/masked-text-field/.storybook"
       },
       "configurations": {
         "ci": {
@@ -69,25 +61,38 @@
         }
       }
     },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "masked-text-field:build-storybook",
+        "staticFilePath": "dist/storybook/masked-text-field"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "masked-text-field:build-storybook:ci"
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional",
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "preset": "conventional"
       }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["masked-text-field:deploy"],
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "postTargets": ["masked-text-field:deploy"]
       }
     }
   }

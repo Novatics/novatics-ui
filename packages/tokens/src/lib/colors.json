@@ -28,5 +28,6 @@
   "mars": "#FF2A0D",
   "mars--dark": "#A30000",
   "mars--light": "#FFEFE7",
-  "universe": "#0D0DFF"
+  "universe": "#0D0DFF",
+  "universe--light": "#EBEBFF"
 }

@@ -5,30 +5,8 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/currency-text-field",
-        "tsConfig": "packages/currency-text-field/tsconfig.lib.json",
-        "project": "packages/currency-text-field/package.json",
-        "entryFile": "packages/currency-text-field/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/currency-text-field/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "format": ["cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies"
-      }
-    },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
@@ -36,20 +14,35 @@
         ]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/currency-text-field"],
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "jestConfig": "packages/currency-text-field/jest.config.ts",
-        "passWithNoTests": true
+        "outputPath": "dist/packages/currency-text-field"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/currency-text-field"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/currency-text-field"
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/currency-text-field/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/currency-text-field/.storybook"
       },
       "configurations": {
         "ci": {
@@ -58,12 +51,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/currency-text-field",
-        "configDir": "packages/currency-text-field/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "packages/currency-text-field/.storybook"
       },
       "configurations": {
         "ci": {
@@ -71,25 +63,38 @@
         }
       }
     },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "currency-text-field:build-storybook",
+        "staticFilePath": "dist/storybook/currency-text-field"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "currency-text-field:build-storybook:ci"
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional",
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "preset": "conventional"
       }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "buildTarget": "production"
       }
     },
     "version:deploy": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["currency-text-field:deploy"],
-        "baseBranch": "master"
+        "baseBranch": "master",
+        "postTargets": ["currency-text-field:deploy"]
       }
     }
   }

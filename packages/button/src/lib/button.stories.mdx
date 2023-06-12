@@ -1,0 +1,199 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Stack from '@mui/material/Stack';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import SendIcon from '@mui/icons-material/Send';
+import Switch from '@mui/material/Switch';
+import Button from './button';
+import pkg from '../../package.json';
+
+<Meta title="Button" component={Button} />
+
+# Button <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/button`.
+
+```shell
+  yarn add -D @novatics/button
+```
+
+### Basic Usage
+
+The `Button` component have three variants: it supports outlined, contained and only text styling. The default variant is `text`.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <Stack spacing={3}>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained">Button</Button>
+            <Button variant="outlined">Button</Button>
+            <Button variant="text">Button</Button>
+          </Stack>
+          <Stack spacing={2} direction="row">
+            <Button disabled variant="contained">
+              Disabled
+            </Button>
+            <Button disabled variant="outlined">
+              Disabled
+            </Button>
+            <Button disabled variant="text">
+              Disabled
+            </Button>
+          </Stack>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Size
+
+A `Button` can be small, medium or large. The default size is medium.
+
+<Canvas>
+  <Story name="Size">
+    {(args) => {
+      return (
+        <Stack spacing={2} direction="row">
+          <Button variant="contained" size="small">
+            Button
+          </Button>
+          <Button variant="contained">Button</Button>
+          <Button variant="contained" size="large">
+            Button
+          </Button>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Icon
+
+A `Button` can also have icons, that can be placed on the left or right of the button.
+
+<Canvas>
+  <Story name="Icon">
+    {(args) => {
+      return (
+        <Stack spacing={2} direction="row">
+          <Button variant="contained" startIcon={<SendIcon />}>
+            Send
+          </Button>
+          <Button variant="contained" endIcon={<SendIcon />}>
+            Send
+          </Button>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Colors
+
+A 'Button' can display a range of colors in addition to the default.
+
+<Canvas>
+  <Story name="Colors">
+    {(args) => {
+      return (
+        <Stack spacing={3}>
+          <Stack spacing={2} direction="row">
+            <Button variant="outlined">Primary</Button>
+            <Button variant="outlined" color="error">
+              Error
+            </Button>
+            <Button variant="outlined" color="success">
+              Success
+            </Button>
+          </Stack>
+          <Stack spacing={2} direction="row">
+            <Button variant="text">Primary</Button>
+            <Button variant="text" color="error">
+              Error
+            </Button>
+            <Button variant="text" color="success">
+              Success
+            </Button>
+            <Button variant="text" color="secondary">
+              Secondary
+            </Button>
+          </Stack>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Loading
+
+A 'Button' can also present a loading state. By default, it will present `CircularProgress` in the center as the indicator.
+
+<Canvas>
+  <Story name="Loading">
+    {(args) => {
+      const [loading, setLoading] = useState(true);
+      return (
+        <Stack spacing={3}>
+          <FormControlLabel
+            sx={{
+              display: 'block',
+            }}
+            control={
+              <Switch
+                checked={loading}
+                onChange={() => setLoading(!loading)}
+                name="loading"
+                color="primary"
+              />
+            }
+            label="Loading"
+          />
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" loading={loading}>
+              Submit
+            </Button>
+            <Button variant="outlined" loading={loading}>
+              Submit
+            </Button>
+            <Button variant="text" loading={loading}>
+              Submit
+            </Button>
+          </Stack>
+          <Stack spacing={2} direction="row">
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="center"
+              loadingIndicator="Loading..."
+            >
+              Submit
+            </Button>
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="start"
+              startIcon={<SendIcon />}
+            >
+              Submit
+            </Button>
+            <Button
+              variant="contained"
+              loading={loading}
+              loadingPosition="end"
+              endIcon={<SendIcon />}
+            >
+              Submit
+            </Button>
+          </Stack>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

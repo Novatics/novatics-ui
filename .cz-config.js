@@ -45,6 +45,7 @@ module.exports = {
     { name: 'currency-text-field' },
     { name: 'masked-text-field' },
     { name: 'radio' },
+    { name: 'select-field' },
     { name: 'styles' },
     { name: 'tokens' },
     { name: 'wizard' }

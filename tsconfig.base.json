@@ -27,6 +27,7 @@
         "packages/masked-text-field/src/index.ts"
       ],
       "@novatics/radio": ["packages/radio/src/index.ts"],
+      "@novatics/select-field": ["packages/select-field/src/index.ts"],
       "@novatics/styles": ["packages/styles/src/index.ts"],
       "@novatics/tokens": ["packages/tokens/src/index.ts"],
       "@novatics/wizard": ["packages/wizard/src/index.ts"]

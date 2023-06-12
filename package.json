@@ -21,7 +21,7 @@
     "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
     "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
     "versions:deploy": "nx affected --base=last-release --verbose --target deploy",
-    "storybook:build": "nx storybook build core"
+    "storybook:build": "nx build-storybook core"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",

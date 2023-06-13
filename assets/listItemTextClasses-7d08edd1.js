@@ -1,2 +1,0 @@
-import{g as e,a as i}from"./styled-cf63dd64.js";function a(t){return i("MuiDivider",t)}const s=e("MuiDivider",["root","absolute","fullWidth","inset","middle","flexItem","light","vertical","withChildren","withChildrenVertical","textAlignRight","textAlignLeft","wrapper","wrapperVertical"]),n=s;function d(t){return i("MuiListItemText",t)}const l=e("MuiListItemText",["root","multiline","dense","inset","primary","secondary"]),o=l;export{d as a,n as d,a as g,o as l};
-//# sourceMappingURL=listItemTextClasses-7d08edd1.js.map

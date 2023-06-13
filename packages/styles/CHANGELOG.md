@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Novatics/novatics-ui/compare/styles-0.4.1...styles-0.5.0) (2023-06-13)
+
+
+### Features
+
+* **input-field:** allowing multiline for input ([4438573](https://github.com/Novatics/novatics-ui/commit/4438573af32a1783b437e985eb58c0662d44e580))
+
 ## [0.4.1](https://github.com/Novatics/novatics-ui/compare/styles-0.4.0...styles-0.4.1) (2023-06-09)
 
 ## [0.4.0](https://github.com/Novatics/novatics-ui/compare/styles-0.3.1...styles-0.4.0) (2023-06-05)

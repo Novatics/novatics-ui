@@ -35,6 +35,7 @@
         "packages/masked-text-field/src/index.ts"
       ],
       "@novatics/radio": ["packages/radio/src/index.ts"],
+      "@novatics/select-field": ["packages/select-field/src/index.ts"],
       "@novatics/radio-group-field": [
         "packages/radio-group-field/src/index.ts"
       ],

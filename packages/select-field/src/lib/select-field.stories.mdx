@@ -1,0 +1,51 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import MenuItem from '@mui/material/MenuItem';
+import SelectField from './select-field';
+import pkg from '../../package.json';
+
+<Meta title="SelectField" component={SelectField} />
+
+# SelectField <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/select-field`.
+
+```shell
+  yarn add -D @novatics/select-field
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/select-field';
+
+  ...
+```
+
+### Basic Usage
+
+<Canvas>
+  <Story name="Basic Usage">
+    {() => {
+        const [value, setValue] = useState("");
+        return (
+          <SelectField
+            value={value}
+            label="Age"
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Select your age"
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </SelectField>
+        )
+      }
+    }
+  </Story>
+</Canvas>
+
+made by Novatics ❤

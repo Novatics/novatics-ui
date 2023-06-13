@@ -18,7 +18,7 @@ export const MuiInputBase: Components['MuiInputBase'] = {
         borderBottomRightRadius: '2px',
         borderTopLeftRadius: '2px',
         borderBottomLeftRadius: '2px',
-        height: '36px',
+        minHeight: '36px',
 
         ':hover:not(.Mui-disabled):not(.MuiInputBase-readOnly):not(.Mui-error)':
           {

@@ -177,6 +177,23 @@ import ... from '@novatics/input-field';
   </Story>
 </Canvas>
 
+### TextArea
+
+By using the prop 'multiline' you can use the InputField as a `textarea`. The props `minRows` and `maxRows` are also available.
+
+<Canvas>
+  <Story name="Textarea">
+    <Grid container spacing={2}>
+      <Grid item xxs={2}>
+        <Stack spacing={0}>
+          <Typography variant="bodySmall">Textarea</Typography>
+          <InputField multiline minRows={2} maxRows={5} label="label" />
+        </Stack>
+      </Grid>
+    </Grid>
+  </Story>
+</Canvas>
+
 ### States
 
 <Canvas>

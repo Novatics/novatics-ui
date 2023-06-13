@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](https://github.com/Novatics/novatics-ui/compare/form-0.1.2...form-0.1.3) (2023-06-13)
+
+### Dependency Updates
+
+* `styles` updated to version `0.6.0`
 ## [0.1.2](https://github.com/Novatics/novatics-ui/compare/form-0.1.1...form-0.1.2) (2023-06-13)
 
 ### Dependency Updates

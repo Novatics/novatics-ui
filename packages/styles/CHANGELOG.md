@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Novatics/novatics-ui/compare/styles-0.5.0...styles-0.6.0) (2023-06-13)
+
+### Dependency Updates
+
+* `tokens` updated to version `0.2.3`
+
+### Features
+
+* **root:** merge branch 'master' into feature/NUI-109-select-field ([c151d15](https://github.com/Novatics/novatics-ui/commit/c151d151fc21d631c387ec17bbab51cf205cf668))
+
 ## [0.5.0](https://github.com/Novatics/novatics-ui/compare/styles-0.4.1...styles-0.5.0) (2023-06-13)
 
 

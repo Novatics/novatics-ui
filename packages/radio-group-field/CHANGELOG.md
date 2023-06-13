@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/radio-group-field-0.1.0...radio-group-field-0.1.1) (2023-06-13)
+
+### Dependency Updates
+
+* `radio` updated to version `0.2.6`
+* `styles` updated to version `0.5.0`
 ## 0.1.0 (2023-06-09)
 
 ### Dependency Updates

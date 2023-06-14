@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, TextField, Typography } from '@mui/material';
 import { FromURLContainer } from './styles';
-import { Button } from '../../../button/src/index';
+import { Button } from '@novatics/button';
 
 export interface FromUrlProps {
   accept?: string;

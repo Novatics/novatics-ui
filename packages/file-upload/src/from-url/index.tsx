@@ -13,6 +13,7 @@ export interface FromUrlProps {
   onAccept?: (url: string) => void;
   onReject?: (url: string) => void;
   handleValidation?: (url: string) => string | null;
+  clearOnAccept?: boolean;
 }
 
 export function FromUrl(props: FromUrlProps) {
@@ -26,6 +27,7 @@ export function FromUrl(props: FromUrlProps) {
     onReject = () => undefined,
     handleValidation,
     error,
+    clearOnAccept = true,
   } = props;
 
   const [url, setUrl] = useState('');
@@ -35,10 +37,9 @@ export function FromUrl(props: FromUrlProps) {
     if (error) setErrorText(error);
   }, [error]);
 
-  function isValidUrl(string) {
+  function isValidUrl(urlString: string) {
     try {
-      new URL(string);
-      return true;
+      return Boolean(new URL(urlString));
     } catch (err) {
       return false;
     }
@@ -56,7 +57,7 @@ export function FromUrl(props: FromUrlProps) {
     const validationResult = validate(url);
     if (validationResult === null) {
       onAccept(url);
-      setUrl('');
+      if (clearOnAccept) setUrl('');
     } else {
       onReject(url);
       setErrorText(validationResult);

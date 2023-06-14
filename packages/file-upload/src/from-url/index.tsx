@@ -1,84 +1,71 @@
-import { useState } from 'react';
-import { Box, TextField, Typography } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Box, TextField, TextFieldProps, Typography } from '@mui/material';
 import { FromURLContainer } from './styles';
-import { Button } from '@novatics/button';
+import { Button, ButtonProps } from '@novatics/button';
 
 export interface FromUrlProps {
-  accept?: string;
   acceptLabels?: string;
   variant?: 'single' | 'combined';
-  componentDisabled?: boolean;
-  buttonDisabled?: boolean;
-  inputDisabled?: boolean;
+  disabled?: boolean;
+  buttonProps?: ButtonProps;
+  textFieldProps?: TextFieldProps;
+  error?: string;
   onAccept?: (url: string) => void;
   onReject?: (url: string) => void;
-  validator?: (url: string) => string | null;
+  handleValidation?: (url: string) => string | null;
+  clearOnAccept?: boolean;
 }
 
 export function FromUrl(props: FromUrlProps) {
   const {
-    accept,
     acceptLabels,
     variant = 'single',
-    componentDisabled,
-    inputDisabled,
-    buttonDisabled,
+    disabled,
+    buttonProps,
+    textFieldProps,
     onAccept = () => undefined,
     onReject = () => undefined,
-    validator,
+    handleValidation,
+    error,
+    clearOnAccept = true,
   } = props;
 
   const [url, setUrl] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [errorText, setErrorText] = useState<string>(error || '');
 
-  function isValidUrl(string) {
+  useEffect(() => {
+    if (error) setErrorText(error);
+  }, [error]);
+
+  function isValidUrl(urlString: string) {
     try {
-      new URL(string);
-      return true;
+      return Boolean(new URL(urlString));
     } catch (err) {
       return false;
     }
   }
 
-  const handleValidation = async (url: string): Promise<string | null> => {
-    if (validator) return validator(url);
+  const validate = (url: string): string | null => {
+    if (handleValidation) return handleValidation(url);
     if (!url) return 'URL is required';
     if (!isValidUrl(url)) return 'Invalid URL';
-    if (!accept) return null;
-
-    setLoading(true);
-    return fetch(url)
-      .then((response) => {
-        const type = response.headers.get('Content-Type');
-        // How to validate types as audio/*, video/*, image/*?
-        setLoading(false);
-        if (type && accept.includes(type)) {
-          return null;
-        } else {
-          return 'Invalid file type';
-        }
-      })
-      .catch(() => {
-        setLoading(false);
-        return 'Validation error';
-      });
+    return null;
   };
 
-  const handleSubmit = async () => {
-    setError(null);
-    const validationResult = await handleValidation(url);
+  const handleSubmit = () => {
+    setErrorText('');
+    const validationResult = validate(url);
     if (validationResult === null) {
       onAccept(url);
-      setUrl('');
+      if (clearOnAccept) setUrl('');
     } else {
       onReject(url);
-      setError(validationResult);
+      setErrorText(validationResult);
     }
   };
 
   return (
-    <FromURLContainer variant={variant} componentDisabled={componentDisabled}>
+    <FromURLContainer variant={variant} disabled={disabled}>
       <Typography variant="overline" color="grey.70">
         Upload by URL
       </Typography>
@@ -91,14 +78,15 @@ export function FromUrl(props: FromUrlProps) {
           sx={{ flexGrow: 1 }}
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          disabled={inputDisabled || componentDisabled}
+          disabled={disabled}
+          {...textFieldProps}
         />
         <Button
           variant="outlined"
-          disabled={!url || buttonDisabled || componentDisabled}
+          disabled={!url || disabled}
           sx={{ textTransform: 'capitalize' }}
           onClick={() => handleSubmit()}
-          loading={loading}
+          {...buttonProps}
         >
           Submit
         </Button>
@@ -106,13 +94,13 @@ export function FromUrl(props: FromUrlProps) {
 
       <Typography
         variant="caption"
-        color={error === null ? 'grey.70' : 'error.main'}
+        color={errorText ? 'error.main' : 'grey.70'}
       >
-        {error === null
-          ? acceptLabels
-            ? `Accepted formats: ${acceptLabels}`
-            : 'All files are accepted'
-          : error}
+        {errorText
+          ? errorText
+          : acceptLabels
+          ? `Accepted formats: ${acceptLabels}`
+          : 'All files are accepted'}
       </Typography>
     </FromURLContainer>
   );

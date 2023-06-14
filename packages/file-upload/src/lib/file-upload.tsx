@@ -11,7 +11,7 @@ export const FileUploadContainer = styled(Box)`
   flex-direction: column;
   gap: 20px;
 
-  > div > *:first-child {
+  > div > *:first-of-type {
     margin: 10px 0;
   }
 
@@ -31,7 +31,7 @@ export function FileUpload(props: FileUploadProps) {
       <Box>
         <Typography variant="h6">From URL:</Typography>
         <FromUrl
-          onUpload={(url) => console.log(`url`, url)}
+          onAccept={(url) => console.log(`url`, url)}
           {...fromUrlProps}
         />
       </Box>

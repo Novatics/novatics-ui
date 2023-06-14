@@ -32,7 +32,9 @@ yarn add @mui/material @emotion/react @emotion/styled
     {(args) => {
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <FileUpload />
+          <FileUpload
+            fromUrlProps={{ accept: 'image/jpeg', acceptLabels: '.JPEG' }}
+          />
         </div>
       );
     }}

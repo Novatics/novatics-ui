@@ -2,13 +2,13 @@ import { Box } from '@mui/material';
 import { styled } from '@novatics/styles';
 import { FromUrlProps } from '.';
 
-interface FromURLContainerProps extends Pick<any, 'kind'> {
+interface FromURLContainerProps extends Pick<FromUrlProps, 'variant'> {
   componentDisabled?: boolean;
 }
 
 export const FromURLContainer = styled(Box)<FromURLContainerProps>`
-  ${({ kind }) => {
-    switch (kind) {
+  ${({ variant }) => {
+    switch (variant) {
       case 'single':
         return `--border: 1px solid;
                 --padding: 24px;`;
@@ -25,7 +25,7 @@ export const FromURLContainer = styled(Box)<FromURLContainerProps>`
   border-color: ${({ theme: { palette } }) => palette.grey[20]};
   width: fit-content;
   padding: var(--padding);
-  min-width: 600px;
+  min-width: 500px;
 
   cursor: ${({ componentDisabled }) =>
     componentDisabled ? 'not-allowed' : ''};

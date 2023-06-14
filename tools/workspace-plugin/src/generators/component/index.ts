@@ -29,6 +29,7 @@ interface ComponentSchemaOptions {
   access?: 'public' | 'restricted';
   storybook7Configuration?: boolean;
   tsConfiguration?: boolean;
+  generator?: string;
 }
 
 function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
@@ -91,6 +92,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     access = 'public',
     storybook7Configuration = true,
     tsConfiguration = true,
+    generator = '@nx/react:library',
   } = schema;
 
   const { className, propertyName, constantName, fileName } = names(name);
@@ -102,7 +104,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   let libArgs = `--compiler=${compiler} --style=${style} --bundler=${bundler} --importPath=${project}/${fileName}`;
   if (buildable) libArgs = '--publishable ' + libArgs;
 
-  const outputLib = execSync(`nx g lib ${libArgs} ${name}`);
+  const outputLib = execSync(`nx g ${generator} ${libArgs} ${name}`);
   console.log(outputLib.toString());
 
   const storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;

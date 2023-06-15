@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Novatics/novatics-ui/compare/styles-0.6.0...styles-0.7.0) (2023-06-15)
+
+
+### Features
+
+* **file-upload:** import from URL ([ad72b3e](https://github.com/Novatics/novatics-ui/commit/ad72b3e5f495defd40d7f24509012edf1a0c2c3c))
+
 ## [0.6.0](https://github.com/Novatics/novatics-ui/compare/styles-0.5.0...styles-0.6.0) (2023-06-13)
 
 ### Dependency Updates

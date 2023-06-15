@@ -28,17 +28,18 @@
         "packages/currency-text-field/src/index.ts"
       ],
       "@novatics/divider": ["packages/divider/src/index.ts"],
+      "@novatics/file-upload": ["packages/file-upload/src/index.ts"],
       "@novatics/form": ["packages/form/src/index.ts"],
-      "@novatics/input-field": ["packages/input-field/src/index.ts"],
       "@novatics/form-group": ["packages/form-group/src/index.ts"],
+      "@novatics/input-field": ["packages/input-field/src/index.ts"],
       "@novatics/masked-text-field": [
         "packages/masked-text-field/src/index.ts"
       ],
       "@novatics/radio": ["packages/radio/src/index.ts"],
-      "@novatics/select-field": ["packages/select-field/src/index.ts"],
       "@novatics/radio-group-field": [
         "packages/radio-group-field/src/index.ts"
       ],
+      "@novatics/select-field": ["packages/select-field/src/index.ts"],
       "@novatics/styles": ["packages/styles/src/index.ts"],
       "@novatics/tokens": ["packages/tokens/src/index.ts"],
       "@novatics/wizard": ["packages/wizard/src/index.ts"],

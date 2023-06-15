@@ -49,7 +49,7 @@ export const MuiButton: Components['MuiButton'] = {
         lineHeight: '20px',
         fontWeight: '600',
         transition: '0.3s',
-        '&:hover': {
+        '&:hover:not([disabled])': {
           boxShadow: 'unset',
           backgroundColor: selectColor(theme, ownerState.color, true),
         },
@@ -67,7 +67,7 @@ export const MuiButton: Components['MuiButton'] = {
       return {
         borderColor: addTransparency(selectColor(theme, ownerState.color)),
         color: selectColor(theme, ownerState.color),
-        '&:hover': {
+        '&:hover:not([disabled])': {
           borderColor: addTransparency(
             selectColor(theme, ownerState.color, true)
           ),
@@ -82,7 +82,7 @@ export const MuiButton: Components['MuiButton'] = {
       const theme = props.theme as Theme;
       return {
         color: selectColor(theme, ownerState.color),
-        '&:hover': {
+        '&:hover:not([disabled])': {
           backgroundColor: addTransparency(
             selectColor(theme, ownerState.color, true)
           ),

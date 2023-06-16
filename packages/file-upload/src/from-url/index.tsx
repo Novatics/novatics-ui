@@ -74,6 +74,7 @@ export function FromUrl(props: FromUrlProps) {
         <TextField
           variant="outlined"
           placeholder="Insert URL here"
+          error={Boolean(errorText)}
           inputProps={{ style: { padding: '0' } }}
           sx={{ flexGrow: 1 }}
           value={url}

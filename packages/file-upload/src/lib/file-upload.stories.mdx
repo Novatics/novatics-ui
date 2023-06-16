@@ -68,8 +68,10 @@ import FileUpload from '@novatics/file-upload';
   <Story name="Drag and Drop">
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <DragAndDrop />
+        <div>
+          <DragAndDrop variant="fullscreen" acceptedLabels="JPG, PNG and GIF" />
+          <br />
+          <DragAndDrop variant="inline" acceptedLabels="JPG, PNG and GIF" />
         </div>
       );
     }}

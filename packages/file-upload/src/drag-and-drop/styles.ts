@@ -79,9 +79,9 @@ export const FullscreenFormatContainer = styled(Box)(() => ({
 }));
 
 export const ErrorText = styled(Typography)<{
-  containerVariant?: 'fullscreen' | 'inline';
-}>(({ containerVariant, theme }) => {
-  const isFullscreen = containerVariant === 'fullscreen';
+  $containerVariant?: 'fullscreen' | 'inline';
+}>(({ $containerVariant, theme }) => {
+  const isFullscreen = $containerVariant === 'fullscreen';
   const gridArea = isFullscreen ? '4 / 1 / 5 / 2' : 'unset';
   return {
     color: theme.palette.error.main,
@@ -110,9 +110,9 @@ export const InlineFormatHint = styled(Typography)<{ $disabled?: boolean }>(
 );
 
 export const Button = styled(NuiButton)<{
-  containerVariant: 'fullscreen' | 'inline';
-}>(({ containerVariant }) => {
-  const isFullscreen = containerVariant === 'fullscreen';
+  $containerVariant: 'fullscreen' | 'inline';
+}>(({ $containerVariant }) => {
+  const isFullscreen = $containerVariant === 'fullscreen';
   const gridArea = isFullscreen ? '3 / 1 / 4 / 2' : '1 / 3 / 3 / 4';
   return {
     gridArea,

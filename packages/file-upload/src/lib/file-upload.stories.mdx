@@ -69,7 +69,11 @@ import FileUpload from '@novatics/file-upload';
     {(args) => {
       return (
         <div>
-          <DragAndDrop variant="fullscreen" acceptedLabels="JPG, PNG and GIF" />
+          <DragAndDrop
+            variant="fullscreen"
+            multiple
+            acceptedLabels="JPG, PNG and GIF"
+          />
           <br />
           <DragAndDrop variant="inline" acceptedLabels="JPG, PNG and GIF" />
         </div>

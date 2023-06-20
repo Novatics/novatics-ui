@@ -3,12 +3,9 @@ import { Field, FieldProps } from 'formik';
 
 import { SelectField, SelectFieldProps } from './select-field';
 
-export type SelectFormikFieldProps<T, U> = SelectFieldProps &
-  FieldProps<T, U>;
+export type SelectFormikFieldProps<T, U> = SelectFieldProps & FieldProps<T, U>;
 
-const SelectFormikField = <T, U>(
-  props: SelectFormikFieldProps<T, U>
-) => {
+const SelectFormikField = <T, U>(props: SelectFormikFieldProps<T, U>) => {
   const internalValidate = useCallback(
     (value) => (props.required ? !value : false),
     [props.required]

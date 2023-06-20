@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/radio-group-field/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/radio-group-field/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/radio-group-field"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/radio-group-field"
-      ],
+      "outputs": ["coverage/packages/radio-group-field"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/radio-group-field"
@@ -58,9 +50,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/radio-group-field",
         "configDir": "packages/radio-group-field/.storybook"
@@ -102,9 +92,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "radio-group-field:deploy"
-        ]
+        "postTargets": ["radio-group-field:deploy"]
       }
     }
   }

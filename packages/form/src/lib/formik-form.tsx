@@ -18,7 +18,6 @@ export type FormikFormProps<T extends FormikValues = FormikValues> = Omit<
     scrollOnError?: boolean | Partial<ScrollOnErrorProps>;
   };
 
-
 const MUI_ERROR_QUERY_SELECTOR = '.Mui-error';
 
 const useFormProps = <T extends FormikValues = FormikValues>(

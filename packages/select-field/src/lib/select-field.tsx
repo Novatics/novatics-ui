@@ -21,7 +21,12 @@ const SelectField = (props: SelectFieldProps) => {
       <FormLabel required={required} focused={false}>
         {label}
       </FormLabel>
-      <MuiSelect IconComponent={ExpandMoreIcon} disabled={disableSelect} error={Boolean(error)} {...others} />
+      <MuiSelect
+        IconComponent={ExpandMoreIcon}
+        disabled={disableSelect}
+        error={Boolean(error)}
+        {...others}
+      />
     </FormControl>
   );
 };

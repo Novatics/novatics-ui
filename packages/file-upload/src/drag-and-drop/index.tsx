@@ -90,7 +90,7 @@ export function DragAndDrop(props: DragAndDropProps) {
       setDragOver(false);
       handleFiles(Array.from(e.dataTransfer.files));
     },
-    [onDrop, disabled]
+    [onDrop, handleFiles, disabled]
   );
 
   const handleDragEnter = useCallback(

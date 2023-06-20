@@ -14,6 +14,10 @@ export interface FromUrlProps {
   onReject?: (url: string) => void;
   handleValidation?: (url: string) => string | null;
   clearOnAccept?: boolean;
+  title?: string;
+  buttonLabel?: string;
+  formatsLabel?: string;
+  placeholder?: string;
 }
 
 export function FromUrl(props: FromUrlProps) {
@@ -28,6 +32,10 @@ export function FromUrl(props: FromUrlProps) {
     handleValidation,
     error,
     clearOnAccept = true,
+    title = 'Upload by URL',
+    buttonLabel = 'Submit',
+    formatsLabel = 'Accepted formats:',
+    placeholder = 'Insert URL here',
   } = props;
 
   const [url, setUrl] = useState('');
@@ -67,13 +75,13 @@ export function FromUrl(props: FromUrlProps) {
   return (
     <FromURLContainer variant={variant} disabled={disabled}>
       <Typography variant="overline" color="grey.70">
-        Upload by URL
+        {title}
       </Typography>
 
       <Box sx={{ display: 'flex', gap: '8px' }}>
         <TextField
           variant="outlined"
-          placeholder="Insert URL here"
+          placeholder={placeholder}
           error={Boolean(errorText)}
           inputProps={{ style: { padding: '0' } }}
           sx={{ flexGrow: 1 }}
@@ -89,7 +97,7 @@ export function FromUrl(props: FromUrlProps) {
           onClick={() => handleSubmit()}
           {...buttonProps}
         >
-          Submit
+          {buttonLabel}
         </Button>
       </Box>
 
@@ -100,7 +108,7 @@ export function FromUrl(props: FromUrlProps) {
         {errorText
           ? errorText
           : acceptLabels
-          ? `Accepted formats: ${acceptLabels}`
+          ? `${formatsLabel} ${acceptLabels}`
           : 'All files are accepted'}
       </Typography>
     </FromURLContainer>

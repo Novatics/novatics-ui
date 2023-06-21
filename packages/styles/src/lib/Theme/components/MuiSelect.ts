@@ -7,6 +7,6 @@ export const MuiSelect: Components['MuiSelect'] = {
     },
     icon: {
       width: '0.95rem',
-    }
+    },
   },
 };

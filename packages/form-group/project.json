@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/form-group/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/form-group/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/form-group"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/form-group"
-      ],
+      "outputs": ["coverage/packages/form-group"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/form-group"
@@ -58,9 +50,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/form-group",
         "configDir": "packages/form-group/.storybook"
@@ -102,9 +92,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "form-group:deploy"
-        ]
+        "postTargets": ["form-group:deploy"]
       }
     }
   }

@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.5](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.3.5) (2023-06-21)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.2.9`
+* `radio` updated to version `0.2.9`
+* `styles` updated to version `0.7.1`
+* `checkbox-field` updated to version `0.3.7`
+* `file-upload` updated to version `0.2.0`
+* `form` updated to version `0.1.5`
+* `form-group` updated to version `0.1.1`
+* `input-field` updated to version `0.3.3`
+* `radio-group-field` updated to version `0.1.4`
+* `select-field` updated to version `0.1.1`
+
+### Bug Fixes
+
+* **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
+
 ## [0.3.4](https://github.com/Novatics/novatics-ui/compare/core-0.3.3...core-0.3.4) (2023-06-15)
 
 ### Dependency Updates

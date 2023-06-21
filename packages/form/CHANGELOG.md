@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.5](https://github.com/Novatics/novatics-ui/compare/form-0.1.4...form-0.1.5) (2023-06-21)
+
+### Dependency Updates
+
+* `styles` updated to version `0.7.1`
+
+### Bug Fixes
+
+* **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
+
 ## [0.1.4](https://github.com/Novatics/novatics-ui/compare/form-0.1.3...form-0.1.4) (2023-06-15)
 
 ### Dependency Updates

@@ -20,7 +20,7 @@ const ProgressContainer = styled(Box)<LinearProgressProps>((props) => {
 
 const LinearProgress = (props: LinearProgressProps) => (
   <ProgressContainer>
-    <Box sx={{ width: '100%' }}>
+    <Box width="100%">
       <MuiLinearProgress {...props} />
     </Box>
     {props.withLabel && (

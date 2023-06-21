@@ -30,21 +30,20 @@ import ... from '@novatics/select-field';
 <Canvas>
   <Story name="Basic Usage">
     {() => {
-        const [value, setValue] = useState("");
-        return (
-          <SelectField
-            value={value}
-            label="Age"
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Select your age"
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </SelectField>
-        )
-      }
-    }
+      const [value, setValue] = useState('');
+      return (
+        <SelectField
+          value={value}
+          label="Age"
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Select your age"
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </SelectField>
+      );
+    }}
   </Story>
 </Canvas>
 

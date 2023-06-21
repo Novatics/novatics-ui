@@ -142,7 +142,7 @@ export const FormComponent = <T,>(props: FormProps<T>, ref: any) => {
           ? cloneElement(child as ReactElement, {
               loading,
               disabled,
-              direction
+              direction,
             })
           : child;
       });

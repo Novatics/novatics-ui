@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import pkg from '../../package.json';
 import { FileUpload } from './file-upload';
 import { FromUrl } from '../from-url';
+import { DragAndDrop } from '../drag-and-drop';
 
 <Meta title="File Upload" component={FileUpload} />
 
@@ -55,6 +56,26 @@ import FileUpload from '@novatics/file-upload';
       return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <FromUrl />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Drag and Drop
+
+<Canvas>
+  <Story name="Drag and Drop">
+    {(args) => {
+      return (
+        <div>
+          <DragAndDrop
+            variant="fullscreen"
+            multiple
+            acceptedLabels="JPG, PNG and GIF"
+          />
+          <br />
+          <DragAndDrop variant="inline" acceptedLabels="JPG, PNG and GIF" />
         </div>
       );
     }}

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/form-group-0.1.0...form-group-0.1.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
+
 ## 0.1.0 (2023-06-05)
 
 

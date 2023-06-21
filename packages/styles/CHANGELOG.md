@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Novatics/novatics-ui/compare/styles-0.7.0...styles-0.8.0) (2023-06-21)
+
+
+### Features
+
+* **linear-progress:** linearProgress done ([1a55b0f](https://github.com/Novatics/novatics-ui/commit/1a55b0f59f617e5a7da2d08d79f2d476a9526819))
+
+
+### Bug Fixes
+
+* **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
+
 ## [0.7.0](https://github.com/Novatics/novatics-ui/compare/styles-0.6.0...styles-0.7.0) (2023-06-15)
 
 

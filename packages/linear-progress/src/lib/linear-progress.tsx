@@ -6,7 +6,7 @@ import { styled } from '@novatics/styles';
 import { Typography } from '@mui/material';
 
 interface LinearProgressProps extends MuiLinearProgressProps {
-  withLabel?: boolean;
+  showPercentage?: boolean;
 }
 
 const ProgressContainer = styled(Box)<LinearProgressProps>((props) => {
@@ -23,7 +23,7 @@ const LinearProgress = (props: LinearProgressProps) => (
     <Box width="100%">
       <MuiLinearProgress {...props} />
     </Box>
-    {props.withLabel && (
+    {props.showPercentage && (
       <Typography variant="caption">{`${props.value}%`}</Typography>
     )}
   </ProgressContainer>

@@ -35,7 +35,7 @@ yarn add @mui/material @emotion/react @emotion/styled
 
 ### Basic Usage
 
-The LinearProgress component is used to show a progress bar. The `withLabel` attribute is used to present a label with the percentage of the progress.
+The LinearProgress component is used to show a progress bar. The `showPercentage` attribute is used to present a label with the percentage of the progress.
 
 <Canvas>
   <Story name="Basic Usage">
@@ -43,7 +43,7 @@ The LinearProgress component is used to show a progress bar. The `withLabel` att
       return (
         <div style={{ width: '80%' }}>
           <LinearProgress
-            withLabel
+            showPercentage
             variant="determinate"
             value={70}
             {...args}

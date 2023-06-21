@@ -52,6 +52,7 @@ module.exports = {
     { name: 'form' },
     { name: 'form-group' },
     { name: 'input-field' },
+    { name: 'linear-progress' },
     { name: 'masked-text-field' },
     { name: 'radio' },
     { name: 'radio-group-field' },

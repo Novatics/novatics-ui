@@ -21,6 +21,7 @@ import { MuiButton } from './Theme/components/MuiButton';
 import { MuiRadio } from './Theme/components/MuiRadio';
 import { MuiOutlinedInput } from './Theme/components/MuiOutlinedInput';
 import { MuiSelect } from './Theme/components/MuiSelect';
+import { MuiLinearProgress } from './Theme/components/MuiLinearProgress';
 import './Theme/fonts.css';
 
 export { themePalette, themeBorderRadius };
@@ -35,6 +36,7 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiInputBase,
       MuiFormHelperText,
       MuiButton,
+      MuiLinearProgress,
       MuiRadio,
       MuiOutlinedInput,
       MuiSelect,

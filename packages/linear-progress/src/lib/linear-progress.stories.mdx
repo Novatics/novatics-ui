@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import LinearProgress from './linear-progress';
+import pkg from '../../package.json';
+
+<Meta title="LinearProgress" component={LinearProgress} />
+
+# LinearProgress <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/linear-progress`.
+
+```shell
+  yarn add -D @novatics/linear-progress
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/linear-progress';
+
+  ...
+
+
+```
+
+### Dependencies
+
+This component extends [Material UI React Linear Progress](https://mui.com/material-ui/react-progress/). Therefore is needed to install Material UI:
+
+```bash
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
+### Basic Usage
+
+The LinearProgress component is used to show a progress bar. The `showPercentage` attribute is used to present a label with the percentage of the progress.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <div style={{ width: '80%' }}>
+          <LinearProgress
+            showPercentage
+            variant="determinate"
+            value={70}
+            {...args}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+made by Novatics ❤

@@ -16,11 +16,16 @@ export const ListItemContainer = styled(Box)<{ $error: boolean }>(
       borderRadius: '2px',
       borderStyle: 'solid',
       borderColor,
+      minWidth: '500px',
+      img: {
+        maxWidth: '1.5rem',
+        maxHeight: '1.5rem',
+      },
     };
   }
 );
 
-export const Actions = styled(Stack)((props) => {
+export const Actions = styled(Stack)(() => {
   return {
     button: {
       width: '2rem',

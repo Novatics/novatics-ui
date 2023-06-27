@@ -1,7 +1,30 @@
-import { Box } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { styled } from '@novatics/styles';
-import { ListItemProps } from '.';
 
-export const ListItemContainer = styled(Box)((props) => {
-  return {};
+export const ListItemContainer = styled(Box)<{ $error: boolean }>(
+  ({ $error, theme }) => {
+    const borderColor = $error
+      ? theme.palette.error.main
+      : theme.palette.grey[20];
+    return {
+      display: 'grid',
+      gridTemplateColumns: '1.5rem 1fr 2fr auto',
+      gap: '8px',
+      alignItems: 'center',
+      padding: '8px 16px ',
+      borderWidth: '1px',
+      borderRadius: '2px',
+      borderStyle: 'solid',
+      borderColor,
+    };
+  }
+);
+
+export const Actions = styled(Stack)((props) => {
+  return {
+    button: {
+      width: '2rem',
+      height: '2rem',
+    },
+  };
 });

@@ -1,62 +1,95 @@
-import { ListItemContainer } from './styles';
-import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
-import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
-import TableChartOutlinedIcon from '@mui/icons-material/TableChartOutlined';
-import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { ListItemContainer, Actions } from './styles';
+import {
+  FeedOutlined as DefaultFileIcon,
+  ImageOutlined as ImageIcon,
+  TableChartOutlined as SheetIcon,
+  PictureAsPdfOutlined as PdfIcon,
+  CheckCircleOutline as CheckIcon,
+  CancelOutlined as CancelIcon,
+  RestartAlt as RetryIcon,
+} from '@mui/icons-material';
+import { Typography, IconButton } from '@mui/material';
 import { LinearProgress } from '@novatics/linear-progress';
-import { Stack, Typography } from '@mui/material';
-import { Button } from '@novatics/button';
+import { useState } from 'react';
 
 export interface ListItemProps {
   fileName?: string;
-  icon?: React.ReactNode | null;
+  fileIcon?: React.ReactNode | null;
+  retryIcon?: React.ReactNode | null;
+  cancelIcon?: React.ReactNode | null;
+  successIcon?: React.ReactNode | null;
   imagePreview?: string;
   loadingPercentage?: number;
-  uploaded?: boolean;
+  succeeded?: boolean;
   error?: string;
-  onNameClick?: () => void;
+  onSuccessClick?: () => void;
   onCancel?: () => void;
   onRetry?: () => void;
   onDelete?: () => void;
+  deleteAfterSuccess?: boolean;
 }
 
 export function ListItem(props: ListItemProps) {
   const {
     fileName,
-    icon,
+    fileIcon,
+    retryIcon,
+    cancelIcon,
+    successIcon,
     imagePreview,
     loadingPercentage,
-    uploaded,
+    succeeded,
     error,
-    onNameClick,
-    onCancel,
-    onRetry,
-    onDelete,
+    onSuccessClick,
+    onCancel = () => undefined,
+    onRetry = () => undefined,
+    onDelete = () => undefined,
+    deleteAfterSuccess = false,
   } = props;
+
+  const [hoverSuccessButton, setHoverSuccessButton] = useState(false);
 
   const renderIcon = () => {
     const sheetExtensions = ['.csv', '.xls', '.ods'];
     const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
 
     if (imagePreview) return <img src={imagePreview} alt={fileName} />;
-    if (icon !== undefined) return icon;
-    if (fileName?.includes('.pdf')) return <PictureAsPdfOutlinedIcon />;
+    if (fileIcon !== undefined) return fileIcon;
+    if (fileName?.includes('.pdf'))
+      return <PdfIcon sx={{ color: 'grey.20' }} />;
     if (sheetExtensions.some((v) => fileName?.includes(v)))
-      return <TableChartOutlinedIcon />;
+      return <SheetIcon sx={{ color: 'grey.20' }} />;
     if (imageExtensions.some((v) => fileName?.includes(v)))
-      return <ImageOutlinedIcon />;
+      return <ImageIcon sx={{ color: 'grey.20' }} />;
 
-    return <FeedOutlinedIcon />;
+    return <DefaultFileIcon sx={{ color: 'grey.20' }} />;
+  };
+
+  const renderName = () => {
+    if (succeeded && onSuccessClick)
+      return (
+        <Typography
+          sx={{ cursor: 'pointer', color: 'support.main' }}
+          onClick={onSuccessClick}
+        >
+          {fileName}
+        </Typography>
+      );
+    return <Typography>{fileName}</Typography>;
   };
 
   const renderProgress = () => {
-    if (error) return <Typography color="error">{error}</Typography>;
-    if (uploaded)
+    if (error)
+      return (
+        <Typography justifySelf="end" color="error">
+          {error}
+        </Typography>
+      );
+    if (succeeded)
       return (
         <LinearProgress variant="determinate" value={100} showPercentage />
       );
-    if (loadingPercentage)
+    if (loadingPercentage !== undefined)
       return (
         <LinearProgress
           variant="determinate"
@@ -70,29 +103,48 @@ export function ListItem(props: ListItemProps) {
   const renderActions = () => {
     if (error)
       return (
-        <Stack direction="row" spacing={1}>
-          <Button variant="outlined" size="small" onClick={onRetry}>
-            Retry icon
-          </Button>
-          <Button variant="outlined" size="small" onClick={onDelete}>
-            Delete icon
-          </Button>
-        </Stack>
+        <Actions direction="row">
+          <IconButton aria-label="retry" onClick={onRetry}>
+            {retryIcon || <RetryIcon />}
+          </IconButton>
+          <IconButton aria-label="delete" onClick={onDelete}>
+            {cancelIcon || <CancelIcon />}
+          </IconButton>
+        </Actions>
       );
-    if (uploaded)
-      return <CheckCircleOutlineIcon sx={{ color: 'success.main' }} />;
+    if (succeeded)
+      return (
+        successIcon || (
+          <Actions>
+            <IconButton
+              onMouseEnter={() => setHoverSuccessButton(true)}
+              onMouseLeave={() => setHoverSuccessButton(false)}
+              onClick={onDelete}
+              disabled={!deleteAfterSuccess}
+            >
+              {hoverSuccessButton ? (
+                <CancelIcon />
+              ) : (
+                <CheckIcon sx={{ color: 'success.main' }} />
+              )}
+            </IconButton>
+          </Actions>
+        )
+      );
 
     return (
-      <Button variant="outlined" size="small" onClick={onCancel}>
-        Cancel icon
-      </Button>
+      <Actions>
+        <IconButton aria-label="cancel" onClick={onCancel}>
+          <CancelIcon />
+        </IconButton>
+      </Actions>
     );
   };
 
   return (
-    <ListItemContainer>
+    <ListItemContainer $error={Boolean(error)}>
       {renderIcon()}
-      <Typography>{fileName}</Typography>
+      {renderName()}
       {renderProgress()}
       {renderActions()}
     </ListItemContainer>

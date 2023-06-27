@@ -1,8 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Stack } from '@mui/material';
 import pkg from '../../package.json';
 import { FileUpload } from './file-upload';
 import { FromUrl } from '../from-url';
 import { DragAndDrop } from '../drag-and-drop';
+import { ListItem } from '../list-item';
 
 <Meta title="File Upload" component={FileUpload} />
 
@@ -82,11 +84,23 @@ import FileUpload from '@novatics/file-upload';
   </Story>
 </Canvas>
 
-```tsx
-import { FromUrl, FromUrlProps } from '@novatics/file-upload';
+### List Item
 
-<FromUrl />;
-```
+<Canvas>
+  <Story name="List Item">
+    {(args) => {
+      return (
+        <Stack width="50rem">
+          <ListItem fileName="Test.jpg" loadingPercentage={25} />
+          <br />
+          <ListItem fileName="Test.txt" error="Tente novamente" />
+          <br />
+          <ListItem fileName="Test.csv" succeeded onSuccessClick={() => {}} />
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
 
 ### Playground
 

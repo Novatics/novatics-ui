@@ -2,7 +2,7 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.2.0](https://github.com/Novatics/novatics-ui/compare/linear-progress-0.1.0...linear-progress-0.2.0) (2023-07-05)
+## [0.2.0](https://github.com/Novatics/novatics-ui/compare/linear-progress-0.1.0...linear-progress-0.2.0) (2023-07-03)
 
 ### Dependency Updates
 
@@ -12,12 +12,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **file-upload:** list item done ([fa06035](https://github.com/Novatics/novatics-ui/commit/fa060355b1847762462a45313e9419efe229c69d))
 * **root:** improve organization on storybook ([8b2f795](https://github.com/Novatics/novatics-ui/commit/8b2f795811ab8304bb7d6ce2f56311949b3561d1))
-
-
-### Bug Fixes
-
-* **root:** fix component generator ([45fd258](https://github.com/Novatics/novatics-ui/commit/45fd25822651eb9e229b868ddba37f443c9928e2))
-* **root:** fix test and deploy, update packages and format files ([86dcc38](https://github.com/Novatics/novatics-ui/commit/86dcc38a7efde19ca7051746e646663aea19ee28))
 
 ## 0.1.0 (2023-06-21)
 

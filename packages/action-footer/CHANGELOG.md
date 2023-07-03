@@ -2,17 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.3.0](https://github.com/Novatics/novatics-ui/compare/action-footer-0.2.1...action-footer-0.3.0) (2023-07-05)
+## [0.3.0](https://github.com/Novatics/novatics-ui/compare/action-footer-0.2.1...action-footer-0.3.0) (2023-07-03)
 
 
 ### Features
 
 * **root:** improve organization on storybook ([8b2f795](https://github.com/Novatics/novatics-ui/commit/8b2f795811ab8304bb7d6ce2f56311949b3561d1))
-
-
-### Bug Fixes
-
-* **root:** fix test and deploy, update packages and format files ([86dcc38](https://github.com/Novatics/novatics-ui/commit/86dcc38a7efde19ca7051746e646663aea19ee28))
 
 ## [0.2.1](https://github.com/Novatics/novatics-ui/compare/action-footer-0.2.0...action-footer-0.2.1) (2023-06-05)
 

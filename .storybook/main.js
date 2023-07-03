@@ -1,7 +1,7 @@
 import remarkGfm from 'remark-gfm';
 
 module.exports = {
-  stories: ['*.stories.mdx', '*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['*.stories.mdx', '*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-essentials',
     '@react-theming/storybook-addon',

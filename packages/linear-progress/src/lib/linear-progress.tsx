@@ -18,11 +18,17 @@ const ProgressContainer = styled(Box)<LinearProgressProps>((props) => {
   };
 });
 
+const ProgressBar = styled(MuiLinearProgress)<LinearProgressProps>((props) => {
+  return {
+    backgroundColor: props.theme.palette.grey[10],
+    width: '100%',
+    height: '6px',
+  };
+});
+
 const LinearProgress = (props: LinearProgressProps) => (
   <ProgressContainer>
-    <Box width="100%">
-      <MuiLinearProgress {...props} />
-    </Box>
+    <ProgressBar {...props} />
     {props.showPercentage && (
       <Typography variant="caption">{`${props.value}%`}</Typography>
     )}

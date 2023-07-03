@@ -1,14 +1,13 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Stack, Divider } from '@mui/material';
 import pkg from '../../package.json';
-import { FileUpload } from './file-upload';
 import { FromUrl } from '../from-url';
 import { DragAndDrop } from '../drag-and-drop';
+import { ListItem } from '../list-item';
 
-<Meta title="File Upload" component={FileUpload} />
+<Meta title="Components/File Upload/Intro" />
 
 # FileUpload <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
-
-Use this component for File Upload
 
 ### Installation
 
@@ -20,7 +19,7 @@ yarn add @novatics/file-upload
 
 ### Dependencies
 
-This component extends [Material UI React Text Field](https://mui.com/material-ui/react-text-field). Therefore is needed to install Material UI:
+This component extends [Material UI React](https://mui.com/material-ui/) components. Therefore is needed to install Material UI:
 
 ```bash
 yarn add @mui/material @emotion/react @emotion/styled
@@ -28,35 +27,43 @@ yarn add @mui/material @emotion/react @emotion/styled
 
 ### Basic Usage
 
+The FileUpload is composed by 3 components: `FromUrl`, `DragAndDrop` and `ListItem`. They can be used separately or combined.
+
 <Canvas>
   <Story name="Basic Usage">
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <FileUpload
-            fromUrlProps={{ accept: 'image/jpeg', acceptLabels: '.JPEG' }}
+        <Stack width={500} spacing={2}>
+          <DragAndDrop
+            variant="inline"
+            multiple
+            acceptedLabels="JPG, PNG and GIF"
           />
-        </div>
+          <Divider>or</Divider>
+          <FromUrl
+            accept="image/jpeg"
+            acceptLabels=".JPEG"
+            variant="combined"
+          />
+          <br />
+          <ListItem fileName="Test.png" loadingPercentage={25} />
+        </Stack>
       );
     }}
   </Story>
 </Canvas>
 
-```tsx
-import FileUpload from '@novatics/file-upload';
-
-<FileUpload />;
-```
-
 ### From URL
+
+The FromUrl component receives an URL and a callback function to be called when the user clicks on the button to upload the file. More about FromUrl [here](https://components.novatics.com.br/?path=/docs/fromurl--docs).
 
 <Canvas>
   <Story name="From URL">
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <FromUrl />
-        </div>
+        <Stack spacing={2}>
+          <FromUrl variant="single" />
+        </Stack>
       );
     }}
   </Story>
@@ -64,42 +71,32 @@ import FileUpload from '@novatics/file-upload';
 
 ### Drag and Drop
 
+The `DragAndDrop` component can be used for selecting files by both draggin and dropping them or clicking on the button to select. More about DragAndDrop [here](https://components.novatics.com.br/?path=/docs/draganddrop--docs).
+
 <Canvas>
   <Story name="Drag and Drop">
     {(args) => {
       return (
-        <div>
-          <DragAndDrop
-            variant="fullscreen"
-            multiple
-            acceptedLabels="JPG, PNG and GIF"
-          />
-          <br />
+        <Stack width="50rem" spacing={2}>
           <DragAndDrop variant="inline" acceptedLabels="JPG, PNG and GIF" />
-        </div>
+        </Stack>
       );
     }}
   </Story>
 </Canvas>
 
-```tsx
-import { FromUrl, FromUrlProps } from '@novatics/file-upload';
+### List Item
 
-<FromUrl />;
-```
-
-### Playground
+A list item can be used to show the status of a file upload. More about ListItem [here](https://components.novatics.com.br/?path=/docs/listitem--docs).
 
 <Canvas>
-  <Story name="Playground" argTypes={{}}>
+  <Story name="List Item">
     {(args) => {
       return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <FileUpload {...args} />
-        </div>
+        <Stack width="50rem">
+          <ListItem fileName="Test.jpg" loadingPercentage={25} />
+        </Stack>
       );
     }}
   </Story>
 </Canvas>
-
-<ArgsTable story="Playground" />

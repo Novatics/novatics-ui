@@ -69,18 +69,21 @@ export function DragAndDrop(props: DragAndDropProps) {
     if (error) setErrorText(error);
   }, [error]);
 
-  const handleFiles = (files: File[]) => {
-    if (handleValidation) {
-      const validationResult = handleValidation(files);
-      if (validationResult) {
-        setErrorText(validationResult);
-        if (onDropRejected) onDropRejected(files);
-        return;
+  const handleFiles = useCallback(
+    (files: File[]) => {
+      if (handleValidation) {
+        const validationResult = handleValidation(files);
+        if (validationResult) {
+          setErrorText(validationResult);
+          if (onDropRejected) onDropRejected(files);
+          return;
+        }
       }
-    }
 
-    if (onDropAccepted) onDropAccepted(files);
-  };
+      if (onDropAccepted) onDropAccepted(files);
+    },
+    [handleValidation, onDropAccepted, onDropRejected]
+  );
 
   const handleDrop = useCallback(
     (e: React.DragEvent<HTMLDivElement>) => {

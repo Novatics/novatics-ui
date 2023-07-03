@@ -3,7 +3,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import <%= className %> from './<%= fileName %>'
 import pkg from '../../package.json';
 
-<Meta title="<%= className %>" component={<%= className %>} />
+<Meta title="Components/<%= className %>" component={<%= className %>} />
 
 # <%= className %> <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
 

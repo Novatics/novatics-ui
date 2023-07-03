@@ -5,7 +5,7 @@ const config: StorybookConfig = {
   stories: [
     ...rootMain.stories.map((s) => `../../../${s}`),
     '../../**/*.stories.mdx',
-    '../../**/*.stories.@(js|jsx|ts|tsx)',
+    '../../**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [...rootMain.addons, '@storybook/addon-essentials'],
   framework: {

@@ -1,12 +1,11 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Stack, Divider } from '@mui/material';
 import pkg from '../../package.json';
-import { FileUpload } from './file-upload';
 import { FromUrl } from '../from-url';
 import { DragAndDrop } from '../drag-and-drop';
 import { ListItem } from '../list-item';
 
-<Meta title="File Upload" component={FileUpload} />
+<Meta title="Components/File Upload/Intro" />
 
 # FileUpload <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
 
@@ -56,7 +55,7 @@ The FileUpload is composed by 3 components: `FromUrl`, `DragAndDrop` and `ListIt
 
 ### From URL
 
-The FromUrl component receives an URL and a callback function to be called when the user clicks on the button to upload the file. It has two variants: `single` and `combined`.
+The FromUrl component receives an URL and a callback function to be called when the user clicks on the button to upload the file. More about FromUrl [here](https://components.novatics.com.br/?path=/docs/fromurl--docs).
 
 <Canvas>
   <Story name="From URL">
@@ -64,7 +63,6 @@ The FromUrl component receives an URL and a callback function to be called when 
       return (
         <Stack spacing={2}>
           <FromUrl variant="single" />
-          <FromUrl acceptLabels=".CSV, .XLSX" variant="combined" />
         </Stack>
       );
     }}
@@ -73,18 +71,13 @@ The FromUrl component receives an URL and a callback function to be called when 
 
 ### Drag and Drop
 
-The `DragAndDrop` component can be used in two variants: `inline` and `fullscreen`. Both draggin and dropping files or clicking on the button to select them are supported.
+The `DragAndDrop` component can be used for selecting files by both draggin and dropping them or clicking on the button to select. More about DragAndDrop [here](https://components.novatics.com.br/?path=/docs/draganddrop--docs).
 
 <Canvas>
   <Story name="Drag and Drop">
     {(args) => {
       return (
-        <Stack spacing={2}>
-          <DragAndDrop
-            variant="fullscreen"
-            multiple
-            acceptedLabels="JPG, PNG and GIF"
-          />
+        <Stack width="50rem" spacing={2}>
           <DragAndDrop variant="inline" acceptedLabels="JPG, PNG and GIF" />
         </Stack>
       );
@@ -94,7 +87,7 @@ The `DragAndDrop` component can be used in two variants: `inline` and `fullscree
 
 ### List Item
 
-A list item can be used to show the status of a file upload. If it is loading, succeeded or failed.
+A list item can be used to show the status of a file upload. More about ListItem [here](https://components.novatics.com.br/?path=/docs/listitem--docs).
 
 <Canvas>
   <Story name="List Item">
@@ -102,29 +95,8 @@ A list item can be used to show the status of a file upload. If it is loading, s
       return (
         <Stack width="50rem">
           <ListItem fileName="Test.jpg" loadingPercentage={25} />
-          <br />
-          <ListItem
-            fileName="Test.csv"
-            succeeded
-            onSuccessClick={() => {}}
-            deleteAfterSuccess
-          />
-          <br />
-          <ListItem fileName="Test.txt" error="Tente novamente" />
         </Stack>
       );
     }}
   </Story>
 </Canvas>
-
-### Playground
-
-<Canvas>
-  <Story name="Playground" argTypes={{}}>
-    {(args) => {
-      return <FileUpload {...args} />;
-    }}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Playground" />

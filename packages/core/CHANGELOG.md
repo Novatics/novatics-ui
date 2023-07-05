@@ -2,6 +2,41 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.4.0) (2023-07-05)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.3.0`
+* `currency-text-field` updated to version `0.3.0`
+* `masked-text-field` updated to version `0.3.0`
+* `radio` updated to version `0.3.0`
+* `wizard` updated to version `0.3.0`
+* `styles` updated to version `0.9.0`
+* `action-footer` updated to version `0.3.0`
+* `button` updated to version `0.2.0`
+* `checkbox-field` updated to version `0.4.0`
+* `chip` updated to version `0.3.0`
+* `divider` updated to version `0.3.0`
+* `file-upload` updated to version `0.2.0`
+* `form` updated to version `0.2.0`
+* `form-group` updated to version `0.2.0`
+* `input-field` updated to version `0.4.0`
+* `linear-progress` updated to version `0.2.0`
+* `radio-group-field` updated to version `0.2.0`
+* `select-field` updated to version `0.2.0`
+* `tokens` updated to version `0.3.0`
+
+### Features
+
+* **root:** improve organization on storybook ([8b2f795](https://github.com/Novatics/novatics-ui/commit/8b2f795811ab8304bb7d6ce2f56311949b3561d1))
+
+
+### Bug Fixes
+
+* **core:** fix storybook ([799d7f1](https://github.com/Novatics/novatics-ui/commit/799d7f1f56600de285690587a6b86e0b4e45476d))
+* **root:** fix test and deploy, update packages and format files ([86dcc38](https://github.com/Novatics/novatics-ui/commit/86dcc38a7efde19ca7051746e646663aea19ee28))
+* **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
+
 ## [0.3.5](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.3.5) (2023-06-21)
 
 ### Dependency Updates

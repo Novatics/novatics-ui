@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts';
 import { joinPathFragments } from '@nx/devkit';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/file-upload',
+  cacheDir: '../../node_modules/.vite/action-footer',
 
   plugins: [
     dts({

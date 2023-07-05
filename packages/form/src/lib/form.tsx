@@ -129,7 +129,7 @@ export const FormComponent = <T,>(props: FormProps<T>, ref: any) => {
   const { onSubmitButton, onResetButton } = useButtonsFormProps(props);
   const disabled = useMemo(
     () => ownerDisabled || loading,
-    [loading, ownerDisabled]
+    [loading, ownerDisabled],
   );
 
   const childrenArray = useMemo(() => {

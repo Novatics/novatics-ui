@@ -34,6 +34,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/currency-text-field"],
       "options": {
+        "config": "packages/currency-text-field/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/currency-text-field"
       }

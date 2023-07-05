@@ -7,16 +7,16 @@ export type RadioGroupFormikFieldProps<T, U> = RadioGroupFieldProps &
   FieldProps<T, U>;
 
 const RadioGroupFormikField = <T, U>(
-  props: RadioGroupFormikFieldProps<T, U>
+  props: RadioGroupFormikFieldProps<T, U>,
 ) => {
   const internalValidate = useCallback(
     (value) => (props.required ? !value : false),
-    [props.required]
+    [props.required],
   );
 
   const label = useMemo(
     () => (props.label ? props.label : props.name),
-    [props.label, props.name]
+    [props.label, props.name],
   );
 
   return (

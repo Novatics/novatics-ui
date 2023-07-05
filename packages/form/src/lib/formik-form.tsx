@@ -21,7 +21,7 @@ export type FormikFormProps<T extends FormikValues = FormikValues> = Omit<
 const MUI_ERROR_QUERY_SELECTOR = '.Mui-error';
 
 const useFormProps = <T extends FormikValues = FormikValues>(
-  props: FormikFormProps<T>
+  props: FormikFormProps<T>,
 ) => {
   const {
     title,
@@ -63,7 +63,7 @@ const useScrollOnErrorProps = <T extends FormikValues = FormikValues>({
 };
 
 export const FormikForm = <T extends FormikValues = FormikValues>(
-  props: FormikFormProps<T>
+  props: FormikFormProps<T>,
 ) => {
   const {
     children,

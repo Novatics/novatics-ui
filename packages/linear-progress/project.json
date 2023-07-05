@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/linear-progress/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/linear-progress/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/linear-progress"
@@ -36,10 +30,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/linear-progress"
-      ],
+      "outputs": ["coverage/packages/linear-progress"],
       "options": {
+        "config": "packages/linear-progress/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/linear-progress"
       }
@@ -58,9 +51,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/linear-progress",
         "configDir": "packages/linear-progress/.storybook"
@@ -102,9 +93,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "linear-progress:deploy"
-        ]
+        "postTargets": ["linear-progress:deploy"]
       }
     }
   }

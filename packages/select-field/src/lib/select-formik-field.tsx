@@ -8,12 +8,12 @@ export type SelectFormikFieldProps<T, U> = SelectFieldProps & FieldProps<T, U>;
 const SelectFormikField = <T, U>(props: SelectFormikFieldProps<T, U>) => {
   const internalValidate = useCallback(
     (value) => (props.required ? !value : false),
-    [props.required]
+    [props.required],
   );
 
   const label = useMemo(
     () => (props.label ? props.label : props.name),
-    [props.label, props.name]
+    [props.label, props.name],
   );
 
   return (

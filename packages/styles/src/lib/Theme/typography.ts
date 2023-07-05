@@ -46,7 +46,7 @@ export const themeTypography = typographies.reduce(
     };
     return acc;
   },
-  {} as TypographyOptions
+  {} as TypographyOptions,
 );
 
 export default themeTypography;

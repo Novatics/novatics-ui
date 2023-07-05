@@ -48,9 +48,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{workspaceRoot}/coverage/packages/testing"],
+      "outputs": ["{workspaceRoot}/coverage/tools/workspace-plugin"],
       "options": {
-        "reportsDirectory": "../../coverage/packages/testing",
+        "reportsDirectory": "../../coverage/tools/workspace-plugin",
         "passWithNoTests": true
       }
     }

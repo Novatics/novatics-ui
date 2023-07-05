@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/button"],
       "options": {
+        "config": "packages/button/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/button"
       }

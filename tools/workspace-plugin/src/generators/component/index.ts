@@ -45,7 +45,7 @@ function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
   fs.writeFileSync(
     `${tree.root}/.cz-config.js`,
     'module.exports = ' + util.inspect(newCzConf),
-    'utf-8'
+    'utf-8',
   );
 }
 
@@ -62,9 +62,15 @@ function updateTargetsVersion(targets: Record<string, any>) {
   targets.version.options.baseBranch = 'master';
 }
 
+function updateTargetsTest(targets: Record<string, any>, fileName: string) {
+  targets.test = targets.test ?? {};
+  targets.test.options = targets.test.options ?? {};
+  targets.test.options.config = `packages/${fileName}/vitest.config.ts`;
+}
+
 function createTargetsVersionDeploy(
   targets: Record<string, any>,
-  fileName: string
+  fileName: string,
 ) {
   targets['version:deploy'] = { ...targets['version:deploy'] } ?? {};
   targets['version:deploy'].executor = '@jscutlery/semver:version';
@@ -109,19 +115,19 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
   const storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
   const outputStory = execSync(
-    `nx g storybook-configuration ${storyArgs} ${fileName}`
+    `nx g storybook-configuration ${storyArgs} ${fileName}`,
   );
   console.log(outputStory.toString());
 
   const semverArgs = `--baseBranch=${baseBranch} --enforceConventionalCommits=${enforceConventionalCommits} --preset=${preset}`;
   const outputSemver = execSync(
-    `nx g @jscutlery/semver:install ${semverArgs} --projects=${fileName}`
+    `nx g @jscutlery/semver:install ${semverArgs} --projects=${fileName}`,
   );
   console.log(outputSemver.toString());
 
   const ngxDeployArgs = `--access=${access}`;
   const outputNgxDeploy = execSync(
-    `nx g ngx-deploy-npm:install ${ngxDeployArgs} --projects=${fileName}`
+    `nx g ngx-deploy-npm:install ${ngxDeployArgs} --projects=${fileName}`,
   );
   console.log(outputNgxDeploy.toString());
 
@@ -143,7 +149,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
       constantName,
       fileName,
       tmpl: '',
-    }
+    },
   );
 
   await formatFiles(tree);
@@ -167,7 +173,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
         constantName,
         fileName,
         tmpl: '',
-      }
+      },
     );
 
     await formatFiles(tree);
@@ -178,6 +184,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     updateTargetsBuild(json.targets);
     updateTargetsVersion(json.targets);
     createTargetsVersionDeploy(json.targets, fileName);
+    updateTargetsTest(json.targets, fileName);
 
     return json;
   });

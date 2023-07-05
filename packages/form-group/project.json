@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["coverage/packages/form-group"],
       "options": {
+        "config": "packages/form-group/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/form-group"
       }

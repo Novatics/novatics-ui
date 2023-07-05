@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/styles"],
       "options": {
+        "config": "packages/styles/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/styles"
       }

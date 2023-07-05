@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["coverage/packages/file-upload"],
       "options": {
+        "config": "packages/file-upload/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/file-upload"
       }

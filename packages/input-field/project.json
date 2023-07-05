@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/input-field"],
       "options": {
+        "config": "packages/input-field/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/input-field"
       }

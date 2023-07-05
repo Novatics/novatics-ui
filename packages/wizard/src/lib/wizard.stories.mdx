@@ -97,8 +97,8 @@ To set a step completed, we have to set the value of `status` key inside `steps`
       const completeStep = (stepIndex) => {
         setCompleteSteps((value) =>
           value.map((step, i) =>
-            i === stepIndex ? { ...step, status: 'completed' } : step
-          )
+            i === stepIndex ? { ...step, status: 'completed' } : step,
+          ),
         );
       };
       return (

@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/radio"],
       "options": {
+        "config": "packages/radio/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/radio"
       }

@@ -2,162 +2,7 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.4.31](https://github.com/Novatics/novatics-ui/compare/core-0.4.30...core-0.4.31) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.30](https://github.com/Novatics/novatics-ui/compare/core-0.4.29...core-0.4.30) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.29](https://github.com/Novatics/novatics-ui/compare/core-0.4.28...core-0.4.29) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.28](https://github.com/Novatics/novatics-ui/compare/core-0.4.27...core-0.4.28) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.27](https://github.com/Novatics/novatics-ui/compare/core-0.4.26...core-0.4.27) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.26](https://github.com/Novatics/novatics-ui/compare/core-0.4.25...core-0.4.26) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.25](https://github.com/Novatics/novatics-ui/compare/core-0.4.24...core-0.4.25) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.24](https://github.com/Novatics/novatics-ui/compare/core-0.4.23...core-0.4.24) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.23](https://github.com/Novatics/novatics-ui/compare/core-0.4.22...core-0.4.23) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.22](https://github.com/Novatics/novatics-ui/compare/core-0.4.21...core-0.4.22) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.21](https://github.com/Novatics/novatics-ui/compare/core-0.4.20...core-0.4.21) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.20](https://github.com/Novatics/novatics-ui/compare/core-0.4.19...core-0.4.20) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.19](https://github.com/Novatics/novatics-ui/compare/core-0.4.18...core-0.4.19) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.18](https://github.com/Novatics/novatics-ui/compare/core-0.4.17...core-0.4.18) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.17](https://github.com/Novatics/novatics-ui/compare/core-0.4.16...core-0.4.17) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.16](https://github.com/Novatics/novatics-ui/compare/core-0.4.15...core-0.4.16) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.15](https://github.com/Novatics/novatics-ui/compare/core-0.4.14...core-0.4.15) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.14](https://github.com/Novatics/novatics-ui/compare/core-0.4.13...core-0.4.14) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.13](https://github.com/Novatics/novatics-ui/compare/core-0.4.12...core-0.4.13) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.12](https://github.com/Novatics/novatics-ui/compare/core-0.4.11...core-0.4.12) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.11](https://github.com/Novatics/novatics-ui/compare/core-0.4.10...core-0.4.11) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.10](https://github.com/Novatics/novatics-ui/compare/core-0.4.9...core-0.4.10) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.9](https://github.com/Novatics/novatics-ui/compare/core-0.4.8...core-0.4.9) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.8](https://github.com/Novatics/novatics-ui/compare/core-0.4.7...core-0.4.8) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.7](https://github.com/Novatics/novatics-ui/compare/core-0.4.6...core-0.4.7) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.6](https://github.com/Novatics/novatics-ui/compare/core-0.4.5...core-0.4.6) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.5](https://github.com/Novatics/novatics-ui/compare/core-0.4.4...core-0.4.5) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.4](https://github.com/Novatics/novatics-ui/compare/core-0.4.3...core-0.4.4) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.3](https://github.com/Novatics/novatics-ui/compare/core-0.4.2...core-0.4.3) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.2](https://github.com/Novatics/novatics-ui/compare/core-0.4.1...core-0.4.2) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.1](https://github.com/Novatics/novatics-ui/compare/core-0.4.0...core-0.4.1) (2023-07-03)
-
-### Dependency Updates
-
-* `file-upload` updated to version `0.1.0`
-## [0.4.0](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.4.0) (2023-07-03)
+## [0.4.0](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.4.0) (2023-07-05)
 
 ### Dependency Updates
 
@@ -172,10 +17,11 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * `checkbox-field` updated to version `0.4.0`
 * `chip` updated to version `0.3.0`
 * `divider` updated to version `0.3.0`
-* `file-upload` updated to version `0.1.0`
+* `file-upload` updated to version `0.2.0`
 * `form` updated to version `0.2.0`
 * `form-group` updated to version `0.2.0`
 * `input-field` updated to version `0.4.0`
+* `linear-progress` updated to version `0.2.0`
 * `radio-group-field` updated to version `0.2.0`
 * `select-field` updated to version `0.2.0`
 * `tokens` updated to version `0.3.0`
@@ -188,6 +34,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### Bug Fixes
 
 * **core:** fix storybook ([799d7f1](https://github.com/Novatics/novatics-ui/commit/799d7f1f56600de285690587a6b86e0b4e45476d))
+* **root:** fix test and deploy, update packages and format files ([86dcc38](https://github.com/Novatics/novatics-ui/commit/86dcc38a7efde19ca7051746e646663aea19ee28))
 * **select-field:** fix select component and run prettier ([4f3c9dc](https://github.com/Novatics/novatics-ui/commit/4f3c9dc0054f09f53f07b2719dffe4185f4b0982))
 
 ## [0.3.5](https://github.com/Novatics/novatics-ui/compare/core-0.3.4...core-0.3.5) (2023-06-21)

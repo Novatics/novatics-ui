@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["coverage/packages/radio-group-field"],
       "options": {
+        "config": "packages/wizard/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/radio-group-field"
       }

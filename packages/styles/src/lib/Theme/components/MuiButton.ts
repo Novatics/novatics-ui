@@ -5,7 +5,7 @@ import { addTransparency } from '../util';
 const selectColor = (
   theme?: Theme,
   color?: string,
-  isHover?: boolean
+  isHover?: boolean,
 ): string | undefined => {
   switch (color) {
     case 'primary':
@@ -26,7 +26,7 @@ const selectIconColor = (
   theme?: Theme,
   color?: string,
   disabled?: boolean,
-  variant?: string
+  variant?: string,
 ): string | undefined => {
   return disabled
     ? 'inherit'
@@ -69,10 +69,10 @@ export const MuiButton: Components['MuiButton'] = {
         color: selectColor(theme, ownerState.color),
         '&:hover:not([disabled])': {
           borderColor: addTransparency(
-            selectColor(theme, ownerState.color, true)
+            selectColor(theme, ownerState.color, true),
           ),
           backgroundColor: addTransparency(
-            selectColor(theme, ownerState.color, true)
+            selectColor(theme, ownerState.color, true),
           ),
         },
       };
@@ -84,7 +84,7 @@ export const MuiButton: Components['MuiButton'] = {
         color: selectColor(theme, ownerState.color),
         '&:hover:not([disabled])': {
           backgroundColor: addTransparency(
-            selectColor(theme, ownerState.color, true)
+            selectColor(theme, ownerState.color, true),
           ),
         },
       };
@@ -111,7 +111,7 @@ export const MuiButton: Components['MuiButton'] = {
           theme,
           ownerState.color,
           ownerState.disabled,
-          ownerState.variant
+          ownerState.variant,
         ),
       };
     },
@@ -123,7 +123,7 @@ export const MuiButton: Components['MuiButton'] = {
           theme,
           ownerState.color,
           ownerState.disabled,
-          ownerState.variant
+          ownerState.variant,
         ),
       };
     },

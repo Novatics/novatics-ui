@@ -10,7 +10,7 @@ describe('CurrencyTextField', () => {
         onChange={() => {
           // setup on change
         }}
-      />
+      />,
     );
     expect(baseElement).toBeTruthy();
   });

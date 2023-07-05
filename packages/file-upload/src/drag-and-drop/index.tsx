@@ -82,7 +82,7 @@ export function DragAndDrop(props: DragAndDropProps) {
 
       if (onDropAccepted) onDropAccepted(files);
     },
-    [handleValidation, onDropAccepted, onDropRejected]
+    [handleValidation, onDropAccepted, onDropRejected],
   );
 
   const handleDrop = useCallback(
@@ -93,7 +93,7 @@ export function DragAndDrop(props: DragAndDropProps) {
       setDragOver(false);
       handleFiles(Array.from(e.dataTransfer.files));
     },
-    [onDrop, handleFiles, disabled]
+    [onDrop, handleFiles, disabled],
   );
 
   const handleDragEnter = useCallback(
@@ -103,7 +103,7 @@ export function DragAndDrop(props: DragAndDropProps) {
       e.stopPropagation();
       if (onDragEnter) onDragEnter(e);
     },
-    [onDragEnter, disabled]
+    [onDragEnter, disabled],
   );
 
   const handleDragOver = useCallback(
@@ -114,7 +114,7 @@ export function DragAndDrop(props: DragAndDropProps) {
       if (onDragOver) onDragOver(e);
       setDragOver(true);
     },
-    [onDragOver, disabled]
+    [onDragOver, disabled],
   );
 
   const handleDragLeave = useCallback(
@@ -125,7 +125,7 @@ export function DragAndDrop(props: DragAndDropProps) {
       if (onDragLeave) onDragLeave(e);
       setDragOver(false);
     },
-    [onDragLeave, disabled]
+    [onDragLeave, disabled],
   );
 
   const handleButton = () => {

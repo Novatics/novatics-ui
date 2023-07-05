@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "novatics",
-  "defaultProject": "packages",
+  "defaultProject": "@novatics",
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
@@ -15,7 +15,8 @@
         "style": "@emotion/styled",
         "linter": "eslint",
         "bundler": "vite",
-        "babel": true
+        "babel": true,
+        "unitTestRunner": "vitest"
       },
       "component": {
         "style": "@emotion/styled",

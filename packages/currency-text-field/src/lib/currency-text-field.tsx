@@ -50,7 +50,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
     const mergedCurrency = defaults(
       currencyProps,
       currencyPreset,
-      currencyFallback
+      currencyFallback,
     );
 
     return pick(mergedCurrency, CURRENCY_ATTRIBUTES) as CurrencyProps;
@@ -66,7 +66,7 @@ export function CurrencyTextField(props: CurrencyTextFieldProps) {
         symbol: '',
       });
     },
-    [priorityCurrencyProps]
+    [priorityCurrencyProps],
   );
 
   const internalOnChange = (textFieldValue: string) => {

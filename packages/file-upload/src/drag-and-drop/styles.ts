@@ -67,7 +67,7 @@ export const DragAndDropContainer = styled(Box)<{
 export const Title = styled(Typography)<{ $disabled?: boolean }>(
   ({ theme, $disabled }) => ({
     color: $disabled ? theme.palette.grey[50] : theme.palette.grey[85],
-  })
+  }),
 );
 
 export const FullscreenFormatContainer = styled(Box)(() => ({
@@ -94,19 +94,19 @@ export const FullscreenFormatHint = styled(Typography)<{ $disabled?: boolean }>(
     display: 'inline-block',
     color: $disabled ? theme.palette.grey[20] : theme.palette.grey[50],
     fontWeight: theme.typography.fontWeightRegular,
-  })
+  }),
 );
 
 export const FullscreenFormats = styled(Typography)<{ $disabled?: boolean }>(
   ({ theme, $disabled }) => ({
     color: $disabled ? theme.palette.grey[20] : theme.palette.grey[80],
-  })
+  }),
 );
 
 export const InlineFormatHint = styled(Typography)<{ $disabled?: boolean }>(
   ({ theme, $disabled }) => ({
     color: $disabled ? theme.palette.grey[20] : theme.palette.grey[60],
-  })
+  }),
 );
 
 export const Button = styled(NuiButton)<{

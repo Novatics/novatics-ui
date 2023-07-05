@@ -51,7 +51,7 @@ export function MaskedTextField(props: MaskedTextFieldProps) {
       onChange(onChangeValue || '');
       setMaskedValue(masked.value);
     },
-    [masked, outputFormat, onChange]
+    [masked, outputFormat, onChange],
   );
 
   return (

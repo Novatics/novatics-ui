@@ -10,7 +10,7 @@ describe('MaskedTextField', () => {
         onChange={(value) => {
           console.log(value);
         }}
-      />
+      />,
     );
     expect(baseElement).toBeTruthy();
   });

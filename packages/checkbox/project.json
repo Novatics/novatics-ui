@@ -22,10 +22,11 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{workspaceRoot}/coverage/packages/testing"],
+      "outputs": ["{workspaceRoot}/coverage/packages/checkbox"],
       "options": {
-        "reportsDirectory": "../../coverage/packages/testing",
-        "passWithNoTests": true
+        "config": "packages/checkbox/vitest.config.ts",
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/checkbox"
       }
     },
     "storybook": {

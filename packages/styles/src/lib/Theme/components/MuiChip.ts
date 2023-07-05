@@ -52,7 +52,7 @@ export const MuiChip: Components['MuiChip'] = {
     outlined: ({ ownerState }) => ({
       backgroundColor: 'transparent',
       borderColor: addTransparency(
-        selectColor(ownerState.color, ownerState.variant)
+        selectColor(ownerState.color, ownerState.variant),
       ),
     }),
     label: {
@@ -74,14 +74,14 @@ export const MuiChip: Components['MuiChip'] = {
       transition: '0.3s',
       '&:hover': {
         color: addTransparency(
-          selectColor(ownerState.color, ownerState.variant)
+          selectColor(ownerState.color, ownerState.variant),
         ),
       },
     }),
     clickable: ({ ownerState }) => ({
       '&:hover': {
         backgroundColor: `${selectBackgroundColor(
-          ownerState.color
+          ownerState.color,
         )} !important`, // This is needed to override the default hover color since MUI doesn't use .MuiChip-clickable for this
         color: selectColor(ownerState.color),
         borderColor: addTransparency(selectColor(ownerState.color)),

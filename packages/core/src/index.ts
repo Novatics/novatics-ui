@@ -16,6 +16,7 @@ export * from '@novatics/file-upload';
 export * from '@novatics/form';
 export * from '@novatics/form-group';
 export * from '@novatics/input-field';
+export * from '@novatics/linear-progress';
 export * from '@novatics/masked-text-field';
 export * from '@novatics/radio';
 export * from '@novatics/radio-group-field';

@@ -32,6 +32,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/packages/action-footer"],
       "options": {
+        "config": "packages/action-footer/vitest.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/action-footer"
       }

@@ -41,7 +41,7 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiOutlinedInput,
       MuiSelect,
     },
-    componentsInput
+    componentsInput,
   );
 };
 
@@ -65,7 +65,7 @@ export const createTheme = (
       customShadows: themeShadows,
       components,
     },
-    other
+    other,
   );
 
   return MUICreateTheme(nuiTheme, ...args);

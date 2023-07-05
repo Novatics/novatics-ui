@@ -92,6 +92,7 @@
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/coverage-c8": "0.32.4",
     "@vitest/ui": "0.32.4",
     "commitizen": "^4.3.0",

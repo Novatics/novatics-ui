@@ -62,6 +62,12 @@ function updateTargetsVersion(targets: Record<string, any>) {
   targets.version.options.baseBranch = 'master';
 }
 
+function updateTargetsTest(targets: Record<string, any>, fileName: string) {
+  targets.test = targets.test ?? {};
+  targets.test.options = targets.test.options ?? {};
+  targets.test.options.config = `packages/${fileName}/vitest.config.ts`;
+}
+
 function createTargetsVersionDeploy(
   targets: Record<string, any>,
   fileName: string,
@@ -178,6 +184,7 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     updateTargetsBuild(json.targets);
     updateTargetsVersion(json.targets);
     createTargetsVersionDeploy(json.targets, fileName);
+    updateTargetsTest(json.targets, fileName);
 
     return json;
   });

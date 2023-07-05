@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Novatics/novatics-ui/compare/styles-0.8.0...styles-0.9.0) (2023-07-05)
+
+### Dependency Updates
+
+* `tokens` updated to version `0.3.0`
+
+### Features
+
+* **root:** improve organization on storybook ([8b2f795](https://github.com/Novatics/novatics-ui/commit/8b2f795811ab8304bb7d6ce2f56311949b3561d1))
+
+
+### Bug Fixes
+
+* **root:** fix test and deploy, update packages and format files ([86dcc38](https://github.com/Novatics/novatics-ui/commit/86dcc38a7efde19ca7051746e646663aea19ee28))
+
 ## [0.8.0](https://github.com/Novatics/novatics-ui/compare/styles-0.7.0...styles-0.8.0) (2023-06-21)
 
 

@@ -1,18 +1,18 @@
 import MUILink, { LinkProps as MUILinkProps } from '@mui/material/Link';
 
 export interface LinkProps extends MUILinkProps {
-  showIcon?: boolean;
+  isExternal?: boolean;
 }
 
-export function Link({ children }, props: LinkProps) {
-  const { showIcon = true } = props;
+export const Link = (props: LinkProps) => {
+  const { isExternal = false, underline = 'none', children, ...other } = props;
 
   return (
-    <MUILink {...props} underline="none" href="#" variant={props.variant}>
+    <MUILink underline={underline} {...other}>
       {children}
-      {showIcon ?? <span className="">↗</span>}
+      {isExternal ? <span> ↗</span> : ''}
     </MUILink>
   );
-}
+};
 
 export default Link;

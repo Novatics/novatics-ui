@@ -8,9 +8,6 @@ export const MuiLink: Components['MuiLink'] = {
       '&:visited': {
         color: themePalette.primary?.main,
       },
-/*       '&:after': {
-        content: '↗',
-      }, */
     },
   },
 };

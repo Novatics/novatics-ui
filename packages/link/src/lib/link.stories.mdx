@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Stack from '@mui/material/Stack';
 
 import Link from './link';
 import pkg from '../../package.json';
@@ -26,7 +27,29 @@ import ... from '@novatics/link';
 
   ...
 
-
 ```
+
+### Basic Usage
+
+The Link component is used to display a customizable anchor element
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <Stack spacing={2} direction={"row"}>
+          <Link variant="h1">
+            link inline padrão
+          </Link>
+
+          <Link showIcon={true}>
+            link inline abre em nova aba
+          </Link>
+        </Stack>
+      );
+    }}
+
+  </Story>
+</Canvas>
 
 made by Novatics ❤

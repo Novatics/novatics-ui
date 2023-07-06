@@ -1,17 +1,17 @@
-import styled from '@emotion/styled';
+import MUILink, { LinkProps as MUILinkProps } from '@mui/material/Link';
 
-/* eslint-disable-next-line */
-export interface LinkProps {}
+export interface LinkProps extends MUILinkProps {
+  showIcon?: boolean;
+}
 
-const StyledLink = styled.div`
-  color: pink;
-`;
+export function Link({ children }, props: LinkProps) {
+  const { showIcon = true } = props;
 
-export function Link(props: LinkProps) {
   return (
-    <StyledLink>
-      <h1>Welcome to Link!</h1>
-    </StyledLink>
+    <MUILink {...props} underline="none" href="#" variant={props.variant}>
+      {children}
+      {showIcon ?? <span className="">↗</span>}
+    </MUILink>
   );
 }
 

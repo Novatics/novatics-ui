@@ -11,8 +11,7 @@ export default defineConfig({
   plugins: [
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: joinPathFragments(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true,
+      tsconfigPath: joinPathFragments(__dirname, 'tsconfig.lib.json'),
     }),
     react(),
     viteTsConfigPaths({
@@ -45,14 +44,5 @@ export default defineConfig({
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
-  },
-
-  test: {
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
 });

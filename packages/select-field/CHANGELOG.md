@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Novatics/novatics-ui/compare/select-field-0.2.0...select-field-0.2.1) (2023-07-07)
+
 ## [0.2.0](https://github.com/Novatics/novatics-ui/compare/select-field-0.1.0...select-field-0.2.0) (2023-07-05)
 
 

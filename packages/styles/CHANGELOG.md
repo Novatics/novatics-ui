@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.1](https://github.com/Novatics/novatics-ui/compare/styles-0.9.0...styles-0.9.1) (2023-07-07)
+
+### Dependency Updates
+
+* `tokens` updated to version `0.3.1`
+
+### Bug Fixes
+
+* **link:** fix prop use of Link component ([ce6987c](https://github.com/Novatics/novatics-ui/commit/ce6987c33c4cabd8597dcbd93b98989b8c4063b9))
+* **root:** fix component generator ([85ebf8b](https://github.com/Novatics/novatics-ui/commit/85ebf8b9a175b4f55c187b7fb4c9d0fc3207c7a9))
+
 ## [0.9.0](https://github.com/Novatics/novatics-ui/compare/styles-0.8.0...styles-0.9.0) (2023-07-05)
 
 ### Dependency Updates

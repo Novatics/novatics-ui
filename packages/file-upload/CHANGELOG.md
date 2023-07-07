@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Novatics/novatics-ui/compare/file-upload-0.2.0...file-upload-0.2.1) (2023-07-07)
+
+### Dependency Updates
+
+* `button` updated to version `0.2.1`
+* `styles` updated to version `0.9.1`
+* `linear-progress` updated to version `0.2.1`
 ## [0.2.0](https://github.com/Novatics/novatics-ui/compare/file-upload-0.1.0...file-upload-0.2.0) (2023-07-05)
 
 ### Dependency Updates

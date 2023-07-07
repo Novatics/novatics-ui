@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Novatics/novatics-ui/compare/checkbox-field-0.4.0...checkbox-field-0.4.1) (2023-07-07)
+
+### Dependency Updates
+
+* `checkbox` updated to version `0.3.1`
 ## [0.4.0](https://github.com/Novatics/novatics-ui/compare/checkbox-field-0.3.6...checkbox-field-0.4.0) (2023-07-05)
 
 ### Dependency Updates

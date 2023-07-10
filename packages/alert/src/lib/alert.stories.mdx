@@ -1,0 +1,173 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Alert from './alert';
+import pkg from '../../package.json';
+import {
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+
+<Meta title="Components/Alert" component={Alert} />
+
+# Alert <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/alert`.
+
+```shell
+  yarn add -D @novatics/alert
+```
+
+```shell
+  npm install --dev @novatics/alert
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/alert';
+
+  ...
+
+
+```
+
+### Basic Usage
+
+The `Alert` component have three variants: it supports outlined, contained and only text styling. The default variant is `text`.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      return (
+        <Stack spacing={3}>
+          <Grid container spacing={2}>
+            <Grid item xxs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Persistente</Typography>
+                <Alert severity="info">
+                  Este é um alert persistente!
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xxs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Dispensável</Typography>
+                <Alert onClose={()=>{}}>
+                  Este é um alert dispensável!
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xxs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Action</Typography>
+                <Alert action={<Typography>Action</Typography>}>
+                  Este é um alert com alguma action!
+                </Alert>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Stack>
+
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+
+### Severity
+
+The `Alert` component have four variants: success, error, info and warning.
+<Canvas>
+  <Story name="Severity">
+    {(args) => {
+      return (
+        <Stack spacing={4}>
+          <Grid container spacing={4}>
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Success</Typography>
+                <Alert onClose={()=>{}}>
+                  Este é um alerta preenchido.
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Warning</Typography>
+                <Alert severity="warning" onClose={()=>{}}>
+                  Este é um alerta preenchido.
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Error</Typography>
+                <Alert severity="error"  onClose={()=>{}}>
+                  Este é um alerta preenchido.
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Informativo</Typography>
+                <Alert severity="info" onClose={()=>{}}>
+                  Este é um alerta preenchido.
+                </Alert>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+
+### Title
+
+The `Alert` could have title and description.
+<Canvas>
+  <Story name="Title">
+    {(args) => {
+      return (
+        <Stack spacing={4}>
+          <Grid container spacing={4}>
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Success</Typography>
+                <Alert onClose={()=>{}}>
+                  Este é um alerta sem title.
+                </Alert>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Stack spacing={1}>
+                <Typography variant="body">Warning</Typography>
+                <Alert title="Title" onClose={()=>{}}>
+                  O children vira a descrição
+                </Alert>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Stack>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+
+made by Novatics ❤

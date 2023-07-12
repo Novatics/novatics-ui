@@ -11,6 +11,7 @@ import { themeShadows } from './Theme/shadows';
 import { themeTypography } from './Theme/typography';
 import { Length } from './Theme/types';
 import { themeBreakpoints } from './Theme/breakpoints';
+import { MuiAlert } from './Theme/components/MuiAlert';
 import { MuiCheckbox } from './Theme/components/MuiCheckbox';
 import { MuiChip } from './Theme/components/MuiChip';
 import { MuiDivider } from './Theme/components/MuiDivider';
@@ -32,6 +33,7 @@ export { themePalette, themeBorderRadius };
 const createComponents = (componentsInput: ThemeOptions['components']) => {
   return deepmerge(
     {
+      MuiAlert,
       MuiCheckbox,
       MuiChip,
       MuiDivider,

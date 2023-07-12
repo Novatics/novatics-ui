@@ -67,7 +67,7 @@ The `Alert` component have three variants: it supports outlined, contained and o
             <Grid item xxs={4}>
               <Stack spacing={2}>
                 <Typography variant="body">Action</Typography>
-                <Alert action={<Typography>Action</Typography>}>
+                <Alert action={<Typography variant="body2">Action</Typography>}>
                   Este é um alert com alguma action!
                 </Alert>
               </Stack>
@@ -94,7 +94,7 @@ The `Alert` component have four variants: success, error, info and warning.
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Success</Typography>
-                <Alert onClose={()=>{}}>
+                <Alert severity="success" onClose={()=>{}}>
                   Este é um alerta preenchido.
                 </Alert>
               </Stack>
@@ -147,7 +147,7 @@ The `Alert` could have title and description.
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Success</Typography>
-                <Alert onClose={()=>{}}>
+                <Alert title="Title" action={<Typography variant="body2">Action</Typography>} onClose={()=>{}}>
                   Este é um alerta sem title.
                 </Alert>
               </Stack>

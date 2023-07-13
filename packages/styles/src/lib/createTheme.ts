@@ -23,6 +23,7 @@ import { MuiOutlinedInput } from './Theme/components/MuiOutlinedInput';
 import { MuiSelect } from './Theme/components/MuiSelect';
 import { MuiLinearProgress } from './Theme/components/MuiLinearProgress';
 import { MuiLink } from './Theme/components/MUILink';
+import { MuiBackdrop } from './Theme/components/MuiBackdrop';
 
 import './Theme/fonts.css';
 
@@ -42,7 +43,8 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiRadio,
       MuiOutlinedInput,
       MuiSelect,
-      MuiLink
+      MuiLink,
+      MuiBackdrop
     },
     componentsInput,
   );

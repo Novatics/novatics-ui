@@ -46,6 +46,7 @@ export const Alert = (props: AlertProps) => {
 
   return (
     <MUIAlert
+      variant={variant}
       severity={severity}
       icon={severityIcons[severity]}
       action={

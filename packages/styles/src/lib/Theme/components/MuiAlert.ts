@@ -22,38 +22,38 @@ export const MuiAlert: Components['MuiAlert'] = {
           fontSize: '12px',
         },
 
-        '&.MuiAlert-standardSuccess': {
+        '&.MuiAlert-outlinedSuccess': {
           border: `1px solid ${theme.palette.success.main}`,
           '& .MuiAlert-icon': {
             color: theme.palette.success.main,
           },
         },
 
-        '&.MuiAlert-standardWarning': {
+        '&.MuiAlert-outlinedWarning': {
           border: `1px solid ${theme.palette.warning.main}`,
           '& .MuiAlert-icon': {
             color: theme.palette.warning.main,
           },
         },
 
-        '&.MuiAlert-standardError': {
+        '&.MuiAlert-outlinedError': {
           border: `1px solid ${theme.palette.error.main}`,
           '& .MuiAlert-icon': {
             color: theme.palette.error.main,
           },
         },
 
+        '&.MuiAlert-outlinedInfo': {
+          border: `1px solid ${theme.palette.info.main}`,
+          '& .MuiAlert-icon': {
+              color: theme.palette.info.main,
+          },
+        },
+
         '& .MuiSvgIcon-root': {
           height: '16px',
           width: '16px',
-        },
-
-        '&.MuiAlert-standardInfo': {
-          border: `1px solid ${theme.palette.info.main}`,
-          '& .MuiAlert-icon': {
-            color: theme.palette.info.main,
-          },
-        },
+        },        
       };
     },
   },

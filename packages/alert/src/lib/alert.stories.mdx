@@ -146,8 +146,8 @@ The `Alert` could have title and description.
           <Grid container spacing={4}>
             <Grid item xs={3}>
               <Stack spacing={1}>
-                <Typography variant="body">Success</Typography>
-                <Alert title="Title" action={<Typography variant="body2">Action</Typography>} onClose={()=>{}}>
+                <Typography variant="body">Without title</Typography>
+                <Alert action={<Typography variant="body2">Action</Typography>} onClose={()=>{}}>
                   Este é um alerta sem title.
                 </Alert>
               </Stack>
@@ -155,7 +155,7 @@ The `Alert` could have title and description.
 
             <Grid item xs={3}>
               <Stack spacing={1}>
-                <Typography variant="body">Warning</Typography>
+                <Typography variant="body">With title</Typography>
                 <Alert title="Title" onClose={()=>{}}>
                   O children vira a descrição
                 </Alert>

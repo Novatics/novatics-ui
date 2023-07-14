@@ -26,7 +26,7 @@ const CloseButton = styled(IconButton)`
 const Content = styled(Box)`
   display: flex;
   flex-direction: column;
-  padding-top: 4px;
+  padding-top: 2px;
 `;
 
 export const Alert = (props: AlertProps) => {
@@ -51,12 +51,12 @@ export const Alert = (props: AlertProps) => {
       icon={severityIcons[severity]}
       action={
         <Box sx={{display: 'flex', alignItems: 'center'}}>
-          {action && <Box mr="4px">{action}</Box>}
-          {onClose && (
+          {action ? <Box mr="4px">{action}</Box> : null}
+          {onClose ? (
             <CloseButton onClick={onClose}>
               <CloseIcon />
             </CloseButton>
-          )}
+          ) : null}
         </Box>
       }
       sx={{ alignItems: title ? 'start' : 'center' }}
@@ -64,13 +64,13 @@ export const Alert = (props: AlertProps) => {
     >
       {title ? (
         <Content>
-          <Typography variant="body1" fontSize="14px" mb="4px">{title}</Typography>
-          <Typography variant="body2" fontSize="12px" color="GrayText">
+          <Typography variant='body' fontWeight="500" color='grey.85'>{title}</Typography>
+          <Typography variant='bodySmall' color="grey.70">
             {children}
           </Typography>
         </Content>
       ) : (
-        <Typography variant="body1" fontSize="14px">{children}</Typography>
+        <Typography variant='body' fontWeight="500" color='grey.85'>{children}</Typography>
       )}
     </MUIAlert>
   );

@@ -17,6 +17,10 @@ export const MuiAlert: Components['MuiAlert'] = {
           },
         },
 
+        '& .MuiAlert-action': {
+          padding: '0px',
+        },
+
         '& .MuiAlert-message': {
           padding: '0px',
           fontSize: '12px',

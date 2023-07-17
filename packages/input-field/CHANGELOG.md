@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.4](https://github.com/Novatics/novatics-ui/compare/input-field-0.4.3...input-field-0.4.4) (2023-07-17)
+
+### Dependency Updates
+
+* `styles` updated to version `0.10.0`
 ## [0.4.3](https://github.com/Novatics/novatics-ui/compare/input-field-0.4.2...input-field-0.4.3) (2023-07-17)
 
 ### Dependency Updates

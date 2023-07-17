@@ -38,7 +38,7 @@ import ... from '@novatics/alert';
 
 ### Basic Usage
 
-The `Alert` component have three variants: it supports outlined, contained and only text styling. The default variant is `text`.
+The `Alert` component supports three type variants: persistent, dispensable and action alerts.
 
 <Canvas>
   <Story name="Basic Usage">
@@ -48,18 +48,18 @@ The `Alert` component have three variants: it supports outlined, contained and o
           <Grid container spacing={2}>
             <Grid item xxs={4}>
               <Stack spacing={2}>
-                <Typography variant="body">Persistente</Typography>
+                <Typography variant="body">Persistent</Typography>
                 <Alert severity="info">
-                  Este é um alert persistente!
+                  This is a persistent alert.
                 </Alert>
               </Stack>
             </Grid>
 
             <Grid item xxs={4}>
               <Stack spacing={2}>
-                <Typography variant="body">Dispensável</Typography>
+                <Typography variant="body">Dispensable</Typography>
                 <Alert onClose={()=>{}}>
-                  Este é um alert dispensável!
+                  This is a dispensable alert.
                 </Alert>
               </Stack>
             </Grid>
@@ -68,13 +68,12 @@ The `Alert` component have three variants: it supports outlined, contained and o
               <Stack spacing={2}>
                 <Typography variant="body">Action</Typography>
                 <Alert action={<Typography variant="body2">Action</Typography>}>
-                  Este é um alert com alguma action!
+                  This is an alert with some action!
                 </Alert>
               </Stack>
             </Grid>
           </Grid>
         </Stack>
-
       );
     }}
   </Story>
@@ -85,6 +84,7 @@ The `Alert` component have three variants: it supports outlined, contained and o
 ### Severity
 
 The `Alert` component have four variants: success, error, info and warning.
+
 <Canvas>
   <Story name="Severity">
     {(args) => {
@@ -95,7 +95,7 @@ The `Alert` component have four variants: success, error, info and warning.
               <Stack spacing={1}>
                 <Typography variant="body">Success</Typography>
                 <Alert severity="success" onClose={()=>{}}>
-                  Este é um alerta preenchido.
+                  Success alert!
                 </Alert>
               </Stack>
             </Grid>
@@ -104,7 +104,7 @@ The `Alert` component have four variants: success, error, info and warning.
               <Stack spacing={1}>
                 <Typography variant="body">Warning</Typography>
                 <Alert severity="warning" onClose={()=>{}}>
-                  Este é um alerta preenchido.
+                  Warning alert!
                 </Alert>
               </Stack>
             </Grid>
@@ -113,16 +113,16 @@ The `Alert` component have four variants: success, error, info and warning.
               <Stack spacing={1}>
                 <Typography variant="body">Error</Typography>
                 <Alert severity="error"  onClose={()=>{}}>
-                  Este é um alerta preenchido.
+                  Error alert!
                 </Alert>
               </Stack>
             </Grid>
 
             <Grid item xs={3}>
               <Stack spacing={1}>
-                <Typography variant="body">Informativo</Typography>
+                <Typography variant="body">Infomartive</Typography>
                 <Alert severity="info" onClose={()=>{}}>
-                  Este é um alerta preenchido.
+                  Infomartive alert!
                 </Alert>
               </Stack>
             </Grid>
@@ -148,7 +148,7 @@ The `Alert` could have title and description.
               <Stack spacing={1}>
                 <Typography variant="body">Without title</Typography>
                 <Alert action={<Typography variant="body2">Action</Typography>} onClose={()=>{}}>
-                  Este é um alerta sem title.
+                  Alert without title. dsa dsa dsa dsa dsa
                 </Alert>
               </Stack>
             </Grid>

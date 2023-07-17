@@ -8,8 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircleOutline';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-
-/* eslint-disable-next-line */
 export interface AlertProps extends MUIAlertProps {
   severity?: AlertColor;
   onClose?: () => void;
@@ -27,6 +25,12 @@ const Content = styled(Box)`
   display: flex;
   flex-direction: column;
   padding-top: 2px;
+`;
+
+const ActionContent = styled(Box)`
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
 `;
 
 export const Alert = (props: AlertProps) => {
@@ -50,14 +54,14 @@ export const Alert = (props: AlertProps) => {
       severity={severity}
       icon={severityIcons[severity]}
       action={
-        <Box sx={{display: 'flex', alignItems: 'center'}}>
+        <ActionContent>
           {action ? <Box mr="4px">{action}</Box> : null}
           {onClose ? (
             <CloseButton onClick={onClose}>
               <CloseIcon />
             </CloseButton>
           ) : null}
-        </Box>
+        </ActionContent>
       }
       sx={{ alignItems: title ? 'start' : 'center' }}
       {...other}

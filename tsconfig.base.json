@@ -24,6 +24,9 @@
       "@novatics/action-footer": [
         "packages/action-footer/src/index.ts"
       ],
+      "@novatics/alert": [
+        "packages/alert/src/index.ts"
+      ],
       "@novatics/button": [
         "packages/button/src/index.ts"
       ],
@@ -86,9 +89,6 @@
       ],
       "@novatics/workspace-plugin": [
         "tools/workspace-plugin/src/index.ts"
-      ],
-      "core/alert": [
-        "packages/alert/src/index.ts"
       ]
     }
   },

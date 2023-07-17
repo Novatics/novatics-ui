@@ -6,6 +6,7 @@ import { Wizard } from '@novatics/wizard';
 
 export { shadows, borderRadius, typography } from '@novatics/styles';
 export * from '@novatics/action-footer';
+export * from '@novatics/alert';
 export * from '@novatics/button';
 export * from '@novatics/checkbox';
 export * from '@novatics/checkbox-field';

@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Novatics/novatics-ui/compare/styles-0.9.2...styles-0.10.0) (2023-07-17)
+
+
+### Features
+
+* **alert:** adjust component review ([0146a32](https://github.com/Novatics/novatics-ui/commit/0146a325f152440daf6e455c127e80b64ac3a63a))
+* **alert:** adjust following figma file ([fa63a6a](https://github.com/Novatics/novatics-ui/commit/fa63a6aa4d5fd06d048b125f23d1c8a419a639c1))
+* **alert:** styles in theme and other changes ([2c852b5](https://github.com/Novatics/novatics-ui/commit/2c852b5738a5da03754d53050f8e3c4d296f90a1))
+
 ## [0.9.2](https://github.com/Novatics/novatics-ui/compare/styles-0.9.1...styles-0.9.2) (2023-07-17)
 
 ## [0.9.1](https://github.com/Novatics/novatics-ui/compare/styles-0.9.0...styles-0.9.1) (2023-07-07)

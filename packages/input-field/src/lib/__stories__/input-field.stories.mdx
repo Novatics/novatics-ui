@@ -10,6 +10,7 @@ import {
   IconButton,
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
+import Search from '@mui/icons-material/Search';
 
 import InputField from '../input-field';
 import InputFormikField from '../input-formik-field';
@@ -78,28 +79,6 @@ import ... from '@novatics/input-field';
                 placeholder="Placeholder"
               />
             </InputContainer>
-            <InputContainer>
-              <InputField
-                label="label"
-                size="large"
-                placeholder="Placeholder"
-                startAdornment={
-                  <InputAdornment position="start">kg</InputAdornment>
-                }
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => undefined}
-                      onMouseDown={() => undefined}
-                      edge="end"
-                    >
-                      <Visibility />
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </InputContainer>
           </Stack>
         </Grid>
         <Grid item xxs={4}>
@@ -111,28 +90,6 @@ import ... from '@novatics/input-field';
                 size="medium"
                 placeholder="Placeholder"
                 fullWidth
-              />
-            </InputContainer>
-            <InputContainer>
-              <InputField
-                label="label"
-                size="medium"
-                placeholder="Placeholder"
-                startAdornment={
-                  <InputAdornment position="start">kg</InputAdornment>
-                }
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => undefined}
-                      onMouseDown={() => undefined}
-                      edge="end"
-                    >
-                      <Visibility />
-                    </IconButton>
-                  </InputAdornment>
-                }
               />
             </InputContainer>
           </Stack>
@@ -147,27 +104,65 @@ import ... from '@novatics/input-field';
                 placeholder="Placeholder"
               />
             </InputContainer>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Stack>
+  </Story>
+</Canvas>
+
+### Adornments
+
+<Canvas>
+  <Story name="Adornments">
+    <Stack>
+      <Typography variant="h6">Input Field with Adornments</Typography>
+      <Grid container spacing={2}>
+        <Grid item xxs={4}>
+          <Stack spacing={2}>
+            <Typography variant="body">Icon Adornment</Typography>
             <InputContainer>
               <InputField
-                label="label"
-                size="small"
-                placeholder="Placeholder"
-                startAdornment={
-                  <InputAdornment position="start">kg</InputAdornment>
-                }
+                label="Search"
+                placeholder="Search..."
+                startAdornment={<InputAdornment position="start"><Search /></InputAdornment>}
+              />
+            </InputContainer>
+          </Stack>
+        </Grid>
+        <Grid item xxs={4}>
+          <Stack spacing={2}>
+            <Typography variant="body">Icon Button Adornment</Typography>
+            <InputContainer>
+              <InputField
+                label="Password"
+                placeholder="Enter your password"
+                type="password"
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
-                      aria-label="toggle password visibility"
+                      aria-label="Toggle password visibility"
                       onClick={() => undefined}
                       onMouseDown={() => undefined}
                       edge="end"
-                      size="small"
                     >
-                      <Visibility fontSize="small" />
+                      <Visibility />
                     </IconButton>
                   </InputAdornment>
                 }
+              />
+            </InputContainer>
+          </Stack>
+        </Grid>
+        <Grid item xxs={4}>
+          <Stack spacing={2}>
+            <Typography variant="body">Glyph Adornment</Typography>
+            <InputContainer>
+              <InputField
+                label="Amount"
+                placeholder="Enter an amount"
+                startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                endAdornment={<InputAdornment position="end">USD</InputAdornment>}
               />
             </InputContainer>
           </Stack>

@@ -50,7 +50,7 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiGrid,
       MuiBackdrop,
     },
-    componentsInput
+    componentsInput,
   );
 };
 
@@ -74,7 +74,7 @@ export const createTheme = (
       customShadows: themeShadows,
       components,
     },
-    other
+    other,
   );
 
   return MUICreateTheme(nuiTheme, ...args);

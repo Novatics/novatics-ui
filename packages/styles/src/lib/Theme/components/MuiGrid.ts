@@ -24,17 +24,16 @@ export const MuiGrid: Components['MuiGrid'] = {
 
       return {
         [theme.breakpoints.down('sm')]: {
-            padding: theme.spacing(0, 1 / 2),
-          },
+          padding: theme.spacing(0, 0.5),
+        },
         [theme.breakpoints.up('sm')]: {
-          //apply default padding horizontally items, divided by 2 so the sum of both paddings equals the correct spacing between items
-          padding: theme.spacing(0, 1 / 2),
+          padding: theme.spacing(0, 0.5),
         },
         [theme.breakpoints.up('md')]: {
-          padding: theme.spacing(0, 2 / 2),
+          padding: theme.spacing(0, 1),
         },
         [theme.breakpoints.up('lg')]: {
-          padding: theme.spacing(0, 3 / 2),
+          padding: theme.spacing(0, 1.5),
         },
       };
     },

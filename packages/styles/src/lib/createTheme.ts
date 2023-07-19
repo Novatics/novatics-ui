@@ -47,8 +47,8 @@ const createComponents = (componentsInput: ThemeOptions['components']) => {
       MuiOutlinedInput,
       MuiSelect,
       MuiLink,
-      MuiBackdrop,
       MuiGrid,
+      MuiBackdrop,
     },
     componentsInput
   );

@@ -35,6 +35,7 @@ export const Dialog = (props: DialogProps) => {
     sm: '600px',
     md: '960px',
     lg: '1200px',
+    xl: '1920px',
   };
 
   const width = sizes[size || 'md'];

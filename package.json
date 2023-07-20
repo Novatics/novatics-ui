@@ -12,7 +12,10 @@
     "build": "nx run-many --all --target=build",
     "component:generate": "nx generate @novatics/workspace-plugin:component",
     "prepare": "husky install",
-    "lint": "eslint ./packages/**/src/**/*.tsx ./packages/**/src/*.ts --fix",
+    "lint": "nx run-many --target=lint",
+    "lint:affected": "nx affected --target=lint",
+    "check-types": "tsc --project tsconfig.base.json --noEmit --jsx react-jsxdev",
+    "pretty": "prettier --write . --log-level warn",
     "verdaccio:up": "cp .npmrc .npmrc.bkp && cp .npmrc.local .npmrc && docker-compose up -d --build",
     "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
     "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
@@ -34,6 +37,7 @@
     "imask": "^6.6.1",
     "lodash.defaults": "^4.2.0",
     "lodash.isempty": "^4.4.0",
+    "lodash.isnil": "^4.0.0",
     "lodash.pick": "^4.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -80,6 +84,8 @@
     "@types/lodash": "^4.14.195",
     "@types/lodash.defaults": "^4.2.7",
     "@types/lodash.includes": "^4.3.7",
+    "@types/lodash.isempty": "^4.4.7",
+    "@types/lodash.isnil": "^4.0.7",
     "@types/lodash.keys": "^4.2.7",
     "@types/lodash.pick": "^4.4.7",
     "@types/lodash.snakecase": "^4.1.7",
@@ -109,6 +115,7 @@
     "husky": "^8.0.3",
     "jsdom": "~22.1.0",
     "jsonc-eslint-parser": "^2.3.0",
+    "lint-staged": "^13.2.3",
     "lit-html": "^2.7.4",
     "lodash.includes": "^4.3.0",
     "lodash.keys": "^4.2.0",
@@ -138,5 +145,10 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "*": [
+      "yarn lint:affected"
+    ]
   }
 }

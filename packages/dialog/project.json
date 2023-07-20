@@ -1,7 +1,7 @@
 {
-  "name": "link",
+  "name": "dialog",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/link/src",
+  "sourceRoot": "packages/dialog/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,7 +9,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/link/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/dialog/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
@@ -17,7 +17,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/link"
+        "outputPath": "dist/packages/dialog"
       },
       "configurations": {
         "development": {
@@ -30,17 +30,18 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/link"],
+      "outputs": ["coverage/packages/dialog"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/link"
+        "reportsDirectory": "../../coverage/packages/dialog",
+        "config": "packages/dialog/vitest.config.ts"
       }
     },
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/link/.storybook"
+        "configDir": "packages/dialog/.storybook"
       },
       "configurations": {
         "ci": {
@@ -52,8 +53,8 @@
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/link",
-        "configDir": "packages/link/.storybook"
+        "outputDir": "dist/storybook/dialog",
+        "configDir": "packages/dialog/.storybook"
       },
       "configurations": {
         "ci": {
@@ -64,12 +65,12 @@
     "static-storybook": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "link:build-storybook",
-        "staticFilePath": "dist/storybook/link"
+        "buildTarget": "dialog:build-storybook",
+        "staticFilePath": "dist/storybook/dialog"
       },
       "configurations": {
         "ci": {
-          "buildTarget": "link:build-storybook:ci"
+          "buildTarget": "dialog:build-storybook:ci"
         }
       }
     },
@@ -92,7 +93,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": ["link:deploy"]
+        "postTargets": ["dialog:deploy"]
       }
     }
   }

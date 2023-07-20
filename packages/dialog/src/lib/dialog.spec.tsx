@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Alert from './alert';
+import Dialog from './dialog';
 
-describe('Alert', () => {
+describe('Dialog', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Alert />);
+    const { baseElement } = render(<Dialog />);
     expect(baseElement).toBeTruthy();
   });
 });

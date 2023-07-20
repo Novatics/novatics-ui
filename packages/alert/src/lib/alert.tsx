@@ -68,13 +68,17 @@ export const Alert = (props: AlertProps) => {
     >
       {title ? (
         <Content>
-          <Typography variant='body' fontWeight="500" color='grey.85'>{title}</Typography>
-          <Typography variant='bodySmall' color="grey.70">
+          <Typography variant="body" fontWeight="500" color="grey.85">
+            {title}
+          </Typography>
+          <Typography variant="bodySmall" color="grey.70">
             {children}
           </Typography>
         </Content>
       ) : (
-        <Typography variant='body' fontWeight="500" color='grey.85'>{children}</Typography>
+        <Typography variant="body" fontWeight="500" color="grey.85">
+          {children}
+        </Typography>
       )}
     </MUIAlert>
   );

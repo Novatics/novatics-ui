@@ -50,14 +50,14 @@ export const MuiAlert: Components['MuiAlert'] = {
         '&.MuiAlert-outlinedInfo': {
           border: `1px solid ${theme.palette.info.main}`,
           '& .MuiAlert-icon': {
-              color: theme.palette.info.main,
+            color: theme.palette.info.main,
           },
         },
 
         '& .MuiSvgIcon-root': {
           height: '16px',
           width: '16px',
-        },        
+        },
       };
     },
   },

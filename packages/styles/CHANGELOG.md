@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.0](https://github.com/Novatics/novatics-ui/compare/styles-0.11.0...styles-0.12.0) (2023-07-20)
+
+
+### Features
+
+* **dialog:** dialog component ([0e53c5b](https://github.com/Novatics/novatics-ui/commit/0e53c5b5054a34e158f24af97fd1aba43639d88b))
+
+
+### Bug Fixes
+
+* **dialog:** run lint and fix ([795ca0a](https://github.com/Novatics/novatics-ui/commit/795ca0a674ddebb3bb514216a223692086cb42a0))
+
 ## [0.11.0](https://github.com/Novatics/novatics-ui/compare/styles-0.10.0...styles-0.11.0) (2023-07-20)
 
 

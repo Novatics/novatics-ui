@@ -10,10 +10,9 @@ export const MuiMenuItem: Components['MuiMenuItem'] = {
 
       '.MuiListItemText-root': {
         '.MuiTypography-root' : {
-        textOverflow: 'ellipsis', 
-        overflow: 'hidden',
-         background: 'red'
-        }
+          textOverflow: 'ellipsis',
+          overflow: 'hidden',
+          }
         }
 
     },

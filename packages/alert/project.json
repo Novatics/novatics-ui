@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/alert/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/alert/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/alert"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/alert"
-      ],
+      "outputs": ["coverage/packages/alert"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/alert",
@@ -59,9 +51,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/alert",
         "configDir": "packages/alert/.storybook"
@@ -103,9 +93,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "alert:deploy"
-        ]
+        "postTargets": ["alert:deploy"]
       }
     }
   }

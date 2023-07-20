@@ -33,6 +33,7 @@ interface ComponentSchemaOptions {
 }
 
 function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const czConf = require(`${tree.root}/.cz-config.js`);
   const newCzConf = { ...czConf };
   const { fileName } = options;
@@ -49,11 +50,13 @@ function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function updateTargetsBuild(targets: Record<string, any>) {
   targets.build = targets.build ?? {};
   targets.build.options = targets.build.options ?? {};
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function updateTargetsVersion(targets: Record<string, any>) {
   targets.version = { ...targets.version } ?? {};
   targets.version.executor = '@jscutlery/semver:version';
@@ -62,6 +65,7 @@ function updateTargetsVersion(targets: Record<string, any>) {
   targets.version.options.baseBranch = 'master';
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function updateTargetsTest(targets: Record<string, any>, fileName: string) {
   targets.test = targets.test ?? {};
   targets.test.options = targets.test.options ?? {};
@@ -69,6 +73,7 @@ function updateTargetsTest(targets: Record<string, any>, fileName: string) {
 }
 
 function createTargetsVersionDeploy(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   targets: Record<string, any>,
   fileName: string,
 ) {

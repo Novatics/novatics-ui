@@ -125,7 +125,11 @@ import ... from '@novatics/input-field';
               <InputField
                 label="Search"
                 placeholder="Search..."
-                startAdornment={<InputAdornment position="start"><Search /></InputAdornment>}
+                startAdornment={
+                  <InputAdornment position="start">
+                    <Search />
+                  </InputAdornment>
+                }
               />
             </InputContainer>
           </Stack>
@@ -161,8 +165,12 @@ import ... from '@novatics/input-field';
               <InputField
                 label="Amount"
                 placeholder="Enter an amount"
-                startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                endAdornment={<InputAdornment position="end">USD</InputAdornment>}
+                startAdornment={
+                  <InputAdornment position="start">$</InputAdornment>
+                }
+                endAdornment={
+                  <InputAdornment position="end">USD</InputAdornment>
+                }
               />
             </InputContainer>
           </Stack>

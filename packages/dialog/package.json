@@ -1,5 +1,5 @@
 {
-  "name": "core/dialog",
+  "name": "@novatics/dialog",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -8,5 +8,9 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "dependencies": {
+    "lodash.isempty": "^4.4.0",
+    "lodash.isnil": "^4.0.0"
   }
 }

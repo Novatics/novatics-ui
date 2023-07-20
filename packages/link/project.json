@@ -7,20 +7,14 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/link/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/link/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/link"
@@ -36,9 +30,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "coverage/packages/link"
-      ],
+      "outputs": ["coverage/packages/link"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/link"
@@ -58,9 +50,7 @@
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/link",
         "configDir": "packages/link/.storybook"
@@ -102,9 +92,7 @@
       "options": {
         "preset": "conventional",
         "baseBranch": "master",
-        "postTargets": [
-          "link:deploy"
-        ]
+        "postTargets": ["link:deploy"]
       }
     }
   }

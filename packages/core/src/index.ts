@@ -12,6 +12,7 @@ export * from '@novatics/checkbox';
 export * from '@novatics/checkbox-field';
 export * from '@novatics/chip';
 export * from '@novatics/currency-text-field';
+export * from '@novatics/dialog';
 export * from '@novatics/divider';
 export * from '@novatics/file-upload';
 export * from '@novatics/form';

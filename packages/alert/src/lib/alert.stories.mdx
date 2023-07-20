@@ -2,11 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Alert from './alert';
 import pkg from '../../package.json';
-import {
-  Grid,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -49,21 +45,17 @@ The `Alert` component supports three type variants: persistent, dispensable and 
             <Grid item xxs={4}>
               <Stack spacing={2}>
                 <Typography variant="body">Persistent</Typography>
-                <Alert severity="info">
-                  This is a persistent alert.
-                </Alert>
+                <Alert severity="info">This is a persistent alert.</Alert>
               </Stack>
             </Grid>
-
             <Grid item xxs={4}>
               <Stack spacing={2}>
                 <Typography variant="body">Dispensable</Typography>
-                <Alert onClose={()=>{}}>
+                <Alert onClose={() => undefined}>
                   This is a dispensable alert.
                 </Alert>
               </Stack>
             </Grid>
-
             <Grid item xxs={4}>
               <Stack spacing={2}>
                 <Typography variant="body">Action</Typography>
@@ -79,8 +71,6 @@ The `Alert` component supports three type variants: persistent, dispensable and 
   </Story>
 </Canvas>
 
-
-
 ### Severity
 
 The `Alert` component have four variants: success, error, info and warning.
@@ -94,34 +84,31 @@ The `Alert` component have four variants: success, error, info and warning.
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Success</Typography>
-                <Alert severity="success" onClose={()=>{}}>
+                <Alert severity="success" onClose={() => undefined}>
                   Success alert!
                 </Alert>
               </Stack>
             </Grid>
-
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Warning</Typography>
-                <Alert severity="warning" onClose={()=>{}}>
+                <Alert severity="warning" onClose={() => undefined}>
                   Warning alert!
                 </Alert>
               </Stack>
             </Grid>
-
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Error</Typography>
-                <Alert severity="error"  onClose={()=>{}}>
+                <Alert severity="error" onClose={() => undefined}>
                   Error alert!
                 </Alert>
               </Stack>
             </Grid>
-
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Infomartive</Typography>
-                <Alert severity="info" onClose={()=>{}}>
+                <Alert severity="info" onClose={() => undefined}>
                   Infomartive alert!
                 </Alert>
               </Stack>
@@ -133,11 +120,10 @@ The `Alert` component have four variants: success, error, info and warning.
   </Story>
 </Canvas>
 
-
-
 ### Title
 
 The `Alert` could have title and description.
+
 <Canvas>
   <Story name="Title">
     {(args) => {
@@ -147,16 +133,18 @@ The `Alert` could have title and description.
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">Without title</Typography>
-                <Alert action={<Typography variant="body2">Action</Typography>} onClose={()=>{}}>
+                <Alert
+                  action={<Typography variant="body2">Action</Typography>}
+                  onClose={() => undefined}
+                >
                   Alert without title
                 </Alert>
               </Stack>
             </Grid>
-
             <Grid item xs={3}>
               <Stack spacing={1}>
                 <Typography variant="body">With title</Typography>
-                <Alert title="Title" onClose={()=>{}}>
+                <Alert title="Title" onClose={() => undefined}>
                   Alert content
                 </Alert>
               </Stack>
@@ -167,7 +155,5 @@ The `Alert` could have title and description.
     }}
   </Story>
 </Canvas>
-
-
 
 made by Novatics ❤

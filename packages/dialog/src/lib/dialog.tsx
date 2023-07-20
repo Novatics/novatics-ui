@@ -11,13 +11,16 @@ import {
   Typography,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { Button, ButtonProps } from '@novatics/button';
+import isEmpty from 'lodash.isempty';
+import isNil from 'lodash.isempty';
 
 export interface DialogProps extends MUIDialogProps {
   onClose?: () => void;
   title?: string;
   description?: string;
   children?: React.ReactNode;
-  actionButtons?: React.ReactNode[];
+  actionButtons?: ButtonProps[];
   dialogActions?: React.ReactNode;
   headerDivider?: boolean;
   footerDivider?: boolean;
@@ -69,13 +72,11 @@ export const Dialog = (props: DialogProps) => {
       <DialogContent>{children}</DialogContent>
       {footerDivider ? <Divider /> : null}
 
-      {dialogActions !== undefined ? (
+      {!isNil(dialogActions) ? (
         dialogActions
-      ) : actionButtons !== undefined && actionButtons.length > 0 ? (
+      ) : !isEmpty(actionButtons) ? (
         <DialogActions>
-          {actionButtons.map((actionButton, index) => (
-            <React.Fragment key={index}>{actionButton}</React.Fragment>
-          ))}
+          {actionButtons?.map((actionButton) => <Button {...actionButton} />)}
         </DialogActions>
       ) : null}
     </MUIDialog>

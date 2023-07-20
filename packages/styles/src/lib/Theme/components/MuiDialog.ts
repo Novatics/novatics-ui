@@ -7,7 +7,7 @@ export const MuiDialog: Components['MuiDialog'] = {
 
       return {
         color: theme.palette.text.primary,
-        
+
         '& .MuiDialogTitle-root': {
           padding: '0px 24px',
           paddingTop: '16px',
@@ -29,7 +29,7 @@ export const MuiDialog: Components['MuiDialog'] = {
         },
 
         '& .MuiDialogContent-root': {
-          padding: '24px !important', 
+          padding: '24px !important',
         },
       };
     },

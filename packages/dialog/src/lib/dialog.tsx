@@ -1,67 +1,66 @@
 import React from 'react';
-import MUIDialog, { DialogProps as MUIDialogProps } from '@mui/material/Dialog';
-import { Box, DialogActions, DialogContent, DialogTitle, Divider, IconButton, Typography } from '@mui/material';
+import { Dialog as MUIDialog, DialogProps as MUIDialogProps, Box, DialogActions, DialogContent, DialogTitle, Divider, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 export interface DialogProps extends MUIDialogProps {
-  open: boolean;
-  onClose: () => void;
-  title: string;
-  description: string;
+  onClose?: () => void;
+  title?: string;
+  description?: string;
   size?: 'sm' | 'md' | 'lg';
   children?: React.ReactNode;
-  mainAction: React.ReactNode;
-  secondaryAction?: React.ReactNode;
+  actionButtons?: React.ReactNode[]; // Array de botões de ação
+  dialogActions?: React.ReactNode; // JSX.Element que substitui o DialogActions padrão
   headerDivider?: boolean;
   footerDivider?: boolean;
 }
 
 export const Dialog = (props: DialogProps) => {
   const {
-    open,
     onClose,
     children,
     title,
     description,
     size,
-    mainAction,
-    secondaryAction,
+    actionButtons,
+    dialogActions,
     headerDivider,
     footerDivider,
     ...other
   } = props;
 
-  const sizes = {
-    sm: '600px',
-    md: '960px',
-    lg: '1200px',
-    xl: '1920px',
-  };
-
-  const width = sizes[size || 'md'];
-
   return (
-    <MUIDialog open={open} {...other} PaperProps={{ style: { minWidth: width } }}>
+    <MUIDialog {...other}>
       <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <Box sx={{display: 'flex', flexDirection: 'column'}}>
-          <Typography variant='h5' fontSize='24px' color='grey.85'>{title}</Typography>
+          {title ? <Typography variant='h5' color='grey.85'>
+            {title}
+          </Typography> : null}
           {description ? <Typography mt='4px' variant='bodySmall' color='grey.70'>
             {description}
           </Typography> : null}
         </Box>
-        <IconButton color="inherit" onClick={onClose} aria-label="close"  >
-          <CloseIcon />
-        </IconButton>
+
+        {onClose ? (
+          <IconButton color="inherit" onClick={onClose} aria-label="close"  >
+            <CloseIcon />
+          </IconButton>
+        ) : null}
+        
       </DialogTitle>
+      
       {headerDivider ? <Divider /> : null}
       <DialogContent>{children}</DialogContent>
       {footerDivider ? <Divider /> : null}
-      {(mainAction || secondaryAction) && (
+
+      {dialogActions !== undefined ? (
+        dialogActions
+      ) : actionButtons !== undefined && actionButtons.length > 0 ? (
         <DialogActions>
-          {secondaryAction}
-          {mainAction}
+          {actionButtons.map((actionButton, index) => (
+            <React.Fragment key={index}>{actionButton}</React.Fragment>
+          ))}
         </DialogActions>
-      )}
+      ) : null}
     </MUIDialog>
   );
 };

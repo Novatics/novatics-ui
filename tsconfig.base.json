@@ -50,5 +50,5 @@
       "@novatics/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "dist", "**/**/*.spec.*"]
 }

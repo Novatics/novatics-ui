@@ -4,7 +4,7 @@ import {
   cloneElement,
   useMemo,
   FormEvent,
-  SyntheticEvent,
+  MouseEvent,
   forwardRef,
 } from 'react';
 import Stack, { StackProps } from '@mui/material/Stack';
@@ -23,8 +23,7 @@ export type BaseFormProps = Pick<StackProps, 'sx' | 'direction' | 'ref'> & {
   loading?: boolean | undefined;
   disabled?: boolean | undefined;
   handleSubmit?: (e?: FormEvent<HTMLFormElement>) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  handleReset?: (e?: SyntheticEvent<any>) => void;
+  handleReset?: (e?: MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   submitButtonProps?: ButtonProps;
   resetButtonProps?: ButtonProps;
   buttonsPlacement?: ActionFooterProps['contentPosition'];

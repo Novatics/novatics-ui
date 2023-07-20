@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.0](https://github.com/Novatics/novatics-ui/compare/styles-0.10.0...styles-0.11.0) (2023-07-20)
+
+
+### Features
+
+* **styles:** grid component ([18e97fc](https://github.com/Novatics/novatics-ui/commit/18e97fc3ba1c4624d368d05703bc76ffd9946e9e))
+
+
+### Performance Improvements
+
+* **styles:** use decimal notation instead of fraction ([fbbb821](https://github.com/Novatics/novatics-ui/commit/fbbb8210cdcc6c58da4175d77ad74f2abdb3a4e8))
+
 ## [0.10.0](https://github.com/Novatics/novatics-ui/compare/styles-0.9.2...styles-0.10.0) (2023-07-17)
 
 

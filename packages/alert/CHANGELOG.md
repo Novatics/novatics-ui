@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/alert-0.1.0...alert-0.1.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* Fixing alert title on stories ([8a76200](https://github.com/Novatics/novatics-ui/commit/8a76200cd57b12cba848ae68d4752de515801297))
+
 ## 0.1.0 (2023-07-17)
 
 ### Dependency Updates

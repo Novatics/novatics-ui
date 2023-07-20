@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/link-0.1.0...link-0.1.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* **dialog:** run lint and fix ([795ca0a](https://github.com/Novatics/novatics-ui/commit/795ca0a674ddebb3bb514216a223692086cb42a0))
+
 ## 0.1.0 (2023-07-07)
 
 

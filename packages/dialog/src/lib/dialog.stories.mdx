@@ -1,0 +1,282 @@
+import { useState } from 'react';
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Button, Grid, Stack, Typography } from '@mui/material';
+
+import Dialog from './dialog';
+import pkg from '../../package.json';
+
+<Meta title="Components/Dialog" component={Dialog} />
+
+# Dialog <img src={`https://img.shields.io/badge/Version-v${pkg.version}-brightgreenn`} />
+
+### Installation
+
+First install the latest version of the package from `@novatics/dialog`.
+
+```shell
+  yarn add -D @novatics/dialog
+```
+
+```shell
+  npm install --dev @novatics/dialog
+```
+
+and use it
+
+```tsx
+import ... from '@novatics/dialog';
+
+  ...
+
+
+```
+
+### Basic Usage
+
+`Dialog` simples component, which can have one or two actions.
+
+<Canvas>
+  <Story name="Basic Usage">
+    {(args) => {
+      const [open1, setOpen1] = useState(false);
+      const [open2, setOpen2] = useState(false);
+      const [open3, setOpen3] = useState(false);
+      const [open4, setOpen4] = useState(false);
+
+      return (
+        <Stack spacing={3}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">One action</Typography>
+                <Button variant="contained" onClick={() => setOpen1(!open1)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Two actions</Typography>
+                <Button variant="contained" onClick={() => setOpen2(!open2)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">No actions</Typography>
+                <Button variant="contained" onClick={() => setOpen3(!open3)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+          </Grid>
+
+          <Dialog
+            title="Dialog title"
+            open={open1}
+            onClose={()=> setOpen1(!open1)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen1(!open1)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+
+          <Dialog
+            title="Dialog title"
+            open={open2}
+            onClose={()=> setOpen2(!open2)}
+            mainAction={
+              <Button variant="contained" onClick={() => {}}>
+                Save
+              </Button>
+            }
+            secondaryAction={
+              <Button variant="outlined" onClick={() => setOpen2(!open2)}>
+                Cancel
+              </Button>
+            }>
+              Dialog content
+          </Dialog>
+
+          <Dialog
+            title="Dialog title"
+            open={open3}
+            onClose={()=> setOpen3(!open3)}
+          >
+            Dialog content
+          </Dialog>
+        </Stack>
+      );
+    }}
+
+  </Story>
+</Canvas>
+
+### Description
+
+`Dialog` can have an option description below its title.
+
+<Canvas>
+  <Story name="Description usage">
+    {(args) => {
+      const [open1, setOpen1] = useState(false);
+      const [open2, setOpen2] = useState(false);
+
+      return (
+        <Stack spacing={3}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Without description</Typography>
+                <Button variant="contained" onClick={() => setOpen1(!open1)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">With description</Typography>
+                <Button variant="contained" onClick={() => setOpen2(!open2)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+          </Grid>
+
+          <Dialog
+            title="Dialog title"
+            open={open1}
+            onClose={()=> setOpen1(!open1)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen1(!open1)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+
+          <Dialog
+            title="Dialog title"
+            description="Some description here."
+            open={open2}
+            onClose={()=> setOpen2(!open2)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen2(!open2)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+        </Stack>
+      );
+    }}
+
+  </Story>
+</Canvas>
+
+
+
+### Dividers
+
+`Dialog` can have two dividers, header and footer.
+
+<Canvas>
+  <Story name="Dividers">
+    {(args) => {
+      const [open1, setOpen1] = useState(false);
+      const [open2, setOpen2] = useState(false);
+      const [open3, setOpen3] = useState(false);
+
+      return (
+        <Stack spacing={3}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Header divider</Typography>
+                <Button variant="contained" onClick={() => setOpen1(!open1)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Footer divider</Typography>
+                <Button variant="contained" onClick={() => setOpen2(!open2)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Stack spacing={2}>
+                <Typography variant="body">Header and Footer divider</Typography>
+                <Button variant="contained" onClick={() => setOpen3(!open3)}>
+                  Open dialog
+                </Button>
+              </Stack>
+            </Grid>
+          </Grid>
+
+          <Dialog
+            title="Dialog title"
+            headerDivider
+            open={open1}
+            onClose={()=> setOpen1(!open1)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen1(!open1)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+
+          <Dialog
+            title="Dialog title"
+            description="Some description here."
+            footerDivider
+            open={open2}
+            onClose={()=> setOpen2(!open2)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen2(!open2)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+
+          <Dialog
+            title="Dialog title"
+            description="Some description here."
+            headerDivider
+            footerDivider
+            open={open3}
+            onClose={()=> setOpen3(!open3)}
+            mainAction={
+              <Button variant="outlined" onClick={() => setOpen3(!open3)}>
+                Cancel
+              </Button>
+            }
+          >
+            Dialog content
+          </Dialog>
+        </Stack>
+      );
+    }}
+
+  </Story>
+</Canvas>
+
+made by Novatics ❤

@@ -48,6 +48,7 @@ module.exports = {
     { name: 'checkbox-field' },
     { name: 'chip' },
     { name: 'currency-text-field' },
+    { name: 'dialog' },
     { name: 'divider' },
     { name: 'file-upload' },
     { name: 'form' },

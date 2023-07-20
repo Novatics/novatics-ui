@@ -89,6 +89,9 @@
       ],
       "@novatics/workspace-plugin": [
         "tools/workspace-plugin/src/index.ts"
+      ],
+      "core/dialog": [
+        "packages/dialog/src/index.ts"
       ]
     }
   },

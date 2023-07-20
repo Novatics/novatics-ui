@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5](https://github.com/Novatics/novatics-ui/compare/form-0.2.4...form-0.2.5) (2023-07-20)
+
+### Dependency Updates
+
+* `action-footer` updated to version `0.3.2`
+* `styles` updated to version `0.12.0`
+
+### Bug Fixes
+
+* **root:** adjust scripts ([5ca8e29](https://github.com/Novatics/novatics-ui/commit/5ca8e29d1316c3602716797fbda0405ee0dd638e))
+
 ## [0.2.4](https://github.com/Novatics/novatics-ui/compare/form-0.2.3...form-0.2.4) (2023-07-20)
 
 ### Dependency Updates

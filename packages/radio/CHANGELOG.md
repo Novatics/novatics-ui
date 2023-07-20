@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.5](https://github.com/Novatics/novatics-ui/compare/radio-0.3.4...radio-0.3.5) (2023-07-20)
+
+### Dependency Updates
+
+* `styles` updated to version `0.12.0`
 ## [0.3.4](https://github.com/Novatics/novatics-ui/compare/radio-0.3.3...radio-0.3.4) (2023-07-20)
 
 ### Dependency Updates

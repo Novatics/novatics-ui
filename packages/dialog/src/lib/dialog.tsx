@@ -6,10 +6,9 @@ export interface DialogProps extends MUIDialogProps {
   onClose?: () => void;
   title?: string;
   description?: string;
-  size?: 'sm' | 'md' | 'lg';
   children?: React.ReactNode;
-  actionButtons?: React.ReactNode[]; // Array de botões de ação
-  dialogActions?: React.ReactNode; // JSX.Element que substitui o DialogActions padrão
+  actionButtons?: React.ReactNode[];
+  dialogActions?: React.ReactNode;
   headerDivider?: boolean;
   footerDivider?: boolean;
 }
@@ -20,7 +19,6 @@ export const Dialog = (props: DialogProps) => {
     children,
     title,
     description,
-    size,
     actionButtons,
     dialogActions,
     headerDivider,

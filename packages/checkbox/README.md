@@ -1,7 +1,29 @@
 # checkbox
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Running unit tests
+It is available as an [npm package](https://www.npmjs.com/package/novatics)
 
-Run `nx test checkbox` to execute the unit tests via [Vitest](https://vitest.dev/).
+**npm:**
+
+```sh
+npm install @novatics/checkbox
+```
+
+**yarn:**
+
+```sh
+yarn add @novatics/checkbox
+```
+
+## Usage
+
+```jsx
+import { Checkbox } from '@Novatics/checkbox';
+
+<Checkbox color="primary" />;
+```
+
+## Playground
+
+In this [playground](https://components.novatics.com.br/?path=/story/checkbox--playground), try changing the props and see how it affects the output and the code.

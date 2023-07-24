@@ -95,6 +95,15 @@
         "baseBranch": "master",
         "postTargets": ["action-footer:deploy"]
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/action-footer/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "action-footer:build",
+        "skipServe": true
+      }
     }
   }
 }

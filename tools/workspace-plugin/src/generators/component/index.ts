@@ -118,6 +118,11 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
   const outputLib = execSync(`nx g ${generator} ${libArgs} ${name}`);
   console.log(outputLib.toString());
 
+  const outputCypressConfig = execSync(
+    `nx g @nx/react:cypress-component-configuration  --project=${fileName}`,
+  );
+  console.log(outputCypressConfig.toString());
+
   const storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
   const outputStory = execSync(
     `nx g storybook-configuration ${storyArgs} ${fileName}`,

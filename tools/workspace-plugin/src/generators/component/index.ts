@@ -72,24 +72,6 @@ function updateTargetsTest(targets: Record<string, any>, fileName: string) {
   targets.test.options.config = `packages/${fileName}/vitest.config.ts`;
 }
 
-function updateTargetsCypressTest(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  targets: Record<string, any>,
-  fileName: string,
-) {
-  targets['cypress:test'] = targets['cypress:test'] ?? {};
-  targets['cypress:test'].executor =
-    targets['cypress:test'].executor ?? '@nx/cypress:cypress';
-  targets['cypress:test'].outputs = [
-    `{workspaceRoot}/coverage/packages/${fileName}`,
-  ];
-  targets['cypress:test'].options = targets['cypress:test'].options ?? {};
-  targets['cypress:test'].options.cypressConfig = './cypress.config.ts';
-  targets['cypress:test'].options.testingType = 'component';
-  targets['cypress:test'].options.parallel = false;
-  targets['cypress:test'].options.record = false;
-}
-
 function createTargetsVersionDeploy(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   targets: Record<string, any>,
@@ -135,6 +117,11 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
 
   const outputLib = execSync(`nx g ${generator} ${libArgs} ${name}`);
   console.log(outputLib.toString());
+
+  const outputCypressConfig = execSync(
+    `nx g @nx/react:cypress-component-configuration  --project=${fileName}`,
+  );
+  console.log(outputCypressConfig.toString());
 
   const storyArgs = `--configureCypress=${configureCypress} --generateCypressSpecs=${generateCypressSpecs} --generateStories=${generateStories} --storybook7Configuration=${storybook7Configuration} --tsConfiguration=${tsConfiguration}`;
   const outputStory = execSync(
@@ -208,7 +195,6 @@ export default async function (tree: Tree, schema: ComponentSchemaOptions) {
     updateTargetsVersion(json.targets);
     createTargetsVersionDeploy(json.targets, fileName);
     updateTargetsTest(json.targets, fileName);
-    updateTargetsCypressTest(json.targets, fileName);
 
     return json;
   });

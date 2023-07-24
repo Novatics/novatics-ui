@@ -37,16 +37,6 @@
         "reportsDirectory": "../../coverage/packages/action-footer"
       }
     },
-    "cypress:test": {
-      "executor": "@nx/cypress:cypress",
-      "outputs": ["{workspaceRoot}/coverage/packages/action-footer"],
-      "options": {
-        "cypressConfig": "./cypress.config.ts",
-        "testingType": "component",
-        "parallel": false,
-        "record": false
-      }
-    },
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
@@ -104,6 +94,15 @@
         "preset": "conventional",
         "baseBranch": "master",
         "postTargets": ["action-footer:deploy"]
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/action-footer/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "action-footer:build",
+        "skipServe": true
       }
     }
   }

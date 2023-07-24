@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Novatics/novatics-ui/compare/styles-0.13.0...styles-0.14.0) (2023-07-24)
+
+
+### Features
+
+* **root:** setup cypress and first test for action footer ([3f68a03](https://github.com/Novatics/novatics-ui/commit/3f68a0333c3589bcf82f95f55625777aac9374f5))
+
 ## [0.13.0](https://github.com/Novatics/novatics-ui/compare/styles-0.12.0...styles-0.13.0) (2023-07-24)
 
 

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.0](https://github.com/Novatics/novatics-ui/compare/styles-0.12.0...styles-0.13.0) (2023-07-24)
+
+
+### Features
+
+* **styles:** remove exta style ([0d1cc96](https://github.com/Novatics/novatics-ui/commit/0d1cc96f84949d00c8c01b58e95d1341b82b5217))
+
 ## [0.12.0](https://github.com/Novatics/novatics-ui/compare/styles-0.11.0...styles-0.12.0) (2023-07-20)
 
 

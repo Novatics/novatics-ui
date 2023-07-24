@@ -7,23 +7,25 @@ It is available as an [npm package](https://www.npmjs.com/package/novatics)
 **npm:**
 
 ```sh
-npm install @novatics/actionFooter
+npm install @novatics/action-footer
 ```
 
 **yarn:**
 
 ```sh
-yarn add @novatics/actionFooter
+yarn add @novatics/action-footer
 ```
 
 ## Usage
 
 ```jsx
+import { ActionFooter } from '@Novatics/action-footer';
+
 <ActionFooter spacing={1}>
   <Button variant="outlined" color="primary">
     Click
   </Button>
-</ActionFooter>
+</ActionFooter>;
 ```
 
 ## Playground

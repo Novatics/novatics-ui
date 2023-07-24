@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.5](https://github.com/Novatics/novatics-ui/compare/alert-0.1.4...alert-0.1.5) (2023-07-24)
+
+### Dependency Updates
+
+* `styles` updated to version `0.14.0`
 ## [0.1.4](https://github.com/Novatics/novatics-ui/compare/alert-0.1.3...alert-0.1.4) (2023-07-24)
 
 ### Dependency Updates

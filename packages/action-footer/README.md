@@ -1,7 +1,31 @@
 # action-footer
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Running unit tests
+It is available as an [npm package](https://www.npmjs.com/package/novatics)
 
-Run `nx test action-footer` to execute the unit tests via [Vitest](https://vitest.dev/).
+**npm:**
+
+```sh
+npm install @novatics/actionFooter
+```
+
+**yarn:**
+
+```sh
+yarn add @novatics/actionFooter
+```
+
+## Usage
+
+```jsx
+<ActionFooter spacing={1}>
+  <Button variant="outlined" color="primary">
+    Click
+  </Button>
+</ActionFooter>
+```
+
+## Playground
+
+In this [playground](https://components.novatics.com.br/?path=/story/actionfooter--playground), try changing the props and see how it affects the output and the code.

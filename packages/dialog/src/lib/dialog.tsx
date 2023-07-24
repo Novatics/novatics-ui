@@ -14,6 +14,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Button, ButtonProps } from '@novatics/button';
 import isEmpty from 'lodash.isempty';
 import isNil from 'lodash.isempty';
+// adding @novatics/styles prevent a typescript error from typography component.
+// Typescript get confused because of the redeclaration of types made inside @novatics/styles
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as Styles from '@novatics/styles';
 
 export interface DialogProps extends MUIDialogProps {
   onClose?: () => void;

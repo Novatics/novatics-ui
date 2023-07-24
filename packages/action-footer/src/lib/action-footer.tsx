@@ -3,14 +3,14 @@ import isEmpty from 'lodash.isempty';
 import { Stack, StackProps } from '@mui/material';
 
 export interface ActionFooterProps extends StackProps {
-  contentPosition: 'space-between' | 'end' | 'start' | 'center';
+  contentPosition?: 'space-between' | 'end' | 'start' | 'center';
   children?: React.ReactNode;
   actions?: React.ReactNode[];
 }
 
 export function ActionFooter({
   actions,
-  contentPosition,
+  contentPosition = 'end',
   children,
   ...props
 }: ActionFooterProps) {

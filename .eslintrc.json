@@ -2,11 +2,15 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "@typescript-eslint"],
+  "plugins": ["@nx", "@typescript-eslint", "cypress"],
+  "env": {
+    "cypress/globals": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:cypress/recommended"
   ],
   "overrides": [
     {

@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Novatics/novatics-ui/compare/dialog-0.1.0...dialog-0.1.1) (2023-07-24)
+
+### Dependency Updates
+
+* `styles` updated to version `0.14.0`
+
+### Bug Fixes
+
+* **root:** update packages and fix build ([158ad66](https://github.com/Novatics/novatics-ui/commit/158ad66dbc4e37e57c19b347de636aae00021ce7))
+
 ## 0.1.0 (2023-07-20)
 
 ### Dependency Updates

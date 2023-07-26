@@ -1,7 +1,29 @@
 # currency-text-field
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Running unit tests
+It is available as an [npm package](https://www.npmjs.com/package/novatics)
 
-Run `nx test currency-text-field` to execute the unit tests via [Vitest](https://vitest.dev/).
+**npm:**
+
+```sh
+npm install @novatics/currency-text-field
+```
+
+**yarn:**
+
+```sh
+yarn add @novatics/currency-text-field
+```
+
+## Usage
+
+```jsx
+import CurrencyTextField from '@novatics/currency-text-field';
+
+<CurrencyTextField value={123456} />;
+```
+
+## Playground
+
+In this [playground](https://components.novatics.com.br/?path=/story/currency-textfield--playground), try changing the props and see how it affects the output and the code.

@@ -1,7 +1,25 @@
 # chip
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Running unit tests
+It is available as an [npm package](https://www.npmjs.com/package/novatics)
 
-Run `nx test chip` to execute the unit tests via [Vitest](https://vitest.dev/).
+**npm:**
+
+```sh
+npm install @novatics/chip
+```
+
+**yarn:**
+
+```sh
+yarn add @novatics/chip
+```
+
+## Usage
+
+```jsx
+import { Chip } from '@Novatics/chip';
+
+<Chip label="Chip" />;
+```

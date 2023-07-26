@@ -1,7 +1,30 @@
 # checkbox-field
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Running unit tests
+It is available as an [npm package](https://www.npmjs.com/package/novatics)
 
-Run `nx test checkbox-field` to execute the unit tests via [Vitest](https://vitest.dev/).
+**npm:**
+
+```sh
+npm install @novatics/checkbox-field
+```
+
+**yarn:**
+
+```sh
+yarn add @novatics/checkbox-field
+```
+
+## Usage
+
+```jsx
+import { CheckboxField } from '@Novatics/checkbox-field';
+
+    <CheckboxField />
+    <CheckboxField checked />
+```
+
+## Playground
+
+In this [playground](https://components.novatics.com.br/?path=/story/checkboxfield--playground), try changing the props and see how it affects the output and the code.

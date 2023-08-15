@@ -31,7 +31,7 @@ jobs:
       - name: Setup Git 🔧
         run: |
           git config user.name "GitHub Bot"
-          git config user.email "novatics-ui@novatics.com.br"
+          git config user.email "accounts@novatics.com.br"
           cp .npmrc.deploy .npmrc
 
       - name: Create versions 🏗

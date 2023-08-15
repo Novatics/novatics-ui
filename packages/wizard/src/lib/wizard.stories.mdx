@@ -43,10 +43,10 @@ Use this component for currency inputs
 
 ### Installation
 
-First install the latest version of the package from `@novatics/wizard`.
+First install the latest version of the package from `@novatics-ui/wizard`.
 
 ```bash
-yarn add @novatics/wizard
+yarn add @novatics-ui/wizard
 
 ```
 
@@ -61,7 +61,7 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Basic Usage
 
 ```tsx
-import Wizard from '@novatics/wizard';
+import Wizard from '@novatics-ui/wizard';
 
 <Wizard steps={['...']} />;
 ```
@@ -75,7 +75,7 @@ import Wizard from '@novatics/wizard';
 The `isLinear` prop defines whether the tabs will navigate in a linear way or not:
 
 ```tsx
-import Wizard from '@novatics/wizard';
+import Wizard from '@novatics-ui/wizard';
 
 <Wizard steps={['...']} isLinear />;
 ```
@@ -117,7 +117,7 @@ To set a step completed, we have to set the value of `status` key inside `steps`
 It is possible to override the whole Wizard component by using the following props:
 
 ```tsx
-import Wizard from '@novatics/wizard';
+import Wizard from '@novatics-ui/wizard';
 
 const steps = ['...'];
 
@@ -133,7 +133,7 @@ const steps = ['...'];
 We can also override components for individual tabs by using the `components` key inside `steps` array:
 
 ```tsx
-import Wizard from '@novatics/wizard';
+import Wizard from '@novatics-ui/wizard';
 
 const steps = [
   {
@@ -186,7 +186,7 @@ const steps = [
 The `disabled` key inside `steps` array allows individual tabs to be disabled:
 
 ```tsx
-import Wizard from '@novatics/wizard';
+import Wizard from '@novatics-ui/wizard';
 
 const steps = [
   {

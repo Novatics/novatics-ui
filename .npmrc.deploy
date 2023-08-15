@@ -1,4 +1,4 @@
 ### PROD
 always-auth = true
-@novatics:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@novatics-ui:registry=https://registry.npmjs.org
+//npm.pkg.github.com/:_authToken=${NPM_AUTH_TOKEN}

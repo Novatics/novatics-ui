@@ -1,5 +1,5 @@
 import { Box, Stack } from '@mui/material';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 
 export const ListItemContainer = styled(Box)<{ $error: boolean }>(({
   $error,

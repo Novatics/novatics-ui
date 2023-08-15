@@ -2,7 +2,7 @@ import MUIAlert, {
   AlertProps as MUIAlertProps,
   AlertColor,
 } from '@mui/material/Alert';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircleOutline';

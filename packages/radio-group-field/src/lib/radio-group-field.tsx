@@ -5,8 +5,8 @@ import MuiFormControlLabel from '@mui/material/FormControlLabel';
 import FormHelperText, {
   FormHelperTextProps,
 } from '@mui/material/FormHelperText';
-import { Radio } from '@novatics/radio';
-import { styled } from '@novatics/styles';
+import { Radio } from '@novatics-ui/radio';
+import { styled } from '@novatics-ui/styles';
 
 export interface RadioGroupFieldProps extends RadioGroupProps {
   label?: string;

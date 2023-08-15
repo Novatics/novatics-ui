@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/form-group",
+  "name": "@novatics-ui/form-group",
   "version": "0.2.1",
   "main": "./index.js",
   "types": "./index.d.ts",

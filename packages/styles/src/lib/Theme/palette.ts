@@ -1,5 +1,5 @@
 import { SimplePaletteColorOptions, PaletteOptions } from '@mui/material';
-import { colors } from '@novatics/tokens';
+import { colors } from '@novatics-ui/tokens';
 
 declare module '@mui/material' {
   interface Color {

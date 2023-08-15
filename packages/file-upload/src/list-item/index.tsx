@@ -9,7 +9,7 @@ import {
   RestartAlt as RetryIcon,
 } from '@mui/icons-material';
 import { Typography, IconButton } from '@mui/material';
-import { LinearProgress } from '@novatics/linear-progress';
+import { LinearProgress } from '@novatics-ui/linear-progress';
 import { useState } from 'react';
 
 export interface ListItemProps {

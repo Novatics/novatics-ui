@@ -4,13 +4,13 @@
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "@novatics:registry": "https://npm.pkg.github.com"
+    "@novatics-ui:registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "nx": "nx",
     "dev": "nx storybook core",
     "build": "nx run-many --all --target=build",
-    "component:generate": "nx generate @novatics/workspace-plugin:component",
+    "component:generate": "nx generate @novatics-ui/workspace-plugin:component",
     "cypress:open": "cypress open --component",
     "cypress:run": "cypress run --component --record false",
     "prepare": "husky install",
@@ -24,9 +24,9 @@
     "verdaccio:addUser": "npm adduser --registry http://localhost:4873/",
     "verdaccio:down": "docker-compose stop && cp .npmrc.bkp .npmrc",
     "versions:create": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
-    "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build",
-    "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --push",
+    "versions:create:push": "nx affected --target=version --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --skipCommit  --push",
+    "versions:create:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build --skipCommit",
+    "versions:create:push:deploy": "nx affected --target=version:deploy --base=last-release --noVerify --verbose --parallel=1 --trackDeps --skipCommitTypes=docs,ci,build  --skipCommit --push",
     "versions:deploy": "NODE_OPTIONS='--max_old_space_size=8192' nx affected --base=last-release --verbose --target deploy",
     "storybook:build": "NODE_OPTIONS='--max_old_space_size=8192' nx build-storybook core"
   },

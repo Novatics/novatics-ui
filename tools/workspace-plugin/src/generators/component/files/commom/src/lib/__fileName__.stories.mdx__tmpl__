@@ -9,20 +9,20 @@ import pkg from '../../package.json';
 
 ### Installation
 
-First install the latest version of the package from `@novatics/<%= fileName %>`.
+First install the latest version of the package from `@novatics-ui/<%= fileName %>`.
 
 ```shell
-  yarn add -D @novatics/<%= fileName %>
+  yarn add -D @novatics-ui/<%= fileName %>
 ```
 
 ```shell
-  npm install --dev @novatics/<%= fileName %>
+  npm install --dev @novatics-ui/<%= fileName %>
 ```
 
 and use it
 
 ```tsx
-import ... from '@novatics/<%= fileName %>';
+import ... from '@novatics-ui/<%= fileName %>';
 
   ...
 

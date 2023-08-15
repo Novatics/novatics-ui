@@ -9,13 +9,13 @@ import {
 } from 'react';
 import Stack, { StackProps } from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { Button, ButtonProps } from '@novatics/button';
-import { ActionFooter, ActionFooterProps } from '@novatics/action-footer';
+import { Button, ButtonProps } from '@novatics-ui/button';
+import { ActionFooter, ActionFooterProps } from '@novatics-ui/action-footer';
 import { FormikProps } from 'formik';
-// adding @novatics/styles prevent a typescript error from typography component.
-// Typescript get confused because of the redeclaration of types made inside @novatics/styles
+// adding @novatics-ui/styles prevent a typescript error from typography component.
+// Typescript get confused because of the redeclaration of types made inside @novatics-ui/styles
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as Styles from '@novatics/styles';
+import * as Styles from '@novatics-ui/styles';
 
 export type BaseFormProps = Pick<StackProps, 'sx' | 'direction' | 'ref'> & {
   title?: string | ReturnType<typeof Typography> | null;

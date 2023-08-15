@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/masked-text-field",
+  "name": "@novatics-ui/masked-text-field",
   "version": "0.3.1",
   "main": "./index.js",
   "types": "./index.d.ts",

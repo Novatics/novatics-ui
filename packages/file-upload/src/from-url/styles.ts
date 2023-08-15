@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 import { FromUrlProps } from '.';
 
 interface FromURLContainerProps extends Pick<FromUrlProps, 'variant'> {

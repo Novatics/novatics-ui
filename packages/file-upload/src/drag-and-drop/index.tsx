@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { UploadFile } from '@mui/icons-material';
-import { ButtonProps } from '@novatics/button';
+import { ButtonProps } from '@novatics-ui/button';
 import {
   Button,
   DragAndDropContainer,

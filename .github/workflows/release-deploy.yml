@@ -8,8 +8,8 @@ jobs:
   install-build-deploy:
     runs-on: ubuntu-22.04
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Git 🔧
         run: |
           git config user.name "GitHub Bot"
-          git config user.email "novatics-ui@novatics.com"
+          git config user.email "novatics-ui@novatics.com.br"
           cp .npmrc.deploy .npmrc
 
       - name: Create versions 🏗
@@ -43,8 +43,8 @@ jobs:
       - name: Deploy 🚀
         run: yarn versions:deploy
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Tag last-release 🏷

@@ -1,6 +1,6 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
-import { typography } from '@novatics/tokens';
+import { typography } from '@novatics-ui/tokens';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {

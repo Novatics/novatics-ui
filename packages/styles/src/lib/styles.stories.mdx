@@ -13,20 +13,20 @@ Basic functions to create a MUI theme with our default colors, spacings, border 
 
 ### Installation
 
-First install the latest version of the package from `@novatics/<%= fileName %>`.
+First install the latest version of the package from `@novatics-ui/<%= fileName %>`.
 
 ```shell
-  yarn add -D @novatics/styles
+  yarn add -D @novatics-ui/styles
 ```
 
 ```shell
-  npm install --dev @novatics/styles
+  npm install --dev @novatics-ui/styles
 ```
 
 and use it
 
 ```tsx
-import { ThemeProvider, createTheme, styled } from '@novatics/styles';
+import { ThemeProvider, createTheme, styled } from '@novatics-ui/styles';
 
 const theme = createTheme();
 const Button = styled('button')({ background: 'red' });
@@ -52,7 +52,7 @@ Our package provide a custon createTheme function that creates a MUI theme based
 To use it follow the documentation at Material-UI
 
 ```tsx
-import { ThemeProvider, createTheme, styled } from '@novatics/styles';
+import { ThemeProvider, createTheme, styled } from '@novatics-ui/styles';
 
 const App = ({ children }) => {
   const theme = createTheme();
@@ -80,7 +80,7 @@ This means that we can pass props not recognized by DOM using the dollar sign ($
 This is useful when we are using @emotion/styled as our styling engine.
 
 ```tsx
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 
 export const ListItem = styled('li')(({ $isFirst, $isLast }) => ({
   borderStyle: 'solid',

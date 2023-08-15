@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, TextField, TextFieldProps, Typography } from '@mui/material';
 import { FromURLContainer } from './styles';
-import { Button, ButtonProps } from '@novatics/button';
+import { Button, ButtonProps } from '@novatics-ui/button';
 
 export interface FromUrlProps {
   acceptLabels?: string;

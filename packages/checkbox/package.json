@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/checkbox",
+  "name": "@novatics-ui/checkbox",
   "version": "0.3.7",
   "main": "./index.js",
   "types": "./index.d.ts",

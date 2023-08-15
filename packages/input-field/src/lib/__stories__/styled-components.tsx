@@ -1,4 +1,4 @@
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 import { Box } from '@mui/material';
 
 export const InputContainer = styled(Box)(() => ({

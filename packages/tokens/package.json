@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/tokens",
+  "name": "@novatics-ui/tokens",
   "version": "0.3.1",
   "main": "./index.js",
   "types": "./index.d.ts",

@@ -1,7 +1,7 @@
 /* eslint-disable @nx/enforce-module-boundaries */
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { colors } from '@novatics/tokens';
+import { colors } from '@novatics-ui/tokens';
 
 import { styled } from '../styled';
 

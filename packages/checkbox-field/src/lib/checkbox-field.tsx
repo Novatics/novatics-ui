@@ -1,4 +1,4 @@
-import Checkbox, { CheckboxProps } from '@novatics/checkbox';
+import Checkbox, { CheckboxProps } from '@novatics-ui/checkbox';
 import FormControl from '@mui/material/FormControl';
 import { styled, useTheme } from '@mui/material';
 import { TypographyProps } from '@mui/material/Typography';

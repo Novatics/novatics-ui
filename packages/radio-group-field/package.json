@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/radio-group-field",
+  "name": "@novatics-ui/radio-group-field",
   "version": "0.2.7",
   "main": "./index.js",
   "types": "./index.d.ts",

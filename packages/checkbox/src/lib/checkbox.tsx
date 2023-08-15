@@ -2,7 +2,7 @@ import MuiCheckbox, {
   CheckboxProps as MuiCheckboxProps,
 } from '@mui/material/Checkbox';
 import CheckIcon from '@mui/icons-material/Check';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 import { useMemo } from 'react';
 
 type PropsToOmit =

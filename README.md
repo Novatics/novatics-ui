@@ -11,13 +11,13 @@ Install Novatics UI, it is available as an [npm package](https://www.npmjs.com/p
 **npm:**
 
 ```sh
-npm install @novatics
+npm install @novatics-ui/core
 ```
 
 **yarn:**
 
 ```sh
-yarn add @novatics
+yarn add @novatics-ui/core
 ```
 
 ## Getting started with Novatics UI
@@ -28,7 +28,7 @@ Here is an example of a basic app using Novatics UI's `CurrencyTextField` compon
 
 ```jsx
 import * as React from 'react';
-import CurrencyTextField from '@novatics/currency-text-field';
+import CurrencyTextField from '@novatics-ui/currency-text-field';
 
 function App() {
   return (

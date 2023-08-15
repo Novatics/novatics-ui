@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/link",
+  "name": "@novatics-ui/link",
   "version": "0.2.0",
   "main": "./index.js",
   "types": "./index.d.ts",

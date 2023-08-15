@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/input-field",
+  "name": "@novatics-ui/input-field",
   "version": "0.4.8",
   "main": "./index.js",
   "types": "./index.d.ts",

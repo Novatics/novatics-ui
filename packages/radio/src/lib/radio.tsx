@@ -1,6 +1,6 @@
 import { deepmerge } from '@mui/utils';
 import MuiRadio, { RadioProps as MuiRadioProps } from '@mui/material/Radio';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 
 type PropsToOmit =
   | 'disableFocusRipple'

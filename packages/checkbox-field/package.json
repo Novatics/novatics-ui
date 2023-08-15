@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/checkbox-field",
+  "name": "@novatics-ui/checkbox-field",
   "version": "0.4.7",
   "main": "./index.js",
   "types": "./index.d.ts",

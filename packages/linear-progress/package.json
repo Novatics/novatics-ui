@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/linear-progress",
+  "name": "@novatics-ui/linear-progress",
   "version": "0.2.7",
   "main": "./index.js",
   "types": "./index.d.ts",

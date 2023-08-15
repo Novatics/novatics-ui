@@ -2,7 +2,7 @@ import MuiLinearProgress, {
   LinearProgressProps as MuiLinearProgressProps,
 } from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
-import { styled } from '@novatics/styles';
+import { styled } from '@novatics-ui/styles';
 import { Typography } from '@mui/material';
 
 interface LinearProgressProps extends MuiLinearProgressProps {

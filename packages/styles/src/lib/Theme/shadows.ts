@@ -1,4 +1,4 @@
-import { shadows as rawShadows } from '@novatics/tokens';
+import { shadows as rawShadows } from '@novatics-ui/tokens';
 import { Length, RGBA } from './types';
 
 type ShadowType = `${Length} ${Length} ${Length} ${Length} ${RGBA}`;

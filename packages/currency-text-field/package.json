@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/currency-text-field",
+  "name": "@novatics-ui/currency-text-field",
   "version": "0.3.1",
   "main": "./index.js",
   "types": "./index.d.ts",

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import { styled } from '@novatics/styles';
-import { Button as NuiButton } from '@novatics/button';
+import { styled } from '@novatics-ui/styles';
+import { Button as NuiButton } from '@novatics-ui/button';
 
 export const DragAndDropContainer = styled(Box)<{
   variant?: 'inline' | 'fullscreen';

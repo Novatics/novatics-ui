@@ -1,5 +1,5 @@
 {
-  "name": "@novatics/dialog",
+  "name": "@novatics-ui/dialog",
   "version": "0.1.1",
   "main": "./index.js",
   "types": "./index.d.ts",

@@ -2,14 +2,14 @@ import { FormControl, FormLabel } from '@mui/material';
 import MuiSelect, { SelectProps } from '@mui/material/Select';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export interface SelectFieldProps extends Omit<SelectProps, 'error'> {
+export type SelectFieldProps = Omit<SelectProps, 'error'> & {
   label?: string;
   options?: Array<{ label: string; value: string; disabled?: boolean }>;
   disabled?: boolean;
   loading?: boolean;
   error?: string | boolean;
   required?: boolean;
-}
+};
 
 const SelectField = (props: SelectFieldProps) => {
   const { label, required, error, disabled, loading, ...others } = props;

@@ -4,7 +4,7 @@ import MuiFormGroup, {
 } from '@mui/material/FormGroup';
 import { Children, ReactElement, cloneElement, useMemo } from 'react';
 
-export interface FormGroupProps extends Omit<MUIFormGroupProps, 'children'> {
+export type FormGroupProps = Omit<MUIFormGroupProps, 'children'> & {
   title?: string;
   direction?: 'row' | 'column';
   titleSpacing?: number;
@@ -12,7 +12,7 @@ export interface FormGroupProps extends Omit<MUIFormGroupProps, 'children'> {
   loading?: boolean;
   disabled?: boolean;
   children?: (() => React.ReactNode) | React.ReactNode;
-}
+};
 
 const FormGroup = (props: FormGroupProps) => {
   const {

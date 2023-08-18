@@ -12,11 +12,11 @@ type PropsToOmit =
 // TODO: How should default Color be handled?
 type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 
-export interface RadioProps extends Omit<MuiRadioProps, PropsToOmit> {
+export type RadioProps = Omit<MuiRadioProps, PropsToOmit> & {
   color?: Color;
   error?: boolean;
   checked?: boolean;
-}
+};
 
 const getRadiusCircleStyle = (color: string) =>
   `radial-gradient(${color},${color} 40%,transparent 44%)`;

@@ -8,5 +8,29 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "dependencies": {
+    "@novatics-ui/action-footer": "latest",
+    "@novatics-ui/alert": "latest",
+    "@novatics-ui/button": "latest",
+    "@novatics-ui/checkbox": "latest",
+    "@novatics-ui/checkbox-field": "latest",
+    "@novatics-ui/chip": "latest",
+    "@novatics-ui/currency-text-field": "latest",
+    "@novatics-ui/dialog": "latest",
+    "@novatics-ui/divider": "latest",
+    "@novatics-ui/file-upload": "latest",
+    "@novatics-ui/form": "latest",
+    "@novatics-ui/form-group": "latest",
+    "@novatics-ui/input-field": "latest",
+    "@novatics-ui/linear-progress": "latest",
+    "@novatics-ui/link": "latest",
+    "@novatics-ui/masked-text-field": "latest",
+    "@novatics-ui/radio": "latest",
+    "@novatics-ui/radio-group-field": "latest",
+    "@novatics-ui/select-field": "latest",
+    "@novatics-ui/styles": "latest",
+    "@novatics-ui/tokens": "latest",
+    "@novatics-ui/wizard": "latest"
   }
 }

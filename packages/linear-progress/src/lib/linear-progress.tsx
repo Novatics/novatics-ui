@@ -5,9 +5,9 @@ import Box from '@mui/material/Box';
 import { styled } from '@novatics-ui/styles';
 import { Typography } from '@mui/material';
 
-interface LinearProgressProps extends MuiLinearProgressProps {
+type LinearProgressProps = MuiLinearProgressProps & {
   showPercentage?: boolean;
-}
+};
 
 const ProgressContainer = styled(Box)<LinearProgressProps>((props) => {
   return {

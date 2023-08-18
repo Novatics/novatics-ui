@@ -19,7 +19,7 @@ import isNil from 'lodash.isempty';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as Styles from '@novatics-ui/styles';
 
-export interface DialogProps extends MUIDialogProps {
+export type DialogProps = MUIDialogProps & {
   onClose?: () => void;
   title?: string;
   description?: string;
@@ -28,7 +28,7 @@ export interface DialogProps extends MUIDialogProps {
   dialogActions?: React.ReactNode;
   headerDivider?: boolean;
   footerDivider?: boolean;
-}
+};
 
 export const Dialog = (props: DialogProps) => {
   const {

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 import dts from 'vite-plugin-dts';
 import { joinPathFragments } from '@nx/devkit';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/core',
@@ -15,6 +16,14 @@ export default defineConfig({
     react(),
     viteTsConfigPaths({
       root: '../../',
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: './src/index.d.ts',
+          dest: './',
+        },
+      ],
     }),
   ],
 
@@ -41,7 +50,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', /@mui\/*/],
     },
   },
 });

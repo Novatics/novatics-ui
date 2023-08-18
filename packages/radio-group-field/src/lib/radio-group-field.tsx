@@ -8,7 +8,7 @@ import FormHelperText, {
 import { Radio } from '@novatics-ui/radio';
 import { styled } from '@novatics-ui/styles';
 
-export interface RadioGroupFieldProps extends RadioGroupProps {
+export type RadioGroupFieldProps = RadioGroupProps & {
   label?: string;
   options?: Array<{ label: string; value: string; disabled?: boolean }>;
   disabled?: boolean;
@@ -19,7 +19,7 @@ export interface RadioGroupFieldProps extends RadioGroupProps {
   direction?: 'row' | 'column';
   labelPlacement?: 'end' | 'start' | 'top' | 'bottom';
   withTextHelper?: boolean;
-}
+};
 
 const FormControl = styled(MuiFormControl)<{
   direction?: 'row' | 'column';

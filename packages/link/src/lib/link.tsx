@@ -1,8 +1,8 @@
 import MUILink, { LinkProps as MUILinkProps } from '@mui/material/Link';
 
-export interface LinkProps extends MUILinkProps {
+export type LinkProps = MUILinkProps & {
   isExternal?: boolean;
-}
+};
 
 export const Link = (props: LinkProps) => {
   const { isExternal = false, underline = 'none', children, ...other } = props;

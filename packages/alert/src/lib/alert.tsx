@@ -8,12 +8,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircleOutline';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-export interface AlertProps extends MUIAlertProps {
+
+export type AlertProps = MUIAlertProps & {
   severity?: AlertColor;
   onClose?: () => void;
   title?: string | undefined;
   action?: React.ReactNode;
-}
+};
 
 const CloseButton = styled(IconButton)`
   padding: 4px;

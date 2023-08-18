@@ -15,10 +15,10 @@ type PropsToOmit =
 // TODO: How should default Color be handled?
 type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 
-export interface CheckboxProps extends Omit<MuiCheckboxProps, PropsToOmit> {
+export type CheckboxProps = Omit<MuiCheckboxProps, PropsToOmit> & {
   variant: 'filled' | 'outlined';
   color?: Color;
-}
+};
 
 const IndeterminateIcon = styled('span')<{
   colorType: Color;

@@ -1,5 +1,7 @@
-import ButtonMui, { ButtonProps as MUIButtonProps } from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
+import ButtonMui, {
+  ButtonProps as MUIButtonProps,
+} from '@mui/material/node/Button';
+import CircularProgress from '@mui/material/node/CircularProgress';
 
 export type ButtonProps = MUIButtonProps & {
   loading?: boolean;
@@ -30,4 +32,4 @@ const Button = (props: ButtonProps) => {
 
 export { Button };
 export default Button;
-export * from '@mui/material/Button';
+export * from '@mui/material/node/Button';

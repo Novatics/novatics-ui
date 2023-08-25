@@ -54,6 +54,7 @@ function updateCommitZenConfig(tree: Tree, options: { fileName: string }) {
 function updateTargetsBuild(targets: Record<string, any>) {
   targets.build = targets.build ?? {};
   targets.build.options = targets.build.options ?? {};
+  targets.build.options.generatePackageJson = true;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

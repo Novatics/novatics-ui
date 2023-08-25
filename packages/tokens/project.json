@@ -17,7 +17,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/tokens"
+        "outputPath": "dist/packages/tokens",
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {

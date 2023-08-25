@@ -17,7 +17,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/styles"
+        "outputPath": "dist/packages/styles",
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {

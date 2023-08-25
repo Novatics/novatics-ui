@@ -2,7 +2,7 @@ import {
   createTheme as MUICreateTheme,
   ThemeOptions,
   Theme,
-} from '@mui/material/styles';
+} from '@mui/material/node/styles';
 import { deepmerge } from '@mui/utils';
 import { palette as themePalette } from './Theme/palette';
 import { borderRadius as themeBorderRadius } from './Theme/borderRadius';

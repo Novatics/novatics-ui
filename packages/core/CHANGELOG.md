@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.3](https://github.com/Novatics/novatics-ui/compare/core-0.5.2...core-0.5.3) (2023-08-28)
+
+### Dependency Updates
+
+* `alert` updated to version `0.2.3`
+* `checkbox` updated to version `0.4.3`
+* `checkbox-field` updated to version `0.5.3`
+* `dialog` updated to version `0.2.3`
+* `file-upload` updated to version `0.3.3`
+* `form` updated to version `0.3.3`
+* `input-field` updated to version `0.5.3`
+* `linear-progress` updated to version `0.3.3`
+* `radio` updated to version `0.4.3`
+* `radio-group-field` updated to version `0.3.3`
+* `styles` updated to version `0.16.0`
 ## [0.5.2](https://github.com/Novatics/novatics-ui/compare/core-0.5.1...core-0.5.2) (2023-08-28)
 
 ### Dependency Updates

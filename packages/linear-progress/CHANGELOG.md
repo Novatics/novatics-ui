@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.3](https://github.com/Novatics/novatics-ui/compare/linear-progress-0.3.2...linear-progress-0.3.3) (2023-08-28)
+
+### Dependency Updates
+
+* `styles` updated to version `0.16.0`
 ## [0.3.2](https://github.com/Novatics/novatics-ui/compare/linear-progress-0.3.1...linear-progress-0.3.2) (2023-08-28)
 
 ### Dependency Updates

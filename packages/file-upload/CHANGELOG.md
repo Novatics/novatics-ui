@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.2](https://github.com/Novatics/novatics-ui/compare/file-upload-0.3.1...file-upload-0.3.2) (2023-08-28)
+
+### Dependency Updates
+
+* `button` updated to version `0.3.2`
+* `styles` updated to version `0.15.2`
+* `linear-progress` updated to version `0.3.2`
+
+### Bug Fixes
+
+* **root:** adjust components, CI and banner ([579aa79](https://github.com/Novatics/novatics-ui/commit/579aa791c1358545b3b8d50be1d00dbbebad0f16))
+
 ## [0.2.7](https://github.com/Novatics/novatics-ui/compare/file-upload-0.2.6...file-upload-0.2.7) (2023-07-24)
 
 ### Dependency Updates

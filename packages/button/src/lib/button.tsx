@@ -8,12 +8,17 @@ export type ButtonProps = MUIButtonProps & {
 };
 
 const Button = (props: ButtonProps) => {
-  const { loading = false, loadingPosition = 'center' } = props;
+  const {
+    loading = false,
+    loadingPosition = 'center',
+    loadingIndicator,
+    ...other
+  } = props;
 
   const loadingProps = () => {
     if (!loading) return {};
 
-    const iconIndicator = props.loadingIndicator ?? (
+    const iconIndicator = loadingIndicator ?? (
       <CircularProgress color="inherit" size={16} />
     );
     const iconPosition =
@@ -25,9 +30,9 @@ const Button = (props: ButtonProps) => {
     };
   };
 
-  return <ButtonMui {...props} {...loadingProps()} />;
+  return <ButtonMui {...other} {...loadingProps()} />;
 };
 
+export * from '@mui/material/Button';
 export { Button };
 export default Button;
-export * from '@mui/material/Button';

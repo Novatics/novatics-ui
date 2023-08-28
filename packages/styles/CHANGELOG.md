@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/Novatics/novatics-ui/compare/styles-0.15.2...styles-0.16.0) (2023-08-28)
+
+
+### Features
+
+* **root:** adjust padding of select ([3a1f36c](https://github.com/Novatics/novatics-ui/commit/3a1f36c2f56684a39d10c33433543c72d8ffe8a8))
+
 ## [0.15.2](https://github.com/Novatics/novatics-ui/compare/styles-0.15.1...styles-0.15.2) (2023-08-28)
 
 ### Dependency Updates

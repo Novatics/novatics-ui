@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.2](https://github.com/Novatics/novatics-ui/compare/core-0.5.1...core-0.5.2) (2023-08-28)
+
+### Dependency Updates
+
+* `action-footer` updated to version `0.5.2`
+* `alert` updated to version `0.2.2`
+* `button` updated to version `0.3.2`
+* `checkbox` updated to version `0.4.2`
+* `checkbox-field` updated to version `0.5.2`
+* `chip` updated to version `0.4.2`
+* `currency-text-field` updated to version `0.4.2`
+* `dialog` updated to version `0.2.2`
+* `divider` updated to version `0.4.2`
+* `file-upload` updated to version `0.3.2`
+* `form` updated to version `0.3.2`
+* `form-group` updated to version `0.3.2`
+* `input-field` updated to version `0.5.2`
+* `linear-progress` updated to version `0.3.2`
+* `link` updated to version `0.3.2`
+* `masked-text-field` updated to version `0.4.2`
+* `radio` updated to version `0.4.2`
+* `radio-group-field` updated to version `0.3.2`
+* `select-field` updated to version `0.3.2`
+* `styles` updated to version `0.15.2`
+* `tokens` updated to version `0.4.2`
+* `wizard` updated to version `0.4.2`
+
+### Bug Fixes
+
+* **root:** adjust components, CI and banner ([579aa79](https://github.com/Novatics/novatics-ui/commit/579aa791c1358545b3b8d50be1d00dbbebad0f16))
+
 ## [0.4.7](https://github.com/Novatics/novatics-ui/compare/core-0.4.6...core-0.4.7) (2023-07-24)
 
 ### Dependency Updates

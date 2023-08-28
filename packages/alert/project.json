@@ -17,7 +17,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/alert"
+        "outputPath": "dist/packages/alert",
+        "includeDevDependenciesInPackageJson": true
       },
       "configurations": {
         "development": {

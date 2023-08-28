@@ -11,6 +11,7 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: joinPathFragments(__dirname, 'tsconfig.lib.json'),
+      copyDtsFiles: true,
     }),
     react(),
     viteTsConfigPaths({
@@ -42,6 +43,9 @@ export default defineConfig({
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime', /@mui\/*/],
+      output: {
+        banner: "'use client'",
+      },
     },
   },
 });

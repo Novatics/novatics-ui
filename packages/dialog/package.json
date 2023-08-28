@@ -12,5 +12,8 @@
   "dependencies": {
     "lodash.isempty": "^4.4.0",
     "lodash.isnil": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@mui/icons-material": "^5.14.1"
   }
 }

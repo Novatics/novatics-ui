@@ -10,6 +10,7 @@
     }
   },
   "peerDependencies": {
-    "formik": "^2.2.9"
+    "formik": "^2.2.9",
+    "@mui/icons-material": "^5.14.1"
   }
 }
